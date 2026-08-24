@@ -1,0 +1,24 @@
+{
+  "brandName": "Moonberry Little Treasures",
+  "websiteUrl": "http://moonberrylittletreasures.com",
+  "email": "support@moonberrylittletreasures.com",
+  "descriptor": "MoonberryLittleTreasur",
+  "corpName": "Starpath Marketing Co",
+  "phone": "1-800-762-7529",
+  "address": "480 Athletic Way, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#8F75D8",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#F49DB2",
+    "secondaryTextColor": "#2D264B",
+    "neutralBgColor": "#FDFBF7",
+    "neutralTextColor": "#2D3142",
+    "fontFamily": "Nunito"
+  }
+}

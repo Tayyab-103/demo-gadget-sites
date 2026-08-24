@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "SnugglePure Organic Cotton Baby Bib & Teether Set",
+    "description": "Crafted from 100% GOTS-certified organic cotton muslin with a soothing BPA-free food-grade silicone teether ring. Ultra-absorbent, hypoallergenic, and gentle on delicate newborn skin for drool-free playtime.",
+    "image": "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=1000&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1000&q=80",
+      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=900&q=80",
+    "category": "Bibs & Teethers",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "CloudSoft Natural Beechwood Rattle & Teether",
+    "description": "Handcrafted from all-natural untreated organic beechwood and soft non-toxic food-grade silicone beads. Designed to stimulate sensory development, fine motor grip reflexes, and soothe tender gums.",
+    "image": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1000&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1000&q=80",
+      "https://images.unsplash.com/photo-1584839619566-488523318850?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=900&q=80",
+    "category": "Sensory Toys & Teethers",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "LittleLuxe Heirloom Knitted Cardigan & Booties Set",
+    "description": "An adorable heirloom-quality baby knit cardigan with matching pom-pom booties and cozy bonnet. Knit with breathable 100% organic combed cotton yarn for ultimate newborn warmth, softness, and photogenic charm.",
+    "image": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1000&q=80",
+      "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1000&q=80",
+      "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&q=80",
+    "category": "Knitwear & Apparel",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

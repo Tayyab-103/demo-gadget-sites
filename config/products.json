@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Voltspire Pro Digital Multimeter & Voltage Tester",
+    "description": "A high-precision true-RMS digital multimeter engineered for professional electricians, industrial testing, and high-voltage circuit diagnostics. Features auto-ranging, non-contact voltage detection (NCV), backlit LCD screen, and heavy-duty silicone drop protection.",
+    "image": "/img/products/product1.jpg",
+    "images": [
+      "/img/products/product1.jpg",
+      "/img/products/product2.jpg",
+      "/img/products/product3.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product1.jpg",
+    "category": "Precision Diagnostic Equipment",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "Voltspire Industrial Thermal Imaging Clamp Meter",
+    "description": "An advanced AC/DC clamp meter equipped with precision thermal sensor optics and inrush current capture. Accurately measure up to 1000A without breaking circuits, diagnose hot spots on electrical panels in real-time, and log data wirelessly.",
+    "image": "/img/products/product2.jpg",
+    "images": [
+      "/img/products/product2.jpg",
+      "/img/products/product1.jpg",
+      "/img/products/product3.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product2.jpg",
+    "category": "Thermal & Current Measurement",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Voltspire Heavy-Duty Pure Sine Wave Power Inverter Module",
+    "description": "Engineered for resilient off-grid and backup power systems, this industrial-grade pure sine wave inverter delivers ultra-clean AC power with 94% peak efficiency. Features intelligent dynamic cooling, surge overload protection, and dual quick-terminal connectors.",
+    "image": "/img/products/product3.jpg",
+    "images": [
+      "/img/products/product3.jpg",
+      "/img/products/product1.jpg",
+      "/img/products/product2.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product3.jpg",
+    "category": "Power Conditioning & Conversion",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

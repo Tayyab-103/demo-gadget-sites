@@ -1,0 +1,25 @@
+{
+  "brandName": "Voltspire Electrical Collective",
+  "websiteUrl": "voltspireelectricalcollective.com",
+  "email": "support@voltspireelectricalcollective.com",
+  "descriptor": "VoltspireElectricalCol",
+  "corpName": "Starpath Marketing Co",
+  "phone": "1-800-762-7529",
+  "address": "480 Athletic Way, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#0F1217",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#5B6BF0",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#EFECE4",
+    "neutralTextColor": "#111317",
+    "fontFamily": "Montserrat"
+  }
+}
+

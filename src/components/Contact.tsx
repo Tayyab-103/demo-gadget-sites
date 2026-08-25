@@ -67,7 +67,7 @@ export default function Contact() {
             Have Questions? <span className="text-secondary">Get in Touch</span>
           </h2>
           <p className="text-white/65 text-sm md:text-base">
-            Our customer care representatives are available to help guide you on products, shipping, or billing support.
+            Our styling and support consultants are available to guide your furnishing selections, room layouts, shipping, or custom setups.
           </p>
         </div>
 

@@ -17,12 +17,12 @@ export default function CTASection() {
           </span>
 
           <h2 className="relative z-10 mb-6 text-3xl font-black uppercase leading-[1.1] tracking-tight text-white md:text-5xl">
-            Ready for Your <br />
-            <span className="text-secondary drop-shadow-md">Next Adventure?</span>
+            Elevate Your <br />
+            <span className="text-secondary drop-shadow-md">Living Space</span>
           </h2>
 
           <p className="relative z-10 mb-10 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
-            Join thousands of travelers who&apos;ve upgraded their gear. Bundle up and save on your first order today.
+            Join thousands of design lovers who&apos;ve curated their sanctuaries. Bundle up and enjoy exclusive savings on your first order today.
           </p>
 
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row">
@@ -37,20 +37,16 @@ export default function CTASection() {
               href="/#contact"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/30 bg-transparent px-9 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-white hover:bg-white/10"
             >
-              Talk to Us
+              Talk to a Designer
             </Link>
           </div>
         </div>
 
-        {/* Right: Video */}
+        {/* Right: Premium Image */}
         <div className="relative min-h-[280px] lg:min-h-0">
-          <video
-            src="/cta-video1.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
+          <img
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80"
+            alt="Warm and modern furnished lounge space"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/10 to-transparent lg:bg-gradient-to-r lg:from-primary/70 lg:via-primary/10 lg:to-transparent" />

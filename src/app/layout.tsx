@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium luggage, bags & travel accessories online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium home furnishings, light fixtures & cozy textiles online.`;
 
 // Preload the most common fonts
 const poppins = Poppins({

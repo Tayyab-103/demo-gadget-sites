@@ -103,42 +103,9 @@ export default function Header() {
         ref={headerRef}
         className="sticky top-0 z-50 bg-neutral-bg/85 backdrop-blur-md border-b border-black/5"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-6 lg:px-8 py-5">
-          <Link
-            href="/"
-            onClick={closeAll}
-            className="text-xl lg:text-2xl font-extrabold text-primary flex items-center flex-shrink-0"
-            style={{ textDecoration: "none" }}
-          >
-            {siteConfig.useImageLogo && siteConfig.logoImage ? (
-              <>
-                <img
-                  src="/product-logo.png"
-                  alt={siteConfig.brandName}
-                  className="max-h-11 max-w-[145px] sm:max-w-none w-auto object-contain lg:hidden mix-blend-multiply"
-                />
-                <img
-                  src={siteConfig.logoImage}
-                  alt={siteConfig.brandName}
-                  className="max-h-11 w-auto object-contain hidden lg:block mix-blend-multiply"
-                />
-              </>
-            ) : (
-              <span className="flex items-center gap-2 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
-                {/* <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-primary text-xs font-black">
-                  {firstWord.charAt(0)}
-                </span> */}
-                {firstWord}
-                <span className="text-secondary">
-                  {secondWord ? ` ${secondWord}` : ""}
-                  {trailingWords ? <span className="hidden sm:inline">{` ${trailingWords}`}</span> : ""}
-                </span>
-              </span>
-            )}
-          </Link>
-
-          {/* Desktop nav, centered independent of logo/actions width */}
-          <nav className="hidden lg:block absolute left-1/2 -translate-x-1/2">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-6 lg:px-8 py-5 relative">
+          {/* Desktop nav on the left */}
+          <nav className="hidden lg:block">
             <ul className="flex list-none gap-8 m-0 p-0">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -154,7 +121,38 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+          {/* Logo / Brand Name centered on desktop */}
+          <Link
+            href="/"
+            onClick={closeAll}
+            className="text-lg lg:text-base font-extrabold text-primary flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:transform"
+            style={{ textDecoration: "none" }}
+          >
+            {siteConfig.useImageLogo && siteConfig.logoImage ? (
+              <>
+                <img
+                  src="/product-logo.png"
+                  alt={siteConfig.brandName}
+                  className="max-h-11 max-w-[145px] sm:max-w-none w-auto object-contain lg:hidden mix-blend-multiply"
+                />
+                <img
+                  src={siteConfig.logoImage}
+                  alt={siteConfig.brandName}
+                  className="max-h-8 w-auto object-contain hidden lg:block mix-blend-multiply"
+                />
+              </>
+            ) : (
+              <span className="flex items-center gap-2 tracking-tight text-sm sm:text-base lg:text-xs xl:text-sm font-black uppercase">
+                {firstWord}
+                <span className="text-secondary">
+                  {secondWord ? ` ${secondWord}` : ""}
+                  {trailingWords ? <span className="hidden sm:inline">{` ${trailingWords}`}</span> : ""}
+                </span>
+              </span>
+            )}
+          </Link>
+
+          <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 ml-auto lg:ml-0">
             {/* Search Icon */}
             <button
               onClick={toggleSearch}

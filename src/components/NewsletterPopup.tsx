@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80"
-            alt="Traveler wheeling suitcases out the door"
+            src="https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=900&q=80"
+            alt="Warm, cozy modern interior setting"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}
@@ -89,7 +89,7 @@ export default function NewsletterPopup() {
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Exclusive Travel Deals
+              Exclusive Styling Insights
             </span>
             <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
               Save 15% Today!
@@ -112,7 +112,7 @@ export default function NewsletterPopup() {
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get travel tips, early access to new gear, and <strong>15% off</strong> on your first order.
+                Join the {siteConfig.brandName} community. Subscribe today to get interior design tips, early access to new collections, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">

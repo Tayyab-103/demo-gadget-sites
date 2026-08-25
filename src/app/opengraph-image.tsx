@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Luggage, Bags &amp; Travel Accessories
+          Premium Home Furnishing Collections
         </div>
 
         <div

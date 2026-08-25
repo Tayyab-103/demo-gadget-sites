@@ -16,8 +16,8 @@ const faqData = [
     answer: `Yes, we back all our products with a 60-day money-back guarantee. If you are not satisfied with your purchase, contact our support team via email or phone to initiate a hassle-free return and refund.`
   },
   {
-    question: "Are your bags and gear covered by a warranty?",
-    answer: "Yes. Every product ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
+    question: "Are your furnishings and accessories covered by a warranty?",
+    answer: "Yes. Every product ships with a lifetime warranty on structural joinery and wood frames, alongside a 1-year manufacturer's warranty on fabric upholstery and electrical components."
   },
   {
     question: "How will the charge appear on my credit card statement?",

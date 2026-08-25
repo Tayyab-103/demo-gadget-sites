@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Trip-Tested Durability",
-    desc: "Every bag is stress-tested through real travel conditions before it ships, so it holds up to daily use.",
+    title: "Artisanal Joinery Guarantee",
+    desc: "Every solid wood framework is built using traditional mortise-and-tenon joinery, ensuring lifetime structural integrity.",
   },
   {
-    title: "1-Year Warranty, Every Order",
-    desc: "Manufacturing defects are covered for a full year — no fine print, no hidden exclusions.",
+    title: "60-Day Comfort Trial",
+    desc: "Stage our furnishings in your own room for 60 days. If the comfort and fit aren't absolutely perfect, return it for a full refund.",
   },
   {
-    title: "Responsibly Sourced Materials",
-    desc: "We partner with vetted manufacturers using quality-checked fabrics and hardware in every build.",
+    title: "Oeko-Tex Certified Fabrics",
+    desc: "We source our textiles exclusively from mills using GOTS-certified organic cotton and Oeko-Tex certified non-toxic fibers.",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function QualityPromise() {
         {/* Full-bleed banner */}
         <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
           <img
-            src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=80"
             alt={`${siteConfig.brandName} Quality Assurance`}
             className="absolute inset-0 h-full w-full object-cover"
           />

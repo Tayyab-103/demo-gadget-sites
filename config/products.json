@@ -2,24 +2,24 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Universal Travel Adapter",
-    "description": "One adapter for over 150 countries, with UK, EU, US, and AU plug configurations built in. A compact, unbranded design keeps it light to pack, so you only need to bring one small adapter for the whole trip.",
-    "image": "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
+    "name": "Aura Bouclé Accent Chair",
+    "description": "Upholstered in premium, tactile organic cotton-bouclé, this sculptural lounge chair pairs smooth, flowing contours with solid white oak legs. Perfect for cozy reading corners or as a statement piece in your living room, it offers a luxurious cloud-like seating experience that blends beautifully with modern, minimalist, or transitional spaces.",
+    "image": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
-      "https://images.unsplash.com/photo-1564517746937-14218d983034?w=1000&q=80",
-      "https://images.unsplash.com/photo-1517320069935-381614f8c1e5?w=1000&q=80",
-      "https://images.unsplash.com/photo-1586339393702-b1d274be5806?w=1000&q=80",
-      "https://images.unsplash.com/photo-1770418000074-fa16c0a53e82?w=1000&q=80"
+      "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&q=80",
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1000&q=80",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&q=80",
+      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "ingredientsImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80",
     "boxContents": [
-      "1x Universal Travel Adapter",
-      "1x Carrying Pouch",
-      "Quick Start Guide"
+      "1x Aura Bouclé Accent Chair",
+      "4x Solid Oak Leg Attachments",
+      "Assembly Hardware & Tool Kit",
+      "Upholstery Care Guide"
     ],
-    "category": "Travel Electronics",
+    "category": "Seating",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -37,22 +37,23 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Neck Travel Pillow",
-    "description": "A supportive memory-foam neck pillow that packs down small with its own compression strap, so it takes up almost no space in your carry-on. The contoured shape keeps your head from bobbing on long flights, bus rides, or road trips, and the soft cover is machine washable.",
-    "image": "/img/products/neck-travel-pillow.jpg",
+    "name": "Solas Woven Pendant Light",
+    "description": "Hand-woven from natural organic flax linen and rattan fibers, this pendant lamp creates a soft, warm ambiance in any space. Its organic texture and modern dome silhouette diffuse light beautifully, casting a soft, golden glow across dining tables, entryways, or bedside areas.",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1000&q=80",
     "images": [
-      "/img/products/neck-travel-pillow.jpg",
-      "/img/products/neck-travel-pillow2.jpg",
-      "/img/products/neck-travel-pillow3.jpg"
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1000&q=80",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1000&q=80",
+      "https://images.unsplash.com/photo-1543248939-ff40856f65d4?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "ingredientsImage": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1000&q=80",
     "boxContents": [
-      "1x Neck Travel Pillow",
-      "1x Compression Carry Strap",
-      "Removable Washable Cover"
+      "1x Solas Woven Linen Shade",
+      "1x Brass Canopy & 6ft Textile Cable",
+      "Mounting Hardware & Wire Connectors",
+      "Installation & Wiring Guide"
     ],
-    "category": "Travel Comfort",
+    "category": "Lighting",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -70,22 +71,22 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Travel Organizer Bags",
-    "description": "A set of soft-touch organizer pouches for toiletries and small essentials, keeping cables, skincare, and grooming tools separated and easy to find. Water-resistant fabric and a wipeable lining mean spills stay contained, and each pouch folds flat when it's empty.",
-    "image": "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
+    "name": "Elysian Organic Cotton Throw",
+    "description": "Woven on traditional looms from 100% GOTS-certified organic cotton, this heavy-weight throw blanket features a rich waffle-knit texture. Soft, breathable, and beautifully finished with hand-knotted fringe, it adds layerable warmth and relaxed sophistication to any bed or sofa.",
+    "image": "https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
-      "https://images.unsplash.com/photo-1765516976457-550bd5f6f708?w=1000&q=80",
-      "https://images.unsplash.com/photo-1679466231026-7b632eb05b90?w=1000&q=80"
+      "https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=1000&q=80",
+      "https://images.unsplash.com/photo-1543294001-f7cbfe92237e?w=1000&q=80",
+      "https://images.unsplash.com/photo-1528938102132-4a9276b8e320?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "ingredientsImage": "https://images.unsplash.com/photo-1506306820202-14361668e1c4?w=1000&q=80",
     "boxContents": [
-      "3x Organizer Pouches (S/M/L)",
-      "1x Mesh Toiletry Bag",
-      "Care Instructions Card"
+      "1x Elysian Organic Cotton Throw",
+      "1x Pure Linen Storage Pouch",
+      "Textile Care Guide"
     ],
-    "category": "Travel Organization",
+    "category": "Textiles",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

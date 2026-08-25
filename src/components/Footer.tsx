@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
             <h2 className="text-xl md:text-2xl font-bold">Stay in the loop</h2>
-            <p className="text-white/50 text-sm mt-1">Travel tips, new arrivals, and offers — straight to your inbox.</p>
+            <p className="text-white/50 text-sm mt-1">Interior design tips, new arrivals, and offers — straight to your inbox.</p>
           </div>
 
           {subscribed ? (
@@ -71,7 +71,7 @@ export default function Footer() {
               <h4 className="text-white text-lg font-black uppercase mb-4">{siteConfig.brandName}</h4>
             )}
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-56">
-              Thoughtfully designed travel gear, priced for real travel budgets.
+              Thoughtfully crafted furnishings, designed to bring warmth and comfort to your home.
             </p>
             <div className="flex items-center gap-2.5">
               <img src="/img/visa.png" alt="Visa" className="h-6 w-auto rounded-sm" />
@@ -94,10 +94,10 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="text-white/50 text-xs mb-5 font-bold uppercase tracking-widest">Shop</h4>
             <ul className="flex flex-col gap-3">
-              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Travel Adapter</Link></li>
-              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Neck Travel Pillow</Link></li>
-              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Organizer Bags</Link></li>
-              <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Travel Gear</Link></li>
+              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Aura Accent Chair</Link></li>
+              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Solas Pendant Light</Link></li>
+              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Elysian Throw Blanket</Link></li>
+              <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Furnishings</Link></li>
             </ul>
           </div>
 
@@ -121,7 +121,7 @@ export default function Footer() {
             &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
           </span>
           <span className="text-white/40 text-[10px] text-center sm:text-right max-w-md">
-            Product images are for illustrative purposes; actual gear may vary slightly.
+            Product images are for illustrative purposes; actual furnishings may vary slightly.
           </span>
         </div>
       </div>

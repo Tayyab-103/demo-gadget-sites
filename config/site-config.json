@@ -1,10 +1,10 @@
 {
-  "Product": "Luggage / Travel Accessories",
+  "Product": "Home Furnishing",
   "Processor": "EMP",
-  "brandName": "Roamthorne Travel Goods House",
-  "websiteUrl": "roamthornetravelgoodshouse.com",
-  "email": "support@roamthornetravelgoodshouse.com",
-  "descriptor": "RoamthorneTravelGoodsH",
+  "brandName": "Hearthwyn Home Living Collective",
+  "websiteUrl": "HearthwynHomeLivingCollective.com",
+  "email": "support@hearthwynhomelivingcollective.com",
+  "descriptor": "HearthwynHomeLivingCol",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0F2A5C",
+    "primaryColor": "#2C3E35",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#2F7DF6",
+    "secondaryColor": "#C59B6D",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F5F9FF",
-    "neutralTextColor": "#12203A",
-    "fontFamily": "Poppins"
+    "neutralBgColor": "#FAF7F2",
+    "neutralTextColor": "#2A2521",
+    "fontFamily": "Montserrat"
   }
 }

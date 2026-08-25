@@ -27,7 +27,7 @@ export default function Home() {
         <HowItWorks />
         
         {/* About Brand Section */}
-        <AboutUs />
+        {/* <AboutUs /> */}
 
         {/* Product Catalog Showcase */}
         <ProductGrid />
@@ -36,7 +36,7 @@ export default function Home() {
         <QualityPromise />
         
         {/* Quality Certifications */}
-        {/* <Features /> */}
+        <Features />
         
         {/* Customer Social Proof */}
         <Testimonials />
@@ -45,7 +45,7 @@ export default function Home() {
         <CTASection />
 
         {/* FAQ Accordions Dropdown */}
-        {/* <Faq /> */}
+        <Faq />
 
         {/* Contact Form Section */}
         <Contact />

@@ -27,8 +27,8 @@ const highlights = [
         <polyline points="9 12 11.5 14.5 15 9" />
       </svg>
     ),
-    title: "Trip-Tested Builds",
-    desc: "Every bag and case is stress-tested through real travel conditions before it ever reaches the shop.",
+    title: "Artisan Curation",
+    desc: "We partner with local craftsmen using generational joinery and hand-weaving techniques to ensure every piece has a soul.",
   },
   {
     icon: (
@@ -44,11 +44,12 @@ const highlights = [
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+        <path d="M12 6V12L16 14" />
       </svg>
     ),
-    title: "Built for Real Travel",
-    desc: "Designed to hold up through layovers, cobblestones, and gate-checks alike.",
+    title: "Sustainable Abodes",
+    desc: "Crafted with GOTS-certified organic cotton fabrics, FSC-certified solid oak, and natural non-toxic wood finishes.",
   },
   {
     icon: (
@@ -68,8 +69,8 @@ const highlights = [
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
     ),
-    title: "No Shortcuts",
-    desc: "Durable materials and precision construction — in every piece we ship.",
+    title: "Ergonomic Comfort",
+    desc: "Meticulously scaled and tested to ensure deep seated comfort, optimal posture support, and relaxed home-styled luxury.",
   },
   {
     icon: (
@@ -90,15 +91,15 @@ const highlights = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: "1-Year Warranty",
-    desc: "Every piece we sell is backed by a full year of coverage.",
+    title: "Lifetime Structure Warranty",
+    desc: "Every solid wood joinery framework is built to endure and comes backed by our full lifetime warranty.",
   },
 ];
 
 const stats = [
-  { value: "15k+", label: "Trips Packed" },
-  { value: "60-Day", label: "Returns" },
-  { value: "1-Yr", label: "Warranty" },
+  { value: "15k+", label: "Spaces Adorned" },
+  { value: "60-Day", label: "Comfort Trial" },
+  { value: "Lifetime", label: "Warranty" },
 ];
 
 export default function AboutUs() {
@@ -117,15 +118,12 @@ export default function AboutUs() {
           <span className="eyebrow mb-6 justify-center">Our Story</span>
 
           <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
-            Travel Gear, Built{" "}
-            <span className="text-secondary">to Go the Distance</span>
+            Artisanal Furnishings, Crafted{" "}
+            <span className="text-secondary">for Cozy Living</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, we believe your luggage should
-            work as hard as you do. We design and stress-test every piece
-            through real travel conditions to make sure it holds up, trip
-            after trip.
+            At {siteConfig.brandName}, we believe home should be your sanctuary. We partner with master artisans to craft timeless, sustainable furnishings that bring comfort and natural warmth to your everyday living.
           </p>
         </div>
 
@@ -134,8 +132,8 @@ export default function AboutUs() {
           {/* LEFT — Image */}
           <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-[2.5rem] shadow-2xl lg:mx-0 lg:aspect-4/5">
             <Image
-              src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80"
-              alt={`${siteConfig.brandName} travel lifestyle`}
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80"
+              alt={`${siteConfig.brandName} home interior design`}
               fill
               sizes="(max-width: 1024px) 90vw, 520px"
               className="object-cover"

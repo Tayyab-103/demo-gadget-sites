@@ -4,24 +4,24 @@ import React, { useEffect, useState } from "react";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80",
-    alt: "Traveler waiting at the airport gate with a suitcase, plane taking off",
+    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80",
+    alt: "Cozy modern living room with warm wood tones, natural lighting, and elegant furnishings",
   },
   {
-    src: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80",
-    alt: "Traveler wheeling two hardshell suitcases out the door",
+    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=80",
+    alt: "Warm wooden dining space with natural fabrics, rattan textures, and low hanging lighting",
   },
   {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80",
-    alt: "View of an airplane wing above the clouds at sunset",
+    src: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?w=1600&q=80",
+    alt: "Elegant modern bedroom featuring organic cotton textiles and minimalist warm styling",
   },
   {
-    src: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=1600&q=80",
-    alt: "Canal city skyline, a classic travel destination",
+    src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80",
+    alt: "Aesthetic living corner with a cozy textured chair, wooden accents, and warm ambient light",
   },
   {
-    src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80",
-    alt: "Hikers crossing a snowy mountain ridge",
+    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=80",
+    alt: "Bright, minimalist living space featuring curved furnishings and natural elements",
   },
 ];
 

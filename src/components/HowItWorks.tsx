@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Choose Your Gear",
+    title: "Curate Your Space",
     description:
-      "Browse our range of luggage, bags, and travel accessories, and pick a bundle sized for your next trip, from a single piece to a full travel kit.",
-    image: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80",
+      "Browse our curated catalog of small-batch artisanal seating, warm ambient lighting, and organic cotton textiles to find the perfect style match for your sanctuary.",
+    image: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,18 +23,17 @@ const steps = [
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <path d="M16 10a4 4 0 0 1-8 0" />
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
   },
   {
     number: "02",
-    title: "Fast Secure Checkout",
+    title: "Select Package Bundle",
     description:
-      "Fill in your shipping details and complete your order safely. Our checkout is secured with military-grade 256-bit encryption for your peace of mind.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
+      "Customize your quantity and bundle items. Enjoy exclusive savings when you order matching sets or curate a complete room layout at once.",
+    image: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,17 +47,19 @@ const steps = [
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        <rect x="3" y="3" width="7" height="9" />
+        <rect x="14" y="3" width="7" height="5" />
+        <rect x="14" y="12" width="7" height="9" />
+        <rect x="3" y="16" width="7" height="5" />
       </svg>
     ),
   },
   {
     number: "03",
-    title: "Nationwide Dispatch",
+    title: "White-Glove Delivery",
     description:
-      "Your order is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
+      "Your order is hand-packed, secured, and shipped directly to your doorstep. Enjoy free shipping and simple room placement in 3-5 business days.",
+    image: "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +102,7 @@ export default function HowItWorks() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Getting packed is simple. Follow these three steps to get
-            premium travel gear delivered straight to your door.
+            Elevating your home design is effortless. Follow these three steps to bring premium, handcrafted furnishings directly into your space.
           </p>
         </div>
 

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Everden Classic Organic Cotton Family Crew Tee",
+    "description": "Spun from 100% certified organic combed ring-spun cotton, our signature family crew tee delivers breathable softness, relaxed all-day drape, and reinforced twin-needle stitching built to withstand everyday family adventures and repeated laundering.",
+    "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=1000&q=80",
+      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=900&q=80",
+    "category": "Everyday Family Essentials",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "CloudKnit Cozy Fleece Family Lounge Pullover",
+    "description": "Engineered with brushed French terry fleece and ribbed comfort cuffs, this timeless family pullover offers thermal insulation without excess bulk. Designed with an inclusive relaxed silhouette that layers seamlessly for cozy weekends, school runs, and evening family strolls.",
+    "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=1000&q=80",
+      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=1000&q=80",
+      "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=900&q=80",
+    "category": "Casual Knitwear & Loungewear",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Heritage Weather-Resistant Family Comfort Overcoat",
+    "description": "A versatile, water-resistant family overcoat tailored from breathable micro-twill. Features protective storm plackets, deep utility fleece-lined pockets, and clean tailoring to keep parents and youth warm, dry, and impeccably styled through every season.",
+    "image": "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80",
+    "category": "All-Season Outerwear",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

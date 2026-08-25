@@ -1,0 +1,24 @@
+{
+  "brandName": "Everden Family Wardrobe House",
+  "websiteUrl": "everdenfamilywardrobehouse.com",
+  "email": "support@everdenfamilywardrobehouse.com",
+  "descriptor": "EverdenFamilyWardrobeH",
+  "corpName": "Starpath Marketing Co.",
+  "phone": "1-800-762-7529",
+  "address": "480 Athletic Way, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#191716",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#A36B42",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#FAF8F5",
+    "neutralTextColor": "#191716",
+    "fontFamily": "Montserrat"
+  }
+}

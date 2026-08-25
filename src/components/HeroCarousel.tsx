@@ -3,11 +3,26 @@
 import React, { useEffect, useState } from "react";
 
 const images = [
-  "/img/hero1.png",
-  "/img/hero2.png",
-  "/img/hero3.png",
-  "/img/hero4.jpg",
-  "/img/hero5.jpg",
+  {
+    src: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80",
+    alt: "Traveler waiting at the airport gate with a suitcase, plane taking off",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80",
+    alt: "Traveler wheeling two hardshell suitcases out the door",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80",
+    alt: "View of an airplane wing above the clouds at sunset",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=1600&q=80",
+    alt: "Canal city skyline, a classic travel destination",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80",
+    alt: "Hikers crossing a snowy mountain ridge",
+  },
 ];
 
 export default function HeroCarousel() {
@@ -16,40 +31,39 @@ export default function HeroCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((i) => (i + 1) % images.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-full h-[380px] md:h-[450px] rounded-3xl shadow-2xl overflow-hidden bg-neutral-bg">
-      {images.map((src, idx) => (
-        <img
-          key={src}
-          src={src}
-          alt="Happy customer enjoying a healthy, active lifestyle"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-            idx === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-          }`}
-          style={{ transitionProperty: "opacity, transform" }}
-        />
-      ))}
-
-      {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
-
-      {/* Dot indicators */}
-      <div className="absolute bottom-6 right-6 flex gap-2 z-10">
-        {images.map((src, idx) => (
-          <button
-            key={src}
-            onClick={() => setActiveIndex(idx)}
-            aria-label={`Show image ${idx + 1}`}
-            className={`rounded-full transition-all duration-300 cursor-pointer ${
-              idx === activeIndex ? "w-6 h-2 bg-secondary" : "w-2 h-2 bg-white/60 hover:bg-white/90"
+    <>
+      {/* Background image stack */}
+      <div className="absolute inset-0">
+        {images.map((img, idx) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+              idx === activeIndex ? "opacity-100" : "opacity-0"
             }`}
           />
         ))}
       </div>
-    </div>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2 md:bottom-8">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveIndex(idx)}
+            aria-label={`Show slide ${idx + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+              idx === activeIndex ? "w-8 bg-secondary" : "w-2 bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
+      </div>
+    </>
   );
 }

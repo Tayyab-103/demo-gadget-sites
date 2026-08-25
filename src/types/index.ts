@@ -12,6 +12,7 @@ export interface Product {
   images?: string[];
   showIngredients: boolean;
   ingredientsImage: string;
+  boxContents?: string[];
   category: string;
   billingModel: number;
   ssPrice: string;

@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer premium sports gear and training gadgets through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer premium luggage, bags, and travel accessories through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
@@ -66,7 +66,7 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Bottles Bundle" : "Bottle Pack"}</strong>,
+                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity > 1 ? `${bundle.quantity}-Piece Bundle` : "Single Piece"}</strong>,
                           you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
                           The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.

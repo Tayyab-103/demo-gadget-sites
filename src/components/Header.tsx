@@ -13,7 +13,7 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Products" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -124,10 +124,10 @@ export default function Header() {
                 />
               </>
             ) : (
-              <span className="flex items-center gap-2.5 tracking-tight text-2xl font-black uppercase">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-primary text-sm font-black">
+              <span className="flex items-center gap-2 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
+                {/* <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-primary text-xs font-black">
                   {firstWord.charAt(0)}
-                </span>
+                </span> */}
                 {firstWord}
                 <span className="text-secondary">
                   {secondWord ? ` ${secondWord}` : ""}

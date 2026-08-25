@@ -2,17 +2,24 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "TurboGrip Resistance Band Set",
-    "description": "A pro-grade set of five graduated resistance bands built for strength training, mobility work, and rehab, anywhere you train. Color-coded for load, reinforced at every stitch, and packed with a door anchor, ankle straps, and a carry bag, TurboGrip turns any room into a full-body training gym.",
-    "image": "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1000&q=80",
+    "name": "Universal Travel Adapter",
+    "description": "One adapter for over 150 countries, with UK, EU, US, and AU plug configurations built in. A compact, unbranded design keeps it light to pack, so you only need to bring one small adapter for the whole trip.",
+    "image": "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1000&q=80",
-      "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=1000&q=80",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=80"
+      "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
+      "https://images.unsplash.com/photo-1564517746937-14218d983034?w=1000&q=80",
+      "https://images.unsplash.com/photo-1517320069935-381614f8c1e5?w=1000&q=80",
+      "https://images.unsplash.com/photo-1586339393702-b1d274be5806?w=1000&q=80",
+      "https://images.unsplash.com/photo-1770418000074-fa16c0a53e82?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Strength & Mobility Training",
+    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "boxContents": [
+      "1x Universal Travel Adapter",
+      "1x Carrying Pouch",
+      "Quick Start Guide"
+    ],
+    "category": "Travel Electronics",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +37,22 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "PulseFit Smart Fitness Tracker",
-    "description": "A lightweight performance wearable that tracks heart rate, sleep, steps, and workout intensity in real time, synced straight to your phone. With a 10-day battery, water resistance to 50m, and 20+ sport modes, PulseFit keeps your training data honest whether you're lifting, running, or recovering.",
-    "image": "https://images.unsplash.com/photo-1557935728-e6d1eaabe558?w=1000&q=80",
+    "name": "Neck Travel Pillow",
+    "description": "A supportive memory-foam neck pillow that packs down small with its own compression strap, so it takes up almost no space in your carry-on. The contoured shape keeps your head from bobbing on long flights, bus rides, or road trips, and the soft cover is machine washable.",
+    "image": "/img/products/neck-travel-pillow.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1557935728-e6d1eaabe558?w=1000&q=80",
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1000&q=80",
-      "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1000&q=80"
+      "/img/products/neck-travel-pillow.jpg",
+      "/img/products/neck-travel-pillow2.jpg",
+      "/img/products/neck-travel-pillow3.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Wearable Performance Tech",
+    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "boxContents": [
+      "1x Neck Travel Pillow",
+      "1x Compression Carry Strap",
+      "Removable Washable Cover"
+    ],
+    "category": "Travel Comfort",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +70,22 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "PowerCore Percussion Massage Gun",
-    "description": "A quiet, deep-tissue percussion massager engineered to speed up recovery, loosen tight muscles, and knock out soreness before it slows you down. Six interchangeable heads, five speed settings, and a brushless motor rated for 200 minutes of runtime make PowerCore the recovery tool that keeps up with your training.",
-    "image": "https://images.unsplash.com/photo-1522898467493-49726bf28798?w=1000&q=80",
+    "name": "Travel Organizer Bags",
+    "description": "A set of soft-touch organizer pouches for toiletries and small essentials, keeping cables, skincare, and grooming tools separated and easy to find. Water-resistant fabric and a wipeable lining mean spills stay contained, and each pouch folds flat when it's empty.",
+    "image": "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1522898467493-49726bf28798?w=1000&q=80",
-      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1000&q=80",
-      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1000&q=80"
+      "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
+      "https://images.unsplash.com/photo-1765516976457-550bd5f6f708?w=1000&q=80",
+      "https://images.unsplash.com/photo-1679466231026-7b632eb05b90?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Recovery & Muscle Therapy",
+    "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
+    "boxContents": [
+      "3x Organizer Pouches (S/M/L)",
+      "1x Mesh Toiletry Bag",
+      "Care Instructions Card"
+    ],
+    "category": "Travel Organization",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=900&q=80"
-            alt="Wrapped gift box tied with ribbon"
+            src="https://images.unsplash.com/photo-1503457574465-52a7a7c3edcc?w=900&q=80"
+            alt="Folded stack of soft family clothing"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}
@@ -112,7 +112,7 @@ export default function NewsletterPopup() {
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get styling tips, early access to new arrivals, and <strong>15% off</strong> on your first order.
+                Join the {siteConfig.brandName} community. Subscribe today to get family styling tips, early access to new arrivals, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">

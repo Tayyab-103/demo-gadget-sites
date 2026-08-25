@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Choose Your Piece",
+    title: "Choose Your Fit",
     description:
-      "Browse our collection of jewelry, watches, clocks, and silverware, and pick a bundle sized for you, from a single piece to a full gift set.",
-    image: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=900&q=80",
+      "Browse our collection of tees, flannels, and joggers, and pick a bundle sized for your family, from a single piece to a full wardrobe refresh.",
+    image: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +107,8 @@ export default function HowItWorks() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Finding your next piece is simple. Follow these three steps to get
-            fine jewelry, watches, clocks, or silverware delivered straight to your door.
+            Dressing the whole family is simple. Follow these three steps to
+            get soft, durable everyday clothing delivered straight to your door.
           </p>
         </div>
 

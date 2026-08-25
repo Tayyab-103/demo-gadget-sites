@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Lunara Pearl Pendant Necklace",
-    "description": "A hand-strung cultured pearl necklace finished with a hammered 14k gold-plated pendant, designed to layer beautifully or wear on its own. Each pearl is hand-selected for luster and shape, then set on a tarnish-resistant chain that's equally at home at the office or at a black-tie dinner. Arrives nested in our signature presentation box, ready to gift.",
-    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
+    "name": "Rowan Organic Cotton Crewneck Tee",
+    "description": "A heavyweight, 100% organic cotton crewneck cut for everyday wear, with a garment-washed finish that softens with every wash instead of wearing thin. Reinforced shoulder seams and a double-stitched hem keep it looking new through school runs, weekend errands, and everything in between. Available in sizing for every member of the family, from toddler to adult.",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1000&q=80",
-      "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?w=1000&q=80"
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1000&q=80",
+      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
-    "category": "Fine Jewelry — Necklaces",
+    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
+    "category": "Tees & Everyday Basics",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,16 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Meridian Canvas-Strap Watch",
-    "description": "A slim-profile quartz watch with a sunburst dial, gold-tone case, and a woven canvas strap that softens with wear. Water-resistant to 30m and fitted with a scratch-resistant mineral crystal, Meridian is built for daily wear, from morning meetings to evenings out, and pairs effortlessly with the rest of your jewelry box.",
-    "image": "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
+    "name": "Wildfern Buffalo Check Flannel Shirt",
+    "description": "A brushed-cotton flannel shirt in a classic buffalo check, lined at the yoke for extra warmth and finished with pearl-snap buttons that hold up to little hands. Cut roomy enough to layer over a tee and soft enough to wear alone, it's built for weekend hikes, holiday photos, and everything your family does outdoors. Matches across our full family size run.",
+    "image": "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
-      "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=1000&q=80"
+      "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1000&q=80",
+      "https://images.unsplash.com/photo-1608063615781-e2ef8c73d114?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
-    "category": "Watches & Timepieces",
+    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
+    "category": "Shirts & Flannels",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -57,16 +57,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Aurelia Minimalist Wall Clock",
-    "description": "A silent-sweep wall clock with a solid walnut face and slender brass hands, engineered to keep flawless time without a single tick. Its 10-inch frame is sized to anchor an entryway, study, or gallery wall, and the brushed brass hardware is finished to match the rest of our jewelry and tabletop pieces for a cohesive, considered home.",
-    "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",
+    "name": "Sundown Fleece-Lined Jogger Pants",
+    "description": "A brushed-fleece jogger with an elasticized, adjustable waistband and tapered ankle cuffs, designed to move through playgrounds, practice, and lazy Sundays alike. The four-way stretch fabric keeps its shape wash after wash, and deep side pockets hold everything from snacks to phones. Sized to match the whole family, from kids to adults.",
+    "image": "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",
-      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=1000&q=80"
+      "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1000&q=80",
+      "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
-    "category": "Clocks & Home Décor",
+    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
+    "category": "Pants & Joggers",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

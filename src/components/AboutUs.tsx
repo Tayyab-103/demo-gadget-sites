@@ -27,8 +27,8 @@ const highlights = [
         <polyline points="9 12 11.5 14.5 15 9" />
       </svg>
     ),
-    title: "Hand-Finished Details",
-    desc: "Every piece is inspected by hand for finish, weight, and shine before it ever reaches the shop.",
+    title: "Soft, Breathable Fabrics",
+    desc: "Every fabric is tested for softness and breathability before it's cut and sewn into the collection.",
   },
   {
     icon: (
@@ -47,8 +47,8 @@ const highlights = [
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
-    title: "Made for Everyday Wear",
-    desc: "Designed to move with you, from the office to date night to family gatherings.",
+    title: "Made for Every Day",
+    desc: "Designed to move with your family, from school mornings to weekend adventures.",
   },
   {
     icon: (
@@ -69,7 +69,7 @@ const highlights = [
       </svg>
     ),
     title: "No Shortcuts",
-    desc: "Quality-checked materials and precise finishing — in every piece we ship.",
+    desc: "Reinforced seams and quality-checked stitching — in every piece we ship.",
   },
   {
     icon: (
@@ -90,8 +90,8 @@ const highlights = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: "1-Year Warranty",
-    desc: "Every piece we sell is backed by a full year of coverage.",
+    title: "30-Day Easy Returns",
+    desc: "Not the right fit? Send it back within 30 days, no questions asked.",
   },
 ];
 
@@ -114,17 +114,17 @@ export default function AboutUs() {
           </span>
 
           <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
-            Timeless Pieces,{" "}
+            Everyday Clothing,{" "}
             <span className="text-secondary">
-              Real Craftsmanship
+              Built for Real Families
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, we believe fine jewelry, watches, clocks,
-            and silverware shouldn&apos;t require a fine-jewelry budget. We hand-check
-            every piece against our own standards for finish and durability, so it
-            holds up to daily wear and every occasion after that.
+            At {siteConfig.brandName}, we believe soft, durable everyday
+            clothing shouldn&apos;t require a designer budget. We quality-check
+            every fabric and seam against our own standards, so it holds up to
+            school runs, playgrounds, and every busy day after that.
           </p>
         </div>
 
@@ -135,8 +135,8 @@ export default function AboutUs() {
             {/* Main Image */}
             <div className="group relative w-full max-w-110 aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=900&q=80"
-                alt={`${siteConfig.brandName} pearl pendant necklace, worn`}
+                src="https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=900&q=80"
+                alt={`${siteConfig.brandName} family wearing everyday clothing outdoors`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 440px"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
@@ -198,7 +198,7 @@ export default function AboutUs() {
                   </div>
 
                   <div className="text-[0.6rem] text-neutral-text/50">
-                    1-Year Warranty Included
+                    30-Day Returns Included
                   </div>
                 </div>
               </div>
@@ -208,11 +208,11 @@ export default function AboutUs() {
           {/* RIGHT — Content */}
           <div>
             <p className="mb-10 text-sm leading-relaxed text-neutral-text/70 md:text-base">
-              Our mission is simple: to make beautifully finished jewelry, watches,
-              clocks, and silverware accessible, whether you&apos;re treating
-              yourself, marking a milestone, or shopping for a gift. Every piece
-              is chosen with intention — because you deserve pieces that
-              actually hold up.
+              Our mission is simple: to make soft, well-made clothing accessible
+              for every member of the family, whether you&apos;re restocking
+              basics, dressing for a season, or shopping for a gift. Every piece
+              is chosen with intention — because your family deserves clothes
+              that actually hold up.
             </p>
 
             {/* Feature Grid */}

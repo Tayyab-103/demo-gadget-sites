@@ -75,10 +75,10 @@ export default function Footer() {
             <div className="flex flex-col">
               <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Pearl Pendant Necklace</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Canvas-Strap Watch</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Minimalist Wall Clock</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Jewelry</Link></li>
+                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Organic Cotton Crewneck</Link></li>
+                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Buffalo Check Flannel</Link></li>
+                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Fleece-Lined Joggers</Link></li>
+                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Shop All</Link></li>
               </ul>
             </div>
 

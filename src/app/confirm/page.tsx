@@ -73,7 +73,7 @@ export default function Confirm() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
+      <main className="bg-neutral-bg pt-28 pb-16 md:pt-32 md:pb-24 min-h-[85vh] flex items-center relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
         

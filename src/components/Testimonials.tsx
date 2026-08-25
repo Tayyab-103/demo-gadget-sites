@@ -5,42 +5,42 @@ import React, { useEffect, useState } from "react";
 const testimonials = [
   {
     date: "Jul 2026",
-    quote: "The Lunara necklace is even more beautiful in person. The pearls have real luster and the pendant caught so many compliments the first week I wore it — packaging felt genuinely premium too.",
+    quote: "The Rowan crewneck tees are on constant rotation for my kids now. They've been washed weekly for a month and still look brand new — no pilling, no fading, no stretched-out collars.",
     name: "Sarah M.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
   {
     date: "Jul 2026",
-    quote: "The Meridian watch is lighter than I expected and the canvas strap has broken in perfectly. I've worn it daily for three weeks and it still looks brand new.",
+    quote: "The Wildfern flannel is softer than I expected and the pearl-snap buttons have survived my three-year-old pulling on them daily. Matched with my own and we looked great in our photos.",
     name: "David K.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "The Aurelia clock is the first thing guests notice in our entryway. Completely silent, true to the wood tone in the photos, and it arrived earlier than expected.",
+    quote: "The Sundown joggers are the first pants my son hasn't complained about wearing to school. The fabric held its shape after a dozen washes and the pockets actually fit a phone.",
     name: "Elena R.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "Bought the Lunara necklace as a birthday gift and my sister hasn't taken it off since. The presentation box alone made it feel like a much bigger splurge than it was.",
+    quote: "Bought the Rowan tees as a back-to-school gift for my niece and nephew and their mom asked where I got them. The sizing was spot-on and the cotton feels genuinely premium.",
     name: "Priya N.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "I'm hard on watches and the Meridian has survived gym bags, rain, and daily wear without a scratch on the crystal. Great value for how solid it feels.",
+    quote: "I'm hard on flannels and the Wildfern has survived campfires, dog walks, and weekly wear without a single loose thread. Great value for how solid the fabric feels.",
     name: "Marcus T.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "The Aurelia clock's silent-sweep hands are no joke — I was skeptical but there's genuinely zero ticking. Looks even better against our wall than it did online.",
+    quote: "The Sundown joggers' fleece lining is no joke — I was skeptical but they're genuinely warm without feeling bulky. Looks even better on than it did online.",
     name: "Grace L.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=200&q=80",
@@ -85,7 +85,7 @@ export default function Testimonials() {
           Loved by <span className="text-secondary">15k+ Customers</span>
         </h2>
         <p className="text-neutral-text/60 text-sm md:text-base mt-4 max-w-md text-center md:text-left mx-auto md:mx-0">
-          Every review is proof of the quality and care we put into each piece we ship.
+          Every review is proof of the quality and care we put into each piece we sew.
         </p>
 
         {/* Prev / Next controls (desktop only) */}

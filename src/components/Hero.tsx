@@ -5,83 +5,81 @@ import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 import TypewriterText from "@/components/TypewriterText";
-import HeroCarousel from "@/components/HeroCarousel";
 
-const rotatingPhrases = ["Cherish Forever", "Wear Every Day", "Gift Beautifully", "Pass Down"];
+const rotatingPhrases = ["Grow Up In", "Play Hard In", "Feel Good In", "Pass Down"];
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-primary">
-      {/* Angled accent shape */}
+    <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-[80vh]">
+      {/* Background image */}
       <div
-        className="pointer-events-none absolute -top-40 -right-40 h-125 w-125 rounded-full bg-secondary/10 blur-3xl"
-        aria-hidden="true"
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=1800&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center right",
+        }}
       />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/30" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 pt-14 pb-16 md:pt-20 md:pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-6">
-        {/* Left: Copy */}
-        <div className="text-center lg:text-left">
-          <div className="mb-6 flex justify-center lg:justify-start">
-            <span className="eyebrow eyebrow-invert">{siteConfig.brandName} Atelier</span>
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-16 md:pt-36 md:pb-20">
+        <div className="max-w-xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-secondary text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
+            <span aria-hidden="true">✨</span>
+            <span>{siteConfig.brandName} — Fall Family Edit</span>
           </div>
 
-          <h1 className="mx-auto max-w-xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-white md:text-6xl lg:mx-0 lg:text-[3.6rem]">
-            Pieces Made to{" "}
-            <span className="block text-secondary">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] font-black text-white leading-[1.1] tracking-tight mb-6">
+            Clothes made to{" "}
+            <span className="text-secondary">
               <TypewriterText phrases={rotatingPhrases} />
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/60 md:text-base lg:mx-0">
-            Fine jewelry, watches, clocks, and silverware, hand-finished and thoughtfully priced — curated for everyday wear and gifts worth keeping.
+          <p className="text-white/70 text-base md:text-lg mb-8 leading-relaxed max-w-lg">
+            Soft, durable everyday wear for the whole family, matched across sizes and built to survive school runs, playgrounds, and everything after.
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="flex flex-wrap items-center gap-4 mb-10">
             <Link
-              href="/#shop"
-              className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-secondary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary shadow-lg shadow-secondary/20 transition-all duration-300 hover:bg-white"
+              href="/shop"
+              className="inline-flex items-center justify-center font-bold text-secondary-text text-sm md:text-base bg-secondary hover:brightness-105 transition-all duration-300 py-4 px-10 rounded-full shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:scale-[1.02]"
             >
               Shop The Collection
-              <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </Link>
             <Link
-              href="/#how-it-works"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-9 py-3.5 text-center text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+              href="/about"
+              className="inline-flex items-center justify-center font-bold text-white text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/15 transition-all duration-300 py-4 px-8 rounded-full backdrop-blur-sm"
             >
-              How It Works
+              Our Story
             </Link>
           </div>
 
-          {/* Trust strip */}
-          <div className="mt-12 flex items-center justify-center gap-6 lg:justify-start">
-            {["Free Shipping", "60-Day Returns", "1-Yr Warranty"].map((point) => (
-              <div key={point} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-                <span className="text-[0.62rem] font-bold uppercase tracking-widest text-white/55 md:text-xs">{point}</span>
-              </div>
-            ))}
+          {/* Quick trust metrics */}
+          <div className="pt-8 border-t border-white/10 grid grid-cols-3 gap-4">
+            <div>
+              <div className="text-xl md:text-2xl font-black text-white">100%</div>
+              <div className="text-xs text-white/50 mt-0.5">Quality-Checked Fabrics</div>
+            </div>
+            <div>
+              <div className="text-xl md:text-2xl font-black text-white">4.9★</div>
+              <div className="text-xs text-white/50 mt-0.5">Customer Rating</div>
+            </div>
+            <div>
+              <div className="text-xl md:text-2xl font-black text-white">Free</div>
+              <div className="text-xs text-white/50 mt-0.5">Nationwide Shipping</div>
+            </div>
           </div>
         </div>
-
-        {/* Right: Visual collage */}
-        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg">
-          <HeroCarousel />
-        </div>
       </div>
 
-      {/* Proof points */}
-      <div className="relative z-10 border-t border-black/5 bg-neutral-bg">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4">
-          {["Hand Inspected", "1-Year Warranty", "60-Day Returns", "Free Shipping"].map((point) => (
-            <div key={point} className="flex items-center justify-center gap-3 border-b border-black/5 py-5 text-center even:border-l even:border-black/5 md:py-6 lg:border-b-0 lg:border-l lg:first:border-l-0">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-text text-xs font-bold" aria-hidden="true">✓</span>
-              <span className="text-[0.65rem] font-bold uppercase tracking-widest text-primary md:text-xs">{point}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Bottom accent bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-secondary z-10" />
     </section>
   );
 }

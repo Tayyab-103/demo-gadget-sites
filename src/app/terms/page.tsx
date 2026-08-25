@@ -14,7 +14,7 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
+      <main className="bg-neutral-bg pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer fine jewelry, watches, clocks, and silverware through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer family clothing essentials through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}

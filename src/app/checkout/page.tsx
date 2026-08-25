@@ -126,7 +126,7 @@ export default function Checkout() {
         </div>
       )}
 
-      <main className="bg-neutral-bg py-12 md:py-20 relative overflow-hidden">
+      <main className="bg-neutral-bg pt-28 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
@@ -246,7 +246,7 @@ export default function Checkout() {
             </div>
 
             {/* Cart Summary Column */}
-            <div className="sticky top-[120px] flex flex-col gap-6">
+            <div className="sticky top-28 flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
                 <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
                   Order Summary

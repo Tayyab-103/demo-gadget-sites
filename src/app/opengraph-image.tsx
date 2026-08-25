@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Fine Jewelry, Watches, Clocks &amp; Silverware
+          Everyday Clothing For the Whole Family
         </div>
 
         <div

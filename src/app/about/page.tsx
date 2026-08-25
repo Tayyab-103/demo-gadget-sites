@@ -19,8 +19,8 @@ export default function AboutPage() {
         <PageHeader
           eyebrow="Our Story"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Fine jewelry, watches, clocks, and silverware, hand-finished and priced for everyday wear — this is who we are and why we do it."
-          image="https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?w=1600&q=80"
+          subtitle="Soft, durable everyday clothing for the whole family, quality-checked and priced fairly — this is who we are and why we do it."
+          image="https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=1600&q=80"
           currentLabel="About"
         />
         <AboutUs />

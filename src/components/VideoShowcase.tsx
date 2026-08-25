@@ -5,13 +5,13 @@ import React, { useRef, useState } from "react";
 const videos = [
   {
     src: "/videos/video1.mp4",
-    title: "Hand-Finished, Piece by Piece",
-    desc: "A closer look at how every piece is inspected and finished before it ships.",
+    title: "Stitched, Piece by Piece",
+    desc: "A closer look at how every seam and fabric is checked and finished before it ships.",
   },
   {
     src: "/videos/video2.mp4",
     title: "Worn Every Day",
-    desc: "See our jewelry, watches, and clocks the way our customers actually live with them.",
+    desc: "See our tees, flannels, and joggers the way families actually live in them.",
   },
 ];
 
@@ -77,10 +77,10 @@ export default function VideoShowcase() {
         <div className="text-center mb-12 md:mb-16 max-w-2xl mx-auto">
           <span className="eyebrow justify-center mb-4">See It In Motion</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Crafted to Be <span className="text-secondary">Seen Up Close</span>
+            Made to Be <span className="text-secondary">Lived In</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base">
-            A closer look at the craftsmanship and detail behind every piece we ship.
+            A closer look at the fabric and stitching behind every piece we ship.
           </p>
         </div>
 

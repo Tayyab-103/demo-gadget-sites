@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Hand-Finished Craftsmanship",
-    desc: "Every piece is hand-inspected for finish, weight, and shine before it ships, so it holds up to daily wear.",
+    title: "Quality-Checked Stitching",
+    desc: "Every piece is hand-inspected for seams, fabric weight, and finish before it ships, so it holds up to daily wear.",
   },
   {
-    title: "1-Year Warranty, Every Order",
-    desc: "Manufacturing defects are covered for a full year — no fine print, no hidden exclusions.",
+    title: "30-Day Easy Returns, Every Order",
+    desc: "Not the right fit or feel? Send it back within 30 days — no fine print, no hidden exclusions.",
   },
   {
-    title: "Responsibly Sourced Materials",
-    desc: "We partner with vetted suppliers using quality-checked metals, stones, and components in every piece.",
+    title: "Responsibly Sourced Fabrics",
+    desc: "We partner with vetted mills using quality-checked cottons, fleece, and blends in every piece.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function QualityPromise() {
                 Nothing on the left or right gets cropped.
             */}
             <img
-              src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80"
+              src="https://images.unsplash.com/photo-1503457574465-52a7a7c3edcc?w=1200&q=80"
               alt={`${siteConfig.brandName} Quality Assurance`}
               className="
                 absolute
@@ -202,9 +202,9 @@ export default function QualityPromise() {
                   md:text-[1.05rem]
                 "
               >
-                We understand how much a piece you wear every day has to hold up
-                to. That&apos;s why we maintain strict, end-to-end quality checks
-                across every piece we source and ship.
+                We understand how much clothes your family wears every day have
+                to hold up to. That&apos;s why we maintain strict, end-to-end
+                quality checks across every piece we source and ship.
               </p>
 
               {/* =================================================

@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=900&q=80"
-            alt="Athlete stretching with training gear"
+            src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=900&q=80"
+            alt="Wrapped gift box tied with ribbon"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}
@@ -89,7 +89,7 @@ export default function NewsletterPopup() {
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Exclusive Gear Drop
+              New Arrivals First
             </span>
             <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
               Save 15% Today!
@@ -112,7 +112,7 @@ export default function NewsletterPopup() {
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get training tips, early access to new gear, and <strong>15% off</strong> on your first order.
+                Join the {siteConfig.brandName} community. Subscribe today to get styling tips, early access to new arrivals, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">

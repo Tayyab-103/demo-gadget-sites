@@ -12,12 +12,12 @@ export default function ProductGrid() {
     <section className="py-12 md:py-16 bg-white relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-24">
-          <span className="eyebrow justify-center mb-4">The Range</span>
+          <span className="eyebrow justify-center mb-4">The Collection</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Explore Our <span className="text-secondary">Training Gear</span>
+            Explore The <span className="text-secondary">Collection</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
-            Select a product below to customize your bundle pack and start training smarter today.
+            Select a piece below to customize your bundle and find something worth keeping.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export default function ProductGrid() {
                       alt={product.name}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/400x400?text=Gear";
+                        e.currentTarget.src = "https://placehold.co/400x400?text=Jewelry";
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />

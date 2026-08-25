@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
+import { Poppins, Inter, Montserrat, Roboto, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium sports gear and training gadgets online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop fine jewelry, watches, clocks & silverware online.`;
 
 // Preload the most common fonts
 const poppins = Poppins({
@@ -33,6 +33,13 @@ const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-roboto",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
   display: "swap",
 });
 
@@ -68,6 +75,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } else if (siteConfig.theme.fontFamily === "Roboto") {
     selectedFontClass = roboto.variable;
     activeFontVar = "var(--font-roboto)";
+  } else if (siteConfig.theme.fontFamily === "Playfair Display") {
+    selectedFontClass = playfairDisplay.variable;
+    activeFontVar = "var(--font-playfair-display)";
   }
 
   // Extract theme values

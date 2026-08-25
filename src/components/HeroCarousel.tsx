@@ -3,11 +3,26 @@
 import React, { useEffect, useState } from "react";
 
 const images = [
-  "/img/hero1.png",
-  "/img/hero2.png",
-  "/img/hero3.png",
-  "/img/hero4.jpg",
-  "/img/hero5.jpg",
+  {
+    src: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&q=80",
+    alt: "Layered gold necklace with a crescent moon pendant",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=80",
+    alt: "Cultured pearl necklace in a presentation box",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=900&q=80",
+    alt: "Two polished gold bands",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=80",
+    alt: "Diamond halo ring on a black presentation cushion",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=900&q=80",
+    alt: "Ornate gold necklace and earring set",
+  },
 ];
 
 export default function HeroCarousel() {
@@ -21,12 +36,12 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative w-full h-[380px] md:h-[450px] rounded-3xl shadow-2xl overflow-hidden bg-neutral-bg">
-      {images.map((src, idx) => (
+    <div className="relative aspect-square w-full overflow-hidden rounded-[2.5rem] shadow-2xl">
+      {images.map((img, idx) => (
         <img
-          key={src}
-          src={src}
-          alt="Happy customer enjoying a healthy, active lifestyle"
+          key={img.src}
+          src={img.src}
+          alt={img.alt}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             idx === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
           }`}
@@ -35,13 +50,13 @@ export default function HeroCarousel() {
       ))}
 
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent pointer-events-none" />
 
       {/* Dot indicators */}
       <div className="absolute bottom-6 right-6 flex gap-2 z-10">
-        {images.map((src, idx) => (
+        {images.map((img, idx) => (
           <button
-            key={src}
+            key={img.src}
             onClick={() => setActiveIndex(idx)}
             aria-label={`Show image ${idx + 1}`}
             className={`rounded-full transition-all duration-300 cursor-pointer ${

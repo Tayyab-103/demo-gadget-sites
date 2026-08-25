@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "TurboGrip Resistance Band Set",
-    "description": "A pro-grade set of five graduated resistance bands built for strength training, mobility work, and rehab, anywhere you train. Color-coded for load, reinforced at every stitch, and packed with a door anchor, ankle straps, and a carry bag, TurboGrip turns any room into a full-body training gym.",
-    "image": "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1000&q=80",
+    "name": "Lunara Pearl Pendant Necklace",
+    "description": "A hand-strung cultured pearl necklace finished with a hammered 14k gold-plated pendant, designed to layer beautifully or wear on its own. Each pearl is hand-selected for luster and shape, then set on a tarnish-resistant chain that's equally at home at the office or at a black-tie dinner. Arrives nested in our signature presentation box, ready to gift.",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1000&q=80",
-      "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=1000&q=80",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=80"
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1000&q=80",
+      "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Strength & Mobility Training",
+    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
+    "category": "Fine Jewelry — Necklaces",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "PulseFit Smart Fitness Tracker",
-    "description": "A lightweight performance wearable that tracks heart rate, sleep, steps, and workout intensity in real time, synced straight to your phone. With a 10-day battery, water resistance to 50m, and 20+ sport modes, PulseFit keeps your training data honest whether you're lifting, running, or recovering.",
-    "image": "https://images.unsplash.com/photo-1557935728-e6d1eaabe558?w=1000&q=80",
+    "name": "Meridian Canvas-Strap Watch",
+    "description": "A slim-profile quartz watch with a sunburst dial, gold-tone case, and a woven canvas strap that softens with wear. Water-resistant to 30m and fitted with a scratch-resistant mineral crystal, Meridian is built for daily wear, from morning meetings to evenings out, and pairs effortlessly with the rest of your jewelry box.",
+    "image": "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1557935728-e6d1eaabe558?w=1000&q=80",
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1000&q=80",
-      "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1000&q=80"
+      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
+      "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Wearable Performance Tech",
+    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
+    "category": "Watches & Timepieces",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +57,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "PowerCore Percussion Massage Gun",
-    "description": "A quiet, deep-tissue percussion massager engineered to speed up recovery, loosen tight muscles, and knock out soreness before it slows you down. Six interchangeable heads, five speed settings, and a brushless motor rated for 200 minutes of runtime make PowerCore the recovery tool that keeps up with your training.",
-    "image": "https://images.unsplash.com/photo-1522898467493-49726bf28798?w=1000&q=80",
+    "name": "Aurelia Minimalist Wall Clock",
+    "description": "A silent-sweep wall clock with a solid walnut face and slender brass hands, engineered to keep flawless time without a single tick. Its 10-inch frame is sized to anchor an entryway, study, or gallery wall, and the brushed brass hardware is finished to match the rest of our jewelry and tabletop pieces for a cohesive, considered home.",
+    "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1522898467493-49726bf28798?w=1000&q=80",
-      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1000&q=80",
-      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1000&q=80"
+      "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",
+      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Recovery & Muscle Therapy",
+    "ingredientsImage": "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=900&q=80",
+    "category": "Clocks & Home Décor",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

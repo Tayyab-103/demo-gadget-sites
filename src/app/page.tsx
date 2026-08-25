@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import AboutUs from "@/components/AboutUs";
 import Features from "@/components/Features";
+import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
 import QualityPromise from "@/components/QualityPromise";
 import Testimonials from "@/components/Testimonials";
@@ -28,6 +29,9 @@ export default function Home() {
         
         {/* About Brand Section */}
         <AboutUs />
+
+        {/* Brand Video Showcase */}
+        <VideoShowcase />
 
         {/* Product Catalog Showcase */}
         <ProductGrid />

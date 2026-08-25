@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Choose Your Gear",
+    title: "Choose Your Piece",
     description:
-      "Browse our range of training gadgets and pick a bundle pack sized for your goals, from a single unit to a full team kit.",
-    image: "https://images.unsplash.com/photo-1616803689943-5601631c7fec?w=900&q=80",
+      "Browse our collection of jewelry, watches, clocks, and silverware, and pick a bundle sized for you, from a single piece to a full gift set.",
+    image: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const steps = [
     number: "03",
     title: "Nationwide Dispatch",
     description:
-      "Your gear is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
+      "Your order is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
     image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
     icon: (
       <svg
@@ -107,8 +107,8 @@ export default function HowItWorks() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Getting geared up is simple. Follow these three steps to get
-            premium training gear delivered straight to your door.
+            Finding your next piece is simple. Follow these three steps to get
+            fine jewelry, watches, clocks, or silverware delivered straight to your door.
           </p>
         </div>
 

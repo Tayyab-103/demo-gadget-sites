@@ -27,8 +27,8 @@ const highlights = [
         <polyline points="9 12 11.5 14.5 15 9" />
       </svg>
     ),
-    title: "Field-Tested Builds",
-    desc: "Every gadget is stress-tested by real athletes before it ever reaches the shop.",
+    title: "Hand-Finished Details",
+    desc: "Every piece is inspected by hand for finish, weight, and shine before it ever reaches the shop.",
   },
   {
     icon: (
@@ -47,8 +47,8 @@ const highlights = [
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
-    title: "Built for Real Training",
-    desc: "Designed to fit naturally into your everyday strength and recovery routine.",
+    title: "Made for Everyday Wear",
+    desc: "Designed to move with you, from the office to date night to family gatherings.",
   },
   {
     icon: (
@@ -69,7 +69,7 @@ const highlights = [
       </svg>
     ),
     title: "No Shortcuts",
-    desc: "Durable materials and precision engineering — in every unit we ship.",
+    desc: "Quality-checked materials and precise finishing — in every piece we ship.",
   },
   {
     icon: (
@@ -91,7 +91,7 @@ const highlights = [
       </svg>
     ),
     title: "1-Year Warranty",
-    desc: "Every gadget we sell is backed by a full year of coverage.",
+    desc: "Every piece we sell is backed by a full year of coverage.",
   },
 ];
 
@@ -114,17 +114,17 @@ export default function AboutUs() {
           </span>
 
           <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
-            Engineered Gear,{" "}
+            Timeless Pieces,{" "}
             <span className="text-secondary">
-              Real Performance
+              Real Craftsmanship
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, we believe your training gear should
-            work as hard as you do. We design and stress-test every gadget
-            with real athletes to make sure it holds up, session after
-            session.
+            At {siteConfig.brandName}, we believe fine jewelry, watches, clocks,
+            and silverware shouldn&apos;t require a fine-jewelry budget. We hand-check
+            every piece against our own standards for finish and durability, so it
+            holds up to daily wear and every occasion after that.
           </p>
         </div>
 
@@ -135,8 +135,8 @@ export default function AboutUs() {
             {/* Main Image */}
             <div className="group relative w-full max-w-110 aspect-square rounded-[2rem] overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1591741535018-d042766c62eb?w=900&q=80"
-                alt={`${siteConfig.brandName} training facility`}
+                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=900&q=80"
+                alt={`${siteConfig.brandName} pearl pendant necklace, worn`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 440px"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
@@ -208,11 +208,11 @@ export default function AboutUs() {
           {/* RIGHT — Content */}
           <div>
             <p className="mb-10 text-sm leading-relaxed text-neutral-text/70 md:text-base">
-              Our mission is simple: to make performance gear realistic and
-              accessible, whether you&apos;re building strength at home,
-              tracking your training load, or speeding up recovery between
-              sessions. Every product is built with intention — because
-              you deserve gear that actually keeps up.
+              Our mission is simple: to make beautifully finished jewelry, watches,
+              clocks, and silverware accessible, whether you&apos;re treating
+              yourself, marking a milestone, or shopping for a gift. Every piece
+              is chosen with intention — because you deserve pieces that
+              actually hold up.
             </p>
 
             {/* Feature Grid */}

@@ -74,7 +74,7 @@ export default function ProductDetail() {
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
               <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Dietary Supplement"}
+                {product.category || "Fine Jewelry"}
               </span>
 
               <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">
@@ -110,60 +110,43 @@ export default function ProductDetail() {
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mb-8">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Select Package Quantity:</h4>
-                  <div className="flex flex-col gap-3.5">
-                    {product.bundles.map((bundle) => {
-                      const isActive = selectedBundle.quantity === bundle.quantity;
-                      // Calculate savings relative to base price * quantity
-                      const baseItemPrice = startingPrice;
-                      const regularPrice = baseItemPrice * bundle.quantity;
-                      const savings = regularPrice - bundle.price;
-                      
-                      return (
-                        <div
-                          key={bundle.quantity}
-                          onClick={() => setSelectedBundle(bundle)}
-                          className={`border rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all duration-300 ${
-                            isActive
-                              ? "border-secondary bg-secondary/5 shadow-sm"
-                              : "border-black/5 bg-white hover:border-black/15"
-                          }`}
-                        >
-                          <div className="flex items-center gap-4">
-                            <div
-                              className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 transition-all ${
-                                isActive ? "border-secondary" : "border-black/25"
-                              }`}
-                            >
-                              {isActive && (
-                                <div className="w-2.5 h-2.5 rounded-full bg-secondary" />
-                              )}
-                            </div>
+                  <div className="relative">
+                    <select
+                      value={selectedBundle.quantity}
+                      onChange={(e) => {
+                        const bundle = product.bundles?.find((b) => b.quantity === Number(e.target.value));
+                        if (bundle) setSelectedBundle(bundle);
+                      }}
+                      className="w-full appearance-none border border-black/10 rounded-xl px-5 py-4 text-sm font-bold text-primary bg-white cursor-pointer focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all shadow-sm"
+                    >
+                      {product.bundles.map((bundle) => {
+                        const regularPrice = startingPrice * bundle.quantity;
+                        const savings = regularPrice - bundle.price;
+                        const label = bundle.quantity > 1 ? `Pack of ${bundle.quantity}` : "Single Unit";
+                        const price = parseFloat(String(bundle.price)).toFixed(2);
+                        const savingsText = bundle.quantity > 1 && savings > 0 ? ` (Save $${savings.toFixed(2)})` : "";
 
-                            <div>
-                              <strong className="text-sm font-bold text-primary">
-                                {bundle.quantity > 1 ? `Pack of ${bundle.quantity}` : "Single Unit"}
-                              </strong>
-                              {bundle.quantity > 1 && savings > 0 && (
-                                <span className="bg-secondary text-primary text-[0.62rem] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md ml-3 inline-block">
-                                  Save ${savings.toFixed(2)}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="text-right">
-                            <div className="font-extrabold text-base text-primary">
-                              ${parseFloat(String(bundle.price)).toFixed(2)}
-                            </div>
-                            {bundle.quantity > 1 && (
-                              <div className="text-[0.65rem] text-neutral-text/40 mt-0.5">
-                                ${((parseFloat(String(bundle.price)) / bundle.quantity)).toFixed(2)} / unit
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                        return (
+                          <option key={bundle.quantity} value={bundle.quantity}>
+                            {label} — ${price}{savingsText}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-primary"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
                   </div>
                 </div>
               )}
@@ -184,13 +167,13 @@ export default function ProductDetail() {
                 <div className="border-t border-black/5 pt-8 mt-10">
                   <h3 className="text-base md:text-lg font-bold text-primary mb-3">What&apos;s In The Box</h3>
                   <p className="text-xs text-neutral-text/50 mb-6 leading-relaxed">
-                    Every unit ships fully assembled and ready to use, backed by a 1-year manufacturer&apos;s warranty against defects.
+                    Every piece arrives in our signature gift-ready packaging, backed by a 1-year manufacturer&apos;s warranty against defects.
                   </p>
 
                   <div className="bg-neutral-bg border border-black/5 rounded-xl p-6 flex items-center justify-center shadow-inner">
                     <img
                       src={product.ingredientsImage}
-                      alt="Product packaging"
+                      alt="Signature gift packaging"
                       className="max-w-full h-auto rounded-lg max-h-[350px] object-contain bg-white p-2 border border-black/5"
                       onError={(e) => {
                         e.currentTarget.src = "https://placehold.co/400x300?text=Packaging";

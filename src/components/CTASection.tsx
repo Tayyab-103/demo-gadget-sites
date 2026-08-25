@@ -9,7 +9,7 @@ export default function CTASection() {
       {/* Background Parallax Image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1579126038374-6064e9370f0f?w=1600&q=80')` }}
+        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1600&q=80')` }}
       />
       
       {/* Dark Green Gradient Overlay for Contrast */}
@@ -25,14 +25,14 @@ export default function CTASection() {
           <span className="eyebrow eyebrow-invert mb-6 inline-flex text-secondary relative z-10">
             Limited Time Offer
           </span>
-          
+
           <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight leading-[1.1] relative z-10">
-            Ready to Train Harder, <br />
-            <span className="text-secondary drop-shadow-md">Recover Smarter?</span>
+            Ready to Find Your <br />
+            <span className="text-secondary drop-shadow-md">Next Favorite Piece?</span>
           </h2>
 
           <p className="text-white/80 text-sm md:text-[1.05rem] mb-10 max-w-lg mx-auto leading-relaxed relative z-10">
-            Join thousands of athletes who&apos;ve upgraded their setup. Bundle up and save on your first order today.
+            Join thousands of customers who&apos;ve added to their collection. Bundle up and save on your first order today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
@@ -40,7 +40,7 @@ export default function CTASection() {
               href="/#shop"
               className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-secondary-text hover:bg-white hover:text-primary transition-all duration-300 py-4 px-10 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-secondary/10"
             >
-              Shop Bundles &amp; Save
+              Shop The Collection &amp; Save
               <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
             </Link>
             <Link

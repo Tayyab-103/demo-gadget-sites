@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[60%] grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="w-full lg:w-[60%] grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
             
             {/* Column 1 */}
             <div className="flex flex-col">
@@ -75,10 +75,10 @@ export default function Footer() {
             <div className="flex flex-col">
               <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Resistance Band Set</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Smart Fitness Tracker</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Percussion Massage Gun</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Gear</Link></li>
+                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Pearl Pendant Necklace</Link></li>
+                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Canvas-Strap Watch</Link></li>
+                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Minimalist Wall Clock</Link></li>
+                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Jewelry</Link></li>
               </ul>
             </div>
 
@@ -89,16 +89,6 @@ export default function Footer() {
                 <li className="text-white text-sm break-all">{siteConfig.email}</li>
                 <li className="text-white text-sm">{siteConfig.phone}</li>
                 <li className="text-white text-sm max-w-[150px]">{siteConfig.address}</li>
-              </ul>
-            </div>
-
-            {/* Column 4 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Social Media</h4>
-              <ul className="flex flex-col gap-3">
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">Instagram, {siteConfig.brandName}</a></li>
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">Facebook, {siteConfig.brandName}</a></li>
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">X (Twitter), {siteConfig.brandName}</a></li>
               </ul>
             </div>
 
@@ -132,7 +122,16 @@ export default function Footer() {
             <Link href="/privacy" className="text-white/50 text-xs hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-white/50 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
             <div className="text-white/50 text-[10px] max-w-xs mt-2">
-              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual gear may vary slightly.
+              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual pieces may vary slightly.
+            </div>
+          </div>
+
+          {/* Accepted Payment Methods */}
+          <div className="flex flex-col gap-2.5">
+            <span className="text-white/50 text-xs">We Accept</span>
+            <div className="flex items-center gap-2.5">
+              <img src="/img/visa.png" alt="Visa" className="h-6 w-auto rounded-sm" />
+              <img src="/img/mastercard.png" alt="Mastercard" className="h-6 w-auto rounded-sm" />
             </div>
           </div>
 

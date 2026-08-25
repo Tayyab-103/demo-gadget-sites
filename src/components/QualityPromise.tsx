@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Field-Tested Durability",
-    desc: "Every gadget is stress-tested through real training sessions before it ships, so it holds up to daily use.",
+    title: "Hand-Finished Craftsmanship",
+    desc: "Every piece is hand-inspected for finish, weight, and shine before it ships, so it holds up to daily wear.",
   },
   {
     title: "1-Year Warranty, Every Order",
     desc: "Manufacturing defects are covered for a full year — no fine print, no hidden exclusions.",
   },
   {
-    title: "Responsible Component Sourcing",
-    desc: "We partner with vetted manufacturers using quality-checked materials and components in every build.",
+    title: "Responsibly Sourced Materials",
+    desc: "We partner with vetted suppliers using quality-checked metals, stones, and components in every piece.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function QualityPromise() {
                 Nothing on the left or right gets cropped.
             */}
             <img
-              src="https://images.unsplash.com/photo-1517344368193-41552b6ad3f5?w=1200&q=80"
+              src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=1200&q=80"
               alt={`${siteConfig.brandName} Quality Assurance`}
               className="
                 absolute
@@ -202,9 +202,9 @@ export default function QualityPromise() {
                   md:text-[1.05rem]
                 "
               >
-                We understand how much your gear has to withstand. That&apos;s
-                why we maintain strict, end-to-end testing standards across
-                every product we build and ship.
+                We understand how much a piece you wear every day has to hold up
+                to. That&apos;s why we maintain strict, end-to-end quality checks
+                across every piece we source and ship.
               </p>
 
               {/* =================================================

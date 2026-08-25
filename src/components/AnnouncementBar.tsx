@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 const messages = [
   "Free Shipping on All Orders Nationwide",
   "60-Day Money-Back Satisfaction Guarantee",
-  "1-Year Warranty on Every Gadget",
+  "1-Year Warranty on Every Piece",
+  "Complimentary Gift Packaging on Every Order",
 ];
 
 export default function AnnouncementBar() {

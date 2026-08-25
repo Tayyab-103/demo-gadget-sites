@@ -4,8 +4,8 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "Field-Tested Materials",
-    description: "Every component we use is selected for durability, free of cheap fillers or brittle plastics.",
+    title: "Hand-Selected Materials",
+    description: "Every metal, stone, and movement we use is selected for durability, free of cheap fillers or brittle plating.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z"></path>
@@ -16,7 +16,7 @@ const featuresData = [
   },
   {
     title: "Quality-Controlled Production",
-    description: "Our gear is manufactured under strict quality-control checkpoints before it ever ships.",
+    description: "Our pieces are crafted under strict quality-control checkpoints before they ever ship.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -24,8 +24,8 @@ const featuresData = [
     )
   },
   {
-    title: "Third-Party Stress Tested",
-    description: "Every batch is verified by independent testers to confirm durability, accuracy, and safety.",
+    title: "Third-Party Verified",
+    description: "Every batch is verified by independent inspectors to confirm materials, accuracy, and finish.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 2v7.31"></path>
@@ -55,9 +55,9 @@ export default function Features() {
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[600px] mb-12 md:mb-16">
           <span className="eyebrow mb-4">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built for Real Performance</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built to Be Kept</h2>
           <p className="text-neutral-text/60">
-            We combine durable materials with real athlete feedback to bring you gear that actually holds up.
+            We combine quality materials with real customer feedback to bring you pieces that actually hold up.
           </p>
         </div>
 

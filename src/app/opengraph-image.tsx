@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Fine Jewelry, Watches, Clocks &amp; Silverware
         </div>
 
         <div

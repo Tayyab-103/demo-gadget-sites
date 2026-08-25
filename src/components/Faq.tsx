@@ -16,8 +16,8 @@ const faqData = [
     answer: `Yes, we back all our products with a 60-day money-back guarantee. If you are not satisfied with your purchase, contact our support team via email or phone to initiate a hassle-free return and refund.`
   },
   {
-    question: "Are your gadgets covered by a warranty?",
-    answer: "Yes. Every product ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
+    question: "Are your pieces covered by a warranty?",
+    answer: "Yes. Every piece ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
   },
   {
     question: "How will the charge appear on my credit card statement?",
@@ -50,18 +50,6 @@ export default function Faq() {
             <p className="text-neutral-text/60 text-sm md:text-base mb-10">
               Find immediate answers to common questions about our products, shipping, and return policies.
             </p>
-
-            {/* Decorative Leaf Illustration */}
-            <div className="hidden lg:block relative mb-10">
-              <svg viewBox="0 0 200 200" className="w-48 h-48 text-primary/10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 10 C40 40, 10 100, 30 160 C50 200, 100 190, 100 190 C100 190, 150 200, 170 160 C190 100, 160 40, 100 10Z" />
-                <path d="M100 30 C100 30, 100 190, 100 190" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/20" />
-                <path d="M100 60 C100 60, 60 90, 50 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 60 C100 60, 140 90, 150 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 70 110, 55 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 130 110, 145 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-              </svg>
-            </div>
 
             {/* CTA */}
             <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden">

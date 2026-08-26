@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Alderwyn Artisan Cashmere-Touch Throw Blanket",
+    "description": "Woven from ultra-soft, breathable natural fibers with an intricate heritage knit weave and fringed edge detailing. The Alderwyn Throw Blanket brings an effortless layer of warmth, sensory comfort, and tactile elegance to any living room sofa, lounge chair, or bedroom sanctuary.",
+    "image": "/img/brand/product1_blanket.jpg",
+    "images": [
+      "/img/brand/product1_blanket.jpg",
+      "/img/brand/hero_detail.jpg",
+      "/img/brand/how_step1.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/brand/how_step2.jpg",
+    "category": "Textiles & Soft Furnishings",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "Alderwyn Sculptural Ceramic Ambient Lamp",
+    "description": "Crafted from hand-textured earthen ceramic stoneware with a tailored natural linen drum shade. Radiating a soothing, warm diffused ambient glow, this sculptural lamp serves as both functional ambient lighting and an architectural centerpiece for side tables, consoles, and bedside reading nooks.",
+    "image": "/img/brand/product2_lamp.jpg",
+    "images": [
+      "/img/brand/product2_lamp.jpg",
+      "/img/brand/hero_interior.jpg",
+      "/img/brand/how_step3.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/brand/how_step2.jpg",
+    "category": "Ambient Lighting & Decor",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Alderwyn Handcrafted Travertine & Oak Catchall Tray",
+    "description": "Sculpted from genuine natural vein-cut travertine stone bordered by solid natural white oak joinery. An heirloom-quality decorative accent tray designed to elegantly organize everyday keepsakes, botanical accents, candles, and table essentials with minimalist luxury.",
+    "image": "/img/brand/product3_tray.jpg",
+    "images": [
+      "/img/brand/product3_tray.jpg",
+      "/img/brand/quality_craft.jpg",
+      "/img/brand/hero_detail.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/brand/how_step2.jpg",
+    "category": "Sculptural Accents & Living Decor",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

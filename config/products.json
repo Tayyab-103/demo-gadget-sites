@@ -1,0 +1,80 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "CopperPro Ergonomic Balloon Whisk",
+    "description": "Crafted with 12 flexible, commercial-grade stainless steel wires and a reinforced copper-accented ergonomic handle. Engineered to maximize aeration and reduce wrist fatigue whether you're whipping silky meringue, emulsifying vinaigrettes, or folding delicate batters.",
+    "image": "/images/product-whisk.jpg",
+    "images": [
+      "/images/product-whisk.jpg",
+      "/images/whisk-action-1.jpg",
+      "/images/whisk-action-2.jpg"
+    ],
+    "category": "Precision Baking & Prep",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "Precision Digital Culinary Scale & Timer",
+    "description": "Ultra-accurate 0.1g digital culinary scale with integrated drip timer, scratch-resistant tempered platform, and high-visibility illuminated display. Essential for precision sourdough baking, pour-over extraction, and chef-level recipe formulation.",
+    "image": "/images/product-scale.jpg",
+    "images": [
+      "/images/product-scale.jpg",
+      "/images/scale-action-1.jpg",
+      "/images/scale-action-2.jpg"
+    ],
+    "category": "Measurement & Precision Prep",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Artisan Forged Multi-Prep Chef Shears",
+    "description": "Heavy-gauge forged Japanese stainless steel kitchen shears featuring micro-serrated blade edges, an integrated bone-cutting notch, built-in herb stripper, and copper-finished pivot bolt. Disassembles smoothly for effortless, hygienic sanitization.",
+    "image": "/images/product-shears.jpg",
+    "images": [
+      "/images/product-shears.jpg",
+      "/images/shears-action-1.jpg",
+      "/images/shears-action-2.jpg"
+    ],
+    "category": "Cutlery & Prep Workshop",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

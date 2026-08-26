@@ -1,0 +1,24 @@
+{
+  "brandName": "Thornwick Garden Tool Foundry",
+  "websiteUrl": "ThornwickGardenToolFoundry.com",
+  "email": "support@thornwickgardentoolfoundry.com",
+  "descriptor": "ThornwickGardenToolFou",
+  "corpName": "Starpath Marketing Co.",
+  "phone": "1-800-762-7529",
+  "address": "480 Foundry Way, Suite 100, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#132B1C",
+    "primaryTextColor": "#FFFFFF",
+    "secondaryColor": "#265C1E",
+    "secondaryTextColor": "#FFFFFF",
+    "neutralBgColor": "#FAF9F6",
+    "neutralTextColor": "#11281A",
+    "fontFamily": "Montserrat"
+  }
+}

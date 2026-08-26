@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
 import TypewriterText from "@/components/TypewriterText";
-import HeroCarousel from "@/components/HeroCarousel";
+import { SiteConfig } from "@/types";
+import Link from "next/link";
+import React from "react";
+import siteConfigData from "../../config/site-config.json";
 
 const rotatingPhrases = ["Living Space", "Cozy Sanctuary", "Dream Bedroom", "Dining Area"];
 
@@ -14,12 +13,19 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-primary">
-      {/* Full-bleed background carousel */}
+      {/* Full-bleed background video */}
       <div className="relative flex min-h-[600px] items-center overflow-hidden md:min-h-[680px]">
-        <HeroCarousel />
+        <video
+          src="/hero_bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover z-0 opacity-40"
+        />
 
         {/* Readability overlay */}
-        <div className="absolute inset-0 z-10 bg-primary/45" />
+        <div className="absolute inset-0 z-10 bg-primary/65" />
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
 
         {/* Content */}
@@ -51,15 +57,21 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Proof points */}
-      <div className="relative z-10 border-t border-black/5 bg-neutral-bg">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4">
-          {["Artisanal Joinery", "Lifetime Guarantee", "60-Day Comfort Trial", "White-Glove Shipping"].map((point) => (
-            <div key={point} className="flex items-center justify-center gap-3 border-b border-black/5 py-5 text-center even:border-l even:border-black/5 md:py-6 lg:border-b-0 lg:border-l lg:first:border-l-0">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-text text-xs font-bold" aria-hidden="true">✓</span>
-              <span className="text-[0.65rem] font-bold uppercase tracking-widest text-primary md:text-xs">{point}</span>
-            </div>
-          ))}
+      {/* Proof points scrolling ticker */}
+      <div className="relative z-10 border-t border-black/5 bg-neutral-bg overflow-hidden py-4 md:py-5">
+        <div className="flex items-center">
+          <div className="marquee-track flex items-center gap-16 w-max">
+            {[...Array(6)].map((_, i) => (
+              <React.Fragment key={i}>
+                {["Artisanal Joinery", "Lifetime Guarantee", "60-Day Comfort Trial", "White-Glove Shipping"].map((point) => (
+                  <div key={`${point}-${i}`} className="flex items-center gap-3 whitespace-nowrap">
+                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-text text-[10px] font-bold" aria-hidden="true">✓</span>
+                    <span className="text-[0.65rem] font-bold uppercase tracking-widest text-primary md:text-xs">{point}</span>
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     </section>

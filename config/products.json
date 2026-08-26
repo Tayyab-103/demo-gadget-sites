@@ -2,24 +2,20 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Aura Bouclé Accent Chair",
-    "description": "Upholstered in premium, tactile organic cotton-bouclé, this sculptural lounge chair pairs smooth, flowing contours with solid white oak legs. Perfect for cozy reading corners or as a statement piece in your living room, it offers a luxurious cloud-like seating experience that blends beautifully with modern, minimalist, or transitional spaces.",
-    "image": "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&q=80",
+    "name": "Comforters",
+    "description": "Snuggle into pure comfort with our premium Comforters, designed to bring warmth, style, and a luxurious feel to your bedroom. Expertly crafted with high-quality materials, each comforter offers the perfect balance of softness and weight, ensuring a cozy night's sleep. From elegant patterns to contemporary designs, our collection features a wide range of colors and textures that complement any decor. Easy to maintain and long-lasting, these comforters are perfect for year-round use. Upgrade your bedding experience with our beautiful and comfortable comforters today.",
+    "image": "/img/products/comforter.png",
     "images": [
-      "https://images.unsplash.com/photo-1592078615290-033ee584e267?w=1000&q=80",
-      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=1000&q=80",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&q=80",
-      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1000&q=80"
+      "/img/products/comforter.png"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80",
+    "ingredientsImage": "/img/products/comforter.png",
     "boxContents": [
-      "1x Aura Bouclé Accent Chair",
-      "4x Solid Oak Leg Attachments",
-      "Assembly Hardware & Tool Kit",
-      "Upholstery Care Guide"
+      "1x Premium Bedding Comforter",
+      "1x Protective Storage Bag",
+      "Fabric Care Instruction Card"
     ],
-    "category": "Seating",
+    "category": "Bedding",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -37,23 +33,20 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Solas Woven Pendant Light",
-    "description": "Hand-woven from natural organic flax linen and rattan fibers, this pendant lamp creates a soft, warm ambiance in any space. Its organic texture and modern dome silhouette diffuse light beautifully, casting a soft, golden glow across dining tables, entryways, or bedside areas.",
-    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1000&q=80",
+    "name": "Mini Ceramic Couple Show Piece",
+    "description": "This exquisite pair of ceramic figurines captures a tender moment between a couple, rendered in a modern, minimalist style. The matte white finish and elegant silhouette evoke a sense of calm sophistication, making them a perfect addition to any mantelpiece, bookshelf, or side table. Crafted with attention to detail, these statues add a touch of refined artistry and warmth to your living space.",
+    "image": "/img/products/Mini Ceramic Couple Show Piece.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=1000&q=80",
-      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1000&q=80",
-      "https://images.unsplash.com/photo-1543248939-ff40856f65d4?w=1000&q=80"
+      "/img/products/Mini Ceramic Couple Show Piece.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=1000&q=80",
+    "ingredientsImage": "/img/products/Mini Ceramic Couple Show Piece.jpg",
     "boxContents": [
-      "1x Solas Woven Linen Shade",
-      "1x Brass Canopy & 6ft Textile Cable",
-      "Mounting Hardware & Wire Connectors",
-      "Installation & Wiring Guide"
+      "1x Ceramic Couple Figurine Set",
+      "1x Protective Presentation Box",
+      "Safe-Padding Foam Inserts"
     ],
-    "category": "Lighting",
+    "category": "Decor",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -71,22 +64,21 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Elysian Organic Cotton Throw",
-    "description": "Woven on traditional looms from 100% GOTS-certified organic cotton, this heavy-weight throw blanket features a rich waffle-knit texture. Soft, breathable, and beautifully finished with hand-knotted fringe, it adds layerable warmth and relaxed sophistication to any bed or sofa.",
-    "image": "https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=1000&q=80",
+    "name": "Touch Control Table Lamps",
+    "description": "Illuminate your space with modern elegance using our Touch Control Table Lamps. These stylish lamps feature a smooth, touch-sensitive base that allows you to adjust brightness with a simple tap. Designed with a contemporary aesthetic, they come in various finishes and sizes to perfectly complement your home decor. The lamps are equipped with energy-efficient LED bulbs that provide warm, ambient lighting ideal for bedrooms, living rooms, and study areas. Setting them up is effortless - just plug in and enjoy instant illumination. Durable, chic, and easy to use, these table lamps add a touch of sophistication and convenience to any room.",
+    "image": "/img/products/Touch Control Table Lamps 1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?w=1000&q=80",
-      "https://images.unsplash.com/photo-1543294001-f7cbfe92237e?w=1000&q=80",
-      "https://images.unsplash.com/photo-1528938102132-4a9276b8e320?w=1000&q=80"
+      "/img/products/Touch Control Table Lamps 1.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1506306820202-14361668e1c4?w=1000&q=80",
+    "ingredientsImage": "/img/products/Touch Control Table Lamps 1.jpg",
     "boxContents": [
-      "1x Elysian Organic Cotton Throw",
-      "1x Pure Linen Storage Pouch",
-      "Textile Care Guide"
+      "1x Touch Control Table Lamp",
+      "1x Energy-Efficient LED Bulb",
+      "AC Power Adapter & Cord",
+      "Setup & Operational Manual"
     ],
-    "category": "Textiles",
+    "category": "Lighting",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

@@ -24,7 +24,8 @@ export default function Home() {
         <Hero />
         
         {/* Step-by-Step Flow */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+         <Features />
         
         {/* About Brand Section */}
         {/* <AboutUs /> */}
@@ -33,22 +34,25 @@ export default function Home() {
         <ProductGrid />
 
         {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
+        {/* <QualityPromise /> */}
         
         {/* Quality Certifications */}
-        <Features />
+        {/* <Features /> */}
         
         {/* Customer Social Proof */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}
-        <CTASection />
+        {/* <CTASection /> */}
 
         {/* FAQ Accordions Dropdown */}
         <Faq />
 
+
         {/* Contact Form Section */}
         <Contact />
+
+        <QualityPromise />
       </main>
 
       <Footer />

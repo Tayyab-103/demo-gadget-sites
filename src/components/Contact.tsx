@@ -12,8 +12,43 @@ const contactImages = [
   "https://images.unsplash.com/photo-1543168256-418811576931?w=900&q=80",
 ];
 
+const methods = [
+  {
+    label: "Call Us",
+    value: siteConfig.phone,
+    subtext: "Mon–Fri, 9am–6pm CST",
+    href: `tel:${siteConfig.phone}`,
+    icon: (
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    ),
+  },
+  {
+    label: "Email Us",
+    value: siteConfig.email,
+    subtext: "We reply within 24 hours",
+    href: `mailto:${siteConfig.email}`,
+    icon: (
+      <>
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </>
+    ),
+  },
+  {
+    label: "Visit Us",
+    value: siteConfig.address,
+    subtext: "By appointment only",
+    href: undefined,
+    icon: (
+      <>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </>
+    ),
+  },
+];
+
 export default function Contact() {
-  const [contactSubmitted, setContactSubmitted] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
@@ -37,24 +72,29 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
-          {/* Visual + Info Column */}
+          {/* Visual Column */}
           <div className="relative rounded-[2rem] overflow-hidden min-h-[350px] lg:min-h-0 shadow-xl">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
                 src={src}
-                alt="Friendly customer support team ready to help"
+                alt="Family wearing everyday clothing"
                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                   idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
                 }`}
                 style={{ transitionProperty: "opacity, transform" }}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-primary/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
 
             <div className="relative z-10 h-full flex flex-col justify-end p-8">
+              <span className="text-[0.65rem] font-bold uppercase tracking-widest text-secondary mb-2">Real Families, Real Support</span>
+              <p className="text-white text-lg md:text-xl font-bold leading-snug max-w-sm mb-8">
+                &ldquo;They helped me size the whole family in one call.&rdquo;
+              </p>
+
               {/* Image dots */}
-              <div className="flex gap-2 mb-8">
+              <div className="flex gap-2">
                 {contactImages.map((_, idx) => (
                   <button
                     key={idx}
@@ -66,112 +106,54 @@ export default function Contact() {
                   />
                 ))}
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </div>
-                  <div>
-                    <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Call Us</div>
-                    <div className="font-bold text-sm text-white mt-0.5">{siteConfig.phone}</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </div>
-                  <div>
-                    <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Email Us</div>
-                    <div className="font-bold text-sm text-white mt-0.5 break-all">{siteConfig.email}</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* Form Column */}
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-black/5">
-            {contactSubmitted ? (
-              <div className="text-center py-10 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md bg-secondary/5">
-                  ✓
-                </div>
-                <h3 className="text-primary font-bold text-xl mb-3">
-                  Message Sent Successfully!
-                </h3>
-                <p className="text-neutral-text/60 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out. We have received your query and will reply within 24 hours.
-                </p>
-                <button
-                  className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
-                  onClick={() => setContactSubmitted(false)}
+          {/* Contact Methods Column */}
+          <div className="flex flex-col gap-5">
+            {methods.map((method) => {
+              const Wrapper = method.href ? "a" : "div";
+              return (
+                <Wrapper
+                  key={method.label}
+                  {...(method.href ? { href: method.href } : {})}
+                  className="group flex flex-1 items-center gap-5 rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/5"
                 >
-                  Send Another Message
-                </button>
+                  <div className="flex h-13 w-13 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-secondary/15 group-hover:text-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      {method.icon}
+                    </svg>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/45 mb-1">{method.label}</div>
+                    <div className="font-bold text-sm md:text-base text-primary break-words">{method.value}</div>
+                    <div className="text-xs text-neutral-text/50 mt-0.5">{method.subtext}</div>
+                  </div>
+                  {method.href && (
+                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-black/5 text-primary transition-all duration-300 group-hover:border-secondary group-hover:bg-secondary group-hover:text-secondary-text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </span>
+                  )}
+                </Wrapper>
+              );
+            })}
+
+            {/* FAQ nudge */}
+            <div className="flex flex-1 items-center gap-5 rounded-2xl bg-primary p-6 text-white">
+              <div className="min-w-0 flex-1">
+                <div className="font-bold text-sm md:text-base">Have a quick question?</div>
+                <div className="text-xs text-white/60 mt-0.5">Check our FAQ for instant answers on sizing, shipping, and returns.</div>
               </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setContactSubmitted(true);
-                  (e.target as HTMLFormElement).reset();
-                }}
+              <a
+                href="#faq"
+                className="hidden sm:inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-secondary text-secondary-text font-bold text-xs px-5 py-2.5 hover:brightness-105 transition-all"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Full Name</label>
-                    <input
-                      type="text"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                      placeholder="Enter your name"
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Email Address</label>
-                    <input
-                      type="email"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                      placeholder="Enter your email"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col mb-5">
-                  <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Subject</label>
-                  <input
-                    type="text"
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                    placeholder="What can we help you with?"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col mb-8">
-                  <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Message</label>
-                  <textarea
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg resize-none placeholder:text-neutral-text/30"
-                    rows={5}
-                    placeholder="Write your message here..."
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-md hover:shadow-lg"
-                >
-                  Send Message
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
-                </button>
-              </form>
-            )}
+                View FAQ
+              </a>
+            </div>
           </div>
         </div>
       </div>

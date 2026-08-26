@@ -28,10 +28,10 @@ export default function Home() {
         <HowItWorks />
         
         {/* About Brand Section */}
-        <AboutUs />
+        {/* <AboutUs /> */}
 
         {/* Brand Video Showcase */}
-        <VideoShowcase />
+        {/* <VideoShowcase /> */}
 
         {/* Product Catalog Showcase */}
         <ProductGrid />
@@ -40,7 +40,7 @@ export default function Home() {
         <QualityPromise />
         
         {/* Quality Certifications */}
-        {/* <Features /> */}
+        <Features />
         
         {/* Customer Social Proof */}
         <Testimonials />

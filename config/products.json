@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Velvet Resonance Master Zinc-Brass Guitar Capo & Care Kit",
+    "description": "Precision-cast from acoustic-grade zinc-brass alloy with micro-calibrated spring tension and high-memory silicone neck pads. Delivers buzz-free intonation, zero fret scarring, and balanced string pressure across 6-string and 12-string acoustic, electric, and classical guitars.",
+    "image": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80",
+      "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=1000&q=80",
+      "https://images.unsplash.com/photo-1550985616-10810253b84d?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&q=80",
+    "category": "Artisan Instrument Accessories",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "EchoWave Chromatic Clip-On Tuner & Metronome",
+    "description": "High-precision vibration sensor tuner with ultra-bright multi-angle color LCD display and built-in visual metronome. Engineered with acoustic noise-rejection for lightning-accurate pitch detection from 410Hz to 490Hz across guitars, basses, violins, ukuleles, and brass instruments.",
+    "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1000&q=80",
+      "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=1000&q=80",
+      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&q=80",
+    "category": "Acoustic & Studio Tuning",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Velvet Tone Dual-Shielded Studio Instrument Cable (10ft)",
+    "description": "Master-grade 10ft low-capacitance instrument cable featuring 24K gold-plated 1/4\" jacks, 99.99% oxygen-free copper (OFC) core, and vintage tweed woven jacket. Engineered for zero handling noise, crystal signal clarity, and rugged studio/stage reliability.",
+    "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1000&q=80",
+      "https://images.unsplash.com/photo-1520523839898-507127053c37?w=1000&q=80",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&q=80",
+    "category": "Studio Audio & Signal Gear",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Artisanal Joinery Guarantee",
-    desc: "Every solid wood framework is built using traditional mortise-and-tenon joinery, ensuring lifetime structural integrity.",
+    title: "Trekking-Grade Strength",
+    desc: "Our gear structures undergo severe laboratory load and tension testing to withstand unexpected drops and extreme pass climbs.",
   },
   {
-    title: "60-Day Comfort Trial",
-    desc: "Stage our furnishings in your own room for 60 days. If the comfort and fit aren't absolutely perfect, return it for a full refund.",
+    title: "60-Day Trail Trial",
+    desc: "Test our gear on your preferred trail, climb, or bike loop for 60 days. If you are not completely satisfied, return it for a refund.",
   },
   {
-    title: "Oeko-Tex Certified Fabrics",
-    desc: "We source our textiles exclusively from mills using GOTS-certified organic cotton and Oeko-Tex certified non-toxic fibers.",
+    title: "Eco-Conscious Carbon",
+    desc: "We use aerospace-grade carbon fiber tubing and recycled active rubbers, minimizing overall carbon footprint and trail impact.",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function QualityPromise() {
         {/* Full-bleed banner */}
         <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
           <img
-            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80"
             alt={`${siteConfig.brandName} Quality Assurance`}
             className="absolute inset-0 h-full w-full object-cover"
           />

@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Premium Home Furnishing Collections
+          Premium Sporting Goods &amp; Expedition Gear
         </div>
 
         <div

@@ -9,23 +9,23 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqData = [
   {
     question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `All orders are processed and hand-packed within 1-2 business days. We ship using ${siteConfig.shippingCarrier} white-glove logistics, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive directly at your home. Room placement is included for larger items.`
+    answer: `All orders are processed and hand-packed within 1-2 business days. We ship using ${siteConfig.shippingCarrier} expedition cargo, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive directly at your address. Tracker coordinates are provided upon dispatch.`
   },
   {
-    question: "Do you offer a money-back comfort guarantee?",
-    answer: "Yes. We offer a 60-day home styling and comfort trial. Stage the items in your own space, sit on them, and see the textures. If they do not align with your design vision, contact us for a hassle-free return and refund."
+    question: "Do you offer a money-back trail testing guarantee?",
+    answer: "Yes. We offer a 60-day trail testing trial. Take our backpack, trekking poles, or eyewear out into the wild. Run, hike, or climb with them. If they don't meet your performance standards, contact us for a hassle-free return and refund."
   },
   {
-    question: "Are your furnishings and accessories covered by a warranty?",
-    answer: "Absolutely. Every furniture framework (sofas, accent chairs) is covered by a lifetime structural warranty on joinery and solid wood framing. Upholstery fabrics, stitching, and electrical elements are covered by a 1-year manufacturer's warranty under standard household use."
+    question: "Are your sporting goods covered by a warranty?",
+    answer: "Absolutely. Every structural gear frame (backpack frames, carbon fiber pole shafts) is covered by a lifetime warranty on manufacturing defects. Zippers, strap adjusters, rubber tips, and lenses are covered by a 1-year performance warranty."
   },
   {
     question: "How will the charge appear on my credit card statement?",
     answer: `To ensure transaction transparency, the charge will appear on your credit card statement under the descriptor "${siteConfig.descriptor}".`
   },
   {
-    question: "How can I speak to an interior designer?",
-    answer: `You can reach our styling support desk Monday through Friday during business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. You can also schedule a free video consultation to review fabrics and sizing.`
+    question: "How can I speak to an adventure specialist?",
+    answer: `You can reach our expedition support desk Monday through Friday during business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. You can also schedule a free virtual session to check fittings and pack adjustments.`
   }
 ];
 
@@ -110,15 +110,15 @@ export default function Faq() {
               
               <div className="relative z-10">
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary mb-3 block">
-                  Hearthwyn Concierge
+                  Summit Hollow Guides
                 </span>
                 
                 <h3 className="text-xl md:text-2xl font-bold mb-4 leading-tight">
-                  Need Sizing or Fabric Advice?
+                  Need Sizing or Fit Advice?
                 </h3>
                 
                 <p className="text-white/70 text-xs md:text-sm mb-8 leading-relaxed">
-                  Struggling to visualize dimensions or select the perfect weave? Speak directly with our design consultants for custom fabric swatches and layout suggestions.
+                  Struggling to calibrate pack sizes or select lens filters? Speak directly with our adventure guides for custom fittings and trail gear suggestions.
                 </p>
                 
                 <div className="flex flex-col gap-4">
@@ -126,7 +126,7 @@ export default function Faq() {
                     href="#contact"
                     className="inline-flex items-center justify-center gap-2 bg-secondary text-secondary-text font-bold text-xs uppercase tracking-widest px-6 py-4 rounded-full hover:bg-white hover:text-primary transition-all duration-300 shadow-md shadow-secondary/15"
                   >
-                    Schedule Styling Consultation
+                    Schedule Fit Consultation
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>

@@ -5,44 +5,44 @@ import React, { useEffect, useState } from "react";
 const testimonials = [
   {
     date: "Aug 2026",
-    quote: "The Aura Bouclé chair is even more comfortable than it looks. The fabric is thick and textured, and the white oak legs match my living room details perfectly. It's the ultimate reading spot.",
+    quote: "The load suspension is phenomenal. Packed it with 35 lbs of gear for a 4-day loop in the Cascades, and it felt incredibly balanced. Zero shoulder pain.",
     name: "Sarah M.",
-    role: "Verified Purchaser",
+    role: "Verified Athlete",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
   {
     date: "Jul 2026",
-    quote: "The Solas Woven Pendant is a showstopper. It diffuses a beautiful golden, warm glow across our dining table. Installation was simple and the adjustable canopy was very convenient.",
+    quote: "Super light and rock solid. The twist flip-locks didn't slip once on steep scree descents, and the cork handles kept my hands blister-free.",
     name: "David K.",
-    role: "Verified Purchaser",
+    role: "Verified Mountaineer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
     date: "Jul 2026",
-    quote: "Absolutely love the weight of the Elysian throw. The waffle knit is super cozy but still breathable. It drapes beautifully on our accent chair and has held up well through washes.",
+    quote: "Finally sunglasses that don't slide off when trail running. The polarization is brilliant at picking out rock textures and path details in bright sun.",
     name: "Elena R.",
-    role: "Verified Purchaser",
+    role: "Verified Runner",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "We bought a pair of Aura accent chairs for our sunroom. They feel incredibly premium, heavy, and structured. Customer service was super helpful with delivery planning.",
+    quote: "Love the side pocket accessibility. I could grab my water bottle without taking the pack off. Rain cover kept everything bone dry through a heavy downpour.",
     name: "Priya N.",
-    role: "Verified Purchaser",
+    role: "Verified Hiker",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "Creates the most relaxing ambient lighting. The rattan weaves cast a lovely subtle shadow pattern on the walls. Highly recommend this for entryways or bedrooms.",
+    quote: "Took these up Mount Rainier. The interchangeable tips made the transition from mud to snow fields completely seamless. High quality carbon builds.",
     name: "Marcus T.",
-    role: "Verified Purchaser",
+    role: "Verified Climber",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "The hand-knotted fringe adds such a premium touch. It comes in a lovely linen pouch too, which made it a perfect housewarming gift. I'll definitely be buying more.",
+    quote: "Fits perfectly under a climbing helmet. Lightweight, wrap-around frame blocks glare from all angles. Essential trail gear.",
     name: "Grace L.",
-    role: "Verified Purchaser",
+    role: "Verified Cyclist",
     image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=200&q=80",
   },
 ];
@@ -82,7 +82,7 @@ export default function Testimonials() {
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         <span className="eyebrow mb-4 justify-center md:justify-start">Customer Love</span>
         <h2 className="text-3xl md:text-5xl font-black uppercase text-primary tracking-tight text-center md:text-left">
-          Loved by <span className="text-secondary">15k+ Design Lovers</span>
+          Loved by <span className="text-secondary">15k+ Athletes</span>
         </h2>
         <p className="text-neutral-text/60 text-sm md:text-base mt-4 max-w-md text-center md:text-left mx-auto md:mx-0">
           Every review is proof of the quality and care we put into each piece we ship.

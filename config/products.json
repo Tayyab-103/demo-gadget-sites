@@ -2,20 +2,20 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Comforters",
-    "description": "Snuggle into pure comfort with our premium Comforters, designed to bring warmth, style, and a luxurious feel to your bedroom. Expertly crafted with high-quality materials, each comforter offers the perfect balance of softness and weight, ensuring a cozy night's sleep. From elegant patterns to contemporary designs, our collection features a wide range of colors and textures that complement any decor. Easy to maintain and long-lasting, these comforters are perfect for year-round use. Upgrade your bedding experience with our beautiful and comfortable comforters today.",
-    "image": "/img/products/comforter.png",
+    "name": "Water Aerobics Dumbbells",
+    "description": "Perfect for aqua-fitness classes, water running, or low-impact physical therapy, these dumbbells provide buoyancy to add resistance to your workout. Made from durable EVA foam, they float safely and are resistant to pool chemicals. The ergonomic grips ensure a secure hold even when wet.",
+    "image": "/img/products/WaterAerobicsDumbbells.png",
     "images": [
-      "/img/products/comforter.png"
+      "/img/products/WaterAerobicsDumbbells.png"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/comforter.png",
+    "ingredientsImage": "/img/products/WaterAerobicsDumbbells.png",
     "boxContents": [
-      "1x Premium Bedding Comforter",
-      "1x Protective Storage Bag",
-      "Fabric Care Instruction Card"
+      "2x Water Aerobics Dumbbells",
+      "1x Mesh Storage Carry Bag",
+      "Workout Instruction Guide"
     ],
-    "category": "Bedding",
+    "category": "Aqua Fitness",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -33,20 +33,20 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Mini Ceramic Couple Show Piece",
-    "description": "This exquisite pair of ceramic figurines captures a tender moment between a couple, rendered in a modern, minimalist style. The matte white finish and elegant silhouette evoke a sense of calm sophistication, making them a perfect addition to any mantelpiece, bookshelf, or side table. Crafted with attention to detail, these statues add a touch of refined artistry and warmth to your living space.",
-    "image": "/img/products/Mini Ceramic Couple Show Piece.jpg",
+    "name": "Softball Baseball Pitcher Mitt",
+    "description": "Engineered for competitive players, this 13-inch pitcher's mitt features deep pocket construction and dual-welting for superior ball retention. The genuine leather shell molds to your hand for a custom fit, while the reinforced palm pad absorbs high-velocity impacts, ensuring confidence on the mound.",
+    "image": "/img/products/SoftballBaseballPitcherMitt.png",
     "images": [
-      "/img/products/Mini Ceramic Couple Show Piece.jpg"
+      "/img/products/SoftballBaseballPitcherMitt.png"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/Mini Ceramic Couple Show Piece.jpg",
+    "ingredientsImage": "/img/products/SoftballBaseballPitcherMitt.png",
     "boxContents": [
-      "1x Ceramic Couple Figurine Set",
-      "1x Protective Presentation Box",
-      "Safe-Padding Foam Inserts"
+      "1x Softball Baseball Pitcher Mitt",
+      "1x Premium Leather Conditioner",
+      "Glove Break-In & Care Guide"
     ],
-    "category": "Decor",
+    "category": "Gloves",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -64,21 +64,20 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Touch Control Table Lamps",
-    "description": "Illuminate your space with modern elegance using our Touch Control Table Lamps. These stylish lamps feature a smooth, touch-sensitive base that allows you to adjust brightness with a simple tap. Designed with a contemporary aesthetic, they come in various finishes and sizes to perfectly complement your home decor. The lamps are equipped with energy-efficient LED bulbs that provide warm, ambient lighting ideal for bedrooms, living rooms, and study areas. Setting them up is effortless - just plug in and enjoy instant illumination. Durable, chic, and easy to use, these table lamps add a touch of sophistication and convenience to any room.",
-    "image": "/img/products/Touch Control Table Lamps 1.jpg",
+    "name": "Hollow Plastic Baseballs Bulk",
+    "description": "Our 9-inch plastic baseball is a hollow, lightweight alternative perfect for indoor training, backyard games, and practice sessions. Its durable construction ensures it withstands repeated throws and hits while remaining safe for all ages. The hollow design makes it easy to grip and throw accurately, providing a fun and reliable option for baseball enthusiasts looking for a versatile training ball.",
+    "image": "/img/products/HollowPlasticBaseballsBulk.png",
     "images": [
-      "/img/products/Touch Control Table Lamps 1.jpg"
+      "/img/products/HollowPlasticBaseballsBulk.png"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/Touch Control Table Lamps 1.jpg",
+    "ingredientsImage": "/img/products/HollowPlasticBaseballsBulk.png",
     "boxContents": [
-      "1x Touch Control Table Lamp",
-      "1x Energy-Efficient LED Bulb",
-      "AC Power Adapter & Cord",
-      "Setup & Operational Manual"
+      "12x Hollow Plastic Baseballs",
+      "1x Drawstring Mesh Ball Bag",
+      "Training Drills Guidebook"
     ],
-    "category": "Lighting",
+    "category": "Training Equipment",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

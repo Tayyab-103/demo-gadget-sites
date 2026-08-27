@@ -4,24 +4,24 @@ import React, { useEffect, useState } from "react";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80",
-    alt: "Cozy modern living room with warm wood tones, natural lighting, and elegant furnishings",
+    src: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80",
+    alt: "Hikers ascending a steep mountain ridge under clear blue sky",
   },
   {
-    src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=80",
-    alt: "Warm wooden dining space with natural fabrics, rattan textures, and low hanging lighting",
+    src: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1600&q=80",
+    alt: "Trail runner running along an alpine path at sunrise",
   },
   {
-    src: "https://images.unsplash.com/photo-1617806118233-18e1db207f62?w=1600&q=80",
-    alt: "Elegant modern bedroom featuring organic cotton textiles and minimalist warm styling",
+    src: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1600&q=80",
+    alt: "Cyclist descending a dynamic mountain curves path",
   },
   {
-    src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80",
-    alt: "Aesthetic living corner with a cozy textured chair, wooden accents, and warm ambient light",
+    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80",
+    alt: "Stunning snow-capped alpine peaks at sunset",
   },
   {
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=80",
-    alt: "Bright, minimalist living space featuring curved furnishings and natural elements",
+    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&q=80",
+    alt: "Backpacker camping in the wilderness overlooking a lake",
   },
 ];
 

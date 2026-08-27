@@ -8,8 +8,8 @@ export default function CTASection() {
     <section className="relative overflow-hidden py-24 md:py-32 bg-primary" id="cta">
       {/* Full-bleed background image */}
       <img
-        src="https://images.unsplash.com/photo-1618219940841-a29a1bb7b86e?w=1600&q=80"
-        alt="Stunning modern furnished interior sanctuary"
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+        alt="Mountain sunset visual"
         className="absolute inset-0 h-full w-full object-cover"
       />
       {/* Rich gradient overlays for ultimate readability and depth */}
@@ -27,15 +27,15 @@ export default function CTASection() {
         <div className="p-8 md:p-14 rounded-[2.5rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl">
           
           <span className="eyebrow eyebrow-invert justify-center mb-6 text-secondary">
-            Sanctuary Awaits
+            Gear Up
           </span>
 
           <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight tracking-tight text-white mb-6">
-            Elevate Your <span className="text-secondary drop-shadow-sm">Living Space</span>
+            Gear Up For Your <span className="text-secondary drop-shadow-sm">Next Expedition</span>
           </h2>
 
           <p className="mx-auto mb-10 max-w-xl text-sm md:text-base leading-relaxed text-white/80">
-            Join thousands of design lovers who have transformed their houses into warm, organic sanctuaries. Bundle your items today and receive complimentary shipping and structural lifetime warranty protection.
+            Join thousands of active explorers who rely on Summit Hollow to tackle alpine routes, trail loops, and high-performance runs. Bundle your gear today and get free UPS shipping.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -51,7 +51,7 @@ export default function CTASection() {
               href="/#contact"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/20 bg-white/5 px-9 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-white hover:bg-white/15 hover:scale-[1.03]"
             >
-              Talk to a Designer
+              Talk to an Expert
             </Link>
           </div>
 

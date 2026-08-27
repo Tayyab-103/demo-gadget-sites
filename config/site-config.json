@@ -1,10 +1,10 @@
 {
-  "Product": "Home Furnishing",
-  "Processor": "EMP",
-  "brandName": "Hearthwyn Home Living Collective",
-  "websiteUrl": "HearthwynHomeLivingCollective.com",
-  "email": "support@hearthwynhomelivingcollective.com",
-  "descriptor": "HearthwynHomeLivingCol",
+  "Product": "Sporting Goods",
+  "Processor": "Quantum",
+  "brandName": "Summit Hollow Sporting Works",
+  "websiteUrl": "SummitHollowSportingWorks.com",
+  "email": "support@summithollowsportingworks.com",
+  "descriptor": "SummitHollowSportingWo",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#2C3E35",
+    "primaryColor": "#1D1712",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C59B6D",
-    "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#FAF7F2",
-    "neutralTextColor": "#2A2521",
+    "secondaryColor": "#FFC93C",
+    "secondaryTextColor": "#10222B",
+    "neutralBgColor": "#FBFEFF",
+    "neutralTextColor": "#10222B",
     "fontFamily": "Montserrat"
   }
 }

@@ -4,8 +4,8 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "Sustainably Sourced Woods",
-    description: "We use only FSC-certified kiln-dried solid hardwoods, ensuring our frames are built sustainably and never warp or squeak.",
+    title: "Frictionless Carry Suspensions",
+    description: "Our packs are designed with custom 3D mesh spacers and sternum sliders to eliminate pressure points and active shoulder strain.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z"></path>
@@ -15,8 +15,8 @@ const featuresData = [
     )
   },
   {
-    title: "Premium Artisanal Weaves",
-    description: "Our fabrics are hand-woven from organic cotton and linen with double-layer backing for exceptional tear strength and longevity.",
+    title: "Ultra-Durable Cordura Weaves",
+    description: "Every seams and panel is stitched with high-density ballistic Cordura, offering maximum scrap resistance on rock faces.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -24,8 +24,8 @@ const featuresData = [
     )
   },
   {
-    title: "Hypoallergenic Comfort",
-    description: "Cushioned with certified CertiPUR-US foams and organic wool layers, entirely free of harmful chemicals or flame retardants.",
+    title: "Vanguard Polarized Trail Optics",
+    description: "Impact-proof active polarized lenses filter 100% of glare while enhancing trail color contrasts and depth contours in direct sun.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"></path>
@@ -34,8 +34,8 @@ const featuresData = [
     )
   },
   {
-    title: "Room Placement Guarantee",
-    description: "Stage our furniture in your living space. If it doesn't align with your layout or styling, return it within 60 days.",
+    title: "60-Day Trail Trial Guarantee",
+    description: "Head out on your favorite mountain loops, run, or climb. If you're not fully satisfied with performance, return it within 60 days.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -57,10 +57,10 @@ export default function Features() {
         <div className="max-w-[700px] mb-16 md:mb-20">
           <span className="eyebrow mb-4">Why Choose Us</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-5 tracking-tight leading-tight">
-            Crafted for Cozy <span className="text-secondary">Sanctuaries</span>
+            Engineered for <span className="text-secondary">the Ascent</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base leading-relaxed">
-            We combine generational woodcraft with organic materials to bring you premium furnishings that define the concept of home.
+            We combine lightweight aerospace carbon, military-grade optics, and ballistic fabrics to bring you active gear that excels in the wild.
           </p>
         </div>
 
@@ -70,8 +70,8 @@ export default function Features() {
           {/* Left Column: Premium Highlight Image Card (5 Cols) */}
           <div className="lg:col-span-5 relative group overflow-hidden rounded-[2.5rem] shadow-2xl flex flex-col justify-end min-h-[400px] lg:min-h-0 border border-black/5">
             <img
-              src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1000&q=80"
-              alt="Hearthwyn Joinery Craftsmanship"
+              src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1000&q=80"
+              alt="Summit Hollow active hiking"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
             {/* Elegant warm overlay */}
@@ -80,13 +80,13 @@ export default function Features() {
             {/* Layered Glassmorphic Card */}
             <div className="relative z-10 p-8 md:p-10 m-6 rounded-3xl glass-card border border-white/20 backdrop-blur-md">
               <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">
-                The Hearthwyn Legacy
+                Summit Hollow Legacy
               </span>
               <h3 className="text-xl font-bold text-primary mb-3">
-                Slow-Crafted, Multi-Generational Quality
+                Trail-Tested, High-Altitude Endurance Gear
               </h3>
               <p className="text-neutral-text/75 text-xs md:text-sm leading-relaxed">
-                Our workshop believes in taking time. Every joint is cut, sanded, and inspected by hand to guarantee structure that outlasts trends.
+                We believe gear should vanish into your pace. Every seam, clip, and wrap-around lens is designed to withstand extreme mountain elements.
               </p>
             </div>
           </div>

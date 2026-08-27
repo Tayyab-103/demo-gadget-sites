@@ -27,8 +27,8 @@ const highlights = [
         <polyline points="9 12 11.5 14.5 15 9" />
       </svg>
     ),
-    title: "Artisan Curation",
-    desc: "We partner with local craftsmen using generational joinery and hand-weaving techniques to ensure every piece has a soul.",
+    title: "Trail Testing",
+    desc: "Every strap and buckle is stress-tested on rugged mountain loops and alpine weather passes before it reaches your pack.",
   },
   {
     icon: (
@@ -48,8 +48,8 @@ const highlights = [
         <path d="M12 6V12L16 14" />
       </svg>
     ),
-    title: "Sustainable Abodes",
-    desc: "Crafted with GOTS-certified organic cotton fabrics, FSC-certified solid oak, and natural non-toxic wood finishes.",
+    title: "Endurance Materials",
+    desc: "Crafted with lightweight aerospace carbon fiber, high-density Cordura fabrics, and sweat-resistant natural cork.",
   },
   {
     icon: (
@@ -69,8 +69,8 @@ const highlights = [
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
     ),
-    title: "Ergonomic Comfort",
-    desc: "Meticulously scaled and tested to ensure deep seated comfort, optimal posture support, and relaxed home-styled luxury.",
+    title: "Ergonomic Calibration",
+    desc: "Weight-distributing back frames and impact-absorbing pole shocks are designed to reduce joint fatigue.",
   },
   {
     icon: (
@@ -91,13 +91,13 @@ const highlights = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: "Lifetime Structure Warranty",
-    desc: "Every solid wood joinery framework is built to endure and comes backed by our full lifetime warranty.",
+    title: "Lifetime Gear Warranty",
+    desc: "All structural frames, carbon tubing, and manufacturing joins are covered by our lifetime hardware guarantee.",
   },
 ];
 
 const stats = [
-  { value: "15k+", label: "Spaces Adorned" },
+  { value: "50k+", label: "Trails Packed" },
   { value: "60-Day", label: "Comfort Trial" },
   { value: "Lifetime", label: "Warranty" },
 ];
@@ -118,12 +118,12 @@ export default function AboutUs() {
           <span className="eyebrow mb-6 justify-center">Our Story</span>
 
           <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
-            Artisanal Furnishings, Crafted{" "}
-            <span className="text-secondary">for Cozy Living</span>
+            Summit Gear, Engineered{" "}
+            <span className="text-secondary">for Rugged Ascents</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, we believe home should be your sanctuary. We partner with master artisans to craft timeless, sustainable furnishings that bring comfort and natural warmth to your everyday living.
+            At {siteConfig.brandName}, we believe gear should never limit your exploration. We prototype and test our gear in extreme alpine terrain to ensure comfort, balance, and absolute durability on the trail.
           </p>
         </div>
 
@@ -132,8 +132,8 @@ export default function AboutUs() {
           {/* LEFT — Image */}
           <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-[2.5rem] shadow-2xl lg:mx-0 lg:aspect-4/5">
             <Image
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80"
-              alt={`${siteConfig.brandName} home interior design`}
+              src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1200&q=80"
+              alt={`${siteConfig.brandName} trail backpacking lifestyle`}
               fill
               sizes="(max-width: 1024px) 90vw, 520px"
               className="object-cover"

@@ -14,10 +14,10 @@ export default function ProductGrid() {
         <div className="text-center mb-16 md:mb-20">
           <span className="eyebrow justify-center mb-4">The Collection</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Explore Our <span className="text-secondary">Furnishings</span>
+            Explore Our <span className="text-secondary">Sporting Gear</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
-            Select a piece below to customize your bundle packages and elevate your living space.
+            Select a piece below to customize your bundle packages and prepare for your next outdoor excursion.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function ProductGrid() {
                     alt={product.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/400x400?text=Hearthwyn+Living";
+                      e.currentTarget.src = "https://placehold.co/400x400?text=Summit+Hollow";
                     }}
                   />
                 </div>

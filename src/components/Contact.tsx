@@ -67,7 +67,7 @@ export default function Contact() {
             Have Questions? <span className="text-secondary">Get in Touch</span>
           </h2>
           <p className="text-white/65 text-sm md:text-base">
-            Our styling and support consultants are available to guide your furnishing selections, room layouts, shipping, or custom setups.
+            Our adventure specialists are available to guide your gear selections, pack tailoring, sizing, or shipment questions.
           </p>
         </div>
 

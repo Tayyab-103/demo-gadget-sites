@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Curate Your Space",
+    title: "Select Expedition Gear",
     description:
-      "Browse our curated catalog of small-batch artisanal seating, warm ambient lighting, and organic cotton textiles to find the perfect style match for your sanctuary.",
-    image: "https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?w=900&q=80",
+      "Browse our catalog of high-performance trail backpacks, polarized eyewear, and trekking poles designed to excel in challenging outdoor environments.",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,17 +23,17 @@ const steps = [
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <polyline points="9 22 9 12 15 12 15 22" />
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <polyline points="9 12 11.5 14.5 15 9" />
       </svg>
     ),
   },
   {
     number: "02",
-    title: "Select Package Bundle",
+    title: "Tailor Your Pack",
     description:
-      "Customize your quantity and bundle items. Enjoy exclusive savings when you order matching sets or curate a complete room layout at once.",
-    image: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=900&q=80",
+      "Select quantities or pack combinations. Enjoy bundle savings when equipping yourself for multi-day expeditions or team outings.",
+    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +56,10 @@ const steps = [
   },
   {
     number: "03",
-    title: "White-Glove Delivery",
+    title: "Fast Trail Dispatch",
     description:
-      "Your order is hand-packed, secured, and shipped directly to your doorstep. Enjoy free shipping and simple room placement in 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?w=900&q=80",
+      "Complete checkout securely. Your order is hand-packed, double-checked, and shipped via fast courier straight to your door in 3-5 business days.",
+    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ export default function HowItWorks() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Elevating your home design is effortless. Follow these three steps to bring premium, handcrafted furnishings directly into your space.
+            Equipping your next adventure is straightforward. Follow these three steps to get high-performance, trail-tested sports gear dispatched directly to you.
           </p>
         </div>
 
@@ -110,7 +110,7 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-6">
           {steps.map((step, idx) => (
             <div key={step.number} className="relative">
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-black/5 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
                 {/* Image */}
                 <div className="relative aspect-4/3 overflow-hidden">
                   <Image
@@ -140,7 +140,7 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              {/* Connector arrow (desktop only, between cards) */}
+              {/* Connector arrow (desktop only) */}
               {idx < steps.length - 1 && (
                 <div className="absolute top-1/2 -right-4 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-black/10 bg-white text-primary shadow-md md:flex lg:-right-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

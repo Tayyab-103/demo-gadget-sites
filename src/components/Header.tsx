@@ -195,12 +195,6 @@ export default function Header() {
               )}
             </button>
 
-            <Link
-              href="/shop"
-              className="hidden lg:inline-flex items-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3 px-6 rounded-full text-[0.68rem] uppercase tracking-widest shadow-md hover:shadow-lg"
-            >
-              Shop Now
-            </Link>
 
             {/* Mobile hamburger toggle */}
             <button
@@ -238,13 +232,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/shop"
-              onClick={closeAll}
-              className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-5 rounded-full text-xs uppercase tracking-widest mt-4 shadow-md"
-            >
-              Shop Now
-            </Link>
+
           </div>
         )}
 

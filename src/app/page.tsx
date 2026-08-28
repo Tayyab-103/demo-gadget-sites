@@ -25,10 +25,10 @@ export default function Home() {
         
         {/* Step-by-Step Flow */}
         {/* <HowItWorks /> */}
-         <Features />
+         {/* <Features /> */}
         
         {/* About Brand Section */}
-        {/* <AboutUs /> */}
+        <AboutUs />
 
         {/* Product Catalog Showcase */}
         <ProductGrid />

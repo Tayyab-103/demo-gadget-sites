@@ -6,21 +6,6 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const promises = [
-  {
-    title: "Trekking-Grade Strength",
-    desc: "Our gear structures undergo severe laboratory load and tension testing to withstand unexpected drops and extreme pass climbs.",
-  },
-  {
-    title: "60-Day Trail Trial",
-    desc: "Test our gear on your preferred trail, climb, or bike loop for 60 days. If you are not completely satisfied, return it for a refund.",
-  },
-  {
-    title: "Eco-Conscious Carbon",
-    desc: "We use aerospace-grade carbon fiber tubing and recycled active rubbers, minimizing overall carbon footprint and trail impact.",
-  },
-];
-
 export default function QualityPromise() {
   return (
     <section
@@ -29,7 +14,7 @@ export default function QualityPromise() {
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Full-bleed banner */}
-        <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 lg:aspect-21/8">
           <img
             src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=80"
             alt={`${siteConfig.brandName} Quality Assurance`}
@@ -51,28 +36,6 @@ export default function QualityPromise() {
               <span className="text-secondary">You Deserve</span>
             </h2>
           </div>
-        </div>
-
-        {/* Promise grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          {promises.map((promise, idx) => (
-            <div
-              key={promise.title}
-              className="group/item relative rounded-2xl border border-black/[0.06] bg-neutral-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-lg md:p-8"
-            >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-secondary/25 bg-secondary/[0.08] text-sm font-black text-secondary shadow-sm transition-all duration-300 group-hover/item:border-secondary group-hover/item:bg-secondary group-hover/item:text-primary-text">
-                {String(idx + 1).padStart(2, "0")}
-              </div>
-
-              <h3 className="mb-2 text-base font-bold leading-snug text-primary transition-colors duration-300 group-hover/item:text-secondary sm:text-lg">
-                {promise.title}
-              </h3>
-
-              <p className="text-sm leading-[1.7] text-neutral-text/60">
-                {promise.desc}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

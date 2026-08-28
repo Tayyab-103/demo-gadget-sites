@@ -1,0 +1,71 @@
+[
+  {
+    "id": "product1",
+    "name": "WhiskerCare™ Self-Cleaning Slicker Pet Grooming Brush",
+    "image": "/img/products/brush.jpg",
+    "images": [
+      "/img/products/brush.jpg"
+    ],
+    "description": "Ergonomic slicker brush engineered with fine stainless steel massage beads and a one-click retractable bristle release. Effortlessly removes loose undercoat shedding and dander without scratching delicate pet skin.",
+    "category": "Grooming & Coat Care",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "ssPrice": "6.95",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 11.95 },
+      { "quantity": 3, "price": 16.95 },
+      { "quantity": 4, "price": 20.95 },
+      { "quantity": 5, "price": 24.95 },
+      { "quantity": 6, "price": 28.95 },
+      { "quantity": 7, "price": 31.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "name": "PawPulse™ Smart Interactive LED Motion Pet Ball",
+    "image": "/img/products/ball.jpg",
+    "images": [
+      "/img/products/ball.jpg"
+    ],
+    "description": "Intelligent automated motion toy with 3 speed modes, built-in obstacle avoidance sensor, and soft LED indicator ring. Made with bite-resistant food-grade silicone to keep cats and dogs active and captivated.",
+    "category": "Interactive Play & Toys",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "ssPrice": "11.95",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 19.95 },
+      { "quantity": 3, "price": 27.95 },
+      { "quantity": 4, "price": 34.95 },
+      { "quantity": 5, "price": 40.95 },
+      { "quantity": 6, "price": 46.95 },
+      { "quantity": 7, "price": 50.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "name": "CloudRest™ Orthopedic Calming Pet Nest & Bed",
+    "image": "/img/products/bed.jpg",
+    "images": [
+      "/img/products/bed.jpg"
+    ],
+    "description": "High-density orthopedic memory foam pet bed with raised calming bolster rim for neck support and anxiety relief. Removable, machine-washable waterproof cover upholstered in luxurious bouclé fabric.",
+    "category": "Orthopedic Comfort & Beds",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "ssPrice": "14.95",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 26.95 },
+      { "quantity": 3, "price": 37.95 },
+      { "quantity": 4, "price": 47.95 },
+      { "quantity": 5, "price": 56.95 },
+      { "quantity": 6, "price": 64.95 },
+      { "quantity": 7, "price": 71.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

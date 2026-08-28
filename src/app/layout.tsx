@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. High-performance ${siteConfig.Product?.toLowerCase() || "sporting goods and fitness gear"} engineered for dedicated athletes, strength conditioning, and outdoor performance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade ${siteConfig.Product?.toLowerCase() || "sporting apparel"} engineered for dedicated athletes, high-output conditioning, and peak athletic performance.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,20 +45,20 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Goods & Training Equipment`,
+  title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel & Technical Sportswear`,
   description: siteDescription,
   keywords: [
-    "sporting goods",
-    "athletic equipment",
-    "fitness gear",
-    "weighted training vest",
-    "performance duffle bag",
-    "percussion recovery gun",
+    "sporting apparel",
+    "athletic wear",
+    "technical sportswear",
+    "compression baselayers",
+    "performance hoodies",
+    "athletic socks",
     "Austin athletics",
-    "Northcrest Sporting Collective"
+    "Vantage Thread Athletic Works"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
+    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
+    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
     description: siteDescription,
   },
 };

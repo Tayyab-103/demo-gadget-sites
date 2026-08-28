@@ -32,11 +32,11 @@ export default function Privacy() {
             <p>
               When you visit the Site, we automatically collect certain information about your device, including information
               about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
-              Additionally, as you browse the Site, we collect information about the individual web pages or sporting gear that you view,
+              Additionally, as you browse the Site, we collect information about the individual web pages or sporting apparel that you view,
               what websites or search terms referred you to the Site, and information about how you interact with the Site.
             </p>
             <p>
-              Additionally, when you place an order for sporting goods, weighted conditioning vests, performance bags, or recovery tools through the Site, we collect certain information
+              Additionally, when you place an order for sporting apparel, compression tops, technical hoodies, or socks through the Site, we collect certain information
               from you, including your name, billing address, shipping address, payment information (including encrypted credit card numbers),
               email address, and phone number. We refer to this information as “Order Information.”
             </p>
@@ -50,7 +50,7 @@ export default function Privacy() {
             <ul className="list-disc pl-5 mb-6 space-y-2">
               <li>Communicate with you regarding delivery and tracking updates;</li>
               <li>Screen our orders for potential risk or payment fraud; and</li>
-              <li>Provide you with athletic gear releases or promotions relating to our products or services.</li>
+              <li>Provide you with athletic apparel releases or promotions relating to our products or services.</li>
             </ul>
 
             <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SHARING YOUR PERSONAL INFORMATION</h3>

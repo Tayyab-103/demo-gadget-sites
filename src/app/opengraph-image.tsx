@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Pro-Grade Sporting Goods &amp; Athletic Gear
+          Pro-Grade Sporting Apparel &amp; Technical Sportswear
         </div>
 
         <div

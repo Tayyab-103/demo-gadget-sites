@@ -12,10 +12,10 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/shop", label: "Products" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/shop", label: "Shop" },
+  { href: "/shop", label: "Collections" },
+  { href: "/about", label: "Heritage" },
+  { href: "/contact", label: "Support" },
 ];
 
 export default function Header() {
@@ -37,9 +37,8 @@ export default function Header() {
       )
     : [];
 
-  // Track scroll to intensify the glass pill on scroll
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 30);
+    const handleScroll = () => setIsScrolled(window.scrollY > 15);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -89,109 +88,132 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-2 sm:top-5 left-0 right-0 z-50 px-2.5 sm:px-6 pointer-events-none w-full max-w-full"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        isScrolled ? "shadow-md border-b border-black/8 py-3" : "border-b border-black/6 py-3.5 sm:py-4"
+      }`}
     >
-      {/* Floating glass pill */}
-      <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${
-          isScrolled
-            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2 px-3 sm:py-2.5 sm:px-6 shadow-black/50"
-            : "bg-primary/85 backdrop-blur-xl border-white/15 py-2.5 px-3 sm:py-3 sm:px-7 shadow-black/35"
-        }`}
-      >
-        {/* Logo */}
-        <Link href="/" onClick={closeAll} className="flex items-center gap-2 min-w-0 flex-1 sm:flex-initial" style={{ textDecoration: "none" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        
+        {/* Left: Brand Logo styled like MOVE. ACTIVEWEAR */}
+        <Link href="/" onClick={closeAll} className="flex flex-col group" style={{ textDecoration: "none" }}>
           {siteConfig.useImageLogo && siteConfig.logoImage ? (
-            <div className="bg-white rounded-full px-2.5 py-1 flex items-center">
-              <img
-                src={siteConfig.logoImage}
-                alt={siteConfig.brandName}
-                className="max-h-6 sm:max-h-7 w-auto object-contain"
-              />
-            </div>
+            <img
+              src={siteConfig.logoImage}
+              alt={siteConfig.brandName}
+              className="max-h-7 sm:max-h-8 w-auto object-contain"
+            />
           ) : (
-            <span className="text-white text-xs sm:text-base md:text-lg font-black tracking-tight flex items-center gap-2 min-w-0">
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0 items-center justify-center rounded-xl bg-secondary text-secondary-text shadow-md shadow-secondary/30">
-                {/* Athletic Crest Icon */}
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                </svg>
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-black tracking-tighter text-black uppercase leading-none flex items-baseline">
+                <span>VANTAGE</span>
+                <span className="inline-block w-2 h-2 rounded-full bg-secondary ml-0.5" />
               </span>
-              <span className="truncate uppercase font-black tracking-wider text-[0.72rem] xs:text-xs sm:text-sm md:text-base">
-                <span className="hidden sm:inline">{siteConfig.brandName}</span>
-                <span className="sm:hidden">Northcrest</span>
+              <span className="text-[0.55rem] sm:text-[0.62rem] font-black uppercase tracking-[0.28em] text-black/60 mt-0.5">
+                ATHLETIC WORKS
               </span>
-            </span>
+            </div>
           )}
         </Link>
 
-        {/* Desktop Navigation Links — Strictly 4: Home, Products, About, Contact */}
-        <nav className="hidden lg:flex items-center gap-1.5 bg-white/5 rounded-full p-1 border border-white/10 mx-4">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-300 ${
-                  isActive ? "bg-secondary text-secondary-text shadow-md" : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        {/* Center: Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <Link
+            href="/"
+            className={`text-xs font-black uppercase tracking-wider transition-colors duration-200 ${
+              pathname === "/" ? "text-black border-b-2 border-secondary pb-0.5" : "text-black/75 hover:text-black"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/shop"
+            className={`text-xs font-black uppercase tracking-wider transition-colors duration-200 ${
+              pathname === "/shop" ? "text-black border-b-2 border-secondary pb-0.5" : "text-black/75 hover:text-black"
+            }`}
+          >
+            Shop
+          </Link>
+          <Link
+            href="/about"
+            className={`text-xs font-black uppercase tracking-wider transition-colors duration-200 ${
+              pathname === "/about" ? "text-black border-b-2 border-secondary pb-0.5" : "text-black/75 hover:text-black"
+            }`}
+          >
+            Heritage
+          </Link>
+          <Link
+            href="/contact"
+            className={`text-xs font-black uppercase tracking-wider transition-colors duration-200 ${
+              pathname === "/contact" ? "text-black border-b-2 border-secondary pb-0.5" : "text-black/75 hover:text-black"
+            }`}
+          >
+            Support
+          </Link>
         </nav>
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-          {/* Search Icon Button */}
+        {/* Right: Icons (Search, User, Cart, Mobile Menu) */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Search Icon */}
           <button
             onClick={toggleSearch}
-            className={`transition-all duration-300 p-1.5 sm:p-2.5 rounded-full cursor-pointer ${
-              isSearchOpen ? "bg-white/20 text-secondary" : "text-white/80 hover:text-white hover:bg-white/10"
-            }`}
+            className="p-2 text-black/80 hover:text-black transition-colors cursor-pointer rounded-full hover:bg-black/5"
             aria-label="Toggle Search"
             aria-expanded={isSearchOpen}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
 
-          {/* Cart Icon Button */}
+          {/* User/Support Account Icon */}
+          <Link
+            href="/contact"
+            className="hidden sm:flex p-2 text-black/80 hover:text-black transition-colors rounded-full hover:bg-black/5"
+            aria-label="Athlete Support"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </Link>
+
+          {/* Cart Bag Icon with Lime Volt Badge */}
           <button
             onClick={toggleCart}
-            className="text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 p-1.5 sm:p-2.5 rounded-full relative cursor-pointer"
+            className="relative p-2 text-black/80 hover:text-black transition-colors cursor-pointer rounded-full hover:bg-black/5"
             aria-label="Toggle Cart"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-            {getCartCount() > 0 && (
-              <span className="absolute top-0.5 right-0.5 bg-secondary text-secondary-text rounded-full w-[16px] h-[16px] text-[0.58rem] font-black flex items-center justify-center shadow-md animate-pulse">
+            {getCartCount() > 0 ? (
+              <span className="absolute -top-0.5 -right-0.5 bg-secondary text-secondary-text rounded-full w-[18px] h-[18px] text-[0.62rem] font-black flex items-center justify-center border border-black shadow-xs">
                 {getCartCount()}
+              </span>
+            ) : (
+              <span className="absolute -top-0.5 -right-0.5 bg-secondary text-secondary-text rounded-full w-[16px] h-[16px] text-[0.55rem] font-black flex items-center justify-center border border-black/20">
+                0
               </span>
             )}
           </button>
 
-          {/* Mobile hamburger toggle */}
+          {/* Mobile hamburger button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white p-1.5 sm:p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+            className="md:hidden text-black p-1.5 rounded-lg hover:bg-black/5 transition-colors cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="18" x2="21" y2="18" />
@@ -201,80 +223,100 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Floating Mobile Nav Menu Panel */}
+      {/* Mobile Nav Dropdown */}
       {isMenuOpen && (
-        <div className="lg:hidden max-w-6xl mx-auto mt-2 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-4 flex flex-col gap-1 shadow-2xl pointer-events-auto">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeAll}
-                className={`font-bold text-sm py-2.5 px-4 rounded-xl transition-all duration-200 ${
-                  isActive ? "bg-secondary text-secondary-text" : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        <div className="md:hidden border-t border-black/6 bg-white px-4 py-4 flex flex-col gap-2 shadow-xl">
+          <Link
+            href="/"
+            onClick={closeAll}
+            className={`font-black text-sm py-2.5 px-4 rounded-xl transition-all ${
+              pathname === "/" ? "bg-black text-white" : "text-black/80 hover:bg-black/5"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            href="/shop"
+            onClick={closeAll}
+            className={`font-black text-sm py-2.5 px-4 rounded-xl transition-all ${
+              pathname === "/shop" ? "bg-black text-white" : "text-black/80 hover:bg-black/5"
+            }`}
+          >
+            Shop Apparel
+          </Link>
+          <Link
+            href="/about"
+            onClick={closeAll}
+            className={`font-black text-sm py-2.5 px-4 rounded-xl transition-all ${
+              pathname === "/about" ? "bg-black text-white" : "text-black/80 hover:bg-black/5"
+            }`}
+          >
+            Heritage
+          </Link>
+          <Link
+            href="/contact"
+            onClick={closeAll}
+            className={`font-black text-sm py-2.5 px-4 rounded-xl transition-all ${
+              pathname === "/contact" ? "bg-black text-white" : "text-black/80 hover:bg-black/5"
+            }`}
+          >
+            Support &amp; Sizing
+          </Link>
         </div>
       )}
 
-      {/* Floating Search Panel */}
+      {/* Search Dropdown Panel */}
       {isSearchOpen && (
-        <div className="max-w-6xl mx-auto mt-2 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-4 max-h-[70vh] overflow-y-auto shadow-2xl pointer-events-auto">
-          <div className="relative max-w-2xl mx-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <input
-              ref={searchInputRef}
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search gear..."
-              className="block w-full pl-11 pr-4 py-2.5 text-xs sm:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-white bg-white/10 border border-white/15 placeholder-white/40"
-            />
-          </div>
-
-          {trimmedQuery && (
-            <div className="mt-3 flex flex-col gap-1.5 max-w-2xl mx-auto">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => {
-                  const price = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;
-                  return (
-                    <Link
-                      key={product.id}
-                      href={`/product/${product.id}`}
-                      onClick={closeAll}
-                      className="flex items-center gap-3 p-2 rounded-2xl hover:bg-white/10 border border-transparent hover:border-white/10 transition-all duration-200"
-                    >
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-10 h-10 rounded-xl object-cover bg-white/10 flex-shrink-0"
-                        onError={(e) => {
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80";
-                        }}
-                      />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs font-bold text-white truncate">{product.name}</div>
-                        <div className="text-[0.6rem] text-secondary truncate uppercase tracking-widest font-bold">{product.category}</div>
-                      </div>
-                      <div className="text-xs font-extrabold text-secondary flex-shrink-0">${price}</div>
-                    </Link>
-                  );
-                })
-              ) : (
-                <p className="text-xs text-white/50 text-center py-4">
-                  No gear found for &ldquo;{query}&rdquo;.
-                </p>
-              )}
+        <div className="border-t border-black/8 bg-white px-4 sm:px-6 py-4 shadow-xl">
+          <div className="max-w-2xl mx-auto">
+            <div className="relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search sporting apparel, compression tops, hoodies..."
+                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-black text-black bg-neutral-bg border border-black/10 placeholder-black/40"
+              />
             </div>
-          )}
+
+            {trimmedQuery && (
+              <div className="mt-3 flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
+                {filteredProducts.length > 0 ? (
+                  filteredProducts.map((product) => {
+                    const price = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;
+                    return (
+                      <Link
+                        key={product.id}
+                        href={`/product/${product.id}`}
+                        onClick={closeAll}
+                        className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-black/5 border border-transparent hover:border-black/5 transition-all"
+                      >
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-12 h-12 rounded-xl object-cover bg-black/5 flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs sm:text-sm font-black text-black truncate">{product.name}</div>
+                          <div className="text-[0.65rem] text-black/50 truncate uppercase font-bold">{product.category}</div>
+                        </div>
+                        <div className="text-xs sm:text-sm font-black text-black flex-shrink-0">${price}</div>
+                      </Link>
+                    );
+                  })
+                ) : (
+                  <p className="text-xs text-black/50 text-center py-4">
+                    No sporting apparel found for &ldquo;{query}&rdquo;.
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </header>

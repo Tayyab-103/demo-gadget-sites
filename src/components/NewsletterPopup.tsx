@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[190px] relative">
           <img
-            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&q=80"
-            alt="Northcrest athletic conditioning training"
+            src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80"
+            alt="Vantage Thread athletic apparel conditioning"
             className="w-full h-full object-cover absolute inset-0"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/40 to-primary/95" />
@@ -91,7 +91,7 @@ export default function NewsletterPopup() {
               Athlete Collective VIP Pass
             </span>
             <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
-              Save 15% On Your Next Gear Order
+              Save 15% On Your Next Apparel Order
             </h3>
           </div>
         </div>
@@ -105,13 +105,13 @@ export default function NewsletterPopup() {
               </div>
               <h4 className="text-primary font-black uppercase text-lg mb-2">Discount Code Activated!</h4>
               <p className="text-neutral-text/60 text-sm">
-                Check your inbox for your 15% sporting goods discount code.
+                Check your inbox for your 15% sporting apparel discount code.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/75 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} VIP network. Subscribe today to receive training guides, new gear release alerts, and <strong>15% off</strong> your first order.
+                Join the {siteConfig.brandName} VIP network. Subscribe today to receive training guides, new apparel release alerts, and <strong>15% off</strong> your first order.
               </p>
 
               <div className="mb-4">

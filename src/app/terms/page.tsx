@@ -33,7 +33,7 @@ export default function Terms() {
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing sporting goods, weighted conditioning vests, performance bags, and recovery therapy from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing pro-grade sporting apparel, compression baselayers, technical hoodies, and athletic accessories from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -45,7 +45,7 @@ export default function Terms() {
 
             <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer pro-grade sporting goods and athletic training equipment through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer pro-grade sporting apparel and athletic technical sportswear through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
@@ -84,7 +84,7 @@ export default function Terms() {
             </p>
             <p>
               You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws and local athletic equipment safety regulations).
+              violate any laws in your jurisdiction (including but not limited to copyright laws and local athletic apparel regulations).
             </p>
 
             <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
@@ -96,7 +96,7 @@ export default function Terms() {
 
             <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - 14-DAY FIELD TRIAL &amp; RETURN POLICY</h3>
             <p>
-              We stand behind our sporting equipment with a 14-day field trial guarantee. If you are not satisfied with your purchase,
+              We stand behind our sporting apparel with a 14-day field trial guarantee. If you are not satisfied with the fit or performance of your purchase,
               please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>

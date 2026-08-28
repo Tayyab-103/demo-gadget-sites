@@ -15,10 +15,10 @@ export default function ShopPage() {
       <main className="flex-grow">
         <PageHeader
           eyebrow="Complete Catalog"
-          title={<>The Athlete Collection</>}
-          subtitle="Explore battle-tested weighted training vests, solid cast dumbbells, and storm-shield equipment backpacks."
-          image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80"
-          currentLabel="Products"
+          title={<>The Athlete Apparel Collection</>}
+          subtitle="Explore pro-grade compression baselayers, double-knit technical training hoodies, and zoned performance crew socks."
+          image="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1600&q=80"
+          currentLabel="Apparel"
         />
         <ProductGrid />
       </main>

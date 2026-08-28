@@ -14,7 +14,6 @@ export default function Checkout() {
   const router = useRouter();
   const { cart, getCartTotal, clearCart } = useCart();
 
-  // Redirect to homepage if cart is empty on mount
   useEffect(() => {
     if (cart.length === 0) {
       router.push("/");
@@ -35,14 +34,16 @@ export default function Checkout() {
     cc_month: "",
     cc_year: "",
     CVV: "",
-    notes: ""
+    notes: "",
   });
 
   const [shippingInsurance, setShippingInsurance] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -52,7 +53,7 @@ export default function Checkout() {
   };
 
   const cartTotal = parseFloat(getCartTotal());
-  const insurancePrice = shippingInsurance ? 1.00 : 0.00;
+  const insurancePrice = shippingInsurance ? 1.0 : 0.0;
   const grandTotal = (cartTotal + insurancePrice).toFixed(2);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,7 +61,6 @@ export default function Checkout() {
     setLoading(true);
     setErrorMsg("");
 
-    // Minimal form validations
     if (formData.cc_no.replace(/\s/g, "").length < 13) {
       setErrorMsg("Please enter a valid credit card number.");
       setLoading(false);
@@ -77,24 +77,25 @@ export default function Checkout() {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...formData,
           products: JSON.stringify(cart),
-          "shipping-insurance": shippingInsurance ? "yes" : "no"
-        })
+          "shipping-insurance": shippingInsurance ? "yes" : "no",
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.order_id) {
-        // Success
         clearCart();
         router.push(`/confirm?order_id=${data.order_id}`);
       } else {
-        // Error from CRM gateway
-        setErrorMsg(data.error_message || "There was an error processing your transaction. Please check your card details and try again.");
+        setErrorMsg(
+          data.error_message ||
+            "There was an error processing your transaction. Please check your card details and try again."
+        );
       }
     } catch (err) {
       console.error(err);
@@ -115,161 +116,281 @@ export default function Checkout() {
   return (
     <>
       <Header />
-      
-      {/* Loading Overlay */}
+
       {loading && (
-        <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center">
+        <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center p-4">
           <div className="w-12 h-12 border-4 border-black/10 border-t-secondary rounded-full animate-spin" />
-          <h4 className="mt-6 text-lg font-black text-primary uppercase tracking-tight">Processing Secure Gear Order...</h4>
-          <p className="text-xs text-neutral-text/55">Please do not refresh or close this window.</p>
+          <h4 className="mt-6 text-base sm:text-lg font-black text-primary uppercase tracking-tight text-center">
+            Processing Secure Apparel Order...
+          </h4>
+          <p className="text-xs text-black/50 text-center mt-1">
+            Please do not refresh or close this window.
+          </p>
         </div>
       )}
 
-      <main className="bg-neutral-bg pt-28 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-white pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-36 md:pb-24 border-b border-black/6">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="mb-8 sm:mb-10">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-black/60 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              256-Bit SSL Encrypted
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase text-primary tracking-tight">
+              Athlete <span className="text-secondary">Checkout</span>
+            </h2>
+          </div>
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Encrypted Checkout</span>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 tracking-tight">Athlete <span className="text-secondary">Checkout</span></h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
             {/* Form Column */}
-            <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
+            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-black/8 shadow-sm">
               {errorMsg && (
-                <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-2xl mb-6 text-xs md:text-sm font-semibold">
+                <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-6 text-xs md:text-sm font-semibold">
                   <strong>Transaction Status:</strong> {errorMsg}
                 </div>
               )}
 
               <form onSubmit={handleSubmit}>
-                {/* Billing/Shipping Address */}
-                <h3 className="text-base font-black uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-primary font-mono">
                   1. Shipping Information
                 </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">First Name</label>
-                    <input type="text" name="firstName" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.firstName} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Last Name</label>
-                    <input type="text" name="lastName" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.lastName} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="flex flex-col mb-4">
-                  <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Delivery Address</label>
-                  <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.shippingAddress1} onChange={handleChange} required />
+                  <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                    Delivery Address
+                  </label>
+                  <input
+                    type="text"
+                    name="shippingAddress1"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                    value={formData.shippingAddress1}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">City</label>
-                    <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.shippingCity} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      name="shippingCity"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.shippingCity}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">State</label>
-                    <input type="text" name="shippingState" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" placeholder="e.g. TX" value={formData.shippingState} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      State
+                    </label>
+                    <input
+                      type="text"
+                      name="shippingState"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      placeholder="e.g. TX"
+                      value={formData.shippingState}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">ZIP Code</label>
-                    <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.shippingZip} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      ZIP Code
+                    </label>
+                    <input
+                      type="text"
+                      name="shippingZip"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.shippingZip}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Phone Number</label>
-                    <input type="tel" name="phone" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.phone} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Email Address</label>
-                    <input type="email" name="email" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.email} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
 
                 {/* Credit Card Details */}
-                <h3 className="text-base font-black uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary mt-10">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-primary mt-8 font-mono">
                   2. Payment Details
                 </h3>
 
                 <div className="flex flex-col mb-4">
-                  <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Credit Card Number</label>
+                  <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                    Credit Card Number
+                  </label>
                   <input
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs font-mono"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
                       const val = e.target.value.replace(/\s?/g, "").replace(/(\d{4})/g, "$1 ").trim();
-                      setFormData(prev => ({ ...prev, cc_no: val }));
+                      setFormData((prev) => ({ ...prev, cc_no: val }));
                     }}
                     required
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6">
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Expiry Month</label>
-                    <select name="cc_month" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.cc_month} onChange={handleChange} required>
-                      <option value="">Month</option>
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      Month
+                    </label>
+                    <select
+                      name="cc_month"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.cc_month}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">MM</option>
                       {months.map((m) => (
-                        <option key={m} value={m}>{m}</option>
+                        <option key={m} value={m}>
+                          {m}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">Expiry Year</label>
-                    <select name="cc_year" className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" value={formData.cc_year} onChange={handleChange} required>
-                      <option value="">Year</option>
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      Year
+                    </label>
+                    <select
+                      name="cc_year"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs"
+                      value={formData.cc_year}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">YYYY</option>
                       {years.map((y) => (
-                        <option key={y} value={y}>{y}</option>
+                        <option key={y} value={y}>
+                          {y}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-black mb-2 text-[0.68rem] uppercase tracking-wider text-neutral-text/75">CVV / CVC</label>
-                    <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
+                    <label className="block font-black mb-1.5 text-[0.68rem] uppercase tracking-wider text-black/70 font-mono">
+                      CVV
+                    </label>
+                    <input
+                      type="password"
+                      name="CVV"
+                      maxLength={4}
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-black bg-white shadow-xs font-mono"
+                      placeholder="•••"
+                      value={formData.CVV}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-secondary text-secondary-text hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-lg shadow-secondary/30 hover:scale-[1.01]">
-                  Complete Secure Purchase &rarr;
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-secondary text-black hover:brightness-110 transition-all duration-200 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
+                >
+                  Complete Secure Purchase →
                 </button>
               </form>
             </div>
 
             {/* Cart Summary Column */}
-            <div className="sticky top-28 flex flex-col gap-6">
-              <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
-                <h3 className="text-base font-black uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+            <div className="lg:col-span-5 sticky top-28 flex flex-col gap-6">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/8 shadow-sm">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-primary font-mono">
                   Order Summary
                 </h3>
 
-                {/* Cart list items */}
                 {cart.map((item) => (
-                  <div className="flex justify-between items-center py-4 border-b border-dashed border-black/10 last:border-b-0" key={item.Id}>
-                    <div className="flex-1 pr-4">
-                      <strong className="text-xs md:text-sm font-black text-primary uppercase tracking-tight">{item.Name}</strong>
-                      <span className="block text-[0.65rem] font-bold text-secondary uppercase tracking-wide mt-1">
+                  <div
+                    className="flex justify-between items-center py-3.5 border-b border-dashed border-black/10 last:border-b-0"
+                    key={item.Id}
+                  >
+                    <div className="flex-1 pr-3">
+                      <strong className="text-xs sm:text-sm font-black text-primary uppercase tracking-tight block truncate">
+                        {item.Name}
+                      </strong>
+                      <span className="block text-[0.65rem] font-bold text-secondary uppercase tracking-wide mt-0.5 font-mono">
                         {item.Label} (Qty: {item.Qty})
                       </span>
                     </div>
-                    <span className="font-black text-sm md:text-base text-primary">
+                    <span className="font-black text-sm sm:text-base text-primary font-mono flex-shrink-0">
                       ${item.Total}
                     </span>
                   </div>
                 ))}
 
-                {/* Shipping Insurance Checkbox */}
+                {/* Insurance Toggle */}
                 <div
-                  className="p-4 bg-secondary/8 border border-dashed border-secondary/30 rounded-2xl my-6 flex items-center gap-3.5 cursor-pointer hover:bg-secondary/12 transition-colors duration-200"
-                  onClick={() => setShippingInsurance(prev => !prev)}
+                  className="p-3.5 bg-black/3 border border-dashed border-black/15 rounded-xl my-5 flex items-center gap-3 cursor-pointer hover:bg-black/5 transition-colors"
+                  onClick={() => setShippingInsurance((prev) => !prev)}
                 >
                   <input
                     type="checkbox"
@@ -279,45 +400,49 @@ export default function Checkout() {
                     className="w-4 h-4 cursor-pointer accent-secondary"
                   />
                   <div>
-                    <strong className="text-xs md:text-sm font-black text-primary block">
-                      Add Rush Shipping &amp; Damage Insurance
+                    <strong className="text-xs font-black text-primary block">
+                      Add Rush Shipping Insurance
                     </strong>
-                    <span className="text-[0.65rem] text-neutral-text/60">
-                      Guarantees expedited replacement if lost or damaged in transit ($1.00)
+                    <span className="text-[0.65rem] text-black/60">
+                      Guarantees replacement if lost in transit ($1.00)
                     </span>
                   </div>
                 </div>
 
                 {/* Subtotals & Grand Total */}
-                <div className="flex flex-col gap-3 text-xs md:text-sm mt-4">
-                  <div className="flex justify-between items-center text-neutral-text/70">
-                    <span>Gear Subtotal:</span>
-                    <span className="font-bold">${cartTotal.toFixed(2)}</span>
+                <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-3">
+                  <div className="flex justify-between items-center text-black/70">
+                    <span>Apparel Subtotal:</span>
+                    <span className="font-mono font-bold">${cartTotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between items-center text-neutral-text/70">
+                  <div className="flex justify-between items-center text-black/70">
                     <span>UPS Shipping:</span>
-                    <span className="text-emerald-700 font-black tracking-wider">FREE</span>
+                    <span className="text-emerald-700 font-mono font-black">FREE</span>
                   </div>
                   {shippingInsurance && (
-                    <div className="flex justify-between items-center text-neutral-text/70">
+                    <div className="flex justify-between items-center text-black/70">
                       <span>Shipping Insurance:</span>
-                      <span className="font-bold">$1.00</span>
+                      <span className="font-mono font-bold">$1.00</span>
                     </div>
                   )}
 
-                  <div className="flex justify-between items-center border-t border-black/5 pt-4 mt-2 font-black text-base md:text-lg">
-                    <span className="text-primary uppercase tracking-wider text-xs md:text-sm">Grand Total:</span>
-                    <span className="text-secondary font-black text-xl">${grandTotal}</span>
+                  <div className="flex justify-between items-center border-t border-black/8 pt-3 mt-1 font-black text-base">
+                    <span className="text-primary uppercase tracking-wider text-xs">
+                      Grand Total:
+                    </span>
+                    <span className="text-secondary font-mono font-black text-xl">
+                      ${grandTotal}
+                    </span>
                   </div>
                 </div>
               </div>
 
               {/* Safety Disclosures */}
-              <div className="py-6 text-center text-[0.7rem] text-neutral-text/50 leading-relaxed bg-white border border-black/5 rounded-3xl shadow-sm">
+              <div className="py-5 px-6 text-center text-[0.68rem] text-black/50 leading-relaxed bg-white border border-black/8 rounded-2xl shadow-xs">
                 <p className="font-bold text-primary">
                   🔒 256-Bit SSL Encrypted Bank Gateway.
                 </p>
-                <p className="mt-1">
+                <p className="mt-0.5">
                   Your card statement will display: <strong>{siteConfig.descriptor}</strong>.
                 </p>
               </div>

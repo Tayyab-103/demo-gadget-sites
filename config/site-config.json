@@ -1,10 +1,10 @@
 {
-  "Product": "Sporting Goods",
+  "Product": "Sporting Apparel",
   "Processor": "Synovus Celero",
-  "brandName": "Northcrest Sporting Collective",
-  "websiteUrl": "NorthcrestSportingCollective.com",
-  "email": "support@northcrestsportingcollective.com",
-  "descriptor": "NorthcrestSportingColl",
+  "brandName": "Vantage Thread Athletic Works",
+  "websiteUrl": "VantageThreadAthleticWorks.com",
+  "email": "support@vantagethreadathleticworks.com",
+  "descriptor": "VantageThreadAthleticW",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0B132B",
+    "primaryColor": "#111111",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#0284C7",
-    "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F8FAFC",
-    "neutralTextColor": "#0F172A",
-    "fontFamily": "Inter"
+    "secondaryColor": "#CCFF00",
+    "secondaryTextColor": "#000000",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#111111",
+    "fontFamily": "Montserrat"
   }
 }

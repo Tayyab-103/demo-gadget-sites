@@ -18,9 +18,9 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Athlete Heritage"
+          eyebrow="Apparel Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding material durability."
+          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding fabric durability."
           image="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1600&q=80"
           currentLabel="About"
         />

@@ -37,7 +37,7 @@ export default function Footer() {
               Join the Collective at {siteConfig.brandName}
             </h2>
             <p className="text-white/70 text-xs sm:text-sm mb-6 max-w-md leading-relaxed">
-              Subscribe for VIP product drops, endurance training guides, and exclusive athlete bundle discounts.
+              Subscribe for VIP apparel drops, endurance training guides, and exclusive athlete bundle discounts.
             </p>
             
             {subscribed ? (
@@ -73,15 +73,15 @@ export default function Footer() {
               <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Collective</h4>
               <ul className="flex flex-col gap-2.5">
                 <li><Link href="/" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">All Gear</Link></li>
-                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Athlete Heritage</Link></li>
+                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">All Apparel</Link></li>
+                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Apparel Heritage</Link></li>
                 <li><Link href="/contact" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Collective Support</Link></li>
               </ul>
             </div>
 
             {/* Column 2 */}
             <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Sporting Gear</h4>
+              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Sporting Apparel</h4>
               <ul className="flex flex-col gap-2.5">
                 {products.map((p) => (
                   <li key={p.id}>
@@ -90,7 +90,7 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
-                <li><Link href="/shop" className="text-secondary text-xs sm:text-sm font-bold hover:underline">View All Gear &rarr;</Link></li>
+                <li><Link href="/shop" className="text-secondary text-xs sm:text-sm font-bold hover:underline">View All Apparel &rarr;</Link></li>
               </ul>
             </div>
 

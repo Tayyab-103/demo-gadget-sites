@@ -2,16 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Northcrest Apex-Pro 20LB Adjustable Tactical Weighted Vest",
-    "description": "Engineered for elite conditioning, high-intensity interval training, and tactical endurance workouts. Crafted from 1000D military-grade ballistic nylon with laser-cut MOLLE webbing, padded breathable mesh shoulders, and dual quick-release contoured chest straps. Includes 16 removable laser-cut cast-iron weight bricks that sit flush against your torso to prevent bouncing during sprints, box jumps, and pull-ups.",
-    "image": "/img/products/product1.jpg",
+    "name": "Vantage AeroWeave Pro Athletic Performance Crew & Compression Socks",
+    "description": "Engineered for elite endurance runners, high-cadence turf workouts, and heavy conditioning sessions. Crafted with four-way stretch AeroWeave technical fiber featuring graduated arch compression, seamless micro-knit toe construction to eliminate blister friction, and zonal mesh ventilation channels that keep feet dry and cool under extreme training output.",
+    "image": "/img/product-socks.jpg",
     "images": [
-      "/img/products/product1.jpg",
-      "/img/products/product1_alt.jpg"
+      "/img/product-socks.jpg",
+      "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=800&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/product1.jpg",
-    "category": "Strength & Conditioning",
+    "ingredientsImage": "/img/product-socks.jpg",
+    "category": "Performance Apparel & Accessories",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -29,16 +29,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Northcrest Hex-Grip Solid Cast Dumbbells & Conditioning Band Set",
-    "description": "Precision-balanced solid cast iron dumbbells paired with heavy-duty latex resistance cables and reinforced padded comfort grips. Engineered for progressive overload, functional movement training, and high-velocity conditioning with zero slippage. Features anti-roll hexagonal heads and textured ergonomic handles.",
-    "image": "/img/products/product2.jpg",
+    "name": "Vantage ThermoFlex Seamless Athletic Compression Baselayer Top",
+    "description": "Precision-engineered athletic compression top designed for high-velocity functional training, weight conditioning, and temperature regulation. Features high-gauge ThermoFlex four-way stretch knit that contours to upper-body musculature, accelerates circulation, and uses targeted moisture-transport zones for rapid sweat evacuation.",
+    "image": "/img/product-compression.jpg",
     "images": [
-      "/img/products/product2.jpg",
-      "/img/products/product2_alt.jpg"
+      "/img/product-compression.jpg",
+      "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=800&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/product2.jpg",
-    "category": "Strength & Conditioning",
+    "ingredientsImage": "/img/product-compression.jpg",
+    "category": "Technical Baselayers & Tops",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,16 +56,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Northcrest Hydro-Shield 45L Tactical Athlete Gym Backpack & Dry-Pack",
-    "description": "Built for competitive athletes, multi-sport training, and weekend competitions. Constructed from TPU-laminated storm-resistant composite fabric featuring heavy-duty zippers, isolated ventilated footwear compartment, and dual thermal hydration sleeves. Padded ergonomic shoulder harnesses ensure all-day comfort.",
-    "image": "/img/products/product3.jpg",
+    "name": "Vantage ApexKnit Pro-Performance Athlete Technical Training Hoodie",
+    "description": "The benchmark in high-performance athletic outerwear. Constructed from proprietary double-knit ApexKnit technical fleece with articulated raglan sleeves, bonded storm-resistant zip pockets, and ergonomic ribbed cuffs. Delivers supreme warmth without weight for track warmups, outdoor conditioning, and post-session recovery.",
+    "image": "/img/product-hoodie.jpg",
     "images": [
-      "/img/products/product3.jpg",
-      "/img/products/product3_alt.jpg"
+      "/img/product-hoodie.jpg",
+      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/product3.jpg",
-    "category": "Performance Bags & Gear",
+    "ingredientsImage": "/img/product-hoodie.jpg",
+    "category": "Performance Outerwear & Fleeces",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

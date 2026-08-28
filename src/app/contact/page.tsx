@@ -20,7 +20,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Reach Our Collective"
           title={<>Contact {siteConfig.brandName}</>}
-          subtitle="Questions about gear sizing, volume team orders, or logistics? Our Austin athletic support desk typically responds within 24 hours."
+          subtitle="Questions about apparel sizing, volume team orders, or logistics? Our Austin athletic support desk typically responds within 24 hours."
           image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
           currentLabel="Contact"
         />

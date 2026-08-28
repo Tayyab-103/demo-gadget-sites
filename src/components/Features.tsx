@@ -1,11 +1,15 @@
 "use client";
 
 import React from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const featuresData = [
   {
-    title: "1000D Ballistic Cordura",
-    description: "Constructed with tear-resistant, mil-spec ballistic weave that withstands asphalt scrapes, heavy loads, and relentless daily abuse.",
+    title: "AeroWeave™ 4-Way Stretch",
+    description: "Constructed with multi-directional elastane-infused technical fibers that move with your body without losing shape or tension.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -14,8 +18,8 @@ const featuresData = [
     ),
   },
   {
-    title: "Biomechanical Fit",
-    description: "Contoured anatomical panels and multi-point micro-adjustment straps distribute load evenly across your torso without chafing or bounce.",
+    title: "Flatlock Anti-Chafe Seams",
+    description: "Anatomically mapped smooth seams eliminate skin friction and abrasion during high-cadence sprint and conditioning intervals.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -23,8 +27,8 @@ const featuresData = [
     ),
   },
   {
-    title: "All-Weather Hydro-Shield",
-    description: "TPU-welded storm seams, waterproof zippers, and antimicrobial air-mesh linings keep your gear dry and odor-free in extreme climates.",
+    title: "Thermo-Wick Airflow",
+    description: "Zonal micro-mesh channels pull heat and moisture away from skin to maintain optimal core temperature under max-effort load.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
@@ -33,7 +37,7 @@ const featuresData = [
   },
   {
     title: "14-Day Field Guarantee",
-    description: "Take our gear onto the track, trail, or box. If it doesn't dramatically outperform your existing kit, return it for a complete 100% refund.",
+    description: "Put our apparel through your toughest training sessions. If it doesn't dramatically elevate your comfort, return for a 100% full refund.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" />
@@ -48,12 +52,12 @@ export default function Features() {
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="eyebrow justify-center mb-3">Performance Engineering</span>
+          <span className="eyebrow justify-center mb-3">Fabric Engineering</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
             Built For The <span className="text-secondary">Dedicated Athlete</span>
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-neutral-text/70">
-            Every Northcrest product is subjected to brutal mechanical stress tests and real-world athlete trials to ensure unyielding durability.
+            Every {siteConfig.brandName} apparel piece is subjected to high-cadence sweat tests and mechanical tensile checks to ensure unyielding durability.
           </p>
         </div>
 

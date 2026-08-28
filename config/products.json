@@ -2,17 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Rowan Organic Cotton Crewneck Tee",
-    "description": "A heavyweight, 100% organic cotton crewneck cut for everyday wear, with a garment-washed finish that softens with every wash instead of wearing thin. Reinforced shoulder seams and a double-stitched hem keep it looking new through school runs, weekend errands, and everything in between. Available in sizing for every member of the family, from toddler to adult.",
-    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1000&q=80",
+    "name": "Voltrex 12/2 Copper Romex Wire — 250ft Spool",
+    "description": "Solid-core 12-gauge copper Romex wire rated for 20-amp residential and light commercial circuits, jacketed in code-compliant NM-B sheathing. Each spool is pull-tested and inspected for consistent gauge and insulation integrity before it ships, so it feeds cleanly through conduit and boxes without kinking.",
+    "image": "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1000&q=80",
-      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=1000&q=80",
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=1000&q=80"
+      "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=1000&q=80",
+      "https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
-    "category": "Tees & Everyday Basics",
+    "ingredientsImage": "https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=900&q=80",
+    "category": "Wire & Cable",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,16 +29,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Wildfern Buffalo Check Flannel Shirt",
-    "description": "A brushed-cotton flannel shirt in a classic buffalo check, lined at the yoke for extra warmth and finished with pearl-snap buttons that hold up to little hands. Cut roomy enough to layer over a tee and soft enough to wear alone, it's built for weekend hikes, holiday photos, and everything your family does outdoors. Matches across our full family size run.",
-    "image": "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1000&q=80",
+    "name": "Ironclad 20A Single-Pole Circuit Breaker",
+    "description": "A UL-listed 20-amp single-pole circuit breaker built with a reinforced trip mechanism for reliable overload and short-circuit protection. Compatible with standard residential load centers, each unit is factory-tested for trip accuracy before it leaves our warehouse. A dependable swap for a worn breaker or a panel upgrade.",
+    "image": "https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1516826957135-700dedea698c?w=1000&q=80",
-      "https://images.unsplash.com/photo-1608063615781-e2ef8c73d114?w=1000&q=80"
+      "https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=1000&q=80",
+      "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
-    "category": "Shirts & Flannels",
+    "ingredientsImage": "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=900&q=80",
+    "category": "Breakers & Panels",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -57,16 +56,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Sundown Fleece-Lined Jogger Pants",
-    "description": "A brushed-fleece jogger with an elasticized, adjustable waistband and tapered ankle cuffs, designed to move through playgrounds, practice, and lazy Sundays alike. The four-way stretch fabric keeps its shape wash after wash, and deep side pockets hold everything from snacks to phones. Sized to match the whole family, from kids to adults.",
-    "image": "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1000&q=80",
+    "name": "Coppervolt Heavy-Duty LED Work Light",
+    "description": "A rugged, impact-resistant LED work light delivering 5,000 lumens from a rechargeable battery pack, with a folding stand and 360-degree swivel head. Built with a reinforced housing to survive job-site drops, dust, and daily use, and quality-checked for consistent brightness before it ships.",
+    "image": "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1517438476312-10d79c077509?w=1000&q=80",
-      "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1000&q=80"
+      "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1000&q=80",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
-    "category": "Pants & Joggers",
+    "ingredientsImage": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80",
+    "category": "Tools & Equipment",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

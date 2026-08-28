@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const promises = [
   {
-    title: "Quality-Checked Stitching",
-    desc: "Every piece is hand-inspected for seams, fabric weight, and finish before it ships, so it holds up to daily wear.",
+    title: "Quality-Tested Components",
+    desc: "Every part is inspected and tested for spec accuracy and build quality before it ships, so it performs on the job.",
     icon: (
       <>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -16,7 +16,7 @@ const promises = [
   },
   {
     title: "30-Day Easy Returns",
-    desc: "Not the right fit or feel? Send it back within 30 days — no fine print, no hidden exclusions.",
+    desc: "Wrong part or spec? Send it back within 30 days — no fine print, no restocking headaches.",
     icon: (
       <>
         <polyline points="1 4 1 10 7 10" />
@@ -25,8 +25,8 @@ const promises = [
     ),
   },
   {
-    title: "Responsibly Sourced Fabrics",
-    desc: "We partner with vetted mills using quality-checked cottons, fleece, and blends in every piece.",
+    title: "Certified, Code-Compliant Parts",
+    desc: "We partner with vetted manufacturers using UL-listed and code-compliant materials in every part we sell.",
     icon: (
       <>
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
@@ -49,8 +49,8 @@ export default function QualityPromise() {
           The Premium Quality <span className="text-secondary">You Deserve</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/60 md:text-base">
-          We understand how much clothes your family wears every day have to hold up to.
-          That&apos;s why we maintain strict, end-to-end quality checks across every piece we source and ship.
+          We understand how much the parts on your truck have to hold up to.
+          That&apos;s why we maintain strict, end-to-end quality checks across every part we source and ship.
         </p>
       </div>
 

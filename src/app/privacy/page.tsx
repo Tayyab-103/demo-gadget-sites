@@ -12,7 +12,7 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] right-[-250px] opacity-35 pointer-events-none" />
 

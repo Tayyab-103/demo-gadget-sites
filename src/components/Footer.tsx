@@ -75,9 +75,9 @@ export default function Footer() {
             <div className="flex flex-col">
               <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Organic Cotton Crewneck</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Buffalo Check Flannel</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Fleece-Lined Joggers</Link></li>
+                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Copper Romex Wire</Link></li>
+                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Circuit Breakers</Link></li>
+                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">LED Work Lights</Link></li>
                 <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Shop All</Link></li>
               </ul>
             </div>
@@ -122,7 +122,7 @@ export default function Footer() {
             <Link href="/privacy" className="text-white/50 text-xs hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-white/50 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
             <div className="text-white/50 text-[10px] max-w-xs mt-2">
-              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual pieces may vary slightly.
+              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual parts may vary slightly.
             </div>
           </div>
 

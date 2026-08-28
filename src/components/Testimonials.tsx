@@ -5,42 +5,42 @@ import React, { useEffect, useState } from "react";
 const testimonials = [
   {
     date: "Jul 2026",
-    quote: "The Rowan crewneck tees are on constant rotation for my kids now. They've been washed weekly for a month and still look brand new — no pilling, no fading, no stretched-out collars.",
+    quote: "The Voltrex 12/2 wire has been solid on every rough-in I've run it on. Consistent gauge, clean jacket, no surprises when the inspector checks the panel.",
     name: "Sarah M.",
-    role: "Verified Purchaser",
+    role: "Licensed Electrician",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
   {
     date: "Jul 2026",
-    quote: "The Wildfern flannel is softer than I expected and the pearl-snap buttons have survived my three-year-old pulling on them daily. Matched with my own and we looked great in our photos.",
+    quote: "Ordered a dozen Ironclad breakers for a panel upgrade and every single one tripped exactly where it should in testing. Zero returns, which never happens with bulk orders.",
     name: "David K.",
-    role: "Verified Purchaser",
+    role: "General Contractor",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "The Sundown joggers are the first pants my son hasn't complained about wearing to school. The fabric held its shape after a dozen washes and the pockets actually fit a phone.",
+    quote: "The LED work light survived a drop off the ladder onto concrete and still runs at full brightness. That alone paid for itself on week one.",
     name: "Elena R.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "Bought the Rowan tees as a back-to-school gift for my niece and nephew and their mom asked where I got them. The sizing was spot-on and the cotton feels genuinely premium.",
+    quote: "Restocked the truck with Voltrex wire for a remodel job and the pricing beat my usual supplier by a wide margin. Sizing and gauge were exactly as listed.",
     name: "Priya N.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "I'm hard on flannels and the Wildfern has survived campfires, dog walks, and weekly wear without a single loose thread. Great value for how solid the fabric feels.",
+    quote: "I'm hard on breakers and the Ironclad has handled every overload test I've thrown at it without a single false trip. Great value for how solid it feels.",
     name: "Marcus T.",
-    role: "Verified Purchaser",
+    role: "Licensed Electrician",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
     date: "May 2026",
-    quote: "The Sundown joggers' fleece lining is no joke — I was skeptical but they're genuinely warm without feeling bulky. Looks even better on than it did online.",
+    quote: "The work light's battery life is no joke — I was skeptical but it ran a full 10-hour shift without dimming. Genuinely useful for crawlspace and attic work.",
     name: "Grace L.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=200&q=80",
@@ -65,10 +65,10 @@ export default function Testimonials() {
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow mb-4 justify-center">Customer Love</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary tracking-tight">
-            Loved by <span className="text-secondary">15k+ Customers</span>
+            Trusted by <span className="text-secondary">40k+ Pros & DIYers</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base mt-4">
-            Every review is proof of the quality and care we put into each piece we sew.
+            Every review is proof of the quality and testing we put into each part we ship.
           </p>
         </div>
 

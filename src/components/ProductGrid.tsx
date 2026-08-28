@@ -22,12 +22,12 @@ export default function ProductGrid() {
     <section className="py-12 md:py-16 bg-white relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <span className="eyebrow justify-center mb-4">The Family Edit</span>
+          <span className="eyebrow justify-center mb-4">The Trade Catalog</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
             Explore The <span className="text-secondary">Collection</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
-            Select a piece below to customize your bundle and stock up on family favorites.
+            Select a part below to customize your bundle and stock up for the job.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function ProductGrid() {
                     alt={product.name}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/400x400?text=Clothing";
+                      e.currentTarget.src = "https://placehold.co/400x400?text=Electrical";
                     }}
                   />
 

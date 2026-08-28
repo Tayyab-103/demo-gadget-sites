@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Choose Your Fit",
+    title: "Find Your Part",
     description:
-      "Browse our collection of tees, flannels, and joggers, and pick a bundle sized for your family, from a single piece to a full wardrobe refresh.",
-    image: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=900&q=80",
+      "Browse our inventory of wire, breakers, and equipment, and pick the exact quantity your project needs, from a single connector to a full panel upgrade.",
+    image: "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=900&q=80",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -63,8 +63,8 @@ export default function HowItWorks() {
             How It <span className="text-secondary">Works</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Dressing the whole family is simple. Follow these three steps to
-            get soft, durable everyday clothing delivered straight to your door.
+            Stocking your next job is simple. Follow these three steps to get
+            certified electrical parts and equipment delivered straight to your door.
           </p>
         </div>
 

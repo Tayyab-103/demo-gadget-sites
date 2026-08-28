@@ -6,13 +6,13 @@ import Link from "next/link";
 const videos = [
   {
     src: "/videos/video1.mp4",
-    title: "Stitched, Piece by Piece",
-    desc: "A closer look at how every seam and fabric is checked before it ships.",
+    title: "Tested, Part by Part",
+    desc: "A closer look at how every wire spool and breaker is checked before it ships.",
   },
   {
     src: "/videos/video2.mp4",
-    title: "Worn Every Day",
-    desc: "See our tees, flannels, and joggers the way families actually live in them.",
+    title: "Built for the Job Site",
+    desc: "See our parts and equipment the way electricians actually use them.",
   },
 ];
 
@@ -88,20 +88,20 @@ export default function VideoShowcase() {
           <div className="text-center lg:text-left">
             <span className="eyebrow justify-center mb-5 lg:justify-start">See It In Motion</span>
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-5xl">
-              Made to Be <span className="text-secondary">Lived In</span>
+              Built to Get the <span className="text-secondary">Job Done</span>
             </h2>
             <p className="mx-auto mb-9 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
-              A closer look at the fabric and stitching behind every piece we ship — and how real families actually wear it.
+              A closer look at the testing and quality checks behind every part we ship — and how real electricians put it to work.
             </p>
 
             <div className="mx-auto grid max-w-sm grid-cols-2 gap-4 lg:mx-0">
               <div className="rounded-2xl border border-black/5 bg-neutral-bg p-5 text-left">
-                <div className="text-2xl font-black text-primary md:text-3xl">2M+</div>
-                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Video Views</div>
+                <div className="text-2xl font-black text-primary md:text-3xl">40K+</div>
+                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Orders Shipped</div>
               </div>
               <div className="rounded-2xl border border-black/5 bg-neutral-bg p-5 text-left">
                 <div className="text-2xl font-black text-primary md:text-3xl">4.9★</div>
-                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Fabric Rating</div>
+                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Trade Rating</div>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export default function VideoShowcase() {
               href="/shop"
               className="group mt-9 inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg shadow-primary/15 transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
             >
-              Shop The Collection
+              Shop Parts &amp; Equipment
               <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </Link>
           </div>

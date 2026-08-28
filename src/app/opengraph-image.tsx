@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Everyday Clothing For the Whole Family
+          Electrical Parts &amp; Equipment For the Trade
         </div>
 
         <div

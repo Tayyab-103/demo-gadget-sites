@@ -31,7 +31,7 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-6 pt-36 pb-28 text-center bg-neutral-bg">
+        <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
           <h2 className="text-2xl font-black uppercase text-primary mb-4">Product Not Found</h2>
           <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The product you are looking for does not exist or has been removed from our catalog.</p>
           <button
@@ -59,7 +59,7 @@ export default function ProductDetail() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg pt-28 pb-12 md:pt-32 md:pb-20 relative overflow-hidden">
+      <main className="bg-neutral-bg py-12 md:py-20 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] right-[-250px] opacity-30 pointer-events-none" />
 
@@ -74,7 +74,7 @@ export default function ProductDetail() {
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
               <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Family Clothing"}
+                {product.category || "Electrical Parts"}
               </span>
 
               <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">
@@ -165,15 +165,15 @@ export default function ProductDetail() {
               {/* What's In The Box */}
               {product.showIngredients && product.ingredientsImage && (
                 <div className="border-t border-black/5 pt-8 mt-10">
-                  <h3 className="text-base md:text-lg font-bold text-primary mb-3">Fabric &amp; Care</h3>
+                  <h3 className="text-base md:text-lg font-bold text-primary mb-3">Specs &amp; Certification</h3>
                   <p className="text-xs text-neutral-text/50 mb-6 leading-relaxed">
-                    Every piece arrives folded and ready to wear, backed by our 30-day easy return policy on every order.
+                    Every part arrives tested and ready to install, backed by our 30-day easy return policy on every order.
                   </p>
 
                   <div className="bg-neutral-bg border border-black/5 rounded-xl p-6 flex items-center justify-center shadow-inner">
                     <img
                       src={product.ingredientsImage}
-                      alt="Folded family clothing, ready to wear"
+                      alt="Electrical part, tested and ready to install"
                       className="max-w-full h-auto rounded-lg max-h-[350px] object-contain bg-white p-2 border border-black/5"
                       onError={(e) => {
                         e.currentTarget.src = "https://placehold.co/400x300?text=Packaging";

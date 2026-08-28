@@ -1,82 +1,132 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
+import productsData from "../../config/products.json";
+import { Product } from "@/types";
+import { useCart } from "@/context/CartContext";
 
-const bgImages = [
-  "https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=1800&q=80",
-  "https://images.unsplash.com/photo-1543168256-418811576931?w=1800&q=80",
-  "https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=1800&q=80",
-  "https://images.unsplash.com/photo-1522771930-78848d9293e8?w=1800&q=80",
-];
+const products = productsData as unknown as Product[];
+
+const specs = ["UL Listed", "Ships Same Day", "40K+ Orders Shipped"];
 
 export default function Hero() {
-  const [activeImage, setActiveImage] = useState(0);
+  const { addToCart } = useCart();
+  const featured = products[0];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % bgImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+  const firstBundle = featured?.bundles && featured.bundles[0];
+  const price = firstBundle ? firstBundle.price : featured?.ssPrice;
+
+  const handleQuickAdd = () => {
+    if (!featured) return;
+    const quantity = firstBundle ? firstBundle.quantity : 1;
+    const unitPrice = firstBundle ? (firstBundle.price / firstBundle.quantity).toFixed(2) : featured.ssPrice;
+    addToCart(featured, quantity, unitPrice, "Single Pack");
+  };
 
   return (
-    <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-[80vh]">
-      {/* Background image carousel */}
-      {bgImages.map((src, idx) => (
-        <div
-          key={src}
-          className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${
-            idx === activeImage ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url('${src}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center right",
-          }}
-        />
-      ))}
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/30" />
+    <section className="relative overflow-hidden bg-neutral-bg">
+      {/* Blueprint grid texture */}
+      <div
+        className="pointer-events-none absolute inset-0 text-primary opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-16 md:pt-36 md:pb-20">
-        <div className="max-w-xl">
-          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4rem] font-black text-white leading-[1.1] tracking-tight mb-6">
-            Clothes made to <span className="text-secondary">Grow Up In</span>
+      {/* Angled dark panel, desktop only */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] bg-primary lg:block"
+        style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }}
+      />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-10">
+        {/* Left: Copy */}
+        <div className="text-center lg:text-left">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-primary shadow-sm">
+            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
+            Electrical Parts &amp; Equipment
+          </span>
+
+          <h1 className="mx-auto mt-6 max-w-lg text-4xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-6xl lg:mx-0">
+            The Parts Pros Trust to Get the <span className="text-secondary">Job Done</span>
           </h1>
 
-          <p className="text-white/70 text-base md:text-lg mb-8 leading-relaxed max-w-lg">
-            Soft, durable everyday wear for the whole family, matched across sizes and built to survive school runs, playgrounds, and everything after.
+          <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
+            From copper wire to certified breakers, we stock what contractors and electricians need — tested, code-compliant, and ready to ship today.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          {/* Spec ticker */}
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
+            {specs.map((spec) => (
+              <span
+                key={spec}
+                className="rounded-full border border-primary/10 bg-white px-3.5 py-1.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary/70"
+              >
+                {spec}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-9 flex justify-center lg:justify-start">
             <Link
               href="/shop"
-              className="inline-flex items-center justify-center font-bold text-secondary-text text-sm md:text-base bg-secondary hover:brightness-105 transition-all duration-300 py-4 px-10 rounded-full shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
             >
-              Shop The Collection
+              Shop Parts &amp; Equipment
+              <span className="text-sm">→</span>
             </Link>
           </div>
         </div>
-      </div>
 
-      {/* Carousel indicator dots */}
-      <div className="absolute bottom-8 right-6 z-10 hidden gap-2 md:flex lg:right-10">
-        {bgImages.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setActiveImage(idx)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === activeImage ? "w-6 bg-secondary" : "w-1.5 bg-white/40 hover:bg-white/70"
-            }`}
-            aria-label={`Show background image ${idx + 1}`}
-          />
-        ))}
-      </div>
+        {/* Right: Featured product spotlight */}
+        {featured && (
+          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:ml-auto">
+            <div className="pointer-events-none absolute inset-0 -z-10 scale-90 rounded-full bg-secondary/25 blur-3xl" />
 
-      {/* Bottom accent bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-secondary z-10" />
+            {/* Floating spec badge */}
+            <div className="absolute -left-4 top-6 z-20 hidden rotate-[-4deg] rounded-xl border border-black/5 bg-white px-3 py-2 shadow-lg sm:block">
+              <span className="text-[0.6rem] font-black uppercase tracking-widest text-secondary">Code Compliant</span>
+            </div>
+
+            <div className="relative rounded-[2rem] border border-black/5 bg-white p-6 shadow-2xl">
+              <div className="mb-4 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary/10 px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest text-secondary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  In Stock
+                </span>
+                <span className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/40">{featured.category}</span>
+              </div>
+
+              <Link href={`/product/${featured.id}`} className="block overflow-hidden rounded-2xl bg-neutral-bg">
+                <img
+                  src={featured.image}
+                  alt={featured.name}
+                  className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </Link>
+
+              <Link href={`/product/${featured.id}`}>
+                <h3 className="mt-4 text-base font-bold leading-snug text-primary hover:text-secondary transition-colors">
+                  {featured.name}
+                </h3>
+              </Link>
+
+              <div className="mt-4 flex items-center justify-between gap-3 border-t border-black/5 pt-4">
+                <span className="text-2xl font-black text-primary">${price}</span>
+                <button
+                  onClick={handleQuickAdd}
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary-text shadow-md transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   );
 }

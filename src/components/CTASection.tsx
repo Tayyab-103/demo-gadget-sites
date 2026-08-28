@@ -11,8 +11,8 @@ export default function CTASection() {
           {/* Left — Image */}
           <div className="relative min-h-80 md:min-h-120">
             <img
-              src="https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=1200&q=80"
-              alt="Family wearing everyday clothing outdoors"
+              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80"
+              alt="Electrician on the job wearing safety gear"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/0 to-transparent md:bg-gradient-to-r" />
@@ -29,8 +29,8 @@ export default function CTASection() {
                 ))}
               </div>
               <div>
-                <div className="text-sm font-black text-primary">15,000+</div>
-                <div className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Families Dressed</div>
+                <div className="text-sm font-black text-primary">40,000+</div>
+                <div className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Orders Shipped</div>
               </div>
             </div>
           </div>
@@ -44,11 +44,11 @@ export default function CTASection() {
             </span>
 
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
-              Ready to Dress the Whole Family?
+              Ready to Wire Your Next Project?
             </h2>
 
             <p className="mb-9 max-w-md text-sm leading-relaxed text-secondary-text/75 md:text-base">
-              Join thousands of families who&apos;ve restocked their closets with us. Bundle up and save on your first order today.
+              Join thousands of electricians and contractors who&apos;ve restocked the truck with us. Bundle up and save on your first order today.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">

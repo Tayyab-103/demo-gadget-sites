@@ -10,9 +10,9 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const stats = [
   { value: "2019", label: "Founded" },
-  { value: "50K+", label: "Families Dressed" },
-  { value: "12", label: "Partner Mills" },
-  { value: "All Ages", label: "Sizes Available" },
+  { value: "40K+", label: "Orders Shipped" },
+  { value: "15", label: "Certified Suppliers" },
+  { value: "50", label: "States Served" },
 ];
 
 export default function AboutUs() {
@@ -25,22 +25,23 @@ export default function AboutUs() {
             <span className="eyebrow mb-6">Our Story</span>
 
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.05] tracking-tight text-neutral-text md:text-5xl">
-              Everyday Clothing, <span className="text-secondary">Built for Real Families</span>
+              Electrical Parts, <span className="text-secondary">Built for the Trade</span>
             </h2>
 
             <p className="mb-6 text-sm leading-relaxed text-neutral-text/65 md:text-base">
-              At {siteConfig.brandName}, we believe soft, durable everyday clothing
-              shouldn&apos;t require a designer budget. We quality-check every
-              fabric and seam against our own standards, so it holds up to
-              school runs, playgrounds, and every busy day after that.
+              At {siteConfig.brandName}, we believe certified, code-compliant
+              electrical parts shouldn&apos;t come with distributor markups. We
+              quality-check every wire spool, breaker, and fixture against our
+              own standards, so it holds up on the job site and passes inspection.
             </p>
 
             <p className="mb-10 text-sm leading-relaxed text-neutral-text/65 md:text-base">
-              Our mission is simple: make well-made clothing accessible for
-              every member of the family, whether you&apos;re restocking
-              basics, dressing for a season, or shopping for a gift. Every
-              piece is chosen with intention — because your family deserves
-              clothes that actually hold up.
+              Our mission is simple: make reliable electrical parts and
+              equipment accessible for electricians, contractors, and DIYers
+              alike, whether you&apos;re restocking the truck, wiring a
+              remodel, or tackling a weekend project. Every part is chosen
+              with intention — because your work deserves components that
+              actually hold up.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -66,8 +67,8 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-4 md:gap-5">
               <div className="group relative row-span-2 overflow-hidden rounded-4xl shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1519457851758-fa14f0ee13b1?w=900&q=80"
-                  alt={`${siteConfig.brandName} family wearing everyday clothing outdoors`}
+                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80"
+                  alt={`${siteConfig.brandName} electrician installing wiring on the job`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 340px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -75,8 +76,8 @@ export default function AboutUs() {
               </div>
               <div className="group relative aspect-square overflow-hidden rounded-3xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=700&q=80"
-                  alt="Child playing outside in durable everyday clothing"
+                  src="https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=700&q=80"
+                  alt="Circuit breaker panel with certified components"
                   fill
                   sizes="(max-width: 1024px) 50vw, 320px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -84,8 +85,8 @@ export default function AboutUs() {
               </div>
               <div className="group relative aspect-square overflow-hidden rounded-3xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1503457574465-52a7a7c3edcc?w=700&q=80"
-                  alt="Folded stack of soft cotton family clothing"
+                  src="https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=700&q=80"
+                  alt="Coiled copper wire spool"
                   fill
                   sizes="(max-width: 1024px) 50vw, 320px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"

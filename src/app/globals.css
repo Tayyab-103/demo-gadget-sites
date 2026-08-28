@@ -84,6 +84,39 @@
   background: var(--secondary-color);
 }
 
+/* Shared page container width, matches max-w-7xl px-6 (lg:px-8) used across sections */
+.container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Shared pill button base (pair with color/size utility classes) */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 /* Premium frame with interactive gold offset frame */
 .offset-frame {
   position: relative;

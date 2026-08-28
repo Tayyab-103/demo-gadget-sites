@@ -9,7 +9,7 @@ export default function ShopPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-28 md:pt-32">
+      <main className="flex-grow">
         <ProductGrid />
       </main>
       <Footer />

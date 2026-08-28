@@ -4,8 +4,9 @@ import React from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import AboutUs from "@/components/AboutUs";
-import QualityPromise from "@/components/QualityPromise";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import siteConfigData from "../../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -17,16 +18,17 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Foundry Heritage"
+          eyebrow="Athlete Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Precision-engineered plumbing fittings, heavy-duty shutoff valves, and hydronic heating supplies tested to extreme tolerances and priced fairly."
-          image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&q=80"
+          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding material durability."
+          image="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1600&q=80"
           currentLabel="About"
         />
         <AboutUs />
-        <QualityPromise />
       </main>
       <Footer />
+      <CartDrawer />
+      <NewsletterPopup />
     </>
   );
 }

@@ -8,28 +8,28 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What thread standards and pipe materials are your brass fittings compatible with?",
-    answer: `Our forged brass compression fittings feature standard American National Taper Pipe Threads (NPT / NPTF) compliant with ANSI/ASME B1.20.1. They connect seamlessly with Type K, L, and M copper tubing, brass pipe, schedule 40/80 steel, and standard PEX lines.`
+    question: "How does the 14-day athletic field trial work?",
+    answer: `We encourage you to test our weighted training vests, duffles, and percussion recovery tools during real workouts. If for any reason our gear does not elevate your training standards, return it within ${siteConfig.trialPeriod || 14} days for a 100% full refund with zero hassle.`
   },
   {
-    question: "Are your brass products certified lead-free for potable drinking water?",
-    answer: `Yes. All Copperline brass fittings, ball valves, and water heater connectors meet the federal Safe Drinking Water Act (SDWA) requirements with less than 0.25% weighted average lead content across wetted surfaces, certified for residential and commercial drinking water.`
+    question: "What materials are used in Northcrest training vests and bags?",
+    answer: `Our weighted vests and duffles are constructed from 1000D military-grade ballistic Cordura nylon, reinforced with bar-tack box stitching, TPU-welded storm seams, and antimicrobial breathable air-mesh to prevent moisture buildup and skin irritation.`
   },
   {
-    question: "What are the temperature and pressure limits for your hydronic heating supplies?",
-    answer: `Our compression fittings are rated for pressures up to 1,200 PSI and hydronic temperatures from -65°F to 250°F. The Master-Forge shutoff ball valves are rated to 600 WOG / 150 WSP, and our stainless supply lines support up to 200°F continuous heat at 250 PSI.`
+    question: "How quickly does my order ship and which carrier is used?",
+    answer: `All orders are inspected and packaged in our Austin, TX distribution facility within 1 business day. We ship nationwide using ${siteConfig.shippingCarrier}, with standard delivery arriving at your home, gym, or training facility within ${siteConfig.shippingPeriod} business days.`
   },
   {
-    question: "What shipping carrier do you use and how quickly will my order arrive?",
-    answer: `All orders are dispatched from our foundry distribution center within 1-2 business days. We ship nationwide using ${siteConfig.shippingCarrier}, with standard delivery arriving at your shop or job site within ${siteConfig.shippingPeriod} business days.`
-  },
-  {
-    question: "What is your return policy and warranty on plumbing components?",
-    answer: `We back our foundry hardware with a 60-day money-back guarantee and a comprehensive 1-year manufacturer's warranty against defects in material and workmanship. If you receive any piece that does not meet spec, contact us at ${siteConfig.email} or call ${siteConfig.phone} for immediate resolution.`
+    question: "How do I choose the right weight and adjust the fit?",
+    answer: `The Apex-Pro weighted vest features 16 removable 1.25 lb cast-iron weight bricks, allowing you to scale resistance anywhere from 2.5 lbs to 20 lbs. Dual quick-release micro-adjustment side straps ensure a snug, bounce-free fit for athletes of all body types.`
   },
   {
     question: "How will the charge appear on my credit card statement?",
-    answer: `Your credit card statement will display the clean transaction descriptor "${siteConfig.descriptor}" alongside your verified order amount.`
+    answer: `Your credit card statement will display the official transaction descriptor "${siteConfig.descriptor}" alongside your verified order amount.`
+  },
+  {
+    question: "What is your warranty on percussion therapy guns and electronic gear?",
+    answer: `Our Flow-Recovery percussion therapy guns and electronic recovery equipment come with a comprehensive 1-year manufacturer's replacement warranty covering motor integrity, battery life, and mechanical defects.`
   }
 ];
 
@@ -47,23 +47,23 @@ export default function Faq() {
 
           {/* Left Column — Header & CTA */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-24 lg:self-start">
-            <span className="eyebrow mb-3">Technical FAQs</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary mb-3">
-              Frequently Asked <span className="text-secondary">Questions</span>
+            <span className="eyebrow mb-3">Frequently Asked Questions</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary mb-3">
+              Athlete <span className="text-secondary">Inquiries</span>
             </h2>
             <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mb-8">
-              Find immediate answers regarding thread dimensions, material certifications, pressure tolerances, and contractor shipping.
+              Find immediate answers regarding gear sizing, 14-day field trials, materials engineering, and shipping timelines.
             </p>
 
             {/* CTA card */}
-            <div className="bg-primary rounded-2xl p-6 sm:p-7 text-white shadow-md">
-              <h3 className="text-base sm:text-lg font-bold mb-2">Need custom specifications?</h3>
-              <p className="text-white/70 text-xs sm:text-sm mb-5 leading-relaxed">
-                Our plumbing and hydronic engineering support team is available to assist with product compatibility and bulk contractor orders.
+            <div className="bg-primary rounded-3xl p-7 sm:p-8 text-white shadow-xl">
+              <h3 className="text-base sm:text-lg font-black uppercase tracking-tight mb-2">Need Team or Custom Sizing?</h3>
+              <p className="text-white/70 text-xs sm:text-sm mb-6 leading-relaxed">
+                Our athletic gear advisors and customer care team are standing by to assist with collegiate volume orders and technical specifications.
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-bold text-xs sm:text-sm px-6 py-2.5 rounded-full hover:brightness-110 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-black text-xs sm:text-sm px-6 py-3 rounded-full hover:brightness-110 transition-all shadow-md"
               >
                 Contact Support
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +82,7 @@ export default function Faq() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white rounded-xl sm:rounded-2xl border transition-all duration-200 ${
+                  className={`bg-white rounded-2xl sm:rounded-3xl border transition-all duration-200 ${
                     isOpen ? "border-secondary/50 shadow-md" : "border-black/5 hover:border-black/10 shadow-xs"
                   }`}
                 >
@@ -93,20 +93,20 @@ export default function Faq() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <span className={`text-xs font-bold tracking-wider flex-shrink-0 ${
+                      <span className={`text-xs font-black tracking-wider flex-shrink-0 ${
                         isOpen ? "text-secondary" : "text-neutral-text/30"
                       }`}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-xs sm:text-sm md:text-base font-bold text-primary">
+                      <span className="text-xs sm:text-sm md:text-base font-black text-primary uppercase tracking-tight">
                         {item.question}
                       </span>
                     </div>
 
                     <span
-                      className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-base font-light leading-none transition-all duration-200 ${
+                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-200 ${
                         isOpen
-                          ? "bg-secondary text-secondary-text rotate-45 shadow-sm"
+                          ? "bg-secondary text-secondary-text rotate-45 shadow-md"
                           : "bg-neutral-bg border border-black/10 text-primary"
                       }`}
                     >

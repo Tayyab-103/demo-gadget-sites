@@ -14,22 +14,17 @@ export default function Icon() {
         style={{
           width: "100%",
           height: "100%",
-          borderRadius: "50%",
-          background: siteConfig.theme.primaryColor,
+          borderRadius: 8,
+          background: siteConfig.theme.secondaryColor,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          color: "#ffffff",
+          fontWeight: 900,
+          fontSize: 18,
         }}
       >
-        <div
-          style={{
-            width: 16,
-            height: 20,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
-          }}
-        />
+        ⚡
       </div>
     ),
     { ...size }

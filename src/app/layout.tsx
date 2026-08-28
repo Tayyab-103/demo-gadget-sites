@@ -7,9 +7,9 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Premium industrial-grade ${siteConfig.Product?.toLowerCase() || "plumbing and heating supplies"} engineered for master plumbers and hydronic heating contractors.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. High-performance ${siteConfig.Product?.toLowerCase() || "sporting goods and fitness gear"} engineered for dedicated athletes, strength conditioning, and outdoor performance.`;
 
-// Preload the most common fonts
+// Preload fonts
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -45,10 +45,20 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: siteConfig.brandName,
+  title: `${siteConfig.brandName} | Pro-Grade Sporting Goods & Training Equipment`,
   description: siteDescription,
+  keywords: [
+    "sporting goods",
+    "athletic equipment",
+    "fitness gear",
+    "weighted training vest",
+    "performance duffle bag",
+    "percussion recovery gun",
+    "Austin athletics",
+    "Northcrest Sporting Collective"
+  ],
   openGraph: {
-    title: siteConfig.brandName,
+    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -56,19 +66,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.brandName,
+    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Select dynamic font variable class
-  let selectedFontClass = poppins.variable;
-  let activeFontVar = "var(--font-poppins)";
+  let selectedFontClass = inter.variable;
+  let activeFontVar = "var(--font-inter)";
 
-  if (siteConfig.theme.fontFamily === "Inter") {
-    selectedFontClass = inter.variable;
-    activeFontVar = "var(--font-inter)";
+  if (siteConfig.theme.fontFamily === "Poppins") {
+    selectedFontClass = poppins.variable;
+    activeFontVar = "var(--font-poppins)";
   } else if (siteConfig.theme.fontFamily === "Montserrat") {
     selectedFontClass = montserrat.variable;
     activeFontVar = "var(--font-montserrat)";
@@ -80,7 +89,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     activeFontVar = "var(--font-playfair-display)";
   }
 
-  // Extract theme values
   const {
     primaryColor,
     primaryTextColor,

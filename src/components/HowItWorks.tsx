@@ -1,94 +1,152 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const steps = [
   {
     number: "01",
-    title: "Select Specs & Bundles",
-    description:
-      "Choose precision compression fittings, heavy-duty shutoff valves, or high-temp supply lines. Select bulk bundles to maximize volume discounts.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=900&q=80",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
+    label: "Select Gear",
+    title: "Choose Gear & Bundles",
+    description: "Pick your training equipment and select multi-pack bundles for volume savings.",
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&q=80",
+    badge: "Step 1",
   },
   {
     number: "02",
-    title: "Fast 256-Bit Encrypted Order",
-    description:
-      "Enter delivery details with seamless, encrypted checkout. Immediate order confirmation and automated billing descriptor tracking.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
+    label: "Fast Dispatch",
+    title: "Austin Lab Dispatch",
+    description: `Packed in Austin and shipped via ${siteConfig.shippingCarrier} with real-time tracking in ${siteConfig.shippingPeriod} business days.`,
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    badge: "Step 2",
   },
   {
     number: "03",
-    title: "Direct Job Site Dispatch",
-    description:
-      "Every piece is packed directly from our distribution center and shipped via UPS with real-time tracking for delivery in 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="1" y="3" width="15" height="13" />
-        <polygon points="16 8 20 8 23 11 23 16 16 16 8" />
-        <circle cx="5.5" cy="18.5" r="2.5" />
-        <circle cx="18.5" cy="18.5" r="2.5" />
-      </svg>
-    ),
+    label: "14-Day Trial",
+    title: "14-Day Field Guarantee",
+    description: "Test our gear on your toughest workouts. If you're not satisfied, return for a 100% full refund.",
+    image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1200&q=80",
+    badge: "Step 3",
   },
 ];
 
 export default function HowItWorks() {
+  const [activeTab, setActiveTab] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Smooth auto-rotation
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % steps.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
   return (
-    <section className="bg-neutral-bg py-14 sm:py-16 md:py-20 lg:py-24" id="how-it-works">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="eyebrow mb-3 justify-center">Ordering Workflow</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary">
+    <section className="py-14 sm:py-16 md:py-20 bg-neutral-bg" id="how-it-works">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Minimal Header */}
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+          <span className="eyebrow mb-2.5 justify-center">Simple Process</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
             How It <span className="text-secondary">Works</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-neutral-text/70">
-            From residential plumbing repairs to commercial hydronic heating overhauls, getting industrial-grade components delivered to your job site is straightforward.
+          <p className="text-neutral-text/65 text-xs sm:text-sm mt-2">
+            Three simple steps to equip yourself with pro-grade athletic training gear.
           </p>
         </div>
 
-        {/* Process row */}
-        <div className="grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3 md:gap-6 lg:gap-8">
-          {steps.map((step) => (
-            <div key={step.number} className="group flex flex-col items-center text-center bg-white p-6 sm:p-7 rounded-2xl border border-black/5 shadow-sm transition-all duration-300 hover:shadow-md">
-              {/* Step badge */}
-              <div className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-text shadow-sm transition-all duration-300 group-hover:bg-secondary group-hover:text-secondary-text">
-                {step.icon}
-                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-secondary text-[0.58rem] font-bold text-secondary-text shadow-sm group-hover:bg-primary group-hover:text-primary-text">
-                  {step.number}
-                </span>
-              </div>
-
-              {/* Image */}
-              <div className="relative mb-5 aspect-4/3 w-full overflow-hidden rounded-xl bg-neutral-bg">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 320px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-
-              <h3 className="mb-2 text-base sm:text-lg font-bold text-primary">{step.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-neutral-text/70">{step.description}</p>
-            </div>
+        {/* Minimal Interactive Tab Switcher */}
+        <div className="flex justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+          {steps.map((step, idx) => (
+            <button
+              key={step.number}
+              onClick={() => setActiveTab(idx)}
+              className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                activeTab === idx
+                  ? "bg-primary text-primary-text shadow-md scale-105"
+                  : "bg-white text-neutral-text/60 hover:text-primary hover:bg-white/80 border border-black/5"
+              }`}
+            >
+              <span className={`text-[0.65rem] font-bold ${activeTab === idx ? "text-secondary" : "text-neutral-text/40"}`}>
+                {step.number}
+              </span>
+              <span>{step.label}</span>
+            </button>
           ))}
         </div>
+
+        {/* Interactive Feature Display Card */}
+        <div
+          className="relative overflow-hidden rounded-3xl sm:rounded-4xl shadow-xl bg-primary border border-black/5 min-h-[360px] sm:min-h-[420px] flex items-end"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Background Images */}
+          {steps.map((step, idx) => (
+            <div
+              key={step.number}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                activeTab === idx ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+              }`}
+            >
+              <Image
+                src={step.image}
+                alt={step.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 900px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent" />
+            </div>
+          ))}
+
+          {/* Content Overlay */}
+          <div className="relative z-10 p-6 sm:p-10 md:p-12 w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+            <div className="max-w-lg">
+              <span className="inline-block px-3 py-1 rounded-full bg-secondary text-[0.62rem] font-black uppercase tracking-widest text-secondary-text mb-3 shadow-sm">
+                {steps[activeTab].badge}
+              </span>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-white mb-2">
+                {steps[activeTab].title}
+              </h3>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                {steps[activeTab].description}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link
+                href="/shop"
+                className="inline-flex items-center justify-center font-black text-xs uppercase tracking-wider text-secondary-text bg-secondary hover:brightness-110 transition-all py-3 px-6 rounded-full shadow-md hover:scale-105 whitespace-nowrap"
+              >
+                Shop Gear &rarr;
+              </Link>
+            </div>
+          </div>
+
+          {/* Step Indicator Dots */}
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex gap-1.5">
+            {steps.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveTab(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeTab === idx ? "w-6 bg-secondary" : "w-1.5 bg-white/40 hover:bg-white/70"
+                }`}
+                aria-label={`Go to step ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import AboutUs from "@/components/AboutUs";
-import Features from "@/components/Features";
 import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
 import QualityPromise from "@/components/QualityPromise";
@@ -22,27 +21,25 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
+        {/* Dynamic Hero Section */}
         <Hero />
         
         {/* Step-by-Step Flow */}
         <HowItWorks />
         
-        {/* About Brand Section */}
-        {/* <AboutUs /> */}
-
-        {/* Brand Video Showcase */}
-        {/* <VideoShowcase /> */}
-
-        {/* Product Catalog Showcase */}
+        {/* Flagship Product Showcase */}
         <ProductGrid />
+
+        {/* About Brand & Austin Heritage */}
+        <AboutUs />
+
+        {/* Video Showcase In Motion */}
+        <VideoShowcase />
 
         {/* Credibility & Guarantee Standards */}
         <QualityPromise />
         
-        {/* Quality Certifications */}
-        <Features />
-        
-        {/* Customer Social Proof */}
+        {/* Athlete Testimonials */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}

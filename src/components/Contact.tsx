@@ -7,14 +7,14 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=900&q=80",
-  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80",
-  "/img/contact_engineer.jpg",
+  "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&q=80",
+  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80",
+  "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80",
 ];
 
 const methods = [
   {
-    label: "Call Support Desk",
+    label: "Athlete Support Desk",
     value: siteConfig.phone,
     subtext: "Mon–Fri, 8am–6pm CST",
     href: `tel:${siteConfig.phone}`,
@@ -23,9 +23,9 @@ const methods = [
     ),
   },
   {
-    label: "Foundry Email",
+    label: "Collective Email",
     value: siteConfig.email,
-    subtext: "Replies within 24 hours",
+    subtext: "Direct reply within 24 hours",
     href: `mailto:${siteConfig.email}`,
     icon: (
       <>
@@ -35,9 +35,9 @@ const methods = [
     ),
   },
   {
-    label: "Foundry Address",
+    label: "Austin Headquarters",
     value: siteConfig.address,
-    subtext: "Distribution Center",
+    subtext: "Design Lab & Distribution Hub",
     href: undefined,
     icon: (
       <>
@@ -62,34 +62,34 @@ export default function Contact() {
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-10 sm:mb-14">
-          <span className="eyebrow mb-3">Technical Assistance</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary">
-            Have Questions? <span className="text-secondary">Talk to Specialists</span>
+          <span className="eyebrow mb-3">Collective Assistance</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
+            Have Questions? <span className="text-secondary">Talk to Gear Specialists</span>
           </h2>
           <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mt-3">
-            Our plumbing and hydronic heating technical team is available to assist with component specifications, bulk orders, and logistics.
+            Our Austin athletic gear advisors are ready to assist with sizing questions, team equipment orders, and logistics.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Visual Column */}
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-64 sm:min-h-80 lg:min-h-full shadow-md border border-black/5 bg-neutral-bg">
+          <div className="relative rounded-3xl overflow-hidden min-h-72 sm:min-h-88 lg:min-h-full shadow-lg border border-black/5 bg-neutral-bg">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
                 src={src}
-                alt="Foundry plumbing and heating supplies"
+                alt="Northcrest athletic sporting goods and gear"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                   idx === activeImage ? "opacity-100" : "opacity-0"
                 }`}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
-              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-secondary mb-1.5">Direct Contractor Support</span>
-              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-sm mb-6">
-                &ldquo;They verified my thread tolerances and hydronic pressure requirements immediately.&rdquo;
+            <div className="relative z-10 h-full flex flex-col justify-end p-7 sm:p-9">
+              <span className="text-[0.7rem] font-black uppercase tracking-widest text-secondary mb-2">Direct Athlete Care</span>
+              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-md mb-6">
+                &ldquo;They verified my weighted vest sizing and sent my tracking details within an hour.&rdquo;
               </p>
 
               {/* Image dots */}
@@ -98,8 +98,8 @@ export default function Contact() {
                   <button
                     key={idx}
                     onClick={() => setActiveImage(idx)}
-                    className={`h-1 rounded-full transition-all duration-300 ${
-                      idx === activeImage ? "w-6 bg-secondary" : "w-2 bg-white/30"
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === activeImage ? "w-7 bg-secondary" : "w-2 bg-white/40"
                     }`}
                     aria-label={`Show image ${idx + 1}`}
                   />
@@ -116,21 +116,21 @@ export default function Contact() {
                 <Wrapper
                   key={method.label}
                   {...(method.href ? { href: method.href } : {})}
-                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-black/5 bg-neutral-bg p-5 sm:p-6 shadow-xs transition-all duration-200 hover:border-secondary/30 hover:shadow-sm"
+                  className="group flex items-center gap-4 sm:gap-5 rounded-3xl border border-black/5 bg-neutral-bg p-5 sm:p-6 shadow-xs transition-all duration-200 hover:border-secondary/40 hover:shadow-md"
                 >
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-200 group-hover:bg-secondary group-hover:text-secondary-text">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-200 group-hover:bg-secondary group-hover:text-secondary-text shadow-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       {method.icon}
                     </svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[0.62rem] font-bold uppercase tracking-wider text-neutral-text/50 mb-0.5">{method.label}</div>
-                    <div className="font-bold text-sm sm:text-base text-primary break-words">{method.value}</div>
+                    <div className="text-[0.65rem] font-black uppercase tracking-widest text-neutral-text/50 mb-0.5">{method.label}</div>
+                    <div className="font-black text-sm sm:text-base text-primary break-words">{method.value}</div>
                     <div className="text-xs text-neutral-text/60 mt-0.5">{method.subtext}</div>
                   </div>
                   {method.href && (
-                    <span className="hidden sm:flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-primary transition-all duration-200 group-hover:border-secondary group-hover:bg-secondary group-hover:text-secondary-text">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-primary transition-all duration-200 group-hover:border-secondary group-hover:bg-secondary group-hover:text-secondary-text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                       </svg>
@@ -141,14 +141,14 @@ export default function Contact() {
             })}
 
             {/* FAQ quick link */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-primary p-5 sm:p-6 text-white shadow-sm">
+            <div className="flex items-center justify-between gap-4 rounded-3xl bg-primary p-6 sm:p-7 text-white shadow-md">
               <div className="min-w-0 flex-1">
-                <div className="font-bold text-sm sm:text-base">Need instant answers?</div>
-                <div className="text-xs text-white/70 mt-0.5">Explore our FAQ for specifications, NPT thread compatibility, and returns.</div>
+                <div className="font-black uppercase tracking-tight text-sm sm:text-base">Need instant answers?</div>
+                <div className="text-xs text-white/70 mt-1">Explore our FAQ for gear specifications, 14-day trial details, and returns.</div>
               </div>
               <a
                 href="#faq"
-                className="hidden sm:inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-secondary text-secondary-text font-bold text-xs px-5 py-2 hover:brightness-110 transition-all"
+                className="hidden sm:inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-secondary text-secondary-text font-black text-xs px-5 py-2.5 hover:brightness-110 transition-all shadow-md"
               >
                 View FAQs
               </a>

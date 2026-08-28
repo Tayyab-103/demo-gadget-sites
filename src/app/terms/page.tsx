@@ -19,25 +19,23 @@ export default function Terms() {
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
         <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal Compliance</span>
+          <span className="eyebrow mb-4">Legal &amp; Compliance</span>
           <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
+          <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
               This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
               “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the user,
+              this website, including all information, tools and services available from this site to you, the athlete,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing plumbing and heating supplies from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing sporting goods, weighted conditioning vests, performance bags, and recovery therapy from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
-              terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of
-              Service apply to all users of the site, including without limitation users who are browsers, vendors,
-              contractors, tradesmen, customers, merchants, and/ or contributors of content.
+              terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
             <p>
               Please read these Terms of Service carefully before accessing or using our website. By accessing or using
@@ -45,31 +43,31 @@ export default function Terms() {
               terms and conditions of this agreement, then you may not access the website or use any services.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer industrial-grade plumbing fittings, shutoff valves, and heating supplies through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer pro-grade sporting goods and athletic training equipment through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
             <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
                 <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-primary mb-3">
+                  <h4 className="text-sm md:text-base font-black text-primary mb-3 uppercase tracking-tight">
                     {product.name}
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
                     {product.bundles && product.bundles.map((bundle) => {
                       const totalCost = parseFloat(String(bundle.price));
                       const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
-                        ? "FREE Shipping & Handling"
-                        : `$${product.ssShipping} Shipping & Handling`;
+                        ? "FREE Standard UPS Shipping"
+                        : `$${product.ssShipping} Shipping`;
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity > 1 ? `${bundle.quantity}-Piece Bundle` : "Single Unit"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                          Upon ordering a <strong className="text-primary font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Athlete Package` : "Single Unit"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-primary font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
+                          The credit card charge will appear on your statement as <strong className="text-primary font-bold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}
@@ -78,7 +76,7 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
             <p>
               By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
               or province of residence, or that you are the age of majority in your state or province of residence and you
@@ -86,24 +84,24 @@ export default function Terms() {
             </p>
             <p>
               You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to local building codes and copyright laws).
+              violate any laws in your jurisdiction (including but not limited to copyright laws and local athletic equipment safety regulations).
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
               All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched.
+              You will receive a tracking number via email once your order has been dispatched from our Austin, TX distribution center.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; REFUND POLICY</h3>
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - 14-DAY FIELD TRIAL &amp; RETURN POLICY</h3>
             <p>
-              We stand behind our foundry quality with a 60-day money-back guarantee. If you are not satisfied with your purchase,
+              We stand behind our sporting equipment with a 14-day field trial guarantee. If you are not satisfied with your purchase,
               please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated return facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
+              Returns must be shipped to our designated facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
               Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
             </p>
           </div>

@@ -19,7 +19,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: siteConfig.theme.neutralBgColor,
+          background: siteConfig.theme.primaryColor,
           position: "relative",
         }}
       >
@@ -28,11 +28,11 @@ export default async function Image() {
             position: "absolute",
             top: -90,
             left: -90,
-            width: 280,
-            height: 280,
+            width: 320,
+            height: 320,
             borderRadius: "50%",
-            background: siteConfig.theme.primaryColor,
-            opacity: 0.08,
+            background: siteConfig.theme.secondaryColor,
+            opacity: 0.15,
             display: "flex",
           }}
         />
@@ -41,11 +41,11 @@ export default async function Image() {
             position: "absolute",
             bottom: -110,
             right: -70,
-            width: 340,
-            height: 340,
+            width: 380,
+            height: 380,
             borderRadius: "50%",
             background: siteConfig.theme.secondaryColor,
-            opacity: 0.14,
+            opacity: 0.2,
             display: "flex",
           }}
         />
@@ -54,20 +54,28 @@ export default async function Image() {
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "28px 56px",
-            borderRadius: 24,
-            background: "#ffffff",
-            boxShadow: "0 12px 32px rgba(14, 16, 19, 0.12)",
+            gap: 16,
+            padding: "24px 48px",
+            borderRadius: 999,
+            background: "rgba(255, 255, 255, 0.08)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
           }}
         >
           <div
             style={{
-              display: "flex",
-              fontSize: 64,
+              fontSize: 48,
+              color: siteConfig.theme.secondaryColor,
+            }}
+          >
+            ⚡
+          </div>
+          <div
+            style={{
+              fontSize: 44,
               fontWeight: 900,
-              letterSpacing: -2,
+              letterSpacing: 2,
               textTransform: "uppercase",
-              color: siteConfig.theme.neutralTextColor,
+              color: "#ffffff",
             }}
           >
             {siteConfig.brandName}
@@ -76,19 +84,21 @@ export default async function Image() {
 
         <div
           style={{
-            marginTop: 36,
-            fontSize: 32,
-            fontWeight: 600,
-            color: siteConfig.theme.neutralTextColor,
+            marginTop: 32,
+            fontSize: 26,
+            fontWeight: 700,
+            letterSpacing: 3,
+            textTransform: "uppercase",
+            color: siteConfig.theme.secondaryColor,
           }}
         >
-          {siteConfig.Product}
+          Pro-Grade Sporting Goods &amp; Athletic Gear
         </div>
 
         <div
           style={{
-            marginTop: 28,
-            width: 120,
+            marginTop: 24,
+            width: 140,
             height: 6,
             borderRadius: 999,
             background: siteConfig.theme.secondaryColor,

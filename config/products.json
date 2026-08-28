@@ -1,0 +1,83 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Copperline Forged Brass Heavy-Duty Compression Fitting Kit (1/2\" NPT)",
+    "description": "Engineered from high-density solid forged brass alloy with precision-tapered NPT threading and certified lead-free metallurgy. Designed to withstand rigorous working pressures up to 1,200 PSI and hydronic heating temperatures up to 250°F. Features a precision dual-bevel sealing ring that creates a permanent, zero-leak joint across copper, brass, and PEX plumbing lines without soldering.",
+    "image": "/img/products/product1.jpg",
+    "images": [
+      "/img/products/product1.jpg",
+      "/img/products/product1_alt.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product1.jpg",
+    "category": "Pipe Fittings & Adapters",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "Copperline Master-Forge Full-Port Brass Shutoff Ball Valve (3/4\" NPT)",
+    "description": "Heavyweight forged brass quarter-turn ball valve featuring a hard-chrome-plated solid brass ball and dual self-lubricating PTFE seats. Hydrostatically tested to 600 WOG / 150 WSP for domestic potable water, hydronic heating loops, and boiler manifold isolation. Equipped with a blowout-proof stem and heavy-duty insulated vinyl lever handle for effortless shutoff control.",
+    "image": "/img/products/product2.jpg",
+    "images": [
+      "/img/products/product2.jpg",
+      "/img/products/product2_alt.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product2.jpg",
+    "category": "Heating & Flow Valves",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Copperline Thermal-Flex Stainless Braided Water Heater Supply Line (3/4\" FIP x 24\")",
+    "description": "Industrial-grade multi-filament 304 stainless steel braided connector with high-temperature santoprene inner core, designed for tankless and standard water heaters and hydronic loop systems. Features solid forged brass dielectric connector nuts and heavy-duty EPDM sealing washers to prevent galvanic corrosion and thermal expansion leaks. Rated to 200°F continuous heat and 250 PSI.",
+    "image": "/img/products/product3.jpg",
+    "images": [
+      "/img/products/product3.jpg",
+      "/img/products/product3_alt.jpg"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "/img/products/product3.jpg",
+    "category": "Hydronic Heating & Supply Lines",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

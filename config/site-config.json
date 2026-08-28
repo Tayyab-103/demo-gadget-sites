@@ -1,0 +1,26 @@
+{
+  "Product": "Plumbing and Heating Supplies",
+  "Processor": "Synovus Celero",
+  "brandName": "Copperline Plumbing Foundry",
+  "websiteUrl": "CopperlinePlumbingFoundry.com",
+  "email": "support@copperlineplumbingfoundry.com",
+  "descriptor": "CopperlinePlumbingFoun",
+  "corpName": "Starpath Marketing Co",
+  "phone": "1-800-762-7529",
+  "address": "480 Athletic Way, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#0C1829",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#0284C7",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#F4F7FA",
+    "neutralTextColor": "#0F172A",
+    "fontFamily": "Inter"
+  }
+}

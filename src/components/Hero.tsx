@@ -1,28 +1,53 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import productsData from "../../config/products.json";
-import { Product } from "@/types";
-import { useCart } from "@/context/CartContext";
-
-const products = productsData as unknown as Product[];
 
 const specs = ["UL Listed", "Ships Same Day", "40K+ Orders Shipped"];
 
+const carouselImages = [
+  {
+    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
+    alt: "Electrician installing wiring on the job",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=1200&q=80",
+    alt: "Electrical panel with circuit breakers",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1200&q=80",
+    alt: "Contractor with drill and hard hat on site",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=1200&q=80",
+    alt: "Electrician testing a panel with a multimeter",
+  },
+];
+
 export default function Hero() {
-  const { addToCart } = useCart();
-  const featured = products[0];
+  const [activeImage, setActiveImage] = useState(0);
 
-  const firstBundle = featured?.bundles && featured.bundles[0];
-  const price = firstBundle ? firstBundle.price : featured?.ssPrice;
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveImage((i) => (i + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const handleQuickAdd = () => {
-    if (!featured) return;
-    const quantity = firstBundle ? firstBundle.quantity : 1;
-    const unitPrice = firstBundle ? (firstBundle.price / firstBundle.quantity).toFixed(2) : featured.ssPrice;
-    addToCart(featured, quantity, unitPrice, "Single Pack");
-  };
+  const dots = (
+    <div className="absolute bottom-6 right-6 z-20 flex gap-2">
+      {carouselImages.map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => setActiveImage(idx)}
+          aria-label={`Show image ${idx + 1}`}
+          className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+            idx === activeImage ? "w-6 bg-secondary" : "w-2 bg-white/60 hover:bg-white/90"
+          }`}
+        />
+      ))}
+    </div>
+  );
 
   return (
     <section className="relative overflow-hidden bg-neutral-bg">
@@ -36,21 +61,34 @@ export default function Hero() {
         }}
       />
 
-      {/* Angled dark panel, desktop only */}
+      {/* Right: full-height diagonal image panel — desktop only */}
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] bg-primary lg:block"
+        className="absolute inset-y-0 right-0 z-10 hidden w-[58%] overflow-hidden lg:block"
         style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }}
-      />
+      >
+        {carouselImages.map((img, idx) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+              idx === activeImage ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/5 to-transparent" />
+        {dots}
+      </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14 px-6 py-20 md:py-28 lg:grid-cols-2 lg:gap-10">
-        {/* Left: Copy */}
-        <div className="text-center lg:text-left">
+      <div className="relative z-20 mx-auto flex min-h-140 w-full max-w-7xl flex-col justify-center px-6 py-16 md:min-h-155 md:py-20">
+        {/* Copy */}
+        <div className="max-w-lg text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-primary shadow-sm">
             <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
             Electrical Parts &amp; Equipment
           </span>
 
-          <h1 className="mx-auto mt-6 max-w-lg text-4xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-6xl lg:mx-0">
+          <h1 className="mx-auto mt-6 text-4xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-6xl lg:mx-0">
             The Parts Pros Trust to Get the <span className="text-secondary">Job Done</span>
           </h1>
 
@@ -81,51 +119,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Featured product spotlight */}
-        {featured && (
-          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:ml-auto">
-            <div className="pointer-events-none absolute inset-0 -z-10 scale-90 rounded-full bg-secondary/25 blur-3xl" />
-
-            {/* Floating spec badge */}
-            <div className="absolute -left-4 top-6 z-20 hidden rotate-[-4deg] rounded-xl border border-black/5 bg-white px-3 py-2 shadow-lg sm:block">
-              <span className="text-[0.6rem] font-black uppercase tracking-widest text-secondary">Code Compliant</span>
-            </div>
-
-            <div className="relative rounded-[2rem] border border-black/5 bg-white p-6 shadow-2xl">
-              <div className="mb-4 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary/10 px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest text-secondary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-                  In Stock
-                </span>
-                <span className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/40">{featured.category}</span>
-              </div>
-
-              <Link href={`/product/${featured.id}`} className="block overflow-hidden rounded-2xl bg-neutral-bg">
-                <img
-                  src={featured.image}
-                  alt={featured.name}
-                  className="aspect-square w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </Link>
-
-              <Link href={`/product/${featured.id}`}>
-                <h3 className="mt-4 text-base font-bold leading-snug text-primary hover:text-secondary transition-colors">
-                  {featured.name}
-                </h3>
-              </Link>
-
-              <div className="mt-4 flex items-center justify-between gap-3 border-t border-black/5 pt-4">
-                <span className="text-2xl font-black text-primary">${price}</span>
-                <button
-                  onClick={handleQuickAdd}
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-xs font-bold uppercase tracking-widest text-primary-text shadow-md transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* Mobile/tablet image — the diagonal panel only shows on lg+ */}
+        <div className="relative mt-12 aspect-4/3 w-full overflow-hidden rounded-[2rem] border border-black/5 shadow-2xl lg:hidden">
+          {carouselImages.map((img, idx) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+                idx === activeImage ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+          {dots}
+        </div>
       </div>
     </section>
   );

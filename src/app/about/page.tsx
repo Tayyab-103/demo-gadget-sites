@@ -4,6 +4,9 @@ import React from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import AboutUs from "@/components/AboutUs";
+import HowItWorks from "@/components/HowItWorks";
+import VideoShowcase from "@/components/VideoShowcase";
+import QualityPromise from "@/components/QualityPromise";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
@@ -18,13 +21,16 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="The Craft &amp; Heritage"
+          eyebrow="The Engineering &amp; Standard"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Crafted in Austin, Texas. Dedicated to preserving master bookbinding, bleedproof paper milling, and heirloom writing instruments."
-          image="/img/about-atelier-heritage.jpg"
+          subtitle="Engineered in Austin, Texas. Dedicated to precision aerospace alloy luggage, Italian vegetable-tanned leather, and seamless global transit."
+          image="/img/travel-atelier-craft.jpg"
           currentLabel="About"
         />
         <AboutUs />
+        <HowItWorks />
+        <VideoShowcase />
+        <QualityPromise />
       </main>
       <Footer />
       <CartDrawer />

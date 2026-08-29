@@ -24,18 +24,18 @@ export default function AppleIcon() {
           border: `2px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
-        <div style={{ fontSize: 72 }}>✒</div>
+        <div style={{ fontSize: 72 }}>✈</div>
         <div
           style={{
             fontSize: 16,
             fontWeight: 800,
             letterSpacing: 3,
-            color: "#FAF8F5",
+            color: "#F8F6F0",
             marginTop: 4,
             textTransform: "uppercase",
           }}
         >
-          Quillhaven
+          Wanderloom
         </div>
       </div>
     ),

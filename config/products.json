@@ -2,43 +2,43 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "The Sovereign Master Fountain Pen & Archival Ink Suite",
-    "description": "Handcrafted with solid burnished brass and hand-turned resin, featuring an 18k gold-plated German iridium-tipped nib for seamless ink flow. Includes a precision piston ink converter, three archival noir ink cartridges, and a velvet-lined collector box. Engineered for effortless calligraphic precision and enduring daily prose.",
-    "image": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
+    "name": "The Aviator Aluminum Carry-On Spinner Suitcase",
+    "description": "Precision-crafted from aerospace-grade anodized aluminum alloy with reinforced corner bumpers. Features ultra-whisper Japanese Hinomoto 360° dual spinner wheels, dual TSA-approved integrated combination lock latches, multi-stage aircraft aluminum telescopic handle, and waterproof compression dividers. Airline carry-on compliant worldwide.",
+    "image": "/img/products/aviator-aluminum-spinner.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
-      "https://images.unsplash.com/photo-1585336261026-7f91754020a5?w=900&q=80"
+      "/img/products/aviator-aluminum-spinner.jpg",
+      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=900&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
-    "category": "Fine Writing Instruments",
+    "ingredientsImage": "/img/products/aviator-aluminum-spinner.jpg",
+    "category": "Luxury Hardshell Luggage",
     "billingModel": 1,
-    "ssPrice": "6.95",
+    "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "The Heirloom Full-Grain Leather Bound Journal & Notebook",
-    "description": "Bound by master artisans in vegetable-tanned full-grain leather that burnishes beautifully over years of use. Houses 240 numbered pages of 160 GSM milled archival cotton paper, completely bleedproof against wet fountain pen inks, watercolors, and dip pens. Features Smythe-sewn lay-flat binding, dual silk ribbon bookmarks, and an expandable back pocket.",
-    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
+    "name": "The Nomad Full-Grain Leather & Ballistic Weekender Duffle",
+    "description": "Hand-stitched with Italian vegetable-tanned full-grain leather and weather-resistant 1000D Cordura ballistic canvas. Engineered with a dedicated ventilated shoe compartment, padded 16-inch laptop compartment, solid brass hardware, luggage trolley pass-through sleeve, and a high-density ergonomic shoulder strap.",
+    "image": "/img/products/nomad-leather-duffle.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
-      "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=900&q=80"
+      "/img/products/nomad-leather-duffle.jpg",
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
-    "category": "Artisanal Journals & Notebooks",
+    "ingredientsImage": "/img/products/nomad-leather-duffle.jpg",
+    "category": "Premium Travel Bags & Duffles",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,28 +56,28 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "The Executive Solid Brass Desk Organizer & Correspondence Suite",
-    "description": "A centerpiece for the discerning study or executive desk. Precision milled from raw heavy-gauge brass with a hand-buffed satin finish. Includes an architectural desk tray, weighted pen stand, solid brass letter opener, graduated rule, and a set of deckled-edge cotton correspondence cards with foil-stamped wax seals.",
-    "image": "/img/products/brass-desk-suite.jpg",
+    "name": "The Globalist Modular Compression Packing Cube & Tech Organizer Suite",
+    "description": "A master 6-piece packing architecture engineered from ultralight water-repellent diamond-ripstop nylon and self-healing YKK dual-compression zippers. Includes 4 expandable garment compression cubes, a spill-proof hanging toiletry dopp kit, and an RFID-shielded passport and tech accessories folio.",
+    "image": "/img/products/modular-packing-suite.jpg",
     "images": [
-      "/img/products/brass-desk-suite.jpg",
-      "https://images.unsplash.com/photo-1585336261026-7f91754020a5?w=900&q=80"
+      "/img/products/modular-packing-suite.jpg",
+      "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/brass-desk-suite.jpg",
-    "category": "Executive Desk & Office Supplies",
+    "ingredientsImage": "/img/products/modular-packing-suite.jpg",
+    "category": "Travel Organizers & Accessories",
     "billingModel": 1,
-    "ssPrice": "14.95",
+    "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
     ]
   }
 ]

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto, Playfair_Display } from "next/font/google";
+import { Montserrat, Inter, Poppins, Roboto, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,13 +7,13 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Handcrafted luxury ${siteConfig.Product?.toLowerCase() || "stationery & office supplies"}, precision fountain pens, full-grain leather journals, and archival desk essentials for creators and executives.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-engineered luxury ${siteConfig.Product?.toLowerCase() || "luggage & travel accessories"}, aerospace-grade aluminum carry-ons, Italian full-grain leather weekender bags, and modular compression travel suites.`;
 
 // Preload fonts
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -23,9 +23,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -37,7 +38,7 @@ const roboto = Roboto({
 });
 
 const playfairDisplay = Playfair_Display({
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-playfair-display",
   display: "swap",
@@ -45,24 +46,23 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+  title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
   description: siteDescription,
   keywords: [
-    "stationery",
-    "office supplies",
-    "luxury stationery",
-    "fine writing instruments",
-    "fountain pens",
-    "leather bound journals",
-    "desk accessories",
-    "executive office supplies",
-    "calligraphy set",
-    "archival paper",
-    "Austin stationery atelier",
-    "Quillhaven Stationery House"
+    "luxury luggage",
+    "travel accessories",
+    "aluminum suitcase",
+    "carry on spinner",
+    "leather weekender bag",
+    "compression packing cubes",
+    "tsa approved luggage",
+    "travel bags",
+    "Wanderloom Travel Collective",
+    "executive travel gear",
+    "austin travel accessories"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+    title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,14 +70,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+    title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  let selectedFontClass = `${playfairDisplay.variable} ${inter.variable}`;
-  let activeFontVar = "var(--font-playfair-display)";
+  let selectedFontClass = `${montserrat.variable} ${inter.variable}`;
+  let activeFontVar = "var(--font-montserrat)";
 
   if (siteConfig.theme.fontFamily === "Poppins") {
     selectedFontClass = `${poppins.variable} ${inter.variable}`;

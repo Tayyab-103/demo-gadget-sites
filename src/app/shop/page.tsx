@@ -14,13 +14,13 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Signature Atelier Catalog"
-          title={<>The Fine Stationery &amp; Writing Suite</>}
-          subtitle="Explore German-tipped fountain pens, bleedproof milled cotton journals, and hand-cast solid brass desk accessories."
-          image="/img/cta-workspace-banner.jpg"
-          currentLabel="Collections"
+          eyebrow="Signature Transit Catalog"
+          title={<>Luggage &amp; Modular Travel Gear</>}
+          subtitle="Explore aerospace aluminum carry-on spinners, Italian leather weekender bags, and modular compression packing architectures."
+          image="/img/hero-luggage-travel.jpg"
+          currentLabel="Luggage &amp; Gear"
         />
-        <ProductGrid />
+        <ProductGrid hideHeader={true} />
       </main>
       <Footer />
       <CartDrawer />

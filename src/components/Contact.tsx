@@ -7,14 +7,14 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "/img/about-atelier-heritage.jpg",
-  "/img/step1-craft-essentials.jpg",
-  "/img/products/brass-desk-suite.jpg",
+  "/img/hero-luggage-travel.jpg",
+  "/img/travel-atelier-craft.jpg",
+  "/img/products/nomad-leather-duffle.jpg",
 ];
 
 const methods = [
   {
-    label: "Atelier Concierge Desk",
+    label: "Flight Concierge Desk",
     value: siteConfig.phone,
     subtext: "Mon–Fri, 8am–6pm CST",
     href: `tel:${siteConfig.phone}`,
@@ -23,9 +23,9 @@ const methods = [
     ),
   },
   {
-    label: "Patron & Corporate Email",
+    label: "Traveler & Corporate Inquiries",
     value: siteConfig.email,
-    subtext: "Direct reply within 24 hours",
+    subtext: "Guaranteed reply within 24 hours",
     href: `mailto:${siteConfig.email}`,
     icon: (
       <>
@@ -35,9 +35,9 @@ const methods = [
     ),
   },
   {
-    label: "Austin Atelier & Studio",
+    label: "Austin Design & Dispatch Hangar",
     value: siteConfig.address,
-    subtext: "Design Studio & Distribution Lab",
+    subtext: "Design Studio & Logistics Hub",
     href: undefined,
     icon: (
       <>
@@ -59,20 +59,20 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="contact">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-2xl mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
-            <span>✦</span>
-            Patron Concierge Assistance
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
+            <span>✈</span>
+            Traveler Concierge Assistance
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.15]">
-            Have Inquiries? <span className="text-[#C5A059] italic font-normal">Connect With Our Atelier</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
+            Have Inquiries? <span className="text-[#C87D3B] font-light italic lowercase">Connect With Our Team</span>
           </h2>
-          <p className="text-[#1A202C]/75 text-xs sm:text-sm md:text-base mt-3.5 leading-relaxed font-normal">
-            Our Austin stationery advisors are available to assist with custom corporate orders, bespoke calligraphy sets, and dispatch logistics.
+          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base mt-3.5 leading-relaxed font-normal">
+            Our Austin travel specialists are ready to assist with custom corporate luggage sets, airline dimensional compatibility, and expedited flight dispatches.
           </p>
         </div>
 
@@ -80,25 +80,25 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Visual Column */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full shadow-xl border border-[#C5A059]/30 bg-[#121820]">
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full shadow-2xl border border-[#C87D3B]/30 bg-[#0D1B2A]">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
                 src={src}
-                alt="Quillhaven stationery craftsmanship in Austin"
+                alt="Wanderloom Travel luggage support in Austin"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-65 ${
                   idx === activeImage ? "opacity-65" : "opacity-0"
                 }`}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121820] via-[#121820]/45 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/50 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8 md:p-9 text-[#FAF8F5]">
-              <span className="text-[0.7rem] font-serif uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
-                ✦ Dedicated Patron Care
+            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8 md:p-9 text-white">
+              <span className="text-[0.7rem] uppercase tracking-widest text-[#C87D3B] mb-2 font-extrabold">
+                ✈ Dedicated Flight Care
               </span>
-              <p className="text-[#FAF8F5] text-base sm:text-lg md:text-xl font-serif leading-snug max-w-md mb-6">
-                &ldquo;They verified our corporate executive order and had our wax-sealed tracking details dispatched the same afternoon.&rdquo;
+              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-md mb-6">
+                &ldquo;They verified our executive team&apos;s carry-on dimensions and had our UPS tracking numbers active the same afternoon.&rdquo;
               </p>
 
               {/* Image dots */}
@@ -108,7 +108,7 @@ export default function Contact() {
                     key={idx}
                     onClick={() => setActiveImage(idx)}
                     className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeImage ? "w-7 bg-[#C5A059]" : "w-2 bg-white/40"
+                      idx === activeImage ? "w-7 bg-[#C87D3B]" : "w-2 bg-white/40"
                     }`}
                     aria-label={`Show image ${idx + 1}`}
                   />
@@ -125,26 +125,26 @@ export default function Contact() {
                 <Wrapper
                   key={method.label}
                   {...(method.href ? { href: method.href } : {})}
-                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-[#C5A059]/20 bg-white p-5 sm:p-6 transition-all duration-200 hover:border-[#C5A059] hover:shadow-md"
+                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-[#C87D3B]/20 bg-white p-5 sm:p-6 transition-all duration-200 hover:border-[#C87D3B] hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#121820] text-[#C5A059] transition-all duration-200 group-hover:bg-[#C5A059] group-hover:text-[#121820] shadow-xs">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0D1B2A] text-[#C87D3B] transition-all duration-200 group-hover:bg-[#C87D3B] group-hover:text-white shadow-xs">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       {method.icon}
                     </svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[0.65rem] font-serif font-bold uppercase tracking-widest text-[#C5A059] mb-0.5">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-widest text-[#C87D3B] mb-0.5">
                       {method.label}
                     </div>
-                    <div className="font-serif font-bold text-sm sm:text-base text-[#121820] break-all">
+                    <div className="font-extrabold text-sm sm:text-base text-[#0D1B2A] break-all">
                       {method.value}
                     </div>
-                    <div className="text-xs text-[#1A202C]/60 mt-0.5 font-normal">
+                    <div className="text-xs text-[#18222F]/60 mt-0.5 font-normal">
                       {method.subtext}
                     </div>
                   </div>
                   {method.href && (
-                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#C5A059]/30 text-[#121820] transition-all duration-200 group-hover:border-[#C5A059] group-hover:bg-[#C5A059] group-hover:text-[#121820]">
+                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#C87D3B]/30 text-[#0D1B2A] transition-all duration-200 group-hover:border-[#C87D3B] group-hover:bg-[#C87D3B] group-hover:text-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -156,16 +156,16 @@ export default function Contact() {
             })}
 
             {/* Direct Hours Notice */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-[#121820] p-5 sm:p-6 text-[#FAF8F5] shadow-md mt-2 border border-[#C5A059]/30">
+            <div className="flex items-center justify-between gap-4 rounded-2xl bg-[#0D1B2A] p-5 sm:p-6 text-white shadow-lg mt-2 border border-[#C87D3B]/30">
               <div className="min-w-0 flex-1">
-                <div className="font-serif font-bold uppercase tracking-tight text-sm text-[#FAF8F5]">
-                  Austin Atelier &amp; Fulfillment Studio
+                <div className="font-extrabold uppercase tracking-tight text-sm text-white">
+                  Austin Design &amp; Fulfillment Hangar
                 </div>
-                <div className="text-xs text-[#FAF8F5]/70 mt-0.5 font-normal">
-                  Orders wax-sealed &amp; dispatched Monday through Friday via {siteConfig.shippingCarrier}.
+                <div className="text-xs text-white/70 mt-0.5 font-normal">
+                  Orders tested, packed &amp; dispatched Monday through Friday via {siteConfig.shippingCarrier}.
                 </div>
               </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-[#C5A059] text-[#121820] text-xs font-serif font-bold">
+              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-[#C87D3B] text-white text-xs font-bold uppercase tracking-wider">
                 ACTIVE
               </span>
             </div>

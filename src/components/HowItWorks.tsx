@@ -1,161 +1,188 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const steps = [
+const waypoints = [
   {
     step: "01",
-    label: "CURATED SELECTION",
-    title: "Select Your Craft Essentials",
-    desc: "Choose between German iridium fountain pen suites, Smyth-sewn full-grain leather journals with 160 GSM bleedproof paper, or solid brass executive desk sets tailored for deep creative focus.",
-    badge: "1-Pack to Studio Volume",
-    image: "/img/step1-craft-essentials.jpg",
-    features: [
-      "German Iridium Precision Nibs",
-      "160 GSM Milled Cotton Parchment",
-      "Solid Heavy-Gauge Brass Casting",
-    ],
+    shortLabel: "Curate Gear",
+    icon: "🧳",
+    title: "Select Your Expedition System",
+    tagline: "Aerospace Aluminum & Full-Grain Leather",
+    desc: "Choose between anodized aluminum carry-on spinners, Italian leather weekender duffles, or modular vacuum compression suites.",
+    image: "/img/products/aviator-aluminum-spinner.jpg",
+    tags: ["6061-T6 Alloy", "Italian Full-Grain", "Modular Cubes"],
   },
   {
     step: "02",
-    label: "ATELIER DISPATCH",
-    title: "Austin Atelier Inspection & Wax Seal",
-    desc: `Each piece is individually inspected by hand in our Austin atelier, wrapped in protective archival sleeves, boxed with a custom wax seal, and dispatched via ${siteConfig.shippingCarrier} with full tracking within ${siteConfig.shippingPeriod} business days.`,
-    badge: `${siteConfig.shippingCarrier} Express Tracked`,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
-    features: [
-      "Hand-Inspected in Austin, Texas",
-      "Custom Wax-Sealed Packaging",
-      `Dispatched via ${siteConfig.shippingCarrier} Express (3-5 Days)`,
-    ],
+    shortLabel: "Austin Testing",
+    icon: "⚙️",
+    title: "Austin Calibration & Dispatch",
+    tagline: "Robotic Roll & TSA Verification",
+    desc: `Each piece is calibrated in Austin, Texas, tested on 360° wheel rigs, and shipped via ${siteConfig.shippingCarrier} within ${siteConfig.shippingPeriod} business days.`,
+    image: "/img/travel-atelier-craft.jpg",
+    tags: ["Hinomoto 360°", "TSA Lock Verified", `${siteConfig.shippingCarrier} Tracked`],
   },
   {
     step: "03",
-    label: "STUDIO PRACTICE",
-    title: "14-Day Studio Practice Trial",
-    desc: "Put our fountain pens, leather journals, and desk suites through your daily writing, calligraphy, and drafting rituals. If our craftsmanship does not elevate your prose, return for a 100% full refund with zero hassle.",
-    badge: "100% Satisfaction Guarantee",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
-    features: [
-      "14-Day Risk-Free Studio Trial",
-      "Zero-Bleed & Ghosting Guarantee",
-      "100% Money-Back Satisfaction",
-    ],
+    shortLabel: "Flight Ready",
+    icon: "✈️",
+    title: "Global In-Flight Deployment",
+    tagline: "Worldwide Overhead Bin Clearance",
+    desc: `Universal airline carry-on compliant across 150+ airlines, backed by our risk-free ${siteConfig.trialPeriod || 14}-day flight guarantee.`,
+    image: "/img/hero-luggage-travel.jpg",
+    tags: ["IATA Compliant", `${siteConfig.trialPeriod || 14}-Day Flight Trial`, "100% Refund Guarantee"],
   },
 ];
 
 export default function HowItWorks() {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const current = waypoints[activeIdx];
+
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="how-it-works">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="how-it-works">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
-            <span>✦</span>
-            The Quillhaven Standard
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
+            <span>✈</span>
+            The Wanderloom Standard
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.1]">
-            From The Atelier <span className="text-[#C5A059] italic font-normal">To Your Desk</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
+            From The Hangar <span className="text-[#C87D3B] font-light italic lowercase">To Destination</span>
           </h2>
-          <p className="text-[#1A202C]/70 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-xl mx-auto font-normal">
-            A seamless vertical journey crafted for authors, executives, and calligraphers who demand perfection from selection to the written word.
+          <p className="text-[#18222F]/70 text-xs sm:text-sm md:text-base mt-2.5 max-w-md mx-auto font-normal">
+            A three-waypoint transit protocol built for effortless global journeys.
           </p>
         </div>
 
-        {/* Alternating Vertical Step Sequence (1 -> 2 -> 3) */}
-        <div className="flex flex-col gap-14 sm:gap-20 md:gap-24 relative">
-          
-          {/* Subtle vertical connector line for desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-10 bottom-10 -translate-x-1/2 w-[1px] bg-gradient-to-b from-[#C5A059]/30 via-[#C5A059]/50 to-[#C5A059]/20 pointer-events-none" />
+        {/* Interactive Flight Path Tracker (Horizontal Stepper Line) */}
+        <div className="max-w-3xl mx-auto mb-10">
+          <div className="relative flex items-center justify-between">
+            
+            {/* Connecting Baseline */}
+            <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-[2px] bg-[#C87D3B]/25 z-0" />
+            
+            {/* Active Highlight Fill Line */}
+            <div
+              className="absolute left-8 top-1/2 -translate-y-1/2 h-[2px] bg-[#C87D3B] transition-all duration-500 z-0"
+              style={{
+                width: activeIdx === 0 ? "0%" : activeIdx === 1 ? "50%" : "calc(100% - 64px)",
+              }}
+            />
 
-          {steps.map((item, idx) => {
-            const isEven = idx % 2 === 1; // Step 2 (index 1) is even (description on left, image on right)
+            {/* 3 Interactive Waypoint Buttons */}
+            {waypoints.map((item, idx) => {
+              const isActive = activeIdx === idx;
+              const isPassed = activeIdx >= idx;
 
-            return (
-              <div
-                key={item.step}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center relative"
-              >
-                {/* Image Column */}
-                <div
-                  className={`lg:col-span-6 ${
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  }`}
+              return (
+                <button
+                  key={item.step}
+                  onClick={() => setActiveIdx(idx)}
+                  className="relative z-10 flex flex-col items-center group cursor-pointer focus:outline-none"
                 >
-                  <div className="group relative overflow-hidden rounded-3xl border border-[#C5A059]/30 bg-white shadow-xl aspect-[16/11] sm:aspect-[16/10]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#121820]/75 via-transparent to-transparent pointer-events-none" />
-                    
-                    {/* Floating badge inside image */}
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                      <span className="text-[0.68rem] font-bold uppercase tracking-wider text-[#FAF8F5] bg-[#121820]/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#C5A059]/30">
-                        {item.badge}
-                      </span>
-                      <span className="font-serif font-bold text-xs text-[#C5A059] bg-[#121820]/80 px-2.5 py-1 rounded-md border border-[#C5A059]/20">
-                        STAGE {item.step}
-                      </span>
-                    </div>
+                  <div
+                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-base sm:text-lg font-bold transition-all duration-300 shadow-md ${
+                      isActive
+                        ? "bg-[#0D1B2A] text-white border-2 border-[#C87D3B] scale-110 ring-4 ring-[#C87D3B]/20"
+                        : isPassed
+                        ? "bg-[#C87D3B] text-white border-2 border-[#C87D3B]"
+                        : "bg-white text-[#18222F]/50 border-2 border-[#C87D3B]/30 hover:border-[#C87D3B]"
+                    }`}
+                  >
+                    {item.icon}
                   </div>
-                </div>
+                  <span
+                    className={`text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider mt-2.5 transition-colors ${
+                      isActive ? "text-[#0D1B2A]" : "text-[#18222F]/60 group-hover:text-[#0D1B2A]"
+                    }`}
+                  >
+                    {item.shortLabel}
+                  </span>
+                </button>
+              );
+            })}
 
-                {/* Description Column */}
-                <div
-                  className={`lg:col-span-6 flex flex-col ${
-                    isEven ? "lg:order-1 lg:pr-6" : "lg:order-2 lg:pl-6"
-                  }`}
-                >
-                  {/* Large Number & Step Label */}
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#C5A059] leading-none select-none">
-                      {item.step}
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-[0.65rem] font-serif uppercase tracking-[0.28em] text-[#C5A059] font-bold">
-                        {item.label}
-                      </span>
-                      <span className="h-[1.5px] w-12 bg-[#C5A059]/40 mt-1" />
-                    </div>
-                  </div>
+          </div>
+        </div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#121820] mb-3 leading-snug tracking-tight">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm md:text-base text-[#1A202C]/75 leading-relaxed font-normal mb-6">
-                    {item.desc}
-                  </p>
-
-                  {/* Feature Checkpoints */}
-                  <ul className="flex flex-col gap-2 border-t border-[#C5A059]/15 pt-4 text-xs sm:text-sm text-[#121820]">
-                    {item.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-2.5">
-                        <span className="w-5 h-5 rounded-full bg-[#C5A059]/20 text-[#121820] flex items-center justify-center text-xs font-bold flex-shrink-0">
-                          ✓
-                        </span>
-                        <span className="font-serif">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        {/* Central Interactive Waypoint Spotlight Card */}
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#C87D3B]/25 shadow-xl transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+            
+            {/* Left: Image Spotlight */}
+            <div className="md:col-span-6 relative aspect-[16/11] sm:aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#F8F6F0] border border-[#C87D3B]/20 shadow-inner">
+              <img
+                src={current.image}
+                alt={current.title}
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=800&q=80";
+                }}
+              />
+              <div className="absolute top-3 left-3 bg-[#0D1B2A]/90 text-white backdrop-blur-md px-3 py-1 rounded-full text-[0.62rem] font-bold uppercase tracking-wider border border-[#C87D3B]/30">
+                Waypoint {current.step} / 03
               </div>
-            );
-          })}
+            </div>
 
+            {/* Right: Clean Specs & Action */}
+            <div className="md:col-span-6 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-mono font-bold text-[#C87D3B] uppercase tracking-widest">
+                  STAGE {current.step}
+                </span>
+                <span className="text-xs text-[#18222F]/40">•</span>
+                <span className="text-xs font-semibold text-[#18222F]/60">
+                  {current.tagline}
+                </span>
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0D1B2A] uppercase tracking-tight mb-3">
+                {current.title}
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#18222F]/75 leading-relaxed mb-5 font-normal">
+                {current.desc}
+              </p>
+
+              {/* Minimal Tag Pills */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {current.tags.map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="text-[0.68rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#F8F6F0] text-[#0D1B2A] border border-[#C87D3B]/20"
+                  >
+                    ✓ {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Step Navigation Controls */}
+              <div className="flex items-center gap-3 pt-4 border-t border-[#C87D3B]/15">
+                <button
+                  onClick={() => setActiveIdx((prev) => (prev === 0 ? waypoints.length - 1 : prev - 1))}
+                  className="px-4 py-2 rounded-full border border-[#C87D3B]/30 text-xs font-bold text-[#0D1B2A] hover:bg-[#F8F6F0] transition-colors cursor-pointer"
+                >
+                  ← Prev
+                </button>
+                <button
+                  onClick={() => setActiveIdx((prev) => (prev === waypoints.length - 1 ? 0 : prev + 1))}
+                  className="px-5 py-2 rounded-full bg-[#C87D3B] hover:bg-[#D98745] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
+                >
+                  Next Waypoint →
+                </button>
+              </div>
+
+            </div>
+
+          </div>
         </div>
 
       </div>

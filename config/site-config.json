@@ -1,10 +1,10 @@
 {
-  "Product": "Stationery, Office Supplies",
+  "Product": "Luggage / Travel Accessories",
   "Processor": "Synovus APPs",
-  "brandName": "Quillhaven Stationery House",
-  "websiteUrl": "QuillhavenStationeryHouse.com",
-  "email": "support@QuillhavenStationeryHouse.com",
-  "descriptor": "QuillhavenStationeryHo",
+  "brandName": "Wanderloom Travel Collective",
+  "websiteUrl": "WanderloomTravelCollective.com",
+  "email": "support@wanderloomtravelcollective.com",
+  "descriptor": "WanderloomTravelCollec",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#121820",
+    "primaryColor": "#0D1B2A",
     "primaryTextColor": "#FFFFFF",
-    "secondaryColor": "#C5A059",
+    "secondaryColor": "#C87D3B",
     "secondaryTextColor": "#FFFFFF",
-    "neutralBgColor": "#FAF8F5",
-    "neutralTextColor": "#1A202C",
-    "fontFamily": "Playfair Display"
+    "neutralBgColor": "#F8F6F0",
+    "neutralTextColor": "#18222F",
+    "fontFamily": "Montserrat"
   }
 }

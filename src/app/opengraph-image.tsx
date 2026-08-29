@@ -67,7 +67,7 @@ export default async function Image() {
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            ✒
+            ✈
           </div>
           <div
             style={{
@@ -75,7 +75,7 @@ export default async function Image() {
               fontWeight: 800,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "#FAF8F5",
+              color: "#F8F6F0",
             }}
           >
             {siteConfig.brandName}
@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Artisanal Stationery &amp; Fine Writing Instruments
+          Luxury Luggage &amp; Engineered Travel Gear
         </div>
 
         <div

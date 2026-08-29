@@ -16,6 +16,15 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
   const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
+  // Track selected bundle quantity for each product
+  const [selectedBundles, setSelectedBundles] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {};
+    products.forEach((p) => {
+      initial[p.id] = p.bundles && p.bundles.length > 0 ? p.bundles[0].quantity : 1;
+    });
+    return initial;
+  });
+
   const categories = ["All", ...Array.from(new Set(products.map((p) => p.category)))];
 
   const filteredProducts =
@@ -23,18 +32,28 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
       ? products
       : products.filter((p) => p.category === selectedCategory);
 
-  const handleQuickAdd = (product: Product) => {
-    const firstBundle = product.bundles && product.bundles[0];
-    const quantity = firstBundle ? firstBundle.quantity : 1;
-    const price = firstBundle ? (firstBundle.price / firstBundle.quantity).toFixed(2) : product.ssPrice;
-    addToCart(product, quantity, price, "Single Unit");
+  const handleBundleChange = (productId: string, quantity: number) => {
+    setSelectedBundles((prev) => ({
+      ...prev,
+      [productId]: quantity,
+    }));
+  };
+
+  const handleAddToCart = (product: Product) => {
+    const qty = selectedBundles[product.id] || 1;
+    const bundle = product.bundles?.find((b) => b.quantity === qty);
+    const totalPrice = bundle ? parseFloat(String(bundle.price)) : parseFloat(product.ssPrice) * qty;
+    const unitPrice = (totalPrice / qty).toFixed(2);
+    const label = qty > 1 ? `${qty}-Piece Fleet Suite` : "Single Unit";
+    
+    addToCart(product, qty, unitPrice, label);
   };
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Optional via hideHeader prop) */}
+        {/* Section Header */}
         {!hideHeader ? (
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
@@ -66,7 +85,6 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
             </div>
           </div>
         ) : (
-          /* Category Filter Pills Only (when header is hidden on /shop) */
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 sm:mb-14">
             {categories.map((cat) => (
               <button
@@ -87,10 +105,13 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProducts.map((product) => {
-            const firstBundle = product.bundles && product.bundles[0];
-            const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            const originalPrice = (Number(currentPrice) * 1.4).toFixed(2);
-            const savingsPercent = Math.round(100 - (Number(currentPrice) / Number(originalPrice)) * 100);
+            const currentQty = selectedBundles[product.id] || 1;
+            const currentBundle = product.bundles?.find((b) => b.quantity === currentQty);
+            const currentPrice = currentBundle ? parseFloat(String(currentBundle.price)) : parseFloat(product.ssPrice) * currentQty;
+            const baseSinglePrice = parseFloat(product.ssPrice);
+            const standardRegularTotal = baseSinglePrice * currentQty;
+            const comparisonOriginalPrice = (standardRegularTotal * 1.4).toFixed(2);
+            const savingsPercent = Math.round(100 - (currentPrice / Number(comparisonOriginalPrice)) * 100);
 
             return (
               <div
@@ -117,10 +138,10 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                     {product.category}
                   </span>
 
-                  {/* Discount Pill */}
+                  {/* Discount / Tier Pill */}
                   {savingsPercent > 0 && (
                     <span className="absolute top-3.5 right-3.5 rounded-full bg-[#C87D3B] px-2.5 py-1 text-[0.62rem] font-extrabold uppercase tracking-wider text-white shadow-md">
-                      Save {savingsPercent}%
+                      {currentQty >= 5 ? "Fleet Value" : currentQty >= 3 ? "Most Popular" : `Save ${savingsPercent}%`}
                     </span>
                   )}
                 </Link>
@@ -138,31 +159,90 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                   </div>
 
                   <Link href={`/product/${product.id}`}>
-                    <h3 className="mb-2.5 text-base sm:text-lg font-bold text-[#0D1B2A] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#C87D3B]">
+                    <h3 className="mb-2 text-base sm:text-lg font-bold text-[#0D1B2A] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#C87D3B]">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-xs text-[#18222F]/70 line-clamp-2 mb-6 leading-relaxed font-normal">
+                  <p className="text-xs text-[#18222F]/70 line-clamp-2 mb-4 leading-relaxed font-normal">
                     {product.description}
                   </p>
 
-                  <div className="mt-auto flex items-center justify-between gap-2 border-t border-[#C87D3B]/15 pt-4">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xl sm:text-2xl font-black text-[#0D1B2A]">${currentPrice}</span>
-                      <span className="text-xs font-semibold text-[#18222F]/40 line-through">${originalPrice}</span>
+                  {/* Interactive Bundle Package Dropdown */}
+                  {product.bundles && product.bundles.length > 0 && (
+                    <div className="mb-4">
+                      <div className="relative">
+                        <select
+                          value={currentQty}
+                          onChange={(e) => handleBundleChange(product.id, Number(e.target.value))}
+                          aria-label={`Select bundle for ${product.name}`}
+                          className="w-full appearance-none rounded-xl border border-[#C87D3B]/35 bg-[#F8F6F0] px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#0D1B2A] cursor-pointer focus:border-[#C87D3B] focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all shadow-2xs"
+                        >
+                          {product.bundles.map((b) => (
+                            <option key={b.quantity} value={b.quantity}>
+                              {b.quantity === 1
+                                ? `1 Unit — $${parseFloat(String(b.price)).toFixed(2)}`
+                                : `${b.quantity}-Piece Fleet Suite — $${parseFloat(String(b.price)).toFixed(2)} ($${(parseFloat(String(b.price)) / b.quantity).toFixed(2)}/ea)`}
+                            </option>
+                          ))}
+                        </select>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#0D1B2A]"
+                        >
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Price & Action Row */}
+                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-[#C87D3B]/15 pt-4">
+                    <div className="flex flex-col">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-xl sm:text-2xl font-black text-[#0D1B2A]">
+                          ${currentPrice.toFixed(2)}
+                        </span>
+                        <span className="text-xs font-semibold text-[#18222F]/40 line-through">
+                          ${comparisonOriginalPrice}
+                        </span>
+                      </div>
+                      {currentQty > 1 && (
+                        <span className="text-[0.68rem] text-[#C87D3B] font-bold">
+                          ${(currentPrice / currentQty).toFixed(2)} / unit
+                        </span>
+                      )}
                     </div>
 
                     <button
-                      onClick={() => handleQuickAdd(product)}
-                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0D1B2A] text-[#C87D3B] border border-[#C87D3B]/40 shadow-md transition-all duration-200 hover:bg-[#C87D3B] hover:text-white hover:scale-105 cursor-pointer"
+                      onClick={() => handleAddToCart(product)}
+                      className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-[#0D1B2A] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#C87D3B] border border-[#C87D3B]/40 shadow-md transition-all duration-200 hover:bg-[#C87D3B] hover:text-white hover:scale-105 cursor-pointer flex-shrink-0"
                       aria-label={`Add ${product.name} to cart`}
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="9" cy="21" r="1" />
                         <circle cx="20" cy="21" r="1" />
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                       </svg>
+                      <span>Add to Bag</span>
                     </button>
+                  </div>
+
+                  {/* Trust Micro-Badge */}
+                  <div className="mt-3.5 pt-2.5 border-t border-[#C87D3B]/10 flex items-center justify-between text-[0.65rem] text-[#18222F]/60 font-medium">
+                    <span className="flex items-center gap-1">
+                      <span className="text-[#C87D3B]">✓</span> Free UPS Express
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="text-[#C87D3B]">✓</span> 14-Day Flight Trial
+                    </span>
                   </div>
                 </div>
               </div>
@@ -174,3 +254,4 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
     </section>
   );
 }
+

@@ -67,15 +67,15 @@ export default async function Image() {
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            ✈
+            🛡️
           </div>
           <div
             style={{
-              fontSize: 40,
-              fontWeight: 800,
+              fontSize: 38,
+              fontWeight: 900,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "#F8F6F0",
+              color: "#F8FAFC",
             }}
           >
             {siteConfig.brandName}
@@ -86,13 +86,13 @@ export default async function Image() {
           style={{
             marginTop: 32,
             fontSize: 22,
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: 4,
             textTransform: "uppercase",
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Luxury Luggage &amp; Engineered Travel Gear
+          Commercial Uniforms, Scrubs &amp; Workwear
         </div>
 
         <div

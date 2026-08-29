@@ -2,150 +2,94 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const secondaryPromises = [
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <polyline points="9 12 11.5 14.5 15 9" />
-      </svg>
-    ),
-    title: "Aerospace Impact Armor",
-    desc: "Aircraft-grade 6061-T6 aluminum shell with cold-forged corner blocks that absorb terminal baggage impacts.",
-    badge: "Indestructible Alloy",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="m10 15 5-3-5-3v6Z" />
-      </svg>
-    ),
-    title: "Japanese Hinomoto 360° Glide",
-    desc: "Whisper-silent ball bearings tested across 150 km of cobblestones with under 36 dB acoustic output.",
-    badge: "Silent Dual Spinners",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
-    title: "Dual TSA Integrated Security",
-    desc: "Keyless 3-digit combination latches for seamless customs inspection without broken zippers or cut locks.",
-    badge: "TSA Certified Master Key",
-  },
-];
-
 export default function QualityPromise() {
   return (
-    <section id="quality-promise" className="bg-[#F8F6F0] py-16 sm:py-20 md:py-24 text-[#18222F] border-t border-[#C87D3B]/20">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            The Wanderloom Promise
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Engineering Precision <span className="text-[#C87D3B] font-light italic lowercase">You Can Trust</span>
-          </h2>
-          <p className="mx-auto mt-2.5 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed text-[#18222F]/70 font-normal">
-            Every piece is built to endure the world&apos;s most demanding flight routes.
-          </p>
-        </div>
+    <section
+      id="quality-promise"
+      className="relative bg-[#F8FAFC] pt-16 sm:pt-20 pb-0 text-[#0A0F1D] border-t border-slate-200 overflow-hidden"
+    >
+      {/* Subtle Contour Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="topo-lines" width="700" height="700" patternUnits="userSpaceOnUse">
+              <path
+                d="M50 350 C150 180, 550 180, 650 350 C550 520, 150 520, 50 350 Z M120 350 C200 230, 500 230, 580 350 C500 470, 200 470, 120 350 Z M190 350 C250 280, 450 280, 510 350 C450 420, 250 420, 190 350 Z"
+                fill="none"
+                stroke="#0A0F1D"
+                strokeWidth="1.2"
+              />
+              <path
+                d="M0 120 C250 0, 450 240, 700 120 M0 580 C250 460, 450 700, 700 580"
+                fill="none"
+                stroke="#0A0F1D"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#topo-lines)" />
+        </svg>
+      </div>
 
-        {/* Bento Trust Architecture: Flagship Hero Guarantee + 3 Precision Pillars */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center mb-10 sm:mb-14">
           
-          {/* Flagship Hero Guarantee Card (Left 5 Cols) */}
-          <div className="lg:col-span-5 bg-[#0D1B2A] text-white rounded-3xl p-7 sm:p-9 border border-[#C87D3B]/30 shadow-xl flex flex-col justify-between relative overflow-hidden group">
-            {/* Ambient Background Radial Glow */}
-            <div className="absolute -top-16 -right-16 w-52 h-52 bg-[#C87D3B]/20 rounded-full blur-3xl pointer-events-none" />
+          {/* Left Column: Clean Eyebrow */}
+          <div className="lg:col-span-4 flex items-center">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 select-none">
+              BUILT FOR EXTREMES
+            </span>
+          </div>
+
+          {/* Right Column: Headline & Subtitle */}
+          <div className="lg:col-span-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-4">
+              Built for Where <br />
+              <span className="font-bold text-[#0A0F1D]">Limits Begin.</span>
+            </h2>
+
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-normal mb-5">
+              1000D Cordura® ripstop, DuPont Teflon™ fluid barrier, and Silvadur™ antimicrobial protection backed by our 14-day fit trial.
+            </p>
 
             <div>
-              {/* Trust Crest Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-[#C87D3B] text-white flex items-center justify-center text-2xl shadow-lg mb-6 group-hover:scale-105 transition-transform">
-                ✈
-              </div>
-
-              <span className="text-[0.68rem] font-mono font-bold uppercase tracking-widest text-[#C87D3B] block mb-2">
-                FLAGSHIP COMMITMENT
-              </span>
-
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight mb-4 leading-tight">
-                {siteConfig.trialPeriod || 14}-Day Worldwide <br />
-                <span className="text-[#C87D3B] font-light italic lowercase">Flight Trial</span>
-              </h3>
-
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal mb-8">
-                Pack your wardrobe, board your flight, and test our gear anywhere on earth. If you are not 100% satisfied, return it hassle-free for a complete refund.
-              </p>
-
-              {/* Quick Checkpoints */}
-              <div className="flex flex-col gap-2.5 text-xs text-white/90">
-                <div className="flex items-center gap-2.5">
-                  <span className="w-4 h-4 rounded-full bg-[#C87D3B] text-[#0D1B2A] flex items-center justify-center text-[0.62rem] font-bold">✓</span>
-                  <span>100% Full Refund Coverage</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <span className="w-4 h-4 rounded-full bg-[#C87D3B] text-[#0D1B2A] flex items-center justify-center text-[0.62rem] font-bold">✓</span>
-                  <span>Zero Restocking or Return Fees</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <span className="w-4 h-4 rounded-full bg-[#C87D3B] text-[#0D1B2A] flex items-center justify-center text-[0.62rem] font-bold">✓</span>
-                  <span>Lifetime Structural Chassis Warranty</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-white/10">
               <Link
-                href="/terms"
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C87D3B] hover:text-[#E5985A] transition-colors"
+                href="/shop"
+                className="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0A0F1D] hover:text-blue-600 transition-colors underline underline-offset-8 decoration-1 decoration-[#0A0F1D]/40"
               >
-                Review Guarantee Terms →
+                <span>Explore Collection</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 font-mono text-sm">↗</span>
               </Link>
             </div>
           </div>
 
-          {/* 3 Stacked / Grid Precision Pillars (Right 7 Cols) */}
-          <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5 justify-between">
-            {secondaryPromises.map((item, idx) => (
-              <div
-                key={idx}
-                className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 rounded-3xl bg-white p-6 sm:p-7 border border-[#C87D3B]/20 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#C87D3B]/50 hover:-translate-y-0.5"
-              >
-                <div className="flex h-13 w-13 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0D1B2A] text-[#C87D3B] transition-all duration-300 group-hover:bg-[#C87D3B] group-hover:text-white shadow-xs">
-                  {item.icon}
-                </div>
+        </div>
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <h4 className="text-base sm:text-lg font-bold text-[#0D1B2A] uppercase tracking-tight">
-                      {item.title}
-                    </h4>
-                    <span className="hidden sm:inline-block text-[0.62rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#F8F6F0] text-[#C87D3B] border border-[#C87D3B]/25">
-                      {item.badge}
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#18222F]/70 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+      </div>
 
+      {/* Hanging Rail Presentation */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full h-2 bg-[#0A0F1D] rounded-full relative z-20" />
+        <div className="relative -mt-2 w-full aspect-[16/9] sm:aspect-[2.2/1] overflow-hidden">
+          <Image
+            src="/img/hanging-uniforms-rail.jpg"
+            alt={`${siteConfig.brandName} collection`}
+            fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover object-top"
+            priority
+          />
         </div>
       </div>
+
     </section>
   );
 }

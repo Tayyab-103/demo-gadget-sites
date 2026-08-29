@@ -2,16 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "The Aviator Aluminum Carry-On Spinner Suitcase",
-    "description": "Precision-crafted from aerospace-grade anodized aluminum alloy with reinforced corner bumpers. Features ultra-whisper Japanese Hinomoto 360° dual spinner wheels, dual TSA-approved integrated combination lock latches, multi-stage aircraft aluminum telescopic handle, and waterproof compression dividers. Airline carry-on compliant worldwide.",
-    "image": "/img/products/aviator-aluminum-spinner.jpg",
+    "name": "The Vanguard Pro Heavy-Duty Tactical & Industrial Utility Uniform Suite",
+    "description": "Engineered from 1000D Cordura® reinforced ripstop flex weave with DuPont Teflon™ stain & water-repellent finish. Features articulated knee & elbow armor pockets, 14 multi-tool utility cargo pockets, heavy-duty YKK brass zippers, and reinforced triple-needle stitching for severe industrial and field duty.",
+    "image": "/img/products/product-tactical-workwear.jpg",
     "images": [
-      "/img/products/aviator-aluminum-spinner.jpg",
-      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=900&q=80"
+      "/img/products/product-tactical-workwear.jpg",
+      "/img/hero-uniforms.jpg",
+      "/img/textile-lab-test.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/aviator-aluminum-spinner.jpg",
-    "category": "Luxury Hardshell Luggage",
+    "ingredientsImage": "/img/textile-lab-test.jpg",
+    "category": "Industrial & Tactical Workwear",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
@@ -29,16 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "The Nomad Full-Grain Leather & Ballistic Weekender Duffle",
-    "description": "Hand-stitched with Italian vegetable-tanned full-grain leather and weather-resistant 1000D Cordura ballistic canvas. Engineered with a dedicated ventilated shoe compartment, padded 16-inch laptop compartment, solid brass hardware, luggage trolley pass-through sleeve, and a high-density ergonomic shoulder strap.",
-    "image": "/img/products/nomad-leather-duffle.jpg",
+    "name": "The Apex-Core Antimicrobial Four-Way Stretch Medical Scrub Suite",
+    "description": "Tailored for surgical teams and clinical healthcare professionals with Silvadur™ antimicrobial silver-ion fabric technology. Features fluid-resistant four-way stretch micro-twill, 9-pocket ergonomic utility cargo scrub pants, and breathable mesh ventilation panels for 24-hour shift comfort.",
+    "image": "/img/products/product-medical-scrubs.jpg",
     "images": [
-      "/img/products/nomad-leather-duffle.jpg",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&q=80"
+      "/img/products/product-medical-scrubs.jpg",
+      "/img/hero-uniforms.jpg",
+      "/img/uniform-tailoring-atelier.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/nomad-leather-duffle.jpg",
-    "category": "Premium Travel Bags & Duffles",
+    "ingredientsImage": "/img/products/product-medical-scrubs.jpg",
+    "category": "Medical & Healthcare Uniforms",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,16 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "The Globalist Modular Compression Packing Cube & Tech Organizer Suite",
-    "description": "A master 6-piece packing architecture engineered from ultralight water-repellent diamond-ripstop nylon and self-healing YKK dual-compression zippers. Includes 4 expandable garment compression cubes, a spill-proof hanging toiletry dopp kit, and an RFID-shielded passport and tech accessories folio.",
-    "image": "/img/products/modular-packing-suite.jpg",
+    "name": "The Executive Artisan Double-Breasted Culinary & Chef Uniform Coat",
+    "description": "Master-crafted from 240 GSM organic ring-spun cotton twill with dual CoolVent™ breathable back air-flow panels. Includes stain-release coating, concealed magnetic apron-stay collar tab, dual sleeve thermometer pockets, and handcrafted cloth knot buttons.",
+    "image": "/img/products/product-chef-coat.jpg",
     "images": [
-      "/img/products/modular-packing-suite.jpg",
-      "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80"
+      "/img/products/product-chef-coat.jpg",
+      "/img/hero-uniforms.jpg",
+      "/img/uniform-tailoring-atelier.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/modular-packing-suite.jpg",
-    "category": "Travel Organizers & Accessories",
+    "ingredientsImage": "/img/products/product-chef-coat.jpg",
+    "category": "Culinary & Hospitality Uniforms",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",

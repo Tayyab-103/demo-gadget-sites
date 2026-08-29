@@ -118,34 +118,34 @@ export default function Checkout() {
       <Header />
 
       {loading && (
-        <div className="fixed inset-0 bg-[#0D1B2A]/95 z-50 flex flex-col items-center justify-center p-4">
-          <div className="w-12 h-12 border-4 border-[#C87D3B]/20 border-t-[#C87D3B] rounded-full animate-spin" />
+        <div className="fixed inset-0 bg-[#0A0F1D]/95 z-50 flex flex-col items-center justify-center p-4">
+          <div className="w-12 h-12 border-4 border-blue-500/20 border-t-cyan-400 rounded-full animate-spin" />
           <h4 className="mt-6 text-base sm:text-lg font-bold text-white uppercase tracking-tight text-center">
-            Processing Secure Flight Acquisition...
+            Processing Secure Uniform Outfitting Acquisition...
           </h4>
-          <p className="text-xs text-white/60 text-center mt-1">
+          <p className="text-xs text-slate-400 text-center mt-1">
             Please do not refresh or close this window.
           </p>
         </div>
       )}
 
-      <main className="bg-[#F8F6F0] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-36 md:pb-24 border-b border-[#C87D3B]/20">
+      <main className="bg-[#F8FAFC] pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-36 md:pb-24 border-b border-blue-500/20">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-8 sm:mb-10">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/15 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-widest text-[#C87D3B] mb-2">
-              <span>✈</span>
-              256-Bit SSL Priority Encryption
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-blue-700 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+              <span>[ 256-BIT SSL PRIORITY ENCRYPTION ]</span>
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0D1B2A] tracking-tight uppercase">
-              Priority <span className="text-[#C87D3B] font-light italic lowercase">Checkout</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0A0F1D] tracking-tight uppercase">
+              Priority <span className="gradient-heading font-black">Checkout</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Form Column */}
-            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-[#C87D3B]/25 shadow-lg">
+            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-blue-500/20 shadow-xl shadow-blue-500/5">
               {errorMsg && (
                 <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-6 text-xs md:text-sm font-semibold">
                   <strong>Transaction Status:</strong> {errorMsg}
@@ -153,32 +153,32 @@ export default function Checkout() {
               )}
 
               <form onSubmit={handleSubmit}>
-                <h3 className="text-sm font-bold uppercase tracking-wider border-b border-[#C87D3B]/20 pb-3 mb-5 text-[#0D1B2A]">
-                  1. Flight Dispatch Destination
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D]">
+                  1. Dispatch Destination
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       First Name
                     </label>
                     <input
                       type="text"
                       name="firstName"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.firstName}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       Last Name
                     </label>
                     <input
                       type="text"
                       name="lastName"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.lastName}
                       onChange={handleChange}
                       required
@@ -187,13 +187,13 @@ export default function Checkout() {
                 </div>
 
                 <div className="flex flex-col mb-4">
-                  <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                  <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                     Delivery Address
                   </label>
                   <input
                     type="text"
                     name="shippingAddress1"
-                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                     value={formData.shippingAddress1}
                     onChange={handleChange}
                     required
@@ -202,26 +202,26 @@ export default function Checkout() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       City
                     </label>
                     <input
                       type="text"
                       name="shippingCity"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.shippingCity}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       State
                     </label>
                     <input
                       type="text"
                       name="shippingState"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       placeholder="e.g. TX"
                       value={formData.shippingState}
                       onChange={handleChange}
@@ -229,13 +229,13 @@ export default function Checkout() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       ZIP Code
                     </label>
                     <input
                       type="text"
                       name="shippingZip"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.shippingZip}
                       onChange={handleChange}
                       required
@@ -245,26 +245,26 @@ export default function Checkout() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       name="phone"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.phone}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       Email Address
                     </label>
                     <input
                       type="email"
                       name="email"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-medium"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-medium"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -273,19 +273,19 @@ export default function Checkout() {
                 </div>
 
                 {/* Credit Card Details */}
-                <h3 className="text-sm font-bold uppercase tracking-wider border-b border-[#C87D3B]/20 pb-3 mb-5 text-[#0D1B2A] mt-8">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D] mt-8">
                   2. Payment Details
                 </h3>
 
                 <div className="flex flex-col mb-4">
-                  <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                  <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                     Credit Card Number
                   </label>
                   <input
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-mono"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-mono"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
@@ -298,12 +298,12 @@ export default function Checkout() {
 
                 <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6">
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       Month
                     </label>
                     <select
                       name="cc_month"
-                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-bold"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-bold"
                       value={formData.cc_month}
                       onChange={handleChange}
                       required
@@ -317,12 +317,12 @@ export default function Checkout() {
                     </select>
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       Year
                     </label>
                     <select
                       name="cc_year"
-                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-bold"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-bold"
                       value={formData.cc_year}
                       onChange={handleChange}
                       required
@@ -336,14 +336,14 @@ export default function Checkout() {
                     </select>
                   </div>
                   <div className="flex flex-col">
-                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0D1B2A]">
+                    <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-[#0A0F1D]">
                       CVV
                     </label>
                     <input
                       type="password"
                       name="CVV"
                       maxLength={4}
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-[#C87D3B]/30 rounded-xl focus:outline-none focus:border-[#C87D3B] focus:ring-1 focus:ring-[#C87D3B] transition-all text-[#0D1B2A] bg-[#F8F6F0] shadow-2xs font-mono"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-blue-500/30 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-[#0A0F1D] bg-[#F8FAFC] shadow-2xs font-mono"
                       placeholder="•••"
                       value={formData.CVV}
                       onChange={handleChange}
@@ -354,7 +354,7 @@ export default function Checkout() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center font-extrabold text-center whitespace-nowrap bg-[#C87D3B] text-white hover:bg-[#D98745] transition-all duration-200 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-xl hover:scale-[1.01]"
+                  className="inline-flex items-center justify-center font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white transition-all duration-200 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-xl shadow-blue-500/20 hover:scale-[1.01]"
                 >
                   Complete Priority Dispatch →
                 </button>
@@ -363,25 +363,25 @@ export default function Checkout() {
 
             {/* Cart Summary Column */}
             <div className="lg:col-span-5 sticky top-28 flex flex-col gap-6">
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#C87D3B]/25 shadow-lg">
-                <h3 className="text-sm font-bold uppercase tracking-wider border-b border-[#C87D3B]/20 pb-3 mb-5 text-[#0D1B2A]">
-                  Flight Manifest Summary
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-blue-500/20 shadow-xl shadow-blue-500/5">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D]">
+                  Uniform Manifest Summary
                 </h3>
 
                 {cart.map((item) => (
                   <div
-                    className="flex justify-between items-center py-3.5 border-b border-dashed border-[#C87D3B]/20 last:border-b-0"
+                    className="flex justify-between items-center py-3.5 border-b border-dashed border-blue-500/20 last:border-b-0"
                     key={item.Id}
                   >
                     <div className="flex-1 pr-3">
-                      <strong className="text-xs sm:text-sm font-bold text-[#0D1B2A] block truncate">
+                      <strong className="text-xs sm:text-sm font-bold text-[#0A0F1D] block truncate">
                         {item.Name}
                       </strong>
-                      <span className="block text-[0.65rem] font-extrabold text-[#C87D3B] uppercase tracking-wide mt-0.5">
+                      <span className="block text-[0.65rem] font-extrabold text-blue-600 uppercase tracking-wide mt-0.5">
                         {item.Label} (Qty: {item.Qty})
                       </span>
                     </div>
-                    <span className="font-extrabold text-sm sm:text-base text-[#0D1B2A] flex-shrink-0">
+                    <span className="font-black text-sm sm:text-base text-[#0A0F1D] flex-shrink-0">
                       ${item.Total}
                     </span>
                   </div>
@@ -389,7 +389,7 @@ export default function Checkout() {
 
                 {/* Insurance Toggle */}
                 <div
-                  className="p-3.5 bg-[#F8F6F0] border border-dashed border-[#C87D3B]/30 rounded-xl my-5 flex items-center gap-3 cursor-pointer hover:bg-[#C87D3B]/10 transition-colors"
+                  className="p-3.5 bg-[#F8FAFC] border border-dashed border-blue-500/30 rounded-xl my-5 flex items-center gap-3 cursor-pointer hover:bg-blue-50/50 transition-colors"
                   onClick={() => setShippingInsurance((prev) => !prev)}
                 >
                   <input
@@ -397,40 +397,40 @@ export default function Checkout() {
                     checked={shippingInsurance}
                     onChange={handleInsuranceChange}
                     onClick={(e) => e.stopPropagation()}
-                    className="w-4 h-4 cursor-pointer accent-[#C87D3B]"
+                    className="w-4 h-4 cursor-pointer accent-blue-600"
                   />
                   <div>
-                    <strong className="text-xs font-bold text-[#0D1B2A] block">
-                      Add Flight Transit &amp; Damage Insurance
+                    <strong className="text-xs font-bold text-[#0A0F1D] block">
+                      Add Workforce Transit &amp; Damage Insurance
                     </strong>
-                    <span className="text-[0.65rem] text-[#18222F]/60">
-                      Guarantees expedited replacement if damaged or lost in transit ($1.00)
+                    <span className="text-[0.65rem] text-slate-500">
+                      Guarantees expedited replacement if lost or damaged in transit ($1.00)
                     </span>
                   </div>
                 </div>
 
                 {/* Subtotals & Grand Total */}
                 <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-3">
-                  <div className="flex justify-between items-center text-[#18222F]/70">
-                    <span>Luggage Subtotal:</span>
-                    <span className="font-bold text-[#0D1B2A]">${cartTotal.toFixed(2)}</span>
+                  <div className="flex justify-between items-center text-slate-600">
+                    <span>Uniform Subtotal:</span>
+                    <span className="font-bold text-[#0A0F1D]">${cartTotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between items-center text-[#18222F]/70">
+                  <div className="flex justify-between items-center text-slate-600">
                     <span>{siteConfig.shippingCarrier} Priority Air Delivery:</span>
                     <span className="text-emerald-700 font-bold">FREE</span>
                   </div>
                   {shippingInsurance && (
-                    <div className="flex justify-between items-center text-[#18222F]/70">
+                    <div className="flex justify-between items-center text-slate-600">
                       <span>Transit Insurance:</span>
-                      <span className="font-bold text-[#0D1B2A]">$1.00</span>
+                      <span className="font-bold text-[#0A0F1D]">$1.00</span>
                     </div>
                   )}
 
-                  <div className="flex justify-between items-center border-t border-[#C87D3B]/20 pt-3 mt-1 font-bold text-base">
-                    <span className="text-[#0D1B2A] uppercase tracking-wider text-xs font-bold">
+                  <div className="flex justify-between items-center border-t border-blue-500/20 pt-3 mt-1 font-bold text-base">
+                    <span className="text-[#0A0F1D] uppercase tracking-wider text-xs font-bold">
                       Grand Total:
                     </span>
-                    <span className="text-[#0D1B2A] font-black text-2xl">
+                    <span className="text-[#0A0F1D] font-black text-2xl">
                       ${grandTotal}
                     </span>
                   </div>
@@ -438,8 +438,8 @@ export default function Checkout() {
               </div>
 
               {/* Safety Disclosures */}
-              <div className="py-5 px-6 text-center text-[0.68rem] text-[#18222F]/60 leading-relaxed bg-white border border-[#C87D3B]/25 rounded-2xl shadow-xs">
-                <p className="font-bold text-[#0D1B2A]">
+              <div className="py-5 px-6 text-center text-[0.68rem] text-slate-500 leading-relaxed bg-white border border-blue-500/20 rounded-2xl shadow-xs">
+                <p className="font-bold text-[#0A0F1D]">
                   🔒 256-Bit SSL Encrypted Banking Gateway.
                 </p>
                 <p className="mt-0.5">

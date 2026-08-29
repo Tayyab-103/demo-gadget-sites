@@ -16,7 +16,6 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
   const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  // Track selected bundle quantity for each product
   const [selectedBundles, setSelectedBundles] = useState<Record<string, number>>(() => {
     const initial: Record<string, number> = {};
     products.forEach((p) => {
@@ -50,33 +49,33 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="shop">
+    <section className="py-16 sm:py-20 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         {!hideHeader ? (
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-              <span>✈</span>
-              Engineered For Transit
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-              Signature Travel <span className="text-[#C87D3B] font-light italic lowercase">Systems</span>
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-3 select-none">
+              SIGNATURE CATALOG
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-3">
+              Field-Tested <br className="hidden sm:inline" />
+              <span className="font-bold text-[#0A0F1D]">Uniform Suites.</span>
             </h2>
-            <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
-              Aerospace aluminum hard-cases, full-grain Italian leather weekenders, and modular vacuum packing suites built for millions of air miles.
+            <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto font-normal">
+              Commercial-grade tactical workwear, antimicrobial scrubs, and executive chef coats.
             </p>
 
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-7 sm:mt-8">
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     selectedCategory === cat
-                      ? "bg-[#0D1B2A] text-white shadow-md border border-[#C87D3B] scale-105"
-                      : "bg-white text-[#18222F]/75 border border-[#C87D3B]/20 hover:border-[#C87D3B] hover:text-[#0D1B2A]"
+                      ? "bg-[#0A0F1D] text-white shadow-xs"
+                      : "bg-white text-slate-700 border border-slate-200 hover:border-[#0A0F1D] hover:text-[#0A0F1D]"
                   }`}
                 >
                   {cat}
@@ -85,15 +84,15 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
             </div>
           </div>
         ) : (
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 sm:mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[0.7rem] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? "bg-[#0D1B2A] text-white shadow-md border border-[#C87D3B] scale-105"
-                    : "bg-white text-[#18222F]/75 border border-[#C87D3B]/20 hover:border-[#C87D3B] hover:text-[#0D1B2A]"
+                    ? "bg-[#0A0F1D] text-white shadow-xs"
+                    : "bg-white text-slate-700 border border-slate-200 hover:border-[#0A0F1D] hover:text-[#0A0F1D]"
                 }`}
               >
                 {cat}
@@ -103,7 +102,7 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
         )}
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product) => {
             const currentQty = selectedBundles[product.id] || 1;
             const currentBundle = product.bundles?.find((b) => b.quantity === currentQty);
@@ -116,58 +115,54 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
             return (
               <div
                 key={product.id}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-[#C87D3B]/20 bg-white shadow-sm transition-all duration-300 hover:shadow-2xl hover:border-[#C87D3B]/60 hover:-translate-y-1"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xs transition-all duration-300 hover:shadow-lg hover:border-slate-300"
               >
                 {/* Image Container */}
                 <Link
                   href={`/product/${product.id}`}
-                  className="relative block aspect-[4/3] sm:aspect-square overflow-hidden bg-black/5"
+                  className="relative block aspect-[4/3] sm:aspect-[1/1] overflow-hidden bg-slate-900"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=600&q=80";
-                    }}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
                   {/* Category Pill */}
-                  <span className="absolute top-3.5 left-3.5 rounded-full bg-[#0D1B2A]/90 px-3 py-1 text-[0.62rem] font-bold uppercase tracking-wider text-white shadow-md backdrop-blur-md border border-[#C87D3B]/30">
+                  <span className="absolute top-3 left-3 rounded-full bg-[#0A0F1D]/90 px-2.5 py-0.5 text-[0.62rem] font-bold uppercase tracking-wider text-white shadow-xs backdrop-blur-xs">
                     {product.category}
                   </span>
 
-                  {/* Discount / Tier Pill */}
+                  {/* Savings Pill */}
                   {savingsPercent > 0 && (
-                    <span className="absolute top-3.5 right-3.5 rounded-full bg-[#C87D3B] px-2.5 py-1 text-[0.62rem] font-extrabold uppercase tracking-wider text-white shadow-md">
-                      {currentQty >= 5 ? "Fleet Value" : currentQty >= 3 ? "Most Popular" : `Save ${savingsPercent}%`}
+                    <span className="absolute top-3 right-3 rounded-full bg-[#0A0F1D] px-2 py-0.5 text-[0.62rem] font-bold uppercase tracking-wider text-white shadow-xs">
+                      {currentQty >= 5 ? "Fleet Rate" : currentQty >= 3 ? "Crew Rate" : `Save ${savingsPercent}%`}
                     </span>
                   )}
                 </Link>
 
                 {/* Content */}
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  {/* Rating & verified flight tag */}
-                  <div className="flex items-center gap-1 text-[#C87D3B] mb-2.5">
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  {/* Rating */}
+                  <div className="flex items-center gap-1 text-[#0A0F1D] mb-1.5">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                      <svg key={i} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                       </svg>
                     ))}
-                    <span className="text-[0.68rem] text-[#18222F]/65 font-bold ml-1.5 uppercase tracking-wider">5.0 (Global Traveler Rated)</span>
+                    <span className="text-[0.65rem] text-slate-500 font-bold ml-1">5.0</span>
                   </div>
 
                   <Link href={`/product/${product.id}`}>
-                    <h3 className="mb-2 text-base sm:text-lg font-bold text-[#0D1B2A] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#C87D3B]">
+                    <h3 className="mb-1.5 text-base font-bold text-[#0A0F1D] leading-snug transition-colors line-clamp-1 group-hover:text-blue-600">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-xs text-[#18222F]/70 line-clamp-2 mb-4 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-500 line-clamp-2 mb-4 font-normal leading-relaxed">
                     {product.description}
                   </p>
 
-                  {/* Interactive Bundle Package Dropdown */}
+                  {/* Bundle Selector */}
                   {product.bundles && product.bundles.length > 0 && (
                     <div className="mb-4">
                       <div className="relative">
@@ -175,27 +170,27 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                           value={currentQty}
                           onChange={(e) => handleBundleChange(product.id, Number(e.target.value))}
                           aria-label={`Select bundle for ${product.name}`}
-                          className="w-full appearance-none rounded-xl border border-[#C87D3B]/35 bg-[#F8F6F0] px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#0D1B2A] cursor-pointer focus:border-[#C87D3B] focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all shadow-2xs"
+                          className="w-full appearance-none rounded-xl border border-slate-200 bg-[#F8FAFC] px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#0A0F1D] cursor-pointer focus:outline-none"
                         >
                           {product.bundles.map((b) => (
                             <option key={b.quantity} value={b.quantity}>
                               {b.quantity === 1
-                                ? `1 Unit — $${parseFloat(String(b.price)).toFixed(2)}`
-                                : `${b.quantity}-Piece Fleet Suite — $${parseFloat(String(b.price)).toFixed(2)} ($${(parseFloat(String(b.price)) / b.quantity).toFixed(2)}/ea)`}
+                                ? `Single Unit — $${parseFloat(String(b.price)).toFixed(2)}`
+                                : `${b.quantity}-Piece Suite — $${parseFloat(String(b.price)).toFixed(2)} ($${(parseFloat(String(b.price)) / b.quantity).toFixed(2)}/ea)`}
                             </option>
                           ))}
                         </select>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
+                          width="12"
+                          height="12"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="2.5"
+                          strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#0D1B2A]"
+                          className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[#0A0F1D]"
                         >
                           <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
@@ -204,45 +199,25 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                   )}
 
                   {/* Price & Action Row */}
-                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-[#C87D3B]/15 pt-4">
+                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-slate-100 pt-3.5">
                     <div className="flex flex-col">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-xl sm:text-2xl font-black text-[#0D1B2A]">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xl font-bold text-[#0A0F1D]">
                           ${currentPrice.toFixed(2)}
                         </span>
-                        <span className="text-xs font-semibold text-[#18222F]/40 line-through">
+                        <span className="text-xs text-slate-400 line-through">
                           ${comparisonOriginalPrice}
                         </span>
                       </div>
-                      {currentQty > 1 && (
-                        <span className="text-[0.68rem] text-[#C87D3B] font-bold">
-                          ${(currentPrice / currentQty).toFixed(2)} / unit
-                        </span>
-                      )}
                     </div>
 
                     <button
                       onClick={() => handleAddToCart(product)}
-                      className="inline-flex items-center justify-center gap-1.5 rounded-2xl bg-[#0D1B2A] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#C87D3B] border border-[#C87D3B]/40 shadow-md transition-all duration-200 hover:bg-[#C87D3B] hover:text-white hover:scale-105 cursor-pointer flex-shrink-0"
+                      className="inline-flex items-center justify-center rounded-full bg-[#0A0F1D] hover:bg-slate-800 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all cursor-pointer"
                       aria-label={`Add ${product.name} to cart`}
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="9" cy="21" r="1" />
-                        <circle cx="20" cy="21" r="1" />
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                      </svg>
-                      <span>Add to Bag</span>
+                      Add to Bag
                     </button>
-                  </div>
-
-                  {/* Trust Micro-Badge */}
-                  <div className="mt-3.5 pt-2.5 border-t border-[#C87D3B]/10 flex items-center justify-between text-[0.65rem] text-[#18222F]/60 font-medium">
-                    <span className="flex items-center gap-1">
-                      <span className="text-[#C87D3B]">✓</span> Free UPS Express
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="text-[#C87D3B]">✓</span> 14-Day Flight Trial
-                    </span>
                   </div>
                 </div>
               </div>
@@ -254,4 +229,3 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
     </section>
   );
 }
-

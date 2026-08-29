@@ -14,11 +14,11 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Signature Transit Catalog"
-          title={<>Luggage &amp; Modular Travel Gear</>}
-          subtitle="Explore aerospace aluminum carry-on spinners, Italian leather weekender bags, and modular compression packing architectures."
-          image="/img/hero-luggage-travel.jpg"
-          currentLabel="Luggage &amp; Gear"
+          eyebrow="Commercial Outfitting Catalog"
+          title={<>Commercial Uniforms &amp; Workwear</>}
+          subtitle="Explore tactical industrial utility suites, Silvadur™ antimicrobial medical scrubs, and executive double-breasted culinary coats."
+          image="/img/hero-uniforms.jpg"
+          currentLabel="Uniform Catalog"
         />
         <ProductGrid hideHeader={true} />
       </main>

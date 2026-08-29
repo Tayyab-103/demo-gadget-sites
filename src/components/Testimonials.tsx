@@ -1,176 +1,164 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
 
-interface TravelerReview {
+const siteConfig = siteConfigData as unknown as SiteConfig;
+
+interface CustomerStory {
   id: string;
+  logo: string;
+  logoSub?: string;
   quote: string;
-  name: string;
-  role: string;
-  location: string;
+  authorName: string;
+  authorRole: string;
   image: string;
-  alt: string;
 }
 
-const travelerReviews: TravelerReview[] = [
+const customerStories: CustomerStory[] = [
   {
     id: "01",
-    quote: "The Aviator Aluminum Carry-On survived 40+ international flights last year without a flinch. The Japanese Hinomoto wheels glide like butter across Tokyo and Milan terminals.",
-    name: "Harrison T.",
-    role: "Global Management Consultant",
-    location: "London & New York",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85",
-    alt: "Harrison T. frequent traveler with aluminum suitcase",
+    logo: "VANGUARD DEFENSE",
+    logoSub: "SECURITY",
+    quote:
+      "“Ironvale provides a standard of durability that’s paramount to our officer safety across 350+ patrol personnel in Texas.”",
+    authorName: "Marcus Vance",
+    authorRole: "VP of Security Operations",
+    image: "/img/stories/story-tactical.jpg",
   },
   {
     id: "02",
-    quote: "The Nomad Leather & Ballistic Duffle is the ultimate weekender. The separate ventilated shoe compartment and trolley sleeve make airport security and hotel check-ins completely effortless.",
-    name: "Elena V.",
-    role: "Architectural Photographer",
-    location: "Zurich, Switzerland",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85",
-    alt: "Elena V. traveler with leather weekender duffle",
+    logo: "METRO HEALTH",
+    logoSub: "HOSPITAL",
+    quote:
+      "“The Apex-Core scrubs endure hospital autoclave sterilization without color fade. Our surgical staff enjoys true all-shift comfort.”",
+    authorName: "Dr. Claire Sterling, MD",
+    authorRole: "Chief Nursing Director",
+    image: "/img/stories/story-medical.jpg",
   },
   {
     id: "03",
-    quote: "The modular compression packing cubes doubled the usable space in my carry-on. No more wrinkled suits or loose cables when landing in Singapore for meetings.",
-    name: "David K.",
-    role: "Venture Partner & Tech Executive",
-    location: "San Francisco, CA",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85",
-    alt: "David K. traveling with packing organizers",
-  },
-  {
-    id: "04",
-    quote: "Wanderloom combines Rimowa-level aluminum craftsmanship with the warm soul of Italian full-grain leather. It is without question the best investment in my travel lifestyle.",
-    name: "Sophia L.",
-    role: "Travel Journalist & Creative Director",
-    location: "Austin, TX",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&q=85",
-    alt: "Sophia L. airport travel lifestyle review",
+    logo: "L'ARTISAN",
+    logoSub: "CULINARY",
+    quote:
+      "“The CoolVent airflow panels keep our brigade cool during dinner rushes while preserving the crisp polish our dining room demands.”",
+    authorName: "Antoine Moreau",
+    authorRole: "Executive Head Chef",
+    image: "/img/stories/story-culinary.jpg",
   },
 ];
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const handleNavigate = (newIndex: number) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(newIndex);
+  const handleSelect = (index: number) => {
+    if (isAnimating || index === activeIndex) return;
+    setIsAnimating(true);
+    setActiveIndex(index);
     setTimeout(() => {
-      setIsTransitioning(false);
+      setIsAnimating(false);
     }, 400);
   };
 
-  const handlePrev = () => {
-    const nextIdx = (currentIndex - 1 + travelerReviews.length) % travelerReviews.length;
-    handleNavigate(nextIdx);
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % customerStories.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const handleNext = () => {
-    const nextIdx = (currentIndex + 1) % travelerReviews.length;
-    handleNavigate(nextIdx);
-  };
-
-  const current = travelerReviews[currentIndex];
+  const story = customerStories[activeIndex];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="testimonials">
+    <section className="py-16 sm:py-20 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="testimonials">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            Globetrotter Dispatches
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Trusted Across <span className="text-[#C87D3B] font-light italic lowercase">50+ Countries</span>
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-2.5 select-none">
+            CUSTOMER STORIES
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08]">
+            Inspiring Stories, <br className="hidden sm:inline" />
+            <span className="font-bold text-[#0A0F1D]">Real Customers.</span>
           </h2>
-          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
-            From short regional hops to trans-Pacific journeys, hear directly from the professionals who rely on Wanderloom.
-          </p>
         </div>
 
-        {/* Testimonial Feature Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#C87D3B]/25 shadow-lg">
-          
-          {/* Left Column: Quote & Traveler Info */}
-          <div className="lg:col-span-6 flex flex-col justify-between min-h-[280px] sm:min-h-[300px]">
-            <div>
-              {/* Rating stars */}
-              <div className="flex items-center gap-1 text-[#C87D3B] mb-4 sm:mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                ))}
-                <span className="text-xs font-bold text-[#0D1B2A]/70 ml-2 uppercase tracking-wider">5.0 Verified Flight Review</span>
+        {/* Featured Story Card */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left: Arched Photo */}
+            <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] max-w-[500px] overflow-hidden rounded-3xl lg:rounded-l-3xl lg:rounded-r-[180px] shadow-lg bg-[#0A0F1D] border border-slate-200 group">
+                <Image
+                  src={story.image}
+                  alt={`${story.authorName}`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
+                  className={`object-cover object-center transition-all duration-500 ${
+                    isAnimating ? "opacity-30 scale-95" : "opacity-100 scale-100"
+                  }`}
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Right: Info */}
+            <div
+              className={`lg:col-span-6 flex flex-col justify-center transition-all duration-300 ${
+                isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
+              }`}
+            >
+              {/* Logo Capsule Pill */}
+              <div className="mb-4 sm:mb-5">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200">
+                  <span className="font-bold text-xs tracking-[0.16em] uppercase text-[#0A0F1D]">
+                    {story.logo}
+                  </span>
+                  {story.logoSub && (
+                    <span className="text-[0.6rem] font-medium uppercase tracking-wider text-slate-500 bg-white px-2 py-0.5 rounded-full border border-slate-200">
+                      {story.logoSub}
+                    </span>
+                  )}
+                </div>
               </div>
 
-              <blockquote
-                className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-[#0D1B2A] leading-snug tracking-tight transition-opacity duration-400 ${
-                  isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
-              >
-                &ldquo;{current.quote}&rdquo;
+              {/* Quote */}
+              <blockquote className="text-lg sm:text-xl font-normal text-[#0A0F1D] leading-relaxed tracking-tight mb-5 italic">
+                {story.quote}
               </blockquote>
-            </div>
 
-            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#C87D3B]/20 flex items-center justify-between">
+              {/* Author */}
               <div>
-                <div className="text-base sm:text-lg font-extrabold text-[#0D1B2A]">
-                  {current.name}
+                <div className="text-sm font-bold text-[#0A0F1D]">
+                  {story.authorName}
                 </div>
-                <div className="text-xs font-semibold text-[#C87D3B] tracking-wider mt-0.5 uppercase">
-                  {current.role} · {current.location}
+                <div className="text-xs text-slate-500 mt-0.5">
+                  {story.authorRole}
                 </div>
-              </div>
-
-              {/* Navigation buttons */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-[#F8F6F0] border border-[#C87D3B]/40 flex items-center justify-center text-[#0D1B2A] hover:bg-[#C87D3B] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Previous Testimonial"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-[#F8F6F0] border border-[#C87D3B]/40 flex items-center justify-center text-[#0D1B2A] hover:bg-[#C87D3B] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Next Testimonial"
-                >
-                  →
-                </button>
               </div>
             </div>
+
           </div>
 
-          {/* Right Column: Traveler Photograph */}
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-2xl bg-black/5 shadow-lg border border-[#C87D3B]/25">
-              {travelerReviews.map((note, idx) => (
-                <div
-                  key={note.id}
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    currentIndex === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                  }`}
-                >
-                  <Image
-                    src={note.image}
-                    alt={note.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover object-center"
-                    priority={idx === 0}
-                  />
-                </div>
-              ))}
-            </div>
+          {/* Carousel Dots */}
+          <div className="flex items-center justify-center gap-2.5 mt-8 sm:mt-10">
+            {customerStories.map((item, idx) => (
+              <button
+                key={item.id}
+                onClick={() => handleSelect(idx)}
+                aria-label={`Slide ${idx + 1}`}
+                className={`transition-all duration-300 cursor-pointer rounded-full ${
+                  activeIndex === idx
+                    ? "w-6 h-2 bg-[#0A0F1D]"
+                    : "w-2 h-2 bg-slate-300 hover:bg-slate-500"
+                }`}
+              />
+            ))}
           </div>
 
         </div>

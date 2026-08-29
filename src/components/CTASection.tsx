@@ -9,77 +9,72 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="cta">
+    <section className="py-16 sm:py-20 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="cta">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-3xl sm:rounded-4xl shadow-2xl md:grid-cols-2 bg-[#0D1B2A] text-white border border-[#C87D3B]/30">
+        <div className="grid grid-cols-1 overflow-hidden rounded-3xl md:grid-cols-2 bg-[#0A0F1D] text-white shadow-xl">
           
           {/* Left — Image */}
-          <div className="relative min-h-72 sm:min-h-88 md:min-h-full bg-black/10">
+          <div className="relative min-h-64 sm:min-h-80 md:min-h-full bg-black/10">
             <img
-              src="/img/hero-luggage-travel.jpg"
-              alt="Wanderloom luxury travel and airport luggage"
+              src="/img/hero-uniforms.jpg"
+              alt="Ironvale workforce team apparel"
               className="absolute inset-0 h-full w-full object-cover opacity-90"
-              onError={(e) => {
-                e.currentTarget.src =
-                  "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=1200&q=80";
-              }}
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#0D1B2A]/20 md:to-[#0D1B2A]" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0F1D] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#0A0F1D]/20 md:to-[#0A0F1D]" />
 
             {/* Stat badge */}
-            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-3.5 rounded-2xl bg-[#0D1B2A]/90 px-4 py-3 shadow-2xl backdrop-blur-md border border-[#C87D3B]/40">
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-3 rounded-2xl bg-[#0A0F1D]/90 px-3.5 py-2.5 shadow-xl backdrop-blur-xs border border-white/10">
               <div className="flex -space-x-2">
                 {[
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
-                ].map((src) => (
+                  "/img/stories/story-tactical.jpg",
+                  "/img/stories/story-medical.jpg",
+                  "/img/stories/story-culinary.jpg",
+                ].map((src, i) => (
                   <img
-                    key={src}
+                    key={i}
                     src={src}
                     alt=""
                     aria-hidden="true"
-                    className="h-8 w-8 flex-shrink-0 rounded-full border-2 border-[#C87D3B] object-cover"
+                    className="h-7 w-7 flex-shrink-0 rounded-full border-2 border-[#0A0F1D] object-cover"
                   />
                 ))}
               </div>
               <div>
-                <div className="text-xs sm:text-sm font-extrabold text-white">25,000+</div>
-                <div className="text-[0.62rem] font-bold uppercase tracking-wider text-[#C87D3B]">
-                  Travelers Equipped
+                <div className="text-xs font-bold text-white">45,000+</div>
+                <div className="text-[0.6rem] font-medium uppercase tracking-wider text-slate-300">
+                  Outfitted
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right — Content panel */}
-          <div className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 md:px-12 md:py-14 text-white">
-            <span className="mb-3 inline-flex w-fit items-center gap-2 rounded-full border border-[#C87D3B]/40 px-4 py-1 text-[0.68rem] font-bold uppercase tracking-widest bg-[#C87D3B]/20 text-[#C87D3B]">
-              <span>✈</span>
-              Priority Boarding Ready
-            </span>
+          {/* Right — Content */}
+          <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 text-white">
+            <div className="mb-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-white/70 select-none">
+              FLEET OUTFITTING
+            </div>
 
-            <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text-white uppercase">
-              Upgrade Your Next <br />
-              <span className="text-[#C87D3B] font-light italic lowercase">Global Departure</span>
+            <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl font-medium leading-[1.08] tracking-tight text-white">
+              Upgrade Your Workforce <br />
+              <span className="font-bold text-white">Apparel Standard.</span>
             </h2>
 
-            <p className="mb-8 max-w-md text-xs sm:text-sm md:text-base leading-relaxed text-white/80 font-normal">
-              Acquire aerospace aluminum carry-on spinners, Italian leather weekender bags, and modular compression packing sets directly from {siteConfig.brandName}. Fast tracked {siteConfig.shippingCarrier} dispatch with {siteConfig.trialPeriod || 14}-day worldwide flight trial.
+            <p className="mb-6 max-w-md text-xs sm:text-sm leading-relaxed text-slate-300 font-normal">
+              Heavy-duty tactical workwear, antimicrobial scrubs, and chef coats. Dispatched via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day fit guarantee.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center font-extrabold text-xs sm:text-sm uppercase tracking-wider text-white bg-[#C87D3B] px-8 py-4 rounded-full shadow-xl transition-all duration-200 hover:bg-[#D98745] text-center hover:scale-105"
+                className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-[#0A0F1D] bg-white hover:bg-slate-200 px-6 py-3 rounded-full transition-all text-center"
               >
-                Shop Luggage &amp; Gear →
+                Shop Catalog →
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-white/40 px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-white/10 text-center text-white font-semibold"
+                className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-white/20 px-6 py-3 rounded-full transition-all hover:bg-white/10 text-center text-white font-bold"
               >
-                Travel Concierge
+                Fleet Concierge
               </Link>
             </div>
           </div>

@@ -18,10 +18,10 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Traveler Concierge"
+          eyebrow="Fleet Outfitting Concierge"
           title={<>Connect With {siteConfig.brandName}</>}
-          subtitle="Questions about airline carry-on compatibility, corporate luggage gifting, or expedited flight dispatches? Our Austin flight desk responds within 24 hours."
-          image="/img/hero-luggage-travel.jpg"
+          subtitle="Questions about workforce sizing, custom corporate embroidery, or volume enterprise fleet discounts? Our Austin outfitting desk responds within 24 hours."
+          image="/img/hero-uniforms.jpg"
           currentLabel="Concierge"
         />
         <Contact />

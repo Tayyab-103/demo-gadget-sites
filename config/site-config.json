@@ -1,10 +1,10 @@
 {
-  "Product": "Luggage / Travel Accessories",
+  "Product": "Uniforms",
   "Processor": "Synovus APPs",
-  "brandName": "Wanderloom Travel Collective",
-  "websiteUrl": "WanderloomTravelCollective.com",
-  "email": "support@wanderloomtravelcollective.com",
-  "descriptor": "WanderloomTravelCollec",
+  "brandName": "Ironvale Uniform Outfitters",
+  "websiteUrl": "IronvaleUniformOutfitters.com",
+  "email": "support@ironvaleuniformoutfitters.com",
+  "descriptor": "IronvaleUniformOutfitt",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0D1B2A",
+    "primaryColor": "#0A0F1D",
     "primaryTextColor": "#FFFFFF",
-    "secondaryColor": "#C87D3B",
+    "secondaryColor": "#1E293B",
     "secondaryTextColor": "#FFFFFF",
-    "neutralBgColor": "#F8F6F0",
-    "neutralTextColor": "#18222F",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#0A0F1D",
     "fontFamily": "Montserrat"
   }
 }

@@ -7,14 +7,14 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "/img/hero-luggage-travel.jpg",
-  "/img/travel-atelier-craft.jpg",
-  "/img/products/nomad-leather-duffle.jpg",
+  "/img/hero-uniforms.jpg",
+  "/img/uniform-tailoring-atelier.jpg",
+  "/img/textile-lab-test.jpg",
 ];
 
 const methods = [
   {
-    label: "Flight Concierge Desk",
+    label: "Fleet Phone Desk",
     value: siteConfig.phone,
     subtext: "Mon–Fri, 8am–6pm CST",
     href: `tel:${siteConfig.phone}`,
@@ -23,9 +23,9 @@ const methods = [
     ),
   },
   {
-    label: "Traveler & Corporate Inquiries",
+    label: "Enterprise Email",
     value: siteConfig.email,
-    subtext: "Guaranteed reply within 24 hours",
+    subtext: "Quotes within 24 hours",
     href: `mailto:${siteConfig.email}`,
     icon: (
       <>
@@ -35,9 +35,9 @@ const methods = [
     ),
   },
   {
-    label: "Austin Design & Dispatch Hangar",
+    label: "Austin Tailoring Atelier",
     value: siteConfig.address,
-    subtext: "Design Studio & Logistics Hub",
+    subtext: "Logistics & Design Hub",
     href: undefined,
     icon: (
       <>
@@ -59,58 +59,58 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="contact">
+    <section className="py-16 sm:py-20 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            Traveler Concierge Assistance
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Have Inquiries? <span className="text-[#C87D3B] font-light italic lowercase">Connect With Our Team</span>
+        <div className="max-w-2xl mb-10 sm:mb-12">
+          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-2.5 select-none">
+            FLEET CONCIERGE
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-3">
+            Have Inquiries? <br className="hidden sm:inline" />
+            <span className="font-bold text-[#0A0F1D]">Connect With Our Team.</span>
           </h2>
-          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base mt-3.5 leading-relaxed font-normal">
-            Our Austin travel specialists are ready to assist with custom corporate luggage sets, airline dimensional compatibility, and expedited flight dispatches.
+          <p className="text-slate-600 text-sm leading-relaxed font-normal">
+            Our uniform specialists assist with sizing samples, custom embroidery, and volume fleet orders.
           </p>
         </div>
 
-        {/* 2-Column Visual & Contact Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        {/* 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Visual Column */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full shadow-2xl border border-[#C87D3B]/30 bg-[#0D1B2A]">
+          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[320px] lg:min-h-full bg-[#0A0F1D]">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
                 src={src}
-                alt="Wanderloom Travel luggage support in Austin"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-65 ${
+                alt="Ironvale Uniform Outfitters support in Austin"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-65 ${
                   idx === activeImage ? "opacity-65" : "opacity-0"
                 }`}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1D] via-[#0A0F1D]/50 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8 md:p-9 text-white">
-              <span className="text-[0.7rem] uppercase tracking-widest text-[#C87D3B] mb-2 font-extrabold">
-                ✈ Dedicated Flight Care
+            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-7 text-white">
+              <span className="text-[0.62rem] uppercase tracking-widest text-slate-300 mb-1.5 font-bold">
+                Dedicated Support
               </span>
-              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-md mb-6">
-                &ldquo;They verified our executive team&apos;s carry-on dimensions and had our UPS tracking numbers active the same afternoon.&rdquo;
+              <p className="text-white text-base sm:text-lg font-bold leading-snug max-w-md mb-4">
+                &ldquo;They verified our medical staff&apos;s department sizing and had our UPS tracking active the same afternoon.&rdquo;
               </p>
 
-              {/* Image dots */}
+              {/* Dots */}
               <div className="flex gap-1.5">
                 {contactImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeImage ? "w-7 bg-[#C87D3B]" : "w-2 bg-white/40"
+                    className={`h-1 rounded-full transition-all cursor-pointer ${
+                      idx === activeImage ? "w-6 bg-white" : "w-1.5 bg-white/40"
                     }`}
-                    aria-label={`Show image ${idx + 1}`}
+                    aria-label={`Image ${idx + 1}`}
                   />
                 ))}
               </div>
@@ -118,54 +118,46 @@ export default function Contact() {
           </div>
 
           {/* Contact Methods Column */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          <div className="lg:col-span-7 flex flex-col gap-3.5">
             {methods.map((method) => {
               const Wrapper = method.href ? "a" : "div";
               return (
                 <Wrapper
                   key={method.label}
                   {...(method.href ? { href: method.href } : {})}
-                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-[#C87D3B]/20 bg-white p-5 sm:p-6 transition-all duration-200 hover:border-[#C87D3B] hover:shadow-lg"
+                  className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-[#F8FAFC] p-4 sm:p-5 transition-all hover:border-[#0A0F1D] hover:bg-white"
                 >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0D1B2A] text-[#C87D3B] transition-all duration-200 group-hover:bg-[#C87D3B] group-hover:text-white shadow-xs">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#0A0F1D] text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       {method.icon}
                     </svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[0.65rem] font-bold uppercase tracking-widest text-[#C87D3B] mb-0.5">
+                    <div className="text-[0.62rem] font-bold uppercase tracking-widest text-slate-500 mb-0.5">
                       {method.label}
                     </div>
-                    <div className="font-extrabold text-sm sm:text-base text-[#0D1B2A] break-all">
+                    <div className="font-bold text-sm sm:text-base text-[#0A0F1D] break-all">
                       {method.value}
                     </div>
-                    <div className="text-xs text-[#18222F]/60 mt-0.5 font-normal">
+                    <div className="text-xs text-slate-500 mt-0.5 font-normal">
                       {method.subtext}
                     </div>
                   </div>
-                  {method.href && (
-                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#C87D3B]/30 text-[#0D1B2A] transition-all duration-200 group-hover:border-[#C87D3B] group-hover:bg-[#C87D3B] group-hover:text-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                  )}
                 </Wrapper>
               );
             })}
 
-            {/* Direct Hours Notice */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-[#0D1B2A] p-5 sm:p-6 text-white shadow-lg mt-2 border border-[#C87D3B]/30">
+            {/* Direct Notice */}
+            <div className="flex items-center justify-between gap-4 rounded-xl bg-[#0A0F1D] p-4 sm:p-5 text-white mt-1">
               <div className="min-w-0 flex-1">
-                <div className="font-extrabold uppercase tracking-tight text-sm text-white">
-                  Austin Design &amp; Fulfillment Hangar
+                <div className="font-bold uppercase tracking-tight text-xs text-white">
+                  Austin Atelier &amp; Fulfillment
                 </div>
-                <div className="text-xs text-white/70 mt-0.5 font-normal">
-                  Orders tested, packed &amp; dispatched Monday through Friday via {siteConfig.shippingCarrier}.
+                <div className="text-xs text-slate-300 mt-0.5 font-normal">
+                  Dispatched Monday through Friday via {siteConfig.shippingCarrier}.
                 </div>
               </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-[#C87D3B] text-white text-xs font-bold uppercase tracking-wider">
+              <span className="hidden sm:inline-block px-3 py-0.5 rounded-full bg-white/10 text-white text-[0.65rem] font-bold uppercase tracking-wider">
                 ACTIVE
               </span>
             </div>

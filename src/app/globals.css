@@ -19,15 +19,15 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 5rem;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
   }
   
   body {
-    background-color: var(--neutral-bg-color);
-    color: var(--neutral-text-color);
+    background-color: #FFFFFF;
+    color: #0A0F1D;
     font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     width: 100%;
     max-width: 100%;
@@ -36,125 +36,46 @@
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
   }
-
-  @keyframes pulseGlow {
-    0%, 100% {
-      opacity: 0.15;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.35;
-      transform: scale(1.08);
-    }
-  }
-
-  @keyframes floatSubtle {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-  }
-
-  @keyframes shimmerHighlight {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
 }
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--neutral-bg-color);
+  background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--primary-color) 25%, transparent);
+  background: #CBD5E1;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+  background: #0A0F1D;
 }
 
-/* Modern Travel Collective Eyebrow */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
+/* Clean Editorial Text Tag */
+.editorial-tag {
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--secondary-color);
-  max-width: 100%;
-}
-.eyebrow::before {
-  content: "";
-  width: 16px;
-  height: 2px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-  border-radius: 999px;
-}
-.eyebrow::after {
-  content: "";
-  width: 16px;
-  height: 2px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-  border-radius: 999px;
+  color: rgba(10, 15, 29, 0.8);
+  user-select: none;
 }
 
-.eyebrow-invert {
-  color: var(--secondary-color);
+/* Clean Underline Accent */
+.clean-link {
+  font-weight: 700;
+  color: #0A0F1D;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
 }
-.eyebrow-invert::before {
-  background: var(--secondary-color);
-}
-.eyebrow-invert::after {
-  background: var(--secondary-color);
-}
-
-/* Dynamic Ambient Glow */
-.glow-bg {
-  width: min(580px, 90vw);
-  height: min(580px, 90vw);
-  background: radial-gradient(circle, color-mix(in srgb, var(--secondary-color) 22%, transparent) 0%, color-mix(in srgb, var(--secondary-color) 6%, transparent) 55%, transparent 75%);
-  filter: blur(95px);
-  border-radius: 50%;
-  animation: pulseGlow 12s ease-in-out infinite;
-  max-width: 100%;
-}
-
-/* Luxury Travel Cards & Panels */
-.glass-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(200, 125, 59, 0.16);
-}
-
-.glass-card-dark {
-  background: color-mix(in srgb, var(--primary-color) 94%, transparent);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(200, 125, 59, 0.22);
-}
-
-/* Leather & Copper Gradient Accents */
-.copper-border {
-  border-color: rgba(200, 125, 59, 0.3);
-}
-
-.copper-gradient-text {
-  background: linear-gradient(135deg, #E5985A 0%, #C87D3B 50%, #9B5620 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.clean-link:hover {
+  color: #2563EB;
+  text-decoration-color: #2563EB;
 }
 
 /* Hide scrollbar */
@@ -164,11 +85,4 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* Topographic Subtle Grid Background */
-.topography-pattern {
-  background-color: var(--neutral-bg-color);
-  background-image: radial-gradient(color-mix(in srgb, var(--secondary-color) 10%, transparent) 1px, transparent 1px);
-  background-size: 32px 32px;
 }

@@ -13,9 +13,9 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Luggage & Gear" },
-  { href: "/about", label: "Engineering" },
-  { href: "/contact", label: "Concierge" },
+  { href: "/shop", label: "Uniform Catalog" },
+  { href: "/about", label: "The Atelier" },
+  { href: "/contact", label: "Fleet Concierge" },
 ];
 
 export default function Header() {
@@ -41,7 +41,7 @@ export default function Header() {
     : [];
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 15);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -93,18 +93,11 @@ export default function Header() {
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0D1B2A]/95 backdrop-blur-md shadow-lg border-b border-[#C87D3B]/25 py-3 text-white"
-          : "bg-[#0D1B2A] border-b border-[#C87D3B]/15 py-3.5 text-white"
+          ? "bg-[#0A0F1D]/95 backdrop-blur-md shadow-lg border-b border-slate-800 py-3 text-white"
+          : "bg-[#0A0F1D] border-b border-slate-800/80 py-4 text-white"
       }`}
     >
-      {/* Top Banner Notice */}
-      <div className="hidden sm:block bg-[#080F18] text-[#F8F6F0] py-1 text-center text-[0.68rem] tracking-[0.24em] uppercase font-medium border-b border-[#C87D3B]/30">
-        <span className="text-[#C87D3B] mr-2">✦</span>
-        Aerospace Aluminum Luggage &amp; Modular Travel Systems — 100-Day Global Flight Guarantee
-        <span className="text-[#C87D3B] ml-2">✦</span>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between mt-1 sm:mt-1.5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Left: Brand Logo */}
         <Link href="/" onClick={closeAll} className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>
@@ -115,20 +108,16 @@ export default function Header() {
               className="max-h-8 sm:max-h-9 w-auto object-contain"
             />
           ) : (
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#1E2E44] to-[#0A131F] border border-[#C87D3B] flex items-center justify-center text-[#C87D3B] shadow-md group-hover:scale-105 transition-transform">
-                {/* Compass / Horizon Icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fillOpacity="0.25" />
-                </svg>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-sm shadow-xs">
+                🛡️
               </div>
               <div className="flex flex-col">
-                <span className="text-lg sm:text-xl font-extrabold tracking-wider text-white uppercase leading-none">
-                  WANDERLOOM
+                <span className="text-base sm:text-lg font-bold tracking-widest text-white uppercase leading-none">
+                  IRONVALE
                 </span>
-                <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.34em] text-[#C87D3B] mt-0.5">
-                  TRAVEL COLLECTIVE
+                <span className="text-[0.55rem] sm:text-[0.58rem] font-bold uppercase tracking-[0.26em] text-slate-400 mt-0.5">
+                  UNIFORM OUTFITTERS
                 </span>
               </div>
             </div>
@@ -136,46 +125,47 @@ export default function Header() {
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
+        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`text-xs font-bold uppercase tracking-[0.18em] transition-all duration-200 ${
+                className={`text-xs font-bold uppercase tracking-[0.2em] transition-all duration-200 relative py-1 ${
                   isActive
-                    ? "text-[#C87D3B] border-b-2 border-[#C87D3B] pb-0.5"
-                    : "text-white/80 hover:text-white hover:border-b-2 hover:border-[#C87D3B]/50 pb-0.5"
+                    ? "text-white font-extrabold"
+                    : "text-slate-400 hover:text-white"
                 }`}
               >
                 {item.label}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-white rounded-full" />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Right: Actions (Search, Concierge, Cart, Mobile Menu) */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Search Icon */}
+        {/* Right: Actions (Search, Cart, Mobile Menu) */}
+        <div className="flex items-center gap-2 sm:gap-3.5">
+          {/* Search Button */}
           <button
             onClick={toggleSearch}
-            className="p-2 text-white/85 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
-            aria-label="Search Luggage and Accessories"
+            className="p-2 text-slate-300 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
+            aria-label="Search Uniforms and Workwear"
             aria-expanded={isSearchOpen}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
 
-
-
-          {/* Cart Bag Icon with Saddle Copper Badge */}
+          {/* Cart Bag Icon */}
           <button
             onClick={toggleCart}
-            className="relative p-2 text-white/90 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
+            className="relative p-2 text-slate-200 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
             aria-label="Toggle Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -184,11 +174,11 @@ export default function Header() {
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
             {getCartCount() > 0 ? (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#C87D3B] text-white rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#0D1B2A] shadow-xs">
+              <span className="absolute -top-0.5 -right-0.5 bg-white text-[#0A0F1D] rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#0A0F1D] shadow-xs">
                 {getCartCount()}
               </span>
             ) : (
-              <span className="absolute -top-0.5 -right-0.5 bg-white/20 text-white rounded-full w-[16px] h-[16px] text-[0.55rem] font-bold flex items-center justify-center border border-white/20">
+              <span className="absolute -top-0.5 -right-0.5 bg-white/20 text-white rounded-full w-[16px] h-[16px] text-[0.55rem] font-medium flex items-center justify-center border border-white/20">
                 0
               </span>
             )}
@@ -219,14 +209,14 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-[#C87D3B]/20 bg-[#0A1420] px-4 py-4 flex flex-col gap-2 shadow-2xl">
+        <div className="md:hidden border-t border-slate-800 bg-[#0A0F1D] px-4 py-4 flex flex-col gap-2 shadow-2xl">
           {navLinks.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={closeAll}
               className={`text-xs uppercase tracking-wider font-bold py-2.5 px-4 rounded-xl transition-all ${
-                pathname === item.href ? "bg-[#C87D3B] text-white" : "text-white/90 hover:bg-white/10"
+                pathname === item.href ? "bg-white text-[#0A0F1D]" : "text-slate-200 hover:bg-white/10"
               }`}
             >
               {item.label}
@@ -237,10 +227,10 @@ export default function Header() {
 
       {/* Search Dropdown Panel */}
       {isSearchOpen && (
-        <div className="border-t border-[#C87D3B]/25 bg-[#08111C] px-4 sm:px-6 py-4 shadow-2xl">
+        <div className="border-t border-slate-800 bg-[#0A0F1D] px-4 sm:px-6 py-4 shadow-2xl">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -249,8 +239,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search aluminum carry-ons, leather weekender duffles, packing cubes..."
-                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[#C87D3B] text-white bg-[#101D2D] border border-[#C87D3B]/35 placeholder-white/40"
+                placeholder="Search tactical workwear, antimicrobial scrubs, executive chef coats..."
+                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none text-white bg-slate-900 border border-slate-700 placeholder-slate-400"
               />
             </div>
 
@@ -264,7 +254,7 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-white/10 border border-transparent hover:border-[#C87D3B]/30 transition-all bg-[#122030]"
+                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-white/10 border border-transparent hover:border-slate-700 transition-all bg-slate-900"
                       >
                         <img
                           src={product.image}
@@ -273,15 +263,15 @@ export default function Header() {
                         />
                         <div className="flex-1 min-w-0">
                           <div className="text-xs sm:text-sm font-bold text-white truncate">{product.name}</div>
-                          <div className="text-[0.65rem] text-[#C87D3B] truncate uppercase font-bold tracking-wider">{product.category}</div>
+                          <div className="text-[0.65rem] text-slate-400 truncate uppercase font-bold tracking-wider">{product.category}</div>
                         </div>
-                        <div className="text-xs sm:text-sm font-bold text-[#C87D3B] flex-shrink-0">${price}</div>
+                        <div className="text-xs sm:text-sm font-bold text-white flex-shrink-0">${price}</div>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="text-xs text-white/60 text-center py-4">
-                    No luggage or travel gear found for &ldquo;{query}&rdquo;.
+                  <p className="text-xs text-slate-400 text-center py-4">
+                    No uniform apparel found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

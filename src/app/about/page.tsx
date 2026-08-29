@@ -5,8 +5,6 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import AboutUs from "@/components/AboutUs";
 import HowItWorks from "@/components/HowItWorks";
-import VideoShowcase from "@/components/VideoShowcase";
-import QualityPromise from "@/components/QualityPromise";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
@@ -21,16 +19,14 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="The Engineering &amp; Standard"
+          eyebrow="The Outfitting Standard"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Engineered in Austin, Texas. Dedicated to precision aerospace alloy luggage, Italian vegetable-tanned leather, and seamless global transit."
-          image="/img/travel-atelier-craft.jpg"
+          subtitle="Engineered in Austin, Texas. Dedicated to precision-tailored tactical workwear, antimicrobial clinical scrubs, and executive culinary uniforms."
+          image="/img/uniform-tailoring-atelier.jpg"
           currentLabel="About"
         />
         <AboutUs />
         <HowItWorks />
-        <VideoShowcase />
-        <QualityPromise />
       </main>
       <Footer />
       <CartDrawer />

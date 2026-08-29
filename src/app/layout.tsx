@@ -7,11 +7,11 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-engineered luxury ${siteConfig.Product?.toLowerCase() || "luggage & travel accessories"}, aerospace-grade aluminum carry-ons, Italian full-grain leather weekender bags, and modular compression travel suites.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-tailored heavy-duty tactical uniforms, antimicrobial healthcare scrubs, and executive hospitality chef coats engineered in Austin, Texas.`;
 
 // Preload fonts
 const montserrat = Montserrat({
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
@@ -46,23 +46,23 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
+  title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
   description: siteDescription,
   keywords: [
-    "luxury luggage",
-    "travel accessories",
-    "aluminum suitcase",
-    "carry on spinner",
-    "leather weekender bag",
-    "compression packing cubes",
-    "tsa approved luggage",
-    "travel bags",
-    "Wanderloom Travel Collective",
-    "executive travel gear",
-    "austin travel accessories"
+    "commercial uniforms",
+    "tactical workwear",
+    "medical scrubs",
+    "chef coats",
+    "culinary uniforms",
+    "antimicrobial scrubs",
+    "cordura work pants",
+    "enterprise uniform outfitter",
+    "austin uniform supplier",
+    "hospitality uniforms",
+    "Ironvale Uniform Outfitters"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
+    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Luxury Luggage & Engineered Travel Accessories`,
+    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
     description: siteDescription,
   },
 };

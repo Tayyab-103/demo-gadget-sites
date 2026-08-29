@@ -18,11 +18,11 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Reach Our Collective"
-          title={<>Contact {siteConfig.brandName}</>}
-          subtitle="Questions about apparel sizing, volume team orders, or logistics? Our Austin athletic support desk typically responds within 24 hours."
-          image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
-          currentLabel="Contact"
+          eyebrow="Patron Concierge"
+          title={<>Connect With {siteConfig.brandName}</>}
+          subtitle="Questions about custom nibs, corporate gifts, volume stationery suites, or dispatch logistics? Our Austin concierge desk responds within 24 hours."
+          image="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1600&q=80"
+          currentLabel="Concierge"
         />
         <Contact />
       </main>

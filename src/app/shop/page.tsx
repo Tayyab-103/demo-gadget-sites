@@ -14,11 +14,11 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Complete Catalog"
-          title={<>The Athlete Apparel Collection</>}
-          subtitle="Explore pro-grade compression baselayers, double-knit technical training hoodies, and zoned performance crew socks."
-          image="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1600&q=80"
-          currentLabel="Apparel"
+          eyebrow="Signature Atelier Catalog"
+          title={<>The Fine Stationery &amp; Writing Suite</>}
+          subtitle="Explore German-tipped fountain pens, bleedproof milled cotton journals, and hand-cast solid brass desk accessories."
+          image="/img/cta-workspace-banner.jpg"
+          currentLabel="Collections"
         />
         <ProductGrid />
       </main>

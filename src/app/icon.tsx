@@ -15,16 +15,17 @@ export default function Icon() {
           width: "100%",
           height: "100%",
           borderRadius: 8,
-          background: siteConfig.theme.secondaryColor,
+          background: siteConfig.theme.primaryColor,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#ffffff",
+          color: siteConfig.theme.secondaryColor,
           fontWeight: 900,
-          fontSize: 18,
+          fontSize: 16,
+          border: `1px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
-        ⚡
+        ✒
       </div>
     ),
     { ...size }

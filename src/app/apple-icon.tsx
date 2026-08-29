@@ -14,21 +14,29 @@ export default function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
+          borderRadius: 36,
           background: siteConfig.theme.primaryColor,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          color: siteConfig.theme.secondaryColor,
+          border: `2px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
+        <div style={{ fontSize: 72 }}>✒</div>
         <div
           style={{
-            width: 88,
-            height: 110,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
+            fontSize: 16,
+            fontWeight: 800,
+            letterSpacing: 3,
+            color: "#FAF8F5",
+            marginTop: 4,
+            textTransform: "uppercase",
           }}
-        />
+        >
+          Quillhaven
+        </div>
       </div>
     ),
     { ...size }

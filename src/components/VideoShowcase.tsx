@@ -9,78 +9,78 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function VideoShowcase() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="athlete-lab">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="atelier-lab">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header with Green Accent */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/5 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-black/60 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-            Apparel Lab Motion
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
+            <span>✦</span>
+            The Atelier in Motion
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary leading-[1.08]">
-            Engineered For The <span className="text-secondary">Crucial Reps</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.15]">
+            Engineered For The <span className="text-[#C5A059] italic font-normal">Pinnacle Of Expression</span>
           </h2>
-          <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-xl mx-auto font-normal">
-            Real training sessions from our Austin, TX conditioning facility. Witness how our compression baselayers and hoodies withstand max-effort output.
+          <p className="text-[#1A202C]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
+            Glimpse inside our Austin craft studio. Discover how our fountain pens, leather bookbindings, and milled papers perform under wet ink strokes.
           </p>
         </div>
 
         {/* Dual Dynamic Showcase Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           
-          {/* Card 1: Power & Compression */}
-          <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl">
+          {/* Card 1: Nib Precision */}
+          <div className="group relative overflow-hidden rounded-3xl bg-[#121820] text-[#FAF8F5] shadow-xl border border-[#C5A059]/30 min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 md:p-9 transition-all duration-300 hover:shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1000&q=80"
-              alt="Athletes training in compression activewear"
+              src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1000&q=80"
+              alt="Fountain pen nib ink flow craftsmanship"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-65"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121820] via-[#121820]/60 to-transparent" />
 
             <div className="relative z-10">
-              <span className="inline-block px-3 py-1 rounded-full bg-secondary text-[0.62rem] font-black uppercase tracking-widest text-black mb-3 shadow-md">
-                Thermo-Regulation &amp; Power
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C5A059] text-[0.62rem] font-bold uppercase tracking-widest text-[#121820] mb-3 shadow-md">
+                Precision Calligraphy &amp; Nib
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-2">
-                Maximum Cadence &amp; Moisture Control
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#FAF8F5] tracking-tight mb-2">
+                German Iridium Smooth Ink Evacuation
               </h3>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-4">
-                High-velocity conditioning and track drills engineered with zero-chafe flatlock seams and active thermal wicking.
+              <p className="text-xs sm:text-sm text-[#FAF8F5]/80 leading-relaxed mb-4 font-normal">
+                Fine-tuned feed channels eliminate ink railroading, scratching, and blotting across all paper grains.
               </p>
-              <div className="flex items-center gap-2 text-[0.68rem] font-mono font-bold uppercase tracking-wider text-secondary">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-ping" />
-                Zero-Chafe Flatlock Seams
+              <div className="flex items-center gap-2 text-[0.68rem] font-serif uppercase tracking-wider text-[#C5A059]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-ping" />
+                Dual Cartridge &amp; Piston Converter
               </div>
             </div>
           </div>
 
-          {/* Card 2: Technical Outerwear */}
-          <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl">
+          {/* Card 2: Bookbinding & Cotton Paper */}
+          <div className="group relative overflow-hidden rounded-3xl bg-[#121820] text-[#FAF8F5] shadow-xl border border-[#C5A059]/30 min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 md:p-9 transition-all duration-300 hover:shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1000&q=80"
-              alt="Technical fleece hoodie conditioning"
+              src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=1000&q=80"
+              alt="Hand-bound leather journal with archival paper"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-65"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121820] via-[#121820]/60 to-transparent" />
 
             <div className="relative z-10">
-              <span className="inline-block px-3 py-1 rounded-full bg-secondary text-[0.62rem] font-black uppercase tracking-widest text-black mb-3 shadow-md">
-                Outerwear &amp; Conditioning
+              <span className="inline-block px-3 py-1 rounded-full bg-[#C5A059] text-[0.62rem] font-bold uppercase tracking-widest text-[#121820] mb-3 shadow-md">
+                Master Bookbinding &amp; Paper
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-2">
-                Double-Knit ApexKnit Warmth
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#FAF8F5] tracking-tight mb-2">
+                160 GSM Bleedproof Milled Cotton
               </h3>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-4">
-                Pre-competition warmups and heavy training blocks engineered with ergonomic articulated shoulder panelling.
+              <p className="text-xs sm:text-sm text-[#FAF8F5]/80 leading-relaxed mb-4 font-normal">
+                Smyth-sewn binding allows pages to open completely flat at 180° for uninterrupted drafting and journaling.
               </p>
-              <div className="flex items-center gap-2 text-[0.68rem] font-mono font-bold uppercase tracking-wider text-secondary">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-ping" />
-                Four-Way Tech Stretch
+              <div className="flex items-center gap-2 text-[0.68rem] font-serif uppercase tracking-wider text-[#C5A059]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-ping" />
+                Vegetable-Tanned Full-Grain Leather
               </div>
             </div>
           </div>

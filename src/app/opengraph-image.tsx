@@ -57,25 +57,25 @@ export default async function Image() {
             gap: 16,
             padding: "24px 48px",
             borderRadius: 999,
-            background: "rgba(255, 255, 255, 0.08)",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
+            background: "rgba(255, 255, 255, 0.06)",
+            border: `1px solid ${siteConfig.theme.secondaryColor}`,
           }}
         >
           <div
             style={{
-              fontSize: 48,
+              fontSize: 44,
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            ⚡
+            ✒
           </div>
           <div
             style={{
-              fontSize: 44,
-              fontWeight: 900,
+              fontSize: 40,
+              fontWeight: 800,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "#ffffff",
+              color: "#FAF8F5",
             }}
           >
             {siteConfig.brandName}
@@ -85,21 +85,21 @@ export default async function Image() {
         <div
           style={{
             marginTop: 32,
-            fontSize: 26,
-            fontWeight: 700,
-            letterSpacing: 3,
+            fontSize: 22,
+            fontWeight: 600,
+            letterSpacing: 4,
             textTransform: "uppercase",
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Pro-Grade Sporting Apparel &amp; Technical Sportswear
+          Artisanal Stationery &amp; Fine Writing Instruments
         </div>
 
         <div
           style={{
             marginTop: 24,
             width: 140,
-            height: 6,
+            height: 3,
             borderRadius: 999,
             background: siteConfig.theme.secondaryColor,
             display: "flex",

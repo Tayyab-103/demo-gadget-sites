@@ -3,126 +3,195 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import productsData from "../../config/products.json";
-import { SiteConfig, Product } from "@/types";
+import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
-const products = productsData as unknown as Product[];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email) return;
     setSubscribed(true);
     setEmail("");
   };
 
   return (
-    <footer className="bg-primary text-white py-12 sm:py-16 md:py-20 border-t border-white/10" id="footer">
+    <footer className="bg-[#121820] text-[#FAF8F5] border-t border-[#C5A059]/30 pt-16 sm:pt-20 pb-12 sm:pb-14">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-14 sm:mb-16 md:mb-20">
-          
-          {/* Left Column: CTA & Subscribe */}
-          <div className="w-full lg:w-[42%] flex flex-col">
-            <div className="inline-flex items-center gap-2 mb-3 text-secondary text-xs font-black uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-secondary" />
-              Athlete Collective Direct
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-3 tracking-tight uppercase">
-              Join the Collective at {siteConfig.brandName}
-            </h2>
-            <p className="text-white/70 text-xs sm:text-sm mb-6 max-w-md leading-relaxed">
-              Subscribe for VIP apparel drops, endurance training guides, and exclusive athlete bundle discounts.
+        {/* Top Newsletter Banner */}
+        <div className="rounded-3xl bg-white/5 border border-[#C5A059]/30 p-6 sm:p-8 md:p-10 mb-14 sm:mb-16 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
+          <div className="max-w-md text-center md:text-left">
+            <span className="text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] font-bold">
+              ✦ Patron Circle Access
+            </span>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#FAF8F5] mt-1 tracking-tight">
+              Join The Scribe Journal
+            </h3>
+            <p className="text-xs sm:text-sm text-[#FAF8F5]/70 mt-1.5 font-normal">
+              Receive private atelier editions, calligraphy guides, and 15% off your first acquisition.
             </p>
-            
+          </div>
+
+          <div className="w-full md:w-auto">
             {subscribed ? (
-              <div className="flex items-center gap-3 text-secondary text-xs sm:text-sm font-bold bg-secondary/15 p-4 rounded-2xl border border-secondary/30">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
-                Welcome to the Collective! 15% discount code applied.
+              <div className="bg-[#C5A059]/20 border border-[#C5A059] text-[#C5A059] px-6 py-3 rounded-full text-xs font-serif font-bold">
+                ✓ Welcome to the Patron Circle. Invitation sent.
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full max-w-md">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Athlete / Training Email"
+                  placeholder="Enter your patron email..."
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3.5 text-xs sm:text-sm text-white placeholder:text-white/45 focus:outline-none focus:border-secondary transition-colors"
+                  className="px-5 py-3 rounded-full bg-[#121820] border border-[#C5A059]/40 text-xs sm:text-sm text-[#FAF8F5] placeholder:text-[#FAF8F5]/40 focus:outline-none focus:border-[#C5A059] min-w-[240px] sm:min-w-[280px]"
                 />
                 <button
                   type="submit"
-                  className="bg-secondary text-secondary-text font-black text-xs sm:text-sm px-7 py-3.5 rounded-full hover:brightness-110 transition-all whitespace-nowrap shadow-md cursor-pointer uppercase tracking-wider"
+                  className="px-7 py-3 rounded-full bg-[#C5A059] text-[#121820] text-xs font-bold uppercase tracking-wider hover:bg-[#D4AF37] transition-all cursor-pointer shadow-md text-center"
                 >
-                  Join VIP
+                  Join Circle
                 </button>
               </form>
             )}
           </div>
-
-          {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[58%] grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10">
-            
-            {/* Column 1 */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Collective</h4>
-              <ul className="flex flex-col gap-2.5">
-                <li><Link href="/" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">All Apparel</Link></li>
-                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Apparel Heritage</Link></li>
-                <li><Link href="/contact" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Collective Support</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Sporting Apparel</h4>
-              <ul className="flex flex-col gap-2.5">
-                {products.map((p) => (
-                  <li key={p.id}>
-                    <Link href={`/product/${p.id}`} className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors line-clamp-1">
-                      {p.name}
-                    </Link>
-                  </li>
-                ))}
-                <li><Link href="/shop" className="text-secondary text-xs sm:text-sm font-bold hover:underline">View All Apparel &rarr;</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col col-span-2 sm:col-span-1">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Support</h4>
-              <ul className="flex flex-col gap-2.5">
-                <li className="text-white/80 text-xs sm:text-sm break-all">{siteConfig.email}</li>
-                <li className="text-white/80 text-xs sm:text-sm font-bold">{siteConfig.phone}</li>
-                <li className="text-white/60 text-xs leading-relaxed max-w-[170px]">{siteConfig.address}</li>
-              </ul>
-            </div>
-
-          </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10 text-xs text-white/50">
-          <div>
-            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
+        {/* Main Footer Links Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 pb-12 sm:pb-14 border-b border-[#C5A059]/20">
+          
+          {/* Brand Info */}
+          <div className="sm:col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+              <span className="w-8 h-8 rounded-full bg-[#C5A059] text-[#121820] flex items-center justify-center font-serif font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
+                ✦
+              </span>
+              <span className="font-serif font-bold text-base tracking-wider text-[#FAF8F5] uppercase">
+                {siteConfig.brandName}
+              </span>
+            </Link>
+            <p className="text-xs text-[#FAF8F5]/70 leading-relaxed font-normal mb-4">
+              Artisanal fountain pens, bleedproof leather journals, and architectural brass desk suites crafted in Austin, Texas.
+            </p>
+            <div className="text-[0.68rem] text-[#C5A059] font-serif font-semibold">
+              Descriptor: {siteConfig.descriptor}
+            </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-white/60 hover:text-secondary transition-colors">Privacy Policy</Link>
-            <span>•</span>
-            <Link href="/terms" className="text-white/60 hover:text-secondary transition-colors">Terms &amp; Conditions</Link>
+          {/* Signature Catalog */}
+          <div>
+            <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
+              Collections
+            </h4>
+            <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
+              <li>
+                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
+                  Fountain Pen Suites
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
+                  Full-Grain Leather Journals
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
+                  Solid Brass Desk Accessories
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
+                  Archival Inks &amp; Converters
+                </Link>
+              </li>
+            </ul>
           </div>
+
+          {/* Atelier Heritage */}
+          <div>
+            <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
+              The Atelier
+            </h4>
+            <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
+              <li>
+                <Link href="/about" className="hover:text-[#C5A059] transition-colors">
+                  Our Austin Story
+                </Link>
+              </li>
+              <li>
+                <Link href="/#how-it-works" className="hover:text-[#C5A059] transition-colors">
+                  The Quillhaven Standard
+                </Link>
+              </li>
+              <li>
+                <Link href="/#quality-promise" className="hover:text-[#C5A059] transition-colors">
+                  14-Day Studio Practice
+                </Link>
+              </li>
+              <li>
+                <Link href="/#testimonials" className="hover:text-[#C5A059] transition-colors">
+                  Collector &amp; Scribe Reviews
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Patron Concierge */}
+          <div>
+            <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
+              Patron Concierge
+            </h4>
+            <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
+              <li>
+                <Link href="/contact" className="hover:text-[#C5A059] transition-colors">
+                  Concierge Desk
+                </Link>
+              </li>
+              <li>
+                <a href={`tel:${siteConfig.phone}`} className="hover:text-[#C5A059] transition-colors">
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-[#C5A059] transition-colors">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-[#C5A059] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-[#C5A059] transition-colors">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar: Copyright & Payment Badges */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF8F5]/60">
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved. Handcrafted in Austin, TX.
+          </p>
 
           <div className="flex items-center gap-2">
-            <span className="text-white/50 text-[0.7rem] uppercase tracking-wider">Accepted:</span>
-            <img src="/img/visa.png" alt="Visa" className="h-5 w-auto rounded-xs bg-white p-0.5" />
-            <img src="/img/mastercard.png" alt="Mastercard" className="h-5 w-auto rounded-xs bg-white p-0.5" />
+            {["VISA", "MASTERCARD", "AMEX", "DISCOVER"].map((card) => (
+              <span
+                key={card}
+                className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-[0.62rem] font-mono font-bold text-[#FAF8F5]"
+              >
+                {card}
+              </span>
+            ))}
           </div>
         </div>
 

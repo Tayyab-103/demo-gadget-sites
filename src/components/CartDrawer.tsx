@@ -18,27 +18,27 @@ export default function CartDrawer() {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-xs z-999 transition-all duration-300 ${
+        className={`fixed inset-0 bg-[#121820]/75 backdrop-blur-xs z-999 transition-all duration-300 ${
           isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setIsCartOpen(false)}
       />
       {/* Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[430px] bg-white text-black z-1000 border-l border-black/10 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
+        className={`fixed top-0 bottom-0 right-0 w-full max-w-[430px] bg-[#FAF8F5] text-[#121820] z-1000 border-l border-[#C5A059]/30 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/10 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-secondary" />
-            <h3 className="m-0 text-sm font-black text-black tracking-widest uppercase font-mono">
-              ATHLETE CART
+        <div className="p-6 border-b border-[#C5A059]/20 flex items-center justify-between bg-white">
+          <div className="flex items-center gap-2.5">
+            <span className="text-[#C5A059] text-base">✒</span>
+            <h3 className="m-0 text-sm font-serif font-bold text-[#121820] tracking-widest uppercase">
+              PATRON SATCHEL
             </h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-2xl cursor-pointer text-black/40 hover:text-black leading-none transition-colors"
+            className="bg-transparent border-none text-2xl cursor-pointer text-[#121820]/40 hover:text-[#121820] leading-none transition-colors"
             aria-label="Close Cart"
           >
             &times;
@@ -48,14 +48,14 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-black/50 text-xs font-mono uppercase tracking-wider mb-6">
-                Your athlete cart is empty.
+              <p className="text-[#1A202C]/50 text-xs font-serif uppercase tracking-wider mb-6">
+                Your patron satchel is empty.
               </p>
               <button
-                className="inline-block font-black text-center whitespace-nowrap bg-black text-white hover:bg-black/80 transition-all py-3.5 px-7 rounded-[3px] text-xs uppercase tracking-wider cursor-pointer"
+                className="inline-block font-bold text-center whitespace-nowrap bg-[#121820] text-[#FAF8F5] border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#121820] transition-all py-3.5 px-7 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-sm"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Apparel Catalog
+                Explore Fine Collections
               </button>
             </div>
           ) : (
@@ -85,49 +85,49 @@ export default function CartDrawer() {
 
               return (
                 <div
-                  className="flex gap-4 pb-5 mb-5 border-b border-black/10 items-start relative group"
+                  className="flex gap-4 pb-5 mb-5 border-b border-[#C5A059]/15 items-start relative group bg-white p-3.5 rounded-2xl border"
                   key={item.Id}
                 >
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-xl bg-black/5 flex-shrink-0"
+                    className="w-[70px] h-[70px] object-cover rounded-xl bg-black/5 flex-shrink-0 border border-[#C5A059]/20"
                     onError={(e) => {
                       e.currentTarget.src =
-                        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=150&q=80";
+                        "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=150&q=80";
                     }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="font-black text-xs sm:text-sm text-black mb-0.5 truncate uppercase tracking-tight">
+                    <div className="font-serif font-bold text-xs sm:text-sm text-[#121820] mb-0.5 truncate tracking-tight">
                       {item.Name}
                     </div>
-                    <div className="text-[0.62rem] text-black/50 mb-3 uppercase tracking-wider font-mono">
+                    <div className="text-[0.62rem] text-[#C5A059] mb-3 uppercase tracking-wider font-bold">
                       {item.Label || "Single Unit"}
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
                       {/* Stepper Controls */}
-                      <div className="flex items-center gap-1 bg-black/5 p-1 rounded-[3px]">
+                      <div className="flex items-center gap-1 bg-[#FAF8F5] p-1 rounded-lg border border-[#C5A059]/30">
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="w-5 h-5 rounded-[2px] bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed"
+                          className="w-5 h-5 rounded bg-white text-[#121820] flex items-center justify-center cursor-pointer text-xs font-bold disabled:opacity-25 disabled:cursor-not-allowed shadow-2xs"
                         >
                           -
                         </button>
-                        <span className="px-2 text-xs text-black font-black font-mono">
+                        <span className="px-2 text-xs text-[#121820] font-bold font-serif">
                           {item.Qty}
                         </span>
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="w-5 h-5 rounded-[2px] bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed"
+                          className="w-5 h-5 rounded bg-white text-[#121820] flex items-center justify-center cursor-pointer text-xs font-bold disabled:opacity-25 disabled:cursor-not-allowed shadow-2xs"
                         >
                           +
                         </button>
                       </div>
 
-                      <div className="text-sm font-black text-black font-mono">
+                      <div className="text-sm font-serif font-bold text-[#121820]">
                         ${item.Price}
                       </div>
                     </div>
@@ -135,7 +135,7 @@ export default function CartDrawer() {
 
                   <button
                     onClick={() => removeFromCart(item.Id)}
-                    className="bg-transparent border-none text-black/30 hover:text-black cursor-pointer text-lg px-1 transition-colors self-start leading-none"
+                    className="bg-transparent border-none text-[#121820]/30 hover:text-[#121820] cursor-pointer text-lg px-1 transition-colors self-start leading-none"
                     aria-label="Remove item"
                   >
                     &times;
@@ -147,29 +147,29 @@ export default function CartDrawer() {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-6 border-t border-black/10 bg-white">
-            <div className="flex items-center justify-between mb-5 font-mono">
-              <span className="font-black text-black uppercase text-xs tracking-wider">
+          <div className="p-6 border-t border-[#C5A059]/20 bg-white">
+            <div className="flex items-center justify-between mb-5 font-serif">
+              <span className="font-bold text-[#121820] uppercase text-xs tracking-wider">
                 Subtotal
               </span>
-              <span className="font-black text-lg text-black">
+              <span className="font-bold text-xl text-[#121820]">
                 ${getCartTotal()}
               </span>
             </div>
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-secondary text-black hover:brightness-110 transition-all py-3.5 px-6 rounded-[3px] text-xs w-full shadow-xs mb-2.5"
+              className="inline-flex items-center justify-center font-bold uppercase tracking-wider bg-[#C5A059] text-[#121820] hover:bg-[#D4AF37] transition-all py-3.5 px-6 rounded-full text-xs w-full shadow-md mb-2.5 hover:scale-[1.01]"
               onClick={() => setIsCartOpen(false)}
             >
-              Proceed to Checkout →
+              Proceed to Secure Checkout →
             </Link>
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-transparent border border-black/20 text-black hover:bg-black/5 transition-all py-3 px-6 rounded-[3px] text-xs w-full cursor-pointer"
+              className="inline-flex items-center justify-center font-serif text-xs tracking-wider bg-transparent border border-[#C5A059]/40 text-[#121820] hover:bg-[#FAF8F5] transition-all py-3 px-6 rounded-full w-full cursor-pointer"
             >
-              Continue Shopping
+              Continue Browsing
             </button>
           </div>
         )}

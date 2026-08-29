@@ -1,10 +1,10 @@
 {
-  "Product": "Sporting Apparel",
-  "Processor": "Synovus Celero",
-  "brandName": "Vantage Thread Athletic Works",
-  "websiteUrl": "VantageThreadAthleticWorks.com",
-  "email": "support@vantagethreadathleticworks.com",
-  "descriptor": "VantageThreadAthleticW",
+  "Product": "Stationery, Office Supplies",
+  "Processor": "Synovus APPs",
+  "brandName": "Quillhaven Stationery House",
+  "websiteUrl": "QuillhavenStationeryHouse.com",
+  "email": "support@QuillhavenStationeryHouse.com",
+  "descriptor": "QuillhavenStationeryHo",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#111111",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#CCFF00",
-    "secondaryTextColor": "#000000",
-    "neutralBgColor": "#FFFFFF",
-    "neutralTextColor": "#111111",
-    "fontFamily": "Montserrat"
+    "primaryColor": "#121820",
+    "primaryTextColor": "#FFFFFF",
+    "secondaryColor": "#C5A059",
+    "secondaryTextColor": "#FFFFFF",
+    "neutralBgColor": "#FAF8F5",
+    "neutralTextColor": "#1A202C",
+    "fontFamily": "Playfair Display"
   }
 }

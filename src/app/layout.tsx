@@ -7,11 +7,11 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade ${siteConfig.Product?.toLowerCase() || "sporting apparel"} engineered for dedicated athletes, high-output conditioning, and peak athletic performance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Handcrafted luxury ${siteConfig.Product?.toLowerCase() || "stationery & office supplies"}, precision fountain pens, full-grain leather journals, and archival desk essentials for creators and executives.`;
 
 // Preload fonts
 const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
@@ -45,20 +45,24 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel & Technical Sportswear`,
+  title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
   description: siteDescription,
   keywords: [
-    "sporting apparel",
-    "athletic wear",
-    "technical sportswear",
-    "compression baselayers",
-    "performance hoodies",
-    "athletic socks",
-    "Austin athletics",
-    "Vantage Thread Athletic Works"
+    "stationery",
+    "office supplies",
+    "luxury stationery",
+    "fine writing instruments",
+    "fountain pens",
+    "leather bound journals",
+    "desk accessories",
+    "executive office supplies",
+    "calligraphy set",
+    "archival paper",
+    "Austin stationery atelier",
+    "Quillhaven Stationery House"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,26 +70,26 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  let selectedFontClass = inter.variable;
-  let activeFontVar = "var(--font-inter)";
+  let selectedFontClass = `${playfairDisplay.variable} ${inter.variable}`;
+  let activeFontVar = "var(--font-playfair-display)";
 
   if (siteConfig.theme.fontFamily === "Poppins") {
-    selectedFontClass = poppins.variable;
+    selectedFontClass = `${poppins.variable} ${inter.variable}`;
     activeFontVar = "var(--font-poppins)";
   } else if (siteConfig.theme.fontFamily === "Montserrat") {
-    selectedFontClass = montserrat.variable;
+    selectedFontClass = `${montserrat.variable} ${inter.variable}`;
     activeFontVar = "var(--font-montserrat)";
   } else if (siteConfig.theme.fontFamily === "Roboto") {
-    selectedFontClass = roboto.variable;
+    selectedFontClass = `${roboto.variable} ${inter.variable}`;
     activeFontVar = "var(--font-roboto)";
   } else if (siteConfig.theme.fontFamily === "Playfair Display") {
-    selectedFontClass = playfairDisplay.variable;
+    selectedFontClass = `${playfairDisplay.variable} ${inter.variable}`;
     activeFontVar = "var(--font-playfair-display)";
   }
 

@@ -8,8 +8,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const featuresData = [
   {
-    title: "AeroWeave™ 4-Way Stretch",
-    description: "Constructed with multi-directional elastane-infused technical fibers that move with your body without losing shape or tension.",
+    title: "160 GSM Bleedproof Paper",
+    description: "Milled cotton paper engineered with zero feathering, zero ghosting, and exceptional ink responsiveness.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -18,8 +18,8 @@ const featuresData = [
     ),
   },
   {
-    title: "Flatlock Anti-Chafe Seams",
-    description: "Anatomically mapped smooth seams eliminate skin friction and abrasion during high-cadence sprint and conditioning intervals.",
+    title: "German Iridium-Tipped Nibs",
+    description: "Precision-ground nibs tuned by hand for flawless capillary ink evacuation and buttery-smooth paper contact.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -27,17 +27,18 @@ const featuresData = [
     ),
   },
   {
-    title: "Thermo-Wick Airflow",
-    description: "Zonal micro-mesh channels pull heat and moisture away from skin to maintain optimal core temperature under max-effort load.",
+    title: "Smyth-Sewn 180° Lay-Flat",
+    description: "Reinforced library bookbinding allows your journal to open completely flat across any desk surface.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
       </svg>
     ),
   },
   {
-    title: "14-Day Field Guarantee",
-    description: "Put our apparel through your toughest training sessions. If it doesn't dramatically elevate your comfort, return for a 100% full refund.",
+    title: "14-Day Studio Guarantee",
+    description: "Experience our goods in your daily writing and journaling rituals. Return anytime for a 100% full refund.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" />
@@ -49,15 +50,18 @@ const featuresData = [
 
 export default function Features() {
   return (
-    <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="features">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="eyebrow justify-center mb-3">Fabric Engineering</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
-            Built For The <span className="text-secondary">Dedicated Athlete</span>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
+            <span>✦</span>
+            Artisanal Materials &amp; Craft
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.15]">
+            Crafted For The <span className="text-[#C5A059] italic font-normal">Discerning Scribe</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-neutral-text/70">
-            Every {siteConfig.brandName} apparel piece is subjected to high-cadence sweat tests and mechanical tensile checks to ensure unyielding durability.
+          <p className="mx-auto mt-3.5 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#1A202C]/75 font-normal">
+            Every {siteConfig.brandName} stationery piece is subjected to wet ink tests and material durability checks to ensure lasting heirloom quality.
           </p>
         </div>
 
@@ -65,13 +69,13 @@ export default function Features() {
           {featuresData.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-neutral-bg border border-black/5 shadow-sm transition-all duration-300 hover:border-secondary/40 hover:shadow-md hover:-translate-y-1"
+              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-white border border-[#C5A059]/20 shadow-sm transition-all duration-300 hover:border-[#C5A059]/60 hover:shadow-md hover:-translate-y-1"
             >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-secondary/15 text-secondary shadow-sm">
+              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#C5A059]/15 text-[#C5A059] shadow-xs">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-base font-black text-primary uppercase tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-neutral-text/70">{feature.description}</p>
+              <h3 className="mb-2 text-base font-serif font-bold text-[#121820] tracking-tight">{feature.title}</h3>
+              <p className="text-xs sm:text-sm leading-relaxed text-[#1A202C]/70 font-normal">{feature.description}</p>
             </div>
           ))}
         </div>

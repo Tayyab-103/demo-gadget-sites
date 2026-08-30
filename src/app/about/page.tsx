@@ -19,11 +19,11 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="The Outfitting Standard"
+          eyebrow="The Atelier Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Engineered in Austin, Texas. Dedicated to precision-tailored tactical workwear, antimicrobial clinical scrubs, and executive culinary uniforms."
-          image="/img/uniform-tailoring-atelier.jpg"
-          currentLabel="About"
+          subtitle="Parisian-inspired haute couture and noble fiber artistry. Dedicated to pure mulberry silk, virgin wool-cashmere tailoring, and bespoke Chantilly lace gowns."
+          image="/img/fashion-atelier-craft.jpg"
+          currentLabel="The Atelier"
         />
         <AboutUs />
         <HowItWorks />

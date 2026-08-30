@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, Poppins, Roboto, Playfair_Display } from "next/font/google";
+import { Montserrat, Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,11 +7,11 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-tailored heavy-duty tactical uniforms, antimicrobial healthcare scrubs, and executive hospitality chef coats engineered in Austin, Texas.`;
+const siteDescription = `Discover ${siteConfig.brandName}. Parisian-inspired haute couture, pure mulberry silk charmeuse slip dresses, tailored wool-cashmere trench coats, and bespoke corded Chantilly lace evening gowns.`;
 
 // Preload fonts
 const montserrat = Montserrat({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
@@ -23,46 +23,38 @@ const inter = Inter({
   display: "swap",
 });
 
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-  display: "swap",
-});
-
 const playfairDisplay = Playfair_Display({
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-playfair-display",
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+  title: `${siteConfig.brandName} | Luxury Women's Fashion & Haute Couture Atelier`,
   description: siteDescription,
   keywords: [
-    "commercial uniforms",
-    "tactical workwear",
-    "medical scrubs",
-    "chef coats",
-    "culinary uniforms",
-    "antimicrobial scrubs",
-    "cordura work pants",
-    "enterprise uniform outfitter",
-    "austin uniform supplier",
-    "hospitality uniforms",
-    "Ironvale Uniform Outfitters"
+    "Rosethorne Fashion Atelier",
+    "luxury womens fashion",
+    "haute couture dresses",
+    "silk charmeuse slip dress",
+    "cashmere trench coat",
+    "Chantilly lace evening gown",
+    "bespoke designer clothing",
+    "women eveningwear atelier",
+    "Parisian couture collection",
+    "Austin luxury fashion house"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Luxury Women's Fashion & Haute Couture Atelier`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,29 +62,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Luxury Women's Fashion & Haute Couture Atelier`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  let selectedFontClass = `${montserrat.variable} ${inter.variable}`;
-  let activeFontVar = "var(--font-montserrat)";
-
-  if (siteConfig.theme.fontFamily === "Poppins") {
-    selectedFontClass = `${poppins.variable} ${inter.variable}`;
-    activeFontVar = "var(--font-poppins)";
-  } else if (siteConfig.theme.fontFamily === "Montserrat") {
-    selectedFontClass = `${montserrat.variable} ${inter.variable}`;
-    activeFontVar = "var(--font-montserrat)";
-  } else if (siteConfig.theme.fontFamily === "Roboto") {
-    selectedFontClass = `${roboto.variable} ${inter.variable}`;
-    activeFontVar = "var(--font-roboto)";
-  } else if (siteConfig.theme.fontFamily === "Playfair Display") {
-    selectedFontClass = `${playfairDisplay.variable} ${inter.variable}`;
-    activeFontVar = "var(--font-playfair-display)";
-  }
-
   const {
     primaryColor,
     primaryTextColor,
@@ -103,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" className={`${montserrat.variable} ${inter.variable} ${playfairDisplay.variable} ${cormorant.variable} h-full antialiased`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
@@ -113,11 +88,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             --secondary-text-color: ${secondaryTextColor};
             --neutral-bg-color: ${neutralBgColor};
             --neutral-text-color: ${neutralTextColor};
-            --font-family: ${activeFontVar};
+            --font-family: var(--font-montserrat);
+            --font-serif: var(--font-playfair-display);
+            --font-cormorant: var(--font-cormorant);
           }
         `}} />
       </head>
-      <body>
+      <body className="bg-[#FAF8F6] text-[#18121E]">
         <CartProvider>
           {children}
         </CartProvider>

@@ -8,154 +8,114 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 interface FaqItem {
   id: string;
-  category: "sizing" | "durability" | "shipping";
-  categoryLabel: string;
+  num: string;
   question: string;
   answer: string;
 }
 
 const faqItems: FaqItem[] = [
   {
-    id: "sizing",
-    category: "sizing",
-    categoryLabel: "Sizing",
-    question: "How do your sizing cuts fit compared to standard workwear?",
-    answer: "Our uniforms feature ergonomic athletic cuts with four-way stretch. Order your standard crew size; size up if layering over duty armor.",
+    id: "faq-1",
+    num: "01",
+    question: "How do Rosethorne silhouettes fit?",
+    answer: "Our garments feature tailored bias-cut silhouettes engineered true to standard designer sizing. We recommend selecting your true size; size up if layering outerwear.",
   },
   {
-    id: "trial",
-    category: "sizing",
-    categoryLabel: "Guarantee",
-    question: `How does the ${siteConfig.trialPeriod || 14}-day workforce fit trial work?`,
-    answer: `Wear our uniforms on active shift duty. If unsatisfied for any reason, return or exchange within ${siteConfig.trialPeriod || 14} days with 100% full money-back coverage.`,
+    id: "faq-2",
+    num: "02",
+    question: `How does the ${siteConfig.trialPeriod || 14}-day fit guarantee work?`,
+    answer: `Experience your pieces in the comfort of your home. If the fit or drape is not absolute perfection, return or exchange within ${siteConfig.trialPeriod || 14} days with 100% money-back coverage.`,
   },
   {
-    id: "laundry",
-    category: "durability",
-    categoryLabel: "Care",
-    question: "Can Ironvale uniforms withstand commercial high-heat laundry?",
-    answer: "Yes. Lab-certified for commercial autoclave and wash cycles up to 160°F without shrinkage, pilling, or color bleeding.",
+    id: "faq-3",
+    num: "03",
+    question: "How should I care for pure mulberry silk?",
+    answer: "We recommend gentle hand-washing in cool water with a dedicated silk wash or professional eco dry-cleaning. Lightly steam on low to remove creases.",
   },
   {
-    id: "shipping",
-    category: "shipping",
-    categoryLabel: "Shipping",
-    question: "How quickly will my order ship from the Austin facility?",
-    answer: `Dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracked delivery arriving in ${siteConfig.shippingPeriod} business days.`,
+    id: "faq-4",
+    num: "04",
+    question: "How quickly will my order arrive?",
+    answer: `All orders are carefully inspected and dispatched via ${siteConfig.shippingCarrier} tracked air delivery within 1-2 business days, arriving in ${siteConfig.shippingPeriod} business days.`,
   },
   {
-    id: "billing",
-    category: "shipping",
-    categoryLabel: "Billing",
-    question: "How will this charge appear on my card statement?",
-    answer: `Your billing statement will display the merchant descriptor "${siteConfig.descriptor}".`,
+    id: "faq-5",
+    num: "05",
+    question: "How will the transaction appear on my statement?",
+    answer: `For complete privacy and discretion, your billing statement will display the merchant descriptor "${siteConfig.descriptor}".`,
   },
-  {
-    id: "embroidery",
-    category: "durability",
-    categoryLabel: "Branding",
-    question: "Can we add custom corporate logo embroidery?",
-    answer: "Yes. Our Austin atelier provides commercial embroidery and custom department badges for hospital networks, security teams, and culinary brigades.",
-  },
-];
-
-const categories = [
-  { key: "all", label: "All" },
-  { key: "sizing", label: "Sizing" },
-  { key: "durability", label: "Durability" },
-  { key: "shipping", label: "Shipping" },
 ];
 
 export default function Faq() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [openId, setOpenId] = useState<string | null>("sizing");
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const filteredFaqs =
-    activeCategory === "all"
-      ? faqItems
-      : faqItems.filter((item) => item.category === activeCategory);
-
-  const toggleFaq = (id: string) => {
-    setOpenId(openId === id ? null : id);
+  const toggle = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200" id="faq">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 bg-[#FFFFFF] text-[#18121E] border-t border-[#C59B7E]/20" id="faq">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-2.5 select-none">
-            WORKFORCE GUIDANCE
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-3">
-            Frequently Answered <br className="hidden sm:inline" />
-            <span className="font-bold text-[#0A0F1D]">Questions.</span>
+        {/* Minimalist Section Header */}
+        <div className="text-center max-w-xl mx-auto mb-14 sm:mb-18">
+          <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#C59B7E] block mb-2 select-none">
+            FREQUENTLY ASKED
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-[#18121E] leading-[1.12]">
+            Questions &amp; <span className="italic text-[#C59B7E]">Answers.</span>
           </h2>
-          <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto font-normal">
-            Quick guidance on uniform sizing, commercial laundry care, shipping, and warranty.
-          </p>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => setActiveCategory(cat.key)}
-                className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  activeCategory === cat.key
-                    ? "bg-[#0A0F1D] text-white shadow-xs"
-                    : "bg-white text-slate-700 border border-slate-200 hover:border-[#0A0F1D] hover:text-[#0A0F1D]"
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
 
-        {/* 2-Column Responsive Card Matrix */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {filteredFaqs.map((item) => {
-            const isOpen = openId === item.id;
+        {/* New Minimalist Luxury Accordion Design */}
+        <div className="divide-y divide-[#C59B7E]/20 border-y border-[#C59B7E]/20">
+          {faqItems.map((item, idx) => {
+            const isOpen = openIndex === idx;
 
             return (
               <div
                 key={item.id}
-                onClick={() => toggleFaq(item.id)}
-                className={`rounded-2xl p-5 sm:p-6 transition-all duration-200 cursor-pointer border flex flex-col justify-between ${
-                  isOpen
-                    ? "bg-white border-[#0A0F1D] shadow-sm"
-                    : "bg-white border-slate-200 hover:border-slate-300"
+                onClick={() => toggle(idx)}
+                className={`py-6 sm:py-7 transition-all duration-300 cursor-pointer group ${
+                  isOpen ? "bg-[#FAF8F6]/60 -mx-4 sm:-mx-6 px-4 sm:px-6 rounded-2xl" : ""
                 }`}
               >
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-2.5">
-                    <span className="text-[0.62rem] font-bold uppercase tracking-wider text-slate-500 bg-[#F8FAFC] px-2 py-0.5 rounded-full border border-slate-200">
-                      {item.categoryLabel}
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                    <span className="text-xs sm:text-sm font-mono font-bold text-[#C59B7E] select-none">
+                      {item.num}
                     </span>
-                    <span
-                      className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-transform duration-200 ${
-                        isOpen ? "bg-[#0A0F1D] text-white rotate-45" : "bg-slate-100 text-slate-600"
+                    <h3
+                      className={`text-base sm:text-lg font-serif transition-colors duration-200 ${
+                        isOpen ? "text-[#18121E] font-bold" : "text-[#18121E]/90 group-hover:text-[#C59B7E]"
                       }`}
                     >
-                      +
-                    </span>
+                      {item.question}
+                    </h3>
                   </div>
 
-                  <h3 className="text-sm sm:text-base font-bold text-[#0A0F1D] leading-snug">
-                    {item.question}
-                  </h3>
+                  <span
+                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-300 ${
+                      isOpen
+                        ? "bg-[#18121E] text-[#E6C2AC] rotate-45 shadow-sm"
+                        : "bg-[#FAF8F6] text-[#18121E] border border-[#C59B7E]/30 group-hover:border-[#C59B7E]"
+                    }`}
+                  >
+                    +
+                  </span>
                 </div>
 
+                {/* Animated Dropdown Answer */}
                 <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                    isOpen ? "max-h-32 pt-2.5 opacity-100" : "max-h-0 pt-0 opacity-0"
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100 mt-3.5" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal pt-2.5 border-t border-slate-100">
-                    {item.answer}
-                  </p>
+                  <div className="overflow-hidden pl-8 sm:pl-12">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+                      {item.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
             );

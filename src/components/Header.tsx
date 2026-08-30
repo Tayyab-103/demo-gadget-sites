@@ -13,9 +13,9 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Uniform Catalog" },
+  { href: "/shop", label: "Couture Collection" },
   { href: "/about", label: "The Atelier" },
-  { href: "/contact", label: "Fleet Concierge" },
+  { href: "/contact", label: "Private Concierge" },
 ];
 
 export default function Header() {
@@ -93,8 +93,8 @@ export default function Header() {
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0A0F1D]/95 backdrop-blur-md shadow-lg border-b border-slate-800 py-3 text-white"
-          : "bg-[#0A0F1D] border-b border-slate-800/80 py-4 text-white"
+          ? "bg-[#18121E]/95 backdrop-blur-md shadow-xl border-b border-[#C59B7E]/20 py-3.5 text-[#FAF7F5]"
+          : "bg-[#18121E] border-b border-[#C59B7E]/15 py-4 text-[#FAF7F5]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -109,15 +109,15 @@ export default function Header() {
             />
           ) : (
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-sm shadow-xs">
-                🛡️
+              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59B7E] to-[#E6C2AC] text-[#18121E] flex items-center justify-center font-serif text-sm shadow-md font-bold">
+                ✦
               </div>
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold tracking-widest text-white uppercase leading-none">
-                  IRONVALE
+                <span className="text-base sm:text-lg font-serif tracking-[0.14em] text-white uppercase leading-none">
+                  ROSETHORNE
                 </span>
-                <span className="text-[0.55rem] sm:text-[0.58rem] font-bold uppercase tracking-[0.26em] text-slate-400 mt-0.5">
-                  UNIFORM OUTFITTERS
+                <span className="text-[0.52rem] sm:text-[0.56rem] font-bold uppercase tracking-[0.32em] text-[#C59B7E] mt-0.5">
+                  FASHION ATELIER
                 </span>
               </div>
             </div>
@@ -132,15 +132,15 @@ export default function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`text-xs font-bold uppercase tracking-[0.2em] transition-all duration-200 relative py-1 ${
+                className={`text-xs font-semibold uppercase tracking-[0.24em] transition-all duration-200 relative py-1 ${
                   isActive
-                    ? "text-white font-extrabold"
-                    : "text-slate-400 hover:text-white"
+                    ? "text-[#C59B7E] font-bold"
+                    : "text-slate-300 hover:text-white"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-white rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#C59B7E] rounded-full" />
                 )}
               </Link>
             );
@@ -148,15 +148,15 @@ export default function Header() {
         </nav>
 
         {/* Right: Actions (Search, Cart, Mobile Menu) */}
-        <div className="flex items-center gap-2 sm:gap-3.5">
+        <div className="flex items-center gap-2.5 sm:gap-3.5">
           {/* Search Button */}
           <button
             onClick={toggleSearch}
-            className="p-2 text-slate-300 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
-            aria-label="Search Uniforms and Workwear"
+            className="p-2 text-slate-300 hover:text-[#C59B7E] transition-colors cursor-pointer rounded-full hover:bg-white/10"
+            aria-label="Search Silk, Cashmere, and Gowns"
             aria-expanded={isSearchOpen}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
@@ -165,20 +165,20 @@ export default function Header() {
           {/* Cart Bag Icon */}
           <button
             onClick={toggleCart}
-            className="relative p-2 text-slate-200 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
-            aria-label="Toggle Cart"
+            className="relative p-2 text-slate-200 hover:text-[#C59B7E] transition-colors cursor-pointer rounded-full hover:bg-white/10"
+            aria-label="Toggle Bag"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
               <path d="M3 6h18" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
             {getCartCount() > 0 ? (
-              <span className="absolute -top-0.5 -right-0.5 bg-white text-[#0A0F1D] rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#0A0F1D] shadow-xs">
+              <span className="absolute -top-0.5 -right-0.5 bg-[#C59B7E] text-[#18121E] rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#18121E] shadow-sm">
                 {getCartCount()}
               </span>
             ) : (
-              <span className="absolute -top-0.5 -right-0.5 bg-white/20 text-white rounded-full w-[16px] h-[16px] text-[0.55rem] font-medium flex items-center justify-center border border-white/20">
+              <span className="absolute -top-0.5 -right-0.5 bg-white/20 text-[#FAF7F5] rounded-full w-[16px] h-[16px] text-[0.55rem] font-medium flex items-center justify-center border border-white/20">
                 0
               </span>
             )}
@@ -209,14 +209,14 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-slate-800 bg-[#0A0F1D] px-4 py-4 flex flex-col gap-2 shadow-2xl">
+        <div className="md:hidden border-t border-[#C59B7E]/20 bg-[#18121E] px-4 py-5 flex flex-col gap-2.5 shadow-2xl">
           {navLinks.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={closeAll}
-              className={`text-xs uppercase tracking-wider font-bold py-2.5 px-4 rounded-xl transition-all ${
-                pathname === item.href ? "bg-white text-[#0A0F1D]" : "text-slate-200 hover:bg-white/10"
+              className={`text-xs uppercase tracking-widest font-bold py-3 px-4 rounded-xl transition-all ${
+                pathname === item.href ? "bg-[#C59B7E] text-[#18121E]" : "text-slate-200 hover:bg-white/10"
               }`}
             >
               {item.label}
@@ -227,10 +227,10 @@ export default function Header() {
 
       {/* Search Dropdown Panel */}
       {isSearchOpen && (
-        <div className="border-t border-slate-800 bg-[#0A0F1D] px-4 sm:px-6 py-4 shadow-2xl">
+        <div className="border-t border-[#C59B7E]/20 bg-[#18121E] px-4 sm:px-6 py-5 shadow-2xl">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-[#C59B7E] absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -239,13 +239,13 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search tactical workwear, antimicrobial scrubs, executive chef coats..."
-                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none text-white bg-slate-900 border border-slate-700 placeholder-slate-400"
+                placeholder="Search silk slip dresses, cashmere trench coats, lace evening gowns..."
+                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none text-white bg-[#221B2A] border border-[#C59B7E]/30 placeholder-slate-400 focus:border-[#C59B7E]"
               />
             </div>
 
             {trimmedQuery && (
-              <div className="mt-3 flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
+              <div className="mt-3.5 flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
                 {filteredProducts.length > 0 ? (
                   filteredProducts.map((product) => {
                     const price = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;
@@ -254,7 +254,7 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-white/10 border border-transparent hover:border-slate-700 transition-all bg-slate-900"
+                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-white/10 border border-transparent hover:border-[#C59B7E]/40 transition-all bg-[#221B2A]"
                       >
                         <img
                           src={product.image}
@@ -262,8 +262,8 @@ export default function Header() {
                           className="w-12 h-12 rounded-xl object-cover bg-black/20 flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-xs sm:text-sm font-bold text-white truncate">{product.name}</div>
-                          <div className="text-[0.65rem] text-slate-400 truncate uppercase font-bold tracking-wider">{product.category}</div>
+                          <div className="text-xs sm:text-sm font-serif font-bold text-white truncate">{product.name}</div>
+                          <div className="text-[0.62rem] text-[#C59B7E] truncate uppercase font-bold tracking-wider">{product.category}</div>
                         </div>
                         <div className="text-xs sm:text-sm font-bold text-white flex-shrink-0">${price}</div>
                       </Link>
@@ -271,7 +271,7 @@ export default function Header() {
                   })
                 ) : (
                   <p className="text-xs text-slate-400 text-center py-4">
-                    No uniform apparel found for &ldquo;{query}&rdquo;.
+                    No couture pieces found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

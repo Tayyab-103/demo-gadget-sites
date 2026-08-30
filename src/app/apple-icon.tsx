@@ -24,18 +24,18 @@ export default function AppleIcon() {
           border: `2px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
-        <div style={{ fontSize: 72 }}>🛡️</div>
+        <div style={{ fontSize: 64, fontWeight: 900, color: siteConfig.theme.secondaryColor }}>R</div>
         <div
           style={{
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: 800,
-            letterSpacing: 2,
-            color: "#F8FAFC",
+            letterSpacing: 3,
+            color: "#FAF7F5",
             marginTop: 4,
             textTransform: "uppercase",
           }}
         >
-          Ironvale
+          Rosethorne
         </div>
       </div>
     ),

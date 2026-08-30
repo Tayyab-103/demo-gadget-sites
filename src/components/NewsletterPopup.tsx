@@ -66,31 +66,31 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#0A0F1D]/80 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-[#FFFFFF] rounded-3xl w-full max-w-[500px] border border-slate-200 relative flex flex-col overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 bg-[#18121E]/80 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
+      <div className="bg-[#FFFFFF] rounded-3xl w-full max-w-[500px] border border-[#C59B7E]/30 relative flex flex-col overflow-hidden shadow-2xl">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-[#0A0F1D] hover:bg-[#0A0F1D] hover:text-white transition-all"
+          className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-[#18121E] hover:bg-[#18121E] hover:text-white transition-all"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
         {/* Visual Header */}
-        <div className="h-[190px] relative">
+        <div className="h-[200px] relative">
           <img
-            src="/img/hero-uniforms.jpg"
-            alt="Ironvale workforce uniforms"
-            className="w-full h-full object-cover absolute inset-0 opacity-80"
+            src="/img/fashion-hero.jpg"
+            alt="Rosethorne Fashion Atelier Couture"
+            className="w-full h-full object-cover absolute inset-0 opacity-85"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/50 to-[#0A0F1D]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#18121E]/40 to-[#18121E]/95" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.68rem] uppercase tracking-[0.24em] font-bold text-slate-300 block mb-1">
-              ENTERPRISE INVITATION
+            <span className="text-[0.68rem] uppercase tracking-[0.28em] font-bold text-[#E6C2AC] block mb-1">
+              PRIVATE ATELIER INVITATION
             </span>
-            <h3 className="text-2xl font-bold text-white m-0 tracking-tight">
+            <h3 className="text-2xl font-serif font-bold text-white m-0 tracking-tight">
               Claim $15 Off Your First Order
             </h3>
           </div>
@@ -100,25 +100,25 @@ export default function NewsletterPopup() {
         <div className="p-8">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border border-[#0A0F1D] text-[#0A0F1D] flex items-center justify-center text-xl mx-auto mb-4 font-bold bg-slate-50">
+              <div className="w-12 h-12 rounded-full border border-[#C59B7E] text-[#C59B7E] flex items-center justify-center text-xl mx-auto mb-4 font-bold bg-[#FAF8F6]">
                 ✓
               </div>
-              <h4 className="text-[#0A0F1D] font-bold uppercase text-lg mb-2">Voucher Code Dispatched!</h4>
-              <p className="text-slate-600 text-sm font-normal">
-                Check your inbox for your $15 uniform outfitting credit code.
+              <h4 className="text-[#18121E] font-serif font-bold text-xl mb-2">Invitation Code Dispatched</h4>
+              <p className="text-slate-600 text-sm font-light">
+                Check your inbox for your $15 private couture acquisition voucher.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
-                Join {siteConfig.brandName}. Subscribe today to receive new workforce fabric releases, fleet discounts, and <strong>$15 off</strong> your first order.
+              <p className="text-sm text-slate-600 leading-relaxed mb-6 font-light">
+                Join {siteConfig.brandName}. Subscribe today to receive private runway releases, styling guidance, and <strong>$15 off</strong> your initial purchase.
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-5 py-3.5 text-sm border border-slate-300 rounded-full focus:outline-none focus:border-[#0A0F1D] transition-all text-[#0A0F1D] bg-white shadow-2xs"
-                  placeholder="Enter your workforce email address"
+                  className="block w-full px-5 py-3.5 text-sm border border-[#C59B7E]/30 rounded-full focus:outline-none focus:border-[#C59B7E] transition-all text-[#18121E] bg-[#FAF8F6] shadow-2xs"
+                  placeholder="Enter your personal email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -127,13 +127,13 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-[#0A0F1D] hover:bg-slate-800 text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md"
+                className="inline-block font-bold text-center whitespace-nowrap bg-gradient-to-r from-[#E6C2AC] via-[#C59B7E] to-[#B88564] hover:brightness-110 text-[#18121E] transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-lg"
               >
-                Claim $15 Uniform Credit
+                Claim $15 Couture Credit
               </button>
 
-              <span className="block text-center text-[0.68rem] text-slate-400 mt-3">
-                No spam. Unsubscribe anytime with a single click.
+              <span className="block text-center text-[0.68rem] text-slate-400 mt-3 font-light">
+                Private &amp; confidential. Unsubscribe anytime with one click.
               </span>
             </form>
           )}

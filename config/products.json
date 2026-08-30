@@ -2,45 +2,45 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "The Vanguard Pro Heavy-Duty Tactical & Industrial Utility Uniform Suite",
-    "description": "Engineered from 1000D Cordura® reinforced ripstop flex weave with DuPont Teflon™ stain & water-repellent finish. Features articulated knee & elbow armor pockets, 14 multi-tool utility cargo pockets, heavy-duty YKK brass zippers, and reinforced triple-needle stitching for severe industrial and field duty.",
-    "image": "/img/products/product-tactical-workwear.jpg",
+    "name": "The Aurelia Pure Mulberry Silk Charmeuse Bias-Cut Slip Dress & Stole",
+    "description": "Master-crafted from 22-momme pure mulberry silk charmeuse with an effortless bias-cut silhouette that cascades gracefully. Features delicate hand-rolled hems, French seam interior finishes, and an accompanying lightweight atelier silk scarf for timeless Parisian elegance.",
+    "image": "/img/products/product-silk-slip.jpg",
     "images": [
-      "/img/products/product-tactical-workwear.jpg",
-      "/img/hero-uniforms.jpg",
-      "/img/textile-lab-test.jpg"
+      "/img/products/product-silk-slip.jpg",
+      "/img/fashion-hero.jpg",
+      "/img/fashion-atelier-craft.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/textile-lab-test.jpg",
-    "category": "Industrial & Tactical Workwear",
+    "ingredientsImage": "/img/fashion-atelier-craft.jpg",
+    "category": "Haute Couture & Evening Silks",
     "billingModel": 1,
-    "ssPrice": "14.95",
+    "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "The Apex-Core Antimicrobial Four-Way Stretch Medical Scrub Suite",
-    "description": "Tailored for surgical teams and clinical healthcare professionals with Silvadur™ antimicrobial silver-ion fabric technology. Features fluid-resistant four-way stretch micro-twill, 9-pocket ergonomic utility cargo scrub pants, and breathable mesh ventilation panels for 24-hour shift comfort.",
-    "image": "/img/products/product-medical-scrubs.jpg",
+    "name": "The Celestia Double-Faced Virgin Wool & Mongolian Cashmere Belted Trench Coat",
+    "description": "Sculpted from an ultra-luxurious double-faced virgin wool and Mongolian cashmere blend. Designed with architectural notched lapels, horn-accented buttons, a structured storm flap, and a sash belt that contours the waist with modern couture flair.",
+    "image": "/img/products/product-cashmere-coat.jpg",
     "images": [
-      "/img/products/product-medical-scrubs.jpg",
-      "/img/hero-uniforms.jpg",
-      "/img/uniform-tailoring-atelier.jpg"
+      "/img/products/product-cashmere-coat.jpg",
+      "/img/couture-garment-rail.jpg",
+      "/img/fashion-atelier-craft.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/product-medical-scrubs.jpg",
-    "category": "Medical & Healthcare Uniforms",
+    "ingredientsImage": "/img/products/product-cashmere-coat.jpg",
+    "category": "Luxury Outerwear & Tailoring",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,29 +58,29 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "The Executive Artisan Double-Breasted Culinary & Chef Uniform Coat",
-    "description": "Master-crafted from 240 GSM organic ring-spun cotton twill with dual CoolVent™ breathable back air-flow panels. Includes stain-release coating, concealed magnetic apron-stay collar tab, dual sleeve thermometer pockets, and handcrafted cloth knot buttons.",
-    "image": "/img/products/product-chef-coat.jpg",
+    "name": "The Seraphina French Corded Chantilly Lace & Tiered Silk Organza Gown",
+    "description": "An exquisite statement gala gown crafted with French corded Chantilly lace over luminous layered silk organza. Boasts intricate botanical floral motifs, a sculpted corset bodice with hidden boning, and delicate hand-embroidered pearl accents.",
+    "image": "/img/products/product-lace-gown.jpg",
     "images": [
-      "/img/products/product-chef-coat.jpg",
-      "/img/hero-uniforms.jpg",
-      "/img/uniform-tailoring-atelier.jpg"
+      "/img/products/product-lace-gown.jpg",
+      "/img/fashion-hero.jpg",
+      "/img/couture-garment-rail.jpg"
     ],
     "showIngredients": true,
-    "ingredientsImage": "/img/products/product-chef-coat.jpg",
-    "category": "Culinary & Hospitality Uniforms",
+    "ingredientsImage": "/img/products/product-lace-gown.jpg",
+    "category": "Bespoke Eveningwear & Gowns",
     "billingModel": 1,
-    "ssPrice": "6.95",
+    "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
     ]
   }
 ]

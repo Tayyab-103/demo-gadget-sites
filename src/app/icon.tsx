@@ -21,11 +21,11 @@ export default function Icon() {
           justifyContent: "center",
           color: siteConfig.theme.secondaryColor,
           fontWeight: 900,
-          fontSize: 16,
+          fontSize: 18,
           border: `1px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
-        🛡️
+        R
       </div>
     ),
     { ...size }

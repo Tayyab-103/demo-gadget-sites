@@ -63,19 +63,20 @@ export default async function Image() {
         >
           <div
             style={{
-              fontSize: 44,
+              fontSize: 36,
+              fontWeight: 900,
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            🛡️
+            R
           </div>
           <div
             style={{
-              fontSize: 38,
-              fontWeight: 900,
-              letterSpacing: 2,
+              fontSize: 36,
+              fontWeight: 800,
+              letterSpacing: 3,
               textTransform: "uppercase",
-              color: "#F8FAFC",
+              color: "#FAF7F5",
             }}
           >
             {siteConfig.brandName}
@@ -85,21 +86,21 @@ export default async function Image() {
         <div
           style={{
             marginTop: 32,
-            fontSize: 22,
-            fontWeight: 700,
+            fontSize: 20,
+            fontWeight: 600,
             letterSpacing: 4,
             textTransform: "uppercase",
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Commercial Uniforms, Scrubs &amp; Workwear
+          Luxury Women&apos;s Fashion &amp; Haute Couture Atelier
         </div>
 
         <div
           style={{
             marginTop: 24,
             width: 140,
-            height: 3,
+            height: 2,
             borderRadius: 999,
             background: siteConfig.theme.secondaryColor,
             display: "flex",

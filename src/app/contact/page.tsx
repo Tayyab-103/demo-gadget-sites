@@ -18,10 +18,10 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Fleet Outfitting Concierge"
+          eyebrow="Private Styling &amp; Client Concierge"
           title={<>Connect With {siteConfig.brandName}</>}
-          subtitle="Questions about workforce sizing, custom corporate embroidery, or volume enterprise fleet discounts? Our Austin outfitting desk responds within 24 hours."
-          image="/img/hero-uniforms.jpg"
+          subtitle="Inquiries regarding size matching, garment care, or private appointments? Our styling desk responds within 24 hours."
+          image="/img/couture-garment-rail.jpg"
           currentLabel="Concierge"
         />
         <Contact />

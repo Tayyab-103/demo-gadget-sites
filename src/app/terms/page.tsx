@@ -14,30 +14,27 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-[#F8FAFC] pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
-
+      <main className="bg-[#FAF8F6] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden">
         <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[0.68rem] font-mono font-bold uppercase tracking-[0.2em] text-blue-700 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-            <span>[ LEGAL &amp; COMPLIANCE ]</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#18121E]/5 border border-[#C59B7E]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C59B7E] mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C59B7E] animate-pulse" />
+            <span>LEGAL &amp; COMPLIANCE POLICIES</span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#0A0F1D] mb-8 border-b border-blue-500/20 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#18121E] mb-8 border-b border-[#C59B7E]/20 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-blue-500/20 shadow-xl shadow-blue-500/5 leading-relaxed text-slate-600 text-xs md:text-sm space-y-6 font-normal">
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
+          <div className="bg-white rounded-3xl p-8 md:p-12 border border-[#C59B7E]/25 shadow-xl leading-relaxed text-slate-600 text-xs md:text-sm space-y-6 font-light">
+            <h3 className="text-base font-serif font-bold text-[#18121E] mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
-              This website is operated by <strong className="text-[#0A0F1D] font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-[#0A0F1D] font-semibold">{siteConfig.brandName}</strong>. <strong className="text-[#0A0F1D] font-semibold">{siteConfig.brandName}</strong> offers
+              This website is operated by <strong className="text-[#18121E] font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+              “us” and “our” refer to <strong className="text-[#18121E] font-semibold">{siteConfig.brandName}</strong>. <strong className="text-[#18121E] font-semibold">{siteConfig.brandName}</strong> offers
               this website, including all information, tools and services available from this site to you, the client,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing commercial uniforms, tactical workwear, medical scrubs, or chef apparel from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing haute couture garments, silk dresses, cashmere outerwear, or evening gowns from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -47,16 +44,16 @@ export default function Terms() {
               terms and conditions of this agreement, then you may not access the website or use any services.
             </p>
 
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
+            <h3 className="text-base font-serif font-bold text-[#18121E] mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer commercial uniform apparel suites and accessories through one-time acquisitions (Straight Sale) under the following pricing structures:
+              We offer bespoke couture fashion collections through one-time acquisitions (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-[#F8FAFC] border border-blue-500/20 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-[#FAF8F6] border border-[#C59B7E]/25 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-blue-500/15 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-[#0A0F1D] mb-3 uppercase tracking-tight">
+                <div key={product.id} className="mb-6 pb-6 border-b border-[#C59B7E]/20 last:border-0 last:mb-0 last:pb-0">
+                  <h4 className="text-sm md:text-base font-serif font-bold text-[#18121E] mb-3">
                     {product.name}
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
@@ -67,11 +64,11 @@ export default function Terms() {
                         : `$${product.ssShipping} Shipping`;
 
                       return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-slate-600">
-                          Upon ordering a <strong className="text-[#0A0F1D] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Fleet Outfitting Package` : "Single Unit Sample"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-[#0A0F1D] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
-                          Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-[#0A0F1D] font-bold">“{siteConfig.descriptor}”</strong>.
+                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-slate-600 font-light">
+                          Upon ordering a <strong className="text-[#18121E] font-semibold">{bundle.quantity > 1 ? `${bundle.quantity}-Piece Atelier Wardrobe Ensemble` : "Single Atelier Piece"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-[#18121E] font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                          Your parcel will be dispatched via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
+                          The transaction charge will appear on your card statement as <strong className="text-[#18121E] font-semibold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}
@@ -80,7 +77,7 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
+            <h3 className="text-base font-serif font-bold text-[#18121E] mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
             <p>
               By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
               or province of residence, or that you are the age of majority in your state or province of residence and you
@@ -91,22 +88,22 @@ export default function Terms() {
               violate any laws in your jurisdiction (including but not limited to copyright laws).
             </p>
 
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
+            <h3 className="text-base font-serif font-bold text-[#18121E] mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
               All orders are processed, inspected, and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched from our Austin, TX facility.
+              You will receive a tracking number via email once your parcel has been dispatched from our Austin, TX studio.
             </p>
 
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod || 14}-DAY WORKFORCE PERFECT FIT GUARANTEE &amp; RETURN POLICY</h3>
+            <h3 className="text-base font-serif font-bold text-[#18121E] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod || 14}-DAY FIT &amp; DRAPE GUARANTEE</h3>
             <p>
-              We stand behind our workforce apparel with a {siteConfig.trialPeriod || 14}-day workforce perfect fit guarantee. If you are not satisfied with the fit, comfort, or performance of your purchase,
-              please contact our outfitting concierge desk at <strong className="text-[#0A0F1D] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-[#0A0F1D] font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
+              We stand behind our couture pieces with a {siteConfig.trialPeriod || 14}-day fit and drape guarantee. If you are not completely satisfied with the fit or silhouette of your purchase,
+              please contact our styling concierge desk at <strong className="text-[#18121E] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              <strong className="text-[#18121E] font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated facility at: <strong className="text-[#0A0F1D] font-semibold">{siteConfig.address}</strong>.
-              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
+              Returns must be shipped to our designated facility at: <strong className="text-[#18121E] font-semibold">{siteConfig.address}</strong>.
+              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item in its original condition.
             </p>
           </div>
         </div>

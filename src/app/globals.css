@@ -8,7 +8,8 @@
   --color-neutral-bg: var(--neutral-bg-color);
   --color-neutral-text: var(--neutral-text-color);
   --font-sans: var(--font-family);
-  --font-serif: var(--font-montserrat);
+  --font-serif: var(--font-playfair-display);
+  --font-cormorant: var(--font-cormorant);
 }
 
 /* Base Styles */
@@ -26,15 +27,19 @@
   }
   
   body {
-    background-color: #FFFFFF;
-    color: #0A0F1D;
-    font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #FAF8F6;
+    color: #18121E;
+    font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-playfair-display), var(--font-cormorant), Georgia, serif;
   }
 }
 
@@ -44,38 +49,65 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #FAF8F6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #D8C3B5;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0A0F1D;
+  background: #C59B7E;
 }
 
-/* Clean Editorial Text Tag */
+/* Haute Couture Editorial Utilities */
+.editorial-serif {
+  font-family: var(--font-playfair-display), Georgia, serif;
+}
+
+.editorial-cormorant {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
 .editorial-tag {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(10, 15, 29, 0.8);
+  color: #C59B7E;
   user-select: none;
+}
+
+.rose-gold-gradient {
+  background: linear-gradient(135deg, #E6C2AC 0%, #C59B7E 50%, #A87654 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rose-gold-bg {
+  background: linear-gradient(135deg, #D4A373 0%, #C59B7E 50%, #B88564 100%);
+}
+
+.luxe-shadow {
+  box-shadow: 0 20px 40px -15px rgba(24, 18, 30, 0.07), 0 0 1px 1px rgba(197, 155, 126, 0.15);
+}
+
+.luxe-shadow-hover:hover {
+  box-shadow: 0 30px 60px -20px rgba(24, 18, 30, 0.15), 0 0 1px 1px rgba(197, 155, 126, 0.35);
+  transform: translateY(-3px);
 }
 
 /* Clean Underline Accent */
 .clean-link {
-  font-weight: 700;
-  color: #0A0F1D;
+  font-weight: 600;
+  color: #18121E;
   text-decoration: underline;
   text-underline-offset: 8px;
   text-decoration-thickness: 1px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 .clean-link:hover {
-  color: #2563EB;
-  text-decoration-color: #2563EB;
+  color: #C59B7E;
+  text-decoration-color: #C59B7E;
 }
 
 /* Hide scrollbar */

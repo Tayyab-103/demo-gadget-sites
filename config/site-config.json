@@ -1,0 +1,24 @@
+{
+  "brandName": "Pulse Gear",
+  "websiteUrl": "pulsegear.com",
+  "email": "support@pulsegear.com",
+  "descriptor": "PULSE GEAR",
+  "corpName": "Pulse Gear Inc.",
+  "phone": "1-800-762-7529",
+  "address": "480 Athletic Way, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#0A0B0E",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#0EA5E9",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#FAFAFA",
+    "neutralTextColor": "#111827",
+    "fontFamily": "Montserrat"
+  }
+}

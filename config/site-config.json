@@ -1,0 +1,24 @@
+{
+  "brandName": "Marlowe Finch Creative Supply",
+  "websiteUrl": "marlowefinchcreativesupply.com",
+  "email": "support@marlowefinchcreativesupply.com",
+  "descriptor": "MarloweFinchCreativeSu",
+  "corpName": "Starpath Marketing Co",
+  "phone": "1-800-762-7529",
+  "address": "742 Studio Atelier Row, Suite 300, Austin, TX 78701",
+  "shippingCarrier": "UPS",
+  "shippingPeriod": "3-5",
+  "trialPeriod": 14,
+  "useImageLogo": false,
+  "logoImage": "/img/logo.png",
+  "footerLogoImage": "/img/logo.png",
+  "theme": {
+    "primaryColor": "#1C1917",
+    "primaryTextColor": "#ffffff",
+    "secondaryColor": "#D97706",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#FAF9F5",
+    "neutralTextColor": "#1C1917",
+    "fontFamily": "Montserrat"
+  }
+}

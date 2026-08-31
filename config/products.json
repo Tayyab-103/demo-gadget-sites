@@ -1,0 +1,86 @@
+[
+  {
+    "id": "product1",
+    "stickyId": 1,
+    "name": "Master Series Botanical Pigment Ink & Watercolor Set",
+    "description": "An archival-grade collection of organic botanical pigment inks and finely milled pan watercolors. Formulated with maximum lightfastness for botanical illustrators, calligraphers, and fine artists seeking pure, rich color fidelity.",
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80",
+      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&q=80",
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=900&q=80",
+    "category": "Fine Art Pigments & Inks",
+    "billingModel": 1,
+    "ssPrice": "6.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
+    ]
+  },
+  {
+    "id": "product2",
+    "stickyId": 2,
+    "name": "Heritage Hand-Bound Pressed Cotton Sketchbook Set",
+    "description": "Crafted with 300gsm 100% cold-pressed cotton paper, this heavy-duty hand-bound sketchbook lays flat for effortless gouache, watercolor, and ink work. Features a tactile linen cover and ribbon bookmark built for studio and plein air creation.",
+    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80",
+      "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=1000&q=80",
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=900&q=80",
+    "category": "Paper & Crafting Supplies",
+    "billingModel": 1,
+    "ssPrice": "11.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 11.95 },
+      { "quantity": 2, "price": 17.32 },
+      { "quantity": 3, "price": 22.95 },
+      { "quantity": 4, "price": 29.97 },
+      { "quantity": 5, "price": 31.72 },
+      { "quantity": 6, "price": 38.97 },
+      { "quantity": 7, "price": 41.95 },
+      { "quantity": 8, "price": 54.95 }
+    ]
+  },
+  {
+    "id": "product3",
+    "stickyId": 3,
+    "name": "Studio Edition Kolinsky Sable Fine Detail Brush Kit",
+    "description": "Hand-finished natural sable hair brushes engineered for surgical precision, crisp snap, and unmatched paint retention. Designed for miniature painting, intricate watercolor details, and fine art linework with ergonomic mahogany handles.",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
+      "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1000&q=80",
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80"
+    ],
+    "showIngredients": true,
+    "ingredientsImage": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=900&q=80",
+    "category": "Studio Tools & Brushes",
+    "billingModel": 1,
+    "ssPrice": "14.95",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
+    ]
+  }
+]

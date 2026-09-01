@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 pt-6 sm:pt-8 text-xs text-neutral-text/60 text-center sm:text-left">
           
           <p className="text-[0.7rem] sm:text-xs">
-            Copyright &copy; {currentYear} <span className="text-secondary font-bold">{siteConfig.brandName}</span> | Operated by Starpath Marketing Co
+            Copyright &copy; {currentYear} <span className="text-secondary font-bold">{siteConfig.brandName}</span> | Operated by {siteConfig.corpName}
           </p>
 
           {/* Payment Icon Badges */}

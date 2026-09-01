@@ -10,7 +10,7 @@
       "/img/products/product1-1.jpg",
       "/img/products/product1-2.jpg"
     ],
-    "showIngredients": true,
+    "showIngredients": false,
     "ingredientsImage": "",
     "category": "Fine Art Pigments & Inks",
     "billingModel": 1,
@@ -38,7 +38,7 @@
       "/img/products/product2-2.jpg",
       "/img/products/product2-3.jpg"
     ],
-    "showIngredients": true,
+    "showIngredients": false,
     "ingredientsImage": "",
     "category": "Paper & Crafting Supplies",
     "billingModel": 1,
@@ -66,8 +66,8 @@
       "/img/products/product3-1.jpg",
       "/img/products/product3-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=900&q=80",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Studio Tools & Brushes",
     "billingModel": 1,
     "ssPrice": "14.95",

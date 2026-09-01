@@ -31,7 +31,7 @@ const slides = [
     titleLine1: "Elevate Every Stroke,",
     titleLine2: "Every Canvas",
     subtitle: "Studio-tested mediums formulated for generational permanence and rich pigment depth.",
-    bgImage: "/img/hero3.jpg ",
+    bgImage: "/img/hero3.jpg",
     buttonText: "View Featured Items",
     link: "/#shop",
   },

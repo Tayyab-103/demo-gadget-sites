@@ -24,7 +24,7 @@ export default function CTASection() {
         <img
           src="/img/cta1.jpg"
           alt=""
-          className="hidden lg:block w-64 xl:w-80 h-96 object-cover rounded-2xl shrink-0"
+          className="hidden lg:block w-64 xl:w-80 h-96 object-cover rounded-2xl shrink-0 -rotate-6 shadow-xl transition-transform duration-300 hover:rotate-0"
         />
 
         <div className="w-full max-w-3xl text-center">
@@ -69,7 +69,7 @@ export default function CTASection() {
         <img
           src="/img/cta2.jpg"
           alt=""
-          className="hidden lg:block w-64 xl:w-80 h-96 object-cover rounded-2xl shrink-0"
+          className="hidden lg:block w-64 xl:w-80 h-96 object-cover rounded-2xl shrink-0 rotate-6 shadow-xl transition-transform duration-300 hover:rotate-0"
         />
       </div>
     </section>

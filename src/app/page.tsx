@@ -12,6 +12,7 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -38,6 +39,8 @@ export default function Home() {
 
         {/* Newsletter Collective */}
         <CTASection />
+        {/* Contact Section */}
+        <Contact />
       </main>
 
       <Footer />

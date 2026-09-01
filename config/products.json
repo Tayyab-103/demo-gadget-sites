@@ -2,16 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Master Series Botanical Pigment Ink & Watercolor Set",
-    "description": "An archival-grade collection of organic botanical pigment inks and finely milled pan watercolors. Formulated with maximum lightfastness for botanical illustrators, calligraphers, and fine artists seeking pure, rich color fidelity.",
-    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80",
+    "name": "Acrylic Paints - 6 Colors",
+    "description": "A premium set of 6 acrylic paints, formulated for vibrant color, smooth application, and long-lasting durability. Perfect for artists of all levels seeking to create bold and expressive works on canvas, wood, or paper.",
+    "image": "/img/products/product1.png",
     "images": [
-      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80",
+      "/img/products/product1.png",
       "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&q=80",
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=900&q=80",
+    "ingredientsImage": "",
     "category": "Fine Art Pigments & Inks",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -30,16 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Heritage Hand-Bound Pressed Cotton Sketchbook Set",
-    "description": "Crafted with 300gsm 100% cold-pressed cotton paper, this heavy-duty hand-bound sketchbook lays flat for effortless gouache, watercolor, and ink work. Features a tactile linen cover and ribbon bookmark built for studio and plein air creation.",
-    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80",
+    "name": "Oil Pastels - 24 Colors",
+    "description": "A vibrant set of 24 oil pastels, crafted for smooth blending and rich color payoff. Ideal for artists, students, and hobbyists looking to explore expressive techniques in drawing and mixed media.",
+    "image": "/img/products/product2.png",
     "images": [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80",
+      "/img/products/product2.png",
       "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=1000&q=80",
       "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&q=80"
     ],
     "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=900&q=80",
+    "ingredientsImage": "",
     "category": "Paper & Crafting Supplies",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -58,11 +58,11 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Studio Edition Kolinsky Sable Fine Detail Brush Kit",
-    "description": "Hand-finished natural sable hair brushes engineered for surgical precision, crisp snap, and unmatched paint retention. Designed for miniature painting, intricate watercolor details, and fine art linework with ergonomic mahogany handles.",
-    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
+    "name": "Complete Drawing Kit",
+    "description": "A comprehensive drawing kit that includes a variety of graphite pencils, charcoal sticks, blending tools, and sketching paper. Designed for artists of all skill levels, this kit provides everything needed to create detailed sketches and expressive drawings.",
+    "image": "/img/products/product3.png",
     "images": [
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
+      "/img/products/product3.png",
       "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1000&q=80",
       "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80"
     ],

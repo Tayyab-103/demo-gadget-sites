@@ -7,9 +7,9 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80",
-  "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=900&q=80",
-  "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
+  "/img/contact1.jpg",
+  "/img/contact2.jpg",
+  "/img/contact3.jpg",
 ];
 
 export default function Contact() {

@@ -109,21 +109,21 @@ export default function Header() {
                   onClick={closeAll}
                   className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
                 >
-                  Botanical Ink Set
+                  Acrylic Paints - 6 Colors
                 </Link>
                 <Link
                   href="/product/product2"
                   onClick={closeAll}
                   className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
                 >
-                  Pressed Cotton Sketchbook
+                  Oil Pastels - 24 Colors
                 </Link>
                 <Link
                   href="/product/product3"
                   onClick={closeAll}
                   className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
                 >
-                  Kolinsky Sable Brush Kit
+                  Complete Drawing Kit
                 </Link>
                 <div className="border-t border-black/5 mt-1 pt-1">
                   <Link

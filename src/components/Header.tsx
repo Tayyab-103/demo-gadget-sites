@@ -104,27 +104,16 @@ export default function Header() {
               
               {/* Dropdown Menu */}
               <div className="absolute top-full left-0 mt-3 w-64 bg-white border border-black/10 rounded-2xl shadow-2xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <Link
-                  href="/product/product1"
-                  onClick={closeAll}
-                  className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
-                >
-                  Acrylic Paints - 6 Colors
-                </Link>
-                <Link
-                  href="/product/product2"
-                  onClick={closeAll}
-                  className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
-                >
-                  Oil Pastels - 24 Colors
-                </Link>
-                <Link
-                  href="/product/product3"
-                  onClick={closeAll}
-                  className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
-                >
-                  Complete Drawing Kit
-                </Link>
+                {products.slice(0, 3).map((product) => (
+                  <Link
+                    key={product.id}
+                    href={`/product/${product.id}`}
+                    onClick={closeAll}
+                    className="block px-3 py-2 text-xs font-bold text-primary hover:bg-neutral-bg hover:text-secondary rounded-xl transition-colors"
+                  >
+                    {product.name}
+                  </Link>
+                ))}
                 <div className="border-t border-black/5 mt-1 pt-1">
                   <Link
                     href="/shop"

@@ -3,9 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -96,9 +98,13 @@ export default function Footer() {
           <div className="flex flex-col sm:border-l sm:border-black/10 sm:pl-6 lg:pl-8">
             <h3 className="font-serif text-xs sm:text-sm font-bold text-primary mb-3 sm:mb-4">Shop Collection</h3>
             <ul className="flex flex-col gap-2.5 text-neutral-text/70">
-              <li><Link href="/product/product1" className="hover:text-secondary transition-colors">Acrylic Paints - 6 Colors</Link></li>
-              <li><Link href="/product/product2" className="hover:text-secondary transition-colors">Oil Pastels - 24 Colors</Link></li>
-              <li><Link href="/product/product3" className="hover:text-secondary transition-colors">Complete Drawing Kit</Link></li>
+              {products.slice(0, 3).map((product) => (
+                <li key={product.id}>
+                  <Link href={`/product/${product.id}`} className="hover:text-secondary transition-colors">
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
               <li><Link href="/shop" className="hover:text-secondary transition-colors font-bold text-secondary">All Supplies →</Link></li>
             </ul>
           </div>

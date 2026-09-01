@@ -35,9 +35,13 @@ export default function ProductGrid() {
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {products.map((product) => {
-            const firstBundle = product.bundles && product.bundles[0];
-            const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            const formattedPrice = Number(currentPrice).toFixed(2);
+            const bundlePrices = product.bundles?.map((b) => Number(b.price)) || [];
+            const minPrice = bundlePrices.length ? Math.min(...bundlePrices) : Number(product.ssPrice);
+            const maxPrice = bundlePrices.length ? Math.max(...bundlePrices) : Number(product.ssPrice);
+            const priceLabel =
+              minPrice === maxPrice
+                ? `$${minPrice.toFixed(2)}`
+                : `$${minPrice.toFixed(2)} - $${maxPrice.toFixed(2)}`;
 
             return (
               <div key={product.id} className="group flex flex-col bg-white sm:bg-transparent p-4 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-black/5">
@@ -80,7 +84,7 @@ export default function ProductGrid() {
                   {/* Price Row */}
                   <div className="mt-auto pt-2 flex items-center justify-between border-t border-black/5 sm:border-0 sm:pt-1">
                     <span className="text-base sm:text-lg md:text-xl font-extrabold text-primary">
-                      ${formattedPrice}
+                      {priceLabel}
                     </span>
                     <Link
                       href={`/product/${product.id}`}

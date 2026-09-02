@@ -45,16 +45,16 @@ export default function Terms() {
               terms and conditions of this agreement, then you may not access the website or use any services.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
+            <h3 className="text-base font-bold text-gray-900 mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer premium sports gear and training gadgets through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer premium automotive parts and accessories through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 my-6">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-primary mb-3">
+                <div key={product.id} className="mb-6 pb-6 border-b border-gray-200 last:border-0 last:mb-0 last:pb-0">
+                  <h4 className="text-sm md:text-base font-bold text-gray-900 mb-3">
                     {product.name}
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
@@ -65,11 +65,11 @@ export default function Terms() {
                         : `$${product.ssShipping} Shipping & Handling`;
 
                       return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Bottles Bundle" : "Bottle Pack"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-gray-600">
+                          Upon ordering a <strong className="text-gray-900 font-bold">{bundle.quantity} {bundle.quantity > 1 ? "Units Set" : "Single Unit"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-gray-900 font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
+                          The credit card charge will appear on your statement as <strong className="text-gray-900 font-bold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}

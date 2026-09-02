@@ -2,225 +2,124 @@
 
 import React from "react";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
-
-const torquePerks = [
-  {
-    title: "CNC Laser-Measured Tolerances (±0.01mm)",
-    desc: "100% direct bolt-on plug-and-play installation with zero trimming, drilling, or vehicle modifications.",
-    icon: "⚡",
-  },
-  {
-    title: "Direct-to-Consumer Savings (Up to 50% Off)",
-    desc: "We cut out dealership distributor markups to deliver pro-grade hardware at honest driver prices.",
-    icon: "💰",
-  },
-  {
-    title: "1-Year Comprehensive Full Warranty",
-    desc: "Total hardware peace of mind covering mechanical and electrical assembly defects with free replacement.",
-    icon: "🛡️",
-  },
-  {
-    title: "60-Day Risk-Free Money-Back Guarantee",
-    desc: "Test our components on your vehicle for two full months. If you're not 100% thrilled, return for a full refund.",
-    icon: "🔄",
-  },
-  {
-    title: "Free Same-Day Tracked UPS Shipping",
-    desc: "Dispatched direct from our US fulfillment hub with live tracking sent straight to your email.",
-    icon: "🚚",
-  },
-];
-
-const oemDrawbacks = [
-  "3x to 5x price markups to fund dealership middleman profits",
-  "Restricted 30-day return windows with 15%–20% restocking fees",
-  "Complicated warranty claims requiring dealer service appointments",
-];
-
-const genericDrawbacks = [
-  "Inconsistent casting tolerances that vibrate and wear out prematurely",
-  "Loose fitment often requiring modification, cutting, or adapters",
-  "Zero real warranty when components degrade or fail under load",
-];
 
 export default function Features() {
   return (
-    <section className="py-14 sm:py-20 bg-gradient-to-b from-[#f9fafb] to-[#f0f2f5] border-b border-gray-200" id="comparison">
+    <section className="py-14 sm:py-20 bg-white" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ────────────────── SECTION HEADER ────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-12 border-b border-gray-200">
-          <div className="flex items-center gap-2.5">
-            <span className="w-5 h-5 rounded-full border-2 border-red-600 flex items-center justify-center flex-shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
-            </span>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
-              WHY CHOOSE US
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch">
+          
+          {/* 1. Top-Left: 24/7 Call Handling */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              24/7 Call Handling
+            </h3>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-[#D92525] hover:bg-[#B91C1C] text-white text-xs sm:text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-200 shadow-xs hover:shadow-sm"
+            >
+              Send Request
+            </Link>
+          </div>
+
+          {/* 2. Top-Center: Best Pricing */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Best Pricing
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <ellipse cx="12" cy="7" rx="7" ry="2.5" />
+                <path d="M5 8.5v3c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5v-3c-1.35 1-3.95 1.5-7 1.5s-5.65-.5-7-1.5z" />
+                <path d="M5 13.5v3c0 1.38 3.13 2.5 7 2.5s7-1.12 7-2.5v-3c-1.35 1-3.95 1.5-7 1.5s-5.65-.5-7-1.5z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* 3. Top-Right: Customer Favorite */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Customer Favorite
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* 4. Middle-Left: Reliable Help */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Reliable Help
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-7H6v-1a6 6 0 0 1 12 0v1h-2v7h1a3 3 0 0 0 3-3v-3a8 8 0 0 0-8-8z"/>
+                <circle cx="12" cy="19" r="1.5" />
+              </svg>
+            </div>
+          </div>
+
+          {/* 5. Center: FEATURES Display Header */}
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1 flex flex-col items-center justify-center p-6 text-center min-h-[120px] sm:min-h-[160px]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wider text-gray-900">
+              FEATURES
             </h2>
           </div>
 
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-500">
-            ENGINEERED EXCELLENCE VS. THE ALTERNATIVES
-          </span>
-        </div>
-
-        {/* ────────────────── 2-COLUMN BATTLE CARD SHOWCASE ────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
-          {/* LEFT: THE WINNER — TORQUE HOLLOW HERO CARD (Cols 7) */}
-          <div className="lg:col-span-7 bg-[#0c0f14] text-white rounded-3xl p-7 sm:p-10 border-2 border-red-600 shadow-2xl shadow-red-950/30 flex flex-col justify-between relative overflow-hidden group">
-            {/* Ambient Red Glow */}
-            <div className="absolute -right-20 -top-20 w-80 h-80 bg-red-600/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10">
-              {/* Gold Standard Header Pill */}
-              <div className="inline-flex items-center gap-2 bg-red-600 text-white text-[0.68rem] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md mb-6">
-                <span>🏆</span>
-                <span>THE PRO-GRADE STANDARD &bull; {siteConfig.brandName}</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white leading-tight mb-3">
-                Precision Performance <br />
-                <span className="text-red-500">Without The Dealership Tax</span>
-              </h3>
-
-              <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-8 font-normal max-w-xl">
-                We bridge the gap between expensive dealership parts and unreliable cheap knockoffs. High-performance materials built to exact OEM specifications.
-              </p>
-
-              {/* Perks List */}
-              <div className="space-y-4 mb-8">
-                {torquePerks.map((perk, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white/5 border border-white/10 hover:border-red-500/60 rounded-2xl p-3.5 sm:p-4 transition-all duration-200 flex items-start gap-3.5"
-                  >
-                    <div className="w-8 h-8 rounded-xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
-                      ✓
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
-                        {perk.title}
-                      </h4>
-                      <p className="text-[0.72rem] sm:text-xs text-gray-400 leading-relaxed mt-0.5">
-                        {perk.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Button */}
-            <div className="relative z-10 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-gray-400 font-semibold flex items-center gap-2">
-                <span className="text-green-400 font-bold">✓</span>
-                <span>60-Day Money-Back Trial &bull; 1-Year Warranty</span>
-              </div>
-
-              <Link
-                href="/#shop"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3 rounded-full shadow-lg shadow-red-600/40 hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
-              >
-                <span>Shop The 3 Parts</span>
-                <span>&rarr;</span>
-              </Link>
+          {/* 6. Middle-Right: 100% Money Back */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              100% Money Back
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
             </div>
           </div>
 
-          {/* RIGHT: THE ALTERNATIVES — DEALERSHIP VS CHEAP KNOCKOFFS (Cols 5) */}
-          <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
-            {/* Card 1: Dealership OEM */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm flex flex-col justify-between flex-1">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-700 text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    <span>🏷️</span>
-                    <span>DEALERSHIP OEM</span>
-                  </div>
-                  <span className="text-xs font-bold text-red-600">3x–5x Price Markup</span>
-                </div>
-
-                <h4 className="text-base sm:text-lg font-bold text-gray-900 leading-snug mb-2">
-                  Overpriced with Rigid Policies
-                </h4>
-                <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  High retail price inflation designed to cover dealership overhead and distributor layers.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-gray-600">
-                  {oemDrawbacks.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-red-500 font-bold flex-shrink-0">✕</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-gray-100 text-[0.7rem] text-gray-400 font-semibold">
-                High price tag, zero bundle savings
-              </div>
-            </div>
-
-            {/* Card 2: Cheap Generic Knockoffs */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm flex flex-col justify-between flex-1">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-700 text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-red-200">
-                    <span>⚠️</span>
-                    <span>GENERIC CHEAP PARTS</span>
-                  </div>
-                  <span className="text-xs font-bold text-red-600">High Failure Rate</span>
-                </div>
-
-                <h4 className="text-base sm:text-lg font-bold text-gray-900 leading-snug mb-2">
-                  Inconsistent Castings &amp; Failure Risks
-                </h4>
-                <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  Low upfront cost with poor tolerances, brittle materials, and no real customer support.
-                </p>
-
-                <ul className="space-y-2.5 text-xs text-gray-600">
-                  {genericDrawbacks.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-red-500 font-bold flex-shrink-0">✕</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-gray-100 text-[0.7rem] text-gray-400 font-semibold">
-                Frequent premature replacements required
-              </div>
+          {/* 7. Bottom-Left: Effortless Returns */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Effortless Returns
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+              </svg>
             </div>
           </div>
-        </div>
 
-        {/* ────────────────── STATS & HIGHLIGHT BAR ────────────────── */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-xs grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-gray-900 block leading-none">±0.01mm</span>
-            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider text-red-600 mt-1 block">CNC Laser Tolerance</span>
+          {/* 8. Bottom-Center: Protected Transactions */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Protected Transactions
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/>
+              </svg>
+            </div>
           </div>
-          <div className="border-l border-gray-200">
-            <span className="text-2xl sm:text-3xl font-black text-gray-900 block leading-none">Up to 50%</span>
-            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider text-red-600 mt-1 block">Direct Factory Savings</span>
+
+          {/* 9. Bottom-Right: Trusted by Thousands */}
+          <div className="bg-[#F5F6F8] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-300 hover:shadow-md hover:bg-[#EEF0F4]">
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-3 tracking-tight">
+              Trusted by Thousands
+            </h3>
+            <div className="text-gray-900 flex items-center justify-center">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.9 12.66l-2.61-2.61a2.12 2.12 0 0 0-3 0l-.8.8-1.5-1.5a2.12 2.12 0 0 0-3 0L6.41 12a2.12 2.12 0 0 0 0 3l5.59 5.59a2.12 2.12 0 0 0 3 0l4.9-4.93a2.12 2.12 0 0 0 0-3zM10.5 13.5l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12zm5.66 4.24l-4.24-4.24 1.41-1.41 4.24 4.24-1.41 1.41z"/>
+              </svg>
+            </div>
           </div>
-          <div className="border-l border-gray-200">
-            <span className="text-2xl sm:text-3xl font-black text-gray-900 block leading-none">60 Days</span>
-            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider text-red-600 mt-1 block">Money-Back Guarantee</span>
-          </div>
-          <div className="border-l border-gray-200">
-            <span className="text-2xl sm:text-3xl font-black text-gray-900 block leading-none">100%</span>
-            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-wider text-red-600 mt-1 block">Guaranteed OEM Fit</span>
-          </div>
+
         </div>
       </div>
     </section>
   );
 }
+

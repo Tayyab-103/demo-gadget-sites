@@ -1,26 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { useCart } from "@/context/CartContext";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 
 const products = productsData as unknown as Product[];
 
 const discountBadges = ["-14%", "-18%", "-20%"];
-const reviewCounts = [126, 106, 120];
 
 export default function ProductGrid() {
-  const { addToCart } = useCart();
-  const [addedItem, setAddedItem] = useState<string | null>(null);
-
-  const handleAddToCart = (product: Product, price: string | number) => {
-    addToCart(product, 1, price);
-    setAddedItem(product.id);
-    setTimeout(() => setAddedItem(null), 1800);
-  };
-
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-[#fafafa] border-b border-gray-200" id="shop">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +41,6 @@ export default function ProductGrid() {
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
             const originalPrice = (Number(currentPrice) * 1.5).toFixed(2);
             const discount = discountBadges[idx % discountBadges.length];
-            const reviewCount = reviewCounts[idx % reviewCounts.length];
 
             return (
               <div
@@ -81,17 +69,6 @@ export default function ProductGrid() {
 
                 {/* Card Content */}
                 <div className="p-5 sm:p-6 flex flex-col flex-1 border-t border-gray-100">
-                  {/* Reviews Stars */}
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <div className="flex text-red-500 text-xs">
-                      {"★".repeat(4)}
-                      <span className="text-gray-300">★</span>
-                    </div>
-                    <span className="text-[0.7rem] text-gray-500 font-medium">
-                      ({reviewCount}) Review
-                    </span>
-                  </div>
-
                   {/* Product Title */}
                   <Link
                     href={`/product/${product.id}`}
@@ -110,15 +87,10 @@ export default function ProductGrid() {
                     </span>
                   </div>
 
-                  {/* Add To Cart Button */}
-                  <button
-                    type="button"
-                    onClick={() => handleAddToCart(product, currentPrice)}
-                    className={`w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
-                      addedItem === product.id
-                        ? "bg-green-600 text-white"
-                        : "bg-[#f87171]/20 hover:bg-red-600 text-red-700 hover:text-white"
-                    }`}
+                  {/* Add To Cart Button -> Links to Product Details */}
+                  <Link
+                    href={`/product/${product.id}`}
+                    className="w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs bg-[#f87171]/20 hover:bg-red-600 text-red-700 hover:text-white"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +107,8 @@ export default function ProductGrid() {
                       <circle cx="19" cy="21" r="1" />
                       <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                     </svg>
-                    <span>
-                      {addedItem === product.id ? "Added To Cart ✓" : "ADD TO CART"}
-                    </span>
-                  </button>
+                    <span>ADD TO CART</span>
+                  </Link>
                 </div>
               </div>
             );

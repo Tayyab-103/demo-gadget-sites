@@ -112,7 +112,7 @@ export default function AboutUs() {
             <div className="lg:col-span-6 relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-gray-900 group">
                 <img
-                  src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=900&auto=format&fit=crop&q=80"
+                  src="/img/aboutus.jpg"
                   alt="Torque Hollow Automotive Engineering"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                   onError={(e) => {

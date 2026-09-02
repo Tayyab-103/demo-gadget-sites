@@ -147,7 +147,7 @@ export default function ProductDetail() {
 
                 {/* Rating & Review Summary */}
                 <div className="flex items-center gap-3 pb-4 mb-4 border-b border-gray-100 flex-wrap">
-                  <div className="flex text-amber-400 text-sm">
+                  <div className="flex text-red-500 text-sm">
                     {"★".repeat(5)}
                   </div>
                   <span className="text-xs font-bold text-gray-900">4.9 / 5.0</span>

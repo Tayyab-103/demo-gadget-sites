@@ -17,10 +17,10 @@
   "theme": {
     "primaryColor": "#0E1013",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C6FF3D",
-    "secondaryTextColor": "#0E1013",
-    "neutralBgColor": "#F4F5F7",
-    "neutralTextColor": "#12141A",
+    "secondaryColor": "#DC2626",
+    "secondaryTextColor": "#ffffff",
+    "neutralBgColor": "#FAFAFA",
+    "neutralTextColor": "#111827",
     "fontFamily": "Montserrat"
   }
 }

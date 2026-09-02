@@ -26,7 +26,8 @@ export default function Home() {
         <Hero />
         
         {/* 2. 4 Guarantee / Trust Cards Strip */}
-        <TrustBar />
+        {/* <TrustBar /> */}
+         <Features />
 
         {/* 3. Products Catalog Showcase */}
         <ProductGrid />
@@ -34,9 +35,8 @@ export default function Home() {
         {/* 4. Deal of the Day & Limited Offers */}
         <DealOfTheDay />
 
-        {/* 5. 3-Step How It Works */}
-        {/* <HowItWorks /> */}
-        {/* <Features/> */}
+        {/* 5. Features Grid */}
+        {/* <Features /> */}
 
         {/* 6. Guarantee & Promise Standards */}
         {/* <QualityPromise /> */}

@@ -11,26 +11,15 @@ import { SiteConfig, Product } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
-const categories = [
-  "All categories",
-  "Diagnostics & Scanners",
-  "Performance Tools",
-  "Maintenance & Detailing",
-  "Accessories & Hardware",
-];
-
 export default function Header() {
   const pathname = usePathname();
   const { toggleCart, getCartCount, getCartTotal } = useCart();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All categories");
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
-  const categoryRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Logo text extraction
@@ -42,14 +31,11 @@ export default function Header() {
   const trimmedQuery = query.trim().toLowerCase();
   const filteredProducts = trimmedQuery
     ? products.filter((p) => {
-        const matchesQuery =
+        return (
           p.name.toLowerCase().includes(trimmedQuery) ||
           (p.category || "").toLowerCase().includes(trimmedQuery) ||
-          (p.description || "").toLowerCase().includes(trimmedQuery);
-        const matchesCategory =
-          selectedCategory === "All categories" ||
-          p.category.toLowerCase().includes(selectedCategory.toLowerCase());
-        return matchesQuery && (selectedCategory === "All categories" || matchesCategory);
+          (p.description || "").toLowerCase().includes(trimmedQuery)
+        );
       })
     : [];
 
@@ -58,14 +44,12 @@ export default function Header() {
       if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false);
         setIsSearchFocused(false);
-        setIsCategoryDropdownOpen(false);
       }
     };
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsMenuOpen(false);
         setIsSearchFocused(false);
-        setIsCategoryDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -79,7 +63,6 @@ export default function Header() {
   const closeAll = () => {
     setIsMenuOpen(false);
     setIsSearchFocused(false);
-    setIsCategoryDropdownOpen(false);
   };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -215,53 +198,6 @@ export default function Header() {
               onSubmit={handleSearchSubmit}
               className="flex w-full items-center border-2 border-gray-200 rounded-md bg-white hover:border-gray-300 focus-within:border-red-500 transition-colors shadow-sm"
             >
-              {/* Category Dropdown Selector */}
-              <div ref={categoryRef} className="relative flex-shrink-0">
-                <button
-                  type="button"
-                  onClick={() => setIsCategoryDropdownOpen((prev) => !prev)}
-                  className="flex items-center gap-2 px-3.5 py-2.5 text-xs font-semibold text-gray-700 hover:text-red-600 bg-gray-50/80 border-r border-gray-200 rounded-l transition-colors"
-                >
-                  <span className="max-w-[125px] truncate">{selectedCategory}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`text-gray-400 transition-transform ${
-                      isCategoryDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </button>
-
-                {isCategoryDropdownOpen && (
-                  <div className="absolute left-0 top-full mt-1.5 w-56 bg-white border border-gray-200 rounded-lg shadow-xl py-1.5 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                    {categories.map((cat) => (
-                      <button
-                        key={cat}
-                        type="button"
-                        onClick={() => {
-                          setSelectedCategory(cat);
-                          setIsCategoryDropdownOpen(false);
-                        }}
-                        className={`w-full text-left px-4 py-2 text-xs font-medium hover:bg-red-50 hover:text-red-600 transition-colors ${
-                          selectedCategory === cat ? "text-red-600 font-bold bg-red-50/50" : "text-gray-700"
-                        }`}
-                      >
-                        {cat}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
               {/* Search Input */}
               <div className="relative flex-1">
                 <input
@@ -329,9 +265,6 @@ export default function Header() {
                             <h4 className="text-xs font-bold text-gray-900 group-hover:text-red-600 truncate">
                               {p.name}
                             </h4>
-                            <span className="text-[0.65rem] text-gray-500 uppercase tracking-wider">
-                              {p.category}
-                            </span>
                           </div>
                           <div className="text-sm font-extrabold text-red-600 flex-shrink-0">
                             ${displayPrice}

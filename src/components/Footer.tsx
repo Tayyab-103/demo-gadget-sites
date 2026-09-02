@@ -186,6 +186,20 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            {/* Payment Methods */}
+            <div className="mt-4 pt-3 border-t border-gray-800/80">
+              <span className="text-[0.68rem] font-bold text-gray-400 uppercase tracking-wider block mb-2">
+                Accepted Cards
+              </span>
+              <div className="flex items-center gap-2">
+                <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center h-7 shadow-xs">
+                  <img src="/img/visa.png" alt="Visa" className="h-3.5 w-auto object-contain" />
+                </div>
+                <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center h-7 shadow-xs">
+                  <img src="/img/mastercard.png" alt="Mastercard" className="h-4.5 w-auto object-contain" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

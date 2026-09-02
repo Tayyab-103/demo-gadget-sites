@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          {siteConfig.Product || "Automotive Parts and Accessories"}
         </div>
 
         <div

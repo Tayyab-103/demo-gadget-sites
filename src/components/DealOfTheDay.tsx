@@ -2,14 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useCart } from "@/context/CartContext";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 
 const products = productsData as unknown as Product[];
 
 export default function DealOfTheDay() {
-  const { addToCart } = useCart();
   const featuredProduct: Product = products[0];
   const firstBundle = featuredProduct?.bundles && featuredProduct.bundles[0];
   const currentPrice = firstBundle ? firstBundle.price : featuredProduct?.ssPrice || "6.95";
@@ -22,8 +20,6 @@ export default function DealOfTheDay() {
     minutes: 35,
     seconds: 48,
   });
-
-  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -42,12 +38,6 @@ export default function DealOfTheDay() {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const handleAddToCart = () => {
-    addToCart(featuredProduct, 1, currentPrice);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 2000);
-  };
 
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-white border-b border-gray-200">
@@ -152,15 +142,8 @@ export default function DealOfTheDay() {
                 </Link>
               </h4>
 
-              {/* Review Stars */}
-              <div className="flex items-center justify-center gap-1 text-red-500 text-xs mb-2">
-                {"★".repeat(4)}
-                <span className="text-gray-300">★</span>
-                <span className="text-gray-500 text-[0.7rem] ml-1 font-medium">(126 Reviews)</span>
-              </div>
-
               {/* Price */}
-              <div className="flex items-baseline justify-center gap-2">
+              <div className="flex items-baseline justify-center gap-2 mt-2 mb-2">
                 <span className="text-xl font-black text-red-600">${currentPrice}</span>
                 <span className="text-xs text-gray-400 line-through font-semibold">${originalPrice}</span>
               </div>
@@ -222,18 +205,13 @@ export default function DealOfTheDay() {
               </div>
             </div>
 
-            {/* Add to Cart / Claim Deal Button */}
-            <button
-              type="button"
-              onClick={handleAddToCart}
-              className={`w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm ${
-                added
-                  ? "bg-green-600 text-white"
-                  : "bg-red-600 hover:bg-red-700 text-white shadow-red-600/30"
-              }`}
+            {/* Claim Deal Button -> Links to Product Details */}
+            <Link
+              href={`/product/${featuredProduct.id}`}
+              className="w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-red-600 hover:bg-red-700 text-white shadow-red-600/30 text-center"
             >
-              <span>{added ? "Deal Claimed & Added ✓" : "Claim This Deal"}</span>
-            </button>
+              <span>Claim This Deal &rarr;</span>
+            </Link>
           </div>
         </div>
       </div>

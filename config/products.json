@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Heavy-Duty Air & Oil Filter Kit",
-    "description": "High-efficiency multi-stage filtration system engineered for maximum engine protection, optimal airflow, and extended mileage endurance across all driving conditions.",
-    "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&auto=format&fit=crop&q=80",
+    "name": "Blind Spot Car Mirror Set",
+    "description": "Never miss a thing with these high-quality, wide-angle blind-spot mirrors. Perfect for cars, trucks, and SUVs. Easy peel-and-stick installation. Shatterproof design with durable ABS frame. Eliminates dangerous blind spots and enhances safety while driving, parking, and reversing.",
+    "image": "/img/products/product1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=900&auto=format&fit=crop&q=80"
+      "/img/products/product1.jpg",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
     "showIngredients": false,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Service Kits & Filtration",
+    "ingredientsImage": "",
+    "category": "Auto Safety & Visibility",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Drilled & Slotted Brake Rotors Set",
-    "description": "Precision CNC-machined vented brake rotor pair designed for rapid heat dissipation, reduced brake fade, and superior stopping power under extreme load.",
-    "image": "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=900&auto=format&fit=crop&q=80",
+    "name": "Magnetic Suction Car Phone Mount",
+    "description": "Effortless phone mounting with a powerful magnetic grip. Securely holds your phone on dashboard or windshield without messy adhesives. Fully adjustable with 360° rotation for the perfect viewing angle. One-handed operation for quick phone placement and removal. Universal compatibility with all smartphones. Sleek, compact design that complements any car interior.",
+    "image": "/img/products/product2.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&auto=format&fit=crop&q=80"
+      "/img/products/product2.jpg",
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
     "showIngredients": false,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Brake Disc Parts",
+    "ingredientsImage": "",
+    "category": "Phone & Gadget Accessories",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "High-Output Performance Alternator",
-    "description": "Heavy-duty 180A high-amp automotive alternator featuring high-grade copper windings and internal voltage regulation for rock-solid electrical system stability.",
-    "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&auto=format&fit=crop&q=80",
+    "name": "Fuzzy Leopard Steering Wheel Cover Set",
+    "description": "Add a touch of wild style to your car with this adorable leopard print steering wheel cover set. Made from soft, fuzzy material for extra comfort and grip. Includes steering wheel cover, seat belt covers, and gear shift cover. Elastic band ensures snug fit on most steering wheels. Easy to install and clean. Brighten up your car interior with this fun and fashionable accessory.",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1611821064430-0d40291d0f0b?w=900&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=900&auto=format&fit=crop&q=80"
+      "/img/products/product3.jpg",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
     "showIngredients": false,
-    "ingredientsImage": "https://images.unsplash.com/photo-1607166452427-7e4477079cb9?w=900&q=80",
-    "category": "Engine & Electrical Parts",
+    "ingredientsImage": "",
+    "category": "Car Care & Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

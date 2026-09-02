@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 40" width="64" height="40">
+  <rect width="64" height="40" rx="5" fill="#1A448B"/>
+  <!-- Gold Accent Wing on top-left of V -->
+  <polygon points="12,14 17.5,14 15.5,18 13.5,18" fill="#F7B600"/>
+  <!-- VISA Bold Slanted Wordmark -->
+  <text x="32" y="26" font-family="'Arial Black', Impact, 'Trebuchet MS', sans-serif" font-size="16.5" font-weight="900" font-style="italic" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">VISA</text>
+  <!-- Gold triangle touch on V -->
+  <polygon points="17.2,14 21.5,14 19.8,17.8" fill="#F7B600"/>
+</svg>

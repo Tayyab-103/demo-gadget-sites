@@ -154,10 +154,30 @@ export default function CartDrawer() {
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border-2 border-primary/20 text-primary hover:border-primary hover:bg-primary/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer"
+              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border-2 border-primary/20 text-primary hover:border-primary hover:bg-primary/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer mb-4"
             >
               Continue Shopping
             </button>
+
+            {/* Payment Trust Badges */}
+            <div className="flex flex-col items-center gap-2 pt-3 border-t border-black/5">
+              <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
+                <span className="text-emerald-600">🔒</span>
+                <span>Guaranteed Safe &amp; Secure Checkout</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img
+                  src="/img/mastercard.svg"
+                  alt="MasterCard"
+                  className="h-5 w-auto object-contain rounded"
+                />
+                <img
+                  src="/img/visa.svg"
+                  alt="VISA"
+                  className="h-5 w-auto object-contain rounded"
+                />
+              </div>
+            </div>
           </div>
         )}
       </div>

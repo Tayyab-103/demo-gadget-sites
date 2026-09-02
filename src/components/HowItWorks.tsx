@@ -7,29 +7,29 @@ const steps = [
   {
     step: "01",
     label: "SELECTION & SAVINGS",
-    title: "Curate Your Pet's Essentials",
+    title: "Curate Pet Essentials",
     description:
-      "Explore our veterinarian-approved grooming brushes, interactive smart motion toys, and orthopedic calming beds. Choose single units or customize multi-pack bundles with up to 45% volume savings.",
-    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&q=80",
-    highlight: "Volume bundle discounts applied automatically",
+      "Choose from vet-approved grooming tools, smart interactive toys, and orthopedic beds with automatic volume savings.",
+    image: "/img/how_step1.png",
+    highlight: "Volume discounts applied automatically",
   },
   {
     step: "02",
     label: "DOMESTIC DISPATCH",
-    title: "Carefully Packed & Shipped via UPS",
+    title: "Fast UPS Delivery",
     description:
-      "Every order is inspected and prepared in pet-safe, recyclable packaging from our domestic fulfillment center within 1–2 business days. Receive live UPS tracking updates straight to your inbox.",
-    image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80",
-    highlight: "Fast 3–5 business days nationwide delivery",
+      "Carefully packed in pet-safe recyclable boxes and dispatched within 1–2 days with live UPS tracking.",
+    image: "/img/how_step2.png",
+    highlight: "Fast 3–5 business days delivery",
   },
   {
     step: "03",
     label: "PEACE OF MIND",
     title: "14-Day Happy Tail Guarantee",
     description:
-      "Unbox pure joy for your companion. If your dog or cat isn't 100% smitten with their new essential, our friendly pet concierge is here to assist with a zero-stress refund.",
-    image: "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?w=800&q=80",
-    highlight: "100% risk-free satisfaction promise",
+      "Enjoy 100% satisfaction. If your companion isn't completely delighted, our concierge provides an easy refund.",
+    image: "/img/how_step3.png",
+    highlight: "100% risk-free guarantee",
   },
 ];
 

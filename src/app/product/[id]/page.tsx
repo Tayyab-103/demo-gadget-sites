@@ -211,6 +211,18 @@ export default function ProductDetail() {
                     ✓ Added to your cart!
                   </div>
                 )}
+
+                {/* Guaranteed Safe Checkout Badges */}
+                <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col items-center gap-2">
+                  <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
+                    <span className="text-emerald-600">🔒</span>
+                    <span>Guaranteed Safe &amp; Secure Checkout</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img src="/img/mastercard.svg" alt="MasterCard" className="h-6 w-auto object-contain rounded" />
+                    <img src="/img/visa.svg" alt="VISA" className="h-6 w-auto object-contain rounded" />
+                  </div>
+                </div>
               </div>
 
             </div>

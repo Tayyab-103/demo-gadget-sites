@@ -4,12 +4,9 @@ import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
-import HowItWorks from "@/components/HowItWorks";
-import AboutUs from "@/components/AboutUs";
-import QualityPromise from "@/components/QualityPromise";
 import Testimonials from "@/components/Testimonials";
+import HowItWorks from "@/components/HowItWorks";
 import CTASection from "@/components/CTASection";
-import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -26,25 +23,16 @@ export default function Home() {
         {/* 2. Product Catalog Showcase */}
         <ProductGrid />
 
-        {/* 3. Step-by-Step Experience Flow */}
-        <HowItWorks />
-        
-        {/* 4. About Brand Bento Section */}
-        <AboutUs />
-
-        {/* 5. Credibility & Guarantee Standards */}
-        <QualityPromise />
-        
-        {/* 6. Customer Social Proof Showcase */}
+        {/* 3. Customer Social Proof & Reviews Showcase */}
         <Testimonials />
 
-        {/* 7. Special Offer Conversion Banner */}
+        {/* 4. Step-by-Step Experience & Delivery Flow */}
+        <HowItWorks />
+        
+        {/* 5. Special Offer Conversion Banner */}
         <CTASection />
 
-        {/* 8. FAQ Accordions Dropdown */}
-        <Faq />
-
-        {/* 9. Contact Concierge Section */}
+        {/* 6. Pet Concierge & Support Section */}
         <Contact />
       </main>
 

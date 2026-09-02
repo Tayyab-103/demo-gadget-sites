@@ -2,7 +2,9 @@
 
 import React from "react";
 import Header from "@/components/Header";
-import AboutUs from "@/components/AboutUs";
+import Testimonials from "@/components/Testimonials";
+import HowItWorks from "@/components/HowItWorks";
+import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 
 import CartDrawer from "@/components/CartDrawer";
@@ -12,7 +14,9 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="flex-grow">
-        <AboutUs />
+        <ProductGrid />
+        <Testimonials />
+        <HowItWorks />
       </main>
       <Footer />
       <CartDrawer />

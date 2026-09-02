@@ -26,7 +26,7 @@ export default function CTASection() {
               </h2>
 
               <p className="text-white/75 text-xs sm:text-sm md:text-base max-w-xl leading-relaxed mb-6">
-                Join over 10,000 happy pet households nationwide. Bundle grooming, play, and orthopedic rest essentials today for up to 45% volume savings plus fast UPS express delivery.
+                Bundle grooming, interactive play, and orthopedic comfort essentials today for up to 45% volume savings with fast UPS delivery.
               </p>
 
               {/* Action Buttons */}

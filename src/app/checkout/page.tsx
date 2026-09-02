@@ -193,9 +193,15 @@ export default function Checkout() {
                 </div>
 
                 {/* Credit Card Details */}
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary mt-10">
-                  2. Payment Details
-                </h3>
+                <div className="flex items-center justify-between border-b border-black/5 pb-3.5 mb-6 mt-10">
+                  <h3 className="text-base font-bold uppercase tracking-wider text-primary">
+                    2. Payment Details
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <img src="/img/mastercard.svg" alt="MasterCard" className="h-6 w-auto object-contain rounded" />
+                    <img src="/img/visa.svg" alt="VISA" className="h-6 w-auto object-contain rounded" />
+                  </div>
+                </div>
 
                 <div className="flex flex-col mb-4">
                   <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Credit Card Number</label>

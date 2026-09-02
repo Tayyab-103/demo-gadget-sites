@@ -59,7 +59,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-8">
-              From ergonomic self-cleaning grooming brushes to smart interactive motion toys and cloud-soft orthopedic beds — thoughtful pet essentials engineered for health, comfort, and boundless tail-wags.
+              Thoughtfully engineered grooming, interactive smart toys, and orthopedic beds for happier, healthier pets.
             </p>
 
             {/* Dark Forest Green Pill Button */}
@@ -74,26 +74,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Hero Dog & Cat Living Room Photo + Seal (7 cols) */}
+          {/* Right Column: Hero Dog & Cat Living Room Photo (7 cols) */}
           <div className="lg:col-span-7 relative w-full">
             
             {/* Main Lifestyle Image */}
             <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-xl bg-neutral-200">
               <img
-                src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=1200&q=85"
-                alt="Happy Golden Retriever and cozy cat resting together"
+                src="/img/hero1.png"
+                alt="Happy companions enjoying Whisker Vale pet essentials"
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-            {/* Circular Seal Badge Floating Bottom Right */}
-            <div className="animate-float absolute -bottom-4 right-3 sm:-bottom-5 sm:right-6 z-20 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-[#182825] text-[#FAF8F5] flex flex-col items-center justify-center p-2 text-center border-2 border-secondary/40 shadow-2xl">
-              <span className="text-secondary text-[0.65rem] sm:text-xs">🤎</span>
-              <span className="font-serif text-[0.55rem] sm:text-[0.72rem] font-bold leading-tight my-0.5 text-white/95">
-                Curated <br /> with Love
-              </span>
-              <span className="text-secondary text-[0.65rem] sm:text-xs">🤎</span>
             </div>
 
           </div>

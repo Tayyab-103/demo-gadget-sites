@@ -115,9 +115,9 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2.5 text-xs text-white/70">
                 <li><Link href="/" className="hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/#about" className="hover:text-secondary transition-colors">Our Story &amp; Origin</Link></li>
-                <li><Link href="/#quality-promise" className="hover:text-secondary transition-colors">Safety Standards</Link></li>
-                <li><Link href="/#faq" className="hover:text-secondary transition-colors">FAQ &amp; Sizing</Link></li>
+                <li><Link href="/#shop" className="hover:text-secondary transition-colors">Pet Catalog</Link></li>
+                <li><Link href="/#testimonials" className="hover:text-secondary transition-colors">Pet Parent Reviews</Link></li>
+                <li><Link href="/#how-it-works" className="hover:text-secondary transition-colors">How It Works</Link></li>
                 <li><Link href="/#contact" className="hover:text-secondary transition-colors">Pet Concierge</Link></li>
               </ul>
             </div>
@@ -143,6 +143,32 @@ export default function Footer() {
 
           </div>
 
+        </div>
+
+        {/* Payment Methods & Security Trust Row */}
+        <div className="py-6 border-b border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="text-[0.72rem] uppercase font-bold tracking-wider text-white/60">
+              Accepted Payment Methods:
+            </span>
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/img/mastercard.svg"
+                alt="MasterCard"
+                className="h-7 w-auto object-contain rounded shadow-xs"
+              />
+              <img
+                src="/img/visa.svg"
+                alt="VISA"
+                className="h-7 w-auto object-contain rounded shadow-xs"
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-[0.72rem] text-white/60 font-medium">
+            <span className="text-emerald-400">🔒</span>
+            <span>256-Bit SSL Encrypted &amp; PCI-DSS Compliant</span>
+          </div>
         </div>
 
         {/* Bottom Legal Row */}

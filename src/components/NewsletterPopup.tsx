@@ -81,7 +81,7 @@ export default function NewsletterPopup() {
         {/* Visual Header with Pet */}
         <div className="h-[200px] relative">
           <img
-            src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=900&q=80"
+            src="/img/contact1.png"
             alt="Adorable pet"
             className="w-full h-full object-cover absolute inset-0"
           />

@@ -27,7 +27,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            Have questions about product sizing, multi-pack bundles, or your current order? Our friendly pet advocates are ready to assist.
+            Have questions about product sizing, multi-pack bundles, or shipping? Our friendly team is here to help.
           </p>
         </div>
 

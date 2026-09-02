@@ -5,33 +5,33 @@ import React, { useState } from "react";
 const reviews = [
   {
     quote:
-      "The WhiskerCare slicker brush completely transformed our grooming sessions. The fine bristles gently glide through Bella’s thick double coat without any pulling, and the one-click button drops all the shed hair directly into the trash!",
+      "The WhiskerCare slicker brush transformed grooming. The fine bristles gently glide through Bella’s coat with zero pulling, and the one-click button drops shed hair right into the trash!",
     owner: "Sarah Jenkins",
     pet: "Bella (Golden Retriever)",
     role: "Verified Pet Parent",
     rating: 5,
     product: "WhiskerCare™ Slicker Grooming Brush",
-    petImage: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=800&q=80",
+    petImage: "/img/hero3.png",
   },
   {
     quote:
-      "Milo used to lounge lazily all afternoon until we got the PawPulse smart motion ball. The obstacle sensor is surprisingly smart, and the flashing LED keeps him captivated for hours of active playtime!",
+      "Milo loves the PawPulse smart ball! The automated obstacle sensor is so responsive, and the LED ring keeps him active and captivated for hours.",
     owner: "David Keller",
     pet: "Milo (Scottish Fold Tabby)",
     role: "Verified Pet Parent",
     rating: 5,
     product: "PawPulse™ Smart Interactive LED Ball",
-    petImage: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80",
+    petImage: "/img/hero5.jpg",
   },
   {
     quote:
-      "Rocky has slight joint stiffness in his hips, and this CloudRest orthopedic bed made an immediate difference. The memory foam is dense and supportive, and the raised bolsters let him nestle his neck comfortably all night.",
+      "Rocky has hip stiffness, and this CloudRest bed made an immediate difference. The memory foam is dense and supportive, and the bolsters support his neck perfectly.",
     owner: "Elena Ross",
     pet: "Rocky (French Bulldog)",
     role: "Verified Pet Parent",
     rating: 5,
     product: "CloudRest™ Orthopedic Calming Nest Bed",
-    petImage: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&q=80",
+    petImage: "/img/contact3.png",
   },
 ];
 

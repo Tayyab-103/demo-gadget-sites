@@ -7,13 +7,6 @@ import { Product } from "@/types";
 
 const products = productsData as unknown as Product[];
 
-const categoryTabs = [
-  { id: "all", label: "BEST SELLER" },
-  { id: "baking", label: "EQUIPMENT" },
-  { id: "prep", label: "KITCHENWARE" },
-  { id: "cutlery", label: "CHEF'S TOOLS" },
-];
-
 const badgeMapping: Record<string, string> = {
   product1: "BEST SELLER",
   product2: "NEW ARRIVAL",
@@ -21,35 +14,22 @@ const badgeMapping: Record<string, string> = {
 };
 
 export default function ProductGrid() {
-  const [activeTab, setActiveTab] = useState("all");
-
   return (
     <section className="py-20 md:py-28 bg-[#121316] text-white relative overflow-hidden border-t border-white/5" id="shop">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
         
-        {/* Section Heading & Category Tabs matching the reference image */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight mb-8 font-sans">
-            Discover Curated <br className="sm:hidden" />
-            <span className="text-white/90">Collection</span>
-          </h2>
-
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
-            {categoryTabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`text-[0.68rem] sm:text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
-                  activeTab === tab.id
-                    ? "text-[#121316] bg-[#E5F2C9] shadow-sm"
-                    : "text-white/60 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        {/* Section Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#E5F2C9]" />
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#E5F2C9]">
+              Artisan Workshop Collection
+            </span>
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight font-sans">
+            Discover Curated <br className="sm:hidden" />
+            <span className="text-white/80">Essentials</span>
+          </h2>
         </div>
 
         {/* Product Cards Grid matching the 4-card / 3-card reference layout */}

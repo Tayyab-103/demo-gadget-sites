@@ -21,7 +21,7 @@ const steps = [
     title: "Protective Packaging",
     subtitle: "Inspected & Packed",
     desc: `Each utensil is inspected for flawless balance, coated in protective food-safe finishing, and prepared for dispatch via ${siteConfig.shippingCarrier}.`,
-    image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&q=80",
+    image: "/images/how-it-works-packaging.jpg",
     badge: "100% Quality Checked"
   },
   {
@@ -29,14 +29,14 @@ const steps = [
     title: "Culinary Mastery",
     subtitle: "60-Day Kitchen Trial",
     desc: "Arrives in 3-5 business days ready for high-heat cooking and pastry prep, fully backed by our 1-year replacement warranty.",
-    image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=600&q=80",
+    image: "/images/how-it-works-mastery.jpg",
     badge: "Risk-Free Trial"
   }
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5" id="how-it-works">
+    <section className="py-20 md:py-28 bg-[#121316] text-white relative overflow-hidden border-t border-white/5" id="how-it-works">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}

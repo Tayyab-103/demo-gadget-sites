@@ -4,13 +4,11 @@ import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
-import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
-import AboutUs from "@/components/AboutUs";
 import QualityPromise from "@/components/QualityPromise";
+import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
+import HowItWorks from "@/components/HowItWorks";
 import CTASection from "@/components/CTASection";
-import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -27,26 +25,20 @@ export default function Home() {
         {/* Product Catalog Showcase */}
         <ProductGrid />
 
-        {/* 3 Outlined Feature Boxes */}
-        <Features />
-        
-        {/* 3 Step Workshop Process */}
-        <HowItWorks />
+        {/* Quality & Food Safety Standards */}
+        <QualityPromise />
         
         {/* Brand Atelier Story */}
         <AboutUs />
 
-        {/* Quality & Food Safety Standards */}
-        <QualityPromise />
-        
         {/* Chef & Baker Critiques */}
         <Testimonials />
 
+        {/* 3 Step Workshop Process */}
+        <HowItWorks />
+
         {/* Conversion CTA Banner */}
         <CTASection />
-
-        {/* FAQ Accordions */}
-        <Faq />
 
         {/* Contact Concierge Form */}
         <Contact />

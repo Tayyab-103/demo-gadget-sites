@@ -34,7 +34,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-[#121316] text-white relative overflow-hidden border-t border-white/5" id="reviews">
+    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5" id="reviews">
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}

@@ -12,12 +12,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 function ConfirmContent() {
   const searchParams = useSearchParams();
-  const orderId = searchParams.get("orderId") || searchParams.get("order_id") || "CW-" + Math.floor(100000 + Math.random() * 900000);
-  const today = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
+  const orderId = searchParams.get("orderId") || searchParams.get("order_id") || "CW-849201";
+  const today = "September 2, 2026";
 
   return (
     <div className="bg-[#16171A] rounded-2xl p-8 md:p-12 border border-white/10 text-center max-w-[580px] mx-auto shadow-2xl text-white">

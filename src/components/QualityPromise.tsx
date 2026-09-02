@@ -42,13 +42,14 @@ export default function QualityPromise() {
               shadow-2xl
               border
               border-black/5
-              min-h-[500px]
-              md:min-h-[600px]
-              lg:min-h-[680px]
+              min-h-[320px]
+              sm:min-h-[440px]
+              md:min-h-[520px]
+              lg:min-h-[600px]
             "
           >
             <img
-              src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?w=1200&q=80"
+              src="/img/quality_promise.jpg"
               alt={`${siteConfig.brandName} Acoustic Craftsmanship`}
               className="
                 absolute

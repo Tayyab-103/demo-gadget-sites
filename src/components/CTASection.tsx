@@ -9,7 +9,7 @@ export default function CTASection() {
       {/* Background Studio Visual */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80')` }}
+        style={{ backgroundImage: `url('/img/cta_bg.jpg')` }}
       />
       
       {/* Dark Ambient Gradient Overlay */}
@@ -17,7 +17,7 @@ export default function CTASection() {
 
       <div className="w-full max-w-4xl mx-auto px-6 relative z-10 flex justify-center">
         {/* Frosted Glass Content Card */}
-        <div className="glass-card-dark rounded-[2.5rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/30">
+        <div className="glass-card-dark rounded-3xl md:rounded-[2.5rem] p-6 sm:p-10 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/30">
           
           {/* Faint corner glow */}
           <div className="absolute top-0 right-0 w-36 h-36 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />

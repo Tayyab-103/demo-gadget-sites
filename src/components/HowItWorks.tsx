@@ -9,7 +9,7 @@ const steps = [
     title: "Select Your Tone Hardware",
     description:
       "Explore our boutique range of master capos, chromatic clip-on tuners, and dual-shielded cables. Choose individual units or multi-pack savings for your stage and studio rigs.",
-    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=900&q=80",
+    image: "/img/how_step1.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const steps = [
     title: "Workshop Acoustic Calibration",
     description:
       "Prior to leaving the bench, each accessory undergoes rigorous inspection: micro-balanced fret clamping, noise-floor conductivity tests, and precision pitch response.",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=900&q=80",
+    image: "/img/how_step2_calibration_v2.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const steps = [
     title: "Insured Studio Dispatch",
     description:
       "Packed inside protective shock-absorbing packaging and dispatched nationwide with tracking, reaching your rehearsal room or studio in 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=80",
+    image: "/img/how_step3.jpg",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@ interface ProductGridProps {
 
 export default function ProductGrid({ showHeader = true }: ProductGridProps) {
   return (
-    <section className="py-12 md:py-20 bg-white relative overflow-hidden" id="shop">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         {showHeader && (
           <div className="text-center mb-16 md:mb-20">
@@ -21,13 +21,13 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
             <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
               Artisanal Tone &amp; <span className="text-secondary">Studio Essentials</span>
             </h2>
-            <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
+            <p className="text-neutral-text/65 text-sm md:text-base max-w-2xl mx-auto">
               Engineered with acoustic precision, heavy-duty alloy casting, and low-noise shielding for pristine stage and studio performance.
             </p>
           </div>
         )}
 
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-16 md:gap-24">
           {products.map((product, idx) => {
             const isEven = idx % 2 === 0;
             const firstBundle = product.bundles && product.bundles[0];
@@ -51,12 +51,12 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-                    <span className="absolute top-5 left-5 bg-secondary text-primary text-[0.62rem] font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
+                    <span className="absolute top-5 left-5 bg-secondary text-primary text-xs font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
                       {product.category}
                     </span>
 
                     {/* Studio badge */}
-                    <div className="absolute bottom-5 right-5 bg-primary/80 backdrop-blur-md text-white text-[0.65rem] font-bold px-3.5 py-1.5 rounded-full flex items-center gap-2 border border-white/10">
+                    <div className="absolute bottom-5 right-5 bg-primary/80 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full flex items-center gap-2 border border-white/10">
                       <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                       Studio Tested
                     </div>
@@ -65,15 +65,15 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
 
                 {/* Content Section */}
                 <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 md:px-2">
-                  <span className="text-[0.7rem] font-extrabold uppercase tracking-widest text-secondary mb-2">
+                  <span className="text-xs font-black uppercase tracking-widest text-secondary mb-2">
                     Item #{product.stickyId} • {product.category}
                   </span>
 
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-primary tracking-tight mb-4 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-primary tracking-tight mb-4 leading-tight">
                     {product.name}
                   </h3>
 
-                  <p className="text-neutral-text/65 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
+                  <p className="text-neutral-text/70 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
                     {product.description}
                   </p>
 
@@ -96,15 +96,15 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
                     </div>
                   </div>
 
-                  {/* Micro features list */}
+                  {/* Trust list */}
                   <div className="mt-8 pt-6 border-t border-black/5 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <span className="text-[0.68rem] font-bold text-neutral-text/60 flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-neutral-text/70 flex items-center gap-1.5">
                       <span className="text-secondary font-black">✓</span> 1-Year Warranty
                     </span>
-                    <span className="text-[0.68rem] font-bold text-neutral-text/60 flex items-center gap-1.5">
-                      <span className="text-secondary font-black">✓</span> Free Nationwide Shipping
+                    <span className="text-xs font-bold text-neutral-text/70 flex items-center gap-1.5">
+                      <span className="text-secondary font-black">✓</span> Free Nationwide Dispatch
                     </span>
-                    <span className="text-[0.68rem] font-bold text-neutral-text/60 flex items-center gap-1.5">
+                    <span className="text-xs font-bold text-neutral-text/70 flex items-center gap-1.5">
                       <span className="text-secondary font-black">✓</span> 30-Day Tone Trial
                     </span>
                   </div>

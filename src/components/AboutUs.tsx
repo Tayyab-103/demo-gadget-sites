@@ -114,7 +114,7 @@ export default function AboutUs() {
           <div className="relative flex items-center justify-center">
             <div className="group relative w-full max-w-[480px] aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 bg-white">
               <Image
-                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=900&q=80"
+                src="/img/about_workshop.jpg"
                 alt={`${siteConfig.brandName} artisan luthier bench`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 480px"
@@ -122,7 +122,7 @@ export default function AboutUs() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-[0.62rem] font-bold uppercase tracking-widest text-secondary block">Austin, Texas Workshop</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-secondary block">Austin, Texas Workshop</span>
                 <span className="text-sm font-black">Crafting Tools for Songwriters &amp; Performers</span>
               </div>
             </div>

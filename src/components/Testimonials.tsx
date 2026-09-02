@@ -7,19 +7,19 @@ const testimonials = [
     quote: "The Velvet Resonance capo holds pitch-perfect intonation even up on the 7th fret of my vintage Martin acoustic. Zero string buzz and zero retuning needed between songs.",
     author: "Sarah M.",
     role: "Session Guitarist & Songwriter",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80"
+    image: "/img/testimonial_1.jpg"
   },
   {
     quote: "EchoWave tracks pitch instantaneously even in noisy green rooms and backstage setups. The vibration sensor is razor sharp and the color screen is visible from any angle.",
     author: "David K.",
     role: "Touring Bassist & Multi-Instrumentalist",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+    image: "/img/testimonial_2.jpg"
   },
   {
     quote: "The Velvet Tone studio cables solved our live tracking hum completely. High-grade OFC copper with rugged 24K gold jacks that withstand heavy studio stompboxes.",
     author: "Marcus T.",
     role: "Recording Studio Producer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
+    image: "/img/testimonial_3.jpg"
   }
 ];
 
@@ -61,13 +61,13 @@ export default function Testimonials() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-black text-primary leading-none">4.9 / 5</span>
-              <span className="text-[0.62rem] font-bold text-neutral-text/45 uppercase tracking-widest mt-1">1,400+ Verified Musicians</span>
+              <span className="text-xs font-bold text-neutral-text/50 uppercase tracking-wider mt-1">1,400+ Verified Musicians</span>
             </div>
           </div>
         </div>
 
         {/* Testimonial Feature Card */}
-        <div className="w-full max-w-5xl mx-auto bg-primary rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-10 shadow-2xl relative md:h-[400px] overflow-hidden border border-white/10">
+        <div className="w-full max-w-5xl mx-auto bg-primary rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-10 shadow-2xl relative min-h-[440px] md:h-[420px] overflow-hidden border border-white/10">
           
           {/* Left Column (Image & Author) */}
           <div className="w-full md:w-5/12 flex flex-col flex-shrink-0">

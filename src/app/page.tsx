@@ -15,6 +15,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import Features from "@/components/Features";
 
 export default function Home() {
   return (
@@ -34,10 +35,11 @@ export default function Home() {
         <DealOfTheDay />
 
         {/* 5. 3-Step How It Works */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        {/* <Features/> */}
 
         {/* 6. Guarantee & Promise Standards */}
-        <QualityPromise />
+        {/* <QualityPromise /> */}
         
         {/* 7. Verified Customer Reviews */}
         <Testimonials />
@@ -47,9 +49,6 @@ export default function Home() {
 
         {/* 9. FAQ Accordions */}
         <Faq />
-
-        {/* 10. Contact Section */}
-        <Contact />
       </main>
 
       <Footer />

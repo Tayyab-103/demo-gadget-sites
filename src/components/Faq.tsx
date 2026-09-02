@@ -9,27 +9,27 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqData = [
   {
     question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `All orders are processed and dispatched within 1-2 business days. We ship using ${siteConfig.shippingCarrier} nationwide, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive securely at your door.`
+    answer: `Orders ship via ${siteConfig.shippingCarrier} nationwide within 1-2 business days, with typical delivery in ${siteConfig.shippingPeriod} business days.`
   },
   {
     question: "Do you offer an in-home satisfaction guarantee?",
-    answer: `Yes, we back all our home furnishings with a 60-day in-home satisfaction guarantee. If a piece does not completely harmonize with your space, contact our concierge support team via email or phone to initiate a hassle-free return and refund.`
+    answer: "Yes. We offer a 60-day in-home satisfaction guarantee. Contact our concierge team for an effortless return and full refund."
   },
   {
     question: "Are your home furnishings covered by a warranty?",
-    answer: "Yes. Every Alderwyn piece ships with a comprehensive 1-year manufacturer's craftsmanship warranty covering materials, textile stitching, joinery, and electrical components against defects."
+    answer: "Yes. Every Alderwyn piece includes a 1-year craftsmanship warranty covering materials, stitching, and joinery."
   },
   {
     question: "How do I care for and clean my Alderwyn pieces?",
-    answer: "Our woven throw blankets can be gently spot-cleaned with mild wool-safe detergent or dry cleaned. For ceramic lamps and travertine catchalls, gently wipe with a soft, dry or slightly damp microfiber cloth. Avoid abrasive chemical cleansers."
+    answer: "Spot-clean or dry-clean throw blankets. Gently wipe ceramic lamps and travertine trays with a dry microfiber cloth."
   },
   {
     question: "How will the charge appear on my credit card statement?",
-    answer: `Your card statement will clearly display the charge descriptor as "${siteConfig.descriptor}" to ensure a clean, recognizable transaction record.`
+    answer: `Your card statement will display the descriptor "${siteConfig.descriptor}".`
   },
   {
     question: "How do I contact customer support or design advice?",
-    answer: `You can reach our dedicated customer care team Monday through Friday during regular business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. We respond to all inquiries within 24 business hours.`
+    answer: `Reach our concierge team Monday through Friday at ${siteConfig.phone}, or email us at ${siteConfig.email}.`
   }
 ];
 
@@ -41,24 +41,24 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-neutral-bg relative" id="faq">
+    <section className="py-10 sm:py-14 md:py-16 bg-neutral-bg relative" id="faq">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
         
-        {/* Top Section Header (Matching Reference Design Language) */}
+        {/* Top Section Header */}
         <div className="flex items-center gap-3 sm:gap-6 mb-6">
           {/* Black Pill Badge with '05' */}
-          <span className="bg-primary text-white font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl px-4 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
+          <span className="bg-primary text-white font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl px-3.5 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
             05
           </span>
 
           {/* Heading */}
-          <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none">
+          <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none break-words">
             FREQUENTLY ASKED QUESTIONS
           </h2>
         </div>
 
         {/* Thin Horizontal Divider */}
-        <div className="w-full h-px bg-black/10 mb-8 sm:mb-12 md:mb-14" />
+        <div className="w-full h-px bg-black/10 mb-6 sm:mb-10 md:mb-12" />
 
         {/* FAQ Accordion List */}
         <div className="max-w-4xl mx-auto flex flex-col gap-3.5 sm:gap-4">

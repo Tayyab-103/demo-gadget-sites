@@ -24,23 +24,23 @@ export default function Contact({ showHeader = true, badgeNumber = "06" }: { sho
   }, []);
 
   return (
-    <section className="py-8 sm:py-12 md:py-20 bg-neutral-bg relative" id="contact">
+    <section className="py-10 sm:py-14 md:py-16 bg-neutral-bg relative" id="contact">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
         
         {/* Top Section Header (Shown only when enabled) */}
         {showHeader && (
           <>
             <div className="flex items-center gap-3 sm:gap-6 mb-6">
-              <span className="bg-primary text-white font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl px-4 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
+              <span className="bg-primary text-white font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl px-3.5 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
                 {badgeNumber}
               </span>
 
-              <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none">
+              <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none break-words">
                 GET IN TOUCH
               </h2>
             </div>
 
-            <div className="w-full h-px bg-black/10 mb-8 sm:mb-12 md:mb-14" />
+            <div className="w-full h-px bg-black/10 mb-6 sm:mb-10 md:mb-12" />
           </>
         )}
 

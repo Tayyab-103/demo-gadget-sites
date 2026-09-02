@@ -24,57 +24,18 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-bg text-primary pt-10 sm:pt-14 md:pt-20 pb-10 sm:pb-12 border-t border-black/8 relative overflow-hidden" id="footer">
+    <footer className="bg-neutral-bg text-primary pt-10 sm:pt-14 md:pt-16 pb-8 sm:pb-10 border-t border-black/8 relative overflow-hidden" id="footer">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
         
-        {/* Giant "CONTACT ( → ) US" Headline (Exact Screenshot Reproduction) */}
-        <div className="py-4 sm:py-8 md:py-12 text-center">
-          <Link
-            href="/contact"
-            className="group inline-flex items-center justify-center gap-3 sm:gap-6 md:gap-10 hover:opacity-90 transition-opacity"
-            aria-label="Contact Us"
-          >
-            <span className="font-serif font-normal text-3xl sm:text-5xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] uppercase tracking-[0.04em] text-primary leading-none">
-              CONTACT
-            </span>
-
-            {/* Black Circular Button with Right Arrow */}
-            <span className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-22 lg:h-22 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-neutral-text transition-all duration-300 shadow-md">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:translate-x-1 transition-transform"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
-
-            <span className="font-serif font-normal text-3xl sm:text-5xl md:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] uppercase tracking-[0.04em] text-primary leading-none">
-              US
-            </span>
-          </Link>
-        </div>
-
-        {/* Thin Horizontal Divider */}
-        <div className="w-full h-px bg-black/10 mt-6 sm:mt-10 md:mt-14 mb-8 sm:mb-12 md:mb-16" />
-
-        {/* 3 Columns Layout (Matching Reference Screenshot) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start relative pb-8 sm:pb-12">
+        {/* 3 Columns Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-start relative pb-8 sm:pb-12">
           
           {/* Column 1: QUICK LINKS */}
-          <div className="md:col-span-4 lg:col-span-4 flex flex-col">
-            <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-4 sm:mb-6">
+          <div className="sm:col-span-1 md:col-span-4 lg:col-span-4 flex flex-col">
+            <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-3 sm:mb-5">
               QUICK LINKS
             </h4>
-            <ul className="flex flex-col gap-2.5 sm:gap-3.5">
+            <ul className="flex flex-col gap-2.5 sm:gap-3">
               <li>
                 <Link href="/" className="text-xs sm:text-[0.78rem] font-bold uppercase tracking-[0.16em] text-neutral-text/75 hover:text-primary transition-colors">
                   HOME
@@ -99,11 +60,11 @@ export default function Footer() {
           </div>
 
           {/* Column 2: OUR PRODUCTS */}
-          <div className="md:col-span-4 lg:col-span-4 flex flex-col">
-            <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-4 sm:mb-6">
+          <div className="sm:col-span-1 md:col-span-4 lg:col-span-4 flex flex-col">
+            <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-3 sm:mb-5">
               OUR PRODUCTS
             </h4>
-            <ul className="flex flex-col gap-2.5 sm:gap-3.5">
+            <ul className="flex flex-col gap-2.5 sm:gap-3">
               <li>
                 <Link href="/product/product1" className="text-xs sm:text-[0.78rem] font-bold uppercase tracking-[0.16em] text-neutral-text/75 hover:text-primary transition-colors">
                   THROW BLANKET
@@ -127,10 +88,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: NEWSLETTER & SCROLL TO TOP */}
-          <div className="md:col-span-4 lg:col-span-4 flex flex-col justify-between h-full">
+          {/* Column 3: NEWSLETTER, PAYMENT LOGOS & SCROLL TO TOP */}
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-4 flex flex-col justify-between h-full">
             <div>
-              <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-4 sm:mb-6">
+              <h4 className="font-serif font-normal text-base sm:text-lg md:text-xl uppercase tracking-[0.04em] text-primary mb-3 sm:mb-5">
                 NEWSLETTER
               </h4>
 
@@ -162,13 +123,54 @@ export default function Footer() {
                   </div>
                 </form>
               )}
+
+              {/* Payment Method Badges Positioned Right Below Newsletter */}
+              <div className="mt-6 sm:mt-8">
+                <span className="text-[0.62rem] sm:text-[0.66rem] font-bold uppercase tracking-[0.18em] text-neutral-text/50 block mb-2.5">
+                  ACCEPTED PAYMENTS
+                </span>
+                <div className="flex items-center gap-2.5" aria-label="Accepted Payment Methods">
+                  {/* MasterCard Button */}
+                  <div className="w-[52px] h-[33px] sm:w-[58px] sm:h-[36px] bg-[#163458] rounded-[5px] flex items-center justify-center shadow-xs overflow-hidden transition-transform hover:scale-105 select-none" title="MasterCard">
+                    <svg viewBox="0 0 60 40" className="w-full h-full p-1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="23" cy="17" r="12" fill="#EB001B" />
+                      <circle cx="37" cy="17" r="12" fill="#F79E1B" />
+                      {/* Intersection pattern */}
+                      <path d="M30 7.6a12 12 0 0 0-3.8 9.4 12 12 0 0 0 3.8 9.4 12 12 0 0 0 3.8-9.4 12 12 0 0 0-3.8-9.4z" fill="#FF5F00" />
+                      <line x1="25" y1="11.5" x2="35" y2="11.5" stroke="#163458" strokeWidth="0.8" />
+                      <line x1="23.5" y1="14.2" x2="36.5" y2="14.2" stroke="#163458" strokeWidth="0.8" />
+                      <line x1="23" y1="17" x2="37" y2="17" stroke="#163458" strokeWidth="0.8" />
+                      <line x1="23.5" y1="19.8" x2="36.5" y2="19.8" stroke="#163458" strokeWidth="0.8" />
+                      <line x1="25" y1="22.5" x2="35" y2="22.5" stroke="#163458" strokeWidth="0.8" />
+                      {/* Text */}
+                      <text x="30" y="34" fill="#FFFFFF" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700" fontStyle="italic" fontSize="7.8" textAnchor="middle" letterSpacing="0.2">
+                        MasterCard
+                      </text>
+                    </svg>
+                  </div>
+
+                  {/* VISA Button */}
+                  <div className="w-[52px] h-[33px] sm:w-[58px] sm:h-[36px] bg-[#2257a6] rounded-[5px] flex items-center justify-center shadow-xs overflow-hidden transition-transform hover:scale-105 select-none" title="VISA">
+                    <svg viewBox="0 0 60 40" className="w-full h-full p-1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g transform="translate(6, 8)">
+                        {/* Gold flick on top of V */}
+                        <path d="M 0 3.5 L 4.5 3.5 L 2.5 10 Z" fill="#FAA61A" />
+                        {/* Visa text */}
+                        <text x="24" y="19" fill="#FFFFFF" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontStyle="italic" fontSize="21" textAnchor="middle" letterSpacing="1">
+                          VISA
+                        </text>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Scroll To Top Button (Matching Screenshot) */}
-            <div className="flex justify-end mt-8 sm:mt-10 md:mt-12">
+            {/* Scroll To Top Button */}
+            <div className="flex justify-end mt-6 sm:mt-8">
               <button
                 onClick={scrollToTop}
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-black/15 bg-white/40 hover:bg-white text-primary flex items-center justify-center transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer group"
+                className="w-11 h-11 sm:w-13 sm:h-13 rounded-full border border-black/15 bg-white/40 hover:bg-white text-primary flex items-center justify-center transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer group"
                 aria-label="Scroll to top"
               >
                 <span className="text-base sm:text-lg font-bold group-hover:-translate-y-1 transition-transform">
@@ -181,14 +183,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal Disclosures Bar */}
-        <div className="border-t border-black/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.65rem] sm:text-[0.68rem] font-medium text-neutral-text/60">
-          <div>
+        <div className="border-t border-black/10 pt-5 sm:pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[0.65rem] sm:text-[0.68rem] font-medium text-neutral-text/60 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1">
             <span>&copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.</span>
-            <span className="mx-2">&bull;</span>
+            <span className="hidden sm:inline">&bull;</span>
             <span>Operated by {siteConfig.corpName}</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5 sm:gap-6">
             <Link href="/privacy" className="hover:text-primary transition-colors">
               Privacy Policy
             </Link>

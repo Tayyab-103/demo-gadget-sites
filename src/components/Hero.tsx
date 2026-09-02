@@ -9,11 +9,11 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Hero() {
   return (
-    <section className="relative bg-neutral-bg pb-12 sm:pb-16 md:pb-24 pt-2 md:pt-4">
+    <section className="relative bg-neutral-bg pb-8 sm:pb-12 md:pb-16 pt-2 md:pt-4">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         
-        {/* Large Framed Hero Image Container (Exact OTTO Screenshot Layout) */}
-        <div className="relative w-full aspect-16/10 sm:aspect-16/9 md:aspect-21/10 min-h-[440px] sm:min-h-[520px] md:min-h-[620px] rounded-none overflow-hidden shadow-2xl flex items-center justify-center">
+        {/* Large Framed Hero Image Container */}
+        <div className="relative w-full aspect-16/10 sm:aspect-16/9 md:aspect-21/10 min-h-[360px] sm:min-h-[460px] md:min-h-[580px] rounded-none overflow-hidden shadow-2xl flex items-center justify-center">
           
           {/* Background Photography */}
           <img
@@ -27,10 +27,10 @@ export default function Hero() {
 
           {/* Centered Large Editorial Headline */}
           <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl mx-auto flex flex-col items-center">
-            <h1 className="font-serif font-normal text-white uppercase tracking-[0.06em] sm:tracking-[0.08em] text-3xl sm:text-5xl md:text-6xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.1] sm:leading-[1.12] drop-shadow-md select-none">
+            <h1 className="font-serif font-normal text-white uppercase tracking-[0.05em] sm:tracking-[0.08em] text-2xl sm:text-4xl md:text-6xl lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.12] drop-shadow-md select-none">
               ADD THE GREATEST <br />
               JOY OF{" "}
-              <span className="border border-white/90 px-5 sm:px-9 md:px-12 py-0.5 sm:py-1.5 md:py-2.5 rounded-full inline-block align-middle my-1 transition-all duration-500 hover:bg-white/10">
+              <span className="border border-white/90 px-3.5 sm:px-7 md:px-12 py-0.5 sm:py-1 md:py-2 rounded-full inline-block align-middle my-1 transition-all duration-500 hover:bg-white/10">
                 LIVING.
               </span>
             </h1>

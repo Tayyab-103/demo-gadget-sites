@@ -7,9 +7,9 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=900&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=900&auto=format&fit=crop&q=80",
+  "/img/contact_workshop.jpg",
+  "/img/how_it_works_1.jpg",
+  "/img/quality_promise_banner.jpg",
 ];
 
 export default function Contact() {
@@ -30,12 +30,12 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAF9F6] relative overflow-hidden border-b border-black/5" id="contact">
+    <section className="py-16 md:py-20 bg-[#FAF9F6] relative overflow-hidden border-b border-black/5" id="contact">
       <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
         
         {/* Standardized Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-18">
-          <div className="flex items-center justify-center gap-3 mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+          <div className="flex items-center justify-center gap-3 mb-2.5">
             <span className="w-6 h-[1.5px] bg-[#265C1E]/50 rounded-full" />
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
               WORKSHOP SUPPORT
@@ -47,8 +47,8 @@ export default function Contact() {
             Get in Touch with <span className="text-[#265C1E]">Our Foundry</span>
           </h2>
 
-          <p className="mt-3 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Our toolmakers and customer care team are available to assist with garden tool selection, sharpening advice, warranty claims, or order dispatch.
+          <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
+            Have questions about our tools, metallurgy, or care? Our team is here to assist.
           </p>
         </div>
 
@@ -133,12 +133,11 @@ export default function Contact() {
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-2">
                     Inquiry Topic
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-3 gap-2">
                     {[
                       "General Support",
-                      "Tool Care",
-                      "Order Status",
-                      "Warranty Claim",
+                      "Tool Advice",
+                      "Workshop Inquiry",
                     ].map((item) => (
                       <button
                         type="button"

@@ -9,15 +9,15 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const promises = [
   {
     title: "58 HRC Tempered Carbon Steel",
-    desc: "Every blade undergoes controlled oil quenching to achieve optimum hardness — resisting chips, rock impacts, and blade deflection under heavy leverage.",
+    desc: "Controlled oil quenching ensures maximum blade hardness against bending and chipping.",
   },
   {
     title: "Lifetime Metallurgy Guarantee",
-    desc: "If any Thornwick forging ever cracks, snaps, or fails under standard gardening use, we will repair or replace it unconditionally.",
+    desc: "If any forging cracks or snaps during gardening, we repair or replace it unconditionally.",
   },
   {
     title: "100% Plastic-Free Craft & Packaging",
-    desc: "From lathe-turned solid hardwood handles and brass rivets to recyclable kraft packaging, our products honor the earth we cultivate.",
+    desc: "Lathe-turned solid hardwood handles, brass fittings, and recyclable kraft packaging.",
   },
 ];
 
@@ -25,13 +25,13 @@ export default function QualityPromise() {
   return (
     <section
       id="quality-promise"
-      className="relative overflow-hidden bg-white py-16 md:py-24 border-b border-black/5"
+      className="relative overflow-hidden bg-white py-16 md:py-20 border-b border-black/5"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-14">
         
         {/* Left-Aligned Section Header */}
-        <div className="max-w-2xl mb-12 md:mb-16 text-left">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="max-w-2xl mb-10 md:mb-14 text-left">
+          <div className="flex items-center gap-3 mb-2.5">
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
               OUR QUALITY PROMISE
             </span>
@@ -42,8 +42,8 @@ export default function QualityPromise() {
             Built to Outlast <span className="text-[#265C1E]">A Lifetime of Seasons</span>
           </h2>
 
-          <p className="mt-3 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Gardening should be a lifelong pursuit, not an annual cycle of replacing bent tools. We guarantee every instrument that leaves our workshop.
+          <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
+            Gardening is a lifelong pursuit. We guarantee every instrument that leaves our workshop.
           </p>
         </div>
 
@@ -52,12 +52,9 @@ export default function QualityPromise() {
           {/* LEFT — WORKSHOP CRAFT IMAGE */}
           <div className="lg:col-span-6 relative group overflow-hidden rounded-3xl bg-neutral-900 shadow-md min-h-[380px] md:min-h-[440px]">
             <img
-              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&auto=format&fit=crop&q=80"
+              src="/img/quality_promise_banner.jpg"
               alt="Hand-forged carbon steel garden tools in rich soil"
               className="absolute inset-0 block h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1000&auto=format&fit=crop&q=80";
-              }}
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#132B1C]/90 via-[#132B1C]/30 to-transparent" />
             

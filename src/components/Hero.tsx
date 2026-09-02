@@ -105,7 +105,7 @@ export default function Hero() {
             alt={activeProduct.title}
             className="w-full h-full object-cover object-center"
             onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&auto=format&fit=crop&q=80";
+              e.currentTarget.src = "/img/products/garden_tools/pruner_main.jpg";
             }}
           />
           
@@ -258,7 +258,7 @@ export default function Hero() {
 
           {/* Product Brand Description */}
           <p className="text-[#132A1C]/80 text-xs sm:text-sm md:text-[0.92rem] leading-relaxed max-w-sm sm:max-w-md mb-6">
-            Hand-forged carbon steel trowels, Japanese SK5 bypass pruners, and claw cultivators engineered for a lifetime of planting and root cultivation.
+            Hand-forged carbon steel tools engineered for a lifetime of planting and cultivating.
           </p>
 
           {/* Primary E-Commerce Button: SHOP FORGE TOOLS → */}
@@ -316,7 +316,7 @@ export default function Hero() {
                       alt={item.label}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=320&auto=format&fit=crop&q=80";
+                        e.currentTarget.src = "/img/products/garden_tools/pruner_main.jpg";
                       }}
                     />
                   </div>

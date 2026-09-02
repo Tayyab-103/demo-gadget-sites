@@ -25,12 +25,12 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden border-b border-black/5" id="shop">
+    <section className="py-16 md:py-20 bg-white relative overflow-hidden border-b border-black/5" id="shop">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
         
         {/* Left-Aligned Section Header (Matching First Two Sections) */}
-        <div className="max-w-2xl mb-12 md:mb-16 text-left">
-          <div className="flex items-center gap-3 mb-3">
+        <div className="max-w-2xl mb-10 md:mb-14 text-left">
+          <div className="flex items-center gap-3 mb-2.5">
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
               THE FOUNDRY COLLECTION
             </span>
@@ -41,7 +41,7 @@ export default function ProductGrid() {
             Heirloom Hand <span className="text-[#265C1E]">Garden Tools</span>
           </h2>
 
-          <p className="mt-3 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
+          <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
             Drop-forged carbon steel and FSC-certified hardwood garden tools crafted for a lifetime of planting.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function ProductGrid() {
                       alt={product.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => {
-                        e.currentTarget.src = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&auto=format&fit=crop&q=80";
+                        e.currentTarget.src = "/img/products/garden_tools/trowel_1.jpg";
                       }}
                     />
                     

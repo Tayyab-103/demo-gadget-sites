@@ -80,7 +80,7 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80"
+            src="/img/newsletter_garden.jpg"
             alt="Hand-forged gardening tools in rich soil"
             className="w-full h-full object-cover absolute inset-0"
           />

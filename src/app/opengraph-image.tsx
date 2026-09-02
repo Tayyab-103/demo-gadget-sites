@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Artisan Hand-Forged Garden Tools
         </div>
 
         <div

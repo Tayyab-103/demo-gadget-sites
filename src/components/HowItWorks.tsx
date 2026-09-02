@@ -7,28 +7,28 @@ const steps = [
   {
     number: "01",
     label: "METALLURGY & QUENCHING",
-    title: "58 HRC Drop-Forged Carbon Steel",
-    desc: "Blades are forged from high-carbon manganese and Japanese SK5 steel, oil-quenched to 58 HRC for zero bending and razor edge retention.",
+    title: "58 HRC Drop-Forged Steel",
+    desc: "High-carbon steel blades oil-quenched to 58 HRC for zero bending and superior edge retention.",
     stat: "58 HRC Hardness",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1000&auto=format&fit=crop&q=80",
+    image: "/img/how_it_works_1.jpg",
     caption: "Master Trowel with calibrated soil depth markings",
   },
   {
     number: "02",
     label: "TIMBER CRAFT",
-    title: "Lathe-Turned FSC Ash & Beech",
-    desc: "Handles are lathe-turned from sustainably harvested American white ash, weather-sealed with linseed oil, and secured with solid brass ferrules.",
+    title: "Lathe-Turned Ash Hardwood",
+    desc: "Sustainably harvested American white ash handles, linseed-oil sealed with solid brass ferrules.",
     stat: "100% Solid Hardwood",
-    image: "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?w=1000&auto=format&fit=crop&q=80",
+    image: "/img/how_it_works_2.jpg",
     caption: "Precision Bypass Pruning Shears with alloy handles",
   },
   {
     number: "03",
     label: "WORKSHOP DISPATCH",
-    title: "25° Bevel Honing & Eco Packaging",
-    desc: "Every blade is sharpened to a 25° surgical angle, inspected for grain balance, and shipped directly in 100% plastic-free recyclable packaging.",
+    title: "25° Bevel Honing & Packaging",
+    desc: "Honed to a 25° razor bevel, hand-inspected, and shipped in plastic-free packaging.",
     stat: "25° Honed Edge",
-    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1000&auto=format&fit=crop&q=80",
+    image: "/img/how_it_works_3.jpg",
     caption: "3-Prong Hand Cultivator aerating rich topsoil",
   },
 ];
@@ -38,13 +38,13 @@ export default function HowItWorks() {
   const current = steps[activeStep];
 
   return (
-    <section className="bg-white py-16 md:py-24 border-b border-black/5" id="foundry-standards">
+    <section className="bg-white py-16 md:py-20 border-b border-black/5" id="foundry-standards">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">
           <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-2.5">
               <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
                 FOUNDRY STANDARDS
               </span>
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             </h2>
           </div>
           <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md leading-relaxed">
-            Every Thornwick instrument is hand-forged from Japanese SK5 and high-carbon manganese steel, built to endure generations of planting and root cultivation.
+            Every Thornwick instrument is hand-forged from Japanese SK5 and high-carbon manganese steel, built to endure generations of planting.
           </p>
         </div>
 

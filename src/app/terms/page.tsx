@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer premium sports gear and training gadgets through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer hand-forged carbon steel garden tools, precision bypass pruning shears, and heirloom horticultural instruments through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
@@ -66,7 +66,7 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Bottles Bundle" : "Bottle Pack"}</strong>,
+                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Tools Multi-Pack" : "Tool"}</strong>,
                           you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
                           The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
@@ -85,25 +85,25 @@ export default function Terms() {
               have given us your consent to allow any of your minor dependents to use this site.
             </p>
             <p>
-              You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws).
+              You may not use our garden tools or instruments for any illegal or unauthorized purpose nor may you, in the use of the Service,
+              violate any laws in your jurisdiction (including but not limited to safety, trade, or copyright laws).
             </p>
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
-              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
+              All orders are hand-inspected, packed with plastic-free recyclable materials, and shipped within 1-2 business days of payment confirmation. We ship our tool shipments via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched.
+              You will receive a tracking number via email once your order has been dispatched from our foundry facility.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; REFUND POLICY</h3>
+            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - 60-DAY FIELD TRIAL &amp; RETURN POLICY</h3>
             <p>
-              We stand behind our quality with a 60-day money-back guarantee. If you are not satisfied with your purchase,
-              please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              We stand behind our metallurgical craftsmanship with a 60-day garden field trial and satisfaction guarantee. If you are not completely satisfied with your tool's performance in the garden,
+              please contact our workshop support team at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated return facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
+              Returns must be safely packaged and shipped to our designated workshop facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
               Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
             </p>
           </div>

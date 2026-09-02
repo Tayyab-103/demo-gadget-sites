@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-[#132B1C]" id="cta">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-[#132B1C]" id="cta">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-25"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&auto=format&fit=crop&q=80')` }}
+        style={{ backgroundImage: `url('/img/cta_garden_bg.jpg')` }}
       />
       
       {/* Gradient Overlay */}
@@ -19,21 +19,21 @@ export default function CTASection() {
         {/* Content Card */}
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-white/15">
           
-          <div className="flex items-center justify-center gap-3 mb-3">
+          <div className="flex items-center justify-center gap-3 mb-2.5">
             <span className="w-6 h-[1.5px] bg-[#78C470]/60 rounded-full" />
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#78C470]">
-              SEASONAL FOUNDRY SAVINGS
+              SEASONAL SAVINGS
             </span>
             <span className="w-6 h-[1.5px] bg-[#78C470]/60 rounded-full" />
           </div>
           
-          <h2 className="text-3xl sm:text-4xl font-extrabold uppercase text-white mb-4 tracking-tight leading-tight font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold uppercase text-white mb-3 tracking-tight leading-tight font-sans">
             Equip Your Garden with <br />
             <span className="text-[#78C470]">Heirloom Hand Tools</span>
           </h2>
 
-          <p className="text-white/80 text-xs sm:text-sm mb-8 max-w-xl mx-auto leading-relaxed">
-            Invest in hand-forged instruments engineered to endure heavy clay, dense root systems, and decades of seasonal planting.
+          <p className="text-white/80 text-xs sm:text-sm mb-7 max-w-lg mx-auto leading-relaxed">
+            Hand-forged instruments engineered to endure decades of seasonal planting.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3.5 justify-center">

@@ -91,7 +91,7 @@ export default function CartDrawer() {
                     alt={item.Name}
                     className="w-[72px] h-[72px] object-cover rounded-xl bg-neutral-bg border border-black/5 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=200&q=80";
+                      e.currentTarget.src = "/img/products/garden_tools/trowel_1.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">

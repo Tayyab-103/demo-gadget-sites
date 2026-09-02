@@ -9,7 +9,7 @@ const products = productsData as unknown as Product[];
 
 export default function ProductGrid() {
   return (
-    <section className="py-14 md:py-20 bg-white border-b border-black/[0.06]" id="shop">
+    <section className="py-16 md:py-24 bg-white border-b border-black/[0.06]" id="shop">
       <div className="w-full max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -23,7 +23,7 @@ export default function ProductGrid() {
             </h2>
           </div>
           <p className="text-neutral-text/70 text-sm md:text-base max-w-md">
-            Engineered from certified organic cotton, French terry fleece, and weather-resistant twill. Built for parents, kids, and everyday family moments.
+            Certified organic combed cotton, French terry fleece, and all-weather outerwear.
           </p>
         </div>
 

@@ -30,7 +30,7 @@ export default function AnnouncementBar() {
   const track = [...messages, ...messages, ...messages, ...messages];
 
   return (
-    <div className="bg-primary text-white relative overflow-hidden border-b border-white/10 select-none">
+    <div className="bg-primary text-white relative overflow-hidden select-none">
       <div className="flex items-center">
         <div className="flex-1 overflow-hidden py-2.5">
           <div className="marquee-track flex items-center gap-12 w-max">

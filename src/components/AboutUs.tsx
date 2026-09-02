@@ -9,23 +9,23 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const pillars = [
   {
     number: "01",
-    title: "100% Organic Combed Cottons",
-    desc: "Spun exclusively from long-staple organic cotton fibers, free from synthetic pesticides and harsh chemical finishes.",
+    title: "100% Organic Cotton",
+    desc: "Long-staple fibers free from synthetic pesticides and harsh chemicals.",
   },
   {
     number: "02",
     title: "Pre-Shrunk & Double-Stitched",
-    desc: "Every weave undergoes pre-shrink wash testing and reinforced twin-needle stitching to endure active family life.",
+    desc: "Reinforced twin-needle stitching engineered to endure daily wear.",
   },
   {
     number: "03",
-    title: "OEKO-TEX Non-Toxic Dyes",
-    desc: "Skin-friendly, colorfast dyeing processes that are safe for infants and adults alike with zero toxic runoff.",
+    title: "Non-Toxic Dyes",
+    desc: "Skin-friendly, colorfast finishes safe for infants and adults.",
   },
   {
     number: "04",
-    title: "Direct Family Bundle Pricing",
-    desc: "We eliminate wholesale markups so you can outfit children and parents in premium textiles at fair costs.",
+    title: "Direct Value Pricing",
+    desc: "Zero wholesale markups for premium textiles at fair family rates.",
   },
 ];
 
@@ -45,12 +45,9 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="lg:col-span-7 flex flex-col gap-4 text-neutral-text/70 text-sm md:text-base leading-relaxed">
+          <div className="lg:col-span-7 flex flex-col justify-center text-neutral-text/75 text-sm md:text-base leading-relaxed">
             <p>
-              At <strong className="text-primary font-bold">{siteConfig.brandName}</strong>, we started with a simple belief: family clothing should be simple, exceptionally soft, and built to survive daily wear and washing.
-            </p>
-            <p>
-              We craft foundational wardrobe staples from pure combed organic cottons, soft-brushed French terry fleeces, and weather-resistant outers that look tailored and feel effortless all day.
+              At <strong className="text-primary font-bold">{siteConfig.brandName}</strong>, we craft foundational wardrobe staples from pure combed organic cottons, soft fleeces, and weather-ready outers that look tailored and feel effortless all day.
             </p>
           </div>
         </div>
@@ -61,7 +58,7 @@ export default function AboutUs() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-black/[0.08] bg-white">
               <img
-                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900&q=80"
+                src="/img/about_atelier_craft.jpg"
                 alt="Apparel craftsmanship and textile design"
                 className="w-full h-full object-cover"
               />

@@ -9,7 +9,7 @@ const reviews = [
     family: "Family of 4 &bull; Austin, TX",
     rating: 5,
     tag: "Everyday Crew Tees",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
+    image: "/img/avatar1.jpg",
   },
   {
     quote: "The CloudKnit Pullover is our family's favorite weekend layer. The French terry is thick without being bulky, and it doesn't pill around the cuffs. We ordered the 4-pack bundle and saved significantly.",
@@ -17,7 +17,7 @@ const reviews = [
     family: "Verified Wardrobe Buyer",
     rating: 5,
     tag: "CloudKnit Pullover",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "/img/avatar2.jpg",
   },
   {
     quote: "The weather-resistant overcoat feels like a high-end designer piece at a fraction of the boutique price. Clean tailoring, deep pockets, and water beads right off.",
@@ -25,13 +25,13 @@ const reviews = [
     family: "Verified Purchasers",
     rating: 5,
     tag: "Comfort Overcoat",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+    image: "/img/avatar3.jpg",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-14 md:py-20 bg-white border-b border-black/[0.06]" id="testimonials">
+    <section className="py-16 md:py-24 bg-white border-b border-black/[0.06]" id="testimonials">
       <div className="w-full max-w-7xl mx-auto px-6">
         
         {/* Header */}

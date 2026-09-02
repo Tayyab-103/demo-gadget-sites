@@ -60,4 +60,6 @@ export interface SiteConfig {
   footerLogoImage: string;
   theme: ThemeConfig;
   oneProductCartLimit?: string;
+  Product?: string;
+  Processor?: string;
 }

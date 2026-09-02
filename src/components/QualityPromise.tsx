@@ -9,18 +9,18 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const standards = [
   {
     tag: "01 / Fiber Authenticity",
-    title: "100% Certified Organic Cottons",
-    description: "Every thread is sourced from certified organic farms, ensuring zero toxic synthetic residues and gentle softness on sensitive skin.",
+    title: "Certified Organic Cottons",
+    description: "Sourced from organic farms with zero toxic residues for soft, gentle skin comfort.",
   },
   {
     tag: "02 / Structural Integrity",
-    title: "Pre-Shrunk Weaves & Anti-Pill Finishing",
-    description: "Our French terry and combed jersey fabrics are pre-washed and finished to ensure garments retain their shape and texture across countless wash cycles.",
+    title: "Pre-Shrunk & Anti-Pill Weaves",
+    description: "Pre-washed French terry and combed jerseys retain shape and softness wash after wash.",
   },
   {
     tag: "03 / Household Guarantee",
-    title: "60-Day Easy Size & Fit Protection",
-    description: "Try any garment at home with your family. If the drape, size, or feel isn't perfect, we arrange an effortless exchange or full refund.",
+    title: "60-Day Easy Fit Protection",
+    description: "Try every piece at home with effortless size exchanges and direct satisfaction guarantee.",
   },
 ];
 
@@ -37,9 +37,6 @@ export default function QualityPromise() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary">
             The Everden Quality Code
           </h2>
-          <p className="text-neutral-text/65 text-sm md:text-base mt-3">
-            We hold every garment to rigorous durability and environmental benchmarks before it joins your household wardrobe.
-          </p>
         </div>
 
         {/* 2-Column Split: Visual & 3 Standard Cards */}
@@ -49,8 +46,8 @@ export default function QualityPromise() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-black/[0.08] bg-[#FAF8F5]">
               <img
-                src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1200&q=80"
-                alt={`${siteConfig.brandName} boutique quality`}
+                src="/img/textile_standards_craft.jpg"
+                alt={`${siteConfig.brandName} textile standards`}
                 className="w-full h-full object-cover"
               />
             </div>

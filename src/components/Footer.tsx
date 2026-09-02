@@ -108,13 +108,28 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* Legal Links */}
-          <div className="flex flex-wrap items-center gap-6">
-            <Link href="/privacy" className="text-white/60 text-xs hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-white/60 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
-            <span className="text-white/40 text-[11px]">
-              Descriptor: <strong className="text-white/70">{siteConfig.descriptor}</strong>
-            </span>
+          {/* Payment Badges & Legal Links */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex items-center gap-3 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+              <img
+                src="/img/mastercard.png"
+                alt="MasterCard"
+                className="h-6 w-auto object-contain"
+              />
+              <img
+                src="/img/visa.png"
+                alt="Visa"
+                className="h-6 w-auto object-contain"
+              />
+            </div>
+
+            <div className="flex flex-wrap items-center gap-6">
+              <Link href="/privacy" className="text-white/60 text-xs hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-white/60 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
+              <span className="text-white/40 text-[11px]">
+                Descriptor: <strong className="text-white/70">{siteConfig.descriptor}</strong>
+              </span>
+            </div>
           </div>
         </div>
       </div>

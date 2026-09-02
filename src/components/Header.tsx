@@ -79,25 +79,6 @@ export default function Header() {
     <>
       <AnnouncementBar />
 
-      {/* Top Utility Strip */}
-      <div className="hidden md:block bg-neutral-bg border-b border-black/[0.06] text-neutral-text/70">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-[0.7rem] font-medium tracking-wide">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-            <span>Sustainable Organic Family Essentials &bull; Direct Pricing</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href={`tel:${siteConfig.phone}`} className="hover:text-primary transition-colors">
-              {siteConfig.phone}
-            </a>
-            <span className="text-black/20">|</span>
-            <a href={`mailto:${siteConfig.email}`} className="hover:text-primary transition-colors">
-              {siteConfig.email}
-            </a>
-          </div>
-        </div>
-      </div>
-
       <header
         ref={headerRef}
         className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-black/[0.06] transition-all duration-300"
@@ -181,13 +162,6 @@ export default function Header() {
                 </span>
               )}
             </button>
-
-            <Link
-              href="/shop"
-              className="hidden sm:inline-flex items-center font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-secondary hover:text-white transition-all duration-300 py-2.5 px-5 rounded-full text-[0.68rem] uppercase tracking-widest shadow-sm"
-            >
-              Shop Collection
-            </Link>
 
             {/* Mobile hamburger */}
             <button

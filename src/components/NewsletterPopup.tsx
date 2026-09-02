@@ -80,7 +80,7 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[200px] relative">
           <img
-            src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=900&q=80"
+            src="/img/newsletter_wardrobe_rail.jpg"
             alt="Family wardrobe clothing collection"
             className="w-full h-full object-cover absolute inset-0"
           />

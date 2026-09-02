@@ -9,21 +9,21 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const steps = [
   {
     step: "01",
-    title: "Select Styles & Bundles",
-    desc: "Choose from our 3 foundational family staples. Mix and match individual garments or select multi-pack family bundles to save up to 40%.",
-    image: "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&q=80",
+    title: "Select Styles",
+    desc: "Choose foundational organic wardrobe staples and curated family bundles.",
+    image: "/img/how_step1.jpg",
   },
   {
     step: "02",
-    title: "Fast Encrypted Checkout",
-    desc: "Complete your order with peace of mind. Our checkout utilizes bank-level 256-bit SSL encryption with clear descriptor billing.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    title: "Secure Checkout",
+    desc: "Fast, encrypted checkout with instant order confirmation.",
+    image: "/img/how_step2.jpg",
   },
   {
     step: "03",
     title: "Doorstep Delivery",
-    desc: `Your items are hand-inspected, wrapped in recyclable packaging, and delivered nationwide via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days.`,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    desc: `Hand-inspected, eco-packaged, and delivered via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days.`,
+    image: "/img/how_step3.jpg",
   },
 ];
 
@@ -40,9 +40,6 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary">
             How It Works
           </h2>
-          <p className="text-neutral-text/65 text-sm md:text-base mt-3">
-            Dressing the entire household in certified organic comfort is straightforward and reliable.
-          </p>
         </div>
 
         {/* 3 Steps Cards */}

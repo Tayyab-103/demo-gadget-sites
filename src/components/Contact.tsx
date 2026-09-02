@@ -10,7 +10,7 @@ export default function Contact() {
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
   return (
-    <section className="py-14 md:py-20 bg-white" id="contact">
+    <section className="py-16 md:py-24 bg-white" id="contact">
       <div className="w-full max-w-7xl mx-auto px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">

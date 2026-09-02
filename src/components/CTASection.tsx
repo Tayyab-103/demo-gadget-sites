@@ -5,12 +5,12 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="py-14 md:py-20 bg-[#191716] text-white relative overflow-hidden" id="cta">
+    <section className="py-16 md:py-24 bg-[#191716] text-white relative overflow-hidden" id="cta">
       {/* Background photo texture */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80')`,
+          backgroundImage: `url('/img/hero_family_apparel.jpg')`,
         }}
       />
 

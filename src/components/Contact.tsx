@@ -10,11 +10,11 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#EBECEF] relative overflow-hidden" id="contact">
-      <div className="relative max-w-[1100px] mx-auto px-5 sm:px-8 lg:px-12 z-10">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#EBECEF] relative overflow-hidden" id="contact">
+      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
         
         {/* Main White Card matching reference */}
-        <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-[0_15px_50px_rgba(0,0,0,0.05)] border border-black/[0.04]">
+        <div className="bg-white rounded-[1.8rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-16 shadow-[0_15px_50px_rgba(0,0,0,0.05)] border border-black/[0.04]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             
             {/* ══════════════════════════════════════════

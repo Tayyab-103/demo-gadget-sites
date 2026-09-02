@@ -3,7 +3,7 @@
     "id": "product1",
     "stickyId": 1,
     "name": "Voltspire Pro Digital Multimeter & Voltage Tester",
-    "description": "A high-precision true-RMS digital multimeter engineered for professional electricians, industrial testing, and high-voltage circuit diagnostics. Features auto-ranging, non-contact voltage detection (NCV), backlit LCD screen, and heavy-duty silicone drop protection.",
+    "description": "High-precision true-RMS digital multimeter with auto-ranging, non-contact voltage detection (NCV), and heavy-duty silicone drop protection.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
@@ -31,7 +31,7 @@
     "id": "product2",
     "stickyId": 2,
     "name": "Voltspire Industrial Thermal Imaging Clamp Meter",
-    "description": "An advanced AC/DC clamp meter equipped with precision thermal sensor optics and inrush current capture. Accurately measure up to 1000A without breaking circuits, diagnose hot spots on electrical panels in real-time, and log data wirelessly.",
+    "description": "Industrial AC/DC clamp meter with thermal optics and inrush current capture for non-invasive circuit diagnostics up to 1000A.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
@@ -59,7 +59,7 @@
     "id": "product3",
     "stickyId": 3,
     "name": "Voltspire Heavy-Duty Pure Sine Wave Power Inverter Module",
-    "description": "Engineered for resilient off-grid and backup power systems, this industrial-grade pure sine wave inverter delivers ultra-clean AC power with 94% peak efficiency. Features intelligent dynamic cooling, surge overload protection, and dual quick-terminal connectors.",
+    "description": "Heavy-duty pure sine wave inverter delivering ultra-clean AC power with 94% peak efficiency and surge overload protection.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",

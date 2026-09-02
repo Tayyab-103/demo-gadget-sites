@@ -11,7 +11,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#E5E6EB] pt-8 sm:pt-12 pb-8 sm:pb-12 overflow-hidden" id="footer">
+    <footer className="relative bg-[#E5E6EB] pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 overflow-hidden" id="footer">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* =========================================================
@@ -101,10 +101,30 @@ export default function Footer() {
 
             </div>
 
-            {/* Bottom Row: Copyright + Legal Links */}
-            <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.72rem] text-neutral-text/50 font-medium">
+            {/* Bottom Row: Copyright + Payment Cards + Legal Links */}
+            <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[0.72rem] text-neutral-text/50 font-medium">
               <div>
                 &copy; {currentYear} {siteConfig.brandName}. All rights reserved.
+              </div>
+
+              {/* Payment Badges (MasterCard & VISA) */}
+              <div className="flex items-center gap-2.5 my-1 sm:my-0">
+                {/* MasterCard Card */}
+                <div className="h-7 w-11 rounded-md bg-[#0A1E3F] flex items-center justify-center p-0.5 shadow-xs border border-black/5" title="MasterCard">
+                  <svg viewBox="0 0 36 24" className="w-full h-full">
+                    <circle cx="14" cy="9.5" r="5.5" fill="#EB001B" />
+                    <circle cx="22" cy="9.5" r="5.5" fill="#F79E1B" fillOpacity="0.95" />
+                    <path d="M18 5.7a5.5 5.5 0 0 1 1.6 3.8c0 1.5-.6 2.9-1.6 3.8a5.5 5.5 0 0 1-1.6-3.8c0-1.5.6-2.9 1.6-3.8z" fill="#FF5F00" />
+                    <text x="18" y="19.5" fontSize="3.3" fill="#FFFFFF" textAnchor="middle" fontFamily="sans-serif" fontWeight="700">mastercard</text>
+                  </svg>
+                </div>
+
+                {/* VISA Card */}
+                <div className="h-7 w-11 rounded-md bg-[#2557A7] flex items-center justify-center p-1 shadow-xs border border-black/5" title="Visa">
+                  <svg viewBox="0 0 36 24" className="w-full h-full">
+                    <text x="18" y="16.5" fontSize="10" fill="#FFFFFF" textAnchor="middle" fontFamily="sans-serif" fontStyle="italic" fontWeight="900" letterSpacing="0.5">VISA</text>
+                  </svg>
+                </div>
               </div>
 
               <div className="flex items-center gap-6">

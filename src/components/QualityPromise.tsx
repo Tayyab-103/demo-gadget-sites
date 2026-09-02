@@ -30,24 +30,24 @@ export default function QualityPromise() {
   };
 
   return (
-    <section id="guarantee" className="py-12 sm:py-16 md:py-20 bg-[#F5F5F7] relative overflow-hidden">
-      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 z-10">
+    <section id="guarantee" className="py-12 sm:py-16 lg:py-24 bg-[#F5F5F7] relative overflow-hidden">
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
         
         {/* =========================================================
             HEADER: Centered Pill + Title + Subtitle (Matching Reference)
             ========================================================= */}
-        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white/80 border border-black/5 shadow-2xs mb-5">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 md:mb-18">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-white/80 border border-black/5 shadow-2xs mb-4">
             <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-neutral-text/60">
               OUR GUARANTEE
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#111] leading-[1.15] mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#111] leading-[1.15] mb-3 sm:mb-4">
             Why industry leaders choose VOLTSPIRE
           </h2>
 
-          <p className="text-sm sm:text-base text-neutral-text/55 leading-relaxed">
+          <p className="text-xs sm:text-base text-neutral-text/55 leading-relaxed">
             Exceptional engineering and certified durability that set the benchmark for modern electrical infrastructure
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function QualityPromise() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6">
 
           {/* ──── CARD 1: Product 1 (Voltspire Pro Digital Multimeter) ──── */}
-          <div className="lg:col-span-4 bg-[#ECECEE] rounded-[2rem] p-7 sm:p-8 flex flex-col justify-between border border-black/[0.03] shadow-xs group hover:shadow-md transition-all duration-300">
+          <div className="lg:col-span-4 bg-[#ECECEE] rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-7 md:p-8 flex flex-col justify-between border border-black/[0.03] shadow-xs group hover:shadow-md transition-all duration-300">
             {/* Product Image Showcase */}
             <Link
               href={`/product/${p1.id}`}
@@ -69,7 +69,7 @@ export default function QualityPromise() {
                 alt={p1.name}
                 className="w-full h-full object-cover rounded-xl group-hover/img:scale-105 transition-transform duration-500"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1000&q=80";
+                  e.currentTarget.src = "/img/products/product1.jpg";
                 }}
               />
               <span className="absolute top-3 left-3 bg-[#111] text-white text-[0.6rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
@@ -84,10 +84,10 @@ export default function QualityPromise() {
               </h3>
 
               <Link
-                href={`/product/${p1.id}`}
+                href="/shop"
                 className="inline-flex items-center gap-3 bg-[#111] hover:bg-[#333] text-white text-xs font-semibold pl-5 pr-2 py-2 rounded-full transition-all duration-300 group/btn shadow-sm"
               >
-                <span>View {p1.name.split(" ")[1] || "Equipment"}</span>
+                <span>View Products</span>
                 <span className="w-7 h-7 rounded-full bg-white text-[#111] flex items-center justify-center transition-transform duration-300 group-hover/btn:translate-x-0.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12" />
@@ -108,7 +108,7 @@ export default function QualityPromise() {
               <div className="sm:col-span-7 bg-[#ECECEE] rounded-[2rem] p-7 flex flex-col justify-between border border-black/[0.03] shadow-xs group hover:shadow-md transition-all duration-300 min-h-[260px]">
                 <div className="w-full h-36 rounded-2xl overflow-hidden mb-6 bg-white relative">
                   <img
-                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80"
+                    src="/images/quality_team.jpg"
                     alt="Trusted Industrial Partnership"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -121,17 +121,15 @@ export default function QualityPromise() {
 
               {/* ──── CARD 3: Precision Component Guarantee ──── */}
               <div className="sm:col-span-5 bg-[#ECECEE] rounded-[2rem] p-7 flex flex-col justify-between border border-black/[0.03] shadow-xs group hover:shadow-md transition-all duration-300 min-h-[260px]">
-                <div className="flex items-center justify-end">
-                  <div className="w-20 h-20 rounded-2xl bg-white p-1.5 shadow-xs overflow-hidden border border-black/5">
-                    <img
-                      src="/img/products/product3.jpg"
-                      alt="Certified Hardware"
-                      className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
+                <div className="w-full h-36 rounded-2xl overflow-hidden mb-6 bg-white relative">
+                  <img
+                    src="/images/quality_hardware.jpg"
+                    alt="Certified Hardware Components"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div>
-                  <div className="text-4xl sm:text-5xl font-black text-[#111] tracking-tight leading-none mb-2">
+                  <div className="text-3xl sm:text-4xl font-black text-[#111] tracking-tight leading-none mb-1.5">
                     99.9%
                   </div>
                   <p className="text-xs text-neutral-text/50 font-medium leading-relaxed">
@@ -153,7 +151,7 @@ export default function QualityPromise() {
 
               <div className="w-full sm:w-56 h-44 sm:h-48 rounded-2xl overflow-hidden bg-white flex-shrink-0 shadow-xs border border-black/5 relative">
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?w=800&q=80"
+                  src="/images/quality_grid.jpg"
                   alt="Industrial power infrastructure"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

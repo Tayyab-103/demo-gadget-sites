@@ -33,7 +33,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-10 sm:pb-14">
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 pt-6 sm:pt-10 lg:pt-14 pb-8 sm:pb-12 lg:pb-16">
 
         {/* ═══════════════════════════════════════
             HEADLINE + SUBTITLE + CTA ROW

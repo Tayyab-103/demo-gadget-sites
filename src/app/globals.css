@@ -151,7 +151,7 @@
   }
 }
 .marquee-track {
-  animation: marquee 26s linear infinite;
+  animation: marquee 58s linear infinite;
 }
 .marquee-track:hover {
   animation-play-state: paused;

@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=900&q=80"
-            alt="Athlete stretching with training gear"
+            src="/images/newsletter_banner.jpg"
+            alt="Voltspire precision electrical diagnostic equipment"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}

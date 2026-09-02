@@ -9,7 +9,7 @@ const products = productsData as unknown as Product[];
 
 export default function ProductGrid() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAFAFA] relative overflow-hidden" id="products">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#FAFAFA] relative overflow-hidden" id="products">
       {/* Subtle diagonal line pattern matching Hero aesthetic */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -24,29 +24,29 @@ export default function ProductGrid() {
         }}
       />
 
-      <div className="relative max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 z-10">
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 lg:mb-16 gap-4 sm:gap-6">
           <div>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-2 sm:mb-3">
               <span className="w-2 h-2 rounded-full bg-[#111]" />
               <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-neutral-text/45">
                 Precision Hardware
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#111] leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#111] leading-tight">
               Featured Products
             </h2>
           </div>
 
-          <p className="text-sm sm:text-base text-neutral-text/60 max-w-md">
+          <p className="text-xs sm:text-base text-neutral-text/60 max-w-md">
             Certified electrical instruments and power conversion units built for mission-critical reliability.
           </p>
         </div>
 
         {/* 3-Column Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {products.slice(0, 3).map((product, idx) => {
             const firstBundle = product.bundles && product.bundles[0];
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
@@ -55,7 +55,7 @@ export default function ProductGrid() {
             return (
               <div
                 key={product.id}
-                className="group relative bg-white rounded-[2rem] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/[0.04] hover:-translate-y-1.5"
+                className="group relative bg-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 md:p-7 flex flex-col justify-between shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/[0.04] hover:-translate-y-1.5"
               >
                 <div>
                   {/* Image Container with Badges */}

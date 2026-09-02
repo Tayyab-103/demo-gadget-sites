@@ -8,7 +8,7 @@ const testimonials = [
     name: "Brian Connolly",
     role: "Chief Electrical Inspector",
     company: "Midwest Power Facilities",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "/images/avatar1.jpg",
     quote: "The true-RMS accuracy on commercial switchboards is remarkable. Calibration certificates were included in the box, and the silicone drop casing has survived multiple heavy site drops.",
     rating: 5,
   },
@@ -17,7 +17,7 @@ const testimonials = [
     name: "Devon Vance",
     role: "Master Industrial Electrician",
     company: "Apex Commercial Systems",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+    image: "/images/avatar2.jpg",
     quote: "This is the best diagnostic upgrade we've made for our crew. The thermal clamp caught three phase-balance hotspot issues before they caused a costly plant outage.",
     rating: 5,
   },
@@ -26,7 +26,7 @@ const testimonials = [
     name: "Marcus Sterling",
     role: "Senior Grid Operations Engineer",
     company: "Sterling Power Co.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+    image: "/images/avatar3.jpg",
     quote: "We deployed Voltspire pure sine wave inverter modules across our regional communication relays. Clean harmonic wave output with zero RF interference on sensitive instruments.",
     rating: 5,
     isFeatured: true,
@@ -36,7 +36,7 @@ const testimonials = [
     name: "Hannah Bradley",
     role: "Instrumentation & Calibration Lead",
     company: "Northeast Utilities",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    image: "/images/avatar4.jpg",
     quote: "Exceptional build quality and certified compliance right out of the box. Delivery was swift, and the customer engineering support was very responsive with technical specs.",
     rating: 5,
   },
@@ -45,7 +45,7 @@ const testimonials = [
     name: "Tyler Reynolds",
     role: "Substation Field Technician",
     company: "Reynolds High-Voltage Services",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&q=80",
+    image: "/images/avatar5.jpg",
     quote: "By far the most reliable electrical testing gear in our inventory. The auto-ranging speed and backlit high-contrast display make dark cabinet work straightforward.",
     rating: 5,
   },
@@ -63,17 +63,17 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#F0F4F8] relative overflow-hidden" id="testimonials">
-      <div className="relative max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 z-10">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#F0F4F8] relative overflow-hidden" id="testimonials">
+      <div className="relative max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
         
         {/* =========================================================
             LARGE CURVED BACKDROP CANVAS (Matching Reference)
             ========================================================= */}
-        <div className="relative bg-white rounded-[2.5rem] sm:rounded-[3.5rem] pt-14 sm:pt-20 pb-36 sm:pb-48 px-6 sm:px-12 shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-black/[0.03] overflow-hidden text-center">
+        <div className="relative bg-white rounded-[2rem] sm:rounded-[3.5rem] pt-10 sm:pt-16 lg:pt-20 pb-28 sm:pb-40 lg:pb-48 px-4 sm:px-8 lg:px-12 shadow-[0_15px_50px_rgba(0,0,0,0.04)] border border-black/[0.03] overflow-hidden text-center">
           
           {/* Giant Faint Double Quotes Watermark on Left */}
           <div
-            className="absolute top-8 left-8 sm:top-12 sm:left-14 text-[8rem] sm:text-[11rem] lg:text-[13rem] font-serif font-black text-black/[0.04] leading-none pointer-events-none select-none z-0"
+            className="absolute top-6 left-6 sm:top-10 sm:left-12 text-[6rem] sm:text-[10rem] lg:text-[13rem] font-serif font-black text-black/[0.04] leading-none pointer-events-none select-none z-0"
             aria-hidden="true"
           >
             “
@@ -81,17 +81,17 @@ export default function Testimonials() {
 
           {/* Heading + Accent Line (Matching Reference) */}
           <div className="relative z-10 max-w-xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-black tracking-tight text-[#111] leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-[2.6rem] font-black tracking-tight text-[#111] leading-tight">
               What our Clients say!
             </h2>
             
             {/* Elegant Accent Underline Bar */}
-            <div className="flex items-center justify-center gap-1.5 mt-3.5 mb-2">
-              <span className="w-16 h-[3px] rounded-full bg-[#5B6BF0]" />
+            <div className="flex items-center justify-center gap-1.5 mt-2.5 sm:mt-3.5 mb-2">
+              <span className="w-12 sm:w-16 h-[3px] rounded-full bg-[#5B6BF0]" />
               <span className="w-2.5 h-[3px] rounded-full bg-[#5B6BF0]/50" />
             </div>
 
-            <p className="text-xs sm:text-sm text-neutral-text/50 font-medium mt-3">
+            <p className="text-xs sm:text-sm text-neutral-text/50 font-medium mt-2 sm:mt-3">
               Verified feedback from certified master electricians, facility directors, and electrical grid engineers.
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Testimonials() {
         {/* =========================================================
             OVERLAPPING FLOATING TESTIMONIAL CARDS (Matching Reference)
             ========================================================= */}
-        <div className="-mt-28 sm:-mt-36 relative z-20">
+        <div className="-mt-24 sm:-mt-32 lg:-mt-36 relative z-20">
           
           {/* Desktop 5-Card Layout */}
           <div className="hidden lg:grid grid-cols-5 gap-4 xl:gap-5 items-end">
@@ -125,7 +125,7 @@ export default function Testimonials() {
                         alt={item.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80";
+                          e.currentTarget.src = "/images/avatar2.jpg";
                         }}
                       />
                     </div>
@@ -172,7 +172,7 @@ export default function Testimonials() {
                     alt={testimonials[activeIndex].name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80";
+                      e.currentTarget.src = "/images/avatar2.jpg";
                     }}
                   />
                 </div>

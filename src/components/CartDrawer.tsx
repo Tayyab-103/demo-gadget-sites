@@ -85,7 +85,7 @@ export default function CartDrawer() {
                     alt={item.Name}
                     className="w-[70px] h-[70px] object-contain rounded-xl bg-neutral-bg border border-black/5 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/100x100?text=Product";
+                      e.currentTarget.src = "/img/products/product1.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">

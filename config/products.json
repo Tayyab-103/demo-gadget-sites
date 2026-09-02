@@ -10,8 +10,8 @@
       "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1000&q=80",
       "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=1000&q=80"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=900&q=80",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Bibs & Teethers",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -38,8 +38,8 @@
       "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1000&q=80",
       "https://images.unsplash.com/photo-1584839619566-488523318850?w=1000&q=80"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=900&q=80",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Sensory Toys & Teethers",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -66,8 +66,8 @@
       "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1000&q=80",
       "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?w=1000&q=80"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=900&q=80",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Knitwear & Apparel",
     "billingModel": 1,
     "ssPrice": "14.95",

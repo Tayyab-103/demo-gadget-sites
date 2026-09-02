@@ -4,14 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import productsData from "../../config/products.json";
 import { Product, Bundle } from "@/types";
-import { useCart } from "@/context/CartContext";
 
 const products = productsData as unknown as Product[];
 
 function ProductCard({ product }: { product: Product }) {
-  const { addToCart } = useCart();
   const [selectedBundleIndex, setSelectedBundleIndex] = useState(0);
-  const [addedToast, setAddedToast] = useState(false);
 
   const bundles: Bundle[] = product.bundles && product.bundles.length > 0
     ? product.bundles
@@ -23,24 +20,8 @@ function ProductCard({ product }: { product: Product }) {
   const currentPrice = currentBundle.price;
   const savings = originalTotalPrice - currentPrice;
 
-  const handleAdd = () => {
-    const unitPrice = (currentPrice / currentBundle.quantity).toFixed(2);
-    const label = currentBundle.quantity > 1 ? `${currentBundle.quantity}-Pack Bundle` : "Single Pack";
-    addToCart(product, currentBundle.quantity, unitPrice, label);
-
-    setAddedToast(true);
-    setTimeout(() => setAddedToast(false), 2200);
-  };
-
   return (
     <div className="bg-white rounded-3xl border border-pink-100/80 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden relative group">
-      {addedToast && (
-        <div className="absolute top-3 left-3 right-3 z-30 bg-[#2D264B] text-white py-2 px-3.5 rounded-xl shadow-lg flex items-center justify-between text-xs font-bold animate-in fade-in duration-150">
-          <span>✨ Added to Baby Bag!</span>
-          <span className="text-pink-300">✓</span>
-        </div>
-      )}
-
       {/* Product Image */}
       <div className="relative aspect-4/3 w-full bg-[#FFF5E6]/40 overflow-hidden">
         <Link href={`/product/${product.id}`} className="block w-full h-full">
@@ -67,12 +48,6 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Product Content */}
       <div className="p-5 sm:p-6 flex flex-col flex-grow">
-        {/* Rating */}
-        <div className="flex items-center gap-1 mb-1.5 text-amber-400 text-xs">
-          {"★".repeat(5)}
-          <span className="text-[0.65rem] text-gray-400 font-medium ml-1">5.0 (Verified)</span>
-        </div>
-
         <Link href={`/product/${product.id}`} className="group-hover:text-[#FF6B8B] transition-colors">
           <h3 className="text-sm sm:text-base font-black text-[#1E2330] tracking-tight leading-snug line-clamp-2 min-h-[2.6rem]">
             {product.name}
@@ -107,7 +82,7 @@ function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
 
-        {/* Price and Add Button */}
+        {/* Price and Add Button -> Routes to Product Details Page */}
         <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between gap-2">
           <div>
             {savings > 0 && (
@@ -120,12 +95,12 @@ function ProductCard({ product }: { product: Product }) {
             </div>
           </div>
 
-          <button
-            onClick={handleAdd}
-            className="px-4 sm:px-5 py-2.5 rounded-full bg-[#FF6B8B] hover:bg-[#FA5679] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          <Link
+            href={`/product/${product.id}`}
+            className="px-4 sm:px-5 py-2.5 rounded-full bg-[#FF6B8B] hover:bg-[#FA5679] text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-1.5 cursor-pointer"
           >
-            + Add to Bag
-          </button>
+            <span>+ Add to Bag</span>
+          </Link>
         </div>
       </div>
     </div>

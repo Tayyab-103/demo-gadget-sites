@@ -45,6 +45,8 @@ export interface ThemeConfig {
 }
 
 export interface SiteConfig {
+  Product?: string;
+  Processor?: string;
   brandName: string;
   websiteUrl: string;
   email: string;

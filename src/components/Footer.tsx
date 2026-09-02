@@ -63,11 +63,12 @@ export default function Footer() {
 
           {/* Payment & Trust Badges (3 Cols) */}
           <div className="md:col-span-3 flex flex-col md:items-end">
-            <div className="flex items-center gap-1.5 bg-white/95 px-2.5 py-1.5 rounded-xl shadow-xs mb-2.5">
-              <span className="text-[0.65rem] font-black text-blue-800">VISA</span>
-              <span className="text-[0.65rem] font-black text-red-600">MC</span>
-              <span className="text-[0.65rem] font-black text-blue-600">PAYPAL</span>
-              <span className="text-[0.65rem] font-black text-blue-500">AMEX</span>
+            <span className="text-[0.65rem] font-bold uppercase tracking-wider text-white/90 mb-1.5">
+              Accepted Cards
+            </span>
+            <div className="flex items-center gap-3 mb-2.5">
+              <img src="/img/visa.png" alt="Visa" className="h-6 w-auto object-contain" />
+              <img src="/img/mastercard.png" alt="Mastercard" className="h-6 w-auto object-contain" />
             </div>
 
             <div className="text-[0.65rem] font-bold text-white/90 flex items-center gap-1.5">

@@ -131,8 +131,8 @@ export default function AboutPage() {
               {/* Left Column: Image */}
               <div className="lg:col-span-6 rounded-[2rem] overflow-hidden bg-[#1A1D24] shadow-md h-[320px] sm:h-[380px]">
                 <img
-                  src="/img/hero/hero_right.jpg"
-                  alt="Industrial Electrical Engineering"
+                  src="/img/aboutus.jpg"
+                  alt="Industrial Electrical Engineering Facility"
                   className="w-full h-full object-cover"
                 />
               </div>

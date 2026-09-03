@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Voltspire Pro Digital Multimeter & Voltage Tester",
-    "description": "High-precision true-RMS digital multimeter with auto-ranging, non-contact voltage detection (NCV), and heavy-duty silicone drop protection.",
+    "name": "Magnetic Screwdriver Bit",
+    "description": "Material: High-Carbon Steel; Drive Size: 1/4-inch Hex; Length: 65mm; Color: Black Phosphate; Quantity: 10 Pcs.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
-      "/img/products/product2.jpg",
-      "/img/products/product3.jpg"
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product1.jpg",
-    "category": "Precision Diagnostic Equipment",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Magnetic Screwdriver Bit",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Voltspire Industrial Thermal Imaging Clamp Meter",
-    "description": "Industrial AC/DC clamp meter with thermal optics and inrush current capture for non-invasive circuit diagnostics up to 1000A.",
+    "name": "Blink Video Doorbell Power Adapter Cable",
+    "description": "Material: 24AWG Copper Core; Input: AC 100-240V; Output: DC 5V 1A; Cable Length: 6M/20FT; Compatibility: Blink Video Doorbell, Blink Outdoor, Blink Mini.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
-      "/img/products/product1.jpg",
-      "/img/products/product3.jpg"
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product2.jpg",
-    "category": "Thermal & Current Measurement",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Power Adapter Cable",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Voltspire Heavy-Duty Pure Sine Wave Power Inverter Module",
-    "description": "Heavy-duty pure sine wave inverter delivering ultra-clean AC power with 94% peak efficiency and surge overload protection.",
+    "name": "Digital LCD Multimeter Tester",
+    "description": "Material: ABS Housing & Silicone Sheathing; Max Display: 6000 Counts; DC Voltage: 600mV-600V; AC Voltage: 6V-600V; Resistance: 600Ω-60MΩ.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",
-      "/img/products/product1.jpg",
-      "/img/products/product2.jpg"
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product3.jpg",
-    "category": "Power Conditioning & Conversion",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Multimeter Tester",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

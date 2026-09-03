@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
@@ -12,13 +13,14 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
 const navLinks = [
-  { href: "/", label: "Home", isActive: true },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/shop", label: "Products" },
   { href: "/contact", label: "Contacts" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const { toggleCart, getCartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -102,24 +104,27 @@ export default function Header() {
 
           {/* ===== CENTER-RIGHT: Navigation Links (Reference: clean, underlined active) ===== */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeAll}
-                className={`relative text-[0.82rem] tracking-wide transition-colors py-1 ${
-                  link.isActive
-                    ? "text-[#111] font-semibold"
-                    : "text-neutral-text/50 hover:text-[#111] font-medium"
-                }`}
-              >
-                {link.label}
-                {/* Active underline indicator */}
-                {link.isActive && (
-                  <span className="absolute left-0 -bottom-0.5 w-full h-[1.5px] bg-[#111] rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeAll}
+                  className={`relative text-[0.82rem] tracking-wide transition-colors py-1 ${
+                    isActive
+                      ? "text-[#111] font-semibold"
+                      : "text-neutral-text/50 hover:text-[#111] font-medium"
+                  }`}
+                >
+                  {link.label}
+                  {/* Active underline indicator */}
+                  {isActive && (
+                    <span className="absolute left-0 -bottom-0.5 w-full h-[1.5px] bg-[#111] rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* ===== FAR RIGHT: Minimal cart + mobile menu ===== */}
@@ -233,20 +238,23 @@ export default function Header() {
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-black/5 shadow-xl p-5">
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeAll}
-                  className={`py-3 px-4 rounded-xl text-sm font-medium transition-all ${
-                    link.isActive
-                      ? "text-[#111] font-semibold bg-[#F5F5F5]"
-                      : "text-neutral-text/50 hover:text-[#111] hover:bg-[#F5F5F5]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={closeAll}
+                    className={`py-3 px-4 rounded-xl text-sm font-medium transition-all ${
+                      isActive
+                        ? "text-[#111] font-semibold bg-[#F5F5F5]"
+                        : "text-neutral-text/50 hover:text-[#111] hover:bg-[#F5F5F5]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
             <div className="mt-4 pt-4 border-t border-black/5">
               <Link

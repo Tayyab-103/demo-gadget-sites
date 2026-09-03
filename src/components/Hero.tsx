@@ -2,19 +2,17 @@
 
 import React from "react";
 import Link from "next/link";
-import productsData from "../../config/products.json";
-import { Product } from "@/types";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
 
-const products = productsData as unknown as Product[];
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Hero() {
-  const p1 = products[0];
-
   return (
-    <section className="relative bg-white overflow-hidden">
-      {/* Subtle diagonal marble/wave texture background */}
+    <section className="relative bg-white overflow-hidden border-b border-black/[0.04]">
+      {/* Subtle diagonal grid pattern */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage: `repeating-linear-gradient(
             -45deg,
@@ -25,100 +23,130 @@ export default function Hero() {
           )`,
         }}
       />
-      {/* Soft radial wash */}
+      {/* Soft ambient radial lighting */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(230,230,235,0.5) 0%, transparent 70%)",
-        }}
+        className="absolute -top-40 right-1/4 w-[600px] h-[600px] pointer-events-none rounded-full bg-[#5B6BF0]/[0.04] blur-[120px]"
       />
 
-      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 pt-6 sm:pt-10 lg:pt-14 pb-8 sm:pb-12 lg:pb-16">
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 pt-8 sm:pt-12 lg:pt-16 pb-12 sm:pb-16 lg:pb-20 z-10">
 
-        {/* ═══════════════════════════════════════
-            HEADLINE + SUBTITLE + CTA ROW
-            ═══════════════════════════════════════ */}
-        <div className="mb-8 sm:mb-10">
-          <h1 className="text-[2rem] sm:text-[2.8rem] lg:text-[3.5rem] xl:text-[3.8rem] font-black uppercase tracking-tight text-[#111] leading-[1.08] italic">
-            Your Power, Our Precision
-          </h1>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-3">
-            <p className="text-sm sm:text-[0.95rem] text-neutral-text/50 font-medium tracking-wide">
-              Exceeding Standards In Industrial Electrical Solutions
-            </p>
-            <Link
-              href="/shop"
-              className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#333] text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-300 shadow-sm flex-shrink-0"
-            >
-              Learn More
-            </Link>
+        {/* ══════════════════════════════════════════
+            TOP EYEBROW & RATING SOCIAL PROOF
+            ══════════════════════════════════════════ */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F4F4F6] border border-black/[0.06] shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-[#5B6BF0] animate-pulse" />
+            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#111]">
+              INDUSTRIAL-GRADE ELECTRICAL SOLUTIONS
+            </span>
           </div>
         </div>
 
-        {/* ═══════════════════════════════════════
-            MAIN IMAGE BANNER (with overlaid info card + arrow)
-            ═══════════════════════════════════════ */}
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_50px_-12px_rgba(0,0,0,0.2)] group">
-          {/* Dual image layout mimicking reference (two side-by-side photos of modern infrastructure) */}
-          <div className="flex">
-            <div className="w-1/2 relative bg-[#1A1D24]">
-              <img
-                src="/img/hero/hero_left.jpg"
-                alt="Modern commercial infrastructure"
-                className="w-full h-[280px] sm:h-[340px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-[1.02] filter brightness-95"
-              />
-            </div>
-            <div className="w-1/2 relative bg-[#1A1D24]">
-              <img
-                src="/img/hero/hero_right.jpg"
-                alt="Industrial power architecture"
-                className="w-full h-[280px] sm:h-[340px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-[1.02] filter brightness-95"
-              />
-            </div>
+        {/* ══════════════════════════════════════════
+            HEADLINE & DESCRIPTION ROW
+            ══════════════════════════════════════════ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-10 sm:mb-14">
+          <div className="lg:col-span-8">
+            <h1 className="text-[2.2rem] sm:text-[3.2rem] lg:text-[4.2rem] font-black uppercase tracking-tight text-[#111] leading-[1.05] italic">
+              Precision Electrical Parts <br />
+              {/* <span className="text-neutral-text/45 font-medium not-italic block sm:inline">
+                &amp; High-Performance Equipment
+              </span> */}
+            </h1>
           </div>
+        </div>
 
-          {/* Dark vignette overlay at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+        {/* ══════════════════════════════════════════
+            DUAL HERO IMAGE SHOWCASE (hero1.jpg & hero2.jpg)
+            ══════════════════════════════════════════ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
 
-          {/* Overlaid Info Card (bottom-left) — matching reference dark glass card */}
-          <div className="absolute bottom-5 left-5 right-20 sm:right-24 z-10">
-            {/* "NEW" tag with indicator dot */}
-            <div className="flex items-center gap-1.5 mb-2">
-              <span className="w-[6px] h-[6px] rounded-full bg-[#5B6BF0] animate-pulse" />
-              <span className="text-[0.6rem] font-bold uppercase tracking-widest text-white/60">
-                Featured
+          {/* Left Primary Showcase Card: hero1.jpg */}
+          <div className="lg:col-span-7 relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-[#111] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] group min-h-[360px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8">
+            <img
+              src="/img/hero1.jpg"
+              alt="Precision electrical diagnostic equipment and technician workbench"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
+
+            {/* Top Badge */}
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md text-[#111] text-[0.65rem] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0]" />
+                Diagnostic &amp; Calibration
+              </span>
+              <span className="bg-black/60 backdrop-blur-md text-white/90 text-[0.65rem] font-mono font-semibold px-3 py-1 rounded-full border border-white/10">
+                CAT IV 600V • True-RMS
               </span>
             </div>
-            <h2 className="text-white text-base sm:text-lg lg:text-xl font-bold tracking-tight leading-snug">
-              Leaders in precision electrical equipment
-            </h2>
-            <p className="text-white/50 text-[0.7rem] sm:text-xs font-medium mt-1.5 max-w-[520px] leading-relaxed line-clamp-2">
-              Our product range includes diagnostic multimeters, thermal clamp meters, industrial power inverters, and certified testing equipment.
-            </p>
+
+            {/* Bottom Content */}
+            <div className="relative z-10 max-w-lg">
+              <h2 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight leading-snug mb-2">
+                Engineered for Exacting Calibration &amp; Maximum Jobsite Safety
+              </h2>
+              <p className="text-white/70 text-xs sm:text-sm font-normal leading-relaxed line-clamp-2">
+                High-contrast LCD digital multimeters with silicone anti-shock armor designed to catch micro-voltage variations with zero lag.
+              </p>
+            </div>
           </div>
 
-          {/* Circular arrow button (bottom-right) — matching reference */}
-          <Link
-            href="/shop"
-            className="absolute bottom-5 right-5 z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#111] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-105 group/arrow"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="transform transition-transform duration-300 group-hover/arrow:rotate-45"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </Link>
+          {/* Right Secondary Showcase Card: hero2.jpg */}
+          <div className="lg:col-span-5 relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-[#111] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] group min-h-[360px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8">
+            <img
+              src="/img/hero2.jpg"
+              alt="Industrial power infrastructure and high voltage electrical components"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-90"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
+
+            {/* Top Badge */}
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-md text-[#111] text-[0.65rem] sm:text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Heavy-Duty Hardware
+              </span>
+              <span className="bg-black/60 backdrop-blur-md text-white/90 text-[0.65rem] font-mono font-semibold px-3 py-1 rounded-full border border-white/10">
+                24AWG • High-Carbon Steel
+              </span>
+            </div>
+
+            {/* Bottom Content with Quick Link */}
+            <div className="relative z-10 flex items-end justify-between gap-4">
+              <div className="max-w-xs">
+                <h3 className="text-white text-lg sm:text-xl font-bold tracking-tight leading-snug mb-1">
+                  Power Adapters &amp; Magnetic Drive Bits
+                </h3>
+                <p className="text-white/70 text-xs font-normal leading-relaxed line-clamp-2">
+                  Built to withstand high torque, extreme heat cycles, and continuous commercial duty.
+                </p>
+              </div>
+
+              <Link
+                href="/shop"
+                className="w-12 h-12 rounded-full bg-white text-[#111] hover:bg-[#5B6BF0] hover:text-white flex items-center justify-center transition-all duration-300 shadow-lg flex-shrink-0 group/btn"
+                aria-label="View all electrical products"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform duration-300 group-hover/btn:rotate-45"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -1,219 +1,275 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#EBECEF] relative overflow-hidden" id="contact">
-      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
-        
-        {/* Main White Card matching reference */}
-        <div className="bg-white rounded-[1.8rem] sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-16 shadow-[0_15px_50px_rgba(0,0,0,0.05)] border border-black/[0.04]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            
-            {/* ══════════════════════════════════════════
-                LEFT COLUMN: Info, Address, Phone, Socials
-                ══════════════════════════════════════════ */}
-            <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-8">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-black text-[#111] tracking-tight mb-8">
-                  Get in touch
-                </h2>
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#F0F4F8] relative overflow-hidden" id="contact">
+      <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
-                <div className="space-y-6">
-                  {/* Email */}
-                  <div>
-                    <span className="text-xs text-neutral-text/45 font-medium block mb-1">
-                      Email:
-                    </span>
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="text-sm sm:text-base font-bold text-[#111] hover:text-[#5B6BF0] transition-colors break-all"
-                    >
-                      {siteConfig.email}
-                    </a>
-                  </div>
+        {/* ════════════════════════════════════════════════════════════
+            SPLIT BANNER: Left Theme Card + Right 2x2 Contact Card
+            ════════════════════════════════════════════════════════════ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
 
-                  {/* Phone */}
-                  <div>
-                    <span className="text-xs text-neutral-text/45 font-medium block mb-1">
-                      Phone:
-                    </span>
-                    <a
-                      href={`tel:${siteConfig.phone}`}
-                      className="text-sm sm:text-base font-bold text-[#111] hover:text-[#5B6BF0] transition-colors"
-                    >
-                      {siteConfig.phone}
-                    </a>
-                  </div>
+          {/* ──── LEFT THEME HIGHLIGHT CARD (Using Theme Colors) ──── */}
+          <div
+            className="lg:col-span-4 rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-10 lg:p-12 flex flex-col justify-between shadow-[0_15px_40px_rgba(91,107,240,0.25)] min-h-[360px] sm:min-h-[420px] transition-all"
+            style={{
+              backgroundColor: siteConfig.theme.secondaryColor || "#5B6BF0",
+              color: siteConfig.theme.secondaryTextColor || "#ffffff",
+            }}
+          >
+            <div>
+              <span className="text-xs sm:text-sm font-bold text-white/80 uppercase tracking-wider block mb-4 sm:mb-6">
+                Need To Contact Us?
+              </span>
 
-                  {/* Address */}
-                  <div>
-                    <span className="text-xs text-neutral-text/45 font-medium block mb-1">
-                      Address:
-                    </span>
-                    <p className="text-xs sm:text-sm text-neutral-text/70 leading-relaxed font-medium">
-                      {siteConfig.address}
-                      <br />
-                      {siteConfig.corpName}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Follow Us Icons (Matching Reference) */}
-              <div className="pt-4">
-                <span className="text-xs text-neutral-text/45 font-medium block mb-3">
-                  Follow us
-                </span>
-                <div className="flex items-center gap-2.5">
-                  {/* Instagram */}
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-[#111] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-colors shadow-xs"
-                    aria-label="Instagram"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                  </a>
-
-                  {/* Facebook */}
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-[#111] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-colors shadow-xs"
-                    aria-label="Facebook"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                  </a>
-
-                  {/* LinkedIn */}
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-[#111] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-colors shadow-xs"
-                    aria-label="LinkedIn"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                      <rect x="2" y="9" width="4" height="12" />
-                      <circle cx="4" cy="4" r="2" />
-                    </svg>
-                  </a>
-
-                  {/* X / Twitter */}
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-[#111] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-colors shadow-xs"
-                    aria-label="X"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-black text-white tracking-tight leading-[1.18]">
+                Tell us about your issue so we can help you more quickly
+              </h2>
             </div>
 
-            {/* ══════════════════════════════════════════
-                RIGHT COLUMN: Form (Matching Reference)
-                ══════════════════════════════════════════ */}
-            <div className="lg:col-span-7">
-              {submitted ? (
-                <div className="bg-[#F8F8FA] rounded-2xl p-10 text-center flex flex-col items-center justify-center border border-black/5 min-h-[320px]">
-                  <div className="w-12 h-12 rounded-full bg-[#111] text-white flex items-center justify-center text-xl mb-4 font-bold shadow-md">
-                    ✓
-                  </div>
-                  <h3 className="text-xl font-bold text-[#111] mb-2">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="text-xs sm:text-sm text-neutral-text/60 max-w-sm mb-6 leading-relaxed">
-                    Thank you for reaching out. An electrical engineering specialist will review your inquiry and get back to you shortly.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold text-[#111] underline hover:text-[#5B6BF0] transition-colors cursor-pointer"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="space-y-5"
-                >
-                  {/* Two inputs side-by-side: Your Name & Email address */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-[#111] mb-2">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Your full name"
-                        className="w-full bg-[#F4F4F6] text-xs sm:text-sm text-[#111] placeholder:text-neutral-text/35 px-4 py-3.5 rounded-xl border border-transparent focus:border-black/20 focus:bg-white focus:outline-none transition-all"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-[#111] mb-2">
-                        Email address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="Your email address"
-                        className="w-full bg-[#F4F4F6] text-xs sm:text-sm text-[#111] placeholder:text-neutral-text/35 px-4 py-3.5 rounded-xl border border-transparent focus:border-black/20 focus:bg-white focus:outline-none transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Message textarea */}
-                  <div>
-                    <label className="block text-xs font-semibold text-[#111] mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      placeholder="Write something...."
-                      className="w-full bg-[#F4F4F6] text-xs sm:text-sm text-[#111] placeholder:text-neutral-text/35 p-4 rounded-2xl border border-transparent focus:border-black/20 focus:bg-white focus:outline-none transition-all resize-none"
-                    />
-                  </div>
-
-                  {/* Full-width Black Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full bg-[#111] hover:bg-[#333] text-white font-bold text-xs sm:text-sm py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              )}
+            <div className="pt-8">
+              <a
+                href={`mailto:${siteConfig.email}?subject=Customer%20Help%20Request`}
+                className="inline-flex items-center justify-center bg-white hover:bg-[#0F1217] text-[#0F1217] hover:text-white font-bold text-xs sm:text-sm px-8 py-3.5 rounded-2xl shadow-[0_8px_20px_rgba(0,0,0,0.12)] hover:shadow-lg transition-all duration-300 active:scale-95 cursor-pointer"
+              >
+                Get Help
+              </a>
             </div>
-
           </div>
+
+          {/* ──── RIGHT 2x2 CONTACT CARD ──── */}
+          <div className="lg:col-span-8 bg-[#F8F9FC] rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-12 lg:p-14 border border-black/[0.04] shadow-[0_15px_45px_rgba(0,0,0,0.03)] flex flex-col justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+
+              {/* 1. Phone Card */}
+              <div className="flex flex-col justify-between space-y-4 group">
+                <div className="space-y-2">
+                  <div className="w-10 h-10 text-[#0F1217] flex items-center justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-black text-[#0F1217] tracking-tight">
+                    Phone
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-neutral-text/70 font-medium leading-relaxed">
+                    {siteConfig.phone}
+                  </p>
+                </div>
+
+                <div>
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    className="w-11 h-11 rounded-full bg-[#0F1217] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-105 group/btn cursor-pointer"
+                    aria-label="Call support"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* 2. Email Card */}
+              <div className="flex flex-col justify-between space-y-4 group">
+                <div className="space-y-2">
+                  <div className="w-10 h-10 text-[#0F1217] flex items-center justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-black text-[#0F1217] tracking-tight">
+                    Email
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-neutral-text/70 font-medium leading-relaxed break-all">
+                    {siteConfig.email}
+                  </p>
+                </div>
+
+                <div>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="w-11 h-11 rounded-full bg-[#0F1217] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-105 group/btn cursor-pointer"
+                    aria-label="Send an email"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* 3. Address Card */}
+              <div className="flex flex-col justify-between space-y-4 group">
+                <div className="space-y-2">
+                  <div className="w-10 h-10 text-[#0F1217] flex items-center justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z" />
+                      <circle cx="12" cy="10" r="3" />
+                      <path d="M7 20v-1a5 5 0 0 1 10 0v1" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-black text-[#0F1217] tracking-tight">
+                    Address
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-neutral-text/70 font-medium leading-relaxed">
+                    {siteConfig.address}
+                    <br />
+                    <span className="text-neutral-text/50">{siteConfig.corpName}</span>
+                  </p>
+                </div>
+
+                <div>
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.address)}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-11 h-11 rounded-full bg-[#0F1217] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-105 group/btn cursor-pointer"
+                    aria-label="Open location in maps"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* 4. Return Card */}
+              <div className="flex flex-col justify-between space-y-4 group">
+                <div className="space-y-2">
+                  <div className="w-10 h-10 text-[#0F1217] flex items-center justify-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 8h16M16 4l4 4-4 4" />
+                      <path d="M20 16H4M8 12l-4 4 4 4" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-black text-[#0F1217] tracking-tight">
+                    Return
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-neutral-text/70 font-medium leading-relaxed">
+                    {siteConfig.address}
+                    <br />
+                    <span className="text-neutral-text/50">Docks &amp; Return Processing Center</span>
+                  </p>
+                </div>
+
+                <div>
+                  <Link
+                    href="/terms"
+                    className="w-11 h-11 rounded-full bg-[#0F1217] hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-105 group/btn"
+                    aria-label="View return terms"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -6,30 +6,30 @@ import Link from "next/link";
 const steps = [
   {
     number: "01",
-    label: "METALLURGY & QUENCHING",
-    title: "58 HRC Drop-Forged Steel",
-    desc: "High-carbon steel blades oil-quenched to 58 HRC for zero bending and superior edge retention.",
+    label: "METALLURGY",
+    title: "58 HRC Forged Steel",
+    desc: "High-carbon steel oil-quenched for zero bending and superior edge retention.",
     stat: "58 HRC Hardness",
     image: "/img/how_it_works_1.jpg",
-    caption: "Master Trowel with calibrated soil depth markings",
+    caption: "Drop-forged carbon steel trowel",
   },
   {
     number: "02",
     label: "TIMBER CRAFT",
-    title: "Lathe-Turned Ash Hardwood",
-    desc: "Sustainably harvested American white ash handles, linseed-oil sealed with solid brass ferrules.",
-    stat: "100% Solid Hardwood",
+    title: "Solid Ash Hardwood",
+    desc: "Sustainably harvested white ash handles sealed with natural linseed oil.",
+    stat: "100% Hardwood",
     image: "/img/how_it_works_2.jpg",
-    caption: "Precision Bypass Pruning Shears with alloy handles",
+    caption: "Precision bypass pruners with alloy handles",
   },
   {
     number: "03",
     label: "WORKSHOP DISPATCH",
-    title: "25° Bevel Honing & Packaging",
-    desc: "Honed to a 25° razor bevel, hand-inspected, and shipped in plastic-free packaging.",
-    stat: "25° Honed Edge",
+    title: "25° Honed Edge",
+    desc: "Razor-beveled, hand-inspected, and shipped in plastic-free packaging.",
+    stat: "25° Razor Bevel",
     image: "/img/how_it_works_3.jpg",
-    caption: "3-Prong Hand Cultivator aerating rich topsoil",
+    caption: "3-prong cultivator aerating topsoil",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             </h2>
           </div>
           <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md leading-relaxed">
-            Every Thornwick instrument is hand-forged from Japanese SK5 and high-carbon manganese steel, built to endure generations of planting.
+            Hand-forged from Japanese SK5 and carbon manganese steel, built to endure generations of planting.
           </p>
         </div>
 

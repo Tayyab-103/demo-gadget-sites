@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "58 HRC Tempered Carbon Steel",
-    desc: "Controlled oil quenching ensures maximum blade hardness against bending and chipping.",
+    title: "58 HRC Tempered Steel",
+    desc: "Controlled oil quenching prevents blade bending and chipping.",
   },
   {
-    title: "Lifetime Metallurgy Guarantee",
-    desc: "If any forging cracks or snaps during gardening, we repair or replace it unconditionally.",
+    title: "Lifetime Guarantee",
+    desc: "Unconditional repair or replacement against metallurgical failure.",
   },
   {
-    title: "100% Plastic-Free Craft & Packaging",
-    desc: "Lathe-turned solid hardwood handles, brass fittings, and recyclable kraft packaging.",
+    title: "100% Plastic-Free",
+    desc: "Solid hardwood handles, brass ferrules, and kraft packaging.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function QualityPromise() {
           </h2>
 
           <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Gardening is a lifelong pursuit. We guarantee every instrument that leaves our workshop.
+            Gardening is a lifelong pursuit. We guarantee every instrument from our workshop.
           </p>
         </div>
 
@@ -60,13 +60,13 @@ export default function QualityPromise() {
             
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <span className="text-xs uppercase font-bold text-[#78C470] tracking-widest block mb-1">
-                Hand-Forged in Small Batches
+                Foundry Standard
               </span>
               <h3 className="text-xl md:text-2xl font-extrabold">
-                Inspected &amp; Certified in Austin, Texas
+                Hand-Inspected &amp; Certified
               </h3>
               <p className="text-xs text-white/80 mt-1 max-w-md">
-                Every single piece is individually hand-checked for weight balance, blade bevel, and grain alignment.
+                Individually checked for weight balance, blade sharpness, and wood grain integrity.
               </p>
             </div>
           </div>

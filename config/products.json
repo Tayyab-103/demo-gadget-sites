@@ -2,7 +2,7 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Thornwick Master Forged Carbon Steel Hand Trowel",
+    "name": "Carbon Steel Hand Trowel",
     "description": "Hand-forged from heat-tempered high-carbon steel with an FSC-certified solid ash hardwood handle, calibrated depth markings, and a sharpened beveled scoop. Slices through compacted root systems, heavy clay, and stony soil with zero blade bend.",
     "image": "/img/products/garden_tools/trowel_1.jpg",
     "images": [
@@ -10,8 +10,8 @@
       "/img/products/garden_tools/trowel_2.jpg",
       "/img/products/garden_tools/trowel_3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/garden_tools/trowel_1.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Hand Cultivation & Soil Prep",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -30,7 +30,7 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Thornwick Precision Bypass Pruning Shears (SK5 Steel)",
+    "name": "Pruning Shears (SK5 Steel)",
     "description": "Precision-ground Japanese SK5 carbon steel blades coated in non-stick titanium nitride, with drop-forged alloy handles, shock-absorbing springs, and a brass thumb latch. Delivers effortless surgical cuts up to 1-inch thick without crushing delicate plant fibers.",
     "image": "/img/products/garden_tools/pruner_1.jpg",
     "images": [
@@ -38,8 +38,8 @@
       "/img/products/garden_tools/pruner_2.jpg",
       "/img/products/garden_tools/pruner_3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/garden_tools/pruner_1.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Botanical Pruning & Arbor Snips",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -58,16 +58,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Thornwick Heritage 3-Prong Claw Hand Cultivator",
+    "name": "3-Prong Claw Cultivator",
     "description": "Heavy-duty drop-forged manganese steel triple tines riveted into a weather-sealed kiln-dried European beechwood grip with brass ferrules. Built to break up crusted topsoil, aerate root zones, and extract deep-rooted weeds effortlessly.",
-    "image": "/img/products/garden_tools/cultivator_1.jpg",
+    "image": "/img/products/garden_tools/cultivator_2.jpg",
     "images": [
       "/img/products/garden_tools/cultivator_1.jpg",
       "/img/products/garden_tools/cultivator_2.jpg",
       "/img/products/garden_tools/cultivator_3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/garden_tools/cultivator_1.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Aeration & Subsoil Prep",
     "billingModel": 1,
     "ssPrice": "14.95",

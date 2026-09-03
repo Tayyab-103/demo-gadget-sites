@@ -7,60 +7,38 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const categories = ["All", "Care & Maintenance", "Lifetime Guarantee", "Shipping & Delivery", "Sharpening & Tech"];
+const categories = ["All", "Care", "Guarantee", "Shipping"];
 
 const faqItems = [
   {
     id: "care-1",
     number: "01",
-    category: "Care & Maintenance",
-    question: "How do I care for hand-forged carbon steel tools?",
+    category: "Care",
+    question: "How do I care for carbon steel tools?",
     answer:
-      "Wipe off soil with a dry cloth after use and occasionally apply a light coat of mineral or linseed oil to protect the steel and wooden handle.",
-    tip: "A yearly coat of boiled linseed oil preserves the timber grain against moisture.",
+      "Wipe off soil with a dry cloth after use and occasionally apply a light coat of mineral or linseed oil to protect the steel and hardwood handle.",
   },
   {
     id: "guarantee-1",
     number: "02",
-    category: "Lifetime Guarantee",
-    question: "What is covered under the Thornwick Lifetime Warranty?",
+    category: "Guarantee",
+    question: "What is covered under the Lifetime Warranty?",
     answer:
-      "Every forged blade and timber joint is covered for life against structural failure under standard garden use. If a tool fails, we will repair or replace it.",
-    tip: "Our stamped foundry hallmark serves as lifetime proof of authenticity.",
+      "Every forged blade and timber joint is covered for life against structural failure under standard garden use. We will repair or replace any defective piece.",
   },
   {
     id: "shipping-1",
     number: "03",
-    category: "Shipping & Delivery",
-    question: "What shipping carrier do you use and how fast is delivery?",
-    answer: `Orders ship from our workshop via ${siteConfig.shippingCarrier} within 1-2 business days, arriving in ${siteConfig.shippingPeriod} business days with tracking included.`,
-    tip: "Shipped in 100% plastic-free recyclable kraft packaging.",
+    category: "Shipping",
+    question: "How fast is shipping and delivery?",
+    answer: `Orders dispatch within 1-2 business days via ${siteConfig.shippingCarrier}, arriving in ${siteConfig.shippingPeriod} business days with tracking.`,
   },
   {
     id: "guarantee-2",
     number: "04",
-    category: "Lifetime Guarantee",
-    question: "Do you offer a trial period or money-back guarantee?",
-    answer: `Yes. We offer an unconditional 60-day garden trial. If you are not completely satisfied, contact us at ${siteConfig.email} for a full refund.`,
-    tip: "60 full days of risk-free soil testing.",
-  },
-  {
-    id: "tech-1",
-    number: "05",
-    category: "Sharpening & Tech",
-    question: "Can I re-sharpen the bypass pruner blades and trowel edges?",
-    answer:
-      "Yes. Our Japanese SK5 and manganese steel can easily be honed with a standard whetstone or diamond file at a 20° to 25° bevel angle.",
-    tip: "Use a 1000-grit whetstone along the factory bevel for a razor edge.",
-  },
-  {
-    id: "care-2",
-    number: "06",
-    category: "Care & Maintenance",
-    question: "Why do you use solid ash hardwood for handles?",
-    answer:
-      "American White Ash absorbs planting vibrations, reduces wrist fatigue, and resists splitting under heavy leverage.",
-    tip: "Hand-turned on traditional wood lathes with natural oil finish.",
+    category: "Guarantee",
+    question: "Do you offer a money-back trial?",
+    answer: `Yes. We offer an unconditional 60-day garden trial. If not satisfied, contact us at ${siteConfig.email} for a full refund.`,
   },
 ];
 
@@ -82,7 +60,7 @@ export default function Faq() {
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#265C1E]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 -left-40 w-96 h-96 bg-[#265C1E]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
         
         {/* Centered Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
@@ -197,23 +175,10 @@ export default function Faq() {
 
                 {/* Collapsible Content */}
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-black/5 animate-fadeIn">
-                    <p className="text-[#11281A]/80 text-xs sm:text-sm leading-relaxed mb-5">
+                  <div className="px-5 sm:px-6 pb-5 pt-2 border-t border-black/5 animate-fadeIn">
+                    <p className="text-[#11281A]/80 text-xs sm:text-sm leading-relaxed">
                       {faq.answer}
                     </p>
-
-                    {/* Pro Tip Box */}
-                    {faq.tip && (
-                      <div className="bg-[#F4F8F3] border border-[#265C1E]/15 rounded-xl p-4 flex items-start gap-3">
-                        <span className="text-base flex-shrink-0">🌿</span>
-                        <div className="text-xs text-[#11281A]/85 leading-relaxed">
-                          <strong className="text-[#265C1E] uppercase tracking-wider block text-[0.62rem] font-bold mb-0.5">
-                            Foundry Pro Tip
-                          </strong>
-                          {faq.tip}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>

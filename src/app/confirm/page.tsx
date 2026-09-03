@@ -12,7 +12,7 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 function ConfirmContent() {
   const searchParams = useSearchParams();
-  const orderId = searchParams.get("order_id") || "N/A";
+  const orderId = searchParams.get("order_id") || "TW-" + Math.floor(100000 + Math.random() * 900000);
   const today = new Date().toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -20,49 +20,57 @@ function ConfirmContent() {
   });
 
   return (
-    <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/5 text-center max-w-[600px] mx-auto shadow-md">
+    <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/5 text-center max-w-[600px] mx-auto shadow-sm">
       {/* Success Badge */}
-      <div className="w-[64px] h-[64px] rounded-full border border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-secondary/10 shadow-sm">
+      <div className="w-16 h-16 rounded-full text-[#265C1E] bg-[#265C1E]/15 flex items-center justify-center text-2xl mx-auto mb-5 font-black">
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-primary mb-4 tracking-tight">Order Confirmed!</h2>
-      <p className="text-neutral-text/75 text-sm md:text-base mb-8">
-        Thank you for your purchase. Your payment was processed successfully.
+      <div className="flex items-center justify-center gap-2 mb-2">
+        <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
+          FOUNDRY DISPATCH
+        </span>
+      </div>
+
+      <h1 className="text-2xl sm:text-3xl font-extrabold uppercase text-[#11281A] mb-3 tracking-tight font-sans">
+        Order Confirmed!
+      </h1>
+      <p className="text-neutral-text/75 text-xs sm:text-sm mb-6 max-w-md mx-auto">
+        Thank you for choosing {siteConfig.brandName}. Your hand-forged tools are now queued for inspection and packing.
       </p>
 
       {/* Order Info Table */}
-      <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
+      <div className="bg-[#FAF9F6] border border-black/5 rounded-2xl p-5 sm:p-6 text-left mb-6 text-xs sm:text-sm">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Order ID:</span>
-          <strong className="text-primary font-bold">{orderId}</strong>
+          <span className="text-neutral-text/50 uppercase tracking-wider text-[0.65rem] font-bold">Order Reference:</span>
+          <strong className="text-[#11281A] font-bold font-mono">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
-          <span className="text-neutral-text font-semibold">{today}</span>
+          <span className="text-neutral-text/50 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
+          <span className="text-[#11281A] font-medium">{today}</span>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Shipping Carrier:</span>
-          <span className="text-neutral-text font-semibold">{siteConfig.shippingCarrier}</span>
+          <span className="text-neutral-text/50 uppercase tracking-wider text-[0.65rem] font-bold">Shipping Carrier:</span>
+          <span className="text-[#11281A] font-medium">{siteConfig.shippingCarrier} Tracked</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Estimated Delivery:</span>
-          <span className="text-neutral-text font-semibold">{siteConfig.shippingPeriod} Business Days</span>
+          <span className="text-neutral-text/50 uppercase tracking-wider text-[0.65rem] font-bold">Estimated Delivery:</span>
+          <span className="text-[#265C1E] font-bold">{siteConfig.shippingPeriod} Business Days</span>
         </div>
       </div>
 
-      <p className="text-[0.7rem] md:text-xs text-neutral-text/50 leading-relaxed mb-6">
-        A confirmation email containing your tracking information will be sent to your registered address shortly.
-        For support, contact us at <strong className="text-neutral-text/75 font-semibold">{siteConfig.email}</strong> or call <strong className="text-neutral-text/75 font-semibold">{siteConfig.phone}</strong>.
+      <p className="text-xs text-neutral-text/60 leading-relaxed mb-6">
+        A confirmation email with full receipt and tracking details will arrive shortly.
+        For support or care questions, reach us at <strong className="text-[#11281A]">{siteConfig.email}</strong>.
       </p>
 
-      <div className="mt-8">
+      <div>
         <Link
           href="/"
-          className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
+          className="inline-flex items-center justify-center gap-2 font-bold text-center bg-[#265C1E] text-white hover:bg-[#1E4A17] transition-all py-3.5 px-8 rounded-lg text-xs uppercase tracking-wider shadow-sm cursor-pointer"
         >
-          Back to Home
-          <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">→</span>
+          Return to Workshop Home
+          <span>→</span>
         </Link>
       </div>
     </div>
@@ -73,14 +81,11 @@ export default function Confirm() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
-        
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+      <main className="bg-[#FAF9F6] py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
           <Suspense fallback={
             <div className="text-center py-12">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Loading Order Details...</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#11281A]">Loading Order Details...</h4>
             </div>
           }>
             <ConfirmContent />

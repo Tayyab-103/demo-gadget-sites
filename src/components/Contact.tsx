@@ -15,7 +15,6 @@ const contactImages = [
 export default function Contact() {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
-  const [topic, setTopic] = useState("General Support");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -128,32 +127,6 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                {/* Topic Selector */}
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-2">
-                    Inquiry Topic
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      "General Support",
-                      "Tool Advice",
-                      "Workshop Inquiry",
-                    ].map((item) => (
-                      <button
-                        type="button"
-                        key={item}
-                        onClick={() => setTopic(item)}
-                        className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-center ${
-                          topic === item
-                            ? "bg-[#265C1E] text-white shadow-xs"
-                            : "bg-[#FAF9F6] text-neutral-text/80 border border-black/5 hover:border-[#265C1E]/40"
-                        }`}
-                      >
-                        {item}
-                      </button>
-                    ))}
-                  </div>
-                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>

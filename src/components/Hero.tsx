@@ -51,41 +51,10 @@ const toolCategories = [
   },
 ];
 
-const productGallery = [
-  {
-    id: "product1",
-    label: "SOIL TROWEL",
-    title: "Carbon Steel Hand Trowel",
-    image: "/img/products/garden_tools/trowel_1.jpg",
-    thumb: "/img/products/garden_tools/trowel_1.jpg",
-  },
-  {
-    id: "product2",
-    label: "BYPASS PRUNER",
-    title: "Japanese SK5 Pruning Snips",
-    image: "/img/products/garden_tools/pruner_main.jpg",
-    thumb: "/img/products/garden_tools/pruner_main.jpg",
-  },
-  {
-    id: "product3",
-    label: "CULTIVATOR",
-    title: "3-Prong Claw Hand Cultivator",
-    image: "/img/products/garden_tools/cultivator_1.jpg",
-    thumb: "/img/products/garden_tools/cultivator_1.jpg",
-  },
-];
-
 export default function Hero() {
-  const [activeThumbIndex, setActiveThumbIndex] = useState(1); // Default middle (Bypass Pruner) active
   const { toggleCart, getCartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const nextThumb = () => {
-    setActiveThumbIndex((prev) => (prev + 1) % productGallery.length);
-  };
-
-  const activeProduct = productGallery[activeThumbIndex];
 
   return (
     <section className="relative w-full overflow-hidden bg-white text-[#11281A] select-none">
@@ -98,14 +67,13 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         
         {/* Right Green Photographic Canvas */}
-        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%] transition-opacity duration-700">
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%]">
           <img
-            key={activeProduct.image}
-            src={activeProduct.image}
-            alt={activeProduct.title}
+            src="/img/hero_section.jpg"
+            alt="Thornwick Hand-Forged Garden Tools"
             className="w-full h-full object-cover object-center"
             onError={(e) => {
-              e.currentTarget.src = "/img/products/garden_tools/pruner_main.jpg";
+              e.currentTarget.src = "/img/products/hero_section.jpg";
             }}
           />
           
@@ -129,7 +97,7 @@ export default function Hero() {
       {/* =========================================================================
           TOP INTEGRATED HEADER (4 Core Pages: HOME, PRODUCTS, ABOUT US, CONTACT US)
           ========================================================================= */}
-      <div className="relative z-30 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 pt-6 pb-4 flex items-center justify-between">
+      <div className="relative z-30 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 pt-6 pb-4 flex items-center justify-between">
         
         {/* Left: Hamburger Menu Icon + Brand Name */}
         <div className="flex items-center gap-3.5">
@@ -205,7 +173,7 @@ export default function Hero() {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="relative z-40 bg-white border-b border-black/10 px-6 py-4 flex flex-col gap-2 shadow-lg md:hidden">
+        <div className="relative z-40 bg-white border-b border-black/10 px-6 sm:px-10 lg:px-14 py-4 flex flex-col gap-2 shadow-lg md:hidden">
           {[
             { href: "/", label: "HOME" },
             { href: "/shop", label: "PRODUCTS" },
@@ -226,7 +194,7 @@ export default function Hero() {
 
       {/* Search Input Dropdown */}
       {isSearchOpen && (
-        <div className="relative z-40 bg-white border-b border-black/10 px-6 py-3 max-w-[1440px] mx-auto">
+        <div className="relative z-40 bg-white border-b border-black/10 px-6 sm:px-10 lg:px-14 py-3 max-w-[1440px] mx-auto">
           <input
             type="text"
             placeholder="Search hand trowel, bypass pruners, soil cultivator..."
@@ -238,7 +206,7 @@ export default function Hero() {
       {/* =========================================================================
           HERO MAIN CONTENT AREA (Garden Tool Products & E-Commerce Branding)
           ========================================================================= */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-12 pt-6 sm:pt-10 pb-12 lg:pb-16 min-h-[480px] sm:min-h-[540px] lg:min-h-[580px] flex flex-col justify-between">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-14 pt-8 sm:pt-14 pb-16 sm:pb-20 lg:pb-24 min-h-[480px] sm:min-h-[540px] lg:min-h-[600px] flex flex-col justify-center">
         
         <div className="max-w-md lg:max-w-lg xl:max-w-xl">
           
@@ -288,86 +256,6 @@ export default function Hero() {
 
         </div>
 
-      </div>
-
-      {/* =========================================================================
-          BOTTOM VISUAL GALLERY & INFORMATION STRIP (Authentic Garden Tool Products)
-          ========================================================================= */}
-      <div className="relative z-20 max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-12 pb-8">
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-black/5 shadow-[0_10px_35px_rgba(0,0,0,0.06)] flex flex-col lg:flex-row items-center justify-between gap-5">
-          
-          {/* Left: 3 Garden Tool Thumbnails (Soil Trowel, Bypass Pruner, Cultivator) */}
-          <div className="flex items-center gap-3 w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0">
-            {productGallery.map((item, idx) => {
-              const isActive = activeThumbIndex === idx;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveThumbIndex(idx)}
-                  className={`flex flex-col items-center gap-1.5 p-1 rounded-xl transition-all duration-200 cursor-pointer flex-shrink-0 ${
-                    isActive
-                      ? "ring-2 ring-[#265C1E] bg-[#FAF9F6] shadow-xs"
-                      : "opacity-60 hover:opacity-100"
-                  }`}
-                >
-                  <div className="w-18 h-12 sm:w-22 sm:h-14 rounded-lg overflow-hidden bg-neutral-200 border border-black/5">
-                    <img
-                      src={item.thumb}
-                      alt={item.label}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "/img/products/garden_tools/pruner_main.jpg";
-                      }}
-                    />
-                  </div>
-                  <span className={`text-[0.55rem] sm:text-[0.58rem] font-bold uppercase tracking-wider ${isActive ? "text-[#265C1E] font-black" : "text-neutral-text/60"}`}>
-                    {item.label}
-                  </span>
-                </button>
-              );
-            })}
-
-            {/* Cycle Arrow Button (>) */}
-            <button
-              onClick={nextThumb}
-              aria-label="Next Tool"
-              className="w-8 h-8 rounded-full bg-[#FAF9F6] hover:bg-[#265C1E] hover:text-white border border-black/10 flex items-center justify-center text-[#11281A] transition-colors cursor-pointer flex-shrink-0 ml-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Middle: HEIRLOOM GARDEN TOOL FOUNDRY */}
-          <div className="text-center lg:text-left flex-1 px-2 sm:px-4">
-            <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#265C1E]">
-              HEIRLOOM GARDEN TOOL FOUNDRY
-            </h3>
-            <p className="text-[0.62rem] sm:text-[0.68rem] text-neutral-text/60 font-medium">
-              Hand-Forged Carbon Steel &amp; Solid Ash Hardwood Handles
-            </p>
-          </div>
-
-          {/* Right: 100% LIFETIME WARRANTY Card */}
-          <div className="flex items-center gap-3 bg-[#FAF9F6] border border-black/5 px-4 py-2.5 rounded-xl flex-shrink-0">
-            <div className="w-7 h-7 rounded-lg bg-[#265C1E]/10 text-[#265C1E] flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11.5 14.5 15 9" />
-              </svg>
-            </div>
-            <div className="text-left">
-              <div className="text-[0.62rem] font-black uppercase tracking-wider text-[#265C1E]">
-                100% LIFETIME WARRANTY
-              </div>
-              <div className="text-[0.55rem] text-neutral-text/50 font-bold uppercase tracking-wider">
-                FSC CERTIFIED ASH &amp; BEECH TIMBER
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
 
     </section>

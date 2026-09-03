@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
@@ -14,100 +15,147 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
-
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
-            Terms &amp; Conditions
-          </h1>
-
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
-            <p>
-              This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the user,
-              conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
-            </p>
-            <p>
-              By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be
-              bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
-              terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of
-              Service apply to all users of the site, including without limitation users who are browsers, vendors,
-              customers, merchants, and/ or contributors of content.
-            </p>
-            <p>
-              Please read these Terms of Service carefully before accessing or using our website. By accessing or using
-              any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the
-              terms and conditions of this agreement, then you may not access the website or use any services.
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
-            <p>
-              We offer hand-forged carbon steel garden tools, precision bypass pruning shears, and heirloom horticultural instruments through one-time purchases (Straight Sale) under the following pricing structures:
-            </p>
-
-            {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
-              {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-primary mb-3">
-                    {product.name}
-                  </h4>
-                  <ul className="list-disc pl-5 m-0 space-y-3">
-                    {product.bundles && product.bundles.map((bundle) => {
-                      const totalCost = parseFloat(String(bundle.price));
-                      const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
-                        ? "FREE Shipping & Handling"
-                        : `$${product.ssShipping} Shipping & Handling`;
-
-                      return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Tools Multi-Pack" : "Tool"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
-                          Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
+      <main className="flex-grow bg-[#FAF9F6]">
+        {/* Dedicated Legal Header Banner */}
+        <section className="bg-[#132B1C] text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
+          <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 text-left">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50 mb-3">
+              <Link href="/" className="hover:text-[#78C470] transition-colors">Home</Link>
+              <span>/</span>
+              <span className="text-[#78C470]">Legal</span>
             </div>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
-            <p>
-              By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
-              or province of residence, or that you are the age of majority in your state or province of residence and you
-              have given us your consent to allow any of your minor dependents to use this site.
-            </p>
-            <p>
-              You may not use our garden tools or instruments for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to safety, trade, or copyright laws).
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
-            <p>
-              All orders are hand-inspected, packed with plastic-free recyclable materials, and shipped within 1-2 business days of payment confirmation. We ship our tool shipments via{" "}
-              {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched from our foundry facility.
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - 60-DAY FIELD TRIAL &amp; RETURN POLICY</h3>
-            <p>
-              We stand behind our metallurgical craftsmanship with a 60-day garden field trial and satisfaction guarantee. If you are not completely satisfied with your tool's performance in the garden,
-              please contact our workshop support team at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
-            </p>
-            <p>
-              Returns must be safely packaged and shipped to our designated workshop facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
-              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-sans mb-3">
+              Terms &amp; <span className="text-[#78C470]">Conditions</span>
+            </h1>
+            <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
+              Foundry purchase agreements, warranty coverage, and terms of service for {siteConfig.brandName}.
             </p>
           </div>
-        </div>
+        </section>
+
+        {/* Content Section */}
+        <section className="py-16 md:py-20">
+          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
+            <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-black/5 shadow-sm leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
+              
+              <div className="border-b border-black/5 pb-6">
+                <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E] block mb-2">
+                  FOUNDRY TERMS OF SERVICE
+                </span>
+                <p>
+                  This website is operated by <strong className="text-[#11281A] font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+                  “us” and “our” refer to <strong className="text-[#11281A] font-bold">{siteConfig.brandName}</strong>. By visiting our site and/or purchasing tools from us,
+                  you agree to be bound by the following terms and conditions.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                  Overview &amp; Acceptance
+                </h3>
+                <p className="mb-3">
+                  Please read these Terms of Service carefully before accessing or making a purchase on our website. By accessing or using
+                  any part of the site, you agree to be bound by these terms. If you do not agree to all terms and conditions,
+                  then you may not access the website or purchase our instruments.
+                </p>
+              </div>
+
+              {/* Products & Pricing Points Card */}
+              <div className="border-t border-black/5 pt-6">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                  Products Offered &amp; Transparent Billing Terms
+                </h3>
+                <p className="mb-4">
+                  We offer hand-forged carbon steel garden tools, precision pruning shears, and heirloom horticultural tools through one-time purchases (Straight Sale) under the following clear terms:
+                </p>
+
+                <div className="bg-[#FAF9F6] border border-black/5 rounded-2xl p-5 sm:p-6 space-y-6">
+                  {products.map((product) => (
+                    <div key={product.id} className="pb-4 border-b border-black/5 last:border-0 last:pb-0">
+                      <h4 className="text-xs sm:text-sm font-extrabold text-[#11281A] uppercase tracking-wider mb-2">
+                        {product.name}
+                      </h4>
+                      <ul className="list-disc pl-5 space-y-2 text-xs text-neutral-text/80">
+                        {product.bundles && product.bundles.map((bundle) => {
+                          const totalCost = parseFloat(String(bundle.price));
+                          const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
+                            ? "FREE Shipping"
+                            : `$${product.ssShipping} Shipping`;
+
+                          return (
+                            <li key={bundle.quantity}>
+                              Upon ordering a <strong className="text-[#11281A] font-bold">{bundle.quantity} {bundle.quantity > 1 ? "Tools Multi-Pack" : "Tool"}</strong>,
+                              you will be charged a singular fee of <strong className="text-[#11281A] font-bold">${totalCost.toFixed(2)}</strong> ({shippingText}) for {product.name}.
+                              Delivery is fulfilled via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days.
+                              The charge on your statement will appear as <strong className="text-[#11281A] font-bold">“{siteConfig.descriptor}”</strong>.
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-t border-black/5 pt-6">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                  Section 1 — Online Store Guidelines
+                </h3>
+                <p>
+                  By agreeing to these Terms, you represent that you are at least the age of majority in your state or province of residence.
+                  You may not use our garden tools or site for any unauthorized or unlawful purpose, nor violate any laws in your jurisdiction.
+                </p>
+              </div>
+
+              <div className="border-t border-black/5 pt-6">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                  Section 2 — Shipping &amp; Plastic-Free Packaging
+                </h3>
+                <p>
+                  All orders are hand-inspected, safely packaged with recyclable kraft materials, and dispatched from our workshop within 1-2 business days.
+                  We ship via {siteConfig.shippingCarrier} with expected delivery in {siteConfig.shippingPeriod} business days. You will receive an automated tracking code via email upon dispatch.
+                </p>
+              </div>
+
+              <div className="border-t border-black/5 pt-6">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                  Section 3 — 60-Day Field Trial &amp; Lifetime Foundry Warranty
+                </h3>
+                <p className="mb-3">
+                  We stand behind our steel metallurgy with a 60-day garden soil trial. If you are not completely satisfied with your tool&apos;s performance,
+                  reach our workshop support team at <strong className="text-[#11281A] font-bold">{siteConfig.phone}</strong> or email{" "}
+                  <strong className="text-[#11281A] font-bold">{siteConfig.email}</strong> to obtain an RMA return authorization.
+                </p>
+                <p>
+                  Workshop returns address: <strong className="text-[#11281A] font-bold">{siteConfig.address}</strong>.
+                  Refunds are credited to the original payment method within 5-7 business days of receipt.
+                </p>
+              </div>
+
+              <div className="border-t border-black/5 pt-6 bg-[#FAF9F6] p-6 rounded-2xl">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-2 uppercase tracking-wider font-sans">
+                  Foundry Inquiries &amp; Legal Notices
+                </h3>
+                <div className="flex flex-col sm:flex-row gap-4 text-xs font-bold text-[#11281A]">
+                  <div>
+                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Email:</span>
+                    <a href={`mailto:${siteConfig.email}`} className="hover:text-[#265C1E] transition-colors">{siteConfig.email}</a>
+                  </div>
+                  <div>
+                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Phone:</span>
+                    <a href={`tel:${siteConfig.phone}`} className="hover:text-[#265C1E] transition-colors">{siteConfig.phone}</a>
+                  </div>
+                  <div>
+                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Foundry:</span>
+                    <span>{siteConfig.address}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

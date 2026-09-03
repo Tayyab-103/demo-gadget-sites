@@ -138,11 +138,11 @@ export default function ProductDetail() {
                 {product.description}
               </p>
 
-              {/* QUANTITY SELECTOR DROPDOWN (Requested Feature) */}
+              {/* QUANTITY SELECTOR DROPDOWN */}
               <div className="mb-6 bg-[#FAF9F6] p-4 rounded-2xl border border-black/5">
                 <div className="flex items-center justify-between mb-2">
                   <label htmlFor="quantity-select" className="text-xs font-bold uppercase tracking-wider text-[#11281A]">
-                    Select Quantity (Dropdown):
+                    Select Quantity:
                   </label>
                   <span className="text-xs font-bold text-[#265C1E]">
                     {selectedBundle.quantity > 1 ? `${selectedBundle.quantity} Tools Selected` : "1 Single Instrument"}
@@ -185,49 +185,6 @@ export default function ProductDetail() {
                   </div>
                 </div>
               </div>
-
-              {/* Bundle Packages Cards Selector */}
-              {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#11281A] mb-2.5">
-                    Or Click a Package Tier:
-                  </h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {product.bundles.slice(0, 4).map((bundle) => {
-                      const isActive = selectedBundle.quantity === bundle.quantity;
-                      const regularPrice = startingPrice * bundle.quantity;
-                      const savings = regularPrice - bundle.price;
-                      
-                      return (
-                        <div
-                          key={bundle.quantity}
-                          onClick={() => setSelectedBundle(bundle)}
-                          className={`border rounded-xl p-3 flex flex-col justify-between cursor-pointer transition-all ${
-                            isActive
-                              ? "border-[#265C1E] bg-[#265C1E]/5 shadow-xs"
-                              : "border-black/10 bg-white hover:border-[#265C1E]/40"
-                          }`}
-                        >
-                          <div className="flex items-center justify-between mb-1">
-                            <strong className="text-xs font-bold text-[#11281A]">
-                              {bundle.quantity > 1 ? `${bundle.quantity} Pack` : "1 Single"}
-                            </strong>
-                            {bundle.quantity > 1 && savings > 0 && (
-                              <span className="bg-[#265C1E] text-white text-[0.55rem] font-bold px-1.5 py-0.5 rounded">
-                                Save ${savings.toFixed(0)}
-                              </span>
-                            )}
-                          </div>
-
-                          <div className="text-sm font-black text-[#132B1C]">
-                            ${parseFloat(String(bundle.price)).toFixed(2)}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
 
               {/* Add to Cart Actions */}
               <div className="flex gap-4 mb-6">

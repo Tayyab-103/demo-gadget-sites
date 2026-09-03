@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary text-white pt-16 pb-12 border-t border-white/10" id="footer">
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-8">
+      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
         
         {/* Top Newsletter & Brand Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-16 pb-16 border-b border-white/10">

@@ -10,7 +10,7 @@ const products = productsData as unknown as Product[];
 export default function ProductGrid() {
   return (
     <section className="py-16 md:py-24 bg-white border-b border-black/[0.06]" id="shop">
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 pb-6 border-b border-black/[0.08]">

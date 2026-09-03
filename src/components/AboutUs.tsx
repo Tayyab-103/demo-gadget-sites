@@ -32,7 +32,7 @@ const pillars = [
 export default function AboutUs() {
   return (
     <section className="py-14 md:py-20 bg-[#FAF8F5] border-b border-black/[0.06]" id="about">
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Story Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start mb-12 md:mb-16">

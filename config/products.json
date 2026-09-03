@@ -2,16 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Everden Classic Organic Cotton Family Crew Tee",
-    "description": "Spun from 100% certified organic combed ring-spun cotton, our signature family crew tee delivers breathable softness, relaxed all-day drape, and reinforced twin-needle stitching built to withstand everyday family adventures and repeated laundering.",
-    "image": "/img/product_crew_tee.jpg",
+    "name": "Premium Cotton Crew Tee",
+    "description": "Spun from 100% organic combed ring-spun cotton, our signature family crew tee delivers breathable softness, relaxed all-day drape, and reinforced twin-needle stitching built to withstand everyday family adventures and repeated laundering.",
+    "image": "/img/product1.jpg",
     "images": [
-      "/img/product_crew_tee.jpg",
-      "/img/hero_family_apparel.jpg",
-      "/img/product_fleece_pullover.jpg"
+      "/img/product1.jpg",
+      "/img/product1-1.jpg",
+      "/img/product1-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product_crew_tee.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Everyday Family Essentials",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -30,16 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "CloudKnit Cozy Fleece Family Lounge Pullover",
+    "name": "Cozy Fleece Pullover",
     "description": "Engineered with brushed French terry fleece and ribbed comfort cuffs, this timeless family pullover offers thermal insulation without excess bulk. Designed with an inclusive relaxed silhouette that layers seamlessly for cozy weekends, school runs, and evening family strolls.",
-    "image": "/img/product_fleece_pullover.jpg",
+    "image": "/img/product2.jpg",
     "images": [
-      "/img/product_fleece_pullover.jpg",
-      "/img/hero_family_apparel.jpg",
-      "/img/product_overcoat.jpg"
+      "/img/product2.jpg",
+      "/img/product2-1.jpg",
+      "/img/product2-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product_fleece_pullover.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Casual Knitwear & Loungewear",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -58,16 +58,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Heritage Weather-Resistant Family Comfort Overcoat",
+    "name": "Weather-Resistant Overcoat",
     "description": "A versatile, water-resistant family overcoat tailored from breathable micro-twill. Features protective storm plackets, deep utility fleece-lined pockets, and clean tailoring to keep parents and youth warm, dry, and impeccably styled through every season.",
-    "image": "/img/product_overcoat.jpg",
+    "image": "/img/product3.jpg",
     "images": [
-      "/img/product_overcoat.jpg",
-      "/img/hero_family_apparel.jpg",
-      "/img/product_crew_tee.jpg"
+      "/img/product3.jpg",
+      "/img/product3-1.jpg",
+      "/img/product3-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product_overcoat.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "All-Season Outerwear",
     "billingModel": 1,
     "ssPrice": "14.95",

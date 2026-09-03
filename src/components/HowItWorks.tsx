@@ -11,7 +11,7 @@ const steps = [
     step: "01",
     title: "Select Styles",
     desc: "Choose foundational organic wardrobe staples and curated family bundles.",
-    image: "/img/how_step1.jpg",
+    image: "/img/how_select_styles.jpg",
   },
   {
     step: "02",
@@ -30,7 +30,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="py-14 md:py-20 bg-[#FAF8F5] border-b border-black/[0.06]" id="how-it-works">
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">

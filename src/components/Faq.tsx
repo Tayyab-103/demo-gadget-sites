@@ -42,7 +42,7 @@ export default function Faq() {
 
   return (
     <section className="py-14 md:py-20 bg-[#FAF8F5] border-b border-black/[0.06]" id="faq">
-      <div className="w-full max-w-4xl mx-auto px-6">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-12">

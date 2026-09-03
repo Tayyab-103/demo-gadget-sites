@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary text-white py-16 md:py-24" id="footer">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 mb-20 md:mb-28">
           
@@ -79,10 +81,21 @@ export default function Footer() {
             <div className="flex flex-col">
               <h4 className="text-white/50 text-xs mb-5 font-bold uppercase tracking-wider">Wardrobe</h4>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white/90 text-sm hover:text-secondary transition-colors">Organic Crew Tee</Link></li>
-                <li><Link href="/product/product2" className="text-white/90 text-sm hover:text-secondary transition-colors">Fleece Pullover</Link></li>
-                <li><Link href="/product/product3" className="text-white/90 text-sm hover:text-secondary transition-colors">Comfort Overcoat</Link></li>
-                <li><Link href="/shop" className="text-white/90 text-sm hover:text-secondary transition-colors">All Essentials</Link></li>
+                {products.map((p) => (
+                  <li key={p.id}>
+                    <Link
+                      href={`/product/${p.id}`}
+                      className="text-white/90 text-sm hover:text-secondary transition-colors line-clamp-1"
+                    >
+                      {p.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/shop" className="text-white/90 text-sm hover:text-secondary transition-colors">
+                    All Essentials &rarr;
+                  </Link>
+                </li>
               </ul>
             </div>
 

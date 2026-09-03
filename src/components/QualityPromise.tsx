@@ -27,7 +27,7 @@ const standards = [
 export default function QualityPromise() {
   return (
     <section className="py-14 md:py-20 bg-white border-b border-black/[0.06]" id="quality-promise">
-      <div className="w-full max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
@@ -46,7 +46,7 @@ export default function QualityPromise() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-black/[0.08] bg-[#FAF8F5]">
               <img
-                src="/img/textile_standards_craft.jpg"
+                src="/img/pexels-prolificpeople-37704845.jpg"
                 alt={`${siteConfig.brandName} textile standards`}
                 className="w-full h-full object-cover"
               />

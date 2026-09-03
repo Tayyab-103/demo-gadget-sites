@@ -1,49 +1,57 @@
 "use client";
 
 import React from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
 
-const featuresData = [
+const siteConfig = siteConfigData as unknown as SiteConfig;
+
+const featuresList = [
   {
-    title: "100% Certified Organic",
-    description: "Combed ring-spun organic fibers that are naturally breathable, soft, and gentle on sensitive skin.",
+    number: "01",
+    title: "Fast Delivery",
+    subtitle: `Delivered via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days`,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z"></path>
-        <path d="M12 12v10"></path>
-        <path d="M8 22h8"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13"></rect>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+        <circle cx="18.5" cy="18.5" r="2.5"></circle>
       </svg>
     ),
   },
   {
-    title: "Hypoallergenic Dyes",
-    description: "Colored using OEKO-TEX non-toxic dyes that won't irritate children or bleed during weekly washing.",
+    number: "02",
+    title: "Easy Returns",
+    subtitle: `${siteConfig.trialPeriod || 60}-Day hassle-free exchanges and money-back guarantee`,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 7v6h6"></path>
+        <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+      </svg>
+    ),
+  },
+  {
+    number: "03",
+    title: "Trusted Quality",
+    subtitle: "100% Certified organic textiles and reinforced double-needle stitching",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <polyline points="9 12 11 14 15 10"></polyline>
       </svg>
     ),
   },
   {
-    title: "Reinforced Construction",
-    description: "Double-needle stitching and anti-pill finishes ensure each piece endures seasons of active family wear.",
+    number: "04",
+    title: "Satisfaction",
+    subtitle: "Over 10,000+ happy families outfitted with premium comfort",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 2v7.31"></path>
-        <path d="M14 2v7.31"></path>
-        <path d="M8.5 2h7"></path>
-        <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
-        <path d="M5.52 16h12.96"></path>
-      </svg>
-    ),
-  },
-  {
-    title: "60-Day Easy Returns",
-    description: "Try every garment in the comfort of your home. Love the fit or exchange it with zero restocking fees.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
-        <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
-        <path d="M12 6v12"></path>
+        <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+        <line x1="9" y1="9" x2="9.01" y2="9"></line>
+        <line x1="15" y1="9" x2="15.01" y2="9"></line>
       </svg>
     ),
   },
@@ -51,34 +59,47 @@ const featuresData = [
 
 export default function Features() {
   return (
-    <section className="py-16 md:py-24 bg-neutral-bg" id="features">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-[650px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">The Everden Standard</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">
-            Crafted for Unmatched Family Comfort
-          </h2>
-          <p className="text-neutral-text/65">
-            We blend certified organic textiles with durable tailoring to deliver foundational clothing that feels incredible from day one.
-          </p>
+    <section className="py-16 md:py-24 bg-[#FAF8F5] border-b border-black/[0.06]" id="features">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header matching image style */}
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-secondary text-xs sm:text-sm font-bold uppercase tracking-[0.25em] inline-flex items-center gap-3">
+            OUR FEATURES
+            <span className="w-8 h-[2px] bg-secondary inline-block" />
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuresData.map((feature, idx) => (
+        {/* Horizontal Rows List with top, dividing, and bottom borders */}
+        <div className="border-t border-b border-black/10 divide-y divide-black/10">
+          {featuresList.map((item) => (
             <div
-              className="bg-white rounded-3xl p-7 border border-black/5 hover:border-secondary/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
-              key={idx}
+              key={item.number}
+              className="group flex items-center justify-between py-6 sm:py-8 px-3 sm:px-6 hover:bg-white/60 transition-all duration-300 cursor-default"
             >
-              <div className="mb-5 w-14 h-14 rounded-2xl bg-secondary/15 text-secondary flex items-center justify-center">
-                {feature.icon}
+              {/* Left Number & Title */}
+              <div className="flex items-center">
+                <span className="text-neutral-text/40 group-hover:text-secondary font-mono text-sm sm:text-base font-semibold mr-6 sm:mr-10 transition-colors">
+                  {item.number}
+                </span>
+                <div>
+                  <h3 className="text-lg sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-primary group-hover:text-secondary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-neutral-text/60 text-xs sm:text-sm mt-0.5 hidden sm:block">
+                    {item.subtitle}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-primary">{feature.title}</h3>
-              <p className="text-xs md:text-sm text-neutral-text/65 leading-relaxed mb-0">
-                {feature.description}
-              </p>
+
+              {/* Right Circle Icon Badge */}
+              <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-secondary group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0 ml-4">
+                {item.icon}
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

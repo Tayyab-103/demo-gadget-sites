@@ -9,6 +9,7 @@ import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
 import ProductCarousel from "@/components/ProductCarousel";
+import ProductGalleryMarquee from "@/components/ProductGalleryMarquee";
 
 const products = productsData as unknown as Product[];
 
@@ -193,6 +194,27 @@ export default function ProductDetail() {
 
             </div>
           </div>
+
+          {/* Full-Width Lookbook Marquee Gallery */}
+          <div className="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-black/[0.08]">
+            <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+              <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] block mb-2">
+                Atelier Gallery Stream
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
+                The {product.name} In Detail
+              </h2>
+              <p className="text-neutral-text/70 text-xs sm:text-sm mt-2 max-w-lg mx-auto leading-relaxed">
+                Take a closer look at our organic combed cottons, tailored fits, and reinforced stitching engineered for lasting family life.
+              </p>
+            </div>
+
+            <ProductGalleryMarquee
+              images={product.images && product.images.length > 0 ? product.images : [product.image]}
+              productName={product.name}
+            />
+          </div>
+
         </div>
       </main>
       <Footer />

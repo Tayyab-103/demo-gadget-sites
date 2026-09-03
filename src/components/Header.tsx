@@ -157,7 +157,7 @@ export default function Header() {
 
             {/* Solid Pink Badge */}
             <span className="absolute -top-0.5 -right-1.5 bg-[#FF6B8B] text-white rounded-full min-w-[17px] h-[17px] px-1 text-[0.62rem] font-black flex items-center justify-center shadow-xs">
-              {getCartCount() > 0 ? getCartCount() : 3}
+              {getCartCount()}
             </span>
           </button>
 

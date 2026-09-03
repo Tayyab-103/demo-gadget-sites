@@ -7,9 +7,10 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Engineered electrical parts, high-voltage diagnostic equipment, and power conversion modules.`;
+const siteTitle = `${siteConfig.brandName} | Precision Electrical Parts & Industrial Equipments`;
+const siteDescription = `Industrial-grade electrical parts, precision digital multimeters, continuous power adapter cables, and high-carbon magnetic drive bits for electricians, technicians, and commercial facilities.`;
 
-// Preload the most common fonts
+// Preload common fonts
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -38,19 +39,61 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: siteConfig.brandName,
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteConfig.brandName}`,
+  },
   description: siteDescription,
+  keywords: [
+    "Electrical Parts and Equipments",
+    "Digital LCD Multimeter Tester",
+    "Magnetic Screwdriver Bits",
+    "Power Adapter Cables",
+    "True-RMS Precision Diagnostic Tools",
+    "Industrial Electrical Hardware",
+    "Commercial Electrician Tools",
+    "NIST Factory Calibrated Multimeters",
+    "Voltspire Electrical Collective",
+  ],
+  authors: [{ name: siteConfig.brandName }],
+  creator: siteConfig.brandName,
+  publisher: siteConfig.corpName,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: siteConfig.brandName,
-    description: siteDescription,
-    url: siteUrl,
-    siteName: siteConfig.brandName,
     type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    siteName: siteConfig.brandName,
+    images: [
+      {
+        url: "/img/hero1.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.brandName} - Precision Electrical Parts & Industrial Equipments`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.brandName,
+    title: siteTitle,
     description: siteDescription,
+    images: ["/img/hero1.jpg"],
+    creator: `@${siteConfig.brandName.replace(/\s+/g, "")}`,
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 

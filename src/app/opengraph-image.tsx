@@ -4,7 +4,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-export const alt = siteConfig.brandName;
+export const alt = `${siteConfig.brandName} - Precision Electrical Parts & Industrial Equipments`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -19,79 +19,86 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: siteConfig.theme.neutralBgColor,
+          background: "#0F1217",
           position: "relative",
         }}
       >
+        {/* Ambient Glowing Background Accents */}
         <div
           style={{
             position: "absolute",
-            top: -90,
-            left: -90,
-            width: 280,
-            height: 280,
+            top: -100,
+            left: -100,
+            width: 400,
+            height: 400,
             borderRadius: "50%",
-            background: siteConfig.theme.primaryColor,
-            opacity: 0.08,
+            background: "#5B6BF0",
+            opacity: 0.15,
+            filter: "blur(80px)",
             display: "flex",
           }}
         />
         <div
           style={{
             position: "absolute",
-            bottom: -110,
-            right: -70,
-            width: 340,
-            height: 340,
+            bottom: -100,
+            right: -100,
+            width: 400,
+            height: 400,
             borderRadius: "50%",
-            background: siteConfig.theme.secondaryColor,
-            opacity: 0.14,
+            background: "#5B6BF0",
+            opacity: 0.2,
+            filter: "blur(80px)",
             display: "flex",
           }}
         />
 
+        {/* Brand Container */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            padding: "28px 56px",
+            padding: "24px 48px",
             borderRadius: 24,
-            background: "#ffffff",
-            boxShadow: "0 12px 32px rgba(14, 16, 19, 0.12)",
+            background: "rgba(255, 255, 255, 0.06)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
           <div
             style={{
               display: "flex",
-              fontSize: 64,
+              fontSize: 60,
               fontWeight: 900,
               letterSpacing: -2,
               textTransform: "uppercase",
-              color: siteConfig.theme.neutralTextColor,
+              color: "#ffffff",
             }}
           >
-            {siteConfig.brandName}
+            ⚡ {siteConfig.brandName}
           </div>
         </div>
 
+        {/* Subtitle / Category */}
         <div
           style={{
-            marginTop: 36,
+            marginTop: 32,
             fontSize: 32,
-            fontWeight: 600,
-            color: siteConfig.theme.neutralTextColor,
+            fontWeight: 700,
+            color: "#A0AEC0",
+            textTransform: "uppercase",
+            letterSpacing: 2,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Electrical Parts &amp; Industrial Equipments
         </div>
 
         <div
           style={{
-            marginTop: 28,
-            width: 120,
+            marginTop: 24,
+            width: 140,
             height: 6,
             borderRadius: 999,
-            background: siteConfig.theme.secondaryColor,
+            background: "#5B6BF0",
             display: "flex",
           }}
         />

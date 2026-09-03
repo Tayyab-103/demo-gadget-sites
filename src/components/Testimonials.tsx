@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 const stories = [
@@ -12,7 +12,6 @@ const stories = [
     author: "Camilla V.",
     location: "Austin, TX",
     image: "/img/brand/hero_interior.jpg",
-    aspect: "aspect-square",
   },
   {
     id: "story-2",
@@ -22,13 +21,10 @@ const stories = [
     author: "Marcus T.",
     location: "Dallas, TX",
     image: "/img/brand/how_step3.jpg",
-    aspect: "aspect-16/11",
   },
 ];
 
 export default function Testimonials() {
-  const [activeStory, setActiveStory] = useState<string | null>(null);
-
   return (
     <section className="py-10 sm:py-14 md:py-16 bg-primary text-white relative" id="testimonials">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
@@ -49,7 +45,7 @@ export default function Testimonials() {
         {/* Thin Horizontal Divider */}
         <div className="w-full h-px bg-white/10 mb-6 sm:mb-10 md:mb-12" />
 
-        {/* Asymmetrical 2-Card Showcase (Matching Screenshot Layout) */}
+        {/* Asymmetrical 2-Card Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           
           {/* Left Case Study Card */}
@@ -72,23 +68,9 @@ export default function Testimonials() {
               {stories[0].title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5 sm:mb-6 italic max-w-lg">
+            <p className="text-xs sm:text-sm text-white/70 leading-relaxed italic max-w-lg">
               &ldquo;{stories[0].quote}&rdquo; &mdash; <span className="font-semibold not-italic text-white">{stories[0].author}, {stories[0].location}</span>
             </p>
-
-            <button
-              onClick={() => setActiveStory(activeStory === stories[0].id ? null : stories[0].id)}
-              className="inline-flex items-center gap-2.5 border border-white/30 hover:border-white hover:bg-white hover:text-primary transition-all duration-300 px-5 sm:px-6 py-2.5 rounded-full text-[0.65rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white cursor-pointer shadow-2xs hover:shadow-sm"
-            >
-              <span>{activeStory === stories[0].id ? "CLOSE DETAILS" : "VIEW STORY"}</span>
-              <span>→</span>
-            </button>
-
-            {activeStory === stories[0].id && (
-              <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 text-xs text-white/80 leading-relaxed max-w-lg animate-fadeIn">
-                Featuring the <strong>Alderwyn Artisan Cashmere-Touch Throw Blanket</strong> styled in an open-concept living area with floor-to-ceiling natural light.
-              </div>
-            )}
           </div>
 
           {/* Right Case Study Card */}
@@ -111,23 +93,9 @@ export default function Testimonials() {
               {stories[1].title}
             </h3>
 
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5 sm:mb-6 italic max-w-lg">
+            <p className="text-xs sm:text-sm text-white/70 leading-relaxed italic max-w-lg">
               &ldquo;{stories[1].quote}&rdquo; &mdash; <span className="font-semibold not-italic text-white">{stories[1].author}, {stories[1].location}</span>
             </p>
-
-            <button
-              onClick={() => setActiveStory(activeStory === stories[1].id ? null : stories[1].id)}
-              className="inline-flex items-center gap-2.5 border border-white/30 hover:border-white hover:bg-white hover:text-primary transition-all duration-300 px-5 sm:px-6 py-2.5 rounded-full text-[0.65rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white cursor-pointer shadow-2xs hover:shadow-sm"
-            >
-              <span>{activeStory === stories[1].id ? "CLOSE DETAILS" : "VIEW STORY"}</span>
-              <span>→</span>
-            </button>
-
-            {activeStory === stories[1].id && (
-              <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 text-xs text-white/80 leading-relaxed max-w-lg animate-fadeIn">
-                Featuring the <strong>Alderwyn Sculptural Ceramic Ambient Lamp</strong> and <strong>Travertine &amp; Oak Catchall Tray</strong> curated for a reading corner.
-              </div>
-            )}
           </div>
 
         </div>
@@ -136,3 +104,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

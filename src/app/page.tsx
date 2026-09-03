@@ -8,6 +8,7 @@ import QualityPromise from "@/components/QualityPromise";
 import ProductGrid from "@/components/ProductGrid";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
+import NewsletterSection from "@/components/NewsletterSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -35,6 +36,9 @@ export default function Home() {
 
         {/* 05 Frequently Asked Questions */}
         <Faq />
+
+        {/* Newsletter Section */}
+        <NewsletterSection />
 
         {/* 06 Get In Touch Form */}
         <Contact />

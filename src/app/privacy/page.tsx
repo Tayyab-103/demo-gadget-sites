@@ -12,23 +12,27 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] right-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-neutral-bg py-10 sm:py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8">
+          
+          <div className="text-center sm:text-left mb-8 sm:mb-10">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-neutral-text/50 block mb-2">
+              LEGAL NOTICE
+            </span>
+            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.04em] text-primary leading-tight">
+              PRIVACY POLICY
+            </h1>
+          </div>
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
-            Privacy Policy
-          </h1>
-
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-black/8 shadow-md leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
             <p>
               This Privacy Policy describes how your personal information is collected, used, and shared when you visit
               or make a purchase from <strong className="text-primary font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PERSONAL INFORMATION WE COLLECT</h3>
+            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+              PERSONAL INFORMATION WE COLLECT
+            </h2>
             <p>
               When you visit the Site, we automatically collect certain information about your device, including information
               about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
@@ -41,39 +45,46 @@ export default function Privacy() {
               email address, and phone number. We refer to this information as “Order Information.”
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">HOW DO WE USE YOUR PERSONAL INFORMATION?</h3>
+            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+              HOW DO WE USE YOUR PERSONAL INFORMATION?
+            </h2>
             <p>
               We use the Order Information that we collect generally to fulfill any orders placed through the Site (including
               processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations).
               Additionally, we use this Order Information to:
             </p>
-            <ul className="list-disc pl-5 mb-6 space-y-2">
-              <li>Communicate with you;</li>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Communicate with you regarding orders and delivery milestones;</li>
               <li>Screen our orders for potential risk or fraud; and</li>
-              <li>Provide you with information or advertising relating to our products or services.</li>
+              <li>Provide you with information or updates relating to our handcrafted furnishings or services.</li>
             </ul>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SHARING YOUR PERSONAL INFORMATION</h3>
+            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+              SHARING YOUR PERSONAL INFORMATION
+            </h2>
             <p>
-              We share your Personal Information with third parties to help us use your Personal Information, as described above.
-              For example, we use server-side API integrations (CRMs) to securely capture order information and facilitate card
-              payment processing.
+              We share your Personal Information with trusted service providers to help us fulfill orders and deliver an optimal experience, as described above.
+              For example, we use encrypted payment processors and logistics partners ({siteConfig.shippingCarrier}) to securely fulfill purchases.
             </p>
             <p>
               Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a
               subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">DATA RETENTION</h3>
+            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+              DATA RETENTION
+            </h2>
             <p>
               When you place an order through the Site, we will maintain your Order Information for our records unless and until
               you ask us to delete this information.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">CONTACT US</h3>
+            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+              CONTACT US
+            </h2>
             <p>
-              For more information about our privacy practices, if you have questions, or if you would like to make a complaint,
-              please contact us by e-mail at <strong className="text-primary font-semibold">{siteConfig.email}</strong> or by phone at <strong className="text-primary font-semibold">{siteConfig.phone}</strong>.
+              For more information about our privacy practices, if you have questions, or if you would like to make an inquiry,
+              please contact our concierge support center at <strong className="text-primary font-semibold">{siteConfig.email}</strong> or call <strong className="text-primary font-semibold">{siteConfig.phone}</strong>.
             </p>
           </div>
         </div>
@@ -82,3 +93,4 @@ export default function Privacy() {
     </>
   );
 }
+

@@ -12,7 +12,7 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow bg-neutral-bg">
         {/* Page Editorial Header */}
-        <section className="pt-10 sm:pt-16 md:pt-20 pb-2">
+        <section className="pt-10 sm:pt-14 md:pt-16 pb-2 sm:pb-4">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 text-center">
             <h1 className="font-serif font-normal text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.06em] text-primary mb-3 leading-tight">
               ABOUT US
@@ -31,3 +31,4 @@ export default function AboutPage() {
     </>
   );
 }
+

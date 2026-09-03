@@ -18,9 +18,14 @@ export default function Terms() {
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-25 pointer-events-none" />
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-3">Mercantile Policies</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/[0.06] pb-6 tracking-tight">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
+            <span className="text-xs">🐾</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+              MERCANTILE POLICIES
+            </span>
+          </div>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-8 border-b border-stone-200/80 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 

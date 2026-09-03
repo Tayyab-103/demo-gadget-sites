@@ -126,18 +126,23 @@ export default function Checkout() {
         </div>
       )}
 
-      <main className="bg-neutral-bg py-12 md:py-20 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-[#FAF8F5] py-12 md:py-20 relative overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
+            <span className="text-xs">🔒</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+              GUARANTEED 256-BIT ENCRYPTION
+            </span>
+          </div>
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Secure Checkout</span>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 tracking-tight">Checkout <span className="text-secondary">Securely</span></h2>
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-8">
+            Complete Your <span className="italic text-secondary font-serif">Order</span>
+          </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
             {/* Form Column */}
-            <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/70 shadow-xs">
               {errorMsg && (
                 <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-6 text-xs md:text-sm">
                   <strong>Transaction Status:</strong> {errorMsg}

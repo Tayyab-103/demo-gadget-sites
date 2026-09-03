@@ -57,8 +57,17 @@ export default function ProductGrid() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {products.map((product) => {
             const firstBundle = product.bundles && product.bundles[0];
-            const startingPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            const originalPrice = (Number(startingPrice) * 1.35).toFixed(2);
+            const lastBundle = product.bundles && product.bundles.length > 0
+              ? product.bundles[product.bundles.length - 1]
+              : null;
+            
+            const minPrice = firstBundle
+              ? parseFloat(String(firstBundle.price)).toFixed(2)
+              : parseFloat(product.ssPrice || "0").toFixed(2);
+            const maxPrice = lastBundle
+              ? parseFloat(String(lastBundle.price)).toFixed(2)
+              : minPrice;
+
             const meta = cardMeta[product.id] || {
               badge: "Essential",
               badgeBg: "bg-[#182825] text-white",
@@ -118,13 +127,10 @@ export default function ProductGrid() {
                     </Link>
                   </h3>
 
-                  {/* Price & Savings Row */}
-                  <div className="flex items-baseline gap-2.5 mb-3">
-                    <span className="text-2xl font-bold text-primary font-serif">
-                      ${startingPrice}
-                    </span>
-                    <span className="text-xs font-semibold text-neutral-text/40 line-through">
-                      ${originalPrice}
+                  {/* Price Range: 1 Unit Pack - 8 Unit Pack */}
+                  <div className="flex items-baseline gap-2 mb-3">
+                    <span className="text-xl sm:text-2xl font-bold text-primary font-serif">
+                      ${minPrice} – ${maxPrice}
                     </span>
                   </div>
 
@@ -132,7 +138,7 @@ export default function ProductGrid() {
                   <div className="mb-6">
                     <span className="inline-flex items-center gap-1 bg-[#FAF8F5] border border-stone-200/60 text-secondary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
                       <span>✓</span>
-                      <span>Up to 8-Pack Savings</span>
+                      <span>1 to 8 Unit Pack Tiers</span>
                     </span>
                   </div>
                 </div>

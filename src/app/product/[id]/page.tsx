@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -25,7 +25,14 @@ export default function ProductDetail() {
     : { quantity: 1, price: parseFloat(product?.ssPrice || "0") };
 
   const [selectedBundle, setSelectedBundle] = useState<Bundle>(defaultBundle);
+  const [selectedImage, setSelectedImage] = useState<string>(product?.image || "");
   const [addedNotice, setAddedNotice] = useState(false);
+
+  useEffect(() => {
+    if (product?.image) {
+      setSelectedImage(product.image);
+    }
+  }, [product?.id, product?.image]);
 
   if (!product) {
     return (
@@ -48,6 +55,12 @@ export default function ProductDetail() {
       </>
     );
   }
+
+  const imageList = product.images && product.images.length > 0
+    ? product.images
+    : [product.image];
+
+  const currentDisplayImage = selectedImage || product.image;
 
   const handleAddToCart = () => {
     const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
@@ -79,34 +92,51 @@ export default function ProductDetail() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            {/* Left: Product Image (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-stone-200/60 shadow-xs">
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5]">
+            {/* Left: Product Image & 3-Image Gallery (6 cols) */}
+            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-stone-200/60 shadow-xs flex flex-col">
+              {/* Main Image */}
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5] shadow-xs">
                 <img
-                  src={product.image}
+                  id="main-image"
+                  src={currentDisplayImage}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-300"
                   onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/800x800?text=Pet+Product";
                   }}
                 />
               </div>
 
-              {/* Minimal Trust Badges */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 mt-6 pt-5 border-t border-stone-200/60 text-center">
-                <div className="bg-[#FAF8F5] p-2.5 sm:p-3 rounded-2xl border border-stone-200/50">
-                  <div className="text-lg sm:text-xl mb-0.5">🌿</div>
-                  <div className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-primary">100% Non-Toxic</div>
+              {/* 3-Image Thumbnail Gallery */}
+              {imageList.length > 1 && (
+                <div className="grid grid-cols-3 w-full gap-3 sm:gap-4 mt-4" id="thumbnail-container">
+                  {imageList.map((imgSrc, idx) => {
+                    const isSelected = currentDisplayImage === imgSrc;
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedImage(imgSrc)}
+                        aria-label={`View ${product.name} image ${idx + 1}`}
+                        className={`thumb relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer transition-all duration-200 border-2 ${
+                          isSelected
+                            ? "border-[#182825] ring-2 ring-[#182825]/20 shadow-sm opacity-100 scale-[1.02]"
+                            : "border-stone-200/80 hover:border-stone-400 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`${product.name} thumbnail ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://placehold.co/300x300?text=Pet+Product";
+                          }}
+                        />
+                      </button>
+                    );
+                  })}
                 </div>
-                <div className="bg-[#FAF8F5] p-2.5 sm:p-3 rounded-2xl border border-stone-200/50">
-                  <div className="text-lg sm:text-xl mb-0.5">🩺</div>
-                  <div className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-primary">Vet Endorsed</div>
-                </div>
-                <div className="bg-[#FAF8F5] p-2.5 sm:p-3 rounded-2xl border border-stone-200/50">
-                  <div className="text-lg sm:text-xl mb-0.5">🐾</div>
-                  <div className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-primary">14-Day Trial</div>
-                </div>
-              </div>
+              )}
             </div>
 
             {/* Right: Product Details & Dropdown Selector (6 cols) */}

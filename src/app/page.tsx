@@ -3,9 +3,10 @@
 import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Features from "@/components/Features";
 import ProductGrid from "@/components/ProductGrid";
 import Testimonials from "@/components/Testimonials";
-import HowItWorks from "@/components/HowItWorks";
+import AboutSection from "@/components/AboutSection";
 import CTASection from "@/components/CTASection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -20,19 +21,22 @@ export default function Home() {
         {/* 1. Hero Section */}
         <Hero />
         
-        {/* 2. Product Catalog Showcase */}
+        {/* 2. Features Showcase */}
+        <Features />
+
+        {/* 3. Product Catalog Showcase */}
         <ProductGrid />
 
-        {/* 3. Customer Social Proof & Reviews Showcase */}
+        {/* 4. Customer Social Proof & Reviews Showcase */}
         <Testimonials />
 
-        {/* 4. Step-by-Step Experience & Delivery Flow */}
-        <HowItWorks />
+        {/* 5. About Us Section */}
+        <AboutSection />
         
-        {/* 5. Special Offer Conversion Banner */}
+        {/* 6. Special Offer Conversion Banner */}
         <CTASection />
 
-        {/* 6. Pet Concierge & Support Section */}
+        {/* 7. Pet Concierge & Support Section */}
         <Contact />
       </main>
 

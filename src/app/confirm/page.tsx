@@ -73,11 +73,8 @@ export default function Confirm() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
-        
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+      <main className="bg-[#FAF8F5] py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Suspense fallback={
             <div className="text-center py-12">
               <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Loading Order Details...</h4>

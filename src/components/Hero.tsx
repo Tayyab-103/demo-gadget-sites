@@ -1,69 +1,59 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
-const categories = [
+const heroGallery = [
   {
-    icon: "🥣",
-    title: "Grooming &",
-    subtitle: "Coat Care",
-    href: "/shop",
+    image: "/img/hero1.png",
+    badge: "Bestseller",
+    tag: "🐾 Comfort & Sleep",
+    title: "Orthopedic Rest",
+    description: "Cloud-soft memory foam beds designed for deep, restorative pet sleep and joint relief.",
   },
   {
-    icon: "🦴",
-    title: "Toys &",
-    subtitle: "Playtime",
-    href: "/shop",
+    image: "/img/hero2.png",
+    badge: "Staff Pick",
+    tag: "🎾 Active Play",
+    title: "Interactive Toys",
+    description: "Smart durable enrichment toys engineered to stimulate natural instinct and ease anxiety.",
   },
   {
-    icon: "🧴",
-    title: "Skin & Coat",
-    subtitle: "Health",
-    href: "/shop",
-  },
-  {
-    icon: "🛋️",
-    title: "Beds &",
-    subtitle: "Comfort",
-    href: "/shop",
-  },
-  {
-    icon: "🐾",
-    title: "All Pet",
-    subtitle: "Essentials",
-    href: "/shop",
-  },
-  {
-    icon: "🩺",
-    title: "Health &",
-    subtitle: "Wellness",
-    href: "/about",
+    image: "/img/hero3.png",
+    badge: "Top Rated",
+    tag: "✨ Coat Care",
+    title: "Grooming Essentials",
+    description: "Ergonomic slicker brushes designed for silky soft, tangle-free coats and shedding relief.",
   },
 ];
 
 export default function Hero() {
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+
   return (
-    <section className="relative bg-[#FAF8F5] pt-6 pb-12 sm:pt-10 sm:pb-16 md:pt-14 md:pb-20 overflow-hidden w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#FAF8F5] pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 overflow-hidden w-full">
+      {/* Subtle Ambient Backdrop Glow */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[450px] bg-gradient-to-b from-[#EFE5D8]/70 via-[#FAF8F5]/30 to-transparent blur-3xl pointer-events-none rounded-full" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main 2-Column Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Typography & Action (5 cols) */}
+          {/* Left Column: Typography & Actions (5 cols) */}
           <div className="lg:col-span-5 text-left z-10">
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-primary tracking-tight leading-[1.12] mb-4 sm:mb-6">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold text-primary tracking-tight leading-[1.12] mb-4 sm:mb-5">
               Everything <br />
               <span className="text-secondary italic font-serif">They Love,</span> <br />
               All in One Place
             </h1>
 
-            <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-8">
+            <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-7">
               Thoughtfully engineered grooming, interactive smart toys, and orthopedic beds for happier, healthier pets.
             </p>
 
-            {/* Dark Forest Green Pill Button */}
-            <div className="flex justify-start">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
               <Link
                 href="/shop"
                 className="group inline-flex items-center gap-2.5 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 px-7 sm:px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
@@ -71,49 +61,102 @@ export default function Hero() {
                 <span>Explore Collection</span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
-            </div>
-          </div>
-
-          {/* Right Column: Hero Dog & Cat Living Room Photo (7 cols) */}
-          <div className="lg:col-span-7 relative w-full">
-            
-            {/* Main Lifestyle Image */}
-            <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-xl bg-neutral-200">
-              <img
-                src="/img/hero1.png"
-                alt="Happy companions enjoying Whisker Vale pet essentials"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Bottom Floating Category Pills Bar */}
-        <div className="mt-10 sm:mt-14 bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-stone-200/60 p-3 sm:p-5 max-w-6xl mx-auto relative z-20">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
-            {categories.map((cat, idx) => (
               <Link
-                key={idx}
-                href={cat.href}
-                className="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-xl hover:bg-[#FAF8F5] transition-all duration-200 group"
+                href="/about"
+                className="inline-flex items-center gap-2 bg-white text-primary hover:text-secondary border border-stone-300/80 hover:border-secondary/40 transition-all duration-300 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-xs"
               >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FAF8F5] border border-stone-200/60 flex items-center justify-center text-lg sm:text-xl flex-shrink-0 group-hover:scale-105 group-hover:border-secondary/40 transition-all duration-200">
-                  {cat.icon}
-                </div>
-                <div className="flex flex-col leading-tight min-w-0">
-                  <span className="text-xs font-bold text-primary group-hover:text-secondary transition-colors truncate">
-                    {cat.title}
-                  </span>
-                  <span className="text-[0.65rem] text-neutral-text/55 font-medium truncate">
-                    {cat.subtitle}
-                  </span>
-                </div>
+                <span>Our Story</span>
               </Link>
-            ))}
+            </div>
+
+            {/* Trust Highlights */}
+            <div className="flex items-center flex-wrap gap-x-5 gap-y-1.5 text-[0.7rem] sm:text-xs text-neutral-text/70 font-medium pt-2 border-t border-stone-200/60">
+              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Vet Endorsed</span>
+              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 100% Non-Toxic</span>
+              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 14-Day Guarantee</span>
+            </div>
           </div>
+
+          {/* Right Column: Expanding Image Gallery (7 cols) */}
+          <div className="lg:col-span-7 relative w-full">
+            <div className="flex items-center gap-3 sm:gap-4 h-[360px] sm:h-[420px] md:h-[450px] w-full">
+              {heroGallery.map((item, idx) => {
+                const isActive = activeIdx === idx;
+                return (
+                  <div
+                    key={idx}
+                    onMouseEnter={() => setActiveIdx(idx)}
+                    className={`relative group transition-all duration-500 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-neutral-200 h-full ${
+                      isActive ? "flex-[2.5] md:flex-[2.8]" : "flex-1 opacity-80 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Top Floating Badge */}
+                    <div className="absolute top-3.5 left-3.5 z-10">
+                      <span className="bg-[#182825]/90 text-white backdrop-blur-md text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                        {item.badge}
+                      </span>
+                    </div>
+
+                    {/* Collapsed State Title Label */}
+                    <div
+                      className={`absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-300 pointer-events-none ${
+                        isActive ? "opacity-0" : "opacity-100"
+                      }`}
+                    >
+                      <p className="text-white text-[0.68rem] sm:text-xs font-bold truncate">
+                        {item.title}
+                      </p>
+                    </div>
+
+                    {/* Expanded Hover Overlay with Details */}
+                    <div
+                      className={`absolute inset-0 flex flex-col justify-end p-5 sm:p-8 text-white bg-gradient-to-t from-black/85 via-black/40 to-transparent transition-opacity duration-300 pointer-events-none ${
+                        isActive ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <span className="inline-block text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-secondary bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full w-fit mb-2">
+                        {item.tag}
+                      </span>
+                      <h2 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-1.5 leading-snug">
+                        {item.title}
+                      </h2>
+                      <p className="text-xs sm:text-sm text-white/90 max-w-xs leading-relaxed mb-2 line-clamp-2">
+                        {item.description}
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-[0.72rem] font-bold uppercase tracking-wider text-secondary">
+                        <span>Shop Now</span>
+                        <span>→</span>
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Selection indicator dots */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              {heroGallery.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setActiveIdx(idx)}
+                  aria-label={`Select ${heroGallery[idx].title}`}
+                  className={`transition-all duration-300 rounded-full cursor-pointer ${
+                    activeIdx === idx
+                      ? "w-6 h-1.5 bg-[#182825]"
+                      : "w-1.5 h-1.5 bg-stone-300 hover:bg-stone-400"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>

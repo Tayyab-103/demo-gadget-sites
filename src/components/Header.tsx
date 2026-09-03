@@ -11,7 +11,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
 const navLinks = [
-  { href: "/shop", label: "Shop" },
+  { href: "/", label: "Home" },
+  { href: "/shop", label: "Products" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

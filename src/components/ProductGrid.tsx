@@ -33,7 +33,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Cards Grid matching the 4-card / 3-card reference layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
           {products.map((product) => {
             const badge = badgeMapping[product.id] || "FEATURED";
             const minPrice = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;

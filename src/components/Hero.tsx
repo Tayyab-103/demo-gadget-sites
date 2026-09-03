@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Foreground Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-10 py-16 sm:py-24 lg:py-32 flex-1 flex items-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10 py-16 sm:py-24 lg:py-32 flex-1 flex items-center">
         <div className="max-w-xl text-left">
           
           {/* Eyebrow badge on mobile */}

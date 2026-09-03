@@ -83,7 +83,7 @@ export default function Footer() {
         </div>
 
         {/* Links Navigation Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-12 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/10">
           
           <div>
             <div className="text-[0.65rem] font-bold uppercase tracking-widest text-white/40 mb-4">Company Info</div>
@@ -98,10 +98,19 @@ export default function Footer() {
           <div>
             <div className="text-[0.65rem] font-bold uppercase tracking-widest text-white/40 mb-4">Tool Catalog</div>
             <ul className="flex flex-col gap-2 text-xs text-white/60">
-              <li><Link href="/product/product1" className="hover:text-white transition-colors">CopperPro Balloon Whisk</Link></li>
+              <li><Link href="/product/product1" className="hover:text-white transition-colors">Balloon Whisk</Link></li>
               <li><Link href="/product/product2" className="hover:text-white transition-colors">Digital Culinary Scale</Link></li>
-              <li><Link href="/product/product3" className="hover:text-white transition-colors">Forged Chef Shears</Link></li>
+              <li><Link href="/product/product3" className="hover:text-white transition-colors">Multi-Prep Chef Shears</Link></li>
               <li><Link href="/shop" className="hover:text-white transition-colors">All Workshop Tools</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="text-[0.65rem] font-bold uppercase tracking-widest text-white/40 mb-4">Legal &amp; Policy</div>
+            <ul className="flex flex-col gap-2 text-xs text-white/60">
+              <li><Link href="/privacy" className="hover:text-[#E5F2C9] transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-[#E5F2C9] transition-colors">Terms &amp; Conditions</Link></li>
+              <li><Link href="/contact" className="hover:text-[#E5F2C9] transition-colors">Customer Support</Link></li>
             </ul>
           </div>
 
@@ -116,10 +125,18 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Copyright on left, only payment logos on right */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.68rem] text-white/50">
-          <div>
-            Copyright &copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.
+        {/* Bottom Bar: Copyright and Legal links on left, payment logos on right */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[0.68rem] text-white/50">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-2">
+            <span>Copyright &copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.</span>
+            <span className="text-white/20 hidden sm:inline">&bull;</span>
+            <Link href="/privacy" className="hover:text-white transition-colors underline underline-offset-2">
+              Privacy Policy
+            </Link>
+            <span className="text-white/20 hidden sm:inline">&bull;</span>
+            <Link href="/terms" className="hover:text-white transition-colors underline underline-offset-2">
+              Terms &amp; Conditions
+            </Link>
           </div>
 
           {/* Payment Method Badges */}

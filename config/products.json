@@ -2,7 +2,7 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "CopperPro Ergonomic Balloon Whisk",
+    "name": "Balloon Whisk",
     "description": "Crafted with 12 flexible, commercial-grade stainless steel wires and a reinforced copper-accented ergonomic handle. Engineered to maximize aeration and reduce wrist fatigue whether you're whipping silky meringue, emulsifying vinaigrettes, or folding delicate batters.",
     "image": "/images/product-whisk.jpg",
     "images": [
@@ -28,7 +28,7 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Precision Digital Culinary Scale & Timer",
+    "name": "Digital Culinary Scale & Timer",
     "description": "Ultra-accurate 0.1g digital culinary scale with integrated drip timer, scratch-resistant tempered platform, and high-visibility illuminated display. Essential for precision sourdough baking, pour-over extraction, and chef-level recipe formulation.",
     "image": "/images/product-scale.jpg",
     "images": [
@@ -54,7 +54,7 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Artisan Forged Multi-Prep Chef Shears",
+    "name": "Multi-Prep Chef Shears",
     "description": "Heavy-gauge forged Japanese stainless steel kitchen shears featuring micro-serrated blade edges, an integrated bone-cutting notch, built-in herb stripper, and copper-finished pivot bolt. Disassembles smoothly for effortless, hygienic sanitization.",
     "image": "/images/product-shears.jpg",
     "images": [

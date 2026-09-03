@@ -20,7 +20,8 @@ export default function CTASection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-10 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 text-center">
+        <div className="max-w-4xl mx-auto">
         
         <div className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#E5F2C9]/20 bg-[#E5F2C9]/5 px-4 py-1.5 backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-[#E5F2C9] animate-pulse" />
@@ -61,6 +62,7 @@ export default function CTASection() {
           <span>✓ 1-Year Full Warranty</span>
         </div>
 
+        </div>
       </div>
     </section>
   );

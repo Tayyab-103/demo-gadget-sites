@@ -41,8 +41,8 @@ export default function QualityPromise() {
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-4/5 bg-[#16171A] relative">
               <img
-                src="/images/quality-promise-chef.jpg"
-                alt="Head chef inspecting copper and stainless steel kitchen tool in workshop"
+                src="/images/ourguarantee.jpg"
+                alt="Culinary baking and preparation with premium kitchen tools"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E0F11]/90 via-transparent to-transparent" />

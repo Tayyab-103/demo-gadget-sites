@@ -28,6 +28,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -40,6 +41,7 @@ export default function Header() {
     : [];
 
   useEffect(() => {
+    setMounted(true);
     const handleClickOutside = (e: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false);
@@ -112,7 +114,7 @@ export default function Header() {
         ref={headerRef}
         className="sticky top-0 z-50 bg-neutral-bg/90 backdrop-blur-md border-b border-black/5"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-6 lg:px-8 py-4.5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-6 py-4.5">
           {/* Logo */}
           <Link
             href="/"
@@ -192,7 +194,7 @@ export default function Header() {
                 <path d="M16 10a4 4 0 0 1-8 0"></path>
               </svg>
 
-              {getCartCount() > 0 && (
+              {mounted && getCartCount() > 0 && (
                 <span className="absolute -top-1 -right-1 bg-secondary text-primary rounded-full w-[18px] h-[18px] text-[0.6rem] font-black flex items-center justify-center border-2 border-neutral-bg">
                   {getCartCount()}
                 </span>

@@ -2,16 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Velvet Resonance Master Zinc-Brass Guitar Capo & Care Kit",
-    "description": "Precision-cast from acoustic-grade zinc-brass alloy with micro-calibrated spring tension and high-memory silicone neck pads. Delivers buzz-free intonation, zero fret scarring, and balanced string pressure across 6-string and 12-string acoustic, electric, and classical guitars.",
-    "image": "/img/products/capo_main.jpg",
+    "name": "Guitar Pick",
+    "description": "Engineered for precision and slip-free control, delivering crisp attack and effortless tone with every strike.",
+    "image": "/img/products/guitar-pick.jpg",
     "images": [
-      "/img/products/capo_main.jpg",
-      "/img/products/capo_detail1.jpg",
-      "/img/products/capo_detail2.jpg"
+      "/img/products/guitar-pick.jpg",
+      "/img/products/guitar-pick1.jpg",
+      "/img/products/guitar-pick2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/capo_specs.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Artisan Instrument Accessories",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "EchoWave Chromatic Clip-On Tuner & Metronome",
-    "description": "High-precision vibration sensor tuner with ultra-bright multi-angle color LCD display and built-in visual metronome. Engineered with acoustic noise-rejection for lightning-accurate pitch detection from 410Hz to 490Hz across guitars, basses, violins, ukuleles, and brass instruments.",
-    "image": "/img/products/tuner_main.jpg",
+    "name": "Standard Bb Trumpet",
+    "description": "Crafted with durable yellow brass and responsive piston valves, delivering a brilliant, resonant tone perfect for students and advancing players alike.",
+    "image": "/img/products/trumpet.jpg",
     "images": [
-      "/img/products/tuner_main.jpg",
-      "/img/products/tuner_detail1.jpg",
-      "/img/products/tuner_detail2.jpg"
+      "/img/products/trumpet.jpg",
+      "/img/products/trumpet1.jpg",
+      "/img/products/trumpet2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/tuner_specs.jpg",
-    "category": "Acoustic & Studio Tuning",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": " Brass Instruments",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Velvet Tone Dual-Shielded Studio Instrument Cable (10ft)",
+    "name": "Studio Instrument Cable",
     "description": "Master-grade 10ft low-capacitance instrument cable featuring 24K gold-plated 1/4\" jacks, 99.99% oxygen-free copper (OFC) core, and vintage tweed woven jacket. Engineered for zero handling noise, crystal signal clarity, and rugged studio/stage reliability.",
     "image": "/img/products/cable_main.jpg",
     "images": [
       "/img/products/cable_main.jpg",
-      "/img/products/cable_detail1.jpg",
-      "/img/products/cable_detail2.jpg"
+      "/img/products/cable_main1.jpg",
+      "/img/products/cable_main2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/cable_specs.jpg",
-    "category": "Studio Audio & Signal Gear",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Instrument Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

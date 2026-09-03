@@ -15,7 +15,7 @@ export default function CTASection() {
       {/* Dark Ambient Gradient Overlay */}
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary via-primary/85 to-primary/60" />
 
-      <div className="w-full max-w-4xl mx-auto px-6 relative z-10 flex justify-center">
+      <div className="w-full max-w-7xl mx-auto px-6 relative z-10 flex justify-center">
         {/* Frosted Glass Content Card */}
         <div className="glass-card-dark rounded-3xl md:rounded-[2.5rem] p-6 sm:p-10 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/30">
           

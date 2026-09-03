@@ -9,7 +9,7 @@ const steps = [
     title: "Select Your Tone Hardware",
     description:
       "Explore our boutique range of master capos, chromatic clip-on tuners, and dual-shielded cables. Choose individual units or multi-pack savings for your stage and studio rigs.",
-    image: "/img/how_step1.jpg",
+    image: "/img/how_step1.jpg?v=3",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const steps = [
     title: "Insured Studio Dispatch",
     description:
       "Packed inside protective shock-absorbing packaging and dispatched nationwide with tracking, reaching your rehearsal room or studio in 3-5 business days.",
-    image: "/img/how_step3.jpg",
+    image: "/img/how_step3.jpg?v=3",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -175,6 +175,8 @@ export default function HowItWorks() {
                         src={step.image}
                         alt={step.title}
                         fill
+                        unoptimized
+                        priority={idx === 0}
                         sizes="(max-width: 1024px) 90vw, 440px"
                         className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
                       />

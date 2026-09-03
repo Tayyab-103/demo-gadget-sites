@@ -26,7 +26,7 @@ export default function HeroCarousel() {
         <img
           key={src}
           src={src}
-          alt="Happy customer enjoying a healthy, active lifestyle"
+          alt="Velvet Echo artisan musical hardware and studio instruments"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             idx === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
           }`}

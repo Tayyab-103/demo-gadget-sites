@@ -27,7 +27,7 @@ export default function QualityPromise() {
       id="quality-promise"
       className="relative overflow-hidden bg-neutral-bg py-16 md:py-24"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[1450px] px-5 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
 
           {/* LEFT — IMAGE CARD */}

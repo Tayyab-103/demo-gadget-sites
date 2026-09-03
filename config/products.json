@@ -10,8 +10,8 @@
       "/img/products/product2.jpg",
       "/img/products/product3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product1.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Precision Diagnostic Equipment",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -38,8 +38,8 @@
       "/img/products/product1.jpg",
       "/img/products/product3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product2.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Thermal & Current Measurement",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -66,8 +66,8 @@
       "/img/products/product1.jpg",
       "/img/products/product2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product3.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Power Conditioning & Conversion",
     "billingModel": 1,
     "ssPrice": "14.95",

@@ -1,10 +1,12 @@
 [
   {
     "id": "product1",
-    "name": "WhiskerCare™ Self-Cleaning Slicker Pet Grooming Brush",
+    "name": "Pet Grooming Brush",
     "image": "/img/products/brush.jpg",
     "images": [
-      "/img/products/brush.jpg"
+      "/img/products/brush.jpg",
+      "/img/products/brush2.jpg",
+      "/img/products/brush3.jpg"
     ],
     "description": "Ergonomic slicker brush engineered with fine stainless steel massage beads and a one-click retractable bristle release. Effortlessly removes loose undercoat shedding and dander without scratching delicate pet skin.",
     "category": "Grooming & Coat Care",
@@ -24,13 +26,15 @@
   },
   {
     "id": "product2",
-    "name": "PawPulse™ Smart Interactive LED Motion Pet Ball",
-    "image": "/img/products/ball.jpg",
+    "name": "Chew Toys for Small Dogs",
+    "image": "/img/products/chew-toy.jpg",
     "images": [
-      "/img/products/ball.jpg"
+      "/img/products/chew-toy.jpg",
+      "/img/products/chew-toy2.jpg",
+      "/img/products/chew-toy3.jpg"
     ],
-    "description": "Intelligent automated motion toy with 3 speed modes, built-in obstacle avoidance sensor, and soft LED indicator ring. Made with bite-resistant food-grade silicone to keep cats and dogs active and captivated.",
-    "category": "Interactive Play & Toys",
+    "description": "Interactive chew toys with natural rubber material and appealing texture satisfy your small dog's natural chewing instincts, reduce anxiety, and promote healthy teeth and gums through engaging play and stress-relieving chewing. Perfect for teething puppies and adult dogs seeking enrichment and dental stimulation.",
+    "category": "Chew Toys",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "11.95",
@@ -47,13 +51,15 @@
   },
   {
     "id": "product3",
-    "name": "CloudRest™ Orthopedic Calming Pet Nest & Bed",
-    "image": "/img/products/bed.jpg",
+    "name": "Adjustable Pet Collar for Small Dogs and Cats",
+    "image": "/img/products/collar.jpg",
     "images": [
-      "/img/products/bed.jpg"
+      "/img/products/collar.jpg",
+      "/img/products/collar2.jpg",
+      "/img/products/collar3.jpg"
     ],
-    "description": "High-density orthopedic memory foam pet bed with raised calming bolster rim for neck support and anxiety relief. Removable, machine-washable waterproof cover upholstered in luxurious bouclé fabric.",
-    "category": "Orthopedic Comfort & Beds",
+    "description": "Adjustable Pet Collar",
+    "category": "Collars and Harnesses",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "14.95",

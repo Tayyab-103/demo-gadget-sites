@@ -89,14 +89,14 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-3 sm:px-6 pointer-events-none"
+      className="fixed top-3 sm:top-5 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pointer-events-none"
     >
       {/* Floating glass pill */}
       <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${
+        className={`max-w-7xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${
           isScrolled
-            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2 px-4 sm:px-6 shadow-black/50"
-            : "bg-primary/85 backdrop-blur-xl border-white/15 py-2.5 px-4 sm:px-7 shadow-black/35"
+            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2.5 px-5 sm:px-7 shadow-black/50"
+            : "bg-primary/85 backdrop-blur-xl border-white/15 py-3 px-5 sm:px-8 shadow-black/35"
         }`}
       >
         {/* Logo */}
@@ -149,7 +149,7 @@ export default function Header() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           {/* Search Icon Button */}
           <button
             onClick={toggleSearch}
@@ -183,14 +183,6 @@ export default function Header() {
             )}
           </button>
 
-          {/* CTA Button */}
-          <Link
-            href="/shop"
-            className="hidden sm:inline-flex items-center font-bold text-xs uppercase tracking-wider text-secondary-text bg-secondary hover:brightness-110 transition-all duration-300 py-2.5 px-5 rounded-full shadow-md shadow-secondary/30 hover:scale-105"
-          >
-            Order Supplies
-          </Link>
-
           {/* Mobile hamburger toggle */}
           <button
             onClick={toggleMenu}
@@ -216,7 +208,7 @@ export default function Header() {
 
       {/* Floating Mobile Nav Menu Panel */}
       {isMenuOpen && (
-        <div className="lg:hidden max-w-6xl mx-auto mt-2.5 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-5 flex flex-col gap-1.5 shadow-2xl pointer-events-auto">
+        <div className="lg:hidden max-w-7xl mx-auto mt-2.5 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-5 flex flex-col gap-1.5 shadow-2xl pointer-events-auto">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -232,19 +224,12 @@ export default function Header() {
               </Link>
             );
           })}
-          <Link
-            href="/shop"
-            onClick={closeAll}
-            className="inline-block font-bold text-center text-xs uppercase tracking-wider text-secondary-text bg-secondary hover:brightness-110 transition-all duration-300 py-3 px-5 rounded-full mt-3 shadow-md shadow-secondary/20"
-          >
-            Order Supplies
-          </Link>
         </div>
       )}
 
       {/* Floating Search Panel */}
       {isSearchOpen && (
-        <div className="max-w-6xl mx-auto mt-2.5 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-5 max-h-[70vh] overflow-y-auto shadow-2xl pointer-events-auto">
+        <div className="max-w-7xl mx-auto mt-2.5 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-5 max-h-[70vh] overflow-y-auto shadow-2xl pointer-events-auto">
           <div className="relative max-w-2xl mx-auto">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />

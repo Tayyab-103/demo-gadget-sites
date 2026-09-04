@@ -15,8 +15,8 @@ export default function CTASection() {
           {/* Left — Image */}
           <div className="relative min-h-64 sm:min-h-80 md:min-h-full">
             <img
-              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80"
-              alt="Plumbing fittings and forge supply"
+              src="/img/cold1.jpg"
+              alt="Plumbing engineers and precision hydronic supply hardware"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent md:bg-gradient-to-r" />
@@ -64,7 +64,7 @@ export default function CTASection() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-bold text-xs sm:text-sm uppercase tracking-wider border-2 border-secondary-text/30 px-7 py-3 rounded-full transition-all duration-200 hover:bg-secondary-text/15 text-center"
               >
-                Contact Specs Team
+                Contact Support
               </Link>
             </div>
           </div>

@@ -39,9 +39,6 @@ export default function Home() {
         {/* Credibility & Guarantee Standards */}
         <QualityPromise />
         
-        {/* Quality Certifications */}
-        <Features />
-        
         {/* Customer Social Proof */}
         <Testimonials />
 

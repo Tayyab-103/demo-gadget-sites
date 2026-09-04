@@ -111,7 +111,7 @@ export default function NewsletterPopup() {
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/75 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} trade network. Subscribe today to receive technical sizing guides, new inventory alerts, and <strong>15% off</strong> your first order.
+                Subscribe to receive new inventory alerts, contractor pricing, and <strong>15% off</strong> your first order.
               </p>
 
               <div className="mb-4">

@@ -22,12 +22,12 @@ export default function ProductGrid() {
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-14 md:mb-16">
-          <span className="eyebrow justify-center mb-3">Foundry Catalog</span>
+          <span className="eyebrow justify-center mb-3">Hardware Catalog</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary">
             Plumbing &amp; Heating <span className="text-secondary">Supplies</span>
           </h2>
-          <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mt-3">
-            Choose precision-forged fittings, shutoff valves, and high-temperature hydronic supply lines with contractor multi-pack discounts.
+          <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base max-w-xl mx-auto mt-3">
+            Choose precision-forged brass fittings, shutoff valves, and high-temp supply lines with multi-pack savings.
           </p>
         </div>
 

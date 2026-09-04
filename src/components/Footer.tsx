@@ -31,13 +31,13 @@ export default function Footer() {
           <div className="w-full lg:w-[42%] flex flex-col">
             <div className="inline-flex items-center gap-2 mb-3 text-secondary text-xs font-bold uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              Foundry Direct Supply
+              Foundry Direct
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-3 tracking-tight">
-              Connect with a specialist at {siteConfig.brandName}
+              Stay Connected with {siteConfig.brandName}
             </h2>
             <p className="text-white/70 text-xs sm:text-sm mb-6 max-w-md leading-relaxed">
-              Subscribe for new inventory releases, hydronic technical guides, and contractor volume pricing.
+              Subscribe for new product releases, contractor discounts, and inventory updates.
             </p>
             
             {subscribed ? (

@@ -8,28 +8,28 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What thread standards and pipe materials are your brass fittings compatible with?",
-    answer: `Our forged brass compression fittings feature standard American National Taper Pipe Threads (NPT / NPTF) compliant with ANSI/ASME B1.20.1. They connect seamlessly with Type K, L, and M copper tubing, brass pipe, schedule 40/80 steel, and standard PEX lines.`
+    question: "What pipe materials are your brass fittings compatible with?",
+    answer: `Our forged brass compression fittings feature standard NPT threads compatible with copper tubing, brass pipe, steel, and PEX lines.`
   },
   {
-    question: "Are your brass products certified lead-free for potable drinking water?",
-    answer: `Yes. All Copperline brass fittings, ball valves, and water heater connectors meet the federal Safe Drinking Water Act (SDWA) requirements with less than 0.25% weighted average lead content across wetted surfaces, certified for residential and commercial drinking water.`
+    question: "Are your brass products certified lead-free for drinking water?",
+    answer: `Yes. All Copperline brass fittings, ball valves, and water heater connectors meet federal Safe Drinking Water Act (SDWA) standards for potable water.`
   },
   {
-    question: "What are the temperature and pressure limits for your hydronic heating supplies?",
-    answer: `Our compression fittings are rated for pressures up to 1,200 PSI and hydronic temperatures from -65°F to 250°F. The Master-Forge shutoff ball valves are rated to 600 WOG / 150 WSP, and our stainless supply lines support up to 200°F continuous heat at 250 PSI.`
+    question: "What are the temperature and pressure limits for your supplies?",
+    answer: `Our compression fittings handle up to 1,200 PSI and 250°F. Ball valves are rated to 600 WOG, and stainless lines support up to 200°F continuous heat at 250 PSI.`
   },
   {
-    question: "What shipping carrier do you use and how quickly will my order arrive?",
-    answer: `All orders are dispatched from our foundry distribution center within 1-2 business days. We ship nationwide using ${siteConfig.shippingCarrier}, with standard delivery arriving at your shop or job site within ${siteConfig.shippingPeriod} business days.`
+    question: "How fast is shipping and which carrier do you use?",
+    answer: `Orders ship via ${siteConfig.shippingCarrier} within 1-2 business days, with delivery typically taking ${siteConfig.shippingPeriod} business days nationwide.`
   },
   {
-    question: "What is your return policy and warranty on plumbing components?",
-    answer: `We back our foundry hardware with a 60-day money-back guarantee and a comprehensive 1-year manufacturer's warranty against defects in material and workmanship. If you receive any piece that does not meet spec, contact us at ${siteConfig.email} or call ${siteConfig.phone} for immediate resolution.`
+    question: "What is your return policy and warranty?",
+    answer: `We offer a 60-day money-back guarantee and a 1-year warranty on all products. Contact support at ${siteConfig.email} or call ${siteConfig.phone} for assistance.`
   },
   {
-    question: "How will the charge appear on my credit card statement?",
-    answer: `Your credit card statement will display the clean transaction descriptor "${siteConfig.descriptor}" alongside your verified order amount.`
+    question: "How will the charge appear on my credit card?",
+    answer: `Your card statement will display "${siteConfig.descriptor}" next to the purchase amount.`
   }
 ];
 
@@ -47,19 +47,19 @@ export default function Faq() {
 
           {/* Left Column — Header & CTA */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-24 lg:self-start">
-            <span className="eyebrow mb-3">Technical FAQs</span>
+            <span className="eyebrow mb-3">Help Center</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary mb-3">
               Frequently Asked <span className="text-secondary">Questions</span>
             </h2>
             <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mb-8">
-              Find immediate answers regarding thread dimensions, material certifications, pressure tolerances, and contractor shipping.
+              Quick answers about our plumbing hardware, shipping, warranties, and compatibility.
             </p>
 
             {/* CTA card */}
             <div className="bg-primary rounded-2xl p-6 sm:p-7 text-white shadow-md">
-              <h3 className="text-base sm:text-lg font-bold mb-2">Need custom specifications?</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-2">Have a question?</h3>
               <p className="text-white/70 text-xs sm:text-sm mb-5 leading-relaxed">
-                Our plumbing and hydronic engineering support team is available to assist with product compatibility and bulk contractor orders.
+                Our support team is ready to help you with product compatibility, order status, or bulk requests.
               </p>
               <a
                 href="#contact"

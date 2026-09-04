@@ -18,7 +18,7 @@ const stats = [
 export default function AboutUs() {
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-24" id="about">
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-12 lg:gap-10">
           {/* LEFT — Narrative */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
@@ -29,11 +29,11 @@ export default function AboutUs() {
             </h2>
 
             <p className="mb-6 text-sm leading-relaxed text-neutral-text/75 md:text-base">
-              At {siteConfig.brandName}, we forge precision plumbing fittings, hydronic valves, and heavy-duty heating supplies engineered to outperform generic hardware. Every casting undergoes strict metallurgical analysis and pressure certification before leaving our foundry.
+              At {siteConfig.brandName}, we forge precision brass fittings, shutoff valves, and heating supplies engineered to outperform standard hardware. Every casting undergoes pressure testing and quality certification before dispatch.
             </p>
 
-            <p className="mb-10 text-sm leading-relaxed text-neutral-text/75 md:text-base">
-              Our mission is clear: supply master plumbers, heating contractors, and property owners with certified, zero-leak components at direct foundry prices. Whether you are installing a high-efficiency hydronic boiler loop or repairing critical potable water lines, our hardware delivers lasting peace of mind.
+            <p className="mb-8 text-sm leading-relaxed text-neutral-text/75 md:text-base">
+              Our goal is simple: provide plumbers, contractors, and homeowners with certified, zero-leak plumbing components at direct foundry pricing with fast nationwide shipping.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -46,10 +46,10 @@ export default function AboutUs() {
               </Link>
 
               <Link
-                href="/about"
+                href="/contact"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-primary/20 bg-transparent px-8 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:border-primary hover:bg-primary/5"
               >
-                Foundry Specs
+                Contact Team
               </Link>
             </div>
           </div>

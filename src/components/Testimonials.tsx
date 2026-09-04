@@ -5,30 +5,30 @@ import React, { useEffect, useState } from "react";
 const testimonials = [
   {
     date: "Aug 2026",
-    quote: "The Copperline compression fittings cut our manifold installation time significantly. The threads are cleanly cut with zero burs, and under a 100 PSI air test every single joint held tight.",
+    quote: "The brass compression fittings cut our installation time in half. Clean threading, zero burs, and held 100% tight under pressure test.",
     name: "Thomas B.",
-    role: "Master Plumber & Contractor",
+    role: "Master Plumber",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
     date: "Aug 2026",
-    quote: "We installed the Master-Forge 3/4\" ball valves across a commercial radiant heating boiler system. The quarter-turn lever action is silky smooth, and the forged body gives total confidence.",
+    quote: "We installed the 3/4\" ball valves across a radiant boiler system. Smooth quarter-turn action and solid forged brass construction.",
     name: "Gregory K.",
-    role: "Hydronic Heating Specialist",
+    role: "Hydronic Specialist",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
     date: "Jul 2026",
-    quote: "Replaced old corroded water heater flex lines with the Copperline Thermal-Flex stainless lines. The forged brass dielectric nuts eliminated galvanic electrolysis and the seal was instant.",
+    quote: "Replaced old flex lines with these stainless supply connectors. Solid brass nuts, flawless seal, and zero galvanic corrosion.",
     name: "Marcus V.",
-    role: "Facility Operations Manager",
+    role: "Facility Manager",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
   },
   {
     date: "Jun 2026",
-    quote: "Ordering 8-packs of the compression fittings saved our maintenance crew significant budget compared to local wholesale counter prices. Top-tier forged brass quality.",
+    quote: "Ordering contractor bundles saved our crew substantial budget compared to local supply house counter rates. Top quality.",
     name: "Darren P.",
-    role: "Lead Mechanical Contractor",
+    role: "Mechanical Contractor",
     image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&q=80",
   },
 ];
@@ -48,13 +48,13 @@ export default function Testimonials() {
   return (
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-neutral-bg" id="testimonials">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <span className="eyebrow mb-3 justify-center">Field Tested</span>
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+          <span className="eyebrow mb-3 justify-center">Customer Reviews</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-primary">
             Trusted by <span className="text-secondary">Trade Professionals</span>
           </h2>
           <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mt-3">
-            Master plumbers, boiler technicians, and mechanical contractors rely on our foundry hardware daily.
+            Real feedback from plumbers, technicians, and contractors using our hardware daily.
           </p>
         </div>
 

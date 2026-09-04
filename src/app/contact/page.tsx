@@ -18,7 +18,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Reach Out"
           title={<>Contact {siteConfig.brandName}</>}
-          subtitle="Questions about sizing, an order, or a gift? Our customer care team typically replies within 24 hours."
+          subtitle="Questions about hardware specifications, sizing, or an order? Our customer support team is here to help."
           image="https://images.unsplash.com/photo-1543168256-418811576931?w=1600&q=80"
           currentLabel="Contact"
         />

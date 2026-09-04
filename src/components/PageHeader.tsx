@@ -21,7 +21,7 @@ export default function PageHeader({ eyebrow, title, subtitle, image, currentLab
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-primary/60" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 md:py-28 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center justify-center gap-2 text-[0.68rem] font-bold uppercase tracking-widest text-white/50">
           <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
           <span aria-hidden="true">/</span>

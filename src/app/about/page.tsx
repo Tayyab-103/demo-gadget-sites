@@ -19,7 +19,7 @@ export default function AboutPage() {
         <PageHeader
           eyebrow="Foundry Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Precision-engineered plumbing fittings, heavy-duty shutoff valves, and hydronic heating supplies tested to extreme tolerances and priced fairly."
+          subtitle="Precision-engineered brass fittings, shutoff valves, and heating supplies tested to extreme tolerances."
           image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&q=80"
           currentLabel="About"
         />

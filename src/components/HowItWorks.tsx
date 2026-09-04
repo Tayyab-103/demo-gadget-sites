@@ -14,7 +14,7 @@ const steps = [
     label: "Select Gear",
     title: "Choose Gear & Bundles",
     description: "Pick your training equipment and select multi-pack bundles for volume savings.",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&q=80",
+    image: "/img/howitworks1.jpg",
     badge: "Step 1",
   },
   {
@@ -22,7 +22,7 @@ const steps = [
     label: "Fast Dispatch",
     title: "Austin Lab Dispatch",
     description: `Packed in Austin and shipped via ${siteConfig.shippingCarrier} with real-time tracking in ${siteConfig.shippingPeriod} business days.`,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
+    image: "/img/howitworks2.jpg",
     badge: "Step 2",
   },
   {
@@ -30,7 +30,7 @@ const steps = [
     label: "14-Day Trial",
     title: "14-Day Field Guarantee",
     description: "Test our gear on your toughest workouts. If you're not satisfied, return for a 100% full refund.",
-    image: "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=1200&q=80",
+    image: "/img/howitworksstep3.jpg",
     badge: "Step 3",
   },
 ];
@@ -50,7 +50,7 @@ export default function HowItWorks() {
 
   return (
     <section className="py-14 sm:py-16 md:py-20 bg-neutral-bg" id="how-it-works">
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Minimal Header */}
         <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">

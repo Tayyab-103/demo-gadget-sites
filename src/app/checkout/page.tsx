@@ -129,7 +129,7 @@ export default function Checkout() {
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="eyebrow mb-4">Encrypted Checkout</span>
           <h2 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 tracking-tight">Athlete <span className="text-secondary">Checkout</span></h2>
 

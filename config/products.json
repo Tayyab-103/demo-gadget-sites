@@ -2,15 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Northcrest Apex-Pro 20LB Adjustable Tactical Weighted Vest",
+    "name": "Adjustable Tactical Weighted Vest",
     "description": "Engineered for elite conditioning, high-intensity interval training, and tactical endurance workouts. Crafted from 1000D military-grade ballistic nylon with laser-cut MOLLE webbing, padded breathable mesh shoulders, and dual quick-release contoured chest straps. Includes 16 removable laser-cut cast-iron weight bricks that sit flush against your torso to prevent bouncing during sprints, box jumps, and pull-ups.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
-      "/img/products/product1_alt.jpg"
+      "/img/products/product1-2.jpg",
+      "/img/products/product1-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product1.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Strength & Conditioning",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -29,15 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Northcrest Hex-Grip Solid Cast Dumbbells & Conditioning Band Set",
+    "name": "Hex-Grip Dumbbells & Conditioning Band Set",
     "description": "Precision-balanced solid cast iron dumbbells paired with heavy-duty latex resistance cables and reinforced padded comfort grips. Engineered for progressive overload, functional movement training, and high-velocity conditioning with zero slippage. Features anti-roll hexagonal heads and textured ergonomic handles.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
-      "/img/products/product2_alt.jpg"
+      "/img/products/product2-2.jpg",
+      "/img/products/product2-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product2.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Strength & Conditioning",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -56,16 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Northcrest Hydro-Shield 45L Tactical Athlete Gym Backpack & Dry-Pack",
+    "name": "Tactical Gym Backpack & Dry-Pack",
     "description": "Built for competitive athletes, multi-sport training, and weekend competitions. Constructed from TPU-laminated storm-resistant composite fabric featuring heavy-duty zippers, isolated ventilated footwear compartment, and dual thermal hydration sleeves. Padded ergonomic shoulder harnesses ensure all-day comfort.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",
-      "/img/products/product3_alt.jpg"
+      "/img/products/product3-2.jpg",
+      "/img/products/product3-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/product3.jpg",
-    "category": "Performance Bags & Gear",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Bags & Gear",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

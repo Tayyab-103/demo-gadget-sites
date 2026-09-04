@@ -18,7 +18,7 @@ export default function Terms() {
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="eyebrow mb-4">Legal &amp; Compliance</span>
           <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
             Terms &amp; Conditions

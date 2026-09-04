@@ -26,9 +26,14 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const trimmedQuery = query.trim().toLowerCase();
   const filteredProducts = trimmedQuery
@@ -171,7 +176,7 @@ export default function Header() {
               <circle cx="20" cy="21" r="1" />
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
-            {getCartCount() > 0 && (
+            {mounted && getCartCount() > 0 && (
               <span className="absolute top-0.5 right-0.5 bg-secondary text-secondary-text rounded-full w-[16px] h-[16px] text-[0.58rem] font-black flex items-center justify-center shadow-md animate-pulse">
                 {getCartCount()}
               </span>

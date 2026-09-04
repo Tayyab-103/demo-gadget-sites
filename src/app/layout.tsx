@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${selectedFontClass} h-full antialiased`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {

@@ -2,67 +2,110 @@
 
 import React from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[82vh] min-h-[580px] max-h-[860px] sm:h-[88vh] lg:h-[92vh] overflow-hidden bg-black">
-      {/* Layer 1: One full-bleed <img> spanning 100% of the container */}
-      <img
-        src="/img/hero-athletes.jpg"
-        alt="Vantage Thread Activewear Collection"
-        className="absolute inset-0 w-full h-full object-cover object-[80%_center] sm:object-[78%_center] z-0 pointer-events-none select-none"
-      />
-
-      {/* Layer 2: Transparent dark gradient overlay over the ENTIRE image fading seamlessly toward the right */}
-      <div
-        className="absolute inset-0 w-full h-full z-1 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.68) 28%, rgba(0, 0, 0, 0.32) 50%, rgba(0, 0, 0, 0) 72%)",
-        }}
-      />
-
-      {/* Subtle bottom shadow on small mobile screens for perfect text legibility */}
-      <div
-        className="absolute inset-0 w-full h-full z-1 pointer-events-none md:hidden"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 70%)",
-        }}
-      />
-
-      {/* Layer 3: Hero Content Overlay — Left 6-7% Aligned and Vertically Centered */}
-      <div className="relative z-10 w-full h-full flex items-center px-[6%] sm:px-[7%]">
-        <div className="w-full max-w-[460px]">
+    <section className="pt-28 sm:pt-32 md:pt-36 pb-0 bg-[#f2f7f4] text-black min-h-[90vh] flex flex-col">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col">
+        
+        {/* Main Hero Grid — 2 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 flex-1 items-stretch">
           
-          {/* Large uppercase condensed bold headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-black text-white leading-[0.98] tracking-tight uppercase mb-4">
-            PERFORMANCE<br />
-            MEETS <span className="text-secondary">STYLE.</span>
-          </h1>
+          {/* Left Column: Headline + Description */}
+          <div className="flex flex-col justify-center py-8 sm:py-12 lg:py-16">
 
-          {/* Short white supporting paragraph constrained to ~400-450px */}
-          <p className="text-white/85 text-xs sm:text-sm md:text-base leading-relaxed max-w-[430px] font-normal mb-8">
-            Premium activewear designed to move with you, every step of the way.
-          </p>
 
-          {/* Two horizontal CTA buttons related to the brand */}
-          <div className="flex items-center gap-3.5">
+            {/* Bold headline with arrow */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase text-[#0d3b2e] tracking-tight leading-[1.02] mb-6">
+              <span className="flex items-center gap-3 flex-wrap">
+                <span>FOR</span>
+                <svg className="w-10 h-6 sm:w-14 sm:h-8 text-[#0d3b2e]" viewBox="0 0 48 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="2" y1="12" x2="42" y2="12" />
+                  <polyline points="34 4 42 12 34 20" />
+                </svg>
+              </span>
+              <span className="block">EVERY <span className="text-[#0d4a36]">ATHLETE</span></span>
+              <span className="block">NOT <span className="text-[#0d4a36]">ANYONE</span></span>
+            </h1>
+
+            <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-8 font-normal">
+              Quality activewear crafted with flexible four-way stretch fabric and durable flatlock seams for training and everyday comfort.
+            </p>
+          </div>
+
+          {/* Right Column: Large Hero Image with Shop Now */}
+          <div className="relative rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px] lg:min-h-0 bg-black/5 group shadow-lg border border-black/5">
+            <img
+              src="/img/herosection1.jpg"
+              alt={`${siteConfig.brandName} athletic activewear collection`}
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e22]/60 via-transparent to-transparent" />
+            
+            {/* Shop Now floating button */}
             <Link
               href="/shop"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-black text-xs sm:text-sm bg-secondary hover:brightness-110 transition-all duration-200 py-3 px-6 sm:px-7 rounded-[4px] shadow-sm text-center"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#0d4a36] text-white flex items-center justify-center text-[0.62rem] sm:text-xs font-black uppercase tracking-wider shadow-2xl hover:bg-[#083325] hover:scale-110 transition-all duration-300 border-2 border-white/20 z-10"
             >
-              Shop Apparel
+              <span className="text-center leading-tight">SHOP<br />NOW</span>
             </Link>
+          </div>
+        </div>
+
+        {/* Bottom Row: 2 Category Cards + CTA Buttons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 py-6 sm:py-8">
+          
+          {/* Category Card 1 */}
+          <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
+            <img
+              src="/img/herosection2.jpg"
+              alt="Compression baselayers collection"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+          </Link>
+
+          {/* Category Card 2 */}
+          <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
+            <img
+              src="/img/herosection3.jpg"
+              alt="Technical outerwear collection"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+          </Link>
+
+          {/* CTA Buttons — spanning right 2 columns */}
+          <div className="sm:col-span-2 flex items-end justify-end gap-3 py-2 sm:py-0">
             <Link
               href="/about"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm border border-white/80 bg-black/20 hover:bg-white/15 transition-all duration-200 py-3 px-6 sm:px-7 rounded-[4px] text-center backdrop-blur-xs"
+              className="inline-flex items-center gap-2 justify-center font-black uppercase tracking-wider text-[#0d3b2e] text-xs sm:text-sm bg-white hover:bg-[#e6efe9] border border-black/10 transition-all duration-200 py-3.5 px-7 rounded-xl text-center shadow-sm"
             >
-              Our Heritage
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 16 16 12 12 8" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+              </svg>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm bg-[#0d4a36] hover:bg-[#083325] transition-all duration-200 py-3.5 px-7 rounded-xl text-center shadow-md hover:scale-105"
+            >
+              Contact Us
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
             </Link>
           </div>
 
         </div>
+
       </div>
     </section>
   );

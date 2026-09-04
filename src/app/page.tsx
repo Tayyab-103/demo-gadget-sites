@@ -7,7 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import AboutUs from "@/components/AboutUs";
 import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
-import QualityPromise from "@/components/QualityPromise";
+
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Faq from "@/components/Faq";
@@ -36,8 +36,7 @@ export default function Home() {
         {/* Video Showcase In Motion */}
         <VideoShowcase />
 
-        {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
+
         
         {/* Athlete Testimonials */}
         <Testimonials />

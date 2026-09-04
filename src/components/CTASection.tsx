@@ -7,78 +7,92 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
+/* Floating avatar positions — scattered around the edges of the card */
+const avatars = [
+  { src: "/img/testimonialsec1.jpg", top: "8%", left: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
+  { src: "/img/testimonialsec2.jpg", top: "5%", left: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
+  { src: "/img/herosection1.jpg", bottom: "18%", left: "6%", size: "w-12 h-12 sm:w-14 sm:h-14" },
+  { src: "/img/testimonialsec3.jpg", bottom: "10%", left: "30%", size: "w-10 h-10 sm:w-12 sm:h-12" },
+  { src: "/img/herosection2.jpg", top: "10%", right: "5%", size: "w-13 h-13 sm:w-15 sm:h-15" },
+  { src: "/img/howitworks1.jpg", top: "6%", right: "26%", size: "w-10 h-10 sm:w-12 sm:h-12" },
+  { src: "/img/herosection3.jpg", bottom: "12%", right: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
+  { src: "/img/howitworks2.jpg", bottom: "16%", right: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
+];
+
 export default function CTASection() {
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="cta">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-3xl sm:rounded-4xl shadow-2xl md:grid-cols-2 bg-black text-white">
-          
-          {/* Left — Image */}
-          <div className="relative min-h-72 sm:min-h-88 md:min-h-full">
-            <img
-              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1200&q=80"
-              alt="High performance athletic apparel and training sportswear"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-gradient-to-r" />
 
-            {/* Stat badge */}
-            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-3.5 rounded-2xl bg-white/95 px-4 py-3 shadow-xl backdrop-blur-md">
-              <div className="flex -space-x-2">
-                {[
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
-                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
-                ].map((src) => (
+        {/* CTA Banner Card */}
+        <div className="relative bg-[#f2f7f4] rounded-3xl sm:rounded-[2rem] border border-black/5 shadow-sm overflow-hidden py-16 sm:py-20 md:py-24 px-6 sm:px-10">
+
+          {/* Floating Avatar Circles — scattered around edges */}
+          <div className="hidden md:block">
+            {avatars.map((avatar, idx) => (
+              <div
+                key={idx}
+                className={`absolute ${avatar.size} rounded-full overflow-hidden border-[3px] border-white shadow-lg`}
+                style={{
+                  top: avatar.top,
+                  left: avatar.left,
+                  right: avatar.right,
+                  bottom: avatar.bottom,
+                }}
+              >
+                <img
+                  src={avatar.src}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: Stacked avatar row */}
+          <div className="flex md:hidden items-center justify-center gap-2 mb-8">
+            <div className="flex -space-x-3">
+              {avatars.slice(0, 5).map((avatar, idx) => (
+                <div
+                  key={idx}
+                  className="w-10 h-10 rounded-full overflow-hidden border-[3px] border-white shadow-md"
+                >
                   <img
-                    key={src}
-                    src={src}
+                    src={avatar.src}
                     alt=""
                     aria-hidden="true"
-                    className="h-8 w-8 flex-shrink-0 rounded-full border-2 border-white object-cover"
+                    className="w-full h-full object-cover"
                   />
-                ))}
-              </div>
-              <div>
-                <div className="text-xs sm:text-sm font-black text-black">10,000+</div>
-                <div className="text-[0.62rem] font-bold uppercase tracking-wider text-black/60">
-                  Athletes Equipped
                 </div>
-              </div>
+              ))}
             </div>
+            <span className="text-xs font-black text-[#0d3b2e] ml-2">10,000+</span>
           </div>
 
-          {/* Right — Content panel */}
-          <div className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 md:px-12 md:py-14 text-white">
-            <span className="mb-3 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 px-4 py-1 text-[0.68rem] font-black uppercase tracking-widest bg-white/10">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-              Athlete &amp; Team Ready
-            </span>
-
-            <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl font-black uppercase leading-tight tracking-tight text-white">
-              Gear Up For Your <span className="text-secondary">Next Milestone</span>
+          {/* Center Content */}
+          <div className="relative z-10 text-center max-w-xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0d3b2e] tracking-tight leading-[1.08] mb-4">
+              Ready To Gear Up?
             </h2>
-
-            <p className="mb-8 max-w-md text-xs sm:text-sm md:text-base leading-relaxed text-white/80 font-normal">
-              Order precision athletic training hoodies, compression baselayers, and zoned performance crew socks directly from {siteConfig.brandName}. Fast nationwide UPS shipping on every order.
+            <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto font-normal">
+              Equip your workouts with comfortable compression tops, fleece hoodies, and athletic socks from {siteConfig.brandName}.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4">
-              <Link
-                href="/shop"
-                className="inline-flex items-center justify-center font-black text-xs sm:text-sm uppercase tracking-wider text-black bg-secondary px-8 py-4 rounded-full shadow-lg transition-all duration-200 hover:brightness-110 text-center hover:scale-105"
-              >
-                Shop Collection →
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-white/40 px-8 py-3.5 rounded-full transition-all duration-200 hover:bg-white/15 text-center text-white"
-              >
-                Athlete Support
-              </Link>
-            </div>
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm bg-[#0d4a36] hover:bg-[#083325] transition-all duration-200 py-4 px-10 rounded-full shadow-lg hover:scale-105"
+            >
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
           </div>
+
         </div>
+
       </div>
     </section>
   );

@@ -3,11 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import productsData from "../../config/products.json";
-import { SiteConfig, Product } from "@/types";
+import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
-const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,116 +14,145 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email.trim()) return;
     setSubscribed(true);
     setEmail("");
   };
 
   return (
-    <footer className="bg-primary text-white py-12 sm:py-16 md:py-20 border-t border-white/10" id="footer">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-14 sm:mb-16 md:mb-20">
+    <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-12 md:pt-16 pb-8 w-full bg-[#07241b] text-white/70 border-t border-white/10 font-sans">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Content Row */}
+        <div className="flex flex-col lg:flex-row justify-between w-full gap-10 lg:gap-16 border-b border-white/10 pb-10">
           
-          {/* Left Column: CTA & Subscribe */}
-          <div className="w-full lg:w-[42%] flex flex-col">
-            <div className="inline-flex items-center gap-2 mb-3 text-secondary text-xs font-black uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-secondary" />
-              Athlete Collective Direct
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black leading-tight mb-3 tracking-tight uppercase">
-              Join the Collective at {siteConfig.brandName}
-            </h2>
-            <p className="text-white/70 text-xs sm:text-sm mb-6 max-w-md leading-relaxed">
-              Subscribe for VIP apparel drops, endurance training guides, and exclusive athlete bundle discounts.
-            </p>
-            
-            {subscribed ? (
-              <div className="flex items-center gap-3 text-secondary text-xs sm:text-sm font-bold bg-secondary/15 p-4 rounded-2xl border border-secondary/30">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
-                Welcome to the Collective! 15% discount code applied.
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full max-w-md">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Athlete / Training Email"
-                  required
-                  className="w-full bg-white/10 border border-white/20 rounded-full px-5 py-3.5 text-xs sm:text-sm text-white placeholder:text-white/45 focus:outline-none focus:border-secondary transition-colors"
+          {/* Brand & Description Column */}
+          <div className="lg:max-w-sm flex flex-col">
+            <Link href="/" className="inline-flex flex-col group mb-4" style={{ textDecoration: "none" }}>
+              {siteConfig.useImageLogo && siteConfig.footerLogoImage ? (
+                <img
+                  src={siteConfig.footerLogoImage}
+                  alt={siteConfig.brandName}
+                  className="max-h-8 w-auto object-contain brightness-0 invert"
                 />
-                <button
-                  type="submit"
-                  className="bg-secondary text-secondary-text font-black text-xs sm:text-sm px-7 py-3.5 rounded-full hover:brightness-110 transition-all whitespace-nowrap shadow-md cursor-pointer uppercase tracking-wider"
-                >
-                  Join VIP
-                </button>
-              </form>
-            )}
+              ) : (
+                <div className="flex flex-col">
+                  <span className="text-2xl font-black tracking-tighter text-white uppercase leading-none flex items-baseline">
+                    <span>VANTAGE</span>
+                    <span className="inline-block w-2 h-2 rounded-full bg-[#10b981] ml-0.5" />
+                  </span>
+                  <span className="text-[0.62rem] font-black uppercase tracking-[0.28em] text-[#10b981] mt-1">
+                    ATHLETIC WORKS
+                  </span>
+                </div>
+              )}
+            </Link>
+
+            <p className="text-sm text-white/70 leading-relaxed mb-6">
+              Engineered high-performance compression wear and athletic apparel designed for athletes who demand peak endurance, precision fit, and uncompromising durability.
+            </p>
+
+            {/* Quick Contact Badges */}
+            <div className="flex flex-col gap-1.5 text-xs text-white/60">
+              <span className="font-medium text-white/90">{siteConfig.address}</span>
+              <span>{siteConfig.phone} • {siteConfig.email}</span>
+            </div>
           </div>
 
-          {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[58%] grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-10">
+          {/* Right Navigation & Newsletter Grid */}
+          <div className="flex-1 flex flex-col sm:flex-row items-start sm:justify-end gap-10 sm:gap-14 lg:gap-16">
             
-            {/* Column 1 */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Collective</h4>
-              <ul className="flex flex-col gap-2.5">
-                <li><Link href="/" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">All Apparel</Link></li>
-                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Apparel Heritage</Link></li>
-                <li><Link href="/contact" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Collective Support</Link></li>
+            {/* Company / Navigation Links */}
+            <div>
+              <h2 className="font-bold mb-4 text-white text-sm uppercase tracking-wider">
+                Company
+              </h2>
+              <ul className="text-sm space-y-2.5">
+                <li>
+                  <Link href="/" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shop" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    All Apparel
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-white/70 hover:text-[#10b981] transition-colors">
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            {/* Column 2 */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Sporting Apparel</h4>
-              <ul className="flex flex-col gap-2.5">
-                {products.map((p) => (
-                  <li key={p.id}>
-                    <Link href={`/product/${p.id}`} className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors line-clamp-1">
-                      {p.name}
-                    </Link>
-                  </li>
-                ))}
-                <li><Link href="/shop" className="text-secondary text-xs sm:text-sm font-bold hover:underline">View All Apparel &rarr;</Link></li>
-              </ul>
-            </div>
+            {/* Newsletter Subscription */}
+            <div className="max-w-md w-full sm:w-auto">
+              <h2 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">
+                Subscribe to our newsletter
+              </h2>
+              <div className="text-sm space-y-3">
+                <p className="text-white/70 leading-relaxed text-sm">
+                  The latest gear drops, training guides, and exclusive athlete discounts, sent to your inbox weekly.
+                </p>
 
-            {/* Column 3 */}
-            <div className="flex flex-col col-span-2 sm:col-span-1">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-wider">Support</h4>
-              <ul className="flex flex-col gap-2.5">
-                <li className="text-white/80 text-xs sm:text-sm break-all">{siteConfig.email}</li>
-                <li className="text-white/80 text-xs sm:text-sm font-bold">{siteConfig.phone}</li>
-                <li className="text-white/60 text-xs leading-relaxed max-w-[170px]">{siteConfig.address}</li>
-              </ul>
+                {subscribed ? (
+                  <div className="flex items-center gap-2 text-[#10b981] bg-[#10b981]/15 border border-[#10b981]/30 rounded-xl p-3 text-xs font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Thanks for subscribing! Check your inbox for 15% off.
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      required
+                      className="border border-white/20 bg-white/10 placeholder-white/40 focus:ring-2 focus:ring-[#10b981] focus:border-[#10b981] outline-none w-full sm:w-64 h-10 rounded-lg px-3.5 text-sm text-white transition-all shadow-xs"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-[#10b981] hover:bg-[#0d9668] text-[#07241b] font-black h-10 px-5 rounded-lg text-sm transition-all duration-200 whitespace-nowrap shadow-xs cursor-pointer hover:brightness-110 uppercase tracking-wider text-xs"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
 
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-white/10 text-xs text-white/50">
-          <div>
-            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
-          </div>
-
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-white/60 hover:text-secondary transition-colors">Privacy Policy</Link>
-            <span>•</span>
-            <Link href="/terms" className="text-white/60 hover:text-secondary transition-colors">Terms &amp; Conditions</Link>
-          </div>
+        {/* Bottom Bar: Copyright & Payment Badges */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <p className="text-center sm:text-left">
+            Copyright {currentYear} © <span className="font-semibold text-white/80">{siteConfig.brandName}</span>. All Rights Reserved.
+          </p>
 
           <div className="flex items-center gap-2">
-            <span className="text-white/50 text-[0.7rem] uppercase tracking-wider">Accepted:</span>
+            <span className="text-[0.7rem] uppercase tracking-wider text-white/40 font-medium">Secured:</span>
             <img src="/img/visa.png" alt="Visa" className="h-5 w-auto rounded-xs bg-white p-0.5" />
             <img src="/img/mastercard.png" alt="Mastercard" className="h-5 w-auto rounded-xs bg-white p-0.5" />
           </div>
         </div>
-
       </div>
     </footer>
   );

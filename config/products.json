@@ -2,15 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Vantage AeroWeave Pro Athletic Performance Crew & Compression Socks",
-    "description": "Engineered for elite endurance runners, high-cadence turf workouts, and heavy conditioning sessions. Crafted with four-way stretch AeroWeave technical fiber featuring graduated arch compression, seamless micro-knit toe construction to eliminate blister friction, and zonal mesh ventilation channels that keep feet dry and cool under extreme training output.",
-    "image": "/img/product-socks.jpg",
+    "name": "Crew & Compression Socks",
+    "description": "Breathable athletic socks designed with arch support, seamless toe construction, and cushioned soles for workouts and everyday training.",
+    "image": "/img/products/product-socks.jpg",
     "images": [
-      "/img/product-socks.jpg",
-      "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=800&q=80"
+      "/img/products/product-socks.jpg",
+      "/img/products/products-sock2.jpg",
+      "/img/products/products-sock3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product-socks.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Performance Apparel & Accessories",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -29,15 +30,16 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Vantage ThermoFlex Seamless Athletic Compression Baselayer Top",
-    "description": "Precision-engineered athletic compression top designed for high-velocity functional training, weight conditioning, and temperature regulation. Features high-gauge ThermoFlex four-way stretch knit that contours to upper-body musculature, accelerates circulation, and uses targeted moisture-transport zones for rapid sweat evacuation.",
-    "image": "/img/product-compression.jpg",
+    "name": "Compression Baselayer Top",
+    "description": "Fitted four-way stretch compression shirt that provides muscle support and moisture-wicking comfort during training.",
+    "image": "/img/products/product-compression.jpg",
     "images": [
-      "/img/product-compression.jpg",
-      "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=800&q=80"
+      "/img/products/product-compression.jpg",
+      "/img/products/product-compression2.jpg",
+      "/img/products/product-compression3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product-compression.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Technical Baselayers & Tops",
     "billingModel": 1,
     "ssPrice": "11.95",
@@ -56,15 +58,16 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Vantage ApexKnit Pro-Performance Athlete Technical Training Hoodie",
-    "description": "The benchmark in high-performance athletic outerwear. Constructed from proprietary double-knit ApexKnit technical fleece with articulated raglan sleeves, bonded storm-resistant zip pockets, and ergonomic ribbed cuffs. Delivers supreme warmth without weight for track warmups, outdoor conditioning, and post-session recovery.",
-    "image": "/img/product-hoodie.jpg",
+    "name": "Training Hoodie",
+    "description": "Comfortable fleece training hoodie featuring an athletic cut, front pockets, and warm, breathable fabric for warmups and casual wear.",
+    "image": "/img/products/product-hoodie.jpg",
     "images": [
-      "/img/product-hoodie.jpg",
-      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=800&q=80"
+      "/img/products/product-hoodie.jpg",
+      "/img/products/product-hoodie2.jpg",
+      "/img/products/product-hoodie3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/product-hoodie.jpg",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Performance Outerwear & Fleeces",
     "billingModel": 1,
     "ssPrice": "14.95",

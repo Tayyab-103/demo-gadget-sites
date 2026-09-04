@@ -1,173 +1,178 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const contactImages = [
-  "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&q=80",
-  "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=900&q=80",
-  "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80",
-];
-
-const methods = [
-  {
-    label: "Athlete Support Desk",
-    value: siteConfig.phone,
-    subtext: "Mon–Fri, 8am–6pm CST",
-    href: `tel:${siteConfig.phone}`,
-    icon: (
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    ),
-  },
-  {
-    label: "Collective Email",
-    value: siteConfig.email,
-    subtext: "Direct reply within 24 hours",
-    href: `mailto:${siteConfig.email}`,
-    icon: (
-      <>
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </>
-    ),
-  },
-  {
-    label: "Austin Headquarters",
-    value: siteConfig.address,
-    subtext: "Apparel Design Lab & Distribution Hub",
-    href: undefined,
-    icon: (
-      <>
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </>
-    ),
-  },
-];
-
 export default function Contact() {
-  const [activeImage, setActiveImage] = useState(0);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % contactImages.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header with Green Accent */}
-        <div className="max-w-2xl mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/5 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-black/60 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-            Collective Assistance
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary leading-[1.08]">
-            Have Questions? <span className="text-secondary">Talk to Apparel Specialists</span>
-          </h2>
-          <p className="text-black/65 text-xs sm:text-sm md:text-base mt-3 leading-relaxed font-normal">
-            Our Austin athletic apparel advisors are ready to assist with sizing questions, team equipment orders, and logistics.
-          </p>
-        </div>
 
-        {/* 2-Column Visual & Contact Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          
-          {/* Visual Column */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full shadow-lg border border-black/8 bg-black">
-            {contactImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt="Vantage Thread athletic sporting apparel"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  idx === activeImage ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+        {/* Large Contact Heading */}
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase text-[#0d3b2e] tracking-tight leading-[1.02] mb-12 sm:mb-16">
+          Contact
+        </h2>
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-7 sm:p-9 text-white">
-              <span className="text-[0.7rem] font-black uppercase tracking-widest text-secondary mb-2">
-                Direct Athlete Care
-              </span>
-              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-md mb-6">
-                &ldquo;They verified our team sizing and had our tracking details dispatched within the hour.&rdquo;
-              </p>
+        {/* 2-Column Grid: Form + Info Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-              {/* Image dots */}
-              <div className="flex gap-1.5">
-                {contactImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeImage ? "w-7 bg-secondary" : "w-2 bg-white/40"
-                    }`}
-                    aria-label={`Show image ${idx + 1}`}
-                  />
-                ))}
+          {/* Left Column: Contact Form */}
+          <div className="flex flex-col">
+            {submitted ? (
+              <div className="flex items-center gap-3 text-[#0d4a36] text-sm font-bold bg-white p-6 rounded-2xl border border-[#0d4a36]/20 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+                Thank you! We&apos;ll get back to you within 24 hours.
               </div>
-            </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-0">
+                {/* Full Name */}
+                <div className="py-5 border-b border-black/10">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Full name"
+                    required
+                    className="w-full bg-transparent text-sm sm:text-base text-[#0d3b2e] placeholder-black/40 focus:outline-none font-medium"
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="py-5 border-b border-black/10">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email address"
+                    required
+                    className="w-full bg-transparent text-sm sm:text-base text-[#0d3b2e] placeholder-black/40 focus:outline-none font-medium"
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="py-5 border-b border-black/10">
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Messages"
+                    rows={4}
+                    required
+                    className="w-full bg-transparent text-sm sm:text-base text-[#0d3b2e] placeholder-black/40 focus:outline-none resize-none font-medium"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="mt-8">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm bg-[#0d4a36] hover:bg-[#083325] transition-all duration-200 py-3.5 px-8 rounded-full shadow-md hover:scale-105 cursor-pointer"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
 
-          {/* Contact Methods Column */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
-            {methods.map((method) => {
-              const Wrapper = method.href ? "a" : "div";
-              return (
-                <Wrapper
-                  key={method.label}
-                  {...(method.href ? { href: method.href } : {})}
-                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-black/8 bg-black/3 p-5 sm:p-6 transition-all duration-200 hover:border-secondary/60 hover:bg-white hover:shadow-md"
-                >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-black text-white transition-all duration-200 group-hover:bg-secondary group-hover:text-black shadow-xs">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      {method.icon}
-                    </svg>
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[0.65rem] font-mono font-bold uppercase tracking-widest text-black/50 mb-0.5">
-                      {method.label}
-                    </div>
-                    <div className="font-black text-sm sm:text-base text-primary break-all">
-                      {method.value}
-                    </div>
-                    <div className="text-xs text-black/60 mt-0.5">
-                      {method.subtext}
-                    </div>
-                  </div>
-                  {method.href && (
-                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-primary transition-all duration-200 group-hover:border-secondary group-hover:bg-secondary group-hover:text-black">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                  )}
-                </Wrapper>
-              );
-            })}
+          {/* Right Column: Dark Contact Info Card */}
+          <div className="bg-[#0a2e22] rounded-3xl overflow-hidden shadow-xl border border-[#0d4a36]/30">
+            {/* Card Header */}
+            <div className="relative px-7 sm:px-9 pt-8 pb-7 text-center">
+              {/* Decorative corner dots */}
+              <span className="absolute top-4 left-4 w-2 h-2 rounded-full bg-[#10b981]" />
+              <span className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#10b981]" />
+              <span className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-[#10b981]" />
+              <span className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-[#10b981]" />
 
-            {/* Direct Hours Notice */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-black p-5 sm:p-6 text-white shadow-md mt-2">
-              <div className="min-w-0 flex-1">
-                <div className="font-black uppercase tracking-tight text-sm">
-                  Austin Distribution Facility
+              <p className="text-white text-base sm:text-lg font-bold leading-snug">
+                Get in touch with us!
+              </p>
+              <p className="text-white/80 text-sm font-medium mt-1">
+                Let&apos;s talk!
+              </p>
+            </div>
+
+            {/* Contact Info Items */}
+            <div className="px-7 sm:px-9 pb-8 flex flex-col gap-4">
+              {/* Email */}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-11 h-11 rounded-full bg-[#0d4a36] border border-[#10b981]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
                 </div>
-                <div className="text-xs text-white/70 mt-0.5">
-                  Orders packaged &amp; dispatched Monday through Friday via {siteConfig.shippingCarrier}.
+                <span className="text-white/90 text-sm font-medium group-hover:text-[#10b981] transition-colors break-all">
+                  {siteConfig.email}
+                </span>
+              </a>
+
+              {/* Phone */}
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-11 h-11 rounded-full bg-[#0d4a36] border border-[#10b981]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#10b981] transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
                 </div>
+                <span className="text-white/90 text-sm font-medium group-hover:text-[#10b981] transition-colors">
+                  {siteConfig.phone}
+                </span>
+              </a>
+
+              {/* Address */}
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#0d4a36] border border-[#10b981]/30 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <span className="text-white/90 text-sm font-medium">
+                  {siteConfig.address}
+                </span>
               </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-secondary text-black text-xs font-black font-mono">
-                ACTIVE
-              </span>
+
+              {/* Website */}
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 rounded-full bg-[#0d4a36] border border-[#10b981]/30 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+                <span className="text-white/90 text-sm font-medium">
+                  {siteConfig.websiteUrl}
+                </span>
+              </div>
             </div>
           </div>
 

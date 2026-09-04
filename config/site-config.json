@@ -15,10 +15,10 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#111111",
+    "primaryColor": "#0d4a36",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#CCFF00",
-    "secondaryTextColor": "#000000",
+    "secondaryColor": "#10b981",
+    "secondaryTextColor": "#ffffff",
     "neutralBgColor": "#FFFFFF",
     "neutralTextColor": "#111111",
     "fontFamily": "Montserrat"

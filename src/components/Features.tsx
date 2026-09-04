@@ -52,11 +52,11 @@ export default function Features() {
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="eyebrow justify-center mb-3">Fabric Engineering</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
-            Built For The <span className="text-secondary">Dedicated Athlete</span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-[#0d3b2e]">
+            Built For The <span className="text-[#0d4a36]">Dedicated Athlete</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-neutral-text/70">
+          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-black/70">
             Every {siteConfig.brandName} apparel piece is subjected to high-cadence sweat tests and mechanical tensile checks to ensure unyielding durability.
           </p>
         </div>
@@ -65,13 +65,13 @@ export default function Features() {
           {featuresData.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-neutral-bg border border-black/5 shadow-sm transition-all duration-300 hover:border-secondary/40 hover:shadow-md hover:-translate-y-1"
+              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-[#f2f7f4] border border-black/5 shadow-sm transition-all duration-300 hover:border-[#0d4a36]/30 hover:shadow-md hover:-translate-y-1"
             >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-secondary/15 text-secondary shadow-sm">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0d4a36] text-white shadow-md">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-base font-black text-primary uppercase tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-neutral-text/70">{feature.description}</p>
+              <h3 className="mb-2 text-base font-black text-[#0d3b2e] uppercase tracking-tight">{feature.title}</h3>
+              <p className="text-xs sm:text-sm leading-relaxed text-black/65">{feature.description}</p>
             </div>
           ))}
         </div>

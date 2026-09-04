@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
@@ -12,70 +13,93 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] right-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-[#E5E6EB] py-10 sm:py-16 overflow-hidden">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+          
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-xs text-neutral-text/50 font-medium">
+            <Link href="/" className="hover:text-[#111] transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-[#111]">Privacy Policy</span>
+          </nav>
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
-            Privacy Policy
-          </h1>
+          {/* Hero Header Card */}
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 shadow-[0_15px_45px_rgba(0,0,0,0.05)] border border-black/[0.04]">
+            <div className="max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F4F4F6] border border-black/5 text-[0.65rem] font-bold uppercase tracking-widest text-[#111]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0]" />
+                Data Protection &amp; Security
+              </div>
 
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
-            <p>
-              This Privacy Policy describes how your personal information is collected, used, and shared when you visit
-              or make a purchase from <strong className="text-primary font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
-            </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black uppercase text-[#111] tracking-tight leading-[1.08] italic">
+                Privacy Policy
+              </h1>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PERSONAL INFORMATION WE COLLECT</h3>
-            <p>
-              When you visit the Site, we automatically collect certain information about your device, including information
-              about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
-              Additionally, as you browse the Site, we collect information about the individual web pages or products that you view,
-              what websites or search terms referred you to the Site, and information about how you interact with the Site.
-            </p>
-            <p>
-              Additionally, when you make a purchase or attempt to make a purchase through the Site, we collect certain information
-              from you, including your name, billing address, shipping address, payment information (including credit card numbers),
-              email address, and phone number. We refer to this information as “Order Information.”
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">HOW DO WE USE YOUR PERSONAL INFORMATION?</h3>
-            <p>
-              We use the Order Information that we collect generally to fulfill any orders placed through the Site (including
-              processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations).
-              Additionally, we use this Order Information to:
-            </p>
-            <ul className="list-disc pl-5 mb-6 space-y-2">
-              <li>Communicate with you;</li>
-              <li>Screen our orders for potential risk or fraud; and</li>
-              <li>Provide you with information or advertising relating to our products or services.</li>
-            </ul>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SHARING YOUR PERSONAL INFORMATION</h3>
-            <p>
-              We share your Personal Information with third parties to help us use your Personal Information, as described above.
-              For example, we use server-side API integrations (CRMs) to securely capture order information and facilitate card
-              payment processing.
-            </p>
-            <p>
-              Finally, we may also share your Personal Information to comply with applicable laws and regulations, to respond to a
-              subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">DATA RETENTION</h3>
-            <p>
-              When you place an order through the Site, we will maintain your Order Information for our records unless and until
-              you ask us to delete this information.
-            </p>
-
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">CONTACT US</h3>
-            <p>
-              For more information about our privacy practices, if you have questions, or if you would like to make a complaint,
-              please contact us by e-mail at <strong className="text-primary font-semibold">{siteConfig.email}</strong> or by phone at <strong className="text-primary font-semibold">{siteConfig.phone}</strong>.
-            </p>
+              <p className="text-sm sm:text-base text-neutral-text/65 leading-relaxed pt-2">
+                How your technical inquiries and order information are securely handled at {siteConfig.brandName}.
+              </p>
+            </div>
           </div>
+
+          {/* Main Privacy Body */}
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border border-black/[0.04] shadow-[0_15px_45px_rgba(0,0,0,0.05)] leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-8">
+            
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Overview
+              </h3>
+              <p className="leading-relaxed">
+                This Privacy Policy describes how your personal and corporate information is collected, used, and safeguarded when you visit or place equipment orders through <strong className="text-[#111] font-semibold">{siteConfig.websiteUrl}</strong>.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Information We Collect
+              </h3>
+              <p className="leading-relaxed mb-3">
+                When you browse our catalog, we automatically collect basic device telemetry (browser type, IP address, operating system, and diagnostic session identifiers) to ensure site stability and secure shopping.
+              </p>
+              <p className="leading-relaxed">
+                When purchasing diagnostic devices or requesting contractor quotes, we securely collect necessary fulfillment details: name, company name, billing/shipping address, payment tokenization records, email address, and telephone number.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                How We Use Your Data
+              </h3>
+              <div className="bg-[#F8F9FB] border border-black/[0.05] rounded-2xl p-6 sm:p-8 space-y-3">
+                <p className="font-bold text-[#111] text-xs sm:text-sm">Order information is utilized strictly to:</p>
+                <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-neutral-text/70">
+                  <li>Process credit card authorizations and deliver encrypted order invoices;</li>
+                  <li>Coordinate warehouse dispatch with {siteConfig.shippingCarrier} tracked logistics;</li>
+                  <li>Deliver calibration certificate archives and technical warranty records;</li>
+                  <li>Screen transactions for unauthorized payment activity.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Data Security &amp; Retention
+              </h3>
+              <p className="leading-relaxed">
+                We employ industry-standard 256-bit SSL encryption across all checkout endpoints. We retain transaction data strictly for accounting compliance and warranty verification periods.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Contact Privacy Officer
+              </h3>
+              <p className="leading-relaxed">
+                For questions regarding our privacy standards or data deletion requests, contact our privacy desk directly at <strong className="text-[#111] font-semibold">{siteConfig.email}</strong> or call <strong className="text-[#111] font-semibold">{siteConfig.phone}</strong>.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </main>
       <Footer />

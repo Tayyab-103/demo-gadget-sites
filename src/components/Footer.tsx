@@ -3,9 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,7 +24,7 @@ export default function Footer() {
           {/* INNER FLOATING NAVIGATION CARD */}
           <div className="relative bg-white rounded-[2rem] sm:rounded-[2.5rem] p-7 sm:p-10 lg:p-12 border border-black/[0.07] shadow-sm z-10">
             
-            {/* Top Row: Brand Info + 3 Nav Link Columns */}
+            {/* Top Row: Brand Info + 2 Nav Link Columns */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 border-b border-black/[0.06]">
               
               {/* Left: Brand Logomark & Description */}
@@ -32,72 +34,67 @@ export default function Footer() {
                     ⚡
                   </div>
                   <span className="text-base sm:text-lg font-black text-[#111] tracking-tight">
-                    Voltspire
+                    {siteConfig.brandName}
                   </span>
                 </Link>
 
                 <p className="text-xs text-neutral-text/60 max-w-sm leading-relaxed">
-                  Voltspire helps electrical teams maintain peak reliability, certified calibration, and robust power conversion — everything you need in one place.
+                  {siteConfig.brandName} supplies certified electrical testing instruments, high-carbon magnetic bits, and continuous power cabling for master electricians and commercial contractors.
                 </p>
               </div>
 
-            {/* Right: 2 Clean Nav Columns */}
-            <div className="lg:col-span-7 grid grid-cols-2 gap-8 sm:gap-12 lg:justify-end">
-              
-              {/* Col 1: Pages */}
-              <div>
-                <h4 className="text-xs font-bold text-[#111] uppercase tracking-wider mb-3.5">
-                  Pages
-                </h4>
-                <ul className="space-y-2.5 text-xs text-neutral-text/60 font-medium">
-                  <li>
-                    <Link href="/" className="hover:text-[#5B6BF0] transition-colors">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/shop" className="hover:text-[#5B6BF0] transition-colors">
-                      Shop
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="hover:text-[#5B6BF0] transition-colors">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="hover:text-[#5B6BF0] transition-colors">
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {/* Right: 2 Dynamic Nav Columns */}
+              <div className="lg:col-span-7 grid grid-cols-2 gap-8 sm:gap-12 lg:justify-end">
+                
+                {/* Col 1: Pages */}
+                <div>
+                  <h4 className="text-xs font-bold text-[#111] uppercase tracking-wider mb-3.5">
+                    Pages
+                  </h4>
+                  <ul className="space-y-2.5 text-xs text-neutral-text/60 font-medium">
+                    <li>
+                      <Link href="/" className="hover:text-[#5B6BF0] transition-colors">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/shop" className="hover:text-[#5B6BF0] transition-colors">
+                        Shop Catalog
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className="hover:text-[#5B6BF0] transition-colors">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="hover:text-[#5B6BF0] transition-colors">
+                        Contact
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Col 2: Products */}
-              <div>
-                <h4 className="text-xs font-bold text-[#111] uppercase tracking-wider mb-3.5">
-                  Products
-                </h4>
-                <ul className="space-y-2.5 text-xs text-neutral-text/60 font-medium">
-                  <li>
-                    <Link href="/product/product1" className="hover:text-[#5B6BF0] transition-colors">
-                      Digital Multimeter
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/product/product2" className="hover:text-[#5B6BF0] transition-colors">
-                      Thermal Clamp Meter
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/product/product3" className="hover:text-[#5B6BF0] transition-colors">
-                      Sine Wave Inverter
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                {/* Col 2: Dynamic Products List */}
+                <div>
+                  <h4 className="text-xs font-bold text-[#111] uppercase tracking-wider mb-3.5">
+                    Products
+                  </h4>
+                  <ul className="space-y-2.5 text-xs text-neutral-text/60 font-medium">
+                    {products.map((product) => (
+                      <li key={product.id}>
+                        <Link
+                          href={`/product/${product.id}`}
+                          className="hover:text-[#5B6BF0] transition-colors line-clamp-1"
+                        >
+                          {product.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            </div>
+              </div>
 
             </div>
 
@@ -141,21 +138,21 @@ export default function Footer() {
 
           {/* =========================================================
               GIANT BRAND WATERMARK SITTING BENEATH THE CARD WITH
-              BOTTOM FADED GRADIENT (Matching Reference Image Exactly)
+              BOTTOM FADED GRADIENT
               ========================================================= */}
           <div
             className="relative pt-6 sm:pt-10 overflow-hidden text-center select-none pointer-events-none -mb-4 sm:-mb-8 lg:-mb-10 w-full"
             aria-hidden="true"
           >
             <span
-              className="text-[12vw] xl:text-[10.5rem] font-bold tracking-tight leading-none block uppercase max-w-full text-center"
+              className="text-[12vw] xl:text-[10.5rem] font-bold tracking-tight leading-none block uppercase max-w-full text-center truncate"
               style={{
                 background: "linear-gradient(to bottom, #D2D5E0 0%, #E2E4EE 45%, rgba(255,255,255,0) 90%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Voltspire
+              {siteConfig.brandName.split(" ")[0]}
             </span>
           </div>
 

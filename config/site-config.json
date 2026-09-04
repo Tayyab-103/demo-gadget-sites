@@ -7,7 +7,7 @@
   "descriptor": "VoltspireElectricalCol",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
-  "address": "480 Athletic Way, Austin, TX 78701",
+  "address": "1197 E Los Angeles Ave C-260, Simi Valley, CA 93065",
   "shippingCarrier": "UPS",
   "shippingPeriod": "3-5",
   "trialPeriod": 14,
@@ -19,9 +19,8 @@
     "primaryTextColor": "#ffffff",
     "secondaryColor": "#5B6BF0",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#EFECE4",
+    "neutralBgColor": "#E5E6EB",
     "neutralTextColor": "#111317",
     "fontFamily": "Montserrat"
   }
 }
-

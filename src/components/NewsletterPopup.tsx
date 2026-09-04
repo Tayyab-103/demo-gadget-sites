@@ -10,6 +10,7 @@ export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const popupDismissed = localStorage.getItem("newsletter_dismissed");
@@ -27,7 +28,7 @@ export default function NewsletterPopup() {
     };
 
     const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight * 0.6) {
+      if (window.scrollY >= window.innerHeight * 0.5) {
         hasShownScrollIntent = true;
         showWhenReady();
       }
@@ -36,7 +37,7 @@ export default function NewsletterPopup() {
     const timer = window.setTimeout(() => {
       hasSpentTimeOnPage = true;
       showWhenReady();
-    }, 12000);
+    }, 8000);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -56,89 +57,149 @@ export default function NewsletterPopup() {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      setTimeout(() => {
-        setIsVisible(false);
-        localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      localStorage.setItem("newsletter_dismissed", "true");
     }
+  };
+
+  const copyCode = () => {
+    navigator.clipboard.writeText("VOLT15");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black/65 backdrop-blur-sm z-9999 flex items-center justify-center p-4 sm:p-6 transition-all duration-300">
+      <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] w-full max-w-[620px] shadow-[0_25px_80px_rgba(0,0,0,0.3)] border border-black/10 relative flex flex-col overflow-hidden animate-in fade-in zoom-in duration-300">
+        
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          className="absolute top-4 right-4 bg-white/90 hover:bg-[#111] hover:text-white text-[#111] rounded-full w-9 h-9 flex items-center justify-center text-sm cursor-pointer z-20 shadow-md transition-all border border-black/10"
           aria-label="Close newsletter popup"
         >
-          &times;
+          ✕
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[180px] relative">
+        {/* Visual Header Banner */}
+        <div className="h-[200px] sm:h-[220px] relative overflow-hidden bg-[#111]">
           <img
-            src="/images/newsletter_banner.jpg"
+            src="/img/newsletterimag.jpg"
             alt="Voltspire precision electrical diagnostic equipment"
-            className="w-full h-full object-cover absolute inset-0"
+            className="w-full h-full object-cover absolute inset-0 filter brightness-[0.75] contrast-105"
           />
-          {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
+          {/* Subtle Ambient Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-          <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Exclusive Gear Drop
-            </span>
-            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
-              Save 15% Today!
+          <div className="absolute bottom-5 left-6 right-6 text-white z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0] animate-pulse" />
+              <span className="text-[0.62rem] sm:text-[0.68rem] uppercase tracking-[0.2em] font-bold">
+                VOLTSPIRE VIP NETWORK
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black uppercase text-white m-0 tracking-tight italic">
+              Unlock 15% Off Your First Order
             </h3>
           </div>
         </div>
 
         {/* Form Body */}
-        <div className="p-8">
+        <div className="p-6 sm:p-8">
           {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
+            <div className="text-center py-4 space-y-4">
+              <div className="w-14 h-14 rounded-full bg-[#111] text-white flex items-center justify-center text-2xl mx-auto shadow-md">
                 ✓
               </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get training tips, early access to new gear, and <strong>15% off</strong> on your first order.
+              <h4 className="text-[#111] font-black text-xl sm:text-2xl tracking-tight">
+                Welcome to the Voltspire Collective!
+              </h4>
+              <p className="text-neutral-text/60 text-xs sm:text-sm max-w-sm mx-auto leading-relaxed">
+                Use your exclusive single-use discount coupon code below during checkout for <strong>15% off</strong>.
               </p>
 
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+              {/* Coupon Code Box */}
+              <div className="bg-[#F4F4F6] rounded-2xl p-4 max-w-xs mx-auto border border-black/5 flex items-center justify-between gap-3">
+                <div className="text-left">
+                  <span className="text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/40 block">
+                    Promo Code
+                  </span>
+                  <span className="text-lg font-black font-mono tracking-wider text-[#111]">
+                    VOLT15
+                  </span>
+                </div>
+                <button
+                  onClick={copyCode}
+                  className="bg-[#111] hover:bg-[#5B6BF0] text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors cursor-pointer shadow-xs"
+                >
+                  {copied ? "Copied!" : "Copy"}
+                </button>
               </div>
 
-              <button
-                type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
-              >
-                Unlock 15% Discount
-              </button>
+              <div className="pt-2">
+                <button
+                  onClick={handleClose}
+                  className="text-xs font-bold text-neutral-text/50 hover:text-[#111] underline transition-colors cursor-pointer"
+                >
+                  Continue Browsing Catalog
+                </button>
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <p className="text-xs sm:text-sm text-neutral-text/65 leading-relaxed">
+                Subscribe for priority product drops, NIST calibration technical bulletins, and commercial contractor volume pricing.
+              </p>
 
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
-              </span>
+              {/* Feature Checklist */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-text/75 font-medium py-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#5B6BF0] font-bold">✓</span>
+                  <span>Instant 15% discount code</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#5B6BF0] font-bold">✓</span>
+                  <span>Early access to new gear</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#5B6BF0] font-bold">✓</span>
+                  <span>Diagnostic calibration guides</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#5B6BF0] font-bold">✓</span>
+                  <span>Unsubscribe at any time</span>
+                </div>
+              </div>
+
+              <div className="space-y-3 pt-2">
+                <div className="relative">
+                  <input
+                    type="email"
+                    className="block w-full px-5 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-[#111] focus:ring-1 focus:ring-[#111] transition-all text-[#111] bg-[#F9F9FB] placeholder:text-neutral-text/35 font-medium"
+                    placeholder="Enter your work or personal email..."
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 font-bold text-center bg-[#111] hover:bg-[#5B6BF0] text-white transition-all duration-300 py-4 px-8 rounded-2xl text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg cursor-pointer"
+                >
+                  <span>Claim 15% Discount</span>
+                  <span>→</span>
+                </button>
+              </div>
+
+              <p className="text-center text-[0.68rem] text-neutral-text/40 pt-1">
+                We respect your inbox privacy. No spam, ever.
+              </p>
             </form>
           )}
         </div>
+
       </div>
     </div>
   );

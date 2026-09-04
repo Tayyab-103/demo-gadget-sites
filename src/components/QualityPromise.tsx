@@ -108,14 +108,14 @@ export default function QualityPromise() {
               <div className="sm:col-span-7 bg-[#ECECEE] rounded-[2rem] p-7 flex flex-col justify-between border border-black/[0.03] shadow-xs group hover:shadow-md transition-all duration-300 min-h-[260px]">
                 <div className="w-full h-36 rounded-2xl overflow-hidden mb-6 bg-white relative">
                   <img
-                    src="/images/quality_team.jpg"
+                    src="/img/hero2.jpg"
                     alt="Trusted Industrial Partnership"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="text-xl sm:text-2xl leading-snug tracking-tight font-bold">
                   <span className="text-[#111]">Trusted by</span>{" "}
-                  <span className="text-neutral-text/45 font-medium">electrical engineers & contractors worldwide.</span>
+                  <span className="text-neutral-text/45 font-medium">electrical engineers &amp; contractors worldwide.</span>
                 </div>
               </div>
 
@@ -151,7 +151,7 @@ export default function QualityPromise() {
 
               <div className="w-full sm:w-56 h-44 sm:h-48 rounded-2xl overflow-hidden bg-white flex-shrink-0 shadow-xs border border-black/5 relative">
                 <img
-                  src="/images/quality_grid.jpg"
+                  src="/img/hero1.jpg"
                   alt="Industrial power infrastructure"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

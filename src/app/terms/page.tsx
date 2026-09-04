@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
@@ -14,99 +15,109 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-[#E5E6EB] py-10 sm:py-16 overflow-hidden">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+          
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-xs text-neutral-text/50 font-medium">
+            <Link href="/" className="hover:text-[#111] transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-[#111]">Terms &amp; Conditions</span>
+          </nav>
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
-            Terms &amp; Conditions
-          </h1>
+          {/* Hero Header Card */}
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 shadow-[0_15px_45px_rgba(0,0,0,0.05)] border border-black/[0.04]">
+            <div className="max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F4F4F6] border border-black/5 text-[0.65rem] font-bold uppercase tracking-widest text-[#111]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0]" />
+                Commercial Governance
+              </div>
 
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
-            <p>
-              This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the user,
-              conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
-            </p>
-            <p>
-              By visiting our site and/ or purchasing something from us, you engage in our “Service” and agree to be
-              bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
-              terms and conditions and policies referenced herein and/or available by hyperlink. These Terms of
-              Service apply to all users of the site, including without limitation users who are browsers, vendors,
-              customers, merchants, and/ or contributors of content.
-            </p>
-            <p>
-              Please read these Terms of Service carefully before accessing or using our website. By accessing or using
-              any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the
-              terms and conditions of this agreement, then you may not access the website or use any services.
-            </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black uppercase text-[#111] tracking-tight leading-[1.08] italic">
+                Terms &amp; Conditions
+              </h1>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
-            <p>
-              We offer premium sports gear and training gadgets through one-time purchases (Straight Sale) under the following pricing structures:
-            </p>
+              <p className="text-sm sm:text-base text-neutral-text/65 leading-relaxed pt-2">
+                Commercial terms of service, fulfillment policies, and warranty specifications for {siteConfig.brandName}.
+              </p>
+            </div>
+          </div>
 
-            {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
-              {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-primary mb-3">
-                    {product.name}
-                  </h4>
-                  <ul className="list-disc pl-5 m-0 space-y-3">
-                    {product.bundles && product.bundles.map((bundle) => {
-                      const totalCost = parseFloat(String(bundle.price));
-                      const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
-                        ? "FREE Shipping & Handling"
-                        : `$${product.ssShipping} Shipping & Handling`;
-
-                      return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Bottles Bundle" : "Bottle Pack"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
-                          Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
+          {/* Main Terms Body */}
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border border-black/[0.04] shadow-[0_15px_45px_rgba(0,0,0,0.05)] leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-8">
+            
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Overview &amp; Acceptance
+              </h3>
+              <p className="leading-relaxed">
+                This website is operated by <strong className="text-[#111] font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”, “us” and “our” refer to <strong className="text-[#111] font-bold">{siteConfig.brandName}</strong>. By accessing this portal or purchasing our precision electrical testing instruments, power adapters, and magnetic hardware, you agree to be bound by the following terms and conditions.
+              </p>
             </div>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
-            <p>
-              By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
-              or province of residence, or that you are the age of majority in your state or province of residence and you
-              have given us your consent to allow any of your minor dependents to use this site.
-            </p>
-            <p>
-              You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws).
-            </p>
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Products Offered &amp; Commercial Pricing
+              </h3>
+              <p className="leading-relaxed mb-4">
+                We supply industrial-grade electrical parts and diagnostic equipment through one-time purchases under the following tier structures:
+              </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
-            <p>
-              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
-              {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched.
-            </p>
+              {/* Product Pricing Table / Cards */}
+              <div className="bg-[#F8F9FB] border border-black/[0.05] rounded-2xl p-6 sm:p-8 space-y-6">
+                {products.map((product) => (
+                  <div key={product.id} className="pb-6 border-b border-black/[0.06] last:border-0 last:pb-0">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                      <h4 className="text-sm sm:text-base font-bold text-[#111]">
+                        {product.name}
+                      </h4>
+                      <span className="text-[0.65rem] font-mono font-bold uppercase text-[#5B6BF0] bg-white px-2.5 py-1 rounded-full border border-black/5">
+                        {product.category}
+                      </span>
+                    </div>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; REFUND POLICY</h3>
-            <p>
-              We stand behind our quality with a 60-day money-back guarantee. If you are not satisfied with your purchase,
-              please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
-            </p>
-            <p>
-              Returns must be shipped to our designated return facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
-              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
-            </p>
+                    <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-neutral-text/70">
+                      {product.bundles && product.bundles.map((bundle) => {
+                        const totalCost = parseFloat(String(bundle.price));
+                        const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
+                          ? "FREE Tracked Shipping"
+                          : `$${product.ssShipping} Shipping`;
+
+                        return (
+                          <li key={bundle.quantity} className="leading-relaxed">
+                            Order of <strong className="text-[#111] font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Units Multi-Pack" : "Unit"}</strong>: single transaction of <strong className="text-[#111] font-bold">${totalCost.toFixed(2)}</strong> ({shippingText}). Delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days. Descriptor on billing statement: <strong className="text-[#111] font-mono">“{siteConfig.descriptor}”</strong>.
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Shipping &amp; Logistics Policy
+              </h3>
+              <p className="leading-relaxed">
+                All electrical equipment orders are verified, packaged, and dispatched from our logistics center within 1-2 business days. We partner with <strong className="text-[#111] font-semibold">{siteConfig.shippingCarrier}</strong> nationwide with end-to-end tracking. Transit times typically range between <strong className="text-[#111] font-semibold">{siteConfig.shippingPeriod} business days</strong>.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+                Warranty &amp; Return Policy
+              </h3>
+              <p className="leading-relaxed mb-3">
+                All diagnostic equipment and hardware include a <strong className="text-[#111] font-semibold">{siteConfig.trialPeriod}-day satisfaction guarantee</strong> and a 1-year commercial defect warranty.
+              </p>
+              <p className="leading-relaxed">
+                To initiate a return or calibration exchange, contact our engineering desk at <strong className="text-[#111] font-semibold">{siteConfig.phone}</strong> or <strong className="text-[#111] font-semibold">{siteConfig.email}</strong>. Returns must be shipped to our designated facility at: <strong className="text-[#111] font-semibold">{siteConfig.address}</strong>.
+              </p>
+            </div>
+
           </div>
+
         </div>
       </main>
       <Footer />

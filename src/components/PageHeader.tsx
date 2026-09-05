@@ -29,14 +29,8 @@ export default function PageHeader({ eyebrow, title, subtitle, image, currentLab
           <span className="text-[#C87D3B]">{currentLabel}</span>
         </nav>
 
-        {/* Eyebrow Tag */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/20 border border-[#C87D3B]/40 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3.5 sm:mb-4">
-          <span>✈</span>
-          {eyebrow}
-        </div>
-
         {/* Title */}
-        <h1 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight uppercase">
+        <h1 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight uppercase">
           {title}
         </h1>
 

@@ -9,7 +9,6 @@ import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
 import ProductCarousel from "@/components/ProductCarousel";
-import QualityPromise from "@/components/QualityPromise";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
 const products = productsData as unknown as Product[];
@@ -76,12 +75,7 @@ export default function ProductDetail() {
 
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#C87D3B]/25 shadow-lg flex flex-col">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] w-fit mb-3">
-                <span>✈</span>
-                {product.category || "Luxury Luggage"}
-              </div>
-
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0D1B2A] mt-1 mb-3 leading-snug tracking-tight uppercase">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0D1B2A] mt-1 mb-3 leading-snug tracking-tight uppercase">
                 {product.name}
               </h1>
 
@@ -197,7 +191,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </main>
-      <QualityPromise />
       <Footer />
       <CartDrawer />
       <NewsletterPopup />

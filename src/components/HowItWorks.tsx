@@ -11,31 +11,31 @@ const waypoints = [
     step: "01",
     shortLabel: "Curate Gear",
     icon: "🧳",
-    title: "Select Your Expedition System",
-    tagline: "Aerospace Aluminum & Full-Grain Leather",
-    desc: "Choose between anodized aluminum carry-on spinners, Italian leather weekender duffles, or modular vacuum compression suites.",
+    title: "Select Your Gear",
+    tagline: "Aerospace Aluminum & Leather",
+    desc: "Choose between aluminum carry-ons, leather weekenders, or modular compression suites.",
     image: "/img/products/aviator-aluminum-spinner.jpg",
-    tags: ["6061-T6 Alloy", "Italian Full-Grain", "Modular Cubes"],
+    tags: ["6061-T6 Alloy", "Italian Leather", "Modular Cubes"],
   },
   {
     step: "02",
-    shortLabel: "Austin Testing",
+    shortLabel: "Austin Dispatch",
     icon: "⚙️",
-    title: "Austin Calibration & Dispatch",
-    tagline: "Robotic Roll & TSA Verification",
-    desc: `Each piece is calibrated in Austin, Texas, tested on 360° wheel rigs, and shipped via ${siteConfig.shippingCarrier} within ${siteConfig.shippingPeriod} business days.`,
-    image: "/img/travel-atelier-craft.jpg",
-    tags: ["Hinomoto 360°", "TSA Lock Verified", `${siteConfig.shippingCarrier} Tracked`],
+    title: "Austin Quality Dispatch",
+    tagline: "Tested & Verified",
+    desc: `Calibrated in Austin, Texas, tested on 360° wheel rigs, and shipped with tracked delivery.`,
+    image: "/img/products/howitworksstep2.jpg",
+    tags: ["Hinomoto 360°", "TSA Verified", "Fast Tracked"],
   },
   {
     step: "03",
     shortLabel: "Flight Ready",
     icon: "✈️",
-    title: "Global In-Flight Deployment",
-    tagline: "Worldwide Overhead Bin Clearance",
-    desc: `Universal airline carry-on compliant across 150+ airlines, backed by our risk-free ${siteConfig.trialPeriod || 14}-day flight guarantee.`,
+    title: "Global In-Flight Ready",
+    tagline: "Overhead Clearance",
+    desc: `Carry-on compliant worldwide, backed by our risk-free ${siteConfig.trialPeriod || 14}-day flight guarantee.`,
     image: "/img/hero-luggage-travel.jpg",
-    tags: ["IATA Compliant", `${siteConfig.trialPeriod || 14}-Day Flight Trial`, "100% Refund Guarantee"],
+    tags: ["IATA Compliant", `${siteConfig.trialPeriod || 14}-Day Trial`, "Full Refund"],
   },
 ];
 
@@ -49,15 +49,11 @@ export default function HowItWorks() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            The Wanderloom Standard
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            From The Hangar <span className="text-[#C87D3B] font-light italic lowercase">To Destination</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0D1B2A] leading-tight uppercase">
+            How It Works
           </h2>
           <p className="text-[#18222F]/70 text-xs sm:text-sm md:text-base mt-2.5 max-w-md mx-auto font-normal">
-            A three-waypoint transit protocol built for effortless global journeys.
+            A three-step transit protocol from workshop to final destination.
           </p>
         </div>
 

@@ -83,30 +83,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Signature Catalog */}
+          {/* Products Column */}
           <div>
             <h4 className="font-extrabold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C87D3B]/30 pb-1.5">
-              Gear &amp; Luggage
+              Our Products
             </h4>
             <ul className="space-y-2.5 text-xs text-white/75 font-normal">
               <li>
-                <Link href="/shop" className="hover:text-[#C87D3B] transition-colors">
-                  Aluminum Carry-On Spinners
+                <Link href="/product/product1" className="hover:text-[#C87D3B] transition-colors">
+                  Carry-On Spinner Suitcase
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/product2" className="hover:text-[#C87D3B] transition-colors">
+                  Leather &amp; Ballistic Weekender Duffle
+                </Link>
+              </li>
+              <li>
+                <Link href="/product/product3" className="hover:text-[#C87D3B] transition-colors">
+                  Compression Packing Cube &amp; Tech Organizer Suite
                 </Link>
               </li>
               <li>
                 <Link href="/shop" className="hover:text-[#C87D3B] transition-colors">
-                  Leather Weekender Duffles
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C87D3B] transition-colors">
-                  Modular Compression Cubes
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C87D3B] transition-colors">
-                  RFID Passports &amp; Tech Folios
+                  View All Gear →
                 </Link>
               </li>
             </ul>
@@ -183,15 +183,25 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved. Engineered in Austin, TX.
           </p>
 
-          <div className="flex items-center gap-2">
-            {["VISA", "MASTERCARD", "AMEX", "DISCOVER"].map((card) => (
-              <span
-                key={card}
-                className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-[0.62rem] font-mono font-bold text-white"
-              >
-                {card}
-              </span>
-            ))}
+          {/* Payment Methods */}
+          <div className="flex items-center gap-3">
+            <span className="text-[0.65rem] font-bold uppercase tracking-wider text-white/50 mr-1 hidden sm:inline">
+              Secured Payments:
+            </span>
+            <div className="h-7 sm:h-8 px-2.5 py-1 rounded-lg bg-white border border-white/20 flex items-center justify-center shadow-xs">
+              <img
+                src="/img/visa.png"
+                alt="Visa payment accepted"
+                className="h-full w-auto max-h-5 object-contain"
+              />
+            </div>
+            <div className="h-7 sm:h-8 px-2.5 py-1 rounded-lg bg-white border border-white/20 flex items-center justify-center shadow-xs">
+              <img
+                src="/img/mastercard.png"
+                alt="Mastercard payment accepted"
+                className="h-full w-auto max-h-5 object-contain"
+              />
+            </div>
           </div>
         </div>
 

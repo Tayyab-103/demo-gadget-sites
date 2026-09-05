@@ -21,28 +21,39 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-function loadCartFromStorage(): CartItem[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const savedCart = localStorage.getItem("cartPdtArr");
-    return savedCart ? JSON.parse(savedCart) : [];
-  } catch (e) {
-    console.error("Error parsing cart data from localStorage", e);
-    return [];
-  }
-}
-
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Safely load cart on client mount
+  useEffect(() => {
+    try {
+      const savedCart = localStorage.getItem("cartPdtArr");
+      if (savedCart) {
+        const parsed = JSON.parse(savedCart);
+        if (Array.isArray(parsed)) {
+          setCart(parsed);
+        }
+      }
+    } catch (e) {
+      console.error("Error loading cart from localStorage", e);
+    }
+    setIsLoaded(true);
+  }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-  }, [cart]);
+    if (isLoaded) {
+      try {
+        localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+      } catch (e) {
+        console.error("Error saving cart to localStorage", e);
+      }
+    }
+  }, [cart, isLoaded]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
-    // If site configuration limits cart to one product
     const limitOne = siteConfig.oneProductCartLimit === "yes";
 
     if (limitOne) {
@@ -69,7 +80,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existingItemIndex = prevCart.findIndex((item) => item.Id === product.id);
 
       if (existingItemIndex > -1) {
-        // Update existing item
         const updatedCart = [...prevCart];
         const existingItem = updatedCart[existingItemIndex];
         const newQty = existingItem.Qty + quantity;
@@ -81,7 +91,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
         };
         return updatedCart;
       } else {
-        // Add new item
         const newItem: CartItem = {
           Id: product.id,
           Name: product.name,
@@ -117,8 +126,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       prevCart.map((item) => {
         if (item.Id !== productId) return item;
 
-        // Snap to the real configured bundle tier price instead of unit price x qty,
-        // since sticky.io bundle pricing is non-linear per tier.
         const matchedBundle = item.bundles?.find((b) => b.quantity === quantity);
         if (matchedBundle) {
           return {
@@ -140,6 +147,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clearCart = () => {
     setCart([]);
+    try {
+      localStorage.removeItem("cartPdtArr");
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const toggleCart = () => {

@@ -2,16 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "The Aviator Aluminum Carry-On Spinner Suitcase",
+    "name": "Carry-On Spinner Suitcase",
     "description": "Precision-crafted from aerospace-grade anodized aluminum alloy with reinforced corner bumpers. Features ultra-whisper Japanese Hinomoto 360° dual spinner wheels, dual TSA-approved integrated combination lock latches, multi-stage aircraft aluminum telescopic handle, and waterproof compression dividers. Airline carry-on compliant worldwide.",
     "image": "/img/products/aviator-aluminum-spinner.jpg",
     "images": [
       "/img/products/aviator-aluminum-spinner.jpg",
-      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=900&q=80"
+      "/img/products/spinner-suitcase2.jpg",
+      "/img/products/spinner-suitcase3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/aviator-aluminum-spinner.jpg",
-    "category": "Luxury Hardshell Luggage",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Carry On Spinner Suitcase",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
@@ -29,16 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "The Nomad Full-Grain Leather & Ballistic Weekender Duffle",
+    "name": "Leather & Ballistic Weekender Duffle",
     "description": "Hand-stitched with Italian vegetable-tanned full-grain leather and weather-resistant 1000D Cordura ballistic canvas. Engineered with a dedicated ventilated shoe compartment, padded 16-inch laptop compartment, solid brass hardware, luggage trolley pass-through sleeve, and a high-density ergonomic shoulder strap.",
     "image": "/img/products/nomad-leather-duffle.jpg",
     "images": [
       "/img/products/nomad-leather-duffle.jpg",
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&q=80"
+      "/img/products/leather-duffle2.jpg",
+      "/img/products/leather-duffle3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/nomad-leather-duffle.jpg",
-    "category": "Premium Travel Bags & Duffles",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Leather & Ballistic Weekender Duffle",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,16 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "The Globalist Modular Compression Packing Cube & Tech Organizer Suite",
+    "name": "Compression Packing Cube & Tech Organizer Suite",
     "description": "A master 6-piece packing architecture engineered from ultralight water-repellent diamond-ripstop nylon and self-healing YKK dual-compression zippers. Includes 4 expandable garment compression cubes, a spill-proof hanging toiletry dopp kit, and an RFID-shielded passport and tech accessories folio.",
     "image": "/img/products/modular-packing-suite.jpg",
     "images": [
       "/img/products/modular-packing-suite.jpg",
-      "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80"
+      "/img/products/packing-suite1.jpg",
+      "/img/products/packing-suite2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/modular-packing-suite.jpg",
-    "category": "Travel Organizers & Accessories",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Compression Packing Cube & Tech Organizer Suite",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",

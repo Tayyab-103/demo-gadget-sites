@@ -5,9 +5,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import AboutUs from "@/components/AboutUs";
-import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
-import QualityPromise from "@/components/QualityPromise";
+import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Faq from "@/components/Faq";
@@ -33,11 +32,8 @@ export default function Home() {
         {/* About Brand & Austin Heritage */}
         <AboutUs />
 
-        {/* Video Showcase In Motion */}
-        <VideoShowcase />
-
-        {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
+        {/* Brand Key Features Standards */}
+        <Features />
         
         {/* Athlete Testimonials */}
         <Testimonials />

@@ -16,36 +16,36 @@ interface TravelerReview {
 const travelerReviews: TravelerReview[] = [
   {
     id: "01",
-    quote: "The Aviator Aluminum Carry-On survived 40+ international flights last year without a flinch. The Japanese Hinomoto wheels glide like butter across Tokyo and Milan terminals.",
+    quote: "The Aluminum Carry-On survived 40+ international flights without a flinch. The Hinomoto wheels glide effortlessly.",
     name: "Harrison T.",
-    role: "Global Management Consultant",
+    role: "Global Consultant",
     location: "London & New York",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85",
     alt: "Harrison T. frequent traveler with aluminum suitcase",
   },
   {
     id: "02",
-    quote: "The Nomad Leather & Ballistic Duffle is the ultimate weekender. The separate ventilated shoe compartment and trolley sleeve make airport security and hotel check-ins completely effortless.",
+    quote: "The Leather Duffle is the ultimate weekender. The shoe pocket and pass-through sleeve make travel seamless.",
     name: "Elena V.",
-    role: "Architectural Photographer",
+    role: "Photographer",
     location: "Zurich, Switzerland",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85",
     alt: "Elena V. traveler with leather weekender duffle",
   },
   {
     id: "03",
-    quote: "The modular compression packing cubes doubled the usable space in my carry-on. No more wrinkled suits or loose cables when landing in Singapore for meetings.",
+    quote: "The compression packing cubes doubled my carry-on space. Essential for efficient travel.",
     name: "David K.",
-    role: "Venture Partner & Tech Executive",
+    role: "Tech Executive",
     location: "San Francisco, CA",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85",
     alt: "David K. traveling with packing organizers",
   },
   {
     id: "04",
-    quote: "Wanderloom combines Rimowa-level aluminum craftsmanship with the warm soul of Italian full-grain leather. It is without question the best investment in my travel lifestyle.",
+    quote: "Aerospace aluminum alloy with full-grain leather accents. Outstanding build quality.",
     name: "Sophia L.",
-    role: "Travel Journalist & Creative Director",
+    role: "Creative Director",
     location: "Austin, TX",
     image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&q=85",
     alt: "Sophia L. airport travel lifestyle review",
@@ -82,16 +82,12 @@ export default function Testimonials() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            Globetrotter Dispatches
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Trusted Across <span className="text-[#C87D3B] font-light italic lowercase">50+ Countries</span>
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0D1B2A] leading-tight uppercase">
+            Reviews
           </h2>
-          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
-            From short regional hops to trans-Pacific journeys, hear directly from the professionals who rely on Wanderloom.
+          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-2.5 max-w-xl mx-auto font-normal">
+            Hear directly from global travelers and frequent flyers who rely on Wanderloom.
           </p>
         </div>
 

@@ -5,8 +5,6 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import AboutUs from "@/components/AboutUs";
 import HowItWorks from "@/components/HowItWorks";
-import VideoShowcase from "@/components/VideoShowcase";
-import QualityPromise from "@/components/QualityPromise";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
@@ -29,8 +27,6 @@ export default function AboutPage() {
         />
         <AboutUs />
         <HowItWorks />
-        <VideoShowcase />
-        <QualityPromise />
       </main>
       <Footer />
       <CartDrawer />

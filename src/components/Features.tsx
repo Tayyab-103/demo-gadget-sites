@@ -1,88 +1,256 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const featuresData = [
-  {
-    title: "Aerospace Anodized Alloy",
-    description: "Shock-resistant aluminum-magnesium shell with reinforced impact corner bumpers for extreme travel endurance.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Japanese Hinomoto 360°",
-    description: "Whisper-quiet dual ball-bearing spinner wheels designed to glide silently over airport terminals, cobblestones, and curbs.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <circle cx="12" cy="12" r="4" />
-        <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
-        <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
-        <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
-        <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
-      </svg>
-    ),
-  },
-  {
-    title: "Dual TSA Integrated Locks",
-    description: "Recessed keyless combination latches for frictionless customs inspection and impenetrable transit security.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
-  },
-  {
-    title: `${siteConfig.trialPeriod || 14}-Day Flight Guarantee`,
-    description: "Test our luggage and modular bags on your upcoming journeys. Total peace of mind with 100% full money-back coverage.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
-      </svg>
-    ),
-  },
-];
-
 export default function Features() {
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="features">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✦</span>
-            Materials &amp; Engineering
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Built For Millions of <span className="text-[#C87D3B] font-light italic lowercase">Air Miles</span>
-          </h2>
-          <p className="mx-auto mt-3.5 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#18222F]/75 font-normal">
-            Every piece from {siteConfig.brandName} is subjected to drop tests, handle strain simulations, and cobblestone roll testing before departure.
-          </p>
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Desktop 3x3 Grid Layout with Central "FEATURES" Title */}
+        <div className="hidden lg:grid grid-cols-3 gap-6 items-stretch">
+          
+          {/* Row 1, Col 1: 24/7 Call Handling */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-3">
+              24/7 Call Handling
+            </h3>
+            <Link
+              href="/contact"
+              className="inline-block bg-[#0D1B2A] hover:bg-[#C87D3B] text-white text-xs font-bold uppercase tracking-wider px-6 py-2 rounded-xl transition-colors shadow-xs"
+            >
+              Message Us
+            </Link>
+          </div>
+
+          {/* Row 1, Col 2: Best Pricing */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Best Pricing
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 1, Col 3: Customer Favorite */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Customer Favorite
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 2, Col 1: Reliable Help */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Reliable Help
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 2, Col 2: Center Landmark "FEATURES" */}
+          <div className="flex items-center justify-center text-center p-4 min-h-[140px]">
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0D1B2A] tracking-widest uppercase">
+              FEATURES
+            </h2>
+          </div>
+
+          {/* Row 2, Col 3: 100% Money Back */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              100% Money Back
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+                <circle cx="16" cy="15" r="1" fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 3, Col 1: Effortless Returns */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Effortless Returns
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 3, Col 2: Protected Transactions */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Protected Transactions
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Row 3, Col 3: Trusted by Thousands */}
+          <div className="bg-[#FAF7F2] rounded-3xl p-7 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-lg hover:border-[#C87D3B]/50 hover:-translate-y-0.5 min-h-[140px]">
+            <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+              Trusted by Thousands
+            </h3>
+            <div className="text-[#C87D3B]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a2 2 0 0 0 0-2.8l-1.4-1.4a2 2 0 0 0-2.8 0l-.8.8" />
+                <path d="m18 10 1-1a2 2 0 0 0 0-2.8l-1.4-1.4a2 2 0 0 0-2.8 0l-5.6 5.6a2 2 0 0 0 0 2.8l1.4 1.4" />
+                <path d="m6 18-2-2a2 2 0 0 1 0-2.8l6.8-6.8" />
+                <path d="m2 14 3-3" />
+                <path d="m20 22 2-2" />
+              </svg>
+            </div>
+          </div>
+
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
-          {featuresData.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-white border border-[#C87D3B]/20 shadow-sm transition-all duration-300 hover:border-[#C87D3B]/60 hover:shadow-xl hover:-translate-y-1"
-            >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#C87D3B]/15 text-[#C87D3B] shadow-xs">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-base font-bold text-[#0D1B2A] tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-[#18222F]/70 font-normal">{feature.description}</p>
+        {/* Mobile / Tablet Responsive Layout (< lg) */}
+        <div className="lg:hidden flex flex-col gap-6">
+          <div className="text-center mb-2">
+            <h2 className="text-3xl font-black text-[#0D1B2A] tracking-widest uppercase">
+              FEATURES
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            {/* Card 1 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-3">
+                24/7 Call Handling
+              </h3>
+              <Link
+                href="/contact"
+                className="inline-block bg-[#0D1B2A] hover:bg-[#C87D3B] text-white text-xs font-bold uppercase tracking-wider px-6 py-2 rounded-xl transition-colors shadow-xs"
+              >
+                Message Us
+              </Link>
             </div>
-          ))}
+
+            {/* Card 2 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Best Pricing
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Customer Favorite
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Reliable Help
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                100% Money Back
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <line x1="2" y1="10" x2="22" y2="10" />
+                  <circle cx="16" cy="15" r="1" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Effortless Returns
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="1 4 1 10 7 10" />
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 7 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Protected Transactions
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Card 8 */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 border border-[#C87D3B]/25 shadow-sm flex flex-col items-center justify-center text-center">
+              <h3 className="text-base font-extrabold text-[#0D1B2A] tracking-tight mb-2.5">
+                Trusted by Thousands
+              </h3>
+              <div className="text-[#C87D3B]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.6-4.6a2 2 0 0 0 0-2.8l-1.4-1.4a2 2 0 0 0-2.8 0l-.8.8" />
+                  <path d="m18 10 1-1a2 2 0 0 0 0-2.8l-1.4-1.4a2 2 0 0 0-2.8 0l-5.6 5.6a2 2 0 0 0 0 2.8l1.4 1.4" />
+                  <path d="m6 18-2-2a2 2 0 0 1 0-2.8l6.8-6.8" />
+                  <path d="m2 14 3-3" />
+                  <path d="m20 22 2-2" />
+                </svg>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -56,15 +56,11 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
         {/* Section Header */}
         {!hideHeader ? (
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-              <span>✈</span>
-              Engineered For Transit
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-              Signature Travel <span className="text-[#C87D3B] font-light italic lowercase">Systems</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0D1B2A] leading-tight uppercase">
+              Our Products
             </h2>
-            <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
-              Aerospace aluminum hard-cases, full-grain Italian leather weekenders, and modular vacuum packing suites built for millions of air miles.
+            <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-2.5 max-w-xl mx-auto font-normal">
+              Aerospace aluminum hard-cases, full-grain Italian leather weekenders, and modular packing suites.
             </p>
 
             {/* Category Filter Pills */}

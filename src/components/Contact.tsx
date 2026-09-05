@@ -1,174 +1,321 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const contactImages = [
-  "/img/hero-luggage-travel.jpg",
-  "/img/travel-atelier-craft.jpg",
-  "/img/products/nomad-leather-duffle.jpg",
-];
-
-const methods = [
-  {
-    label: "Flight Concierge Desk",
-    value: siteConfig.phone,
-    subtext: "Mon–Fri, 8am–6pm CST",
-    href: `tel:${siteConfig.phone}`,
-    icon: (
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-    ),
-  },
-  {
-    label: "Traveler & Corporate Inquiries",
-    value: siteConfig.email,
-    subtext: "Guaranteed reply within 24 hours",
-    href: `mailto:${siteConfig.email}`,
-    icon: (
-      <>
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-        <polyline points="22,6 12,13 2,6" />
-      </>
-    ),
-  },
-  {
-    label: "Austin Design & Dispatch Hangar",
-    value: siteConfig.address,
-    subtext: "Design Studio & Logistics Hub",
-    href: undefined,
-    icon: (
-      <>
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-        <circle cx="12" cy="10" r="3" />
-      </>
-    ),
-  },
-];
-
 export default function Contact() {
-  const [activeImage, setActiveImage] = useState(0);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    interest: "",
+    timeline: "",
+    city: "",
+    source: "",
+  });
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % contactImages.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        interest: "",
+        timeline: "",
+        city: "",
+        source: "",
+      });
+    }, 4000);
+  };
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#F8F6F0] text-[#18222F] border-t border-[#C87D3B]/20" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-2xl mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            Traveler Concierge Assistance
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Have Inquiries? <span className="text-[#C87D3B] font-light italic lowercase">Connect With Our Team</span>
-          </h2>
-          <p className="text-[#18222F]/75 text-xs sm:text-sm md:text-base mt-3.5 leading-relaxed font-normal">
-            Our Austin travel specialists are ready to assist with custom corporate luggage sets, airline dimensional compatibility, and expedited flight dispatches.
-          </p>
-        </div>
-
-        {/* 2-Column Visual & Contact Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
-          {/* Visual Column */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-full shadow-2xl border border-[#C87D3B]/30 bg-[#0D1B2A]">
-            {contactImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt="Wanderloom Travel luggage support in Austin"
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-65 ${
-                  idx === activeImage ? "opacity-65" : "opacity-0"
-                }`}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-[#0D1B2A]/50 to-transparent" />
+          {/* Left Column: Headline, Subtitle, & Trust Card */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              {/* Main Headline */}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0D1B2A] tracking-tight leading-tight mb-6 uppercase">
+                Contact Us
+              </h2>
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8 md:p-9 text-white">
-              <span className="text-[0.7rem] uppercase tracking-widest text-[#C87D3B] mb-2 font-extrabold">
-                ✈ Dedicated Flight Care
-              </span>
-              <p className="text-white text-base sm:text-lg md:text-xl font-bold leading-snug max-w-md mb-6">
-                &ldquo;They verified our executive team&apos;s carry-on dimensions and had our UPS tracking numbers active the same afternoon.&rdquo;
-              </p>
+              {/* Dot Grid Icon & Subtitle */}
+              <div className="flex items-start gap-3.5 mb-10 text-[#18222F]/75">
+                <div className="grid grid-cols-3 gap-1 w-5 h-5 flex-shrink-0 mt-1 text-[#0D1B2A]">
+                  {[...Array(9)].map((_, i) => (
+                    <span key={i} className="w-1 h-1 rounded-full bg-current block" />
+                  ))}
+                </div>
+                <p className="text-xs sm:text-sm leading-relaxed font-normal">
+                  We connect you directly with our Austin travel advisors and logistics specialists to tailor your luggage gear.
+                </p>
+              </div>
+            </div>
 
-              {/* Image dots */}
-              <div className="flex gap-1.5">
-                {contactImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeImage ? "w-7 bg-[#C87D3B]" : "w-2 bg-white/40"
-                    }`}
-                    aria-label={`Show image ${idx + 1}`}
+            {/* Trust Callout Box */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-7 border border-[#C87D3B]/20 shadow-xs">
+              {/* Avatar Stack */}
+              <div className="flex items-center -space-x-2.5 mb-4">
+                {[
+                  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80",
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80",
+                ].map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt="Traveler advisor"
+                    className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-xs"
                   />
                 ))}
               </div>
+
+              <p className="text-xs sm:text-sm text-[#18222F]/75 leading-relaxed font-normal">
+                Our advisors already support more than 25,000 travelers and expeditions worldwide in mastering global transit.
+              </p>
             </div>
           </div>
 
-          {/* Contact Methods Column */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
-            {methods.map((method) => {
-              const Wrapper = method.href ? "a" : "div";
-              return (
-                <Wrapper
-                  key={method.label}
-                  {...(method.href ? { href: method.href } : {})}
-                  className="group flex items-center gap-4 sm:gap-5 rounded-2xl border border-[#C87D3B]/20 bg-white p-5 sm:p-6 transition-all duration-200 hover:border-[#C87D3B] hover:shadow-lg"
-                >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0D1B2A] text-[#C87D3B] transition-all duration-200 group-hover:bg-[#C87D3B] group-hover:text-white shadow-xs">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      {method.icon}
+          {/* Right Column: Clean Form Layout */}
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#C87D3B]/25 shadow-lg">
+            {submitted ? (
+              <div className="py-12 text-center">
+                <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 font-bold">
+                  ✓
+                </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#0D1B2A] mb-2">
+                  Thank You for Reaching Out!
+                </h3>
+                <p className="text-xs sm:text-sm text-[#18222F]/70 max-w-md mx-auto">
+                  Your inquiry has been received. One of our travel concierge specialists will respond within 24 hours.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                
+                {/* Row 1: First Name & Last Name */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                      First Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      placeholder="Alex"
+                      className="w-full rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] placeholder-[#18222F]/40 focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                      Last Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      placeholder="Morgan"
+                      className="w-full rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] placeholder-[#18222F]/40 focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Phone & Email */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div>
+                    <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                      Phone Number *
+                    </label>
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3 flex items-center gap-1.5 pointer-events-none text-xs font-bold text-[#0D1B2A]">
+                        <span>🇺🇸</span>
+                        <span className="text-gray-400 font-normal">|</span>
+                      </div>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+1 (512) 800-2490"
+                        className="w-full rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] pl-14 pr-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] placeholder-[#18222F]/40 focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                      Email Address *
+                    </label>
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3.5 text-[#0D1B2A]/50 pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="4" width="20" height="16" rx="2" />
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                      </div>
+                      <input
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="alex.morgan@flight.com"
+                        className="w-full rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] pl-10 pr-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] placeholder-[#18222F]/40 focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 3: Primary Travel Interest */}
+                <div>
+                  <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                    What is your primary travel interest? *
+                  </label>
+                  <div className="relative">
+                    <select
+                      required
+                      value={formData.interest}
+                      onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                      className="w-full appearance-none rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all cursor-pointer"
+                    >
+                      <option value="" disabled>Select from list</option>
+                      <option value="spinner">Aerospace Carry-On Spinner Suitcase</option>
+                      <option value="duffle">Italian Leather Weekender Duffle</option>
+                      <option value="cubes">Compression Packing Cube Suite</option>
+                      <option value="corporate">Fleet / Corporate Expedition Orders</option>
+                      <option value="warranty">Transit Warranty &amp; 100-Day Flight Trial</option>
+                    </select>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0D1B2A]/60"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[0.65rem] font-bold uppercase tracking-widest text-[#C87D3B] mb-0.5">
-                      {method.label}
-                    </div>
-                    <div className="font-extrabold text-sm sm:text-base text-[#0D1B2A] break-all">
-                      {method.value}
-                    </div>
-                    <div className="text-xs text-[#18222F]/60 mt-0.5 font-normal">
-                      {method.subtext}
-                    </div>
-                  </div>
-                  {method.href && (
-                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#C87D3B]/30 text-[#0D1B2A] transition-all duration-200 group-hover:border-[#C87D3B] group-hover:bg-[#C87D3B] group-hover:text-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </span>
-                  )}
-                </Wrapper>
-              );
-            })}
+                </div>
 
-            {/* Direct Hours Notice */}
-            <div className="flex items-center justify-between gap-4 rounded-2xl bg-[#0D1B2A] p-5 sm:p-6 text-white shadow-lg mt-2 border border-[#C87D3B]/30">
-              <div className="min-w-0 flex-1">
-                <div className="font-extrabold uppercase tracking-tight text-sm text-white">
-                  Austin Design &amp; Fulfillment Hangar
+                {/* Row 4: Departure Timeline */}
+                <div>
+                  <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                    What is your upcoming departure timeline? *
+                  </label>
+                  <div className="relative">
+                    <select
+                      required
+                      value={formData.timeline}
+                      onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                      className="w-full appearance-none rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all cursor-pointer"
+                    >
+                      <option value="" disabled>Select from list</option>
+                      <option value="expedited">Within 1 - 2 weeks (Expedited Flight Dispatch)</option>
+                      <option value="month">Next month</option>
+                      <option value="season">Planning for later this season</option>
+                      <option value="general">General travel inquiry</option>
+                    </select>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0D1B2A]/60"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="text-xs text-white/70 mt-0.5 font-normal">
-                  Orders tested, packed &amp; dispatched Monday through Friday via {siteConfig.shippingCarrier}.
+
+                {/* Row 5: Destination or Residence City */}
+                <div>
+                  <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                    What is your departure or destination city? *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.city}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                    placeholder="Austin, Texas / Paris, France"
+                    className="w-full rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] placeholder-[#18222F]/40 focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all"
+                  />
                 </div>
-              </div>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-[#C87D3B] text-white text-xs font-bold uppercase tracking-wider">
-                ACTIVE
-              </span>
-            </div>
+
+                {/* Row 6: Discovery Source */}
+                <div>
+                  <label className="block text-xs font-bold text-[#0D1B2A] mb-1.5">
+                    How did you discover {siteConfig.brandName}? *
+                  </label>
+                  <div className="relative">
+                    <select
+                      required
+                      value={formData.source}
+                      onChange={(e) => setFormData({ ...formData, source: e.target.value })}
+                      className="w-full appearance-none rounded-xl border border-[#0D1B2A]/20 bg-[#FAF7F2] px-4 py-3 text-xs sm:text-sm font-medium text-[#0D1B2A] focus:border-[#C87D3B] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#C87D3B] transition-all cursor-pointer"
+                    >
+                      <option value="" disabled>Select from list</option>
+                      <option value="publications">Aviation &amp; Travel Publications</option>
+                      <option value="review">Flight Review / Traveler Recommendation</option>
+                      <option value="social">Social Media &amp; Digital Magazine</option>
+                      <option value="search">Search Engine</option>
+                      <option value="word">Word of Mouth / Fellow Traveler</option>
+                    </select>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#0D1B2A]/60"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Row 7: Submit Button */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="inline-block bg-[#0D1B2A] hover:bg-[#C87D3B] text-white font-bold text-xs sm:text-sm px-8 py-3.5 rounded-xl shadow-md transition-all duration-200 cursor-pointer uppercase tracking-wider hover:scale-[1.02]"
+                  >
+                    Send Inquiry
+                  </button>
+                </div>
+
+              </form>
+            )}
           </div>
 
         </div>

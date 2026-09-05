@@ -20,43 +20,43 @@ const faqItems: FaqItem[] = [
     id: "carryon",
     category: "flight",
     categoryLabel: "Carry-On Compliance",
-    question: "Is the Aviator Carry-On compliant with all major airlines?",
-    answer: "Yes. Dimensions (21.5\" x 14\" x 9\" including wheels) strictly satisfy FAA and IATA domestic & international overhead bin standards across Delta, United, American, Lufthansa, and Emirates.",
+    question: "Is the Carry-On compliant with major airlines?",
+    answer: "Yes, dimensions satisfy standard FAA and IATA overhead bin requirements across domestic and international airlines.",
   },
   {
     id: "trial",
     category: "guarantee",
     categoryLabel: "Flight Trial",
-    question: `How does the ${siteConfig.trialPeriod || 14}-day worldwide flight trial work?`,
-    answer: `Pack and travel with our gear on your upcoming trips. If it doesn't elevate your transit comfort, return it within ${siteConfig.trialPeriod || 14} days for a 100% full refund with zero restocking fees.`,
+    question: `How does the ${siteConfig.trialPeriod || 14}-day flight trial work?`,
+    answer: `Test our gear on your trips. If not completely satisfied, return within ${siteConfig.trialPeriod || 14} days for a 100% full refund with zero restocking fees.`,
   },
   {
     id: "tsa",
     category: "flight",
     categoryLabel: "Security & Locks",
-    question: "How do the integrated dual TSA combination locks operate?",
-    answer: "The dual recessed latches feature programmable 3-digit combination dials and TSA master keyways, allowing security agents to inspect baggage without damaging locks.",
+    question: "How do the TSA combination locks work?",
+    answer: "Integrated dual latches feature programmable 3-digit combination dials and TSA master keyways for seamless airport security inspections.",
   },
   {
     id: "shipping",
     category: "shipping",
     categoryLabel: "Dispatch & Tracking",
-    question: "How fast will my order ship from the Austin facility?",
-    answer: `Orders are calibrated and dispatched within 1 business day. We ship via ${siteConfig.shippingCarrier} priority air with tracked delivery arriving in ${siteConfig.shippingPeriod} business days.`,
+    question: "How fast does my order ship?",
+    answer: `Orders dispatch within 1 business day via ${siteConfig.shippingCarrier} with full tracking, arriving within ${siteConfig.shippingPeriod} business days.`,
   },
   {
     id: "billing",
     category: "shipping",
     categoryLabel: "Card Statement",
-    question: "How will the transaction appear on my billing statement?",
-    answer: `Your card statement will clearly display the official merchant descriptor "${siteConfig.descriptor}" alongside your verified order total.`,
+    question: "How will the charge appear on my statement?",
+    answer: `Your statement will display "${siteConfig.descriptor}" alongside your verified order total.`,
   },
   {
     id: "care",
     category: "guarantee",
     categoryLabel: "Materials & Care",
-    question: "How do I maintain aluminum alloy and Italian full-grain leather?",
-    answer: "Aluminum shells can be wiped clean with a damp microfiber cloth, while Italian vegetable-tanned leather naturally develops a rich patina and can be nourished with standard leather balms.",
+    question: "How do I care for aluminum and leather gear?",
+    answer: "Wipe aluminum with a damp microfiber cloth. Full-grain leather can be conditioned with standard leather balm.",
   },
 ];
 
@@ -86,15 +86,11 @@ export default function Faq() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C87D3B]/10 border border-[#C87D3B]/30 text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#C87D3B] mb-3">
-            <span>✈</span>
-            Traveler Guidance &amp; Policies
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0D1B2A] leading-[1.15] uppercase">
-            Frequently Answered <span className="text-[#C87D3B] font-light italic lowercase">Questions</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0D1B2A] leading-tight uppercase">
+            FAQ
           </h2>
           <p className="text-[#18222F]/70 text-xs sm:text-sm md:text-base leading-relaxed mt-2.5 max-w-lg mx-auto font-normal">
-            Everything you need to know about overhead sizing, TSA security, shipping, and warranty.
+            Frequently answered questions about sizing, security, shipping, and warranty.
           </p>
 
           {/* Interactive Category Filter Pills */}

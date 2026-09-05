@@ -26,6 +26,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -41,6 +42,7 @@ export default function Header() {
     : [];
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setIsScrolled(window.scrollY > 15);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -173,7 +175,7 @@ export default function Header() {
               <path d="M3 6h18" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-            {getCartCount() > 0 ? (
+            {mounted && getCartCount() > 0 ? (
               <span className="absolute -top-0.5 -right-0.5 bg-[#C59B7E] text-[#18121E] rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#18121E] shadow-sm">
                 {getCartCount()}
               </span>

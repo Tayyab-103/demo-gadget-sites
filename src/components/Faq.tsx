@@ -54,11 +54,12 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#FFFFFF] text-[#18121E] border-t border-[#C59B7E]/20" id="faq">
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-24 md:py-28 bg-[#FAF8F6] text-[#18121E] border-t border-[#C59B7E]/20" id="faq">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Minimalist Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-14 sm:mb-18">
+        <div className="max-w-4xl mx-auto">
+          {/* Minimalist Section Header */}
+          <div className="text-center max-w-xl mx-auto mb-14 sm:mb-18">
           <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#C59B7E] block mb-2 select-none">
             FREQUENTLY ASKED
           </span>
@@ -77,7 +78,7 @@ export default function Faq() {
                 key={item.id}
                 onClick={() => toggle(idx)}
                 className={`py-6 sm:py-7 transition-all duration-300 cursor-pointer group ${
-                  isOpen ? "bg-[#FAF8F6]/60 -mx-4 sm:-mx-6 px-4 sm:px-6 rounded-2xl" : ""
+                  isOpen ? "bg-white -mx-4 sm:-mx-6 px-4 sm:px-6 rounded-2xl shadow-sm border border-[#C59B7E]/20" : ""
                 }`}
               >
                 <div className="flex items-center justify-between gap-4">
@@ -120,8 +121,8 @@ export default function Faq() {
               </div>
             );
           })}
+          </div>
         </div>
-
       </div>
     </section>
   );

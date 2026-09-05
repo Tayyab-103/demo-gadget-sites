@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -9,76 +10,110 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="py-20 sm:py-24 md:py-28 bg-[#FFFFFF] text-[#18121E] border-t border-[#C59B7E]/20" id="cta">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 overflow-hidden rounded-3xl md:grid-cols-2 bg-[#18121E] text-white shadow-2xl border border-[#C59B7E]/30">
-          
-          {/* Left — Image */}
-          <div className="relative min-h-72 sm:min-h-96 md:min-h-full bg-black/20">
-            <img
-              src="/img/fashion-hero.jpg"
-              alt="Rosethorne Fashion Atelier Haute Couture"
-              className="absolute inset-0 h-full w-full object-cover opacity-90"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#18121E] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#18121E]/30 md:to-[#18121E]" />
+    <section
+      id="cta"
+      className="py-20 sm:py-24 md:py-28 bg-[#FAF8F6] text-[#18121E] border-t border-[#C59B7E]/20 relative overflow-hidden"
+    >
+      {/* Background Soft Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#C59B7E]/8 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Stat badge */}
-            <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-7 flex items-center gap-3.5 rounded-2xl bg-[#18121E]/90 px-4 py-3 shadow-2xl backdrop-blur-md border border-[#C59B7E]/40">
-              <div className="flex -space-x-2.5">
-                {[
-                  "/img/stories/story-silk-blouse.jpg",
-                  "/img/stories/story-cashmere-coat.jpg",
-                  "/img/stories/story-lace-gown.jpg",
-                ].map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt=""
-                    aria-hidden="true"
-                    className="h-8 w-8 flex-shrink-0 rounded-full border-2 border-[#18121E] object-cover"
-                  />
-                ))}
-              </div>
-              <div>
-                <div className="text-xs font-serif font-bold text-white">Private Patrons</div>
-                <div className="text-[0.6rem] font-bold uppercase tracking-widest text-[#E6C2AC]">
-                  Worldwide
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* 3-Column Panoramic Composition */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          
+          {/* ================= LEFT COLUMN: Stacked Couture Photo ================= */}
+          <div className="lg:col-span-4 flex justify-center order-2 lg:order-1">
+            <div className="relative w-full max-w-[360px] lg:max-w-none">
+              {/* Stacked Faint Layer Frames Behind */}
+              <div className="absolute inset-0 rounded-3xl border border-[#C59B7E]/25 -rotate-4 translate-x-2 -translate-y-2 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl border border-[#C59B7E]/20 -rotate-2 translate-x-1 -translate-y-1 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl bg-[#EFE6DD] -rotate-1 pointer-events-none" />
+
+              {/* Main Photo Card */}
+              <div className="relative aspect-[4/3] sm:aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C59B7E]/40 -rotate-2 hover:rotate-0 transition-transform duration-500 bg-slate-900 group">
+                <Image
+                  src="/img/cta1.jpg"
+                  alt="Rosethorne Pure Mulberry Silk Couture Collection"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18121E]/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between">
+                  <span className="text-[0.62rem] font-bold uppercase tracking-wider text-[#E6C2AC] bg-[#18121E]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#C59B7E]/40">
+                    Pure Silk Charmeuse
+                  </span>
+                  <span className="text-[0.62rem] font-mono text-white/90">
+                    22-Momme
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right — Content */}
-          <div className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 md:px-14 md:py-14 text-white">
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#E6C2AC] block mb-2 select-none">
+          {/* ================= CENTER COLUMN: Editorial Narrative & Action ================= */}
+          <div className="lg:col-span-4 flex flex-col items-center text-center px-2 sm:px-4 order-1 lg:order-2 my-4 lg:my-0">
+            
+            {/* Eyebrow */}
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#C59B7E] block mb-3 select-none">
               PRIVATE ATELIER INVITATION
             </span>
 
-            <h2 className="mb-4 text-3xl sm:text-4xl md:text-5xl font-serif leading-[1.12] tracking-tight text-white">
-              Experience The Allure <br />
-              <span className="italic text-[#E6C2AC]">Of Bespoke Couture.</span>
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-serif text-[#18121E] leading-[1.14] tracking-tight mb-5 max-w-md">
+              Step into the timeless world of <span className="italic text-[#C59B7E]">pure couture.</span>
             </h2>
 
-            <p className="mb-8 max-w-md text-xs sm:text-sm leading-relaxed text-slate-300 font-light">
-              Pure mulberry silk slip dresses, sculpted cashmere trench coats, and French Chantilly lace evening gowns. Dispatched via {siteConfig.shippingCarrier} with our risk-free {siteConfig.trialPeriod || 14}-day fit and drape guarantee.
+            {/* Subtitle */}
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-8 max-w-sm">
+              Whether you are curating an evening gala wardrobe or seeking bespoke fitting advice, our private atelier stylists are at your service.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3.5">
-              <Link
-                href="/shop"
-                className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-[#18121E] bg-gradient-to-r from-[#E6C2AC] via-[#C59B7E] to-[#B88564] hover:brightness-110 px-8 py-3.5 rounded-full transition-all text-center uppercase tracking-wider shadow-lg"
-              >
-                Shop Collection →
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-[#C59B7E]/50 px-7 py-3.5 rounded-full transition-all hover:bg-white/10 text-center text-[#E6C2AC] font-semibold"
-              >
-                Private Concierge
-              </Link>
+            {/* Button */}
+            <Link
+              href="/shop"
+              className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-white bg-[#18121E] hover:bg-[#C59B7E] hover:text-[#18121E] px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 uppercase tracking-wider cursor-pointer"
+            >
+              Explore Collection
+            </Link>
+
+          </div>
+
+          {/* ================= RIGHT COLUMN: Stacked Tailoring Photo ================= */}
+          <div className="lg:col-span-4 flex justify-center order-3">
+            <div className="relative w-full max-w-[360px] lg:max-w-none">
+              {/* Stacked Faint Layer Frames Behind */}
+              <div className="absolute inset-0 rounded-3xl border border-[#C59B7E]/25 rotate-4 -translate-x-2 -translate-y-2 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl border border-[#C59B7E]/20 rotate-2 -translate-x-1 -translate-y-1 pointer-events-none" />
+              <div className="absolute inset-0 rounded-3xl bg-[#EFE6DD] rotate-1 pointer-events-none" />
+
+              {/* Main Photo Card */}
+              <div className="relative aspect-[4/3] sm:aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C59B7E]/40 rotate-2 hover:rotate-0 transition-transform duration-500 bg-slate-900 group">
+                <Image
+                  src="/img/cta2.jpg"
+                  alt="Rosethorne Master Tailoring & Double-Faced Cashmere"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 400px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18121E]/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between">
+                  <span className="text-[0.62rem] font-bold uppercase tracking-wider text-[#E6C2AC] bg-[#18121E]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#C59B7E]/40">
+                    Atelier Tailoring
+                  </span>
+                  <span className="text-[0.62rem] font-mono text-white/90">
+                    French Seams
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );

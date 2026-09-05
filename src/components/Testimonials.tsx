@@ -99,7 +99,7 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-[#FFFFFF] text-[#18121E] border-t border-[#C59B7E]/20 relative overflow-hidden"
+      className="py-20 sm:py-24 md:py-28 bg-[#FAF8F6] text-[#18121E] border-t border-[#C59B7E]/20 relative overflow-hidden"
       id="testimonials"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -113,10 +113,9 @@ export default function Testimonials() {
         {/* Section Header with Navigation Controls */}
         <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="text-center md:text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#18121E]/5 border border-[#C59B7E]/30 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#C59B7E] mb-3 select-none">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C59B7E] animate-pulse" />
-              <span>EDITORIAL ACCLAIM &amp; PATRONS</span>
-            </div>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#C59B7E] block mb-3 select-none">
+              EDITORIAL ACCLAIM &amp; PATRONS
+            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-[#18121E] leading-[1.12]">
               Loved By Connoisseurs, <br className="hidden sm:inline" />
               <span className="italic text-[#C59B7E]">Worn On Global Stages.</span>
@@ -128,7 +127,7 @@ export default function Testimonials() {
             <button
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="w-12 h-12 rounded-full border border-[#C59B7E]/30 bg-[#FAF8F6] hover:bg-[#18121E] hover:text-[#E6C2AC] text-[#18121E] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-105 active:scale-95"
+              className="w-12 h-12 rounded-full border border-[#C59B7E]/30 bg-white hover:bg-[#18121E] hover:text-[#E6C2AC] text-[#18121E] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-105 active:scale-95"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m15 18-6-6 6-6" />
@@ -148,7 +147,7 @@ export default function Testimonials() {
 
         {/* Featured Story Animated Card */}
         <div className="max-w-6xl mx-auto">
-          <div className="bg-[#FAF8F6] rounded-3xl p-6 sm:p-10 md:p-12 border border-[#C59B7E]/25 shadow-2xl relative overflow-hidden transition-all duration-500">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-[#C59B7E]/25 shadow-2xl relative overflow-hidden transition-all duration-500">
             
             {/* Watermark Quote Icon */}
             <div className="absolute top-4 right-8 font-serif text-8xl md:text-9xl text-[#C59B7E]/10 select-none pointer-events-none">

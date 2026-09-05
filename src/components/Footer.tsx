@@ -2,10 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -89,26 +92,13 @@ export default function Footer() {
               The Collection
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-light">
-              <li>
-                <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
-                  Pure Mulberry Silk Slip Dresses
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
-                  Virgin Wool &amp; Cashmere Outerwear
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
-                  French Chantilly Lace Gowns
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
-                  Atelier Silk Stoles &amp; Scarves
-                </Link>
-              </li>
+              {products.map((product) => (
+                <li key={product.id}>
+                  <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -183,48 +173,38 @@ export default function Footer() {
             © {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved. Mastercrafted in Austin, TX.
           </p>
 
-          {/* Luxury Atelier Theme Payment Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          {/* Luxury Atelier Theme Payment Badges with Official Logos */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             
-            {/* VISA - Luxury Rose-Gold Theme Badge */}
-            <div className="h-8 px-3 rounded-lg bg-white/[0.06] border border-[#C59B7E]/30 hover:border-[#C59B7E]/60 flex items-center justify-center transition-all duration-300 group">
-              <span className="font-serif font-black tracking-widest text-xs italic text-[#E6C2AC] group-hover:text-white transition-colors">
-                VISA
-              </span>
+            {/* VISA - Official Logo */}
+            <div className="h-9 px-3.5 rounded-xl bg-white border border-[#C59B7E]/30 shadow-sm flex items-center justify-center transition-all duration-300 hover:border-[#C59B7E] hover:scale-105">
+              <Image
+                src="/img/visa.png"
+                alt="Visa Payment Accepted"
+                width={46}
+                height={24}
+                className="h-5 w-auto object-contain"
+              />
             </div>
 
-            {/* MASTERCARD - Luxury Rose-Gold Theme Badge */}
-            <div className="h-8 px-3 rounded-lg bg-white/[0.06] border border-[#C59B7E]/30 hover:border-[#C59B7E]/60 flex items-center justify-center gap-1.5 transition-all duration-300 group">
-              <div className="flex -space-x-1.5 items-center">
-                <span className="w-3.5 h-3.5 rounded-full bg-[#C59B7E] opacity-90 group-hover:opacity-100 transition-opacity" />
-                <span className="w-3.5 h-3.5 rounded-full bg-[#E6C2AC] opacity-80 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <span className="font-sans font-bold text-[0.62rem] tracking-wider text-slate-300 group-hover:text-white uppercase transition-colors">
-                Mastercard
-              </span>
-            </div>
-
-            {/* AMEX - Luxury Rose-Gold Theme Badge */}
-            <div className="h-8 px-3 rounded-lg bg-white/[0.06] border border-[#C59B7E]/30 hover:border-[#C59B7E]/60 flex items-center justify-center transition-all duration-300 group">
-              <span className="font-mono font-bold tracking-widest text-[0.62rem] text-[#E6C2AC] group-hover:text-white uppercase transition-colors">
-                AMEX
-              </span>
-            </div>
-
-            {/* DISCOVER - Luxury Rose-Gold Theme Badge */}
-            <div className="h-8 px-3 rounded-lg bg-white/[0.06] border border-[#C59B7E]/30 hover:border-[#C59B7E]/60 flex items-center justify-center gap-1 transition-all duration-300 group">
-              <span className="font-sans font-bold text-[0.62rem] tracking-wider text-slate-300 group-hover:text-white uppercase transition-colors">
-                DISC<span className="text-[#C59B7E] font-extrabold">•</span>VER
-              </span>
+            {/* MASTERCARD - Official Logo */}
+            <div className="h-9 px-3.5 rounded-xl bg-white border border-[#C59B7E]/30 shadow-sm flex items-center justify-center transition-all duration-300 hover:border-[#C59B7E] hover:scale-105">
+              <Image
+                src="/img/mastercard.png"
+                alt="Mastercard Payment Accepted"
+                width={38}
+                height={24}
+                className="h-5 w-auto object-contain"
+              />
             </div>
 
             {/* SSL 256-BIT ENCRYPTION */}
-            <div className="h-8 px-3 rounded-lg bg-[#221B2A] border border-[#C59B7E]/40 flex items-center gap-1.5 shadow-sm">
+            <div className="h-9 px-4 rounded-xl bg-[#221B2A] border border-[#C59B7E]/40 flex items-center gap-2 shadow-sm">
               <svg className="w-3.5 h-3.5 text-[#C59B7E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
-              <span className="text-[0.58rem] font-bold tracking-wider text-[#E6C2AC] uppercase">
+              <span className="text-[0.62rem] font-bold tracking-wider text-[#E6C2AC] uppercase">
                 256-BIT SSL SECURE
               </span>
             </div>

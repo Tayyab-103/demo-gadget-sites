@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -67,7 +69,7 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="sm:col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group" style={{ textDecoration: "none" }}>
               <span className="w-8 h-8 rounded-full bg-[#C5A059] text-[#121820] flex items-center justify-center font-serif font-bold text-sm shadow-sm group-hover:scale-105 transition-transform">
                 ✦
               </span>
@@ -83,36 +85,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Signature Catalog */}
+          {/* Signature Products & Collections */}
           <div>
             <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
-              Collections
+              Products
             </h4>
             <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
+              {products.map((p) => (
+                <li key={p.id}>
+                  <Link href={`/shop#${p.id}`} className="hover:text-[#C5A059] transition-colors">
+                    {p.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
-                  Fountain Pen Suites
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
-                  Full-Grain Leather Journals
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
-                  Solid Brass Desk Accessories
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
-                  Archival Inks &amp; Converters
+                <Link href="/shop" className="hover:text-[#C5A059] text-[#C5A059] font-serif font-semibold transition-colors flex items-center gap-1 mt-1">
+                  <span>View All Collections</span>
+                  <span>→</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Atelier Heritage */}
+          {/* Atelier Heritage & Pages */}
           <div>
             <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
               The Atelier
@@ -120,7 +115,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
               <li>
                 <Link href="/about" className="hover:text-[#C5A059] transition-colors">
-                  Our Austin Story
+                  Our Story
                 </Link>
               </li>
               <li>
@@ -129,19 +124,24 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#quality-promise" className="hover:text-[#C5A059] transition-colors">
-                  14-Day Studio Practice
+                <Link href="/#features" className="hover:text-[#C5A059] transition-colors">
+                  Features &amp; Guarantee
                 </Link>
               </li>
               <li>
                 <Link href="/#testimonials" className="hover:text-[#C5A059] transition-colors">
-                  Collector &amp; Scribe Reviews
+                  Patron Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/#faq" className="hover:text-[#C5A059] transition-colors">
+                  Help &amp; FAQs
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Patron Concierge */}
+          {/* Patron Concierge & Legal */}
           <div>
             <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
               Patron Concierge
@@ -177,21 +177,24 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Copyright & Payment Badges */}
+        {/* Bottom Bar: Copyright & Payment Badges (Visa & Mastercard Only) */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF8F5]/60">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved. Handcrafted in Austin, TX.
           </p>
 
-          <div className="flex items-center gap-2">
-            {["VISA", "MASTERCARD", "AMEX", "DISCOVER"].map((card) => (
-              <span
-                key={card}
-                className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-[0.62rem] font-mono font-bold text-[#FAF8F5]"
-              >
-                {card}
-              </span>
-            ))}
+          {/* Visa & Mastercard Logos from /img folder */}
+          <div className="flex items-center gap-3">
+            <img
+              src="/img/visa.png"
+              alt="Visa Accepted"
+              className="h-7 sm:h-8 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            />
+            <img
+              src="/img/mastercard.png"
+              alt="Mastercard Accepted"
+              className="h-7 sm:h-8 w-auto object-contain transition-transform duration-200 hover:scale-105"
+            />
           </div>
         </div>
 

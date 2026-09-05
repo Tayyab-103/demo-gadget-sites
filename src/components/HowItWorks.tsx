@@ -26,7 +26,7 @@ const steps = [
     title: "Austin Atelier Inspection & Wax Seal",
     desc: `Each piece is individually inspected by hand in our Austin atelier, wrapped in protective archival sleeves, boxed with a custom wax seal, and dispatched via ${siteConfig.shippingCarrier} with full tracking within ${siteConfig.shippingPeriod} business days.`,
     badge: `${siteConfig.shippingCarrier} Express Tracked`,
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
+    image: "/img/standard-2.jpg",
     features: [
       "Hand-Inspected in Austin, Texas",
       "Custom Wax-Sealed Packaging",
@@ -39,7 +39,7 @@ const steps = [
     title: "14-Day Studio Practice Trial",
     desc: "Put our fountain pens, leather journals, and desk suites through your daily writing, calligraphy, and drafting rituals. If our craftsmanship does not elevate your prose, return for a 100% full refund with zero hassle.",
     badge: "100% Satisfaction Guarantee",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
+    image: "/img/standard-3.jpg",
     features: [
       "14-Day Risk-Free Studio Trial",
       "Zero-Bleed & Ghosting Guarantee",

@@ -91,7 +91,7 @@ export default function CartDrawer() {
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-xl bg-black/5 flex-shrink-0 border border-[#C5A059]/20"
+                    className="w-[70px] h-[70px] object-contain p-1 rounded-xl bg-[#FAF8F5] flex-shrink-0 border border-[#C5A059]/20"
                     onError={(e) => {
                       e.currentTarget.src =
                         "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=150&q=80";

@@ -2,15 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "The Sovereign Master Fountain Pen & Archival Ink Suite",
+    "name": "Fountain Pen & Archival Ink Suite",
     "description": "Handcrafted with solid burnished brass and hand-turned resin, featuring an 18k gold-plated German iridium-tipped nib for seamless ink flow. Includes a precision piston ink converter, three archival noir ink cartridges, and a velvet-lined collector box. Engineered for effortless calligraphic precision and enduring daily prose.",
-    "image": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
+    "image": "/img/products/fountain-pen.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
-      "https://images.unsplash.com/photo-1585336261026-7f91754020a5?w=900&q=80"
+      "/img/products/fountain-pen.jpg",
+      "/img/products/fountain-pen-2.jpg",
+      "/img/products/fountain-pen-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80",
+    "showIngredients": false,
+    "ingredientsImage": "",
     "category": "Fine Writing Instruments",
     "billingModel": 1,
     "ssPrice": "6.95",
@@ -29,16 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "The Heirloom Full-Grain Leather Bound Journal & Notebook",
+    "name": "Leather Bound Journal",
     "description": "Bound by master artisans in vegetable-tanned full-grain leather that burnishes beautifully over years of use. Houses 240 numbered pages of 160 GSM milled archival cotton paper, completely bleedproof against wet fountain pen inks, watercolors, and dip pens. Features Smythe-sewn lay-flat binding, dual silk ribbon bookmarks, and an expandable back pocket.",
-    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
+    "image": "/img/products/journal.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
-      "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=900&q=80"
+      "/img/products/journal.jpg",
+      "/img/products/journal-2.jpg",
+      "/img/products/journal-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&q=80",
-    "category": "Artisanal Journals & Notebooks",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Artisanal Journals",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,16 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "The Executive Solid Brass Desk Organizer & Correspondence Suite",
-    "description": "A centerpiece for the discerning study or executive desk. Precision milled from raw heavy-gauge brass with a hand-buffed satin finish. Includes an architectural desk tray, weighted pen stand, solid brass letter opener, graduated rule, and a set of deckled-edge cotton correspondence cards with foil-stamped wax seals.",
-    "image": "/img/products/brass-desk-suite.jpg",
+    "name": "Stationery Set",
+    "description": "A practical and stylish notebook and writing set designed for students, professionals, and everyday use, offering essential tools for note-taking and organization.",
+    "image": "/img/products/stationery-set.jpg",
     "images": [
-      "/img/products/brass-desk-suite.jpg",
-      "https://images.unsplash.com/photo-1585336261026-7f91754020a5?w=900&q=80"
+      "/img/products/stationery-set.jpg",
+      "/img/products/stationery-set-2.jpg",
+      "/img/products/stationery-set-3.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "/img/products/brass-desk-suite.jpg",
-    "category": "Executive Desk & Office Supplies",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Stationery Set",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

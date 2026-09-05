@@ -77,12 +77,12 @@ export default function ProductGrid() {
                 {/* Image Container */}
                 <Link
                   href={`/product/${product.id}`}
-                  className="relative block aspect-[4/3] sm:aspect-square overflow-hidden bg-black/5"
+                  className="relative flex items-center justify-center aspect-[4/3] sm:aspect-square overflow-hidden bg-[#FAF8F5] p-6 sm:p-8 border-b border-[#C5A059]/15"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 filter drop-shadow-sm"
                     onError={(e) => {
                       e.currentTarget.src =
                         "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=600&q=80";

@@ -21,7 +21,7 @@ export default function AboutPage() {
           eyebrow="The Craft &amp; Heritage"
           title={<>About {siteConfig.brandName}</>}
           subtitle="Crafted in Austin, Texas. Dedicated to preserving master bookbinding, bleedproof paper milling, and heirloom writing instruments."
-          image="/img/about-atelier-heritage.jpg"
+          image="/img/heritage1.jpg"
           currentLabel="About"
         />
         <AboutUs />

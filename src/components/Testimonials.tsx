@@ -1,175 +1,178 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 
-interface ScribeNote {
+interface TestimonialItem {
   id: string;
+  statNumber: string;
+  statLabel: string;
+  statFootnote?: string;
   quote: string;
-  name: string;
-  role: string;
-  location: string;
-  image: string;
-  alt: string;
+  authorName: string;
+  authorRole: string;
+  authorAvatar: string;
+  organization: string;
 }
 
-const scribeNotes: ScribeNote[] = [
+const testimonialsData: TestimonialItem[] = [
   {
     id: "01",
-    quote: "The Sovereign fountain pen glides with zero resistance. The balance in hand and consistent wet flow make four-hour manuscript sessions completely effortless.",
-    name: "Evelyn R.",
-    role: "Historical Novelist & Calligrapher",
-    location: "Austin, TX",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&q=85",
-    alt: "Evelyn R. writing with Quillhaven fountain pen in Austin",
+    statNumber: "96%",
+    statLabel: "Patrons reporting zero bleed or ghosting across wet inks³",
+    quote:
+      "The paper handles wet fountain pen ink without any ghosting. The 180° flat binding makes drafting daily manuscripts effortless... easy to use for hours.",
+    authorName: "Julian Vance",
+    authorRole: "Architect & Author, Austin Design Guild",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80",
+    organization: "Austin Design Guild",
   },
   {
     id: "02",
-    quote: "The 160 GSM milled cotton paper takes wet India and iron-gall inks with crisp, featherless edges. The Smythe-sewn binding lays completely flat on my drafting board.",
-    name: "Marcus H.",
-    role: "Architect & Botanical Illustrator",
-    location: "Boston, MA",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85",
-    alt: "Marcus H. architect sketching on Quillhaven archival journal",
+    statNumber: "160 GSM",
+    statLabel: "Milled archival cotton paper with smooth capillary ink flow¹",
+    quote:
+      "The German iridium nib glides cleanly with no scratching or skipping. Having both a piston converter and archival cartridges makes it my daily writer.",
+    authorName: "Marcus Henderson",
+    authorRole: "Technical Writer & Calligrapher",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+    organization: "Scribe Collective",
   },
   {
     id: "03",
-    quote: "The solid brass desk organizer suite transformed my study. It carries a tactile weight and timeless authority that elevate every letter and document I review.",
-    name: "Julian V.",
-    role: "Managing Partner & Rare Book Collector",
-    location: "San Francisco, CA",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1200&q=85",
-    alt: "Julian V. executive desk setup with brass stationery",
+    statNumber: "88%",
+    statLabel: "Patrons who made this their exclusive daily journal & desk suite²",
+    quote:
+      "The full-grain leather cover is aging into a deep caramel patina. It opens completely flat on the desk, making morning reflection a genuine ritual.",
+    authorName: "Evelyn Reed",
+    authorRole: "Essayist & Creative Director",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=150&q=80",
+    organization: "Patron Scribes",
   },
   {
     id: "04",
-    quote: "From the wax-sealed unboxing to the full-grain leather cover that is developing a rich caramel patina, Quillhaven delivers true heirloom quality.",
-    name: "Clara D.",
-    role: "Creative Director & Essayist",
-    location: "New York, NY",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=85",
-    alt: "Clara D. reviewing stationery correspondence suite",
+    statNumber: "100%",
+    statLabel: "Solid brass casting and Smyth-sewn archival durability standard⁴",
+    quote:
+      "The solid brass weight feels substantial on the desk without being bulky. A rare example of stationery made to last years rather than months.",
+    authorName: "David Chen",
+    authorRole: "Managing Partner & Collector",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+    organization: "Atelier Executive",
   },
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const handleNavigate = (newIndex: number) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(newIndex);
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 400);
-  };
-
-  const handlePrev = () => {
-    const nextIdx = (currentIndex - 1 + scribeNotes.length) % scribeNotes.length;
-    handleNavigate(nextIdx);
-  };
-
-  const handleNext = () => {
-    const nextIdx = (currentIndex + 1) % scribeNotes.length;
-    handleNavigate(nextIdx);
-  };
-
-  const current = scribeNotes[currentIndex];
+  const current = testimonialsData[currentIndex];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="testimonials">
+    <section
+      className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20"
+      id="testimonials"
+    >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
-            <span>✦</span>
-            Collector &amp; Scribe Reviews
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.15]">
-            Trusted By Authors <span className="text-[#C5A059] italic font-normal">&amp; Master Scribes</span>
-          </h2>
-          <p className="text-[#1A202C]/75 text-xs sm:text-sm md:text-base leading-relaxed mt-3.5 max-w-xl mx-auto font-normal">
-            From daily journaling rituals to formal executive correspondence, hear directly from the creators using our fine instruments.
-          </p>
-        </div>
-
-        {/* Testimonial Feature Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-[#C5A059]/30 shadow-md">
+        {/* Main Testimonial Split Component (Matching Reference) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* Left Column: Quote & Scribe Info */}
-          <div className="lg:col-span-6 flex flex-col justify-between min-h-[280px] sm:min-h-[300px]">
-            <div>
-              {/* Rating stars */}
-              <div className="flex items-center gap-1 text-[#C5A059] mb-4 sm:mb-5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                ))}
-                <span className="text-xs font-serif font-bold text-[#121820]/70 ml-2">5.0 Verified Patron Review</span>
+          {/* LEFT BLOCK: Deep Charcoal & Gold Brand Stat Card */}
+          <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl bg-gradient-to-br from-[#18202A] to-[#121820] text-[#FAF8F5] border border-[#C5A059]/40 p-7 sm:p-9 md:p-10 shadow-lg transition-all duration-300 relative overflow-hidden">
+            {/* Subtle Gold Ambient Glow */}
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="relative z-10">
+              {/* Stat Number with Gold Accent */}
+              <div className="text-5xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight text-[#C5A059] mb-6 sm:mb-8 leading-none">
+                {current.statNumber}
               </div>
 
-              <blockquote
-                className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-[#121820] leading-snug tracking-tight transition-opacity duration-400 ${
-                  isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
-              >
+              {/* Stat Label */}
+              <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#FAF8F5] leading-snug tracking-tight max-w-sm">
+                {current.statLabel}
+              </h3>
+            </div>
+
+            {/* Bottom Dots Navigation for Left Card */}
+            <div className="relative z-10 flex items-center gap-2 mt-8 pt-4">
+              {testimonialsData.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                    currentIndex === idx
+                      ? "w-8 bg-[#C5A059]"
+                      : "w-2.5 bg-white/30 hover:bg-white/60"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT BLOCK: Quote + Author Info + Guild Mark */}
+          <div className="lg:col-span-7 flex flex-col justify-between rounded-3xl bg-white border border-[#C5A059]/25 p-7 sm:p-9 md:p-10 shadow-xs">
+            {/* Quote */}
+            <div className="mb-8">
+              <blockquote className="text-base sm:text-lg md:text-xl font-serif text-[#121820] leading-relaxed tracking-tight">
                 &ldquo;{current.quote}&rdquo;
               </blockquote>
             </div>
 
-            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#C5A059]/20 flex items-center justify-between">
-              <div>
-                <div className="text-base sm:text-lg font-serif font-bold text-[#121820]">
-                  {current.name}
-                </div>
-                <div className="text-xs font-semibold text-[#C5A059] tracking-wider mt-0.5 uppercase">
-                  {current.role} · {current.location}
-                </div>
-              </div>
-
-              {/* Navigation buttons */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#C5A059]/40 flex items-center justify-center text-[#121820] hover:bg-[#C5A059] hover:text-[#121820] transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Previous Testimonial"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#C5A059]/40 flex items-center justify-center text-[#121820] hover:bg-[#C5A059] hover:text-[#121820] transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Next Testimonial"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Scribe Photograph */}
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-2xl bg-black/5 shadow-lg border border-[#C5A059]/25">
-              {scribeNotes.map((note, idx) => (
-                <div
-                  key={note.id}
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    currentIndex === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                  }`}
-                >
-                  <Image
-                    src={note.image}
-                    alt={note.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover object-center"
-                    priority={idx === 0}
+            {/* Bottom Row: Author details on left, Guild mark on right */}
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-[#C5A059]/15">
+                {/* Author Info */}
+                <div className="flex items-center gap-3.5">
+                  <img
+                    src={current.authorAvatar}
+                    alt={current.authorName}
+                    className="w-12 h-12 rounded-xl object-cover border border-[#C5A059]/30 shadow-xs flex-shrink-0"
                   />
+                  <div>
+                    <div className="font-serif font-bold text-sm sm:text-base text-[#121820]">
+                      {current.authorName}
+                    </div>
+                    <div className="text-xs text-[#1A202C]/65 font-normal">
+                      — {current.authorRole}
+                    </div>
+                  </div>
                 </div>
-              ))}
+
+                {/* Organization Emblem */}
+                <div className="flex items-center gap-2 text-right self-start sm:self-center">
+                  <div className="flex flex-col">
+                    <span className="text-xs font-serif font-bold tracking-wider text-[#121820]">
+                      {current.organization}
+                    </span>
+                    <span className="text-[0.62rem] uppercase tracking-widest text-[#C5A059] font-bold">
+                      Verified Patron
+                    </span>
+                  </div>
+                  <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xs font-serif font-bold">
+                    ✦
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Dots Navigation for Right Card */}
+              <div className="flex items-center gap-2 mt-6 pt-2">
+                {testimonialsData.map((item, idx) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`h-2 rounded-full transition-all cursor-pointer ${
+                      currentIndex === idx
+                        ? "w-7 bg-[#C5A059]"
+                        : "w-2 bg-[#121820]/20 hover:bg-[#121820]/40"
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 

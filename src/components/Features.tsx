@@ -1,84 +1,134 @@
 "use client";
 
 import React from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
-
-const featuresData = [
-  {
-    title: "160 GSM Bleedproof Paper",
-    description: "Milled cotton paper engineered with zero feathering, zero ghosting, and exceptional ink responsiveness.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: "German Iridium-Tipped Nibs",
-    description: "Precision-ground nibs tuned by hand for flawless capillary ink evacuation and buttery-smooth paper contact.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Smyth-Sewn 180° Lay-Flat",
-    description: "Reinforced library bookbinding allows your journal to open completely flat across any desk surface.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-    ),
-  },
-  {
-    title: "14-Day Studio Guarantee",
-    description: "Experience our goods in your daily writing and journaling rituals. Return anytime for a 100% full refund.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" />
-        <circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-];
+import Link from "next/link";
 
 export default function Features() {
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
-            <span>✦</span>
-            Artisanal Materials &amp; Craft
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#121820] leading-[1.15]">
-            Crafted For The <span className="text-[#C5A059] italic font-normal">Discerning Scribe</span>
-          </h2>
-          <p className="mx-auto mt-3.5 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#1A202C]/75 font-normal">
-            Every {siteConfig.brandName} stationery piece is subjected to wet ink tests and material durability checks to ensure lasting heirloom quality.
-          </p>
+        
+        {/* 3x3 Grid Layout matching the reference design */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 items-stretch">
+          
+          {/* Card 1: 24/7 Call Handling */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-3 tracking-tight">
+              24/7 Call Handling
+            </h3>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-xl bg-[#121820] hover:bg-[#C5A059] text-[#FAF8F5] hover:text-[#121820] text-xs font-bold font-serif uppercase tracking-wider transition-all duration-200 shadow-sm hover:scale-105"
+            >
+              Message Us
+            </Link>
+          </div>
+
+          {/* Card 2: Best Pricing */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Best Pricing
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5v14a9 3 0 0 0 18 0V5" />
+                <path d="M3 12a9 3 0 0 0 18 0" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 3: Customer Favorite */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Customer Favorite
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 4: Reliable Help */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Reliable Help
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 5: CENTERPIECE (FEATURES) */}
+          <div className="flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border-2 border-[#C5A059] shadow-md min-h-[140px] sm:min-h-[160px] relative overflow-hidden">
+            <div className="absolute inset-0 bg-[#C5A059]/5 pointer-events-none" />
+            <span className="text-[0.68rem] font-serif uppercase tracking-[0.26em] text-[#C5A059] font-bold mb-1">
+              ✦ Atelier Standard ✦
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black tracking-wider text-[#121820] uppercase">
+              FEATURES
+            </h2>
+          </div>
+
+          {/* Card 6: 100% Money Back */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              100% Money Back
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="14" x="2" y="5" rx="2" />
+                <line x1="2" x2="22" y1="10" y2="10" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 7: Effortless Returns */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Effortless Returns
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 8: Protected Transactions */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Protected Transactions
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Card 9: Trusted by Thousands */}
+          <div className="group flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-3xl bg-white border border-[#C5A059]/25 shadow-xs hover:shadow-xl hover:border-[#C5A059] hover:-translate-y-1 transition-all duration-300 min-h-[140px] sm:min-h-[160px]">
+            <h3 className="text-base sm:text-lg font-serif font-bold text-[#121820] mb-2 tracking-tight">
+              Trusted by Thousands
+            </h3>
+            <div className="text-[#121820] group-hover:text-[#C5A059] transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m11 17 2 2a1 1 0 0 0 1.42 0l4.58-4.59a1 1 0 0 0 0-1.41l-2.83-2.83a1 1 0 0 0-1.42 0L13 12" />
+                <path d="m18 11 3.29-3.29a1 1 0 0 0 0-1.42l-2.58-2.58a1 1 0 0 0-1.42 0L14 7" />
+                <path d="m2 11 3.29-3.29a1 1 0 0 1 1.42 0l2.58 2.58a1 1 0 0 1 0 1.42L6 15" />
+                <path d="m6 15 2 2a1 1 0 0 0 1.42 0l4.58-4.59a1 1 0 0 0 0-1.41l-2.83-2.83a1 1 0 0 0-1.42 0L8 10" />
+              </svg>
+            </div>
+          </div>
+
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
-          {featuresData.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-white border border-[#C5A059]/20 shadow-sm transition-all duration-300 hover:border-[#C5A059]/60 hover:shadow-md hover:-translate-y-1"
-            >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#C5A059]/15 text-[#C5A059] shadow-xs">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-base font-serif font-bold text-[#121820] tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-[#1A202C]/70 font-normal">{feature.description}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

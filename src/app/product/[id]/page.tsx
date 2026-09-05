@@ -9,7 +9,7 @@ import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
 import ProductCarousel from "@/components/ProductCarousel";
-import QualityPromise from "@/components/QualityPromise";
+import Features from "@/components/Features";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
 const products = productsData as unknown as Product[];
@@ -197,7 +197,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </main>
-      <QualityPromise />
+      <Features />
       <Footer />
       <CartDrawer />
       <NewsletterPopup />

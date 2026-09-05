@@ -67,7 +67,7 @@ export default function AboutUs() {
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[5/4] w-full overflow-hidden rounded-3xl bg-black/5 shadow-xl border border-[#C5A059]/30">
               <Image
-                src="/img/about-atelier-heritage.jpg"
+                src="/img/heritage1.jpg"
                 alt={`${siteConfig.brandName} master bookbinding and stationery craftsmanship in Austin, Texas`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 800px"

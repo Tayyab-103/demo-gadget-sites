@@ -275,7 +275,7 @@ export default function Header() {
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-12 h-12 rounded-xl object-cover bg-black/5 flex-shrink-0"
+                          className="w-12 h-12 rounded-xl object-contain p-1 bg-[#FAF8F5] border border-[#C5A059]/20 flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
                           <div className="text-xs sm:text-sm font-bold text-[#121820] font-serif truncate">{product.name}</div>

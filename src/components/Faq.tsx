@@ -80,19 +80,18 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200" id="faq">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200 select-none" id="faq">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-2.5 select-none">
-            WORKFORCE GUIDANCE
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
+            Workforce Guidance
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-3">
-            Frequently Answered <br className="hidden sm:inline" />
-            <span className="font-bold text-[#0A0F1D]">Questions.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
+            Frequently Answered Questions.
           </h2>
-          <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto font-normal">
+          <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md mx-auto">
             Quick guidance on uniform sizing, commercial laundry care, shipping, and warranty.
           </p>
 
@@ -131,11 +130,11 @@ export default function Faq() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-2.5">
-                    <span className="text-[0.62rem] font-bold uppercase tracking-wider text-slate-500 bg-[#F8FAFC] px-2 py-0.5 rounded-full border border-slate-200">
+                    <span className="text-[0.62rem] font-mono font-bold uppercase tracking-wider text-slate-500 bg-[#F8FAFC] px-2.5 py-0.5 rounded-full border border-slate-200">
                       {item.categoryLabel}
                     </span>
                     <span
-                      className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-transform duration-200 ${
+                      className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-transform duration-200 ${
                         isOpen ? "bg-[#0A0F1D] text-white rotate-45" : "bg-slate-100 text-slate-600"
                       }`}
                     >
@@ -143,7 +142,7 @@ export default function Faq() {
                     </span>
                   </div>
 
-                  <h3 className="text-sm sm:text-base font-bold text-[#0A0F1D] leading-snug">
+                  <h3 className="text-base font-bold text-[#0A0F1D] leading-snug">
                     {item.question}
                   </h3>
                 </div>

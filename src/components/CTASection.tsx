@@ -9,7 +9,7 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="py-16 sm:py-20 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="cta">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200 select-none" id="cta">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 overflow-hidden rounded-3xl md:grid-cols-2 bg-[#0A0F1D] text-white shadow-xl">
           
@@ -40,9 +40,9 @@ export default function CTASection() {
                 ))}
               </div>
               <div>
-                <div className="text-xs font-bold text-white">45,000+</div>
-                <div className="text-[0.6rem] font-medium uppercase tracking-wider text-slate-300">
-                  Outfitted
+                <div className="text-xs font-extrabold text-white">45,000+</div>
+                <div className="text-[0.6rem] font-mono uppercase tracking-wider text-slate-300">
+                  Personnel Outfitted
                 </div>
               </div>
             </div>
@@ -50,29 +50,29 @@ export default function CTASection() {
 
           {/* Right — Content */}
           <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 text-white">
-            <div className="mb-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-white/70 select-none">
-              FLEET OUTFITTING
+            <div className="mb-3 text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-400 select-none">
+              Fleet Outfitting
             </div>
 
-            <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl font-medium leading-[1.08] tracking-tight text-white">
+            <h2 className="mb-3 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white">
               Upgrade Your Workforce <br />
-              <span className="font-bold text-white">Apparel Standard.</span>
+              <span className="text-slate-300 font-semibold text-2xl sm:text-3xl md:text-4xl">Apparel Standard.</span>
             </h2>
 
-            <p className="mb-6 max-w-md text-xs sm:text-sm leading-relaxed text-slate-300 font-normal">
+            <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-300 font-normal">
               Heavy-duty tactical workwear, antimicrobial scrubs, and chef coats. Dispatched via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day fit guarantee.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-[#0A0F1D] bg-white hover:bg-slate-200 px-6 py-3 rounded-full transition-all text-center"
+                className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-[#0A0F1D] bg-white hover:bg-slate-200 px-7 py-3.5 rounded-full transition-all text-center uppercase tracking-wider shadow-sm"
               >
                 Shop Catalog →
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-white/20 px-6 py-3 rounded-full transition-all hover:bg-white/10 text-center text-white font-bold"
+                className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-white/20 px-7 py-3.5 rounded-full transition-all hover:bg-white/10 text-center text-white font-bold"
               >
                 Fleet Concierge
               </Link>

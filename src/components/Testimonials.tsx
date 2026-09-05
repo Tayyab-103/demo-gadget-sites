@@ -73,27 +73,29 @@ export default function Testimonials() {
   const story = customerStories[activeIndex];
 
   return (
-    <section className="py-16 sm:py-20 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="testimonials">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200 select-none" id="testimonials">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 mb-2.5 select-none">
-            CUSTOMER STORIES
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
+            Customer Stories
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08]">
-            Inspiring Stories, <br className="hidden sm:inline" />
-            <span className="font-bold text-[#0A0F1D]">Real Customers.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
+            Inspiring Stories, Real Customers.
           </h2>
+          <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
+            From municipal police forces to premier hospital networks and culinary academies across the nation.
+          </p>
         </div>
 
         {/* Featured Story Card */}
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: Arched Photo */}
             <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
-              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] max-w-[500px] overflow-hidden rounded-3xl lg:rounded-l-3xl lg:rounded-r-[180px] shadow-lg bg-[#0A0F1D] border border-slate-200 group">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-3xl lg:rounded-l-3xl lg:rounded-r-[180px] shadow-lg bg-[#0A0F1D] border border-slate-200 group">
                 <Image
                   src={story.image}
                   alt={`${story.authorName}`}
@@ -108,59 +110,55 @@ export default function Testimonials() {
             </div>
 
             {/* Right: Info */}
-            <div
-              className={`lg:col-span-6 flex flex-col justify-center transition-all duration-300 ${
-                isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-              }`}
-            >
-              {/* Logo Capsule Pill */}
-              <div className="mb-4 sm:mb-5">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200">
-                  <span className="font-bold text-xs tracking-[0.16em] uppercase text-[#0A0F1D]">
-                    {story.logo}
+            <div className="lg:col-span-6 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
+                  {story.logo}
+                </span>
+                {story.logoSub && (
+                  <span className="text-xs text-slate-400 font-mono">
+                    • {story.logoSub}
                   </span>
-                  {story.logoSub && (
-                    <span className="text-[0.6rem] font-medium uppercase tracking-wider text-slate-500 bg-white px-2 py-0.5 rounded-full border border-slate-200">
-                      {story.logoSub}
-                    </span>
-                  )}
-                </div>
+                )}
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg sm:text-xl font-normal text-[#0A0F1D] leading-relaxed tracking-tight mb-5 italic">
+              <blockquote className="text-xl sm:text-2xl md:text-[26px] font-bold text-[#0A0F1D] leading-snug tracking-tight mb-6">
                 {story.quote}
               </blockquote>
 
-              {/* Author */}
-              <div>
-                <div className="text-sm font-bold text-[#0A0F1D]">
+              {/* Author info */}
+              <div className="border-t border-slate-200 pt-4 mb-8">
+                <div className="font-extrabold text-sm sm:text-base text-[#0A0F1D]">
                   {story.authorName}
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">
+                <div className="text-xs text-slate-500 font-normal">
                   {story.authorRole}
                 </div>
               </div>
+
+              {/* Story Navigator Thumbnails */}
+              <div className="flex items-center gap-3">
+                {customerStories.map((item, idx) => {
+                  const isActive = idx === activeIndex;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleSelect(idx)}
+                      className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                        isActive
+                          ? "w-8 bg-blue-600 shadow-xs"
+                          : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                      }`}
+                      aria-label={`View story ${idx + 1}`}
+                    />
+                  );
+                })}
+              </div>
+
             </div>
 
           </div>
-
-          {/* Carousel Dots */}
-          <div className="flex items-center justify-center gap-2.5 mt-8 sm:mt-10">
-            {customerStories.map((item, idx) => (
-              <button
-                key={item.id}
-                onClick={() => handleSelect(idx)}
-                aria-label={`Slide ${idx + 1}`}
-                className={`transition-all duration-300 cursor-pointer rounded-full ${
-                  activeIndex === idx
-                    ? "w-6 h-2 bg-[#0A0F1D]"
-                    : "w-2 h-2 bg-slate-300 hover:bg-slate-500"
-                }`}
-              />
-            ))}
-          </div>
-
         </div>
 
       </div>

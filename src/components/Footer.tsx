@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -25,10 +27,10 @@ export default function Footer() {
         {/* Top Newsletter Banner */}
         <div className="rounded-3xl bg-white/5 border border-white/10 p-6 sm:p-8 md:p-10 mb-14 sm:mb-16 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="max-w-md text-center md:text-left">
-            <div className="text-[0.68rem] uppercase tracking-[0.24em] text-slate-400 font-bold mb-1 select-none">
+            <div className="text-[0.68rem] font-mono uppercase tracking-[0.24em] text-blue-400 font-bold mb-1 select-none">
               FLEET OUTFITTER ACCESS
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Join The Workforce Roster
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-normal">
@@ -71,7 +73,7 @@ export default function Footer() {
               <span className="w-7 h-7 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-xs">
                 🛡️
               </span>
-              <span className="font-bold text-base tracking-wider text-white uppercase">
+              <span className="font-extrabold text-base tracking-wider text-white uppercase">
                 {siteConfig.brandName}
               </span>
             </Link>
@@ -83,30 +85,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Signature Catalog */}
+          {/* Signature Catalog - Dynamic Matching Products Grid */}
           <div>
             <h4 className="font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-1.5">
               Workforce Apparel
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
+              {products.map((product) => (
+                <li key={product.id}>
+                  <Link href={`/product/${product.id}`} className="hover:text-blue-400 transition-colors">
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link href="/shop" className="hover:text-white transition-colors">
-                  Tactical &amp; Industrial Workwear
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-white transition-colors">
-                  Antimicrobial Medical Scrubs
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-white transition-colors">
-                  Executive Chef Uniform Coats
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-white transition-colors">
-                  Custom Corporate Outfitting
+                <Link href="/shop" className="text-blue-400 hover:text-blue-300 font-bold transition-colors">
+                  View Full Catalog →
                 </Link>
               </li>
             </ul>
@@ -129,8 +123,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#quality-promise" className="hover:text-white transition-colors">
-                  14-Day Perfect Fit Guarantee
+                <Link href="/#features" className="hover:text-white transition-colors">
+                  Workforce Performance Features
                 </Link>
               </li>
               <li>
@@ -148,50 +142,65 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Outfitting Support Desk
-                </Link>
-              </li>
-              <li>
-                <a href={`tel:${siteConfig.phone}`} className="hover:text-white transition-colors">
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Direct Desk:</span>
+                <a href={`tel:${siteConfig.phone}`} className="hover:text-white font-bold transition-colors">
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Enterprise Support:</span>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white break-all transition-colors">
                   {siteConfig.email}
                 </a>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-white transition-colors">
-                  Terms &amp; Conditions
-                </Link>
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Atelier Hub:</span>
+                <span className="text-slate-300">{siteConfig.address}</span>
               </li>
             </ul>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Copyright & Payment Badges */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p className="text-center sm:text-left">
-            © {new Date().getFullYear()} {siteConfig.brandName}. All Rights Reserved. Engineered in Austin, TX.
+        {/* Bottom Legal Copyright Bar & Payment Methods */}
+        <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+          <p className="font-normal text-center lg:text-left order-2 lg:order-1">
+            &copy; {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved. Precision Commercial Outfitting.
           </p>
 
-          <div className="flex items-center gap-2">
-            {["VISA", "MASTERCARD", "AMEX", "DISCOVER"].map((card) => (
-              <span
-                key={card}
-                className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-[0.62rem] font-mono font-bold text-white"
-              >
-                {card}
-              </span>
-            ))}
+          {/* Payment Methods */}
+          <div className="flex items-center gap-3 order-1 lg:order-2">
+            <span className="text-[0.68rem] font-mono uppercase tracking-wider text-slate-400 select-none">
+              Payment Methods:
+            </span>
+            <div className="flex items-center gap-2">
+              <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center shadow-sm h-7.5 hover:opacity-90 transition-opacity">
+                <img
+                  src="/img/visa.png"
+                  alt="Visa"
+                  className="h-4 w-auto object-contain"
+                />
+              </div>
+              <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center shadow-sm h-7.5 hover:opacity-90 transition-opacity">
+                <img
+                  src="/img/mastercard.png"
+                  alt="Mastercard"
+                  className="h-5 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 order-3">
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/contact" className="hover:text-white transition-colors">
+              Support
+            </Link>
           </div>
         </div>
 

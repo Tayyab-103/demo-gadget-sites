@@ -33,13 +33,32 @@ function loadCartFromStorage(): CartItem[] {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Save cart to localStorage whenever it changes
+  // Hydrate cart from localStorage on client mount
   useEffect(() => {
-    localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-  }, [cart]);
+    setIsMounted(true);
+    try {
+      const savedCart = localStorage.getItem("cartPdtArr");
+      if (savedCart) {
+        const parsed = JSON.parse(savedCart);
+        if (Array.isArray(parsed)) {
+          setCart(parsed);
+        }
+      }
+    } catch (e) {
+      console.error("Error parsing cart data from localStorage", e);
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes (only after mounted)
+  useEffect(() => {
+    if (isMounted) {
+      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+    }
+  }, [cart, isMounted]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     // If site configuration limits cart to one product

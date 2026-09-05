@@ -4,10 +4,9 @@ import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
-import AboutUs from "@/components/AboutUs";
-import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
-import QualityPromise from "@/components/QualityPromise";
+import Features from "@/components/Features";
+import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Faq from "@/components/Faq";
@@ -21,34 +20,31 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
-        {/* Dynamic Hero Section */}
+        {/* Hero Section */}
         <Hero />
         
-        {/* Step-by-Step Flow */}
+        {/* Uniform Protocol Flow */}
         <HowItWorks />
         
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
+        {/* Alternating Features Section */}
+        <Features />
+
         {/* About Brand & Austin Heritage */}
         <AboutUs />
 
-        {/* Video Showcase In Motion */}
-        <VideoShowcase />
-
-        {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
-        
-        {/* Athlete Testimonials */}
+        {/* Customer Testimonials */}
         <Testimonials />
 
-        {/* Conversion CTA Banner */}
+        {/* Fleet Conversion Banner */}
         <CTASection />
 
-        {/* FAQ Accordions Dropdown */}
+        {/* FAQ Accordions */}
         <Faq />
 
-        {/* Contact Form Section */}
+        {/* Fleet Concierge Contact Form */}
         <Contact />
       </main>
 

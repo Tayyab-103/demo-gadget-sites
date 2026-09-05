@@ -1,89 +1,155 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const featuresData = [
+interface FeatureItem {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  imagePosition: "top" | "bottom";
+}
+
+const featuresList: FeatureItem[] = [
   {
-    title: "1000D Ripstop Cordura®",
-    description: "High-tenacity nylon ripstop with DuPont Teflon™ coating that resists tears, chemical spills, and severe abrasive friction.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
+    id: 1,
+    title: "1000D Cordura® Ripstop",
+    description: "High-tenacity nylon ripstop with DuPont Teflon™ shield resisting friction, chemical spills, and heavy abrasion.",
+    image: "/img/feature1.jpg",
+    link: "/shop",
+    imagePosition: "top",
   },
   {
+    id: 2,
     title: "Silvadur™ Antimicrobial",
-    description: "Silver-ion antimicrobial polymer technology providing 99.9% clinical pathogen and odor defense through 100+ industrial washings.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <circle cx="12" cy="12" r="4" />
-        <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
-        <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
-        <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
-        <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
-      </svg>
-    ),
+    description: "Silver-ion polymer technology providing 99.9% clinical pathogen and odor defense through 100+ industrial washes.",
+    image: "/img/feature2.jpg",
+    link: "/shop",
+    imagePosition: "bottom",
   },
   {
-    title: "Triple-Needle Seam Armor",
-    description: "Reinforced high-stress bar-tacking and genuine heavy-gauge YKK zippers engineered for zero seam blowouts under physical duty.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
+    id: 3,
+    title: "Triple-Needle Stitching",
+    description: "Reinforced high-stress bar-tacking and heavy-gauge YKK zippers engineered for zero seam blowouts under tactical duty.",
+    image: "/img/uniform-tailoring-atelier.jpg",
+    link: "/shop",
+    imagePosition: "top",
   },
   {
-    title: `${siteConfig.trialPeriod || 14}-Day Fit Guarantee`,
-    description: "Deploy our uniforms across your workforce. Complete peace of mind with 100% full money-back and free size exchange coverage.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <polyline points="9 12 11.5 14.5 15 9" />
-      </svg>
-    ),
+    id: 4,
+    title: `${siteConfig.trialPeriod || 14}-Day Shift Guarantee`,
+    description: "Deploy our uniform suites risk-free across your crew with 100% money-back coverage and complimentary size exchanges.",
+    image: "/img/feature3.jpg",
+    link: "/shop",
+    imagePosition: "bottom",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#FFFFFF] text-[#0A0F1D] border-t border-slate-200" id="features">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F8FAFC] text-[#0A0F1D] border-t border-slate-200 select-none" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
-          <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/80 mb-3 select-none">
-            TEXTILE ENGINEERING STANDARDS
+        
+        {/* Light Theme Container matching site aesthetics */}
+        <div className="w-full bg-white rounded-3xl p-6 sm:p-10 md:p-14 border border-slate-200/90 shadow-2xs">
+          
+          {/* Centered Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
+              Performance Architecture
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] mb-4">
+              Workforce Performance Features
+            </h2>
+            <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+              Every uniform suite from {siteConfig.brandName} is precision-engineered to withstand severe shift environments, commercial autoclaves, and active daily movement.
+            </p>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-4">
-            Built For Grueling <br className="hidden sm:inline" />
-            <span className="font-bold text-[#0A0F1D]">24-Hour Shifts.</span>
-          </h2>
-          <p className="mx-auto max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
-            Every uniform suite from {siteConfig.brandName} is subjected to seam tensile stress rigs, commercial autoclave wash cycles, and stain-release testing.
-          </p>
+
+          {/* 4 Alternating Feature Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {featuresList.map((feature) => {
+              const isImageTop = feature.imagePosition === "top";
+
+              return (
+                <div
+                  key={feature.id}
+                  className="group flex flex-col bg-[#F8FAFC] rounded-2xl border border-slate-200/90 overflow-hidden transition-all duration-300 hover:border-slate-400 hover:shadow-lg hover:-translate-y-1"
+                >
+                  {/* Top Block */}
+                  {isImageTop ? (
+                    // Top Image
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-200">
+                      <img
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    // Top Text
+                    <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 min-h-[190px] bg-white">
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-[#0A0F1D] mb-2 leading-snug group-hover:text-blue-600 transition-colors">
+                          {feature.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                          {feature.description}
+                        </p>
+                      </div>
+                      <Link
+                        href={feature.link}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0A0F1D] group-hover:text-blue-600 transition-colors mt-4"
+                      >
+                        <span>Learn more</span>
+                        <span className="transition-transform group-hover:translate-x-1">→</span>
+                      </Link>
+                    </div>
+                  )}
+
+                  {/* Bottom Block */}
+                  {isImageTop ? (
+                    // Bottom Text
+                    <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 min-h-[190px] bg-white">
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-[#0A0F1D] mb-2 leading-snug group-hover:text-blue-600 transition-colors">
+                          {feature.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+                          {feature.description}
+                        </p>
+                      </div>
+                      <Link
+                        href={feature.link}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#0A0F1D] group-hover:text-blue-600 transition-colors mt-4"
+                      >
+                        <span>Learn more</span>
+                        <span className="transition-transform group-hover:translate-x-1">→</span>
+                      </Link>
+                    </div>
+                  ) : (
+                    // Bottom Image
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-200">
+                      <img
+                        src={feature.image}
+                        alt={feature.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuresData.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-2xs transition-all duration-300 hover:border-[#0A0F1D] hover:shadow-lg hover:-translate-y-1"
-            >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-[#0A0F1D] text-white shadow-2xs">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-base font-bold text-[#0A0F1D] tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">{feature.description}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

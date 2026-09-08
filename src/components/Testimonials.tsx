@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 const testimonials = [
   {
-    quote: "The Thornwick Hand Trowel is hands down the best gardening tool I've held in 25 years of horticultural work. The blade cuts through heavy clay and stony soil without flexing a single millimeter.",
+    quote: "The Briarforge Hand Trowel is hands down the best gardening tool I've held in 25 years of horticultural work. The blade cuts through heavy clay and stony soil without flexing a single millimeter.",
     author: "Eleanor Vance",
     role: "Master Gardener & Nursery Curator",
     image: "/img/how_it_works_1.jpg",

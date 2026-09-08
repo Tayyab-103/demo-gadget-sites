@@ -97,11 +97,11 @@ export default function QualityPromise() {
             <div className="mt-8 pt-5 border-t border-black/5 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-[#132B1C] text-white flex items-center justify-center font-bold text-xs">
-                  TW
+                  BF
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase text-[#11281A] tracking-wider">
-                    Thornwick Foundry Seal
+                    Briarforge Collective Seal
                   </div>
                   <div className="text-[0.65rem] text-neutral-text/50">
                     Lifetime Metallurgy Guarantee

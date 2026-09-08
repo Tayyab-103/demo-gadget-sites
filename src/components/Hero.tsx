@@ -70,7 +70,7 @@ export default function Hero() {
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%]">
           <img
             src="/img/hero_section.jpg"
-            alt="Thornwick Hand-Forged Garden Tools"
+            alt="Briarforge Hand-Forged Garden Tools"
             className="w-full h-full object-cover object-center"
             onError={(e) => {
               e.currentTarget.src = "/img/products/hero_section.jpg";
@@ -114,7 +114,7 @@ export default function Hero() {
           </button>
           
           <Link href="/" className="font-extrabold text-sm sm:text-base tracking-[0.22em] uppercase text-[#132A1C] font-sans">
-            THORNWICK
+            BRIARFORGE
           </Link>
         </div>
 

@@ -31,7 +31,7 @@ export default function ContactPage() {
         </section>
 
         {/* Strictly Workshop Assistance & Contact Form */}
-        <Contact />
+        <Contact showForm={true} />
       </main>
 
       <Footer />

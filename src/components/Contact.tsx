@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -12,7 +13,11 @@ const contactImages = [
   "/img/quality_promise_banner.jpg",
 ];
 
-export default function Contact() {
+interface ContactProps {
+  showForm?: boolean;
+}
+
+export default function Contact({ showForm = false }: ContactProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
 
@@ -29,7 +34,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-[#FAF9F6] relative overflow-hidden border-b border-black/5" id="contact">
+    <section className="py-16 md:py-24 bg-[#FAF9F6] relative overflow-hidden border-b border-black/5" id="contact">
       <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
         
         {/* Standardized Section Header */}
@@ -47,135 +52,201 @@ export default function Contact() {
           </h2>
 
           <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Have questions about our tools, metallurgy, or care? Our team is here to assist.
+            Have questions about our tools, metallurgy, or care? Our blacksmiths and customer care team are here to assist.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          {/* Visual + Info Column */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] lg:min-h-0 shadow-md border border-black/5 bg-neutral-900">
-            {contactImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt="Thornwick Garden Tool Foundry craftsmanship"
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                }`}
-                style={{ transitionProperty: "opacity, transform" }}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#132B1C]/95 via-[#132B1C]/50 to-[#132B1C]/20" />
+        {showForm ? (
+          /* FULL FORM VIEW (Used on /contact page) */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Visual + Info Column */}
+            <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] lg:min-h-0 shadow-md border border-black/5 bg-neutral-900">
+              {contactImages.map((src, idx) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt="Briarforge Garden Collective craftsmanship"
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                    idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                  }`}
+                  style={{ transitionProperty: "opacity, transform" }}
+                />
+              ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#132B1C]/95 via-[#132B1C]/50 to-[#132B1C]/20" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
-              {/* Direct Info Pills */}
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                  <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                    ☎
+              <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
+                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                      ☎
+                    </div>
+                    <div>
+                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Call Support</div>
+                      <a href={`tel:${siteConfig.phone}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors">
+                        {siteConfig.phone}
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Call Support</div>
-                    <a href={`tel:${siteConfig.phone}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors">
-                      {siteConfig.phone}
-                    </a>
+                  
+                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
+                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                      ✉
+                    </div>
+                    <div>
+                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Direct Email</div>
+                      <a href={`mailto:${siteConfig.email}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors break-all">
+                        {siteConfig.email}
+                      </a>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                  <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                    ✉
-                  </div>
-                  <div>
-                    <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Direct Email</div>
-                    <a href={`mailto:${siteConfig.email}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors break-all">
-                      {siteConfig.email}
-                    </a>
-                  </div>
-                </div>
 
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                  <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                    ⚲
-                  </div>
-                  <div>
-                    <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Workshop &amp; Foundry</div>
-                    <div className="font-medium text-xs text-white/90">{siteConfig.address}</div>
+                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
+                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
+                      ⚲
+                    </div>
+                    <div>
+                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Workshop &amp; Foundry</div>
+                      <div className="font-medium text-xs text-white/90">{siteConfig.address}</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Form Column */}
-          <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-black/5 shadow-xs flex flex-col justify-center">
-            {contactSubmitted ? (
-              <div className="text-center py-10">
-                <div className="w-14 h-14 rounded-full bg-[#265C1E]/15 text-[#265C1E] mx-auto flex items-center justify-center text-xl font-bold mb-3">
-                  ✓
+            {/* Form Column */}
+            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-black/5 shadow-xs flex flex-col justify-center">
+              {contactSubmitted ? (
+                <div className="text-center py-10">
+                  <div className="w-14 h-14 rounded-full bg-[#265C1E]/15 text-[#265C1E] mx-auto flex items-center justify-center text-xl font-bold mb-3">
+                    ✓
+                  </div>
+                  <h3 className="text-xl font-extrabold text-[#11281A] uppercase tracking-tight mb-2">Inquiry Dispatched!</h3>
+                  <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md mx-auto mb-6">
+                    Thank you for reaching out to {siteConfig.brandName}. One of our workshop team members will reply within 24 hours.
+                  </p>
+                  <button
+                    onClick={() => setContactSubmitted(false)}
+                    className="font-bold bg-[#265C1E] text-white hover:bg-[#1E4A17] transition-all py-3 px-7 rounded-lg text-xs uppercase tracking-wider cursor-pointer"
+                  >
+                    Send Another Inquiry
+                  </button>
                 </div>
-                <h3 className="text-xl font-extrabold text-[#11281A] uppercase tracking-tight mb-2">Inquiry Dispatched!</h3>
-                <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md mx-auto mb-6">
-                  Thank you for reaching out to {siteConfig.brandName}. One of our workshop team members will reply within 24 hours.
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
+                        Your Full Name
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Eleanor Vance"
+                        className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="e.g. eleanor@garden.com"
+                        className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
+                      Message to Toolmakers
+                    </label>
+                    <textarea
+                      rows={4}
+                      required
+                      placeholder="Tell us about your garden inquiry, order, or tool needs..."
+                      className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full font-bold uppercase tracking-widest text-xs bg-[#265C1E] hover:bg-[#1E4A17] text-white transition-all py-3.5 px-6 rounded-lg shadow-sm cursor-pointer mt-1"
+                  >
+                    Send Message to Workshop
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        ) : (
+          /* FORM-FREE OVERVIEW CARDS (Default Contact Component for Homepage) */
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 1. Phone Card */}
+            <div className="bg-white rounded-3xl p-7 border border-black/5 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#265C1E]/10 text-[#265C1E] flex items-center justify-center text-lg font-bold mb-5 group-hover:bg-[#265C1E] group-hover:text-white transition-colors">
+                  ☎
+                </div>
+                <h3 className="text-lg font-bold text-[#11281A] mb-1">Direct Telephone</h3>
+                <p className="text-xs text-neutral-text/70 mb-4 leading-relaxed">
+                  Connect directly with our tool specialists for immediate product advice or order help.
                 </p>
-                <button
-                  onClick={() => setContactSubmitted(false)}
-                  className="font-bold bg-[#265C1E] text-white hover:bg-[#1E4A17] transition-all py-3 px-7 rounded-lg text-xs uppercase tracking-wider cursor-pointer"
-                >
-                  Send Another Inquiry
-                </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="font-bold text-sm text-[#265C1E] hover:text-[#132B1C] transition-colors inline-flex items-center gap-1.5"
+              >
+                <span>{siteConfig.phone}</span>
+                <span>→</span>
+              </a>
+            </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                      Your Full Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Eleanor Vance"
-                      className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="e.g. eleanor@garden.com"
-                      className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
-                    />
-                  </div>
+            {/* 2. Email Card */}
+            <div className="bg-white rounded-3xl p-7 border border-black/5 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-[#265C1E]/10 text-[#265C1E] flex items-center justify-center text-lg font-bold mb-5 group-hover:bg-[#265C1E] group-hover:text-white transition-colors">
+                  ✉
                 </div>
+                <h3 className="text-lg font-bold text-[#11281A] mb-1">Workshop Email</h3>
+                <p className="text-xs text-neutral-text/70 mb-4 leading-relaxed">
+                  Send warranty inquiries, wholesale requests, or custom blacksmithing questions.
+                </p>
+              </div>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="font-bold text-sm text-[#265C1E] hover:text-[#132B1C] transition-colors inline-flex items-center gap-1.5 break-all"
+              >
+                <span>{siteConfig.email}</span>
+                <span>→</span>
+              </a>
+            </div>
 
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                    Message to Toolmakers
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Tell us about your garden inquiry, order, or tool needs..."
-                    className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors resize-none"
-                  />
+            {/* 3. Foundry Address & Full Contact Action Card */}
+            <div className="bg-[#132B1C] text-white rounded-3xl p-7 shadow-md flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-white/15 text-[#78C470] flex items-center justify-center text-lg font-bold mb-5">
+                  ⚲
                 </div>
-
-                <button
-                  type="submit"
-                  className="w-full font-bold uppercase tracking-widest text-xs bg-[#265C1E] hover:bg-[#1E4A17] text-white transition-all py-3.5 px-6 rounded-lg shadow-sm cursor-pointer mt-1"
+                <h3 className="text-lg font-bold text-white mb-1">Foundry Headquarters</h3>
+                <p className="text-xs text-white/75 mb-4 leading-relaxed">
+                  {siteConfig.address}
+                </p>
+              </div>
+              <div className="relative z-10 pt-2">
+                <Link
+                  href="/contact"
+                  className="w-full text-center inline-block font-bold text-xs uppercase tracking-wider bg-[#265C1E] hover:bg-[#1E4A17] text-white py-3 px-5 rounded-xl transition-all shadow-sm"
                 >
-                  Send Message to Workshop
-                </button>
-              </form>
-            )}
+                  Open Contact Page Form →
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
       </div>
     </section>
   );

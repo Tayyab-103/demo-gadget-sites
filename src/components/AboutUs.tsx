@@ -50,7 +50,7 @@ export default function AboutUs() {
           </h2>
           
           <p className="mt-4 text-[#11281A]/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl">
-            We reject flimsy stamped-metal garden tools. At Thornwick, every trowel, bypass pruner, and hand cultivator is built as an heirloom tool meant to be passed down through generations of gardeners.
+            We reject flimsy stamped-metal garden tools. At Briarforge Garden Collective, every trowel, bypass pruner, and hand cultivator is built as an heirloom tool meant to be passed down through generations of gardeners.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
@@ -8,82 +8,210 @@ import { Product } from "@/types";
 const products = productsData as unknown as Product[];
 
 export default function ProductGrid() {
+  const [active, setActive] = useState(0);
+
+  if (!products || products.length === 0) return null;
+
+  const total = products.length;
+  const leftIdx = (active - 1 + total) % total;
+  const rightIdx = (active + 1) % total;
+
+  const leftProduct = products[leftIdx];
+  const centerProduct = products[active];
+  const rightProduct = products[rightIdx];
+
+  const getPrice = (p: Product) => {
+    const bundle = p.bundles && p.bundles[0];
+    return bundle ? bundle.price : p.ssPrice;
+  };
+
+  const centerPrice = getPrice(centerProduct);
+  const centerOriginalPrice = (Number(centerPrice) * 1.4).toFixed(2);
+
+  const leftPrice = getPrice(leftProduct);
+  const rightPrice = getPrice(rightProduct);
+
+  const handlePrev = () => {
+    setActive((prev) => (prev - 1 + total) % total);
+  };
+
+  const handleNext = () => {
+    setActive((prev) => (prev + 1) % total);
+  };
+
   return (
-    <section className="py-12 md:py-16 bg-white relative overflow-hidden" id="shop">
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 md:mb-24">
-          <span className="eyebrow justify-center mb-4">The Collection</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Explore The <span className="text-secondary">Collection</span>
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden font-sans border-b border-black/5" id="shop">
+      
+      {/* Background Subtle Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0C1E17]/5 border border-[#D4AF37]/40 mb-3 shadow-2xs">
+            <span className="text-[#D4AF37] text-xs">✦</span>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0C1E17]">
+              Curated Masterpieces
+            </span>
+            <span className="text-[#D4AF37] text-xs">✦</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal uppercase tracking-tight text-[#0C1E17] leading-tight">
+            Explore The <span className="text-[#D4AF37]">Collection</span>
           </h2>
-          <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
-            Select a piece below to customize your bundle and find something worth keeping.
+          <p className="text-black/60 text-xs sm:text-sm md:text-base mt-2 max-w-md mx-auto leading-relaxed">
+            Click to rotate through our signature creations or select a piece to configure your custom suite.
           </p>
         </div>
 
-        <div className="flex flex-col gap-20 md:gap-32">
-          {products.map((product, idx) => {
-            const isEven = idx % 2 === 0;
-            const firstBundle = product.bundles && product.bundles[0];
-            const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            // Fake an original price for the crossed-out effect to match the design screenshot
-            const originalPrice = (Number(currentPrice) * 1.3).toFixed(2);
+        {/* 3-Card Spotlight Carousel Row */}
+        <div className="w-full flex items-center justify-center gap-3 sm:gap-6 lg:gap-8" id="carouselRow">
+          
+          {/* ─── 1. LEFT CARD (PREVIEW) ─── */}
+          <div
+            id="leftCard"
+            onClick={handlePrev}
+            className="hidden md:flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-95 transition-all duration-500 transform hover:-translate-x-1"
+          >
+            <div className="w-40 lg:w-56 aspect-4/5 rounded-2xl overflow-hidden bg-[#0C1E17] border border-black/10 shadow-md relative">
+              <img
+                id="leftImg"
+                src={leftProduct.image}
+                alt={leftProduct.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E17]/80 via-transparent to-transparent" />
+              <span className="absolute top-3 left-3 bg-[#0C1E17]/80 backdrop-blur-xs text-[#D4AF37] text-[0.6rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md">
+                {leftProduct.category || "Jewelry"}
+              </span>
+            </div>
+            <p id="leftName" className="text-xs lg:text-sm font-serif font-bold text-slate-800 mt-3 text-center max-w-[160px] truncate group-hover:text-[#D4AF37] transition-colors">
+              {leftProduct.name}
+            </p>
+            <span className="text-[0.7rem] font-bold text-black/50">${leftPrice}</span>
+          </div>
 
-            return (
-              <div
-                key={product.id}
-                className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-16 lg:gap-24`}
-              >
-                {/* Image Section */}
-                <Link href={`/product/${product.id}`} className="w-full md:w-1/2 relative flex justify-center group z-10">
-                  <div className="relative w-full max-w-[420px] aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/400x400?text=Jewelry";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
-                    <span className="absolute top-5 left-5 bg-secondary text-primary text-[0.62rem] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md">
-                      {product.category}
-                    </span>
-                  </div>
-                </Link>
+          {/* ─── 2. CENTER CARD (ACTIVE SPOTLIGHT) ─── */}
+          <div className="flex flex-col items-center max-w-sm sm:max-w-md w-full animate-in fade-in zoom-in-95 duration-300">
+            <Link
+              href={`/product/${centerProduct.id}`}
+              className="group relative w-64 sm:w-80 md:w-96 aspect-4/5 rounded-3xl overflow-hidden bg-[#0C1E17] border-2 border-[#D4AF37] shadow-2xl shadow-[#D4AF37]/20 block cursor-pointer"
+            >
+              <img
+                id="centerImg"
+                src={centerProduct.image}
+                alt={centerProduct.name}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop";
+                }}
+              />
+              
+              {/* Gradient Scrim */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E17]/90 via-[#0C1E17]/20 to-transparent" />
 
-                {/* Content Section */}
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 md:px-4">
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-neutral-text tracking-tighter mb-4 leading-none">
-                    {product.name}
-                  </h3>
+              {/* Top Floating Badge */}
+              <span className="absolute top-4 left-4 bg-[#0C1E17]/90 backdrop-blur-md text-[#D4AF37] text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-[#D4AF37]/40 shadow-md">
+                ✦ {centerProduct.category || "Featured Piece"} ✦
+              </span>
 
-                  <p className="text-neutral-text/60 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-                    {product.description}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8">
-                    <Link
-                      href={`/product/${product.id}`}
-                      className="group inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-10 rounded-full text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-secondary/20"
-                    >
-                      Shop Now
-                    </Link>
-
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl md:text-4xl font-black text-neutral-text">
-                        ${currentPrice}
-                      </span>
-                      <span className="text-xl md:text-2xl font-bold text-secondary line-through opacity-80">
-                        ${originalPrice}
-                      </span>
-                    </div>
+              {/* Bottom Quick Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                <div>
+                  <span className="text-[0.65rem] text-white/60 uppercase tracking-widest block font-medium">Starting at</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-xl sm:text-2xl font-black text-[#D4AF37]">${centerPrice}</span>
+                    <span className="text-xs text-white/50 line-through">${centerOriginalPrice}</span>
                   </div>
                 </div>
+                <span className="bg-[#D4AF37] text-[#0C1E17] text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-md group-hover:bg-white transition-colors">
+                  View Piece &rarr;
+                </span>
               </div>
-            );
-          })}
+            </Link>
+
+            {/* Center Product Details */}
+            <div className="text-center mt-5 px-2">
+              <h3 id="centerName" className="text-lg sm:text-2xl font-serif font-bold text-[#0C1E17] tracking-tight leading-snug hover:text-[#D4AF37] transition-colors">
+                <Link href={`/product/${centerProduct.id}`}>
+                  {centerProduct.name}
+                </Link>
+              </h3>
+              
+              <p id="centerSubtitle" className="text-xs sm:text-sm text-black/65 mt-2 line-clamp-2 max-w-sm mx-auto font-light leading-relaxed">
+                {centerProduct.description}
+              </p>
+            </div>
+          </div>
+
+          {/* ─── 3. RIGHT CARD (PREVIEW) ─── */}
+          <div
+            id="rightCard"
+            onClick={handleNext}
+            className="hidden md:flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-95 transition-all duration-500 transform hover:translate-x-1"
+          >
+            <div className="w-40 lg:w-56 aspect-4/5 rounded-2xl overflow-hidden bg-[#0C1E17] border border-black/10 shadow-md relative">
+              <img
+                id="rightImg"
+                src={rightProduct.image}
+                alt={rightProduct.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E17]/80 via-transparent to-transparent" />
+              <span className="absolute top-3 left-3 bg-[#0C1E17]/80 backdrop-blur-xs text-[#D4AF37] text-[0.6rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md">
+                {rightProduct.category || "Watches"}
+              </span>
+            </div>
+            <p id="rightName" className="text-xs lg:text-sm font-serif font-bold text-slate-800 mt-3 text-center max-w-[160px] truncate group-hover:text-[#D4AF37] transition-colors">
+              {rightProduct.name}
+            </p>
+            <span className="text-[0.7rem] font-bold text-black/50">${rightPrice}</span>
+          </div>
+
         </div>
+
+        {/* ─── 4. CAROUSEL CONTROLS & DOTS ─── */}
+        <div className="flex items-center gap-4 mt-8" id="controls">
+          <button
+            onClick={handlePrev}
+            className="w-9 h-9 rounded-full border border-black/15 bg-white hover:border-[#D4AF37] hover:bg-[#0C1E17] hover:text-[#D4AF37] transition-all flex items-center justify-center text-xs font-bold cursor-pointer shadow-xs"
+            aria-label="Previous Product"
+          >
+            &#8592;
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex items-center gap-2" id="dots">
+            {products.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`transition-all duration-300 cursor-pointer ${
+                  i === active
+                    ? "w-8 h-2.5 rounded-full bg-[#0C1E17] border border-[#D4AF37]"
+                    : "w-2.5 h-2.5 rounded-full bg-black/20 hover:bg-black/40"
+                }`}
+                aria-label={`Jump to product ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="w-9 h-9 rounded-full border border-black/15 bg-white hover:border-[#D4AF37] hover:bg-[#0C1E17] hover:text-[#D4AF37] transition-all flex items-center justify-center text-xs font-bold cursor-pointer shadow-xs"
+            aria-label="Next Product"
+          >
+            &#8594;
+          </button>
+        </div>
+
       </div>
     </section>
   );

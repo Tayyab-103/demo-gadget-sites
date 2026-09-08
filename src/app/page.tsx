@@ -25,7 +25,8 @@ export default function Home() {
         <Hero />
         
         {/* Step-by-Step Flow */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        <Features />
         
         {/* About Brand Section */}
         <AboutUs />
@@ -51,8 +52,8 @@ export default function Home() {
         {/* FAQ Accordions Dropdown */}
         <Faq />
 
-        {/* Contact Form Section */}
-        <Contact />
+        {/* Contact Information Section (Form removed on Home page) */}
+        <Contact showForm={false} />
       </main>
 
       <Footer />

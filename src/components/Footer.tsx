@@ -73,12 +73,12 @@ export default function Footer() {
 
             {/* Column 2 */}
             <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
+              <h4 className="text-white/50 text-xs mb-5 font-normal">Collections</h4>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Pearl Pendant Necklace</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Canvas-Strap Watch</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Minimalist Wall Clock</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Jewelry</Link></li>
+                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">18K Gold Solitaire Pendant</Link></li>
+                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Automatic Chronograph Watch</Link></li>
+                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Sterling Silverware &amp; Clock Suite</Link></li>
+                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Atelier Masterpieces</Link></li>
               </ul>
             </div>
 

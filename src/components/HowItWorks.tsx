@@ -1,81 +1,58 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const steps = [
   {
-    number: "01",
-    title: "Choose Your Piece",
+    step: "01",
+    phase: "Select Your Piece",
+    title: "Curate Your Atelier Suite",
     description:
-      "Browse our collection of jewelry, watches, clocks, and silverware, and pick a bundle sized for you, from a single piece to a full gift set.",
-    image: "https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=900&q=80",
+      "Explore our handcrafted collection of 18K solid gold jewelry, Swiss-precision automatic chronographs, and mirror-finished 925 sterling silverware. Choose a single signature piece or customize a multi-piece bundle with exclusive collector savings.",
+    badge: "Bespoke Collection",
+    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=900&auto=format&fit=crop",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <path d="M16 10a4 4 0 0 1-8 0" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="6 2 18 2 22 8 12 22 2 8 6 2"></polygon>
+        <line x1="2" y1="8" x2="22" y2="8"></line>
+        <line x1="12" y1="2" x2="12" y2="22"></line>
       </svg>
     ),
   },
   {
-    number: "02",
-    title: "Fast Secure Checkout",
+    step: "02",
+    phase: "Master Quality Check",
+    title: "Certified Hallmarking & Precision",
     description:
-      "Fill in your shipping details and complete your order safely. Our checkout is secured with military-grade 256-bit encryption for your peace of mind.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
+      "Prior to dispatch, each piece is meticulously inspected by our master jewelers and horologists. We verify gemstone clarity, carat hallmarking, and timekeeping accuracy to ensure pristine heirloom standards.",
+    badge: "Official Certification",
+    image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=900&auto=format&fit=crop",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <polyline points="9 12 11.5 14.5 15 9"></polyline>
       </svg>
     ),
   },
   {
-    number: "03",
-    title: "Nationwide Dispatch",
+    step: "03",
+    phase: "Armored Courier Dispatch",
+    title: "Insured Transit & 14-Day Trial",
     description:
-      "Your order is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
+      "Your order is secured inside our velvet-lined lacquer keepsake box and dispatched via insured UPS express courier in 3-5 business days. Enjoy an uninterrupted 14-day private home inspection with our guarantee.",
+    badge: "100% Risk-Free",
+    image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?q=80&w=900&auto=format&fit=crop",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="1" y="3" width="15" height="13" />
-        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-        <circle cx="5.5" cy="18.5" r="2.5" />
-        <circle cx="18.5" cy="18.5" r="2.5" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13"></rect>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+        <circle cx="18.5" cy="18.5" r="2.5"></circle>
       </svg>
     ),
   },
@@ -83,120 +60,135 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section
-      className="relative overflow-hidden bg-neutral-bg py-12 md:py-16"
-      id="how-it-works"
-    >
-      {/* Background ambient blur */}
-      <div className="pointer-events-none absolute right-0 top-0 h-150 w-150 -translate-y-1/2 translate-x-1/3 rounded-full bg-secondary/5 blur-3xl" />
+    <section className="py-20 md:py-28 bg-[#F9F7F2] text-[#121E19] relative overflow-hidden font-sans" id="how-it-works">
+      
+      {/* Subtle Background Glows */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D4AF37]/8 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-[#0C1E17]/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="pointer-events-none absolute bottom-0 left-0 h-125 w-125 -translate-x-1/3 translate-y-1/3 rounded-full bg-primary/5 blur-3xl" />
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0C1E17]/5 border border-[#D4AF37]/40 mb-4 shadow-xs">
+            <span className="text-[#D4AF37] text-xs">✦</span>
+            <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#0C1E17]">
+              The Atelier Experience
+            </span>
+            <span className="text-[#D4AF37] text-xs">✦</span>
+          </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
-        {/* Header */}
-        <div className="mb-16 text-center md:mb-24">
-          <span className="eyebrow mb-6 justify-center">
-            Simple Steps
-          </span>
-
-          <h2 className="mb-6 text-3xl font-black uppercase tracking-tight text-primary md:text-5xl">
-            How It{" "}
-            <span className="text-secondary">
-              Works
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-normal uppercase tracking-tight text-[#0C1E17] leading-tight mb-5">
+            How Acquiring Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0C1E17] via-[#D4AF37] to-[#0C1E17]">
+              Heirloom Piece Works
             </span>
           </h2>
 
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Finding your next piece is simple. Follow these three steps to get
-            fine jewelry, watches, clocks, or silverware delivered straight to your door.
+          <p className="text-sm md:text-base text-black/65 font-light leading-relaxed max-w-2xl mx-auto">
+            From the jeweler&apos;s bench to your doorstep, our three-stage process ensures uncompromised quality, verified authenticity, and complete peace of mind.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Connecting line */}
-          <div className="absolute bottom-10 left-1/2 top-10 z-0 hidden w-px -translate-x-1/2 bg-black/10 lg:block" />
+        {/* 3-Step Interactive Grid Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+          
+          {steps.map((item, idx) => (
+            <div
+              key={item.step}
+              className="group relative flex flex-col justify-between bg-white rounded-3xl p-6 sm:p-8 border border-black/8 hover:border-[#D4AF37]/60 shadow-lg shadow-black/5 hover:shadow-2xl hover:shadow-[#D4AF37]/15 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden"
+            >
+              {/* Top Accent Gradient Bar */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0C1E17] via-[#D4AF37] to-[#0C1E17] opacity-80 group-hover:opacity-100 transition-opacity" />
 
-          <div className="flex flex-col gap-16 lg:gap-24">
-            {steps.map((step, idx) => {
-              const isEven = idx % 2 !== 0;
+              <div>
+                {/* Visual Image Header */}
+                <div className="relative aspect-16/10 rounded-2xl overflow-hidden bg-[#0C1E17] mb-6 shadow-md border border-black/5">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108 opacity-90 group-hover:opacity-100"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=900&auto=format&fit=crop";
+                    }}
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E17]/80 via-transparent to-transparent" />
 
-              return (
-                <div
-                  key={step.number}
-                  className={`relative z-10 flex flex-col items-center gap-10 lg:gap-0 ${
-                    isEven
-                      ? "lg:flex-row-reverse"
-                      : "lg:flex-row"
-                  }`}
-                >
-                  {/* Text Content */}
-                  <div
-                    className={`flex w-full flex-col items-center text-center lg:w-1/2 ${
-                      isEven
-                        ? "lg:items-start lg:pl-20 lg:text-left"
-                        : "lg:items-end lg:pr-20 lg:text-right"
-                    }`}
-                  >
-                    <div
-                      className={`flex max-w-md flex-col items-center ${
-                        isEven
-                          ? "lg:items-start"
-                          : "lg:items-end"
-                      }`}
-                    >
-                      <span className="mb-2 text-6xl font-black leading-none text-primary/10 md:text-7xl">
-                        {step.number}
-                      </span>
+                  {/* Step Numeral Badge */}
+                  <span className="absolute top-3 left-3 bg-[#0C1E17]/90 backdrop-blur-md text-[#D4AF37] text-xs font-mono font-bold px-3 py-1 rounded-full border border-[#D4AF37]/30 shadow-sm">
+                    STAGE {item.step}
+                  </span>
 
-                      <h3 className="mb-4 text-2xl font-extrabold text-primary md:text-3xl">
-                        {step.title}
-                      </h3>
-
-                      <p className="text-sm leading-relaxed text-neutral-text/65 md:text-base">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Desktop Center Node */}
-                  <div className="absolute left-1/2 z-20 hidden h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full border border-black/10 bg-white shadow-lg lg:flex">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white">
-                      {step.icon}
-                    </div>
-                  </div>
-
-                  {/* Mobile Icon */}
-                  <div className="relative z-20 -my-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-white shadow-lg lg:hidden">
-                    {step.icon}
-                  </div>
-
-                  {/* Image */}
-                  <div
-                    className={`flex w-full justify-center lg:w-1/2 ${
-                      isEven
-                        ? "lg:justify-end"
-                        : "lg:justify-start"
-                    }`}
-                  >
-                    <div className="group relative aspect-4/3 w-full max-w-110 overflow-hidden rounded-4xl bg-white shadow-2xl">
-                      {/* Soft overlay */}
-                      <div className="pointer-events-none absolute inset-0 z-10 bg-primary/5 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
-
-                      <Image
-                        src={step.image}
-                        alt={step.title}
-                        fill
-                        sizes="(max-width: 1024px) 90vw, 440px"
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                      />
-                    </div>
-                  </div>
+                  {/* Badge */}
+                  <span className="absolute bottom-3 right-3 bg-white/95 text-[#0C1E17] text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs">
+                    {item.badge}
+                  </span>
                 </div>
-              );
-            })}
+
+                {/* Step Phase Subheading */}
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#D4AF37] mb-2">
+                  <span className="w-6 h-6 rounded-full bg-[#0C1E17] text-[#D4AF37] flex items-center justify-center text-[0.65rem] shrink-0 shadow-xs">
+                    {item.icon}
+                  </span>
+                  <span>{item.phase}</span>
+                </div>
+
+                {/* Main Card Title */}
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0C1E17] tracking-tight mb-3 leading-snug group-hover:text-[#D4AF37] transition-colors">
+                  {item.title}
+                </h3>
+
+                {/* Card Description */}
+                <p className="text-xs sm:text-sm text-black/70 leading-relaxed font-light mb-6">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Card Footer */}
+              <div className="pt-4 border-t border-black/8 flex items-center justify-between text-xs">
+                <span className="font-semibold text-black/50 tracking-wider">
+                  Guaranteed by {siteConfig.brandName}
+                </span>
+                <span className="text-[#D4AF37] font-bold group-hover:translate-x-1 transition-transform">
+                  &rarr;
+                </span>
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        {/* Bottom Concierge & Assurance Banner */}
+        <div className="mt-16 bg-[#0C1E17] rounded-3xl p-8 sm:p-10 text-white border border-[#D4AF37]/30 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="relative z-10 max-w-xl text-center md:text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#D4AF37] block mb-1">
+              ✦ Personal Atelier Concierge ✦
+            </span>
+            <h4 className="text-xl sm:text-2xl font-serif font-normal tracking-tight text-white mb-2">
+              Have Questions About Ring Sizing, Watch Calibers, or Custom Silverware?
+            </h4>
+            <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+              Our master jewelry consultants in Austin, TX are on standby to assist with sizing advice, gift curation, or order status.
+            </p>
+          </div>
+
+          <div className="relative z-10 flex flex-col sm:flex-row gap-3 shrink-0">
+            <Link
+              href="/#shop"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#E5C266] to-[#D4AF37] text-[#0C1E17] font-bold text-xs uppercase tracking-widest hover:brightness-110 shadow-lg shadow-[#D4AF37]/25 transition-all cursor-pointer"
+            >
+              Browse Products &rarr;
+            </Link>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-widest transition-all cursor-pointer"
+            >
+              Contact Concierge
+            </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

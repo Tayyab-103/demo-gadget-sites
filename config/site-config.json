@@ -1,10 +1,10 @@
 {
   "Product": "Jewelry, Watch, Clock, & Silverware Stores",
-  "Processor": "EMP",
-  "brandName": "Mooncrest Jewelry Collective",
-  "websiteUrl": "MooncrestJewelryCollective.com",
-  "email": "support@MooncrestJewelryCollective.com",
-  "descriptor": "MooncrestJewelryCollec",
+  "Processor": "Netevia Esq",
+  "brandName": "Gilded Harbor Jewelry Works",
+  "websiteUrl": "GildedHarborJewelryWorks.com",
+  "email": "support@gildedharborjewelryworks.com",
+  "descriptor": "GildedHarborJewelryWor",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#15130F",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C6A15B",
-    "secondaryTextColor": "#171308",
-    "neutralBgColor": "#F8F4EC",
-    "neutralTextColor": "#221D15",
+    "primaryColor": "#0C1E17",
+    "primaryTextColor": "#FFFFFF",
+    "secondaryColor": "#D4AF37",
+    "secondaryTextColor": "#0C1E17",
+    "neutralBgColor": "#F9F7F2",
+    "neutralTextColor": "#121E19",
     "fontFamily": "Playfair Display"
   }
 }

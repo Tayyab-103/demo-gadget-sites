@@ -51,10 +51,42 @@ const toolCategories = [
   },
 ];
 
+const heroSlides = [
+  {
+    image: "/img/hero_section.jpg",
+    alt: "Briarforge Hand-Forged Garden Tools in Action",
+  },
+  {
+    image: "/img/how_it_works_1.jpg",
+    alt: "Artisan Blacksmith Forging Heat-Tempered Steel",
+  },
+  {
+    image: "/img/products/garden_tools/trowel_2.jpg",
+    alt: "Carbon Steel Trowel in Lush Organic Garden",
+  },
+  {
+    image: "/img/quality_promise_banner.jpg",
+    alt: "Heirloom Quality Garden Hand Tools",
+  },
+  {
+    image: "/img/products/garden_tools/pruner_3.jpg",
+    alt: "SK5 Titanium Japanese Pruning Shears",
+  },
+];
+
 export default function Hero() {
   const { toggleCart, getCartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  // Automatic slide rotation every 4.5 seconds
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative w-full overflow-hidden bg-white text-[#11281A] select-none">
@@ -62,24 +94,33 @@ export default function Hero() {
       {/* =========================================================================
           BACKGROUND: S-Curve Split
           Left: Clean Pure White Canvas
-          Right: Dark Forest Green / Botanical Garden Photo
+          Right: Automatic Crossfade Image Carousel (No Dots / No Arrows)
           ========================================================================= */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         
-        {/* Right Green Photographic Canvas */}
-        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%]">
-          <img
-            src="/img/hero_section.jpg"
-            alt="Briarforge Hand-Forged Garden Tools"
-            className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              e.currentTarget.src = "/img/products/hero_section.jpg";
-            }}
-          />
+        {/* Right Photographic Carousel Canvas */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%] bg-[#132B1C] overflow-hidden">
+          {heroSlides.map((slide, idx) => (
+            <div
+              key={slide.image}
+              className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
+                idx === activeSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-full object-cover object-center"
+                onError={(e) => {
+                  e.currentTarget.src = "/img/hero_section.jpg";
+                }}
+              />
+            </div>
+          ))}
           
           {/* Header Visibility Protection Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#173822]/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/40 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#173822]/60 via-transparent to-transparent z-10" />
         </div>
 
         {/* Organic S-Curve Divider */}

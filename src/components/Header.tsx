@@ -100,27 +100,34 @@ export default function Header() {
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-14">
           
-          {/* Left Side: Minimal Hamburger Menu Icon */}
-          <div className="flex items-center">
+          {/* Left Side: Minimal Hamburger Menu Icon + Brand Logo */}
+          <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={toggleMenu}
-              className="flex items-center justify-center text-[#11281A] hover:text-[#265C1E] transition-colors cursor-pointer p-1.5 focus:outline-none"
+              className="flex items-center justify-center text-[#11281A] hover:text-[#265C1E] transition-colors cursor-pointer p-1 focus:outline-none"
               aria-label="Toggle Navigation Menu"
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="3" y1="6" x2="21" y2="6"></line>
                   <line x1="3" y1="12" x2="21" y2="12"></line>
                   <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
               )}
             </button>
+
+            <Link
+              href="/"
+              className="font-extrabold text-sm sm:text-base tracking-[0.22em] uppercase text-[#11281A] hover:text-[#265C1E] transition-colors font-sans flex items-center gap-2"
+            >
+              <span>{siteConfig.brandName.toUpperCase()}</span>
+            </Link>
           </div>
 
           {/* Right/Center Navigation: HOME, PRODUCTS, ABOUT US, CONTACT US */}

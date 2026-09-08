@@ -9,45 +9,45 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const pillars = [
   {
     number: "01",
-    title: "100% Organic Cotton",
-    desc: "Long-staple fibers free from synthetic pesticides and harsh chemicals.",
+    title: "Laser-Precision Fit",
+    desc: "Micro-tolerance CNC cut joints engineered to snap smoothly together with zero glue or adhesives.",
   },
   {
     number: "02",
-    title: "Pre-Shrunk & Double-Stitched",
-    desc: "Reinforced twin-needle stitching engineered to endure daily wear.",
+    title: "Sustainably Sourced Wood",
+    desc: "Eco-certified Baltic birch, smooth solid walnut, and non-toxic food-safe finishes built to endure.",
   },
   {
     number: "03",
-    title: "Non-Toxic Dyes",
-    desc: "Skin-friendly, colorfast finishes safe for infants and adults.",
+    title: "Deep Tactical Gameplay",
+    desc: "Thoughtfully balanced game mechanics that stimulate strategic thinking, social play, and replayability.",
   },
   {
     number: "04",
-    title: "Direct Value Pricing",
-    desc: "Zero wholesale markups for premium textiles at fair family rates.",
+    title: "100% Complete Set Promise",
+    desc: "Every gear, meeple, card, and blueprint strictly inspected with lifetime free missing piece support.",
   },
 ];
 
 export default function AboutUs() {
   return (
-    <section className="py-14 md:py-20 bg-[#FAF8F5] border-b border-black/[0.06]" id="about">
+    <section className="py-14 md:py-20 bg-[#FAF8F5] border-b border-black/[0.06] font-sans" id="about">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Story Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start mb-12 md:mb-16">
           <div className="lg:col-span-5">
-            <span className="text-secondary text-xs font-bold uppercase tracking-[0.2em] block mb-2">
-              Atelier &amp; Craft
+            <span className="text-[#A36B42] text-xs font-bold uppercase tracking-[0.2em] block mb-2">
+              Our Craft &amp; Mission
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-primary leading-tight">
-              Clothing Built For Real Family Life
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#191716] leading-tight">
+              Igniting Curiosity, Strategy &amp; Play
             </h2>
           </div>
 
-          <div className="lg:col-span-7 flex flex-col justify-center text-neutral-text/75 text-sm md:text-base leading-relaxed">
+          <div className="lg:col-span-7 flex flex-col justify-center text-black/75 text-sm md:text-base leading-relaxed">
             <p>
-              At <strong className="text-primary font-bold">{siteConfig.brandName}</strong>, we craft foundational wardrobe staples from pure combed organic cottons, soft fleeces, and weather-ready outers that look tailored and feel effortless all day.
+              At <strong className="text-[#191716] font-bold">{siteConfig.brandName}</strong>, we believe the greatest moments happen around a tabletop or maker workbench. We curate and craft mechanical 3D wooden models, engaging tabletop strategy games, and timeless classic puzzles that bring families and enthusiasts together away from screens.
             </p>
           </div>
         </div>
@@ -56,12 +56,24 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Studio Photo */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-black/[0.08] bg-white">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-black/[0.08] bg-white group">
               <img
-                src="/img/about_atelier_craft.jpg"
-                alt="Apparel craftsmanship and textile design"
-                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200&auto=format&fit=crop"
+                alt="Wonderwick Hobby Workshop and Board Game Design"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1200&auto=format&fit=crop";
+                }}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#E5B887] block mb-1">
+                  AUSTIN, TEXAS ATELIER
+                </span>
+                <p className="text-xs sm:text-sm font-semibold text-white/90">
+                  Where tactile craftsmanship meets the thrill of tabletop competition.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -70,15 +82,15 @@ export default function AboutUs() {
             {pillars.map((pillar) => (
               <div
                 key={pillar.number}
-                className="bg-white p-6 rounded-2xl border border-black/[0.06] shadow-xs hover:border-secondary/40 transition-colors"
+                className="bg-white p-6 rounded-2xl border border-black/[0.06] shadow-xs hover:border-[#A36B42]/40 transition-colors"
               >
-                <span className="text-lg font-black text-secondary font-mono block mb-1.5">
+                <span className="text-lg font-black text-[#A36B42] font-mono block mb-1.5">
                   {pillar.number}
                 </span>
-                <h3 className="text-sm font-bold uppercase tracking-wide text-primary mb-1.5">
+                <h3 className="text-sm font-bold uppercase tracking-wide text-[#191716] mb-1.5">
                   {pillar.title}
                 </h3>
-                <p className="text-neutral-text/65 text-xs leading-relaxed">
+                <p className="text-black/65 text-xs leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>

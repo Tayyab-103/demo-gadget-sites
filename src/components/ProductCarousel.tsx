@@ -11,16 +11,16 @@ export default function ProductCarousel({ images, name }: ProductCarouselProps) 
   const [stopScroll, setStopScroll] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const rawImages = images && images.length > 0 ? images : ["/img/product1.jpg"];
+  const rawImages = images && images.length > 0 ? images : ["https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&auto=format&fit=crop"];
 
-  // Default contextual titles for angles/details
+  // Contextual titles for kit angles and components
   const imageTitles = [
-    "Signature Silhouette",
-    "Tailored Fit & Drape",
-    "Organic Fabric Detail",
-    "Twin-Needle Reinforced Stitch",
-    "All-Day Everyday Comfort",
-    "Pre-Shrunk Weave Texture",
+    "Kit Presentation Angle",
+    "Precision Laser-Cut Detail",
+    "Snug Wooden Gear Fitment",
+    "Tabletop Game Board Setup",
+    "Natural Baltic Birch Grain",
+    "Assembled Model Showcase",
   ];
 
   const cardData = rawImages.map((img, idx) => ({
@@ -74,10 +74,10 @@ export default function ProductCarousel({ images, name }: ProductCarouselProps) 
       {/* Marquee Gallery Container */}
       <div className="relative">
         <div className="flex items-center justify-between mb-3 px-1">
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">
-            Product Gallery Stream
+          <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#A36B42]">
+            Hobby Gallery Stream
           </span>
-          <span className="text-[0.65rem] text-neutral-text/50 font-medium">
+          <span className="text-[0.65rem] text-black/50 font-medium">
             Hover to pause &bull; Click to enlarge
           </span>
         </div>
@@ -114,7 +114,7 @@ export default function ProductCarousel({ images, name }: ProductCarouselProps) 
                     <p className="text-white text-sm sm:text-base font-semibold text-center mb-2 leading-snug">
                       {card.title}
                     </p>
-                    <span className="inline-block bg-white text-primary text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+                    <span className="inline-block bg-white text-[#191716] text-[0.65rem] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
                       View Angle
                     </span>
                   </div>

@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Premium Cotton Crew Tee",
-    "description": "Spun from 100% organic combed ring-spun cotton, our signature family crew tee delivers breathable softness, relaxed all-day drape, and reinforced twin-needle stitching built to withstand everyday family adventures and repeated laundering.",
-    "image": "/img/product1.jpg",
+    "name": "Grandmaster Solid Walnut Wooden Chess & Checkers Set",
+    "description": "Crafted from rich solid walnut and maple inlays, this tournament-grade chess set features weighted Staunton wooden pieces with velvet-lined bottoms for satisfying, silent moves. The folding storage board protects all 32 chessmen and checkers pieces for generations of strategic play.",
+    "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop",
     "images": [
-      "/img/product1.jpg",
-      "/img/product1-1.jpg",
-      "/img/product1-2.jpg"
+      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586165368502-1bad197a6461?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1560174038-da43ac74f01b?q=80&w=800&auto=format&fit=crop"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Everyday Family Essentials",
+    "category": "Classic Wooden Chess & Games",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Cozy Fleece Pullover",
-    "description": "Engineered with brushed French terry fleece and ribbed comfort cuffs, this timeless family pullover offers thermal insulation without excess bulk. Designed with an inclusive relaxed silhouette that layers seamlessly for cozy weekends, school runs, and evening family strolls.",
-    "image": "/img/product2.jpg",
+    "name": "Classic Handcrafted Wooden Ludo & Pachisi Board Game",
+    "description": "Relive classic family game nights with this heirloom-crafted wooden Ludo set. Features a smooth dual-sided wooden game board, vibrant hand-painted wooden player pegs, rolling dice cups, and solid brass dice. Engineered for 2 to 4 players of all ages with zero plastic parts.",
+    "image": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=800&auto=format&fit=crop",
     "images": [
-      "/img/product2.jpg",
-      "/img/product2-1.jpg",
-      "/img/product2-2.jpg"
+      "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1563941402622-4e7a488bcc57?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1632516643720-e7f5d7d6ecc9?q=80&w=800&auto=format&fit=crop"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Casual Knitwear & Loungewear",
+    "category": "Family Tabletop Board Games",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Weather-Resistant Overcoat",
-    "description": "A versatile, water-resistant family overcoat tailored from breathable micro-twill. Features protective storm plackets, deep utility fleece-lined pockets, and clean tailoring to keep parents and youth warm, dry, and impeccably styled through every season.",
-    "image": "/img/product3.jpg",
+    "name": "The Grandmaster Tabletop Lore & Brain Teaser Puzzle Books",
+    "description": "A beautifully bound hardcover collection containing over 250 master-level chess puzzles, game strategy playbooks, logic riddles, and tabletop lore. Features premium thick parchment paper, illustrated diagram blueprints, and complete solution guides.",
+    "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop",
     "images": [
-      "/img/product3.jpg",
-      "/img/product3-1.jpg",
-      "/img/product3-2.jpg"
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "All-Season Outerwear",
+    "category": "Strategy Guides & Puzzle Activity Books",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

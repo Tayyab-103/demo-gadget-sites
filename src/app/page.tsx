@@ -4,10 +4,12 @@ import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
+import HobbyCategories from "@/components/HobbyCategories";
 import AboutUs from "@/components/AboutUs";
-import Features from "@/components/Features";
 import ProductGrid from "@/components/ProductGrid";
 import QualityPromise from "@/components/QualityPromise";
+import Features from "@/components/Features";
+import MakersClub from "@/components/MakersClub";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Faq from "@/components/Faq";
@@ -21,33 +23,42 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
+        {/* 1. Full-Width Background Carousel Hero */}
         <Hero />
         
-        {/* Step-by-Step Flow */}
-        <HowItWorks />
-        
-        {/* About Brand Section */}
-        <AboutUs />
+        {/* 2. Step-by-Step Discovery Process */}
+        {/* <HowItWorks /> */}
+        <Features />
 
-        {/* Product Catalog Showcase */}
+        {/* 3. Visual 4-Category Hobby Worlds (New Component) */}
+        {/* <HobbyCategories /> */}
         <ProductGrid />
+        
+        {/* 4. Brand Mission & Atelier Craftsmanship */}
+        {/* <AboutUs /> */}
 
-        {/* Credibility & Guarantee Standards */}
+        {/* 5. Featured Maker Kits Catalog */}
+        
+
+        {/* 6. Maker Quality Standards */}
         <QualityPromise />
         
-        {/* Quality Certifications & Core Features */}
-        <Features />
+        {/* 7. Core Store Guarantees */}
         
-        {/* Customer Social Proof */}
+
+        {/* 8. #WonderwickMakers Community Showcase (New Component) */}
+        {/* <MakersClub /> */}
+        
+        {/* 9. Customer Player Reviews */}
         <Testimonials />
 
-        {/* Conversion CTA Banner */}
+        {/* 10. 15% Off VIP Guild CTA */}
         <CTASection />
 
-        {/* FAQ Accordions Dropdown */}
-        {/* <Faq /> */}
+        {/* 11. Frequently Asked Questions */}
+        <Faq />
 
-        {/* Contact Form Section */}
+        {/* 12. Concierge & Contact Form */}
         <Contact />
       </main>
 

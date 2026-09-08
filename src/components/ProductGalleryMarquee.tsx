@@ -9,15 +9,15 @@ interface ProductGalleryMarqueeProps {
 
 export default function ProductGalleryMarquee({ images, productName }: ProductGalleryMarqueeProps) {
   const [stopScroll, setStopScroll] = useState(false);
-  const rawImages = images && images.length > 0 ? images : ["/img/product1.jpg"];
+  const rawImages = images && images.length > 0 ? images : ["https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&auto=format&fit=crop"];
 
   const titles = [
-    "Signature Silhouette",
-    "Tailored Fit & Drape",
-    "Organic Fabric Detail",
-    "Reinforced Twin-Needle Stitch",
-    "All-Day Family Comfort",
-    "Pre-Shrunk Weave Texture",
+    "Precision Laser-Cut Tolerance",
+    "Natural Baltic Birch Inlay",
+    "Snug Interlocking Joinery",
+    "Tabletop Game Night View",
+    "Kinetic Gear Mechanism",
+    "Heirloom Presentation Finish",
   ];
 
   const cardData = rawImages.map((img, idx) => ({

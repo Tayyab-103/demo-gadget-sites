@@ -14,21 +14,21 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
+      <main className="bg-[#FAFAFA] py-16 md:py-24 relative overflow-hidden">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
+            <span>𝄞 Legal Policy</span>
+          </div>
 
-        <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
-          <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#000000] mb-8 border-b border-rose-100 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
+          <div className="bg-[#FDFDFD] rounded-3xl p-6 sm:p-10 border border-rose-100 shadow-md leading-relaxed text-gray-700 text-xs md:text-sm space-y-6 font-medium">
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
-              This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
+              This website is operated by <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+              “us” and “our” refer to <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong>. <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong> offers
               this website, including all information, tools and services available from this site to you, the user,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
@@ -39,22 +39,17 @@ export default function Terms() {
               Service apply to all users of the site, including without limitation users who are browsers, vendors,
               customers, merchants, and/ or contributors of content.
             </p>
-            <p>
-              Please read these Terms of Service carefully before accessing or using our website. By accessing or using
-              any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the
-              terms and conditions of this agreement, then you may not access the website or use any services.
-            </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer handcrafted musical accessories, tuners, and studio gear through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer handcrafted acoustic instruments, luthier accessories, and archival sheet music editions through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-[#FAFAFA] border border-rose-100 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-bold text-primary mb-3">
+                <div key={product.id} className="mb-6 pb-6 border-b border-rose-100 last:border-0 last:mb-0 last:pb-0">
+                  <h4 className="text-sm md:text-base font-black text-[#4C0519] mb-3">
                     {product.name}
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
@@ -65,11 +60,11 @@ export default function Terms() {
                         : `$${product.ssShipping} Shipping & Handling`;
 
                       return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Units Studio Bundle" : "Unit Pack"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-primary font-semibold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-gray-700">
+                          Upon ordering a <strong className="text-[#000000] font-bold">{bundle.quantity} {bundle.quantity > 1 ? "Units Studio Bundle" : "Unit Edition"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-[#4C0519] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-primary font-semibold">“{siteConfig.descriptor}”</strong>.
+                          The credit card charge will appear on your statement as <strong className="text-[#000000] font-bold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}
@@ -78,33 +73,28 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 1 - ONLINE STORE TERMS</h3>
             <p>
               By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
               or province of residence, or that you are the age of majority in your state or province of residence and you
               have given us your consent to allow any of your minor dependents to use this site.
             </p>
-            <p>
-              You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws).
-            </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
-              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
-              {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
+              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our instruments and sheet music via{" "}
+              {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days in protective, moisture-sealed packaging.
               You will receive a tracking number via email once your order has been dispatched.
             </p>
 
-            <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; REFUND POLICY</h3>
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; TONE GUARANTEE</h3>
             <p>
-              We stand behind our quality with a 60-day money-back guarantee. If you are not satisfied with your purchase,
-              please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
+              We stand behind our craftsmanship with a 30-day tone satisfaction trial. If you are not satisfied with your purchase,
+              please contact our workshop service center at <strong className="text-[#000000] font-bold">{siteConfig.phone}</strong> or email us at{" "}
+              <strong className="text-[#000000] font-bold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated return facility at: <strong className="text-primary font-semibold">{siteConfig.address}</strong>.
-              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
+              Returns must be shipped to our designated workshop facility at: <strong className="text-[#000000] font-bold">{siteConfig.address}</strong>.
             </p>
           </div>
         </div>

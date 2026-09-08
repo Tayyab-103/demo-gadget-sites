@@ -3,16 +3,16 @@
     "id": "product1",
     "stickyId": 1,
     "name": "Guitar Pick",
-    "description": "Engineered for precision and slip-free control, delivering crisp attack and effortless tone with every strike.",
-    "image": "/img/products/guitar-pick.jpg",
+    "description": "10 Pcs Guitar Picks with Assorted Thickness, Celluloid Guitar Picks for Acoustic Electric Bass Guitar Beginners Accessories",
+    "image": "/img/products/product1.jpg",
     "images": [
-      "/img/products/guitar-pick.jpg",
-      "/img/products/guitar-pick1.jpg",
-      "/img/products/guitar-pick2.jpg"
+      "/img/products/product1.jpg",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Artisan Instrument Accessories",
+    "category": "Guitar Pick",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Standard Bb Trumpet",
-    "description": "Crafted with durable yellow brass and responsive piston valves, delivering a brilliant, resonant tone perfect for students and advancing players alike.",
-    "image": "/img/products/trumpet.jpg",
+    "name": "metal kazoo instrument",
+    "description": "12 Pcs Metal Kazoo Portable Kazoo Instrument for Adults Kids Party Favor, Mini Metal Mouth Kazoo Musical Toy",
+    "image": "/img/products/product2.jpg",
     "images": [
-      "/img/products/trumpet.jpg",
-      "/img/products/trumpet1.jpg",
-      "/img/products/trumpet2.jpg"
+      "/img/products/product2.jpg",
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": " Brass Instruments",
+    "category": "Orchestral Instruments",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Studio Instrument Cable",
-    "description": "Master-grade 10ft low-capacitance instrument cable featuring 24K gold-plated 1/4\" jacks, 99.99% oxygen-free copper (OFC) core, and vintage tweed woven jacket. Engineered for zero handling noise, crystal signal clarity, and rugged studio/stage reliability.",
-    "image": "/img/products/cable_main.jpg",
+    "name": "25ft Instrument Audio Cable",
+    "description": "Premium 1/4-inch TS instrument cable with oxygen-free copper core, 20 AWG conductor, and noise-rejecting braided shield. 24k gold-plated connectors with strain-relief collar and secure-grip molded housing. 95% copper braid and PE insulation ensure low capacitance and maximum signal integrity across full 25ft length. Ideal for electric guitars, basses, keyboards, and audio interfaces.",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "/img/products/cable_main.jpg",
-      "/img/products/cable_main1.jpg",
-      "/img/products/cable_main2.jpg"
+      "/img/products/product3.jpg",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Instrument Accessories",
+    "category": "Musical Instruments Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

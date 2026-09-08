@@ -1,54 +1,69 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function CTASection() {
+  const [isDismissed, setIsDismissed] = useState(false);
+
+  if (isDismissed) {
+    return null;
+  }
+
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden bg-primary" id="cta">
-      {/* Background Studio Visual */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
-        style={{ backgroundImage: `url('/img/cta_bg.jpg')` }}
-      />
-      
-      {/* Dark Ambient Gradient Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary via-primary/85 to-primary/60" />
+    <section className="py-16 md:py-24 bg-[#FAFAFA] relative overflow-hidden" id="cta">
+      <div className="md:grid md:grid-cols-2 max-w-7xl bg-[#FDFDFD] mx-4 md:mx-auto rounded-2xl overflow-hidden shadow-xl border border-rose-200/80">
+        <div className="hidden md:block w-full h-full relative min-h-[360px]">
+          <img
+            src="/img/cta_bg.jpg"
+            alt="Harmonic Hollow promotional workshop"
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              e.currentTarget.src = "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/promotional/image.png";
+            }}
+          />
+        </div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-10 flex justify-center">
-        {/* Frosted Glass Content Card */}
-        <div className="glass-card-dark rounded-3xl md:rounded-[2.5rem] p-6 sm:p-10 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/30">
-          
-          {/* Faint corner glow */}
-          <div className="absolute top-0 right-0 w-36 h-36 bg-secondary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          
-          <span className="eyebrow eyebrow-invert mb-5 inline-flex text-secondary relative z-10">
-            Elevate Your Sound
-          </span>
-          
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight leading-[1.1] relative z-10">
-            Ready for Pure Tone &amp; <br />
-            <span className="text-secondary drop-shadow-md">Studio-Grade Reliability?</span>
-          </h2>
+        <div className="relative flex items-center justify-center p-6 md:p-10">
+          <button
+            onClick={() => setIsDismissed(true)}
+            className="absolute top-5 right-5 bg-rose-50 hover:bg-rose-100 text-[#4C0519] rounded-full p-2.5 transition-colors cursor-pointer border border-rose-200"
+            aria-label="Close promotion"
+          >
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 2 2 13M2 2l11 11"
+                stroke="#4C0519"
+                strokeOpacity=".8"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
 
-          <p className="text-white/80 text-sm md:text-base mb-10 max-w-lg mx-auto leading-relaxed relative z-10">
-            Join thousands of musicians and creators who have upgraded their instrument setup. Choose individual packs or save with multi-item studio bundles.
-          </p>
+          <div className="max-md:py-12 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] leading-tight">
+              <span className="text-[#D2446D]">Don&apos;t miss out</span> on our discounted products.
+            </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+            <p className="mt-4 text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
+              Don&apos;t miss out on amazing discounts—shop now before they&apos;re gone!
+            </p>
+
             <Link
-              href="/products"
-              className="group inline-flex items-center justify-center gap-2.5 font-black text-center whitespace-nowrap bg-secondary text-primary hover:bg-white hover:text-primary transition-all duration-300 py-3.5 px-9 rounded-full text-xs uppercase tracking-widest shadow-xl shadow-secondary/15"
+              href="/shop"
+              className="inline-block rounded-xl bg-[#4C0519] hover:bg-[#D2446D] transition-all duration-300 text-sm font-bold px-10 sm:px-14 py-3.5 mt-6 text-white cursor-pointer shadow-md hover:shadow-lg"
             >
-              Shop Collection &amp; Save
-              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
+              Check out the products
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-white/30 text-white hover:border-secondary hover:bg-secondary/10 hover:text-secondary transition-all duration-300 py-3.5 px-9 rounded-full text-xs uppercase tracking-widest"
+
+            <button
+              onClick={() => setIsDismissed(true)}
+              className="block mx-auto px-8 py-2.5 mt-3 text-sm text-gray-600 hover:text-[#4C0519] transition-colors cursor-pointer"
             >
-              Workshop Inquiries
-            </Link>
+              No thanks, I don&apos;t want the discounts.
+            </button>
           </div>
         </div>
       </div>

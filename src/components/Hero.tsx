@@ -1,62 +1,189 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
+interface CarouselSlide {
+  id: string;
+  image: string;
+  title: string;
+  category: string;
+}
+
+const carouselSlides: CarouselSlide[] = [
+  {
+    id: "slide-1",
+    image:"/img/hero1.jpg",
+    title: "Solid Sitka Spruce Acoustic Guitars",
+    category: "Master Luthier Voicing",
+  },
+  {
+    id: "slide-2",
+    image:
+      "/img/hero2.jpg",
+    title: "European Maple Classical Violins",
+    category: "Orchestral Strings Collection",
+  },
+  {
+    id: "slide-3",
+    image:
+      "/img/hero3.jpg",
+    title: "Archival Score Anthologies & Folios",
+    category: "Acid-Free 120gsm Parchment",
+  },
+  {
+    id: "slide-4",
+    image:
+      "/img/hero4.jpg",
+    title: "Hand-Tuned 17-Key African Mahogany Kalimbas",
+    category: "Harmonic C Major Tuning",
+  },
+];
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % carouselSlides.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length
+    );
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(nextSlide, 4500);
+    return () => clearInterval(timer);
+  }, [nextSlide, isPaused]);
+
   return (
-    <section className="relative overflow-hidden bg-primary min-h-[580px] md:min-h-[640px] flex items-center">
-      {/* Background ambient warm acoustic guitar photo dwelling in the background */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-right lg:bg-[center_right_15%] bg-no-repeat opacity-45"
-        style={{ backgroundImage: `url('/img/hero_guitar_master_a.jpg')` }}
-      />
+    <section
+      id="hero-section"
+      className="bg-gradient-to-b from-[#FFF5F7] via-[#FAFAFA] to-[#F3E8EE] px-4 sm:px-10 overflow-hidden pt-6 sm:pt-10 h-full relative"
+    >
+      {/* Background ambient glow spots */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#D2446D]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Dark gradient vignettes for seamless ambient dwelling */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/85 to-transparent" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary via-transparent to-primary/80" />
-      <div className="pointer-events-none absolute -top-40 -right-40 h-130 w-130 rounded-full bg-secondary/15 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-130 w-130 rounded-full bg-secondary/10 blur-3xl" />
+      <main className="flex-grow flex flex-col items-center max-w-7xl mx-auto w-full relative z-10">
+        {/* Main Headline */}
+        <h1 className="text-center text-[#000000] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-5xl leading-tight tracking-tight">
+          Preferred choice of musicians in{" "}
+          <span className="text-[#D2446D]">
+            every concert hall &amp; studio
+          </span>
+        </h1>
 
-      {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:py-28 w-full">
-        <div className="max-w-2xl">
-          <div className="mb-5 flex justify-start">
-            <span className="eyebrow eyebrow-invert">{siteConfig.brandName}</span>
-          </div>
+        {/* Subtitle */}
+        <p className="mt-4 text-center text-gray-600 max-w-lg text-sm sm:text-base leading-relaxed font-medium">
+          Discover why performers trust our handcrafted tonewood instruments and
+          archival sheet music for acoustic perfection.
+        </p>
 
-          <h1 className="text-4xl font-black uppercase leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[3.8rem]">
-            Crafted for <br />
-            <span className="block text-secondary">
-              Pure Tone &amp; Resonance
-            </span>
-          </h1>
+        {/* CTA Button */}
+        <Link
+          href="/shop"
+          className="mt-8 bg-[#4C0519] text-white px-7 pr-3 py-3 rounded-full text-sm font-extrabold flex items-center space-x-2.5 hover:bg-[#D2446D] transition shadow-lg shadow-[#4C0519]/20 hover:scale-105 active:scale-95"
+        >
+          <span>Explore Collection &amp; Scores</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4.821 11.999h13.43m0 0-6.714-6.715m6.715 6.715-6.715 6.715"
+              stroke="#fff"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
-            Artisanal acoustic hardware, calibrated tuners, and studio-grade audio accessories engineered for musicians, producers, and tone seekers.
-          </p>
+        {/* Bottom Hero Carousel */}
+        <div
+          className="w-full max-w-5xl mt-12 sm:mt-16 relative group"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Main Carousel Container */}
+          <div className="relative rounded-[36px] sm:rounded-[50px] h-72 sm:h-96 md:h-[440px] w-full overflow-hidden rounded-b-none shadow-2xl border-t border-x border-rose-100 bg-black">
+            {carouselSlides.map((slide, idx) => {
+              const isActive = currentSlide === idx;
+              return (
+                <div
+                  key={slide.id}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                >
+                  <img
+                    className="h-full w-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
+                    src={slide.image}
+                    alt={slide.title}
+                  />
 
-          <div className="mt-10 flex flex-col items-stretch sm:items-center gap-4 sm:flex-row justify-start">
-            <Link
-              href="/products"
-              className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-secondary px-9 py-4 text-center text-xs font-black uppercase tracking-widest text-primary shadow-xl shadow-secondary/20 transition-all duration-300 hover:bg-white hover:text-primary hover:shadow-2xl"
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Floating Top Tag */}
+                  <div className="absolute top-5 left-5 sm:top-6 sm:left-7 z-20">
+                    <span className="bg-white/95 backdrop-blur-md text-[#4C0519] text-[0.7rem] sm:text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md">
+                      𝄞 {slide.category}
+                    </span>
+                  </div>
+
+                  {/* Floating Bottom Info */}
+                  <div className="absolute bottom-6 left-6 right-20 sm:bottom-8 sm:left-8 z-20 text-white">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-black drop-shadow-md text-white tracking-tight leading-tight">
+                      {slide.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Left / Right Chevron Controls */}
+            <button
+              onClick={prevSlide}
+              aria-label="Previous Slide"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-[#4C0519] text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all shadow-md cursor-pointer hover:scale-110 text-xl font-bold"
             >
-              Explore Collection
-              <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-            </Link>
-            <Link
-              href="#about"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-9 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-secondary hover:bg-secondary/10 hover:text-secondary"
+              ‹
+            </button>
+
+            <button
+              onClick={nextSlide}
+              aria-label="Next Slide"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-[#4C0519] text-white backdrop-blur-md border border-white/20 flex items-center justify-center transition-all shadow-md cursor-pointer hover:scale-110 text-xl font-bold"
             >
-              Our Workshop
-            </Link>
+              ›
+            </button>
+
+            {/* Indicator Dots */}
+            <div className="absolute bottom-5 right-6 sm:bottom-6 sm:right-8 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+              {carouselSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    currentSlide === idx
+                      ? "w-6 bg-[#D2446D]"
+                      : "w-2 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </section>
   );
 }

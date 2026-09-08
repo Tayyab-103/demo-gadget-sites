@@ -22,30 +22,19 @@ export default function AnnouncementBar() {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-secondary text-primary relative overflow-hidden border-b border-black/10">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
-        <div className="flex-1 flex items-center justify-center gap-3 text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="text-primary opacity-80"
-          >
-            <path d="M9 18V5l12-2v13"></path>
-            <circle cx="6" cy="18" r="3"></circle>
-            <circle cx="18" cy="16" r="3"></circle>
-          </svg>
-          <span className="text-[0.68rem] md:text-[0.74rem] font-black uppercase tracking-[0.16em] text-primary">
-            Handcrafted Instrument Care &amp; Studio Hardware • Free Nationwide Dispatch on All Orders
+    <div className="bg-[#4C0519] text-white relative overflow-hidden border-b border-[#D2446D]/20">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2">
+        <div className="flex-1 flex items-center justify-center gap-2.5 text-center">
+          <span className="text-[#D2446D] text-xs">𝄞</span>
+          <span className="text-[0.68rem] md:text-[0.74rem] font-bold uppercase tracking-[0.18em] text-white/95">
+            Master-Crafted Instruments &amp; Archival Sheet Music &bull; Free Insured Express Delivery
           </span>
         </div>
 
         <button
           onClick={handleDismiss}
           aria-label="Dismiss announcement"
-          className="flex-shrink-0 pl-4 py-1 text-primary/70 hover:text-primary transition-colors cursor-pointer bg-transparent"
+          className="flex-shrink-0 pl-3 py-1 text-white/70 hover:text-white transition-colors cursor-pointer bg-transparent"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>

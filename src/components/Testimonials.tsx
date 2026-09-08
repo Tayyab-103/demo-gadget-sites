@@ -4,22 +4,22 @@ import React, { useState } from "react";
 
 const testimonials = [
   {
-    quote: "The Velvet Resonance capo holds pitch-perfect intonation even up on the 7th fret of my vintage Martin acoustic. Zero string buzz and zero retuning needed between songs.",
-    author: "Sarah M.",
-    role: "Session Guitarist & Songwriter",
-    image: "/img/testimonial_1.jpg"
+    quote: "The solid Sitka spruce acoustic guitar has breathtaking dynamic range. The trebles are glassy and singing, while the low-end is punchy and warm. The included gold-foil chord anthology is museum quality.",
+    author: "Elena Rostova",
+    role: "Concert Classical Guitarist & Composer",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80"
   },
   {
-    quote: "EchoWave tracks pitch instantaneously even in noisy green rooms and backstage setups. The vibration sensor is razor sharp and the color screen is visible from any angle.",
-    author: "David K.",
-    role: "Touring Bassist & Multi-Instrumentalist",
-    image: "/img/testimonial_2.jpg"
+    quote: "Harmonic Hollow's European maple violin has incredible acoustic projection. The oil varnish finish is sublime and the string action was set up flawlessly straight out of the case.",
+    author: "David Vance",
+    role: "Orchestral First Violinist",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
   },
   {
-    quote: "The Velvet Tone studio cables solved our live tracking hum completely. High-grade OFC copper with rugged 24K gold jacks that withstand heavy studio stompboxes.",
-    author: "Marcus T.",
-    role: "Recording Studio Producer",
-    image: "/img/testimonial_3.jpg"
+    quote: "The 17-key mahogany kalimba has pure, crystalline bell-like sustain with zero tine buzzing. Perfect for ambient film scoring and songwriting sessions in my studio.",
+    author: "Marcus Thorne",
+    role: "Soundtrack Producer & Composer",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80"
   }
 ];
 
@@ -35,24 +35,26 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden" id="testimonials">
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+    <section className="py-16 md:py-24 bg-[#FAFAFA] relative overflow-hidden" id="testimonials">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
           <div className="max-w-[600px]">
-            <span className="eyebrow mb-3">Musician Feedback</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-3 tracking-tight">
-              Trusted on <span className="text-secondary">Stage &amp; Studio</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
+              <span>𝄞 Musician Endorsements</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black uppercase text-[#000000] mb-3 tracking-tight">
+              Trusted On <span className="text-[#D2446D]">Concert Stages &amp; Studios</span>
             </h2>
-            <p className="text-neutral-text/65 text-sm md:text-base">
-              Real reviews from recording artists, touring players, and studio producers who rely on Velvet Echo hardware.
+            <p className="text-gray-600 text-sm md:text-base font-medium">
+              Real reviews from recording artists, orchestral performers, and studio composers who perform with Harmonic Hollow instruments.
             </p>
           </div>
 
           {/* Aggregate rating badge */}
-          <div className="flex items-center gap-4 bg-neutral-bg border border-black/5 px-6 py-4 rounded-2xl shadow-sm flex-shrink-0">
-            <div className="flex gap-1 text-secondary">
+          <div className="flex items-center gap-4 bg-[#FDFDFD] border border-rose-100 px-6 py-4 rounded-2xl shadow-sm flex-shrink-0">
+            <div className="flex gap-1 text-[#D2446D]">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -60,14 +62,14 @@ export default function Testimonials() {
               ))}
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-black text-primary leading-none">4.9 / 5</span>
-              <span className="text-xs font-bold text-neutral-text/50 uppercase tracking-wider mt-1">1,400+ Verified Musicians</span>
+              <span className="text-lg font-black text-[#4C0519] leading-none">4.9 / 5</span>
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">1,800+ Verified Musicians</span>
             </div>
           </div>
         </div>
 
         {/* Testimonial Feature Card */}
-        <div className="w-full max-w-5xl mx-auto bg-primary rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-10 shadow-2xl relative min-h-[440px] md:h-[420px] overflow-hidden border border-white/10">
+        <div className="w-full max-w-5xl mx-auto bg-[#4C0519] rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-6 md:gap-10 shadow-2xl relative min-h-[440px] md:h-[420px] overflow-hidden border border-[#D2446D]/30">
           
           {/* Left Column (Image & Author) */}
           <div className="w-full md:w-5/12 flex flex-col flex-shrink-0">
@@ -79,10 +81,10 @@ export default function Testimonials() {
               />
             </div>
             <div>
-              <h4 className="text-secondary font-black text-lg md:text-xl mb-0.5">
+              <h4 className="text-[#D2446D] font-black text-lg md:text-xl mb-0.5">
                 {testimonials[activeIndex].author}
               </h4>
-              <span className="text-white/60 text-xs md:text-sm font-medium">
+              <span className="text-white/70 text-xs md:text-sm font-medium">
                 {testimonials[activeIndex].role}
               </span>
             </div>
@@ -92,7 +94,7 @@ export default function Testimonials() {
           <div className="w-full md:w-7/12 flex flex-col relative min-h-0">
             
             {/* Stars */}
-            <div className="flex gap-1 text-secondary mb-4 md:mb-6 flex-shrink-0">
+            <div className="flex gap-1 text-[#D2446D] mb-4 md:mb-6 flex-shrink-0">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -114,8 +116,8 @@ export default function Testimonials() {
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      idx === activeIndex ? "w-8 bg-secondary" : "w-2 bg-white/20 hover:bg-white/40"
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      idx === activeIndex ? "w-8 bg-[#D2446D]" : "w-2 bg-white/20 hover:bg-white/40"
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   />
@@ -126,24 +128,18 @@ export default function Testimonials() {
               <div className="flex items-center gap-2 md:gap-3">
                 <button 
                   onClick={prevTestimonial}
-                  className="w-10 h-10 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors border border-white/10"
+                  className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center hover:bg-[#D2446D] transition-colors border border-white/10 cursor-pointer"
                   aria-label="Previous testimonial"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                  </svg>
+                  ‹
                 </button>
                 
                 <button 
                   onClick={nextTestimonial}
-                  className="w-10 h-10 rounded-lg bg-white/10 text-white flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors border border-white/10"
+                  className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center hover:bg-[#D2446D] transition-colors border border-white/10 cursor-pointer"
                   aria-label="Next testimonial"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  ›
                 </button>
               </div>
 

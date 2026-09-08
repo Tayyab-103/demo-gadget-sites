@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
@@ -11,135 +11,206 @@ const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubscribed(true);
-    setEmail("");
-  };
 
   return (
-    <footer className="bg-primary text-white py-14 md:py-20 border-t border-white/10" id="footer">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 mb-14 md:mb-16">
-          
-          {/* Left Column: Brand & Subscribe */}
-          <div className="w-full lg:w-[44%] flex flex-col">
+    <footer className="relative bg-[#1A0309] text-white overflow-hidden" id="footer">
+
+      {/* Top: Scalloped wave from body */}
+      <div className="w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-10 sm:h-14 md:h-16 fill-current text-[#FAFAFA]">
+          <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,10 1440,40 L1440,0 L0,0 Z" />
+        </svg>
+      </div>
+
+      {/* Main Footer Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+
+          {/* Brand Column */}
+          <div className="lg:col-span-4 flex flex-col">
+            {/* Logo */}
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-secondary text-primary font-black shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] flex items-center justify-center shadow-lg shadow-black/50 text-2xl text-white font-black">
+                𝄞
               </div>
-              <span className="text-xl font-black uppercase tracking-tight text-white">
-                {siteConfig.brandName}
-              </span>
+              <div>
+                <span className="text-xl font-black text-white tracking-tight uppercase leading-none block">
+                  {siteConfig.brandName}
+                </span>
+                <span className="text-[0.62rem] text-[#D2446D] font-bold tracking-widest uppercase">
+                  Artisanal Tonewoods &amp; Scores
+                </span>
+              </div>
             </div>
 
-            <p className="text-sm md:text-base leading-relaxed mb-6 text-white/80 max-w-md">
-              Acoustic hardware, precision clip-on tuners, and studio-grade audio cables engineered for performers and producers.
+            <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-sm font-normal">
+              Dedicated to acoustic purity and musical devotion. From solid Sitka spruce guitars to classical score anthologies — crafted to inspire every stage and session.
             </p>
-            
-            {subscribed ? (
-              <div className="flex items-center gap-3 text-secondary text-sm font-bold bg-secondary/10 px-5 py-3.5 rounded-xl border border-secondary/20 w-fit">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
-                Welcome to the Velvet Echo community!
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address..."
-                  required
-                  className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-secondary transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="bg-secondary text-primary font-black text-xs uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-white transition-all whitespace-nowrap shadow-md"
-                >
-                  Join Circle
-                </button>
-              </form>
-            )}
 
-            {/* Payment Method Badges (Clean dark-translucent cards) */}
-            <div className="mt-8 flex items-center gap-3">
-              <span className="text-xs uppercase tracking-wider text-white/50 font-bold mr-1">
-                Accepted Payments:
-              </span>
-              <div className="h-8 px-3 bg-white/10 border border-white/15 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-sm transition-all hover:bg-white/15">
-                <img src="/img/mastercard.png" alt="MasterCard" className="h-4.5 w-auto object-contain brightness-95" />
-              </div>
-              <div className="h-8 px-3 bg-white/10 border border-white/15 rounded-lg flex items-center justify-center backdrop-blur-sm shadow-sm transition-all hover:bg-white/15">
-                <img src="/img/visa.png" alt="Visa" className="h-3.5 w-auto object-contain brightness-95" />
+            {/* Contact Info */}
+            <div className="flex flex-col gap-2.5 mb-6">
+              <a href={`mailto:${siteConfig.email}`} className="text-xs text-rose-200 hover:text-[#D2446D] transition-colors font-medium flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">✉</span>
+                {siteConfig.email}
+              </a>
+              <a href={`tel:${siteConfig.phone}`} className="text-xs text-rose-200 hover:text-[#D2446D] transition-colors font-medium flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">📞</span>
+                {siteConfig.phone}
+              </a>
+              <div className="text-xs text-white/50 font-medium flex items-center gap-2">
+                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">📍</span>
+                {siteConfig.address}
               </div>
             </div>
           </div>
 
-          {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[52%] grid grid-cols-1 sm:grid-cols-3 gap-8">
-            
-            {/* Column 1: Navigation */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-widest">Navigation</h4>
-              <ul className="flex flex-col gap-2.5 text-sm">
-                <li><Link href="/" className="text-white/70 hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/products" className="text-white/70 hover:text-secondary transition-colors">Products</Link></li>
-                <li><Link href="/about" className="text-white/70 hover:text-secondary transition-colors">About Us</Link></li>
-                <li><Link href="/contact" className="text-white/70 hover:text-secondary transition-colors">Contact Us</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 2: Collection */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-widest">Collection</h4>
-              <ul className="flex flex-col gap-2.5 text-sm">
-                {products.map((p) => (
-                  <li key={p.id}>
-                    <Link href={`/product/${p.id}`} className="text-white/70 hover:text-secondary transition-colors">
-                      {p.name}
+          {/* Nav Columns */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {/* Dynamic Products Column */}
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
+                Instruments &amp; Scores
+              </h4>
+              <ul className="flex flex-col gap-2.5">
+                {products.map((product) => (
+                  <li key={product.id}>
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                      <span className="line-clamp-1">{product.name}</span>
                     </Link>
                   </li>
                 ))}
-                <li><Link href="/products" className="text-white/70 hover:text-secondary transition-colors">All Hardware</Link></li>
+                <li>
+                  <Link
+                    href="/shop"
+                    className="text-xs text-[#D2446D] hover:text-white transition-colors font-bold flex items-center gap-1.5 group mt-1"
+                  >
+                    <span>View All Collections →</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
-            {/* Column 3: Workshop Contact */}
-            <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-black uppercase tracking-widest">Workshop</h4>
-              <ul className="flex flex-col gap-2.5 text-sm text-white/70">
-                <li className="break-all">{siteConfig.email}</li>
-                <li>{siteConfig.phone}</li>
-                <li className="leading-relaxed">{siteConfig.address}</li>
+            {/* Company Column */}
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
+                Workshop
+              </h4>
+              <ul className="flex flex-col gap-2.5">
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    About Our Luthiers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Our Story
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Contact Workshop
+                  </Link>
+                </li>
               </ul>
             </div>
 
+            {/* Legal Column */}
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
+                Policies
+              </h4>
+              <ul className="flex flex-col gap-2.5">
+                <li>
+                  <Link
+                    href="/privacy"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Insured Shipping Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
+                    Tone Guarantee &amp; Returns
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
+
         </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10 text-xs text-white/60">
-          <div>
-            &copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.
-          </div>
-
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <span>Austin, Texas</span>
-          </div>
-        </div>
-
       </div>
+
+      {/* Payment & Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-5">
+
+          {/* Payment icons */}
+          <div className="flex items-center gap-4">
+            <span className="text-[0.65rem] text-white/40 font-bold uppercase tracking-wider">Secure Payment Gateway:</span>
+            <div className="flex items-center gap-3">
+              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
+                <img src="/img/visa.png" alt="Visa" className="h-4 w-auto object-contain opacity-80" />
+              </div>
+              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
+                <img src="/img/mastercard.png" alt="Mastercard" className="h-4 w-auto object-contain opacity-80" />
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <p className="text-[0.68rem] text-white/40 font-medium text-center md:text-right">
+            &copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.&nbsp;
+            <Link href="/privacy" className="hover:text-white/70 transition-colors underline-offset-2 hover:underline">Privacy</Link>
+            &nbsp;&middot;&nbsp;
+            <Link href="/terms" className="hover:text-white/70 transition-colors underline-offset-2 hover:underline">Terms</Link>
+          </p>
+
+        </div>
+      </div>
+
+      {/* Decorative background blobs */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#4C0519]/40 blur-3xl pointer-events-none translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-[#D2446D]/10 blur-2xl pointer-events-none -translate-x-1/2" />
+
     </footer>
   );
 }

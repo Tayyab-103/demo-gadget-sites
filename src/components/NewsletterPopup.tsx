@@ -1,10 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,75 +62,90 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[480px] border border-secondary/20 shadow-2xl relative flex flex-col overflow-hidden">
+    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 max-w-[380px] w-[calc(100vw-2rem)] sm:w-full transition-all duration-300">
+      <div className="bg-[#FDFDFD] rounded-2xl border border-rose-200 shadow-2xl overflow-hidden relative group/popup ring-1 ring-black/5">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-primary/80 backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center text-sm cursor-pointer z-10 text-white hover:bg-secondary hover:text-primary transition-all border border-white/20"
+          className="absolute top-3 right-3 bg-black/40 hover:bg-[#D2446D] text-white rounded-full w-7 h-7 flex items-center justify-center text-sm cursor-pointer z-20 backdrop-blur-sm transition-all border border-white/20"
           aria-label="Close newsletter popup"
         >
-          &times;
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[180px] relative">
+        {/* Compact Hero Banner */}
+        <div className="h-28 relative overflow-hidden">
           <img
-            src="/img/newsletter_guitar.jpg"
-            alt="Artisanal acoustic guitar and hardware"
-            className="w-full h-full object-cover absolute inset-0"
+            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80"
+            alt="Harmonic Hollow Acoustic Instrument"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 to-primary/90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#4C0519] via-[#4C0519]/70 to-transparent" />
 
-          <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="text-[0.65rem] uppercase tracking-[0.2em] font-black text-secondary block mb-0.5">
-              Musician Circle
+          <div className="absolute bottom-3 left-4 right-10 text-white">
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#D2446D]/90 text-[0.6rem] font-bold tracking-wider uppercase text-white mb-1 shadow-sm">
+              <span>𝄞</span> Workshop VIP
             </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
-              Save 15% Today!
+            <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug uppercase text-white drop-shadow">
+              Claim 15% Off Your First Order
             </h3>
           </div>
         </div>
 
-        {/* Form Body */}
-        <div className="p-7">
+        {/* Content Body */}
+        <div className="p-4 sm:p-5">
           {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full bg-secondary/15 text-secondary flex items-center justify-center text-xl mx-auto mb-3 font-bold">
+            <div className="text-center py-2">
+              <div className="w-10 h-10 rounded-full bg-rose-100 text-[#4C0519] flex items-center justify-center text-lg mx-auto mb-2 font-black border border-rose-200">
                 ✓
               </div>
-              <h4 className="text-primary font-black text-lg mb-1">Welcome to the Sound Circle!</h4>
-              <p className="text-neutral-text/50 text-xs">
-                Check your inbox for your 15% discount code on your first order.
+              <h4 className="text-[#000000] font-black text-sm mb-1 uppercase tracking-wider">
+                You&apos;re On The List!
+              </h4>
+              <p className="text-gray-600 text-xs mb-3 font-medium">
+                Use your workshop discount code at checkout:
               </p>
+              <div className="inline-block bg-rose-50 border border-dashed border-[#D2446D] px-4 py-2 rounded-xl text-[#4C0519] font-mono font-bold text-sm tracking-widest select-all">
+                HARMONIC15
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-xs md:text-sm text-neutral-text/70 leading-relaxed mb-5">
-                Join the {siteConfig.brandName} sound circle. Receive acoustic maintenance guides, early hardware releases, and <strong>15% off</strong> your first order.
+              <p className="text-xs text-gray-600 leading-relaxed mb-3.5 font-medium">
+                Subscribe for exclusive instrument drops, score releases, and an instant <strong>15% discount</strong> voucher.
               </p>
 
-              <div className="mb-4">
+              <div className="flex flex-col gap-2">
                 <input
                   type="email"
-                  className="block w-full px-4 py-3 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/35"
+                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-rose-200 rounded-xl focus:outline-none focus:border-[#D2446D] focus:ring-2 focus:ring-[#D2446D]/20 transition-all text-[#000000] bg-[#FAFAFA] placeholder:text-gray-400 font-medium"
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+
+                <button
+                  type="submit"
+                  className="w-full bg-[#4C0519] hover:bg-[#D2446D] text-white font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2 group"
+                >
+                  <span>Get 15% Discount</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </button>
               </div>
 
-              <button
-                type="submit"
-                className="inline-block font-black text-center whitespace-nowrap bg-primary text-white hover:bg-secondary hover:text-primary transition-all duration-300 py-3.5 px-6 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-md"
-              >
-                Unlock 15% Musician Discount
-              </button>
-
-              <span className="block text-center text-[0.65rem] text-neutral-text/40 mt-3">
-                Zero spam. Pure tone. Unsubscribe at any time.
-              </span>
+              <div className="flex items-center justify-between mt-2.5 text-[0.65rem] text-gray-400 font-medium px-0.5">
+                <span>🔒 No spam guaranteed</span>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="hover:text-gray-700 underline cursor-pointer"
+                >
+                  No thanks
+                </button>
+              </div>
             </form>
           )}
         </div>

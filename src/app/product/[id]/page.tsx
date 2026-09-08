@@ -1,42 +1,54 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
-import ProductCarousel from "@/components/ProductCarousel";
 
 const products = productsData as unknown as Product[];
 
 export default function ProductDetail() {
   const params = useParams();
   const router = useRouter();
-  const { addToCart } = useCart();
+  const { addToCart, setIsCartOpen } = useCart();
 
   const productId = typeof params.id === "string" ? params.id : Array.isArray(params.id) ? params.id[0] : "";
   const product = products.find((p) => p.id === productId);
 
-  // Set default selected bundle
   const defaultBundle: Bundle = product?.bundles && product.bundles.length > 0
     ? product.bundles[0]
     : { quantity: 1, price: parseFloat(product?.ssPrice || "0") };
 
   const [selectedBundle, setSelectedBundle] = useState<Bundle>(defaultBundle);
+  const [selectedImage, setSelectedImage] = useState<string>(product?.image || "");
+  const [addedToast, setAddedToast] = useState(false);
+
+  useEffect(() => {
+    if (product) {
+      setSelectedImage(product.image);
+      if (product.bundles && product.bundles.length > 0) {
+        setSelectedBundle(product.bundles[0]);
+      }
+    }
+  }, [product]);
 
   if (!product) {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
-          <h2 className="text-2xl font-black uppercase text-primary mb-4">Hardware Item Not Found</h2>
-          <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The musical item you are looking for is not in our current workshop catalog.</p>
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-28 text-center bg-[#FAFAFA]">
+          <h2 className="text-2xl font-black uppercase text-[#4C0519] mb-4">Product Not Found</h2>
+          <p className="text-gray-500 mb-8 max-w-md mx-auto text-sm font-medium">
+            The item you are looking for is not available in our catalog.
+          </p>
           <button
-            className="inline-block font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-secondary hover:text-primary transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
-            onClick={() => router.push("/products")}
+            className="inline-block font-black text-center whitespace-nowrap bg-[#4C0519] text-white hover:bg-[#D2446D] transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+            onClick={() => router.push("/shop")}
           >
             Return to Store
           </button>
@@ -46,163 +58,159 @@ export default function ProductDetail() {
     );
   }
 
+  const productImages = product.images && product.images.length > 0 ? product.images : [product.image];
+
   const handleAddToCart = () => {
     const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
-    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Studio Bundle` : "Single Unit";
+    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item Edition";
     
     addToCart(product, selectedBundle.quantity, unitPrice, label);
+    setAddedToast(true);
+    setTimeout(() => setAddedToast(false), 2500);
   };
 
-  const startingPrice = parseFloat(product.ssPrice);
-  const regularPrice = startingPrice * selectedBundle.quantity;
-  const currentSavings = regularPrice - selectedBundle.price;
+  const handleBuyNow = () => {
+    const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
+    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item Edition";
+    
+    addToCart(product, selectedBundle.quantity, unitPrice, label);
+    setIsCartOpen(true);
+  };
+
+  const currentPriceNum = parseFloat(String(selectedBundle.price));
+  const originalPrice = (currentPriceNum * 1.35).toFixed(2);
 
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-12 md:py-20 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] right-[-250px] opacity-30 pointer-events-none" />
+      <main className="bg-[#FAFAFA] py-10 md:py-16 relative overflow-hidden min-h-[75vh]">
+        {/* Toast Notification */}
+        {addedToast && (
+          <div className="fixed top-24 right-6 z-50 bg-[#4C0519] text-white px-5 py-3 rounded-2xl shadow-2xl border border-[#D2446D] flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-200">
+            <span className="text-[#D2446D] font-black">✓</span>
+            <span className="text-xs font-bold">Added {product.name} to cart!</span>
+          </div>
+        )}
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
-            
-            {/* Product Image Section */}
-            <div className="bg-white rounded-3xl p-6 border border-black/5 shadow-xl">
-              <ProductCarousel images={product.images && product.images.length > 0 ? product.images : [product.image]} name={product.name} />
-            </div>
+        <div className="max-w-6xl w-full px-4 sm:px-6 mx-auto">
+          {/* Breadcrumbs */}
+          <p className="text-xs sm:text-sm text-gray-500 font-medium flex items-center gap-1.5 flex-wrap">
+            <Link href="/" className="hover:text-[#4C0519] transition-colors">Home</Link> /
+            <Link href="/shop" className="hover:text-[#4C0519] transition-colors">Products</Link> /
+            <span className="text-gray-600">{product.category}</span> /
+            <span className="text-[#D2446D] font-bold">{product.name}</span>
+          </p>
 
-            {/* Product Details Section */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-xl">
-              <span className="text-[0.68rem] font-black uppercase text-secondary tracking-[0.22em]">
-                {product.category || "Artisan Instrument Hardware"}
-              </span>
-
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-primary mt-2 mb-4 leading-tight uppercase">
-                {product.name}
-              </h1>
-
-              {/* Star Ratings */}
-              <div className="flex items-center gap-2.5 mb-6">
-                <div className="flex gap-0.5 text-secondary">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
+          <div className="flex flex-col md:flex-row gap-10 lg:gap-16 mt-6 items-start">
+            {/* Gallery Left Section */}
+            <div className="flex flex-col-reverse sm:flex-row gap-3 w-full md:w-auto">
+              {/* Vertical / Horizontal Thumbnail List */}
+              {productImages.length > 1 && (
+                <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
+                  {productImages.map((img, i) => (
+                    <div
+                      key={i}
+                      onClick={() => setSelectedImage(img)}
+                      onMouseEnter={() => setSelectedImage(img)}
+                      className={`border max-w-20 sm:max-w-24 border-gray-500/30 rounded-xl overflow-hidden cursor-pointer aspect-square transition-all ${
+                        selectedImage === img
+                          ? "border-[#D2446D] ring-2 ring-[#D2446D]/30 shadow-md"
+                          : "opacity-70 hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`Thumbnail ${i + 1}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = product.image;
+                        }}
+                      />
+                    </div>
                   ))}
                 </div>
-                <span className="text-xs text-neutral-text/50 font-semibold">(28 Verified Musician Reviews)</span>
+              )}
+
+              {/* Main Selected Product Image */}
+              <div className="border border-gray-500/30 max-w-full sm:max-w-[420px] md:max-w-[460px] aspect-square rounded-2xl overflow-hidden bg-white shadow-sm flex items-center justify-center relative">
+                <img
+                  src={selectedImage || product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80";
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Product Info & Actions Right Section */}
+            <div className="text-sm w-full md:w-1/2">
+              <h1 className="text-2xl sm:text-3xl font-medium text-[#000000]">{product.name}</h1>
+
+              {/* Price MRP */}
+              <div className="mt-4">
+                <p className="text-gray-500/70 line-through text-sm">MRP: ${originalPrice}</p>
+                <p className="text-2xl sm:text-3xl font-medium text-[#000000]">
+                  MRP: ${parseFloat(String(selectedBundle.price)).toFixed(2)}
+                </p>
+                <span className="text-gray-500/70 text-xs">(inclusive of all taxes)</span>
               </div>
 
-              <div className="text-3xl font-black text-primary mb-6 flex items-baseline gap-2">
-                ${parseFloat(String(selectedBundle.price)).toFixed(2)}
-                {selectedBundle.quantity > 1 && (
-                  <span className="text-xs md:text-sm font-bold text-neutral-text/40 ml-1">
-                    (${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} / unit)
-                  </span>
-                )}
-              </div>
-
-              <p className="text-neutral-text/70 mb-8 text-xs md:text-sm leading-relaxed border-t border-black/5 pt-5">
-                {product.description}
-              </p>
-
-              {/* Dropdown for Select Package Quantity */}
+              {/* Bundle Selection Options */}
               {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-8">
-                  <label htmlFor="package-select" className="block text-xs font-black uppercase tracking-wider text-primary mb-3">
-                    Select Package Quantity:
-                  </label>
-                  
-                  <div className="relative">
-                    <select
-                      id="package-select"
-                      value={selectedBundle.quantity}
-                      onChange={(e) => {
-                        const qty = Number(e.target.value);
-                        const found = product.bundles?.find((b) => b.quantity === qty);
-                        if (found) setSelectedBundle(found);
-                      }}
-                      className="w-full appearance-none bg-neutral-bg border-2 border-black/10 rounded-2xl px-5 py-4 pr-12 text-sm font-bold text-primary focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all cursor-pointer shadow-sm"
-                    >
-                      {product.bundles.map((bundle) => {
-                        const savings = startingPrice * bundle.quantity - bundle.price;
-                        const unitRate = (parseFloat(String(bundle.price)) / bundle.quantity).toFixed(2);
-                        const label = bundle.quantity === 1 ? "1 Unit" : `Pack of ${bundle.quantity}`;
-                        const savingsText = savings > 0 ? ` — Save $${savings.toFixed(2)}` : "";
-
-                        return (
-                          <option key={bundle.quantity} value={bundle.quantity} className="text-primary font-medium py-2">
-                            {label} • ${parseFloat(String(bundle.price)).toFixed(2)} (${unitRate}/unit){savingsText}
-                          </option>
-                        );
-                      })}
-                    </select>
-
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Selected Package Confirmation Card */}
-                  <div className="mt-4 p-4 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-secondary text-primary text-xs font-black flex-shrink-0">
-                        ✓
-                      </span>
-                      <div>
-                        <span className="text-xs font-black text-primary uppercase tracking-wide block">
-                          {selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Studio Bundle` : "Single Unit Pack"}
-                        </span>
-                        <span className="text-[0.68rem] text-neutral-text/60">
-                          ${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} per unit
-                        </span>
-                      </div>
-                    </div>
-
-                    {selectedBundle.quantity > 1 && currentSavings > 0 && (
-                      <span className="bg-secondary text-primary text-[0.65rem] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                        Save ${currentSavings.toFixed(2)}
-                      </span>
-                    )}
+                <div className="mt-6">
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">
+                    Select Quantity Tier:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {product.bundles.map((bundle) => {
+                      const isSelected = selectedBundle.quantity === bundle.quantity;
+                      return (
+                        <button
+                          key={bundle.quantity}
+                          type="button"
+                          onClick={() => setSelectedBundle(bundle)}
+                          className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
+                            isSelected
+                              ? "border-[#4C0519] bg-rose-50 text-[#4C0519] ring-1 ring-[#4C0519]"
+                              : "border-gray-300 bg-white text-gray-700 hover:border-gray-400"
+                          }`}
+                        >
+                          {bundle.quantity} {bundle.quantity === 1 ? "Unit" : "Units"} • ${bundle.price}
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               )}
 
-              {/* Add to Cart Actions */}
-              <div className="flex gap-4 mb-8 mt-6">
+              {/* About Product */}
+              <p className="text-base font-medium mt-6 text-[#000000]">About Product</p>
+              <ul className="list-disc ml-4 text-gray-500/70 space-y-1 mt-2 text-sm">
+                <li>{product.description}</li>
+                <li>High-quality materials &amp; precision construction</li>
+                <li>Tested for durability, tone, and reliability</li>
+                <li>Fast shipping with safe packaging</li>
+              </ul>
+
+              {/* Action Buttons */}
+              <div className="flex items-center mt-8 gap-4 text-base">
                 <button
-                  className="group inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-primary text-white hover:bg-secondary hover:text-primary transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-xl"
+                  type="button"
                   onClick={handleAddToCart}
+                  className="w-full py-3.5 font-bold bg-white text-gray-800 hover:bg-rose-50 border border-rose-200 hover:border-[#D2446D] rounded-xl transition cursor-pointer text-center"
                 >
                   Add to Cart
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleBuyNow}
+                  className="w-full py-3.5 font-bold bg-[#4C0519] hover:bg-[#D2446D] text-white rounded-xl transition cursor-pointer text-center shadow-md hover:shadow-lg"
+                >
+                  Buy now
                 </button>
               </div>
-
-              {/* What's In The Box */}
-              {product.showIngredients && product.ingredientsImage && (
-                <div className="border-t border-black/5 pt-8 mt-8">
-                  <h3 className="text-sm md:text-base font-black uppercase text-primary mb-2">Workshop Packaging &amp; Warranty</h3>
-                  <p className="text-xs text-neutral-text/55 mb-5 leading-relaxed">
-                    Ships in custom padded protective housing, backed by our 1-year workshop warranty against defects and 30-day tone trial.
-                  </p>
-
-                  <div className="bg-neutral-bg border border-black/5 rounded-2xl p-5 flex items-center justify-center">
-                    <img
-                      src={product.ingredientsImage}
-                      alt="Workshop product and packaging"
-                      className="max-w-full h-auto rounded-xl max-h-[300px] object-cover bg-white p-1 border border-black/5"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/400x300?text=Hardware";
-                      }}
-                    />
-                  </div>
-                </div>
-              )}
-
             </div>
           </div>
         </div>

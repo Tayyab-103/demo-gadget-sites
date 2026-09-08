@@ -1,10 +1,10 @@
 {
-  "Product": "Music Store",
-  "Processor": "Synovus PPS",
-  "brandName": "Velvet Echo Musical Workshop",
-  "websiteUrl": "VelvetEchoMusicalWorkshop.com",
-  "email": "support@velvetechomusicalworkshop.com",
-  "descriptor": "VelvetEchoMusicalWorks",
+  "Product": "Music Stores (instruments, sheet music)",
+  "Processor": "Netevia Evolve",
+  "brandName": "Harmonic Hollow Music Workshop",
+  "websiteUrl": "HarmonicHollowMusicWorkshop.com",
+  "email": "support@harmonichollowmusicworkshop.com",
+  "descriptor": "HarmonicHollowMusicWor",
   "corpName": "Starpath Marketing Co.",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0D0F14",
+    "primaryColor": "#4C0519",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#D97706",
-    "secondaryTextColor": "#0D0F14",
-    "neutralBgColor": "#FAF8F5",
-    "neutralTextColor": "#171A21",
+    "secondaryColor": "#D2446D",
+    "secondaryTextColor": "#4C0519",
+    "neutralBgColor": "#FAFAFA",
+    "neutralTextColor": "#000000",
     "fontFamily": "Montserrat"
   }
 }

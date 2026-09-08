@@ -76,9 +76,9 @@ export default function Footer() {
               <h4 className="text-white/50 text-xs mb-5 font-normal">Collections</h4>
               <ul className="flex flex-col gap-3">
                 <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">18K Gold Solitaire Pendant</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Automatic Chronograph Watch</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Sterling Silverware &amp; Clock Suite</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Atelier Masterpieces</Link></li>
+                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">18K Gold Pavé Statement Ring</Link></li>
+                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">South Sea Pearl Drop Earrings</Link></li>
+                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Fine Jewelry</Link></li>
               </ul>
             </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
               <ul className="flex flex-col gap-3">
                 <li className="text-white text-sm break-all">{siteConfig.email}</li>
                 <li className="text-white text-sm">{siteConfig.phone}</li>
-                <li className="text-white text-sm max-w-[150px]">{siteConfig.address}</li>
+                <li className="text-white text-sm break-words">{siteConfig.address}</li>
               </ul>
             </div>
 

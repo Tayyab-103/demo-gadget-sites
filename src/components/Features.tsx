@@ -51,29 +51,42 @@ const featuresData = [
 
 export default function Features() {
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg" id="features">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-[600px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built to Be Kept</h2>
-          <p className="text-neutral-text/60">
-            We combine quality materials with real customer feedback to bring you pieces that actually hold up.
+    <section className="py-14 md:py-20 bg-neutral-bg border-b border-black/5" id="features">
+      <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-[650px] mb-12 md:mb-16">
+          <span className="eyebrow mb-3">Why Choose Us</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">
+            Built to Be Kept
+          </h2>
+          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
+            We combine premium materials with meticulous craftsmanship to bring you timeless pieces that truly endure.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresData.map((feature, idx) => (
             <div
-              className="bg-white rounded-xl p-6 border-2 border-black/10 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               key={idx}
+              className="group bg-white rounded-2xl p-7 border border-black/10 hover:border-secondary/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
             >
-              <div className="mb-5 w-14 h-14 rounded-xl border-2 border-primary text-primary flex items-center justify-center">
-                {feature.icon}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-secondary/10 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div>
+                <div className="mb-6 w-14 h-14 rounded-2xl bg-neutral-bg border border-black/10 group-hover:border-secondary/40 group-hover:bg-primary group-hover:text-secondary text-primary flex items-center justify-center transition-all duration-300 shadow-sm">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-bold mb-2.5 text-primary group-hover:text-primary transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-text/70 leading-relaxed m-0">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-primary">{feature.title}</h3>
-              <p className="text-xs md:text-sm text-neutral-text/60 leading-relaxed mb-0">
-                {feature.description}
-              </p>
+
+              <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-wider text-secondary">
+                <span>Standard 0{idx + 1}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary/60" />
+              </div>
             </div>
           ))}
         </div>

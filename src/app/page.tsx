@@ -3,10 +3,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HowItWorks from "@/components/HowItWorks";
-import AboutUs from "@/components/AboutUs";
 import Features from "@/components/Features";
-import VideoShowcase from "@/components/VideoShowcase";
 import ProductGrid from "@/components/ProductGrid";
 import QualityPromise from "@/components/QualityPromise";
 import Testimonials from "@/components/Testimonials";
@@ -22,37 +19,28 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
+        {/* 1. Hero Section */}
         <Hero />
         
-        {/* Step-by-Step Flow */}
-        {/* <HowItWorks /> */}
+        {/* 2. Features / Why Choose Us */}
         <Features />
-        
-        {/* About Brand Section */}
-        <AboutUs />
 
-        {/* Brand Video Showcase */}
-        <VideoShowcase />
-
-        {/* Product Catalog Showcase */}
+        {/* 3. Product Catalog Showcase */}
         <ProductGrid />
 
-        {/* Credibility & Guarantee Standards */}
+        {/* 4. Credibility & Guarantee Standards */}
         <QualityPromise />
         
-        {/* Quality Certifications */}
-        {/* <Features /> */}
-        
-        {/* Customer Social Proof */}
+        {/* 5. Customer Social Proof */}
         <Testimonials />
 
-        {/* Conversion CTA Banner */}
+        {/* 6. Conversion CTA Banner */}
         <CTASection />
 
-        {/* FAQ Accordions Dropdown */}
+        {/* 7. FAQ Accordions Dropdown */}
         <Faq />
 
-        {/* Contact Information Section (Form removed on Home page) */}
+        {/* 8. Contact Information Section */}
         <Contact showForm={false} />
       </main>
 

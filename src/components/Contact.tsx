@@ -87,27 +87,27 @@ export default function Contact({ showForm = true }: ContactProps) {
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {/* Phone */}
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/15 hover:border-[#D4AF37] hover:bg-white/15 transition-all group"
+                  className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 sm:px-5 py-4 rounded-2xl border border-white/15 hover:border-[#D4AF37] hover:bg-white/15 transition-all group min-w-0"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Call Concierge</div>
-                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5">{siteConfig.phone}</div>
+                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5 truncate">{siteConfig.phone}</div>
                   </div>
                 </a>
                 
                 {/* Email */}
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/15 hover:border-[#D4AF37] hover:bg-white/15 transition-all group"
+                  className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 sm:px-5 py-4 rounded-2xl border border-white/15 hover:border-[#D4AF37] hover:bg-white/15 transition-all group min-w-0"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -115,9 +115,11 @@ export default function Contact({ showForm = true }: ContactProps) {
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Email Inquiries</div>
-                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5 truncate max-w-[150px] sm:max-w-none">{siteConfig.email}</div>
+                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5 break-all sm:break-words leading-tight">
+                      {siteConfig.email}
+                    </div>
                   </div>
                 </a>
               </div>
@@ -126,7 +128,7 @@ export default function Contact({ showForm = true }: ContactProps) {
 
           {/* If showForm is TRUE: render the contact form */}
           {showForm ? (
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-black/8 flex flex-col justify-center">
+            <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-black/8 flex flex-col justify-center">
               {contactSubmitted ? (
                 <div className="text-center py-10 flex flex-col items-center justify-center">
                   <div className="w-16 h-16 rounded-full border-2 border-[#D4AF37] text-[#0C1E17] flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md bg-[#D4AF37]/15">
@@ -205,13 +207,13 @@ export default function Contact({ showForm = true }: ContactProps) {
             </div>
           ) : (
             /* If showForm is FALSE (Home page display): Show Atelier Showroom & Support card with CTA to Contact page */
-            <div className="lg:col-span-5 bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-black/8 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-black/8 flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-[#0C1E17] text-[#D4AF37] flex items-center justify-center mb-6 shadow-md text-lg font-black">
                   ✦
                 </div>
 
-                <h3 className="text-2xl font-serif font-bold text-[#0C1E17] tracking-tight mb-3">
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0C1E17] tracking-tight mb-3">
                   Atelier Showroom &amp; Support
                 </h3>
 
@@ -221,24 +223,24 @@ export default function Contact({ showForm = true }: ContactProps) {
 
                 <div className="space-y-3.5 text-xs text-black/75 border-t border-black/8 pt-5 mb-8">
                   <div className="flex items-start gap-3">
-                    <span className="text-[#D4AF37] font-bold text-sm">📍</span>
-                    <div>
+                    <span className="text-[#D4AF37] font-bold text-sm shrink-0">📍</span>
+                    <div className="min-w-0 flex-1">
                       <strong className="block text-[#0C1E17] font-semibold">Atelier Address</strong>
-                      <span>{siteConfig.address}</span>
+                      <span className="break-words">{siteConfig.address}</span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="text-[#D4AF37] font-bold text-sm">⏱️</span>
-                    <div>
+                    <span className="text-[#D4AF37] font-bold text-sm shrink-0">⏱️</span>
+                    <div className="min-w-0 flex-1">
                       <strong className="block text-[#0C1E17] font-semibold">Operating Hours</strong>
                       <span>Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM CST</span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <span className="text-[#D4AF37] font-bold text-sm">💬</span>
-                    <div>
+                    <span className="text-[#D4AF37] font-bold text-sm shrink-0">💬</span>
+                    <div className="min-w-0 flex-1">
                       <strong className="block text-[#0C1E17] font-semibold">Response Guarantee</strong>
                       <span>Replies within 24 business hours guaranteed</span>
                     </div>

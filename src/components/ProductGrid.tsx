@@ -107,7 +107,7 @@ export default function ProductGrid() {
                 alt={centerProduct.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop";
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop";
                 }}
               />
               
@@ -166,7 +166,7 @@ export default function ProductGrid() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0C1E17]/80 via-transparent to-transparent" />
               <span className="absolute top-3 left-3 bg-[#0C1E17]/80 backdrop-blur-xs text-[#D4AF37] text-[0.6rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md">
-                {rightProduct.category || "Watches"}
+                {rightProduct.category || "Fine Jewelry"}
               </span>
             </div>
             <p id="rightName" className="text-xs lg:text-sm font-serif font-bold text-slate-800 mt-3 text-center max-w-[160px] truncate group-hover:text-[#D4AF37] transition-colors">

@@ -103,7 +103,7 @@ export default function ProductDetail() {
     <>
       <Header />
       <main className="bg-[#07130E] text-white py-8 sm:py-12 md:py-16 relative overflow-hidden font-sans">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumbs */}
           <nav className="text-xs sm:text-sm text-white/50 mb-8 flex flex-wrap items-center gap-2 tracking-wider" aria-label="Breadcrumb">

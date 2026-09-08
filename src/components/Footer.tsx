@@ -70,12 +70,12 @@ export default function Footer() {
             
             {/* Column 1 */}
             <div className="flex flex-col">
-              <h4 className="text-secondary text-xs mb-4 font-bold uppercase tracking-wider">Foundry</h4>
+              <h4 className="text-secondary text-xs mb-4 font-bold uppercase tracking-wider">Navigation</h4>
               <ul className="flex flex-col gap-2.5">
                 <li><Link href="/" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">All Supplies</Link></li>
-                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Foundry Specs</Link></li>
-                <li><Link href="/contact" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Contractor Support</Link></li>
+                <li><Link href="/shop" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Products</Link></li>
+                <li><Link href="/about" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">About</Link></li>
+                <li><Link href="/contact" className="text-white/80 text-xs sm:text-sm hover:text-secondary transition-colors">Contact</Link></li>
               </ul>
             </div>
 

@@ -69,7 +69,7 @@ export default function Hero() {
               href="/shop"
               className="inline-flex items-center justify-center font-bold text-secondary-text text-sm sm:text-base bg-secondary hover:brightness-110 transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full shadow-lg shadow-secondary/25 hover:scale-[1.02] text-center"
             >
-              Shop Catalog
+              Shop
             </Link>
             <Link
               href="/about"

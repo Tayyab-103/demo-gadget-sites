@@ -43,7 +43,7 @@ export default function Testimonials() {
       setIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [isPaused, testimonials.length]);
+  }, [isPaused]);
 
   return (
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-neutral-bg" id="testimonials">

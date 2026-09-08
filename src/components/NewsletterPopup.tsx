@@ -59,7 +59,7 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      }, 2000);
     }
   };
 
@@ -67,11 +67,11 @@ export default function NewsletterPopup() {
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-2xl w-full max-w-[480px] border border-gray-200 relative flex flex-col overflow-hidden shadow-2xl">
+      <div className="bg-white rounded-2xl w-full max-w-[480px] border border-blue-100 relative flex flex-col overflow-hidden shadow-2xl">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/90 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-gray-700 hover:text-red-600 transition-all shadow-sm"
+          className="absolute top-4 right-4 bg-white/90 hover:bg-white rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-gray-700 hover:text-blue-600 transition-all shadow-sm"
           aria-label="Close newsletter popup"
         >
           &times;
@@ -85,10 +85,10 @@ export default function NewsletterPopup() {
             className="w-full h-full object-cover absolute inset-0 opacity-80"
           />
           {/* Transparent Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-[#0c0f14]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-950/40 via-blue-950/60 to-[#0A192F]" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-black text-red-500 block mb-1">
+            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-black text-blue-400 block mb-1">
               VIP Driver&apos;s Club
             </span>
             <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
@@ -118,7 +118,7 @@ export default function NewsletterPopup() {
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white"
+                  className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white"
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -128,7 +128,7 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="inline-block font-extrabold text-center whitespace-nowrap bg-red-600 hover:bg-red-700 text-white transition-all duration-200 py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider w-full shadow-lg shadow-red-600/30 cursor-pointer"
+                className="inline-block font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-200 py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider w-full shadow-lg shadow-blue-600/30 cursor-pointer"
               >
                 Unlock 15% Discount
               </button>

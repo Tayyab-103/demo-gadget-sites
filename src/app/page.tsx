@@ -22,6 +22,7 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
+
         {/* 1. Hero Section */}
         <Hero />
         
@@ -33,22 +34,22 @@ export default function Home() {
         <ProductGrid />
 
         {/* 4. Deal of the Day & Limited Offers */}
-        <DealOfTheDay />
+        {/* <DealOfTheDay /> */}
 
         {/* 5. Features Grid */}
         {/* <Features /> */}
-
-        {/* 6. Guarantee & Promise Standards */}
-        {/* <QualityPromise /> */}
         
         {/* 7. Verified Customer Reviews */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* 8. VIP Club Discount Banner */}
         <CTASection />
+        {/* <HowItWorks /> */}
 
         {/* 9. FAQ Accordions */}
         <Faq />
+
+        <Contact />
       </main>
 
       <Footer />

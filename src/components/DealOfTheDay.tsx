@@ -13,7 +13,7 @@ export default function DealOfTheDay() {
   const currentPrice = firstBundle ? firstBundle.price : featuredProduct?.ssPrice || "6.95";
   const originalPrice = (Number(currentPrice) * 1.5).toFixed(2);
 
-  // Live countdown timer state (2 days, 14 hours, 35 mins, 48 secs)
+  // Live countdown timer state
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
     hours: 14,
@@ -44,24 +44,24 @@ export default function DealOfTheDay() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ────────────────── SECTION TITLE ────────────────── */}
         <div className="flex items-center gap-2.5 mb-8 pb-3 border-b border-gray-200">
-          <span className="w-5 h-5 rounded-full border-2 border-red-600 flex items-center justify-center flex-shrink-0">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+          <span className="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center flex-shrink-0">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
           </span>
           <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
             <span>DEAL OF </span>
-            <span className="text-gray-500 font-bold">THE DAY</span>
+            <span className="text-blue-600 font-bold">THE DAY</span>
           </h2>
         </div>
 
         {/* ────────────────── MAIN DEAL GRID: BANNER + DEAL CARD ────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Left Hero Promo Banner */}
-          <div className="lg:col-span-8 relative rounded-2xl overflow-hidden bg-[#0c0f14] text-white p-6 sm:p-10 lg:p-12 flex flex-col justify-between shadow-xl min-h-[380px] sm:min-h-[420px] group">
-            {/* Ambient Sparkles & Glow Effects */}
+          <div className="lg:col-span-8 relative rounded-2xl overflow-hidden bg-gradient-to-r from-[#0B192C] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 flex flex-col justify-between shadow-xl min-h-[380px] sm:min-h-[420px] group">
+            {/* Ambient Sparkles & Blue Glow Effects */}
             <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-              <div className="absolute right-10 top-1/2 -translate-y-1/2 w-80 h-80 bg-red-600/15 rounded-full blur-3xl" />
+              <div className="absolute right-10 top-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
               {/* Starburst icon */}
-              <div className="absolute right-16 bottom-10 opacity-30 text-white animate-pulse">
+              <div className="absolute right-16 bottom-10 opacity-20 text-white animate-pulse">
                 <svg className="w-32 h-32" viewBox="0 0 100 100" fill="currentColor">
                   <path d="M50 0 L53 38 L91 50 L53 62 L50 100 L47 62 L9 50 L47 38 Z" />
                 </svg>
@@ -73,32 +73,32 @@ export default function DealOfTheDay() {
               <img
                 src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=900&auto=format&fit=crop&q=80"
                 alt="Automotive Mechanic and Tire"
-                className="w-full h-full object-cover object-left opacity-35 sm:opacity-55 mix-blend-luminosity filter contrast-125"
+                className="w-full h-full object-cover object-left opacity-30 sm:opacity-45 mix-blend-luminosity filter contrast-125"
                 onError={(e) => {
                   e.currentTarget.src = "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=900&auto=format&fit=crop&q=80";
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0c0f14]/80 to-[#0c0f14]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0B192C]/80 to-[#0B192C]" />
             </div>
 
             {/* Banner Text Content */}
             <div className="relative z-10 sm:ml-auto sm:max-w-md text-left py-4">
-              <div className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-gray-300 mb-2">
-                STARTING AT <span className="text-red-500 font-extrabold text-base sm:text-lg">${currentPrice}</span>
+              <div className="inline-block text-xs sm:text-sm font-black uppercase tracking-widest text-blue-200 mb-2">
+                STARTING AT <span className="text-blue-400 font-extrabold text-base sm:text-lg">${currentPrice}</span>
               </div>
 
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.08] tracking-tight uppercase mb-2">
                 <span className="text-white">MOST </span>
-                <span className="text-red-600">ESSENTIALS</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">ESSENTIALS</span>
               </h3>
 
-              <p className="text-sm sm:text-base font-bold uppercase tracking-wider text-gray-300 mb-6">
+              <p className="text-sm sm:text-base font-bold uppercase tracking-wider text-blue-100/80 mb-6">
                 SHOP AND SAVE BIG ON PRO-GRADE PARTS
               </p>
 
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3 rounded-full shadow-lg shadow-red-600/40 hover:scale-105 active:scale-95 transition-all duration-200"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3 rounded-full shadow-lg shadow-blue-600/40 hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 <span>Shop now</span>
                 <span>&rarr;</span>
@@ -106,23 +106,23 @@ export default function DealOfTheDay() {
             </div>
 
             {/* Bottom Subtle Trust Tag */}
-            <div className="relative z-10 flex items-center gap-4 text-xs text-gray-400 font-semibold pt-4 border-t border-white/10 mt-auto">
+            <div className="relative z-10 flex items-center gap-4 text-xs text-blue-200/60 font-semibold pt-4 border-t border-white/10 mt-auto">
               <span>✓ OEM Standard Tested</span>
               <span>✓ Rapid Same-Day Dispatch</span>
             </div>
           </div>
 
-          {/* Right Deal of the Day Product Card (Red Outline Highlight) */}
-          <div className="lg:col-span-4 border-2 border-red-500 rounded-2xl bg-white p-5 sm:p-6 shadow-xl flex flex-col justify-between relative">
+          {/* Right Deal of the Day Product Card */}
+          <div className="lg:col-span-4 border-2 border-blue-500/70 rounded-2xl bg-white p-5 sm:p-6 shadow-xl flex flex-col justify-between relative">
             {/* Discount Ribbon Tag */}
-            <div className="absolute top-4 right-4 bg-red-600 text-white text-[0.68rem] font-black uppercase px-2.5 py-1 rounded-full shadow-sm">
+            <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[0.68rem] font-black uppercase px-2.5 py-1 rounded-full shadow-sm">
               SAVE 50%
             </div>
 
             {/* Product Image */}
             <Link
               href={`/product/${featuredProduct.id}`}
-              className="block w-full aspect-[4/3] p-4 bg-gray-50/70 rounded-xl overflow-hidden mb-4 group"
+              className="block w-full aspect-[4/3] p-4 bg-blue-50/40 rounded-xl overflow-hidden mb-4 group"
             >
               <img
                 src={featuredProduct.image}
@@ -136,7 +136,7 @@ export default function DealOfTheDay() {
 
             {/* Product Details */}
             <div className="text-center mb-4">
-              <h4 className="text-base font-bold text-gray-900 hover:text-red-600 transition-colors leading-snug mb-1.5">
+              <h4 className="text-base font-bold text-gray-900 hover:text-blue-600 transition-colors leading-snug mb-1.5">
                 <Link href={`/product/${featuredProduct.id}`}>
                   {featuredProduct.name}
                 </Link>
@@ -144,7 +144,7 @@ export default function DealOfTheDay() {
 
               {/* Price */}
               <div className="flex items-baseline justify-center gap-2 mt-2 mb-2">
-                <span className="text-xl font-black text-red-600">${currentPrice}</span>
+                <span className="text-xl font-black text-blue-600">${currentPrice}</span>
                 <span className="text-xs text-gray-400 line-through font-semibold">${originalPrice}</span>
               </div>
             </div>
@@ -153,21 +153,21 @@ export default function DealOfTheDay() {
             <div className="mb-4">
               <div className="flex items-center justify-between text-[0.72rem] font-bold text-gray-600 mb-1.5">
                 <span>Available: <strong className="text-gray-900">48</strong></span>
-                <span>Units Sold: <strong className="text-red-600">252</strong></span>
+                <span>Units Sold: <strong className="text-blue-600">252</strong></span>
               </div>
               <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                <div className="bg-red-600 h-full rounded-full w-[84%] animate-pulse" />
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full rounded-full w-[84%] animate-pulse" />
               </div>
             </div>
 
-            {/* Live Countdown Timer (Matching Screenshot) */}
+            {/* Live Countdown Timer */}
             <div className="pt-3 border-t border-gray-100 mb-4 text-center">
               <p className="text-[0.72rem] font-bold text-gray-600 uppercase tracking-wide mb-2">
-                <strong className="text-red-600">Hurry Up!</strong> Offer ends in :
+                <strong className="text-blue-600">Hurry Up!</strong> Offer ends in :
               </p>
 
               <div className="grid grid-cols-4 gap-1.5">
-                <div className="bg-gray-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
+                <div className="bg-blue-50/70 border border-blue-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
                   <span className="text-sm font-black text-gray-900 leading-none">
                     {String(timeLeft.days).padStart(2, "0")}
                   </span>
@@ -176,7 +176,7 @@ export default function DealOfTheDay() {
                   </span>
                 </div>
 
-                <div className="bg-gray-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
+                <div className="bg-blue-50/70 border border-blue-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
                   <span className="text-sm font-black text-gray-900 leading-none">
                     {String(timeLeft.hours).padStart(2, "0")}
                   </span>
@@ -185,7 +185,7 @@ export default function DealOfTheDay() {
                   </span>
                 </div>
 
-                <div className="bg-gray-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
+                <div className="bg-blue-50/70 border border-blue-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
                   <span className="text-sm font-black text-gray-900 leading-none">
                     {String(timeLeft.minutes).padStart(2, "0")}
                   </span>
@@ -194,8 +194,8 @@ export default function DealOfTheDay() {
                   </span>
                 </div>
 
-                <div className="bg-gray-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
-                  <span className="text-sm font-black text-red-600 leading-none">
+                <div className="bg-blue-50/70 border border-blue-100 rounded-lg py-1.5 px-1 flex flex-col items-center">
+                  <span className="text-sm font-black text-blue-600 leading-none">
                     {String(timeLeft.seconds).padStart(2, "0")}
                   </span>
                   <span className="text-[0.58rem] font-semibold text-gray-400 uppercase tracking-wider mt-0.5">
@@ -208,7 +208,7 @@ export default function DealOfTheDay() {
             {/* Claim Deal Button -> Links to Product Details */}
             <Link
               href={`/product/${featuredProduct.id}`}
-              className="w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-red-600 hover:bg-red-700 text-white shadow-red-600/30 text-center"
+              className="w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-blue-600/30 text-center"
             >
               <span>Claim This Deal &rarr;</span>
             </Link>

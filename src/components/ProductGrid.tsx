@@ -1,85 +1,122 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 
 const products = productsData as unknown as Product[];
-
 const discountBadges = ["-14%", "-18%", "-20%"];
 
 export default function ProductGrid() {
+  const [active, setActive] = useState(0);
+
+  // Calculate left and right adjacent product indices
+  const count = products.length;
+  const leftIdx = (active - 1 + count) % count;
+  const rightIdx = (active + 1) % count;
+
+  const currentProduct = products[active] || products[0];
+  const leftProduct = products[leftIdx] || products[0];
+  const rightProduct = products[rightIdx] || products[0];
+
+  const getPrice = (prod: Product) => {
+    const firstBundle = prod.bundles && prod.bundles[0];
+    return firstBundle ? firstBundle.price : prod.ssPrice;
+  };
+
+  const currentPrice = getPrice(currentProduct);
+  const originalPrice = (Number(currentPrice) * 1.5).toFixed(2);
+  const currentDiscount = discountBadges[active % discountBadges.length];
+
   return (
-    <section className="py-10 sm:py-14 lg:py-16 bg-[#fafafa] border-b border-gray-200" id="shop">
+    <section className="py-12 sm:py-20 bg-[#f8fafc] border-b border-gray-200 overflow-hidden" id="shop">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ────────────────── SECTION HEADER STRIP ────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-8 border-b border-gray-200">
-          {/* Left Title: ⦿ EXPLORE PRODUCTS */}
+        
+        {/* ────────────────── SECTION HEADER ────────────────── */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-8 sm:mb-12 border-b border-gray-200">
           <div className="flex items-center gap-2.5">
-            <span className="w-5 h-5 rounded-full border-2 border-red-600 flex items-center justify-center flex-shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+            <span className="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center flex-shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
             </span>
             <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
               EXPLORE PRODUCTS
             </h2>
           </div>
 
-          {/* Right Action: VIEW ALL */}
           <Link
             href="/shop"
-            className="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-red-600 border-b-2 border-red-600 pb-0.5 self-start sm:self-auto transition-colors"
+            className="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-blue-600 border-b-2 border-blue-600 pb-0.5 self-start sm:self-auto transition-colors"
           >
             VIEW ALL PRODUCTS &rarr;
           </Link>
         </div>
 
-        {/* ────────────────── 3 PRODUCTS SHOWCASE GRID ────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {products.slice(0, 3).map((product, idx) => {
-            const firstBundle = product.bundles && product.bundles[0];
-            const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            const originalPrice = (Number(currentPrice) * 1.5).toFixed(2);
-            const discount = discountBadges[idx % discountBadges.length];
+        {/* ────────────────── 3-CARD FOCAL CAROUSEL ────────────────── */}
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-center gap-3 sm:gap-6 lg:gap-8 w-full select-none">
+            
+            {/* Left Card (Smaller & Clickable to switch) */}
+            <div
+              onClick={() => setActive(leftIdx)}
+              className="hidden md:flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-90 transition-all duration-300 hover:scale-95 transform scale-90"
+              title={`View ${leftProduct.name}`}
+            >
+              <div className="w-44 lg:w-52 aspect-square rounded-2xl p-4 bg-white border border-gray-200 shadow-sm overflow-hidden flex items-center justify-center group-hover:border-blue-400 group-hover:shadow-md transition-all">
+                <img
+                  src={leftProduct.image}
+                  alt={leftProduct.name}
+                  className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://placehold.co/400x400?text=Auto+Part";
+                  }}
+                />
+              </div>
+              <p className="text-xs lg:text-sm font-semibold text-slate-600 mt-2.5 text-center max-w-[180px] truncate group-hover:text-blue-600">
+                {leftProduct.name}
+              </p>
+              <span className="text-xs text-blue-600 font-bold">${getPrice(leftProduct)}</span>
+            </div>
 
-            return (
-              <div
-                key={product.id}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-red-300 transition-all duration-300 flex flex-col group relative"
-              >
+            {/* Center Card (Prominent & Featured) */}
+            <div className="flex flex-col items-center w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px]">
+              <div className="relative w-full bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-600/30 shadow-xl shadow-blue-600/10 flex flex-col items-center group transition-all duration-300">
                 {/* Discount Badge */}
-                <div className="absolute top-3.5 right-3.5 z-20 bg-red-600 text-white text-[0.68rem] font-black w-8 h-8 rounded-full flex items-center justify-center shadow-md">
-                  {discount}
+                <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[0.72rem] font-black px-2.5 py-1 rounded-full shadow-md">
+                  {currentDiscount}
                 </div>
 
-                {/* Product Image Area */}
+                {/* Main Product Image */}
                 <Link
-                  href={`/product/${product.id}`}
-                  className="relative block w-full aspect-square p-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+                  href={`/product/${currentProduct.id}`}
+                  className="w-full aspect-square max-w-[260px] sm:max-w-[300px] flex items-center justify-center p-4 bg-gradient-to-b from-blue-50/40 to-white rounded-2xl overflow-hidden cursor-pointer"
                 >
                   <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-500"
+                    src={currentProduct.image}
+                    alt={currentProduct.name}
+                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       e.currentTarget.src = "https://placehold.co/400x400?text=Auto+Part";
                     }}
                   />
                 </Link>
 
-                {/* Card Content */}
-                <div className="p-5 sm:p-6 flex flex-col flex-1 border-t border-gray-100">
-                  {/* Product Title */}
+                {/* Details */}
+                <div className="w-full mt-4 text-center">
+                  <span className="text-[0.68rem] font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full inline-block mb-1.5">
+                    {currentProduct.category || "Premium Auto Upgrade"}
+                  </span>
+
                   <Link
-                    href={`/product/${product.id}`}
-                    className="text-sm sm:text-base font-bold text-gray-900 hover:text-red-600 transition-colors line-clamp-2 leading-snug mb-3 flex-1"
+                    href={`/product/${currentProduct.id}`}
+                    className="block text-base sm:text-lg font-bold text-slate-950 hover:text-blue-600 transition-colors line-clamp-2 leading-snug"
                   >
-                    {product.name}
+                    {currentProduct.name}
                   </Link>
 
-                  {/* Price Section */}
-                  <div className="flex items-baseline gap-2.5 mb-4">
-                    <span className="text-lg sm:text-xl font-extrabold text-red-600">
+                  {/* Price */}
+                  <div className="flex items-baseline justify-center gap-2 mt-2">
+                    <span className="text-xl sm:text-2xl font-black text-blue-600">
                       ${currentPrice}
                     </span>
                     <span className="text-xs sm:text-sm text-gray-400 line-through font-medium">
@@ -87,19 +124,19 @@ export default function ProductGrid() {
                     </span>
                   </div>
 
-                  {/* Add To Cart Button -> Links to Product Details */}
+                  {/* Buy / View Product Button */}
                   <Link
-                    href={`/product/${product.id}`}
-                    className="w-full py-2.5 px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs bg-[#f87171]/20 hover:bg-red-600 text-red-700 hover:text-white"
+                    href={`/product/${currentProduct.id}`}
+                    className="mt-4 w-full py-3 px-5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:shadow-lg shadow-blue-500/25 hover:-translate-y-0.5"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
+                      width="15"
+                      height="15"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2.5"
+                      strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
@@ -107,13 +144,53 @@ export default function ProductGrid() {
                       <circle cx="19" cy="21" r="1" />
                       <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                     </svg>
-                    <span>ADD TO CART</span>
+                    <span>View &amp; Buy Now</span>
                   </Link>
                 </div>
               </div>
-            );
-          })}
+            </div>
+
+            {/* Right Card (Smaller & Clickable to switch) */}
+            <div
+              onClick={() => setActive(rightIdx)}
+              className="hidden md:flex flex-col items-center cursor-pointer group opacity-60 hover:opacity-90 transition-all duration-300 hover:scale-95 transform scale-90"
+              title={`View ${rightProduct.name}`}
+            >
+              <div className="w-44 lg:w-52 aspect-square rounded-2xl p-4 bg-white border border-gray-200 shadow-sm overflow-hidden flex items-center justify-center group-hover:border-blue-400 group-hover:shadow-md transition-all">
+                <img
+                  src={rightProduct.image}
+                  alt={rightProduct.name}
+                  className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://placehold.co/400x400?text=Auto+Part";
+                  }}
+                />
+              </div>
+              <p className="text-xs lg:text-sm font-semibold text-slate-600 mt-2.5 text-center max-w-[180px] truncate group-hover:text-blue-600">
+                {rightProduct.name}
+              </p>
+              <span className="text-xs text-blue-600 font-bold">${getPrice(rightProduct)}</span>
+            </div>
+
+          </div>
+
+          {/* ────────────────── DOTS NAVIGATION ────────────────── */}
+          <div className="flex items-center gap-2.5 mt-6 sm:mt-8">
+            {products.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                aria-label={`Go to product ${i + 1}`}
+                className={`transition-all duration-300 cursor-pointer rounded-full ${
+                  i === active
+                    ? "w-6 h-2 bg-gradient-to-r from-blue-600 to-indigo-600"
+                    : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

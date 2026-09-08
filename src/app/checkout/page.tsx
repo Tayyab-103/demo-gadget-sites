@@ -105,7 +105,7 @@ export default function Checkout() {
   };
 
   if (cart.length === 0) {
-    return null; // Don't render checkout forms if redirecting
+    return null;
   }
 
   // Generate CC Expiry Months & Years options
@@ -120,20 +120,20 @@ export default function Checkout() {
       {/* Loading Overlay */}
       {loading && (
         <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center">
-          <div className="w-12 h-12 border-4 border-gray-200 border-t-red-600 rounded-full animate-spin" />
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin" />
           <h4 className="mt-6 text-lg font-bold text-gray-900">Processing Secure Order...</h4>
           <p className="text-xs text-gray-500">Please do not refresh or close this window.</p>
         </div>
       )}
 
-      <main className="bg-[#fafafa] py-12 md:py-16 relative overflow-hidden font-sans border-b border-gray-200">
+      <main className="bg-[#f8fafc] py-12 md:py-16 relative overflow-hidden font-sans border-b border-gray-200">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
-            <span className="text-xs font-bold uppercase tracking-widest text-red-600">Encrypted 256-Bit SSL</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-600">Encrypted 256-Bit SSL</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-black uppercase text-gray-900 mb-8 tracking-tight">
-            Checkout <span className="text-red-600">Securely</span>
+            Checkout <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Securely</span>
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -155,42 +155,42 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">First Name</label>
-                    <input type="text" name="firstName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.firstName} onChange={handleChange} required />
+                    <input type="text" name="firstName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.firstName} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Last Name</label>
-                    <input type="text" name="lastName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.lastName} onChange={handleChange} required />
+                    <input type="text" name="lastName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.lastName} onChange={handleChange} required />
                   </div>
                 </div>
 
                 <div className="flex flex-col mb-4">
                   <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Shipping Address</label>
-                  <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.shippingAddress1} onChange={handleChange} required />
+                  <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.shippingAddress1} onChange={handleChange} required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">City</label>
-                    <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.shippingCity} onChange={handleChange} required />
+                    <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.shippingCity} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">State</label>
-                    <input type="text" name="shippingState" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" placeholder="e.g. TX" value={formData.shippingState} onChange={handleChange} required />
+                    <input type="text" name="shippingState" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" placeholder="e.g. TX" value={formData.shippingState} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">ZIP Code</label>
-                    <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.shippingZip} onChange={handleChange} required />
+                    <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.shippingZip} onChange={handleChange} required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Phone Number</label>
-                    <input type="tel" name="phone" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.phone} onChange={handleChange} required />
+                    <input type="tel" name="phone" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.phone} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Email Address</label>
-                    <input type="email" name="email" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.email} onChange={handleChange} required />
+                    <input type="email" name="email" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.email} onChange={handleChange} required />
                   </div>
                 </div>
 
@@ -205,7 +205,7 @@ export default function Checkout() {
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white"
+                    className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
@@ -219,7 +219,7 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Expiry Month</label>
-                    <select name="cc_month" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.cc_month} onChange={handleChange} required>
+                    <select name="cc_month" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.cc_month} onChange={handleChange} required>
                       <option value="">Month</option>
                       {months.map((m) => (
                         <option key={m} value={m}>{m}</option>
@@ -228,7 +228,7 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">Expiry Year</label>
-                    <select name="cc_year" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" value={formData.cc_year} onChange={handleChange} required>
+                    <select name="cc_year" className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" value={formData.cc_year} onChange={handleChange} required>
                       <option value="">Year</option>
                       {years.map((y) => (
                         <option key={y} value={y}>{y}</option>
@@ -237,13 +237,13 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-1.5 text-[0.68rem] uppercase tracking-wider text-gray-600">CVV / CVC</label>
-                    <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-gray-900 bg-white" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
+                    <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-xs sm:text-sm border border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all text-gray-900 bg-white" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-red-600 hover:bg-red-700 text-white transition-all duration-200 py-4 px-8 rounded-xl w-full cursor-pointer mt-6 text-xs uppercase tracking-wider shadow-lg shadow-red-600/30"
+                  className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-200 py-4 px-8 rounded-xl w-full cursor-pointer mt-6 text-xs uppercase tracking-wider shadow-lg shadow-blue-600/30"
                 >
                   Complete Secure Order &rarr;
                 </button>
@@ -274,7 +274,7 @@ export default function Checkout() {
 
                 {/* Shipping Insurance Checkbox */}
                 <div
-                  className="p-3.5 bg-red-50/50 border border-dashed border-red-200 rounded-xl my-4 flex items-center gap-3 cursor-pointer hover:bg-red-50 transition-colors duration-200"
+                  className="p-3.5 bg-blue-50/50 border border-dashed border-blue-200 rounded-xl my-4 flex items-center gap-3 cursor-pointer hover:bg-blue-50 transition-colors duration-200"
                   onClick={() => setShippingInsurance(prev => !prev)}
                 >
                   <input
@@ -282,7 +282,7 @@ export default function Checkout() {
                     checked={shippingInsurance}
                     onChange={handleInsuranceChange}
                     onClick={(e) => e.stopPropagation()}
-                    className="w-4 h-4 cursor-pointer accent-red-600"
+                    className="w-4 h-4 cursor-pointer accent-blue-600"
                   />
                   <div>
                     <strong className="text-xs font-bold text-gray-900 block">
@@ -313,7 +313,7 @@ export default function Checkout() {
 
                   <div className="flex justify-between items-center border-t border-gray-100 pt-3 mt-1 font-bold text-base">
                     <span className="text-gray-900 uppercase tracking-wider text-xs">Total:</span>
-                    <span className="text-red-600 font-black text-xl">${grandTotal}</span>
+                    <span className="text-blue-600 font-black text-xl">${grandTotal}</span>
                   </div>
                 </div>
               </div>

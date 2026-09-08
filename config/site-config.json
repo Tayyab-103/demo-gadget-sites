@@ -1,10 +1,10 @@
 {
   "Product": "Automotive Parts and Accessories",
-  "Processor": "Paysafe",
-  "brandName": "Torque Hollow Automotive Works",
-  "websiteUrl": "TorqueHollowAutomotiveWorks.com",
-  "email": "support@torquehollowautomotiveworks.com",
-  "descriptor": "TorqueHollowAutomotive",
+  "Processor": "Netevia Evolve",
+  "brandName": "Axlethorne Automotive Foundry",
+  "websiteUrl": "AxlethorneAutomotiveFoundry.com",
+  "email": "support@axlethorneautomotivefoundry.com",
+  "descriptor": "AxlethorneAutomotiveFo",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0E1013",
+    "primaryColor": "#0B192C",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#DC2626",
+    "secondaryColor": "#2563EB",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#FAFAFA",
-    "neutralTextColor": "#111827",
+    "neutralBgColor": "#F8FAFC",
+    "neutralTextColor": "#0F172A",
     "fontFamily": "Montserrat"
   }
 }

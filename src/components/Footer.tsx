@@ -28,20 +28,20 @@ export default function Footer() {
         <div className="rounded-3xl bg-white/5 border border-[#C5A059]/30 p-6 sm:p-8 md:p-10 mb-14 sm:mb-16 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="max-w-md text-center md:text-left">
             <span className="text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] font-bold">
-              ✦ Patron Circle Access
+              ✦ Join Our Newsletter
             </span>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#FAF8F5] mt-1 tracking-tight">
-              Join The Scribe Journal
+              Stay in Touch with Quillhaven
             </h3>
             <p className="text-xs sm:text-sm text-[#FAF8F5]/70 mt-1.5 font-normal">
-              Receive private atelier editions, calligraphy guides, and 15% off your first acquisition.
+              Receive special stationery release updates, calligraphy guides, and 15% off your first order.
             </p>
           </div>
 
           <div className="w-full md:w-auto">
             {subscribed ? (
               <div className="bg-[#C5A059]/20 border border-[#C5A059] text-[#C5A059] px-6 py-3 rounded-full text-xs font-serif font-bold">
-                ✓ Welcome to the Patron Circle. Invitation sent.
+                ✓ Thank you for subscribing! Check your inbox.
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto">
@@ -49,7 +49,7 @@ export default function Footer() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your patron email..."
+                  placeholder="Enter your email address..."
                   required
                   className="px-5 py-3 rounded-full bg-[#121820] border border-[#C5A059]/40 text-xs sm:text-sm text-[#FAF8F5] placeholder:text-[#FAF8F5]/40 focus:outline-none focus:border-[#C5A059] min-w-[240px] sm:min-w-[280px]"
                 />
@@ -57,7 +57,7 @@ export default function Footer() {
                   type="submit"
                   className="px-7 py-3 rounded-full bg-[#C5A059] text-[#121820] text-xs font-bold uppercase tracking-wider hover:bg-[#D4AF37] transition-all cursor-pointer shadow-md text-center"
                 >
-                  Join Circle
+                  Subscribe
                 </button>
               </form>
             )}
@@ -100,56 +100,56 @@ export default function Footer() {
               ))}
               <li>
                 <Link href="/shop" className="hover:text-[#C5A059] text-[#C5A059] font-serif font-semibold transition-colors flex items-center gap-1 mt-1">
-                  <span>View All Collections</span>
+                  <span>View All Products</span>
                   <span>→</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Atelier Heritage & Pages */}
+          {/* Quick Links & Pages */}
           <div>
             <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
-              The Atelier
+              Quick Links
             </h4>
             <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
               <li>
+                <Link href="/" className="hover:text-[#C5A059] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C5A059] transition-colors">
+                  Shop
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-[#C5A059] transition-colors">
-                  Our Story
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/#how-it-works" className="hover:text-[#C5A059] transition-colors">
-                  The Quillhaven Standard
-                </Link>
-              </li>
-              <li>
-                <Link href="/#features" className="hover:text-[#C5A059] transition-colors">
-                  Features &amp; Guarantee
-                </Link>
-              </li>
-              <li>
-                <Link href="/#testimonials" className="hover:text-[#C5A059] transition-colors">
-                  Patron Reviews
+                <Link href="/contact" className="hover:text-[#C5A059] transition-colors">
+                  Contact Us
                 </Link>
               </li>
               <li>
                 <Link href="/#faq" className="hover:text-[#C5A059] transition-colors">
-                  Help &amp; FAQs
+                  FAQs
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Patron Concierge & Legal */}
+          {/* Customer Support & Legal */}
           <div>
             <h4 className="font-serif font-bold text-sm text-[#FAF8F5] uppercase tracking-wider mb-4 border-b border-[#C5A059]/30 pb-1.5">
-              Patron Concierge
+              Customer Support
             </h4>
             <ul className="space-y-2.5 text-xs text-[#FAF8F5]/75 font-normal">
               <li>
                 <Link href="/contact" className="hover:text-[#C5A059] transition-colors">
-                  Concierge Desk
+                  Contact Support
                 </Link>
               </li>
               <li>

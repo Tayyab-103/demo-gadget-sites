@@ -43,7 +43,7 @@ export default function ProductDetail() {
             className="inline-block font-bold text-center whitespace-nowrap bg-[#121820] text-[#FAF8F5] border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#121820] transition-all py-3.5 px-8 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-md"
             onClick={() => router.push("/shop")}
           >
-            Return to Signature Catalog
+            Return to Shop
           </button>
         </main>
         <Footer />
@@ -164,7 +164,7 @@ export default function ProductDetail() {
                   className="group inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-[#C5A059] text-[#121820] hover:bg-[#D4AF37] transition-all duration-200 py-3.5 sm:py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
                   onClick={handleAddToCart}
                 >
-                  Add to Satchel
+                  Add to Cart
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </button>
               </div>

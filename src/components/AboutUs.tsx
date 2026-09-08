@@ -59,7 +59,7 @@ export default function AboutUs() {
               href="/shop"
               className="inline-flex items-center justify-center font-bold uppercase tracking-[0.14em] text-[#121820] text-xs sm:text-sm bg-[#C5A059] hover:bg-[#D4AF37] transition-all duration-200 py-3.5 px-8 rounded-full shadow-md text-center hover:scale-105 w-full sm:w-auto"
             >
-              Explore Stationery Catalog →
+              Shop All Products →
             </Link>
           </div>
 

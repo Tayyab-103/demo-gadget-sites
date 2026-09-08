@@ -71,14 +71,14 @@ export default function Hero() {
                 href="/shop"
                 className="inline-flex items-center justify-center gap-2 font-bold text-xs sm:text-sm uppercase tracking-wider bg-[#2A3B2B] hover:bg-[#1E2B1F] text-[#FAF8F5] transition-all duration-200 py-4 px-8 rounded-full shadow-lg hover:scale-105 text-center cursor-pointer"
               >
-                Explore Collection
+                Shop Collection
                 <span className="text-base leading-none">↓</span>
               </Link>
               <Link
                 href="/about"
                 className="inline-flex items-center justify-center font-serif text-xs sm:text-sm border border-[#C5A059]/60 text-[#121820] hover:bg-[#C5A059]/15 transition-all duration-200 py-4 px-7 rounded-full text-center"
               >
-                Our Story
+                About Us
               </Link>
             </div>
 

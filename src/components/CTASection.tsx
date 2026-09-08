@@ -63,7 +63,7 @@ export default function CTASection() {
               href="/shop"
               className="inline-flex items-center justify-center font-serif text-xs sm:text-sm font-bold tracking-wider text-[#FAF8F5] bg-[#121820] hover:bg-[#C5A059] hover:text-[#121820] px-7 py-3.5 rounded-xl shadow-md transition-all duration-200 hover:scale-105"
             >
-              Explore Collections
+              Shop Collection
             </Link>
 
           </div>

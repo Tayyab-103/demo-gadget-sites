@@ -18,7 +18,7 @@ export default function ShopPage() {
           title={<>The Fine Stationery &amp; Writing Suite</>}
           subtitle="Explore German-tipped fountain pens, bleedproof milled cotton journals, and hand-cast solid brass desk accessories."
           image="/img/cta-workspace-banner.jpg"
-          currentLabel="Collections"
+          currentLabel="Shop"
         />
         <ProductGrid />
       </main>

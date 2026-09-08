@@ -33,7 +33,7 @@ export default function CartDrawer() {
           <div className="flex items-center gap-2.5">
             <span className="text-[#C5A059] text-base">✒</span>
             <h3 className="m-0 text-sm font-serif font-bold text-[#121820] tracking-widest uppercase">
-              PATRON SATCHEL
+              SHOPPING CART
             </h3>
           </div>
           <button
@@ -49,13 +49,13 @@ export default function CartDrawer() {
           {cart.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-[#1A202C]/50 text-xs font-serif uppercase tracking-wider mb-6">
-                Your patron satchel is empty.
+                Your cart is empty.
               </p>
               <button
                 className="inline-block font-bold text-center whitespace-nowrap bg-[#121820] text-[#FAF8F5] border border-[#C5A059] hover:bg-[#C5A059] hover:text-[#121820] transition-all py-3.5 px-7 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-sm"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Fine Collections
+                Start Shopping
               </button>
             </div>
           ) : (
@@ -169,7 +169,7 @@ export default function CartDrawer() {
               onClick={() => setIsCartOpen(false)}
               className="inline-flex items-center justify-center font-serif text-xs tracking-wider bg-transparent border border-[#C5A059]/40 text-[#121820] hover:bg-[#FAF8F5] transition-all py-3 px-6 rounded-full w-full cursor-pointer"
             >
-              Continue Browsing
+              Continue Shopping
             </button>
           </div>
         )}

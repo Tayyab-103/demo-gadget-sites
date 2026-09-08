@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, useSyncExternalStore, ReactNode } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { Product, CartItem, SiteConfig } from "@/types";
 
@@ -21,25 +21,65 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-function loadCartFromStorage(): CartItem[] {
-  if (typeof window === "undefined") return [];
+const emptyCart: CartItem[] = [];
+let memoryCart: CartItem[] = emptyCart;
+let listeners: Array<() => void> = [];
+
+function getCartFromStorage(): CartItem[] {
+  if (typeof window === "undefined") return emptyCart;
   try {
     const savedCart = localStorage.getItem("cartPdtArr");
-    return savedCart ? JSON.parse(savedCart) : [];
+    if (savedCart) {
+      const parsed = JSON.parse(savedCart);
+      if (Array.isArray(parsed)) return parsed;
+    }
   } catch (e) {
     console.error("Error parsing cart data from localStorage", e);
-    return [];
   }
+  return emptyCart;
+}
+
+if (typeof window !== "undefined") {
+  memoryCart = getCartFromStorage();
+}
+
+function subscribe(listener: () => void) {
+  listeners.push(listener);
+  const handleStorage = () => {
+    memoryCart = getCartFromStorage();
+    listener();
+  };
+  window.addEventListener("storage", handleStorage);
+  return () => {
+    listeners = listeners.filter((l) => l !== listener);
+    window.removeEventListener("storage", handleStorage);
+  };
+}
+
+function getSnapshot() {
+  return memoryCart;
+}
+
+function getServerSnapshot() {
+  return emptyCart;
+}
+
+function updateCartState(next: CartItem[] | ((prev: CartItem[]) => CartItem[])) {
+  const updated = typeof next === "function" ? next(memoryCart) : next;
+  memoryCart = updated;
+  if (typeof window !== "undefined") {
+    try {
+      localStorage.setItem("cartPdtArr", JSON.stringify(updated));
+    } catch (e) {
+      console.error("Error saving cart data to localStorage", e);
+    }
+  }
+  listeners.forEach((listener) => listener());
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const cart = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  // Save cart to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-  }, [cart]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     // If site configuration limits cart to one product
@@ -60,12 +100,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         Label: label,
         bundles: product.bundles
       };
-      setCart([newItem]);
+      updateCartState([newItem]);
       setIsCartOpen(true);
       return;
     }
 
-    setCart((prevCart) => {
+    updateCartState((prevCart) => {
       const existingItemIndex = prevCart.findIndex((item) => item.Id === product.id);
 
       if (existingItemIndex > -1) {
@@ -104,7 +144,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   const removeFromCart = (productId: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.Id !== productId));
+    updateCartState((prevCart) => prevCart.filter((item) => item.Id !== productId));
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
@@ -113,7 +153,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    setCart((prevCart) =>
+    updateCartState((prevCart) =>
       prevCart.map((item) => {
         if (item.Id !== productId) return item;
 
@@ -139,7 +179,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   const clearCart = () => {
-    setCart([]);
+    updateCartState([]);
   };
 
   const toggleCart = () => {

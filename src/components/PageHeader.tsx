@@ -24,7 +24,7 @@ export default function PageHeader({ eyebrow, title, subtitle, image, currentLab
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="mb-3.5 sm:mb-4 flex items-center justify-center gap-2 text-[0.68rem] font-serif uppercase tracking-widest text-[#FAF8F5]/60">
-          <Link href="/" className="hover:text-[#C5A059] transition-colors">Atelier Home</Link>
+          <Link href="/" className="hover:text-[#C5A059] transition-colors">Home</Link>
           <span aria-hidden="true">/</span>
           <span className="text-[#C5A059]">{currentLabel}</span>
         </nav>

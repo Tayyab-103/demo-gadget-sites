@@ -118,7 +118,7 @@ export default function NewsletterPopup() {
                 <input
                   type="email"
                   className="block w-full px-5 py-3.5 text-sm border border-[#C5A059]/30 rounded-full focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all text-[#121820] bg-white shadow-xs font-serif"
-                  placeholder="Enter your patron email address"
+                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -129,7 +129,7 @@ export default function NewsletterPopup() {
                 type="submit"
                 className="inline-block font-bold text-center whitespace-nowrap bg-[#C5A059] text-[#121820] border border-[#C5A059] hover:bg-[#D4AF37] transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:scale-[1.01]"
               >
-                Claim 15% Patron Discount
+                Claim 15% Discount
               </button>
 
               <span className="block text-center text-[0.68rem] text-[#1A202C]/50 mt-3">

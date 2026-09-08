@@ -22,7 +22,7 @@ export default function ContactPage() {
           title={<>Connect With {siteConfig.brandName}</>}
           subtitle="Questions about custom nibs, corporate gifts, volume stationery suites, or dispatch logistics? Our Austin concierge desk responds within 24 hours."
           image="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=1600&q=80"
-          currentLabel="Concierge"
+          currentLabel="Contact Us"
         />
         <Contact />
       </main>

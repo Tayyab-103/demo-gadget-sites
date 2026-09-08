@@ -4,11 +4,11 @@
     "stickyId": 1,
     "name": "Balloon Whisk",
     "description": "Crafted with 12 flexible, commercial-grade stainless steel wires and a reinforced copper-accented ergonomic handle. Engineered to maximize aeration and reduce wrist fatigue whether you're whipping silky meringue, emulsifying vinaigrettes, or folding delicate batters.",
-    "image": "/images/product-whisk.jpg",
+    "image": "/img/product-whisk.jpg",
     "images": [
-      "/images/product-whisk.jpg",
-      "/images/whisk-action-1.jpg",
-      "/images/whisk-action-2.jpg"
+      "/img/product-whisk.jpg",
+      "/img/whisk-action-1.jpg",
+      "/img/whisk-action-2.jpg"
     ],
     "category": "Precision Baking & Prep",
     "billingModel": 1,
@@ -30,11 +30,11 @@
     "stickyId": 2,
     "name": "Digital Culinary Scale & Timer",
     "description": "Ultra-accurate 0.1g digital culinary scale with integrated drip timer, scratch-resistant tempered platform, and high-visibility illuminated display. Essential for precision sourdough baking, pour-over extraction, and chef-level recipe formulation.",
-    "image": "/images/product-scale.jpg",
+    "image": "/img/product-scale.jpg",
     "images": [
-      "/images/product-scale.jpg",
-      "/images/scale-action-1.jpg",
-      "/images/scale-action-2.jpg"
+      "/img/product-scale.jpg",
+      "/img/scale-action-1.jpg",
+      "/img/scale-action-2.jpg"
     ],
     "category": "Measurement & Precision Prep",
     "billingModel": 1,
@@ -56,11 +56,11 @@
     "stickyId": 3,
     "name": "Multi-Prep Chef Shears",
     "description": "Heavy-gauge forged Japanese stainless steel kitchen shears featuring micro-serrated blade edges, an integrated bone-cutting notch, built-in herb stripper, and copper-finished pivot bolt. Disassembles smoothly for effortless, hygienic sanitization.",
-    "image": "/images/product-shears.jpg",
+    "image": "/img/product-shears.jpg",
     "images": [
-      "/images/product-shears.jpg",
-      "/images/shears-action-1.jpg",
-      "/images/shears-action-2.jpg"
+      "/img/product-shears.jpg",
+      "/img/shears-action-1.jpg",
+      "/img/shears-action-2.jpg"
     ],
     "category": "Cutlery & Prep Workshop",
     "billingModel": 1,

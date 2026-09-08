@@ -1,10 +1,10 @@
 {
   "Product": "Kitchen Tools",
-  "Processor": "Maverick",
-  "brandName": "Copper Whisk Kitchen Workshop",
-  "websiteUrl": "CopperWhiskKitchenWorkshop.com",
-  "email": "support@copperwhiskkitchenworkshop.com",
-  "descriptor": "CopperWhiskKitchenWork",
+  "Processor": "Quantum",
+  "brandName": "Ember Whisk Kitchen Foundry",
+  "websiteUrl": "EmberWhiskKitchenFoundry.com",
+  "email": "support@emberwhiskkitchenfoundry.com",
+  "descriptor": "EmberWhiskKitchenFound",
   "corpName": "Starpath Marketing Co.",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -12,15 +12,15 @@
   "shippingPeriod": "3-5",
   "trialPeriod": 14,
   "useImageLogo": false,
-  "logoImage": "/img/logo.png",
-  "footerLogoImage": "/img/logo.png",
+  "logoImage": "/product-logo.png",
+  "footerLogoImage": "/product-logo.png",
   "theme": {
-    "primaryColor": "#161413",
+    "primaryColor": "#121316",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C87A3E",
+    "secondaryColor": "#E06830",
     "secondaryTextColor": "#ffffff",
     "neutralBgColor": "#F8F6F2",
-    "neutralTextColor": "#1E1B18",
+    "neutralTextColor": "#121316",
     "fontFamily": "Montserrat"
   }
 }

@@ -9,59 +9,70 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5">
-      {/* Subtle pale champagne glow background */}
-      <div
-        className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#E5F2C9]/5 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#E5F2C9]/5 blur-3xl"
-        aria-hidden="true"
-      />
+    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-[#F8F6F2]" id="cta">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-[#121316] rounded-[2.5rem] p-8 sm:p-12 md:p-14 text-white relative overflow-hidden border border-white/10 shadow-xl">
+          {/* Subtle Background Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#E06830]/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 text-center">
-        <div className="max-w-4xl mx-auto">
-        
-        <div className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#E5F2C9]/20 bg-[#E5F2C9]/5 px-4 py-1.5 backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#E5F2C9] animate-pulse" />
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#E5F2C9]">
-            Join 25k+ Equipped Kitchens
-          </span>
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Content (8 cols) */}
+            <div className="lg:col-span-8 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-[#E06830]/30 text-[#E06830] text-xs font-bold uppercase tracking-wider mb-4">
+                <span>✦</span>
+                <span>Special Foundry Toolset Offer</span>
+              </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight leading-tight mb-6 font-sans">
-          Ready to Elevate Your <br />
-          <span className="text-[#E5F2C9]">Culinary Craft?</span>
-        </h2>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+                Equip Your Prep Counter <br />
+                <span className="text-[#E06830] italic font-serif">With Master-Forged Tools</span>
+              </h2>
 
-        <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-          Equip your kitchen with commercial-grade balloon whisks, ultra-precise digital scales, and Japanese steel kitchen shears. Backed by our 60-day money-back trial.
-        </p>
+              <p className="text-white/80 text-xs sm:text-sm md:text-base max-w-xl leading-relaxed mb-8">
+                Bundle the 12-wire balloon whisk, 0.1g digital scale, and multi-prep chef shears today for automatic volume discounts and free nationwide UPS tracked shipping.
+              </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/shop"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E5F2C9] text-[#0E0F11] font-bold text-xs uppercase tracking-widest px-9 py-4 rounded-lg hover:bg-white hover:shadow-[0_0_25px_rgba(229,242,201,0.4)] transition-all duration-300 shadow-md"
-          >
-            Shop The Collection &rarr;
-          </Link>
-          <Link
-            href="/about"
-            className="w-full sm:w-auto inline-flex items-center justify-center font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-lg border border-white/20 text-white hover:border-white hover:bg-white/10 transition-all duration-300"
-          >
-            Learn Our Story
-          </Link>
-        </div>
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3.5 items-stretch sm:items-center">
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#E06830] text-white hover:bg-white hover:text-[#121316] transition-all duration-300 py-3.5 px-8 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg text-center"
+                >
+                  <span>Shop Tool Bundles &amp; Save</span>
+                  <span className="text-sm">→</span>
+                </Link>
 
-        {/* Micro guarantees */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-[0.68rem] font-bold uppercase tracking-widest text-white/40 pt-8 border-t border-white/10">
-          <span>✓ 100% Food-Safe</span>
-          <span>✓ Fast Nationwide Shipping</span>
-          <span>✓ 60-Day Money-Back Trial</span>
-          <span>✓ 1-Year Full Warranty</span>
-        </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center font-bold text-center bg-transparent border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 py-3.5 px-7 rounded-full text-xs uppercase tracking-widest"
+                >
+                  Contact Culinary Concierge
+                </Link>
+              </div>
+            </div>
 
+            {/* Right Mini Trust Box (4 cols) */}
+            <div className="lg:col-span-4 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 flex flex-col gap-3.5 text-xs text-white/90">
+              <div className="flex items-center gap-2.5">
+                <span className="text-[#E06830] font-bold">✓</span>
+                <span>{siteConfig.trialPeriod}-Day Risk-Free Culinary Trial</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="text-[#E06830] font-bold">✓</span>
+                <span>100% Forged Food-Safe Stainless Alloys</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="text-[#E06830] font-bold">✓</span>
+                <span>{siteConfig.shippingCarrier} Fast Tracked Dispatch</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="text-[#E06830] font-bold">✓</span>
+                <span>Dedicated Workshop Support</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>

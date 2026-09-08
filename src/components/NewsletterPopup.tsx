@@ -12,34 +12,30 @@ export default function NewsletterPopup() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
+    // Check if dismissed previously
     const popupDismissed = localStorage.getItem("newsletter_dismissed");
     if (popupDismissed) return;
 
-    let hasSpentTimeOnPage = false;
-    let hasShownScrollIntent = false;
     let isPopupShown = false;
 
-    const showWhenReady = () => {
-      if (hasSpentTimeOnPage && hasShownScrollIntent && !isPopupShown) {
+    const triggerPopup = () => {
+      if (!isPopupShown) {
         isPopupShown = true;
         setIsVisible(true);
       }
     };
 
+    const timer = window.setTimeout(() => {
+      triggerPopup();
+    }, 4000);
+
     const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight * 0.6) {
-        hasShownScrollIntent = true;
-        showWhenReady();
+      if (window.scrollY >= 350) {
+        triggerPopup();
       }
     };
 
-    const timer = window.setTimeout(() => {
-      hasSpentTimeOnPage = true;
-      showWhenReady();
-    }, 12000);
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
 
     return () => {
       window.clearTimeout(timer);
@@ -47,7 +43,7 @@ export default function NewsletterPopup() {
     };
   }, []);
 
-  const handleClose = () => {
+  const handleDismiss = () => {
     setIsVisible(false);
     localStorage.setItem("newsletter_dismissed", "true");
   };
@@ -59,86 +55,98 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000);
+      }, 2500);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/75 backdrop-blur-md z-9999 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
-      <div className="bg-[#16171A] rounded-2xl w-full max-w-[480px] border border-white/15 relative flex flex-col overflow-hidden shadow-2xl text-white">
-        
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 bg-black/60 border border-white/20 rounded-full w-8 h-8 flex items-center justify-center text-sm cursor-pointer z-10 text-white hover:bg-[#E5F2C9] hover:text-[#0E0F11] transition-all shadow-sm"
-          aria-label="Close newsletter popup"
-        >
-          &times;
-        </button>
+    <div
+      role="dialog"
+      aria-label="Exclusive Kitchen Discount Offer"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-sm sm:max-w-md w-[calc(100%-2rem)] sm:w-[420px] animate-fadeIn transition-all duration-500 ease-out"
+    >
+      <div className="bg-white/95 backdrop-blur-md rounded-3xl border border-stone-200/90 shadow-2xl p-5 sm:p-6 relative overflow-hidden flex flex-col gap-3.5 text-[#121316]">
+        {/* Decorative Top Accent */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#E06830] to-transparent" />
 
-        {/* Visual Header */}
-        <div className="h-[160px] relative bg-[#23252B]">
-          <img
-            src="/images/whisk-action-1.jpg"
-            alt="Pastry chef holding copper balloon whisk"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#16171A] via-[#16171A]/70 to-transparent" />
-
-          <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-[#E5F2C9] block mb-1">
-              Workshop Privileges
-            </span>
-            <h3 className="text-xl sm:text-2xl font-black text-white m-0 tracking-tight">
-              Enjoy 15% Off Your Order
-            </h3>
+        {/* Header Row: Badge & Close Button */}
+        <div className="flex items-center justify-between gap-3 pt-1">
+          <div className="inline-flex items-center gap-1.5 bg-[#F8F6F2] border border-stone-200 px-3 py-1 rounded-full text-[0.68rem] font-bold uppercase tracking-wider text-[#121316]">
+            <span className="text-[#E06830]">✦</span>
+            <span>VIP Chef Club • Save 15%</span>
           </div>
+
+          <button
+            onClick={handleDismiss}
+            aria-label="Dismiss offer"
+            className="w-7 h-7 rounded-full bg-stone-100 hover:bg-stone-200 text-[#121316]/60 hover:text-[#121316] flex items-center justify-center text-xs transition-colors cursor-pointer border-none"
+          >
+            ✕
+          </button>
         </div>
 
-        {/* Form Body */}
-        <div className="p-6 sm:p-8">
-          {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-[#E5F2C9] text-[#E5F2C9] flex items-center justify-center text-xl mx-auto mb-4 font-bold bg-[#E5F2C9]/10">
-                ✓
-              </div>
-              <h4 className="text-white font-bold text-lg mb-2">Welcome to {siteConfig.brandName}</h4>
-              <p className="text-white/60 text-xs sm:text-sm">
-                Your 15% welcome voucher code has been registered.
+        {/* Content Body */}
+        {submitted ? (
+          <div className="py-4 text-center flex flex-col items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-[#E06830]/20 text-[#121316] flex items-center justify-center text-xl font-bold mb-2 shadow-xs">
+              ✓
+            </div>
+            <h4 className="text-[#121316] font-serif font-bold text-lg mb-1">
+              Welcome to the Foundry!
+            </h4>
+            <p className="text-[#121316]/75 text-xs leading-relaxed max-w-xs">
+              Check your inbox for your 15% promotional discount voucher code for {siteConfig.brandName}.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-[#121316] leading-tight mb-1">
+                Unlock 15% Off Kitchen Tools
+              </h3>
+              <p className="text-[#121316]/75 text-xs leading-relaxed">
+                Join our culinary community for tool maintenance tips, exclusive workshop drops, and an instant <strong>15% voucher</strong>.
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
-                Subscribe for gourmet chef techniques, seasonal kitchen guides, and receive <strong>15% off</strong> your first tool purchase.
-              </p>
 
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-white/15 rounded-xl focus:outline-none focus:border-[#E5F2C9] transition-all text-white bg-[#23252B] placeholder:text-white/30"
-                  placeholder="Enter your email address..."
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
+            {/* Email Field */}
+            <div className="relative">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="w-full bg-[#F8F6F2] border border-stone-300 rounded-full px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-[#121316] placeholder:text-[#121316]/40 focus:outline-none focus:border-[#E06830] transition-all shadow-xs"
+              />
+            </div>
 
+            {/* Action Buttons (Cookie-Modal Style) */}
+            <div className="flex items-center gap-2 pt-1">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center font-bold text-center bg-[#E5F2C9] text-[#0E0F11] hover:bg-white transition-all duration-300 py-3.5 px-6 rounded-xl text-xs uppercase tracking-widest cursor-pointer shadow-md"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-[#121316] text-white hover:bg-[#E06830] hover:text-white font-bold text-[0.7rem] uppercase tracking-wider py-2.5 sm:py-3 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer text-center whitespace-nowrap"
               >
-                Claim 15% Workshop Voucher &rarr;
+                <span>Claim 15% Off</span>
+                <span>→</span>
               </button>
 
-              <span className="block text-center text-[0.65rem] text-white/40 mt-3">
-                No spam. Unsubscribe anytime with one click.
-              </span>
-            </form>
-          )}
-        </div>
+              <button
+                type="button"
+                onClick={handleDismiss}
+                className="px-3.5 py-2.5 sm:py-3 rounded-full text-[0.68rem] font-bold text-[#121316]/60 hover:text-[#121316] hover:bg-stone-100 transition-colors cursor-pointer bg-transparent border border-stone-200"
+              >
+                Maybe later
+              </button>
+            </div>
+
+            <span className="text-center text-[0.62rem] text-[#121316]/50">
+              No spam ever. 100% chef-trusted privacy.
+            </span>
+          </form>
+        )}
       </div>
     </div>
   );

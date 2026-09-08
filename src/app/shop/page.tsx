@@ -18,7 +18,7 @@ export default function ShopPage() {
           title={<>Luggage &amp; Modular Travel Gear</>}
           subtitle="Explore aerospace aluminum carry-on spinners, Italian leather weekender bags, and modular compression packing architectures."
           image="/img/hero-luggage-travel.jpg"
-          currentLabel="Luggage &amp; Gear"
+          currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />
       </main>

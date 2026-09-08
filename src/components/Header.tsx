@@ -13,9 +13,9 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Luggage & Gear" },
-  { href: "/about", label: "Engineering" },
-  { href: "/contact", label: "Concierge" },
+  { href: "/shop", label: "Shop" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {

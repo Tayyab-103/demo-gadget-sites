@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { Product, CartItem, SiteConfig } from "@/types";
 
@@ -22,36 +22,37 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  // Safely load cart on client mount
-  useEffect(() => {
-    try {
-      const savedCart = localStorage.getItem("cartPdtArr");
-      if (savedCart) {
-        const parsed = JSON.parse(savedCart);
-        if (Array.isArray(parsed)) {
-          setCart(parsed);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const savedCart = localStorage.getItem("cartPdtArr");
+        if (savedCart) {
+          const parsed = JSON.parse(savedCart);
+          if (Array.isArray(parsed)) {
+            return parsed;
+          }
         }
+      } catch (e) {
+        console.error("Error loading cart from localStorage", e);
       }
-    } catch (e) {
-      console.error("Error loading cart from localStorage", e);
     }
-    setIsLoaded(true);
-  }, []);
+    return [];
+  });
+  const isMountedRef = useRef(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    if (isLoaded) {
-      try {
-        localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-      } catch (e) {
-        console.error("Error saving cart to localStorage", e);
-      }
+    if (!isMountedRef.current) {
+      isMountedRef.current = true;
+      return;
     }
-  }, [cart, isLoaded]);
+    try {
+      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+    } catch (e) {
+      console.error("Error saving cart to localStorage", e);
+    }
+  }, [cart]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     const limitOne = siteConfig.oneProductCartLimit === "yes";

@@ -22,7 +22,7 @@ export default function ContactPage() {
           title={<>Connect With {siteConfig.brandName}</>}
           subtitle="Questions about airline carry-on compatibility, corporate luggage gifting, or expedited flight dispatches? Our Austin flight desk responds within 24 hours."
           image="/img/hero-luggage-travel.jpg"
-          currentLabel="Concierge"
+          currentLabel="Contact Us"
         />
         <Contact />
       </main>

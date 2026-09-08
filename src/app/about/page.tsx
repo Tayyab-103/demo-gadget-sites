@@ -23,7 +23,7 @@ export default function AboutPage() {
           title={<>About {siteConfig.brandName}</>}
           subtitle="Engineered in Austin, Texas. Dedicated to precision aerospace alloy luggage, Italian vegetable-tanned leather, and seamless global transit."
           image="/img/travel-atelier-craft.jpg"
-          currentLabel="About"
+          currentLabel="About Us"
         />
         <AboutUs />
         <HowItWorks />

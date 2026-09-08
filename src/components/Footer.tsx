@@ -83,6 +83,35 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Navigation Column */}
+          <div>
+            <h4 className="font-extrabold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C87D3B]/30 pb-1.5">
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5 text-xs text-white/75 font-normal">
+              <li>
+                <Link href="/" className="hover:text-[#C87D3B] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C87D3B] transition-colors">
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#C87D3B] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#C87D3B] transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Products Column */}
           <div>
             <h4 className="font-extrabold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C87D3B]/30 pb-1.5">
@@ -101,7 +130,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/product/product3" className="hover:text-[#C87D3B] transition-colors">
-                  Compression Packing Cube &amp; Tech Organizer Suite
+                  Compression Packing Cube Suite
                 </Link>
               </li>
               <li>
@@ -112,44 +141,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Travel Engineering */}
+          {/* Traveler Concierge / Support */}
           <div>
             <h4 className="font-extrabold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C87D3B]/30 pb-1.5">
-              The Collective
-            </h4>
-            <ul className="space-y-2.5 text-xs text-white/75 font-normal">
-              <li>
-                <Link href="/about" className="hover:text-[#C87D3B] transition-colors">
-                  Our Engineering Story
-                </Link>
-              </li>
-              <li>
-                <Link href="/#how-it-works" className="hover:text-[#C87D3B] transition-colors">
-                  The Wanderloom Standard
-                </Link>
-              </li>
-              <li>
-                <Link href="/#quality-promise" className="hover:text-[#C87D3B] transition-colors">
-                  100-Day Global Flight Trial
-                </Link>
-              </li>
-              <li>
-                <Link href="/#testimonials" className="hover:text-[#C87D3B] transition-colors">
-                  Globetrotter Reviews
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Traveler Concierge */}
-          <div>
-            <h4 className="font-extrabold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C87D3B]/30 pb-1.5">
-              Traveler Concierge
+              Customer Support
             </h4>
             <ul className="space-y-2.5 text-xs text-white/75 font-normal">
               <li>
                 <Link href="/contact" className="hover:text-[#C87D3B] transition-colors">
-                  Flight Concierge Desk
+                  Contact Us
                 </Link>
               </li>
               <li>

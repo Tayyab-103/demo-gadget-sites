@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const messages = [
   "✨ FREE SHIPPING ON ALL ORDERS | SAFE & NON-TOXIC CERTIFIED",
-  "🎀 100% ORGANIC COTTON & NATURAL BEECHWOOD BABY ESSENTIALS",
-  "🧸 30-DAY HAPPY BABY LOVE-IT-OR-RETURN-IT GUARANTEE",
-  "🍼 USE CODE 'BABY20' FOR EXTRA 20% OFF AT CHECKOUT",
+  "🌿 GOTS-CERTIFIED ORGANIC COTTON & NATURAL BEECHWOOD ESSENTIALS",
+  "💜 30-DAY LOVE-IT GUARANTEE — RETURN ANY ITEM, NO QUESTIONS",
+  "🎀 USE CODE 'GROVE20' FOR 20% OFF YOUR FIRST ORDER",
 ];
 
 export default function AnnouncementBar() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = React.useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => {
       if (localStorage.getItem("announcement_dismissed") === "true") {
         setIsVisible(false);
@@ -40,7 +40,6 @@ export default function AnnouncementBar() {
                 key={idx}
                 className="text-[0.68rem] md:text-[0.72rem] font-bold uppercase tracking-[0.18em] flex items-center gap-3 whitespace-nowrap"
               >
-                {/* Clean Gold Star SVG instead of checkmark */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="10"

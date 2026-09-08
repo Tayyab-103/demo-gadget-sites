@@ -1,10 +1,10 @@
 {
   "Product": "Baby Products",
-  "Processor": "Paysafe",
-  "brandName": "Moonberry Little Treasures",
-  "websiteUrl": "http://moonberrylittletreasures.com",
-  "email": "support@moonberrylittletreasures.com",
-  "descriptor": "MoonberryLittleTreasur",
+  "Processor": "Quantum",
+  "brandName": "Lullaby Grove Baby Collective",
+  "websiteUrl": "LullabyGroveBabyCollective.com",
+  "email": "support@lullabygrovebabycollective.com",
+  "descriptor": "LullabyGroveBabyCollec",
   "corpName": "Starpath Marketing Co",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#8F75D8",
+    "primaryColor": "#7C3AED",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#F49DB2",
-    "secondaryTextColor": "#2D264B",
-    "neutralBgColor": "#FDFBF7",
-    "neutralTextColor": "#2D3142",
+    "secondaryColor": "#A78BFA",
+    "secondaryTextColor": "#2D1A5E",
+    "neutralBgColor": "#FAFAFA",
+    "neutralTextColor": "#1E1040",
     "fontFamily": "Nunito"
   }
 }

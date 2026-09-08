@@ -4,24 +4,24 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "100% Organic Muslin",
-    description: "Ultra-absorbent, hypoallergenic, and gentle on sensitive newborn skin without harsh chemicals.",
+    title: "GOTS-Certified Organic",
+    description: "Every fabric is spun from 100% certified organic long-staple cotton — no pesticides, no synthetic dyes, no compromises for delicate newborn skin.",
     icon: "🌿"
   },
   {
-    title: "Pure Natural Beechwood",
-    description: "Sustainably harvested, non-splintering smooth wood that is naturally antibacterial and soothing.",
+    title: "Sustainably Harvested Wood",
+    description: "Our beechwood teethers and rattles are hand-sanded to a velvety smooth finish — naturally antimicrobial and completely splinter-free.",
     icon: "🪵"
   },
   {
-    title: "Pediatrician Approved",
-    description: "Tested for age-appropriate sensory development, grip safety, and BPA-free teething comfort.",
+    title: "Pediatrician Tested",
+    description: "Every product passes age-appropriate safety testing for grip, sensory development, and BPA-free teething comfort — approved by child health experts.",
     icon: "✨"
   },
   {
-    title: "30-Day Happy Return",
-    description: "Loving our little treasures is guaranteed with our simple, hassle-free 30-day return policy.",
-    icon: "💝"
+    title: "30-Day Love-It Guarantee",
+    description: "If your little one isn't completely delighted, return any item within 30 days for a full, no-fuss refund. That's our nursery promise.",
+    icon: "💜"
   }
 ];
 
@@ -30,28 +30,25 @@ export default function Features() {
     <section className="py-16 md:py-24 bg-white" id="features">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[600px] mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-pink-600 font-bold text-xs uppercase tracking-widest mb-3">
-            🎀 The Moonberry Difference
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-[#7C3AED] font-bold text-xs uppercase tracking-widest mb-3">
+            💜 The Lullaby Grove Difference
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-[#2B2D42] mb-3 tracking-tight">Pure Comfort for Little Babes</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-[#1E1040] mb-3 tracking-tight">Crafted Pure. Made With Heart.</h2>
           <p className="text-gray-600 text-sm md:text-base">
-            We combine wholesome organic materials with parent-conscious design to create baby products you can trust.
+            We blend the finest organic materials with thoughtful, parent-conscious design to create baby essentials you can trust from the very first touch.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresData.map((feature, idx) => (
             <div
-              className="bg-[#FAF7F2] rounded-3xl p-6 border border-purple-100 hover:border-purple-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="bg-gradient-to-b from-[#F3EEFF] to-white rounded-3xl p-6 border border-purple-100 hover:border-purple-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
               key={idx}
             >
-              <div className="mb-4 text-3xl">
-                {feature.icon}
-              </div>
-              <h3 className="text-base font-black mb-2 text-[#2B2D42]">{feature.title}</h3>
-              <p className="text-xs md:text-sm text-gray-500 leading-relaxed mb-0">
-                {feature.description}
-              </p>
+              <div className="absolute top-0 right-0 w-20 h-20 rounded-full bg-purple-200/20 -translate-y-1/2 translate-x-1/2 group-hover:bg-purple-300/25 transition-colors" />
+              <div className="mb-4 text-3xl">{feature.icon}</div>
+              <h3 className="text-base font-black mb-2 text-[#1E1040]">{feature.title}</h3>
+              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>

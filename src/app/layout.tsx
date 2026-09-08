@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Discover heirloom-quality organic baby clothes, soothing teether toys, and nursery essentials designed with love for your little ones.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Discover heirloom-quality organic baby essentials — pure muslin bibs, natural beechwood teethers, and hand-knit nursery treasures crafted with love for your little one.`;
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -32,10 +32,10 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Heirloom Organic Baby Essentials`,
+  title: `${siteConfig.brandName} | Organic Baby Essentials`,
   description: siteDescription,
   openGraph: {
-    title: `${siteConfig.brandName} | Heirloom Organic Baby Essentials`,
+    title: `${siteConfig.brandName} | Organic Baby Essentials`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,

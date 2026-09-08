@@ -87,7 +87,7 @@ export default function NewsletterPopup() {
           <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent" />
 
           <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="text-[0.68rem] uppercase tracking-wider font-extrabold text-pink-300 block mb-1">
+            <span className="text-[0.68rem] uppercase tracking-wider font-extrabold text-purple-200 block mb-1">
               🍼 Welcome Little Parent!
             </span>
             <h3 className="text-2xl font-black text-white m-0 tracking-tight leading-tight">
@@ -100,10 +100,10 @@ export default function NewsletterPopup() {
         <div className="p-6 sm:p-7">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xl mx-auto mb-3">
-                🎀
+              <div className="w-12 h-12 rounded-full bg-purple-100 text-[#7C3AED] flex items-center justify-center text-xl mx-auto mb-3">
+                💜
               </div>
-              <h4 className="text-purple-700 font-bold text-lg mb-1">Welcome to our Family!</h4>
+              <h4 className="text-[#7C3AED] font-bold text-lg mb-1">Welcome to our Family!</h4>
               <p className="text-gray-500 text-xs">
                 Use code <strong className="text-purple-700">BABY15</strong> at checkout for 15% off.
               </p>
@@ -127,7 +127,7 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="font-bold text-center bg-pink-500 hover:bg-pink-600 text-white transition-all py-3.5 px-6 rounded-full text-xs uppercase tracking-wider w-full shadow-md cursor-pointer"
+                className="font-bold text-center bg-[#7C3AED] hover:bg-[#6D28D9] text-white transition-all py-3.5 px-6 rounded-full text-xs uppercase tracking-wider w-full shadow-md shadow-purple-300/30 cursor-pointer"
               >
                 Claim 15% Baby Discount
               </button>

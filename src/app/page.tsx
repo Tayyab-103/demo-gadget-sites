@@ -13,6 +13,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import Features from "@/components/Features";
+import LatestCreations from "@/components/LatestCreations";
 
 export default function Home() {
   return (
@@ -22,20 +24,26 @@ export default function Home() {
         {/* 1. Hero Banner with 3-Feature Pillar Strip */}
         <Hero />
 
-        {/* 2. Product Catalog & Promo Banners (Direct shopping after Hero) */}
-        <ProductGrid />
-        
-        {/* 3. Brand Story & Organic Materials: The Anatomy of Tenderness */}
+        {/* <Features/> */}
         <AboutUs />
 
-        {/* 4. Step-by-Step Delivery & Packaging Flow */}
+        {/* 2. Product Catalog & Promo Banners (Direct shopping after Hero) */}
+        <ProductGrid />
+
+        {/* 3. Interactive Latest Creations Gallery */}
+        <LatestCreations />
+        
+        {/* 4. Brand Story & Organic Materials: The Anatomy of Tenderness */}
+        {/* <AboutUs /> */}
+
+        {/* 5. Step-by-Step Delivery & Packaging Flow */}
         <HowItWorks />
         
         {/* 5. Verified Parent Reviews & Social Proof */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* 6. Editorial FAQ Index: The Things Parents Ask */}
-        <Faq />
+        {/* <Faq /> */}
 
         {/* 7. Newsletter & Community: Join Our Baby Family */}
         <CTASection />

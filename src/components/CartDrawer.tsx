@@ -51,12 +51,13 @@ export default function CartDrawer() {
               <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">
                 Your uniform bag is currently empty.
               </p>
-              <button
+              <Link
+                href="/shop"
                 className="inline-block font-bold text-center whitespace-nowrap bg-[#0A0F1D] text-white hover:bg-slate-800 transition-all py-3.5 px-7 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-sm"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Uniform Catalog
-              </button>
+                Explore Shop
+              </Link>
             </div>
           ) : (
             cart.map((item) => {

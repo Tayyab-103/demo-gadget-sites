@@ -58,7 +58,7 @@ export default function AboutUs() {
               href="/shop"
               className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-white bg-[#0A0F1D] hover:bg-slate-800 transition-all py-3.5 px-8 rounded-full text-center uppercase tracking-wider shadow-xs active:scale-95"
             >
-              Explore Catalog →
+              Explore Shop →
             </Link>
           </div>
 

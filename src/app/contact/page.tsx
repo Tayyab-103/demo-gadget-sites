@@ -22,7 +22,7 @@ export default function ContactPage() {
           title={<>Connect With {siteConfig.brandName}</>}
           subtitle="Questions about workforce sizing, custom corporate embroidery, or volume enterprise fleet discounts? Our Austin outfitting desk responds within 24 hours."
           image="/img/hero-uniforms.jpg"
-          currentLabel="Concierge"
+          currentLabel="Contact"
         />
         <Contact />
       </main>

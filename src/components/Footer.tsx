@@ -28,20 +28,20 @@ export default function Footer() {
         <div className="rounded-3xl bg-white/5 border border-white/10 p-6 sm:p-8 md:p-10 mb-14 sm:mb-16 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="max-w-md text-center md:text-left">
             <div className="text-[0.68rem] font-mono uppercase tracking-[0.24em] text-blue-400 font-bold mb-1 select-none">
-              FLEET OUTFITTER ACCESS
+              NEWSLETTER
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Join The Workforce Roster
+              Stay Updated With {siteConfig.brandName}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-normal">
-              Receive private uniform releases, fabric test reports, and $15 off your crew&apos;s initial outfitting order.
+              Receive private uniform releases, fabric test reports, and special offers directly to your inbox.
             </p>
           </div>
 
           <div className="w-full md:w-auto">
             {subscribed ? (
               <div className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider">
-                ✓ Welcome aboard. Fleet credentials dispatched to your inbox.
+                ✓ Thank you for subscribing! Check your inbox for updates.
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5 w-full sm:w-auto">
@@ -49,7 +49,7 @@ export default function Footer() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your workforce email..."
+                  placeholder="Enter your email address..."
                   required
                   className="px-5 py-3 rounded-full bg-slate-900 border border-slate-700 text-xs sm:text-sm text-white placeholder:text-slate-400 focus:outline-none focus:border-white min-w-[240px] sm:min-w-[280px]"
                 />
@@ -57,7 +57,7 @@ export default function Footer() {
                   type="submit"
                   className="px-7 py-3 rounded-full bg-white hover:bg-slate-200 text-[#0A0F1D] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer text-center"
                 >
-                  Join Roster
+                  Subscribe
                 </button>
               </form>
             )}
@@ -81,14 +81,14 @@ export default function Footer() {
               Tactical workwear, antimicrobial medical scrubs, and executive chef uniform coats engineered in Austin, Texas.
             </p>
             <div className="text-[0.68rem] text-slate-400 font-mono font-medium">
-              DESCRIPTOR: {siteConfig.descriptor}
+              Descriptor: {siteConfig.descriptor}
             </div>
           </div>
 
-          {/* Signature Catalog - Dynamic Matching Products Grid */}
+          {/* Shop Column */}
           <div>
             <h4 className="font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-1.5">
-              Workforce Apparel
+              Shop
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
               {products.map((product) => (
@@ -100,61 +100,66 @@ export default function Footer() {
               ))}
               <li>
                 <Link href="/shop" className="text-blue-400 hover:text-blue-300 font-bold transition-colors">
-                  View Full Catalog →
+                  Shop All Products →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Outfitting Standards */}
+          {/* Pages / Navigation Column */}
           <div>
             <h4 className="font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-1.5">
-              The Atelier
+              Pages
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
+              <li>
+                <Link href="/" className="hover:text-white transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-white transition-colors">
+                  Shop
+                </Link>
+              </li>
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  Our Austin Tailoring Story
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/#how-it-works" className="hover:text-white transition-colors">
-                  The Ironvale Protocol
-                </Link>
-              </li>
-              <li>
-                <Link href="/#features" className="hover:text-white transition-colors">
-                  Workforce Performance Features
-                </Link>
-              </li>
-              <li>
-                <Link href="/#testimonials" className="hover:text-white transition-colors">
-                  Enterprise Client Reviews
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Outfitting Concierge */}
+          {/* Contact Column */}
           <div>
             <h4 className="font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-1.5">
-              Fleet Concierge
+              Contact
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
               <li>
-                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Direct Desk:</span>
+                <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-bold transition-colors">
+                  Contact Us →
+                </Link>
+              </li>
+              <li>
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Phone:</span>
                 <a href={`tel:${siteConfig.phone}`} className="hover:text-white font-bold transition-colors">
                   {siteConfig.phone}
                 </a>
               </li>
               <li>
-                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Enterprise Support:</span>
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Email:</span>
                 <a href={`mailto:${siteConfig.email}`} className="hover:text-white break-all transition-colors">
                   {siteConfig.email}
                 </a>
               </li>
               <li>
-                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Atelier Hub:</span>
+                <span className="text-slate-400 block text-[0.65rem] font-mono uppercase">Address:</span>
                 <span className="text-slate-300">{siteConfig.address}</span>
               </li>
             </ul>
@@ -165,7 +170,7 @@ export default function Footer() {
         {/* Bottom Legal Copyright Bar & Payment Methods */}
         <div className="pt-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-xs text-slate-400">
           <p className="font-normal text-center lg:text-left order-2 lg:order-1">
-            &copy; {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved. Precision Commercial Outfitting.
+            &copy; {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.
           </p>
 
           {/* Payment Methods */}
@@ -192,14 +197,23 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 order-3">
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <Link href="/shop" className="hover:text-white transition-colors">
+              Shop
+            </Link>
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-white transition-colors">
+              Contact
+            </Link>
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Support
             </Link>
           </div>
         </div>

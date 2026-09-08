@@ -35,11 +35,10 @@ function loadCartFromStorage(): CartItem[] {
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const isInitialMount = React.useRef(true);
 
   // Hydrate cart from localStorage on client mount
   useEffect(() => {
-    setIsMounted(true);
     try {
       const savedCart = localStorage.getItem("cartPdtArr");
       if (savedCart) {
@@ -53,12 +52,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Save cart to localStorage whenever it changes (only after mounted)
+  // Save cart to localStorage whenever it changes (only after initial load)
   useEffect(() => {
-    if (isMounted) {
-      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
     }
-  }, [cart, isMounted]);
+    try {
+      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+    } catch (e) {
+      console.error("Error saving cart to localStorage", e);
+    }
+  }, [cart]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     // If site configuration limits cart to one product

@@ -18,7 +18,7 @@ export default function ShopPage() {
           title={<>Commercial Uniforms &amp; Workwear</>}
           subtitle="Explore tactical industrial utility suites, Silvadur™ antimicrobial medical scrubs, and executive double-breasted culinary coats."
           image="/img/hero-uniforms.jpg"
-          currentLabel="Uniform Catalog"
+          currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />
       </main>

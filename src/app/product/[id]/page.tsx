@@ -38,14 +38,14 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center bg-[#FAF8F5]">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center bg-neutral-bg">
           <div className="text-4xl mb-3">🐾</div>
           <h2 className="font-serif text-2xl font-bold text-primary mb-3">Pet Product Not Found</h2>
           <p className="text-neutral-text/60 mb-6 max-w-md mx-auto text-sm">
             The pet essential you are searching for is unavailable or has been relocated.
           </p>
           <button
-            className="inline-block font-bold text-center bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+            className="inline-block font-bold text-center bg-secondary text-white hover:bg-primary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
             onClick={() => router.push("/")}
           >
             Return to Pet Mercantile
@@ -78,7 +78,7 @@ export default function ProductDetail() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF8F5] py-8 sm:py-12 md:py-16 relative overflow-hidden">
+      <main className="bg-neutral-bg py-8 sm:py-12 md:py-16 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumb Navigation */}
@@ -92,22 +92,22 @@ export default function ProductDetail() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            {/* Left: Product Image & 3-Image Gallery (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-stone-200/60 shadow-xs flex flex-col">
+            {/* Left: Product Image & Gallery (6 cols) */}
+            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-stone-200/80 shadow-xs flex flex-col">
               {/* Main Image */}
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5] shadow-xs">
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-bg shadow-xs border border-stone-100">
                 <img
                   id="main-image"
                   src={currentDisplayImage}
                   alt={product.name}
                   className="w-full h-full object-cover transition-all duration-300"
                   onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/800x800?text=Pet+Product";
+                    e.currentTarget.src = "/img/hero1.jpg";
                   }}
                 />
               </div>
 
-              {/* 3-Image Thumbnail Gallery */}
+              {/* Thumbnail Gallery */}
               {imageList.length > 1 && (
                 <div className="grid grid-cols-3 w-full gap-3 sm:gap-4 mt-4" id="thumbnail-container">
                   {imageList.map((imgSrc, idx) => {
@@ -120,8 +120,8 @@ export default function ProductDetail() {
                         aria-label={`View ${product.name} image ${idx + 1}`}
                         className={`thumb relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer transition-all duration-200 border-2 ${
                           isSelected
-                            ? "border-[#182825] ring-2 ring-[#182825]/20 shadow-sm opacity-100 scale-[1.02]"
-                            : "border-stone-200/80 hover:border-stone-400 opacity-70 hover:opacity-100"
+                            ? "border-secondary ring-2 ring-secondary/30 shadow-sm opacity-100 scale-[1.02]"
+                            : "border-stone-200 hover:border-stone-400 opacity-70 hover:opacity-100"
                         }`}
                       >
                         <img
@@ -129,7 +129,7 @@ export default function ProductDetail() {
                           alt={`${product.name} thumbnail ${idx + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            e.currentTarget.src = "https://placehold.co/300x300?text=Pet+Product";
+                            e.currentTarget.src = "/img/hero1.jpg";
                           }}
                         />
                       </button>
@@ -140,22 +140,14 @@ export default function ProductDetail() {
             </div>
 
             {/* Right: Product Details & Dropdown Selector (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 border border-stone-200/60 shadow-xs">
-              <span className="text-[0.65rem] sm:text-xs font-bold uppercase text-secondary tracking-[0.2em] bg-[#FAF8F5] border border-stone-200/60 px-3 py-1 rounded-full inline-block mb-3">
+            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 border border-stone-200/80 shadow-xs">
+              <span className="text-[0.65rem] sm:text-xs font-bold uppercase text-secondary tracking-[0.2em] bg-neutral-bg border border-stone-200/80 px-3 py-1 rounded-full inline-block mb-3">
                 🐾 {product.category}
               </span>
 
-              <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 leading-snug">
+              <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4 leading-snug">
                 {product.name}
               </h1>
-
-              {/* Star Ratings */}
-              <div className="flex items-center gap-2.5 mb-5 pb-5 border-b border-stone-200/60">
-                <div className="flex text-amber-500 text-xs sm:text-sm">
-                  {"★★★★★"}
-                </div>
-                <span className="text-xs text-neutral-text/60 font-medium">5.0 (420+ Verified Reviews)</span>
-              </div>
 
               {/* Price Row */}
               <div className="mb-5 flex items-baseline gap-3 flex-wrap">
@@ -163,12 +155,12 @@ export default function ProductDetail() {
                   ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 </span>
                 {selectedBundle.quantity > 1 && (
-                  <span className="text-xs font-bold text-secondary bg-[#FAF8F5] border border-stone-200/60 px-2.5 py-1 rounded-lg">
+                  <span className="text-xs font-bold text-secondary bg-neutral-bg border border-stone-200/80 px-2.5 py-1 rounded-lg">
                     ${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} / unit
                   </span>
                 )}
                 {savings > 0 && (
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                  <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
                     Save ${savings.toFixed(2)}
                   </span>
                 )}
@@ -180,9 +172,9 @@ export default function ProductDetail() {
 
               {/* Dropdown Selector for Quantity & Bundle */}
               {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-6 p-4 sm:p-5 bg-[#FAF8F5] rounded-2xl border border-stone-200/60">
+                <div className="mb-6 p-4 sm:p-5 bg-neutral-bg rounded-2xl border border-stone-200/80">
                   <label htmlFor="bundle-select" className="block text-xs font-bold uppercase tracking-wider text-primary mb-2">
-                    Select Quantity &amp; Bundle:
+                    Select Quantity &amp; Bundle Tier:
                   </label>
                   
                   <div className="relative">
@@ -194,7 +186,7 @@ export default function ProductDetail() {
                         const bundle = product.bundles?.find((b) => b.quantity === q);
                         if (bundle) setSelectedBundle(bundle);
                       }}
-                      className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 text-sm font-semibold text-primary focus:outline-none focus:border-[#182825] focus:ring-1 focus:ring-[#182825] transition-all cursor-pointer shadow-xs appearance-none pr-10"
+                      className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 text-sm font-semibold text-primary focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all cursor-pointer shadow-xs appearance-none pr-10"
                     >
                       {product.bundles.map((bundle) => {
                         const bPrice = parseFloat(String(bundle.price)).toFixed(2);
@@ -229,7 +221,7 @@ export default function ProductDetail() {
               {/* Add to Cart CTA */}
               <div className="flex flex-col gap-2.5">
                 <button
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full cursor-pointer text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2.5 bg-secondary text-white hover:bg-primary transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full cursor-pointer text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
                   onClick={handleAddToCart}
                 >
                   <span>Add {selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Item"} to Pet Cart</span>
@@ -237,15 +229,15 @@ export default function ProductDetail() {
                 </button>
 
                 {addedNotice && (
-                  <div className="text-center text-xs font-bold text-emerald-600 bg-emerald-50 py-2 rounded-xl border border-emerald-200 animate-fadeIn">
+                  <div className="text-center text-xs font-bold text-emerald-700 bg-emerald-50 py-2 rounded-xl border border-emerald-200 animate-fadeIn">
                     ✓ Added to your cart!
                   </div>
                 )}
 
                 {/* Guaranteed Safe Checkout Badges */}
                 <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col items-center gap-2">
-                  <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
-                    <span className="text-emerald-600">🔒</span>
+                  <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/70 font-semibold">
+                    <span className="text-secondary">🔒</span>
                     <span>Guaranteed Safe &amp; Secure Checkout</span>
                   </div>
                   <div className="flex items-center gap-2">

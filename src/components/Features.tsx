@@ -1,115 +1,113 @@
 "use client";
 
 import React from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const features = [
   {
-    title: "Quality You Can Trust",
+    iconEmoji: "🌿",
+    title: "100% Non-Toxic & Pet-Safe",
     description:
-      "Every product is carefully selected to meet our high standards of quality.",
-    offset: "md:translate-y-4",
-    icon: (
-      <svg
-        className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-3-3a1 1 0 0 0-1.4 0l-1.3 1.3" />
-        <path d="m14.7 9.3-1.4-1.4a1 1 0 0 0-1.4 0L7.6 12.2a1 1 0 0 0 0 1.4l2 2a1 1 0 0 0 1.4 0l1.3-1.3" />
-        <path d="M2 8.5 7.5 3l4.2 4.2" />
-        <path d="M22 15.5 16.5 21l-4.2-4.2" />
-      </svg>
-    ),
+      "Engineered without BPA, phthalates, or harsh materials to ensure safe daily chewing, grooming, and travel.",
   },
   {
-    title: "Fast & Reliable Delivery",
+    iconEmoji: "🩺",
+    title: "Veterinarian Endorsed Design",
     description:
-      "Your orders are shipped quickly and handled with care every step of the way.",
-    offset: "md:-translate-y-2",
-    icon: (
-      <svg
-        className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
-        <path d="M15 18H9" />
-        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.24-4.05a1 1 0 0 0-.78-.38H14v10" />
-        <circle cx="17" cy="18.5" r="2.5" />
-        <circle cx="6.5" cy="18.5" r="2.5" />
-        <path d="M1.5 8h3" />
-        <path d="M1 12h3.5" />
-      </svg>
-    ),
+      "Anatomically contoured products that reduce pet travel anxiety and promote oral hygiene and clean living spaces.",
   },
   {
-    title: "Hassle-Free Returns",
+    iconEmoji: "📦",
+    title: `Fast ${siteConfig.shippingCarrier} Tracked Delivery`,
     description:
-      "Changed your mind? Enjoy simple and easy returns with our return policy.",
-    offset: "md:translate-y-4",
-    icon: (
-      <svg
-        className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-        <path d="M3 3v5h5" />
-      </svg>
-    ),
+      `Dispatched within 1–2 business days in secure protective packaging with live real-time tracking straight to your door.`,
+  },
+  {
+    iconEmoji: "⭐",
+    title: `${siteConfig.trialPeriod}-Day Happy Tail Guarantee`,
+    description:
+      "If for any reason you or your pet are not 100% delighted, our concierge team will make it right with an easy refund.",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="features">
+    <section className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Centered Pill Badge */}
-        <div className="flex justify-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center justify-center bg-[#182825] text-white px-6 sm:px-7 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:bg-secondary transition-all duration-300 cursor-default">
-            Explore Our Features
+        {/* Section Header */}
+        <div className="text-left max-w-3xl mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-neutral-bg px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
+            <span className="text-xs">🐾</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+              WHY PET PARENTS TRUST US
+            </span>
           </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
+            Crafted for Comfort, <span className="italic text-secondary font-serif">Engineered for Joy</span>
+          </h2>
+
+          <p className="text-neutral-text/75 text-sm sm:text-base leading-relaxed">
+            Every product in our catalog meets high standards of animal welfare, safety, and durability.
+          </p>
         </div>
 
-        {/* 3-Card Features Showcase */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch pt-2 pb-6">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className={`bg-white rounded-3xl sm:rounded-[2.5rem] p-7 sm:p-9 md:p-10 border border-stone-200/70 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col items-center text-center group ${feature.offset}`}
-            >
-              {/* Feature Icon Container */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#182825] flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-sm group-hover:bg-secondary transition-colors duration-300 flex-shrink-0">
-                {feature.icon}
+        {/* 2-Column Showcase with /img/feature.jpg */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          {/* Left: Feature Image Card (5 cols) */}
+          <div className="lg:col-span-5 relative w-full">
+            <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] w-full rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl border border-stone-200/80 bg-stone-100 group">
+              <img
+                src="/img/feature.jpg"
+                alt="Pet Supplies Quality & Care"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src = "/img/hero.jpg";
+                }}
+              />
+              
+              {/* Floating Badge */}
+              <div className="absolute bottom-6 left-6 right-6 bg-primary/95 backdrop-blur-md text-white p-5 rounded-2xl border border-white/10 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-secondary text-white flex items-center justify-center text-xl flex-shrink-0">
+                    🐾
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold font-serif">Certified Pet Quality</div>
+                    <div className="text-[0.68rem] text-white/75">Backed by our 14-day Happy Tail guarantee</div>
+                  </div>
+                </div>
               </div>
-
-              {/* Horizontal Divider Line */}
-              <div className="w-full border-t border-stone-200/80 mb-6 sm:mb-7" />
-
-              {/* Feature Title */}
-              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
-                {feature.title}
-              </h3>
-
-              {/* Feature Description */}
-              <p className="text-neutral-text/75 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto">
-                {feature.description}
-              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: 4 Feature Benefit Cards (7 cols) */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className="bg-neutral-bg rounded-2xl sm:rounded-3xl p-6 border border-stone-200/80 shadow-xs hover:shadow-lg hover:border-secondary/50 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-stone-200 text-2xl flex items-center justify-center mb-4 shadow-xs group-hover:scale-105 transition-transform">
+                    {feature.iconEmoji}
+                  </div>
+                  <h3 className="font-serif text-base sm:text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-text/75 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>

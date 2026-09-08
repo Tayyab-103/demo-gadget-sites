@@ -1,10 +1,10 @@
 {
-  "Product": "Pet Store",
-  "Processor": "Synovus Celero",
-  "brandName": "Whisker Vale Pet Mercantile",
-  "websiteUrl": "WhiskerValePetMercantile.com",
-  "email": "support@whiskervalepetmercantile.com",
-  "descriptor": "WhiskerValePetMercanti",
+  "Product": "Pet Shops, Pet Food & Supplies",
+  "Processor": "Quantum",
+  "brandName": "Tailsworth Pet Supply Collective",
+  "websiteUrl": "TailsworthPetSupplyCollective.com",
+  "email": "support@tailsworthpetsupplycollective.com",
+  "descriptor": "TailsworthPetSupplyCol",
   "corpName": "Starpath Marketing Co.",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
@@ -15,12 +15,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#182825",
+    "primaryColor": "#3B2314",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#E07A5F",
+    "secondaryColor": "#16A34A",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#FAF8F5",
-    "neutralTextColor": "#24201D",
+    "neutralBgColor": "#FBFBFA",
+    "neutralTextColor": "#3B2314",
     "fontFamily": "Montserrat"
   }
 }

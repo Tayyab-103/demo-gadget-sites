@@ -29,7 +29,7 @@ export default function CartDrawer() {
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/5 flex items-center justify-between">
+        <div className="p-6 border-b border-black/5 flex items-center justify-between bg-neutral-bg">
           <div className="flex items-center gap-2">
             <span className="text-xl">🐾</span>
             <h3 className="m-0 text-lg font-black text-primary tracking-tight uppercase">Your Pet Cart</h3>
@@ -48,12 +48,12 @@ export default function CartDrawer() {
             <div className="text-center py-16">
               <div className="text-5xl mb-4">🐶</div>
               <h4 className="text-base font-bold text-primary mb-1">Your cart is empty</h4>
-              <p className="text-neutral-text/50 text-xs">Treat your furry friend to our curated essentials.</p>
+              <p className="text-neutral-text/60 text-xs">Treat your companion to our curated pet supplies.</p>
               <button
-                className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-secondary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer"
+                className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Shop Pet Essentials
+                Shop Pet Supplies
               </button>
             </div>
           ) : (
@@ -62,7 +62,7 @@ export default function CartDrawer() {
               const tierIndex = bundles ? bundles.findIndex((b) => b.quantity === item.Qty) : -1;
               const canDecrease = bundles ? tierIndex > 0 : item.Qty > 1;
               const canIncrease = bundles
-                ? tierIndex > -1 && tierIndex < item.EnableMaxqty - 1
+                ? tierIndex > -1 && tierIndex < (item.EnableMaxqty || 8) - 1
                 : true;
 
               const handleDecrease = () => {
@@ -82,13 +82,13 @@ export default function CartDrawer() {
               };
 
               return (
-                <div className="flex gap-4 pb-5 mb-5 border-b border-black/5 items-start relative group" key={item.Id}>
+                <div className="flex gap-4 pb-5 mb-5 border-b border-stone-100 items-start relative group" key={item.Id}>
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-2xl bg-neutral-bg border border-black/5 flex-shrink-0"
+                    className="w-[70px] h-[70px] object-cover rounded-2xl bg-neutral-bg border border-stone-200 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/100x100?text=Pet+Item";
+                      e.currentTarget.src = "/img/hero1.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">
@@ -99,11 +99,11 @@ export default function CartDrawer() {
 
                     <div className="flex items-center justify-between gap-3">
                       {/* Stepper Controls */}
-                      <div className="flex items-center gap-1.5 bg-[#FAF8F5] p-1 rounded-xl border border-black/5">
+                      <div className="flex items-center gap-1.5 bg-neutral-bg p-1 rounded-xl border border-stone-200">
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg hover:border-secondary/20 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-stone-200 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
@@ -111,7 +111,7 @@ export default function CartDrawer() {
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg hover:border-secondary/20 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-stone-200 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
@@ -123,7 +123,7 @@ export default function CartDrawer() {
 
                   <button
                     onClick={() => removeFromCart(item.Id)}
-                    className="bg-transparent border-none text-neutral-text/30 hover:text-red-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
+                    className="bg-transparent border-none text-neutral-text/40 hover:text-red-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
                     aria-label="Remove item"
                   >
                     &times;
@@ -135,17 +135,17 @@ export default function CartDrawer() {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-6 border-t border-black/5 bg-[#FAF8F5]">
+          <div className="p-6 border-t border-stone-200 bg-neutral-bg">
             <div className="flex items-center justify-between mb-6">
               <span className="font-black text-primary uppercase text-xs tracking-wider">Subtotal</span>
-              <span className="font-black text-xl text-primary">
+              <span className="font-black text-xl text-primary font-serif">
                 ${getCartTotal()}
               </span>
             </div>
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-3"
+              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-3"
               onClick={() => setIsCartOpen(false)}
             >
               <span>Proceed to Checkout</span>
@@ -160,9 +160,9 @@ export default function CartDrawer() {
             </button>
 
             {/* Payment Trust Badges */}
-            <div className="flex flex-col items-center gap-2 pt-3 border-t border-black/5">
-              <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
-                <span className="text-emerald-600">🔒</span>
+            <div className="flex flex-col items-center gap-2 pt-3 border-t border-stone-200">
+              <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/70 font-semibold">
+                <span className="text-secondary">🔒</span>
                 <span>Guaranteed Safe &amp; Secure Checkout</span>
               </div>
               <div className="flex items-center gap-2">

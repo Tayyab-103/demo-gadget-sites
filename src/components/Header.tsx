@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
@@ -12,12 +13,13 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Products" },
+  { href: "/shop", label: "Pet Supplies" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const { toggleCart, getCartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -25,6 +27,13 @@ export default function Header() {
 
   const headerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const isLinkActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || (pathname ? pathname.startsWith(`${href}/`) : false);
+  };
 
   const trimmedQuery = query.trim().toLowerCase();
   const filteredProducts = trimmedQuery
@@ -79,26 +88,26 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md transition-all duration-300 border-b border-black/[0.04] w-full"
+      className="sticky top-0 z-50 bg-[#543625] text-white backdrop-blur-md transition-all duration-300 border-b border-black/15 shadow-md w-full"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5 sm:py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4">
         
-        {/* Left: Luxury Boutique Logo (Circular Emblem + Brand & Subtitle) */}
+        {/* Left: Brand Logo (Emblem + Title & Subtitle) */}
         <Link
           href="/"
           onClick={closeAll}
           className="flex items-center gap-2.5 sm:gap-3.5 group flex-shrink-0"
           style={{ textDecoration: "none" }}
         >
-          {/* Circular Luxury Emblem Icon */}
-          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#182825] text-[#FAF8F5] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/10 flex-shrink-0">
+          {/* Circular Emblem Icon */}
+          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#16A34A] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/20 flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               className="w-5 h-5 sm:w-6 sm:h-6 text-white"
             >
-              {/* Luxury Pet Paw Emblem */}
+              {/* Pet Paw Emblem */}
               <circle cx="8.5" cy="5.5" r="1.7" />
               <circle cx="15.5" cy="5.5" r="1.7" />
               <circle cx="5.5" cy="10" r="1.7" />
@@ -107,37 +116,44 @@ export default function Header() {
             </svg>
           </div>
 
-          {/* Typography: Brand Title & Small Uppercase Descriptor */}
+          {/* Typography: Dynamic Brand Title & Subtitle */}
           <div className="flex flex-col">
-            <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-primary leading-tight">
-              Whisker &amp; Co.
+            <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-white leading-tight">
+              {siteConfig.brandName}
             </span>
-            <span className="text-[0.55rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-neutral-text/55 -mt-0.5">
-              LUXURY PET BOUTIQUE
+            <span className="text-[0.55rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.22em] text-[#16A34A] -mt-0.5">
+              PET SHOPS, FOOD &amp; SUPPLIES
             </span>
           </div>
         </Link>
 
-        {/* Center: Clean, Minimalist Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-neutral-text/80 hover:text-primary transition-colors duration-200 tracking-normal relative py-1"
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Center: Navigation Links with Active Indicator */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 bg-black/10 px-4 py-1.5 rounded-full border border-white/10">
+          {navLinks.map((link) => {
+            const active = isLinkActive(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-semibold transition-all duration-200 tracking-normal relative py-1.5 px-4 rounded-full ${
+                  active
+                    ? "bg-[#16A34A] text-white shadow-sm font-bold"
+                    : "text-white/85 hover:text-[#16A34A] hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Right: Clean Search & Luxury Shopping Bag Outline Icons */}
+        {/* Right: Search & Shopping Cart */}
         <div className="flex items-center gap-3.5 sm:gap-6 flex-shrink-0">
-          {/* Search Outline Icon */}
+          {/* Search Button */}
           <button
             onClick={toggleSearch}
-            className="p-1 text-primary hover:text-secondary transition-colors cursor-pointer bg-transparent border-none"
-            aria-label="Search items"
+            className="p-1.5 text-white hover:text-[#16A34A] transition-colors cursor-pointer bg-transparent border-none"
+            aria-label="Search pet products"
             aria-expanded={isSearchOpen}
           >
             <svg
@@ -147,7 +163,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.8"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -156,10 +172,10 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Shopping Bag Outline Icon with Tiny Count Badge */}
+          {/* Shopping Bag Button with Badge */}
           <button
             onClick={toggleCart}
-            className="p-1 text-primary hover:text-secondary transition-colors cursor-pointer relative bg-transparent border-none"
+            className="p-1.5 text-white hover:text-[#16A34A] transition-colors cursor-pointer relative bg-transparent border-none"
             aria-label="Shopping Cart"
           >
             <svg
@@ -169,7 +185,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.8"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -178,16 +194,16 @@ export default function Header() {
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
 
-            {/* Micro Badge Count */}
-            <span className="absolute -top-1 -right-1 bg-[#182825] text-white rounded-full w-4 h-4 text-[0.62rem] font-bold flex items-center justify-center border border-[#FAF8F5] shadow-xs">
+            {/* Cart Count Badge */}
+            <span className="absolute -top-1 -right-1 bg-[#16A34A] text-white rounded-full w-4 h-4 text-[0.62rem] font-bold flex items-center justify-center border border-[#543625] shadow-xs">
               {getCartCount()}
             </span>
           </button>
 
-          {/* Mobile Hamburger Menu Button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-1 text-primary hover:text-secondary cursor-pointer bg-transparent border-none"
+            className="lg:hidden p-1.5 text-white hover:text-[#16A34A] cursor-pointer bg-transparent border-none"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -207,25 +223,32 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu with Active Highlights */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#FAF8F5] border-t border-black/[0.06] shadow-xl px-6 py-6 flex flex-col gap-3 transition-all animate-fadeIn">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={closeAll}
-              className="text-base font-medium text-neutral-text/90 hover:text-primary py-2 border-b border-black/[0.04] last:border-0"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="lg:hidden bg-[#3B2314] text-white border-t border-white/10 shadow-2xl px-6 py-6 flex flex-col gap-2 transition-all animate-fadeIn">
+          {navLinks.map((link) => {
+            const active = isLinkActive(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={closeAll}
+                className={`text-base font-semibold py-2.5 px-4 rounded-xl transition-all ${
+                  active
+                    ? "bg-[#16A34A] text-white font-bold shadow-xs"
+                    : "text-white/90 hover:text-[#16A34A] hover:bg-white/5"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/#shop"
             onClick={closeAll}
-            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#182825] text-white py-3.5 rounded-full text-xs font-bold uppercase tracking-widest"
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#16A34A] text-white hover:bg-white hover:text-primary py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-md"
           >
-            <span>Explore Collection</span>
+            <span>Explore Pet Catalog</span>
             <span>→</span>
           </Link>
         </div>
@@ -233,7 +256,7 @@ export default function Header() {
 
       {/* Search Dropdown Overlay */}
       {isSearchOpen && (
-        <div className="bg-[#FAF8F5] border-t border-black/[0.06] shadow-xl px-6 py-6 max-h-[75vh] overflow-y-auto">
+        <div className="bg-[#FAF8F5] text-[#3B2314] border-t border-black/10 shadow-2xl px-6 py-6 max-h-[75vh] overflow-y-auto">
           <div className="max-w-3xl mx-auto">
             <div className="relative">
               <svg
@@ -246,7 +269,7 @@ export default function Header() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-text/40"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3B2314]/40"
               >
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -256,8 +279,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search luxury grooming, interactive smart toys, orthopedic beds..."
-                className="w-full pl-12 pr-4 py-3.5 text-sm bg-white border border-black/10 rounded-full focus:outline-none focus:border-[#182825] transition-colors text-neutral-text placeholder:text-neutral-text/40 shadow-xs"
+                placeholder="Search carrier backpacks, chew toys, self-cleaning litter scoops..."
+                className="w-full pl-12 pr-4 py-3.5 text-sm bg-white border border-stone-300 rounded-full focus:outline-none focus:border-[#16A34A] transition-colors text-[#3B2314] placeholder:text-[#3B2314]/40 shadow-xs"
               />
             </div>
 
@@ -271,7 +294,7 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-4 p-3 rounded-2xl bg-white hover:border-[#182825] border border-black/5 transition-all shadow-xs"
+                        className="flex items-center gap-4 p-3 rounded-2xl bg-white hover:border-[#16A34A] border border-stone-200 transition-all shadow-xs"
                       >
                         <img
                           src={product.image}
@@ -279,17 +302,17 @@ export default function Header() {
                           className="w-12 h-12 rounded-xl object-cover bg-neutral-100 flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-bold text-primary truncate">{product.name}</div>
-                          <div className="text-[0.68rem] text-secondary font-bold uppercase tracking-wider">{product.category}</div>
+                          <div className="text-sm font-bold text-[#3B2314] truncate">{product.name}</div>
+                          <div className="text-[0.68rem] text-[#16A34A] font-bold uppercase tracking-wider">{product.category}</div>
                         </div>
-                        <div className="text-sm font-bold text-primary flex-shrink-0">
+                        <div className="text-sm font-bold text-[#3B2314] flex-shrink-0">
                           ${price}
                         </div>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="text-xs text-neutral-text/50 text-center py-6">
+                  <p className="text-xs text-[#3B2314]/60 text-center py-6">
                     No pet items found for &ldquo;{query}&rdquo;.
                   </p>
                 )}

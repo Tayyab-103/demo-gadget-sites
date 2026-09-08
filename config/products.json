@@ -1,15 +1,15 @@
 [
   {
     "id": "product1",
-    "name": "Pet Grooming Brush",
-    "image": "/img/products/brush.jpg",
+    "name": "Pet Carrier Backpack for Small Dogs and Cats",
+    "image": "/img/products/product1.jpg",
     "images": [
-      "/img/products/brush.jpg",
-      "/img/products/brush2.jpg",
-      "/img/products/brush3.jpg"
+      "/img/products/product1.jpg",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
-    "description": "Ergonomic slicker brush engineered with fine stainless steel massage beads and a one-click retractable bristle release. Effortlessly removes loose undercoat shedding and dander without scratching delicate pet skin.",
-    "category": "Grooming & Coat Care",
+    "description": "The Pet Carrier Backpack for Small Dogs and Cats offers a secure, comfortable, and convenient solution for traveling with your small pet. Made with breathable mesh fabric and adjustable padded shoulder straps, this backpack ensures proper ventilation and a snug fit for both you and your pet. It features an innovative transparent bubble window that allows your pet to see the outside world, reducing anxiety during travel, while the integrated safety leash prevents accidental escapes. Perfect for vet visits, daily errands, or weekend adventures, this carrier keeps your furry friend close and protected while freeing up your hands for effortless carrying.",
+    "category": "Pet Carrier Backpack",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "6.95",
@@ -27,14 +27,14 @@
   {
     "id": "product2",
     "name": "Chew Toys for Small Dogs",
-    "image": "/img/products/chew-toy.jpg",
+    "image": "/img/products/product2.jpg",
     "images": [
-      "/img/products/chew-toy.jpg",
-      "/img/products/chew-toy2.jpg",
-      "/img/products/chew-toy3.jpg"
+      "/img/products/product2.jpg",
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
-    "description": "Interactive chew toys with natural rubber material and appealing texture satisfy your small dog's natural chewing instincts, reduce anxiety, and promote healthy teeth and gums through engaging play and stress-relieving chewing. Perfect for teething puppies and adult dogs seeking enrichment and dental stimulation.",
-    "category": "Chew Toys",
+    "description": "The Ultimate Dental Care Combo for Small Dogs: Keep your pup's teeth sparkling clean with our all-in-one dental care solution! This ultimate bundle includes a dental chew toy to satisfy natural chewing instincts and promote healthy teeth, along with a self-cleaning litter box scoop for effortless maintenance. Both products are made with high-quality, pet-safe materials and designed for maximum convenience and effectiveness. Perfect for busy pet parents seeking stress-free grooming and hygiene solutions for their furry friends.",
+    "category": "Pet Dental Care",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "11.95",
@@ -51,15 +51,15 @@
   },
   {
     "id": "product3",
-    "name": "Adjustable Pet Collar for Small Dogs and Cats",
-    "image": "/img/products/collar.jpg",
+    "name": "Self-Cleaning Litter Box Scoop",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "/img/products/collar.jpg",
-      "/img/products/collar2.jpg",
-      "/img/products/collar3.jpg"
+      "/img/products/product3.jpg",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
-    "description": "Adjustable Pet Collar",
-    "category": "Collars and Harnesses",
+    "description": "The Self-Cleaning Litter Box Scoop features a durable, lightweight aluminum alloy scooping shovel with widely spaced slots that efficiently sift through clumping cat litter, removing waste while leaving clean litter behind. The long, ergonomic handle with a comfortable non-slip grip keeps your hands safely away from soiled litter, and the lightweight design makes scooping effortless. Ideal for daily maintenance of both standard and self-cleaning litter boxes, this scoop helps maintain a hygienic environment for your cat with ease.",
+    "category": "Litter Box Scoop",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "14.95",

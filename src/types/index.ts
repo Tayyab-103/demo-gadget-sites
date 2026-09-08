@@ -5,17 +5,17 @@ export interface Bundle {
 
 export interface Product {
   id: string;
-  stickyId: number;
+  stickyId?: number;
   name: string;
   description: string;
   image: string;
   images?: string[];
-  showIngredients: boolean;
-  ingredientsImage: string;
+  showIngredients?: boolean;
+  ingredientsImage?: string;
   category: string;
-  billingModel: number;
+  billingModel?: number;
   ssPrice: string;
-  ssShipping: string;
+  ssShipping?: string;
   bundles?: Bundle[];
 }
 
@@ -26,10 +26,10 @@ export interface CartItem {
   Price: number | string;
   Qty: number;
   Total: string;
-  billModel: number;
-  StickyId: number;
-  trlPrice: string;
-  EnableMaxqty: number;
+  billModel?: number;
+  StickyId?: number;
+  trlPrice?: string;
+  EnableMaxqty?: number;
   Label: string;
   bundles?: Bundle[];
 }
@@ -45,6 +45,8 @@ export interface ThemeConfig {
 }
 
 export interface SiteConfig {
+  Product?: string;
+  Processor?: string;
   brandName: string;
   websiteUrl: string;
   email: string;

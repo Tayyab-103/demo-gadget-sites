@@ -12,34 +12,31 @@ export default function NewsletterPopup() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
+    // Check if dismissed previously
     const popupDismissed = localStorage.getItem("newsletter_dismissed");
     if (popupDismissed) return;
 
-    let hasSpentTimeOnPage = false;
-    let hasShownScrollIntent = false;
+    // Show like a floating cookie modal after a brief delay or scroll
     let isPopupShown = false;
 
-    const showWhenReady = () => {
-      if (hasSpentTimeOnPage && hasShownScrollIntent && !isPopupShown) {
+    const triggerPopup = () => {
+      if (!isPopupShown) {
         isPopupShown = true;
         setIsVisible(true);
       }
     };
 
+    const timer = window.setTimeout(() => {
+      triggerPopup();
+    }, 4000);
+
     const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight * 0.6) {
-        hasShownScrollIntent = true;
-        showWhenReady();
+      if (window.scrollY >= 350) {
+        triggerPopup();
       }
     };
 
-    const timer = window.setTimeout(() => {
-      hasSpentTimeOnPage = true;
-      showWhenReady();
-    }, 12000);
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
 
     return () => {
       window.clearTimeout(timer);
@@ -47,7 +44,7 @@ export default function NewsletterPopup() {
     };
   }, []);
 
-  const handleClose = () => {
+  const handleDismiss = () => {
     setIsVisible(false);
     localStorage.setItem("newsletter_dismissed", "true");
   };
@@ -66,80 +63,91 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-9999 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl w-full max-w-[480px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl">
-        
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/90 backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center text-base cursor-pointer z-20 text-neutral-800 hover:bg-secondary hover:text-white transition-all shadow-md"
-          aria-label="Close newsletter popup"
-        >
-          ✕
-        </button>
+    <div
+      role="dialog"
+      aria-label="Exclusive Pet Discount Offer"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-sm sm:max-w-md w-[calc(100%-2rem)] sm:w-[420px] animate-fadeIn transition-all duration-500 ease-out"
+    >
+      <div className="bg-white/95 backdrop-blur-md rounded-3xl border border-stone-200/90 shadow-2xl p-5 sm:p-6 relative overflow-hidden flex flex-col gap-3.5">
+        {/* Decorative Top Ambient Accent */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary" />
 
-        {/* Visual Header with Pet */}
-        <div className="h-[200px] relative">
-          <img
-            src="/img/contact1.png"
-            alt="Adorable pet"
-            className="w-full h-full object-cover absolute inset-0"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-[#182825]/40 to-[#182825]/90" />
-
-          <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="text-[0.68rem] uppercase tracking-[0.2em] font-black text-secondary block mb-1">
-              🐾 VIP Pet Parent Club
-            </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight leading-tight">
-              Unlock 15% Off Your First Pet Bundle!
-            </h3>
+        {/* Header Row: Badge & Close Button */}
+        <div className="flex items-center justify-between gap-3 pt-1">
+          <div className="inline-flex items-center gap-1.5 bg-secondary/15 border border-secondary/30 px-3 py-1 rounded-full text-[0.68rem] font-black uppercase tracking-wider text-secondary">
+            <span>🐾</span>
+            <span>VIP Pet Club • Save 15%</span>
           </div>
+
+          <button
+            onClick={handleDismiss}
+            aria-label="Dismiss offer"
+            className="w-7 h-7 rounded-full bg-stone-100 hover:bg-stone-200 text-neutral-text/60 hover:text-primary flex items-center justify-center text-xs transition-colors cursor-pointer border-none"
+          >
+            ✕
+          </button>
         </div>
 
-        {/* Form Body */}
-        <div className="p-6 sm:p-8 bg-white">
-          {submitted ? (
-            <div className="text-center py-6">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mx-auto mb-3 font-bold">
-                ✓
-              </div>
-              <h4 className="text-primary font-black text-xl mb-1">Welcome to the Pack!</h4>
-              <p className="text-neutral-text/70 text-xs leading-relaxed">
-                Check your inbox for your 15% promotional discount code.
+        {/* Content Body */}
+        {submitted ? (
+          <div className="py-4 text-center flex flex-col items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-emerald-100 text-secondary flex items-center justify-center text-xl font-bold mb-2 shadow-xs">
+              ✓
+            </div>
+            <h4 className="text-primary font-serif font-bold text-lg mb-1">
+              Welcome to the Pack!
+            </h4>
+            <p className="text-neutral-text/75 text-xs leading-relaxed max-w-xs">
+              Check your inbox for your 15% promotional discount voucher code for {siteConfig.brandName}.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-primary leading-tight mb-1">
+                Unlock 15% Off Pet Supplies
+              </h3>
+              <p className="text-neutral-text/75 text-xs leading-relaxed">
+                Join our pet parent collective for veterinarian care guidance, exclusive bundle releases, and an instant <strong>15% voucher</strong>.
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-xs sm:text-sm text-neutral-text/75 leading-relaxed mb-6">
-                Join thousands of loving dog and cat owners. Subscribe to get veterinarian care tips, exclusive bundle drops, and an instant <strong>15% discount</strong> on today&apos;s order.
-              </p>
 
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-secondary transition-all text-neutral-text bg-[#FAF8F5] placeholder:text-neutral-text/40"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
+            {/* Email Field */}
+            <div className="relative">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="w-full bg-neutral-bg border border-stone-300 rounded-full px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutral-text placeholder:text-neutral-text/40 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all shadow-xs"
+              />
+            </div>
 
+            {/* Action Buttons (Cookie-Modal Style) */}
+            <div className="flex items-center gap-2 pt-1">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-3.5 px-6 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-primary font-black text-[0.7rem] uppercase tracking-wider py-2.5 sm:py-3 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer text-center whitespace-nowrap"
               >
-                <span>Claim 15% Pet Voucher</span>
+                <span>Claim 15% Off</span>
                 <span>🐾</span>
               </button>
 
-              <span className="block text-center text-[0.68rem] text-neutral-text/40 mt-3">
-                No spam ever. 100% pet-friendly privacy policy.
-              </span>
-            </form>
-          )}
-        </div>
+              <button
+                type="button"
+                onClick={handleDismiss}
+                className="px-3.5 py-2.5 sm:py-3 rounded-full text-[0.68rem] font-bold text-neutral-text/60 hover:text-primary hover:bg-stone-100 transition-colors cursor-pointer bg-transparent border border-stone-200"
+              >
+                Maybe later
+              </button>
+            </div>
+
+            <span className="text-center text-[0.62rem] text-neutral-text/50">
+              No spam ever. 100% pet-friendly privacy.
+            </span>
+          </form>
+        )}
       </div>
     </div>
   );

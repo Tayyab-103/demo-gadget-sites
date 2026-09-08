@@ -2,23 +2,25 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
-import { Product } from "@/types";
+import { SiteConfig, Product } from "@/types";
 
+const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
 const cardMeta: Record<string, { badge: string; badgeBg: string }> = {
   product1: {
-    badge: "Bestseller",
-    badgeBg: "bg-[#182825] text-white",
+    badge: "Travel Essential",
+    badgeBg: "bg-primary text-white",
   },
   product2: {
-    badge: "Smart Toy",
+    badge: "Dental Care",
     badgeBg: "bg-secondary text-white",
   },
   product3: {
-    badge: "Top Rated",
-    badgeBg: "bg-[#182825] text-white",
+    badge: "Bestseller",
+    badgeBg: "bg-primary text-white",
   },
 };
 
@@ -32,24 +34,24 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="shop">
+    <section className="py-12 sm:py-16 md:py-20 bg-neutral-bg relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
             <span className="text-xs">🐾</span>
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              WHISKER VALE MERCANTILE CATALOG
+              {siteConfig.brandName.toUpperCase()} CATALOG
             </span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Curated <span className="italic text-secondary font-serif">Pet Essentials</span>
+            Curated <span className="italic text-secondary font-serif">Pet Supplies &amp; Essentials</span>
           </h2>
 
-          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            Thoughtfully engineered for safety, comfort, and everyday joy.
+          <p className="text-neutral-text/75 text-sm sm:text-base leading-relaxed">
+            Thoughtfully engineered for pet comfort, joyful play, and daily convenience.
           </p>
         </div>
 
@@ -70,30 +72,55 @@ export default function ProductGrid() {
 
             const meta = cardMeta[product.id] || {
               badge: "Essential",
-              badgeBg: "bg-[#182825] text-white",
+              badgeBg: "bg-primary text-white",
             };
             const isLiked = liked[product.id];
+
+            // Secondary image for hover effect
+            const primaryImage = product.images && product.images[0] ? product.images[0] : product.image;
+            const secondaryImage = product.images && product.images.length > 1
+              ? product.images[1]
+              : product.image;
 
             return (
               <div
                 key={product.id}
-                className="bg-white rounded-[2rem] border border-stone-200/60 p-5 sm:p-6 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-[2rem] border border-stone-200/80 p-5 sm:p-6 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* 1:1 Aspect Ratio Image Container */}
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5] mb-5">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/600x600?text=Pet+Product";
-                      }}
-                    />
+                  {/* 1:1 Aspect Ratio Image Container with Hover Swap to Secondary Image */}
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-bg mb-5 border border-stone-100">
+                    <Link href={`/product/${product.id}`} className="block w-full h-full relative">
+                      {/* Primary Image */}
+                      <img
+                        src={primaryImage}
+                        alt={product.name}
+                        className={`w-full h-full object-cover transition-all duration-500 ${
+                          secondaryImage !== primaryImage
+                            ? "group-hover:opacity-0 group-hover:scale-105"
+                            : "group-hover:scale-105"
+                        }`}
+                        onError={(e) => {
+                          e.currentTarget.src = "/img/hero1.jpg";
+                        }}
+                      />
+
+                      {/* Secondary Image on Hover */}
+                      {secondaryImage && secondaryImage !== primaryImage && (
+                        <img
+                          src={secondaryImage}
+                          alt={`${product.name} alternate view`}
+                          className="absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                          onError={(e) => {
+                            e.currentTarget.src = primaryImage;
+                          }}
+                        />
+                      )}
+                    </Link>
 
                     {/* Top Left Badge */}
                     <span
-                      className={`absolute top-3.5 left-3.5 ${meta.badgeBg} text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm`}
+                      className={`absolute top-3.5 left-3.5 ${meta.badgeBg} text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm pointer-events-none z-10`}
                     >
                       {meta.badge}
                     </span>
@@ -102,22 +129,12 @@ export default function ProductGrid() {
                     <button
                       onClick={(e) => toggleLike(product.id, e)}
                       aria-label="Save to favorites"
-                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-sm shadow-sm hover:scale-110 transition-all cursor-pointer border border-black/[0.04]"
+                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-sm shadow-sm hover:scale-110 transition-all cursor-pointer border border-black/[0.06] z-10"
                     >
                       <span className={isLiked ? "text-red-500" : "text-stone-400 hover:text-red-500"}>
                         {isLiked ? "♥" : "♡"}
                       </span>
                     </button>
-                  </div>
-
-                  {/* Rating Block */}
-                  <div className="flex items-center gap-1.5 mb-2.5">
-                    <div className="flex text-amber-500 text-xs">
-                      {"★★★★★"}
-                    </div>
-                    <span className="text-xs font-bold text-neutral-text/75">
-                      5.0 <span className="text-neutral-text/40 font-normal">(380)</span>
-                    </span>
                   </div>
 
                   {/* Title */}
@@ -127,7 +144,7 @@ export default function ProductGrid() {
                     </Link>
                   </h3>
 
-                  {/* Price Range: 1 Unit Pack - 8 Unit Pack */}
+                  {/* Price Range */}
                   <div className="flex items-baseline gap-2 mb-3">
                     <span className="text-xl sm:text-2xl font-bold text-primary font-serif">
                       ${minPrice} – ${maxPrice}
@@ -136,9 +153,9 @@ export default function ProductGrid() {
 
                   {/* Savings Tag */}
                   <div className="mb-6">
-                    <span className="inline-flex items-center gap-1 bg-[#FAF8F5] border border-stone-200/60 text-secondary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
+                    <span className="inline-flex items-center gap-1 bg-neutral-bg border border-stone-200/80 text-secondary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
                       <span>✓</span>
-                      <span>1 to 8 Unit Pack Tiers</span>
+                      <span>1 to 8 Unit Pack Volume Tiers</span>
                     </span>
                   </div>
                 </div>
@@ -147,7 +164,7 @@ export default function ProductGrid() {
                 <div className="pt-2">
                   <Link
                     href={`/product/${product.id}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-primary transition-all duration-300 py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg"
                   >
                     <span>View Product &amp; Tiers</span>
                     <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

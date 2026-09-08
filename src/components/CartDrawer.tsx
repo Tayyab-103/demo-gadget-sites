@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 
@@ -91,11 +92,15 @@ export default function CartDrawer() {
                   className="flex gap-4 pb-5 mb-5 border-b border-slate-100 items-start relative group bg-[#FAF8F6] p-4 rounded-2xl border border-[#C59B7E]/20"
                   key={item.Id}
                 >
-                  <img
-                    src={item.Image}
-                    alt={item.Name}
-                    className="w-[72px] h-[72px] object-cover rounded-xl bg-slate-900 flex-shrink-0 border border-[#C59B7E]/20"
-                  />
+                  <div className="w-[72px] h-[72px] rounded-xl overflow-hidden bg-slate-900 flex-shrink-0 border border-[#C59B7E]/20 relative">
+                    <Image
+                      src={item.Image}
+                      alt={item.Name}
+                      width={72}
+                      height={72}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-serif font-bold text-xs sm:text-sm text-[#18121E] mb-0.5 truncate tracking-tight">
                       {item.Name}

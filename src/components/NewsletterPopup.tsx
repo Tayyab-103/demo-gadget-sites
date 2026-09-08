@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -79,10 +80,11 @@ export default function NewsletterPopup() {
 
         {/* Visual Header */}
         <div className="h-[200px] relative">
-          <img
+          <Image
             src="/img/fashion-hero.jpg"
             alt="Rosethorne Fashion Atelier Couture"
-            className="w-full h-full object-cover absolute inset-0 opacity-85"
+            fill
+            className="object-cover opacity-85"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#18121E]/40 to-[#18121E]/95" />
 

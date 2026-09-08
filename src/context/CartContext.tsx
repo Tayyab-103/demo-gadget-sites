@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useContext, useState, useSyncExternalStore, ReactNode } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { Product, CartItem, SiteConfig } from "@/types";
 
@@ -21,47 +21,70 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-function loadCartFromStorage(): CartItem[] {
+let memoryCart: CartItem[] = [];
+let isLoadedFromStorage = false;
+const listeners = new Set<() => void>();
+
+function emitChange() {
+  listeners.forEach((l) => l());
+}
+
+function getStoredCart(): CartItem[] {
   if (typeof window === "undefined") return [];
-  try {
-    const savedCart = localStorage.getItem("cartPdtArr");
-    return savedCart ? JSON.parse(savedCart) : [];
-  } catch (e) {
-    console.error("Error parsing cart data from localStorage", e);
-    return [];
+  if (!isLoadedFromStorage) {
+    isLoadedFromStorage = true;
+    try {
+      const saved = localStorage.getItem("cartPdtArr");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          memoryCart = parsed;
+        }
+      }
+    } catch {
+      // ignore
+    }
   }
+  return memoryCart;
+}
+
+function updateCartStorage(newCart: CartItem[]) {
+  memoryCart = newCart;
+  if (typeof window !== "undefined") {
+    try {
+      localStorage.setItem("cartPdtArr", JSON.stringify(newCart));
+    } catch {
+      // ignore
+    }
+  }
+  emitChange();
+}
+
+function subscribeCart(listener: () => void) {
+  listeners.add(listener);
+  const handleStorage = (e: StorageEvent) => {
+    if (e.key === "cartPdtArr") {
+      isLoadedFromStorage = false;
+      getStoredCart();
+      emitChange();
+    }
+  };
+  window.addEventListener("storage", handleStorage);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener("storage", handleStorage);
+  };
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false);
-
-  // Load from localStorage only on client after mount, start with empty array
-  useEffect(() => {
-    try {
-      const savedCart = localStorage.getItem("cartPdtArr");
-      if (savedCart) {
-        const parsed = JSON.parse(savedCart);
-        if (Array.isArray(parsed)) {
-          setCart(parsed);
-        }
-      }
-    } catch (e) {
-      console.error("Error parsing cart data from localStorage", e);
-    }
-    setIsInitialized(true);
-  }, []);
-
-  // Save cart to localStorage whenever it changes (after initial mount)
-  useEffect(() => {
-    if (isInitialized) {
-      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-    }
-  }, [cart, isInitialized]);
+  const cart = useSyncExternalStore(
+    subscribeCart,
+    getStoredCart,
+    () => []
+  );
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
-    // If site configuration limits cart to one product
     const limitOne = siteConfig.oneProductCartLimit === "yes";
 
     if (limitOne) {
@@ -79,51 +102,47 @@ export function CartProvider({ children }: { children: ReactNode }) {
         Label: label,
         bundles: product.bundles
       };
-      setCart([newItem]);
+      updateCartStorage([newItem]);
       setIsCartOpen(true);
       return;
     }
 
-    setCart((prevCart) => {
-      const existingItemIndex = prevCart.findIndex((item) => item.Id === product.id);
+    const currentCart = memoryCart;
+    const existingIndex = currentCart.findIndex((item) => item.Id === product.id);
 
-      if (existingItemIndex > -1) {
-        // Update existing item
-        const updatedCart = [...prevCart];
-        const existingItem = updatedCart[existingItemIndex];
-        const newQty = existingItem.Qty + quantity;
-        
-        updatedCart[existingItemIndex] = {
-          ...existingItem,
-          Qty: newQty,
-          Total: (parseFloat(String(price)) * newQty).toFixed(2)
-        };
-        return updatedCart;
-      } else {
-        // Add new item
-        const newItem: CartItem = {
-          Id: product.id,
-          Name: product.name,
-          Image: product.image,
-          Price: price,
-          Qty: quantity,
-          Total: (parseFloat(String(price)) * quantity).toFixed(2),
-          billModel: product.billingModel,
-          StickyId: product.stickyId,
-          trlPrice: product.ssPrice,
-          EnableMaxqty: product.bundles ? product.bundles.length : 1,
-          Label: label,
-          bundles: product.bundles
-        };
-        return [...prevCart, newItem];
-      }
-    });
+    if (existingIndex > -1) {
+      const updated = [...currentCart];
+      const existingItem = updated[existingIndex];
+      const newQty = existingItem.Qty + quantity;
+      updated[existingIndex] = {
+        ...existingItem,
+        Qty: newQty,
+        Total: (parseFloat(String(price)) * newQty).toFixed(2)
+      };
+      updateCartStorage(updated);
+    } else {
+      const newItem: CartItem = {
+        Id: product.id,
+        Name: product.name,
+        Image: product.image,
+        Price: price,
+        Qty: quantity,
+        Total: (parseFloat(String(price)) * quantity).toFixed(2),
+        billModel: product.billingModel,
+        StickyId: product.stickyId,
+        trlPrice: product.ssPrice,
+        EnableMaxqty: product.bundles ? product.bundles.length : 1,
+        Label: label,
+        bundles: product.bundles
+      };
+      updateCartStorage([...currentCart, newItem]);
+    }
 
     setIsCartOpen(true);
   };
 
   const removeFromCart = (productId: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.Id !== productId));
+    updateCartStorage(memoryCart.filter((item) => item.Id !== productId));
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
@@ -132,33 +151,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    setCart((prevCart) =>
-      prevCart.map((item) => {
-        if (item.Id !== productId) return item;
-
-        // Snap to the real configured bundle tier price instead of unit price x qty,
-        // since sticky.io bundle pricing is non-linear per tier.
-        const matchedBundle = item.bundles?.find((b) => b.quantity === quantity);
-        if (matchedBundle) {
-          return {
-            ...item,
-            Qty: matchedBundle.quantity,
-            Price: (matchedBundle.price / matchedBundle.quantity).toFixed(2),
-            Total: matchedBundle.price.toFixed(2)
-          };
-        }
-
+    const updated = memoryCart.map((item) => {
+      if (item.Id !== productId) return item;
+      const matchedBundle = item.bundles?.find((b) => b.quantity === quantity);
+      if (matchedBundle) {
         return {
           ...item,
-          Qty: quantity,
-          Total: (parseFloat(String(item.Price)) * quantity).toFixed(2)
+          Qty: matchedBundle.quantity,
+          Price: (matchedBundle.price / matchedBundle.quantity).toFixed(2),
+          Total: matchedBundle.price.toFixed(2)
         };
-      })
-    );
+      }
+      return {
+        ...item,
+        Qty: quantity,
+        Total: (parseFloat(String(item.Price)) * quantity).toFixed(2)
+      };
+    });
+
+    updateCartStorage(updated);
   };
 
   const clearCart = () => {
-    setCart([]);
+    updateCartStorage([]);
   };
 
   const toggleCart = () => {

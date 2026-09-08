@@ -18,7 +18,7 @@ export default function ShopPage() {
           title={<>Couture Dresses &amp; Outerwear</>}
           subtitle="Explore pure 22-momme mulberry silk slip dresses, double-faced virgin wool cashmere coats, and corded Chantilly lace gala gowns."
           image="/img/fashion-hero.jpg"
-          currentLabel="Collection"
+          currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />
       </main>

@@ -2,15 +2,18 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[640px] sm:min-h-[720px] md:min-h-[800px] overflow-hidden bg-[#18121E] text-white flex items-center pt-32 sm:pt-36 md:pt-40 pb-20 sm:pb-24">
       {/* Background Image */}
-      <img
+      <Image
         src="/img/fashion-hero.jpg"
         alt="Rosethorne Fashion Atelier Couture Collection"
-        className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-85 select-none pointer-events-none"
+        fill
+        priority
+        className="object-cover object-[75%_center] sm:object-center opacity-85 select-none pointer-events-none"
       />
 
       {/* Gradient Fades */}

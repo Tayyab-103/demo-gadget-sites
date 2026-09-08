@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
@@ -121,9 +122,11 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                   href={`/product/${product.id}`}
                   className="relative block aspect-[4/3] sm:aspect-[1/1] overflow-hidden bg-slate-900"
                 >
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 

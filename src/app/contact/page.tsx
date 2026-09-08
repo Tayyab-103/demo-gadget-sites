@@ -22,7 +22,7 @@ export default function ContactPage() {
           title={<>Connect With {siteConfig.brandName}</>}
           subtitle="Inquiries regarding size matching, garment care, or private appointments? Our styling desk responds within 24 hours."
           image="/img/couture-garment-rail.jpg"
-          currentLabel="Concierge"
+          currentLabel="Contact"
         />
         <Contact />
       </main>

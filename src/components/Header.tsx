@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import siteConfigData from "../../config/site-config.json";
@@ -11,22 +12,31 @@ import { SiteConfig, Product } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
+const emptySubscribe = () => () => {};
+function useIsMounted() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+}
+
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Couture Collection" },
-  { href: "/about", label: "The Atelier" },
-  { href: "/contact", label: "Private Concierge" },
+  { href: "/shop", label: "Shop" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
   const { toggleCart, getCartCount } = useCart();
   const pathname = usePathname();
+  const mounted = useIsMounted();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -42,8 +52,9 @@ export default function Header() {
     : [];
 
   useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => setIsScrolled(window.scrollY > 15);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -104,9 +115,11 @@ export default function Header() {
         {/* Left: Brand Logo */}
         <Link href="/" onClick={closeAll} className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>
           {siteConfig.useImageLogo && siteConfig.logoImage ? (
-            <img
+            <Image
               src={siteConfig.logoImage}
               alt={siteConfig.brandName}
+              width={160}
+              height={36}
               className="max-h-8 sm:max-h-9 w-auto object-contain"
             />
           ) : (
@@ -258,11 +271,15 @@ export default function Header() {
                         onClick={closeAll}
                         className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-white/10 border border-transparent hover:border-[#C59B7E]/40 transition-all bg-[#221B2A]"
                       >
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-12 h-12 rounded-xl object-cover bg-black/20 flex-shrink-0"
-                        />
+                        <div className="w-12 h-12 rounded-xl overflow-hidden bg-black/20 flex-shrink-0 relative">
+                          <Image
+                            src={product.image}
+                            alt={product.name}
+                            width={48}
+                            height={48}
+                            className="w-12 h-12 object-cover"
+                          />
+                        </div>
                         <div className="flex-1 min-w-0">
                           <div className="text-xs sm:text-sm font-serif font-bold text-white truncate">{product.name}</div>
                           <div className="text-[0.62rem] text-[#C59B7E] truncate uppercase font-bold tracking-wider">{product.category}</div>

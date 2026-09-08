@@ -86,6 +86,35 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Navigation Pages */}
+          <div>
+            <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C59B7E]/20 pb-2">
+              Navigation
+            </h4>
+            <ul className="space-y-2.5 text-xs text-slate-300 font-light">
+              <li>
+                <Link href="/" className="hover:text-[#C59B7E] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#C59B7E] transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#C59B7E] transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Couture Repertoire */}
           <div>
             <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C59B7E]/20 pb-2">
@@ -94,7 +123,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-slate-300 font-light">
               {products.map((product) => (
                 <li key={product.id}>
-                  <Link href="/shop" className="hover:text-[#C59B7E] transition-colors">
+                  <Link href={`/product/${product.id}`} className="hover:text-[#C59B7E] transition-colors">
                     {product.name}
                   </Link>
                 </li>
@@ -102,46 +131,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Atelier Heritage */}
-          <div>
-            <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C59B7E]/20 pb-2">
-              The Atelier
-            </h4>
-            <ul className="space-y-2.5 text-xs text-slate-300 font-light">
-              <li>
-                <Link href="/about" className="hover:text-[#C59B7E] transition-colors">
-                  Our Paris-Austin Story
-                </Link>
-              </li>
-              <li>
-                <Link href="/#how-it-works" className="hover:text-[#C59B7E] transition-colors">
-                  The Couture Protocol
-                </Link>
-              </li>
-              <li>
-                <Link href="/#quality-promise" className="hover:text-[#C59B7E] transition-colors">
-                  14-Day Fit Guarantee
-                </Link>
-              </li>
-              <li>
-                <Link href="/#testimonials" className="hover:text-[#C59B7E] transition-colors">
-                  Editorial Patrons &amp; Reviews
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Private Concierge */}
+          {/* Private Concierge & Legal */}
           <div>
             <h4 className="font-serif font-bold text-sm text-white uppercase tracking-wider mb-4 border-b border-[#C59B7E]/20 pb-2">
               Private Concierge
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-300 font-light">
-              <li>
-                <Link href="/contact" className="hover:text-[#C59B7E] transition-colors">
-                  Styling Consultation Desk
-                </Link>
-              </li>
               <li>
                 <a href={`tel:${siteConfig.phone}`} className="hover:text-[#C59B7E] transition-colors">
                   {siteConfig.phone}

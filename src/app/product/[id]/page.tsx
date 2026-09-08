@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -180,9 +181,11 @@ export default function ProductDetail() {
                   </p>
 
                   <div className="bg-[#FAF8F6] border border-[#C59B7E]/20 rounded-2xl p-3.5 flex items-center justify-center">
-                    <img
+                    <Image
                       src={product.ingredientsImage}
                       alt={`${product.name} craftsmanship details`}
+                      width={480}
+                      height={260}
                       className="max-w-full h-auto rounded-xl max-h-[260px] object-cover bg-white p-1 border border-[#C59B7E]/20"
                     />
                   </div>

@@ -23,7 +23,7 @@ export default function AboutPage() {
           title={<>About {siteConfig.brandName}</>}
           subtitle="Parisian-inspired haute couture and noble fiber artistry. Dedicated to pure mulberry silk, virgin wool-cashmere tailoring, and bespoke Chantilly lace gowns."
           image="/img/fashion-atelier-craft.jpg"
-          currentLabel="The Atelier"
+          currentLabel="About"
         />
         <AboutUs />
         <HowItWorks />

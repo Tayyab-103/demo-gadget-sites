@@ -21,7 +21,7 @@ export default function AboutPage() {
           eyebrow="Studio Heritage"
           title={<>About {siteConfig.brandName}</>}
           subtitle="Dedicated to equipping painters, craft creators, and workshops with archival cotton canvases and vibrant fine art mediums."
-          image="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1600&q=80"
+          image="/img/about1.jpg"
           currentLabel="About"
         />
         <AboutUs />

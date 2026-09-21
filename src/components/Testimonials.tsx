@@ -2,48 +2,32 @@
 
 import React, { useState } from "react";
 
-interface FieldNote {
-  id: string;
+interface TestimonialItem {
   quote: string;
-  name: string;
+  author: string;
   role: string;
-  location: string;
   image: string;
-  alt: string;
-  fallback: string;
 }
 
-const fieldNotes: FieldNote[] = [
+const testimonials: TestimonialItem[] = [
   {
-    id: "01",
-    quote: "The canvas tooth and paint pigmentation are phenomenal. Layering oil and acrylics over these pre-primed canvases holds up beautifully.",
-    name: "Elena V.",
-    role: "Fine Art Painter",
-    location: "Boulder, CO",
-    image: "/img/testimonialsec1.jpg",
-    alt: "Elena V. working in fine art painting studio",
-    fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
+    quote: "The botanical inks have incredible depth and zero bleeding. My calligraphy lines stay crisp and lightfast on heavy watercolor paper.",
+    author: "Eleanor Vance",
+    role: "Botanical Illustrator",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80"
   },
   {
-    id: "02",
-    quote: "The brush kit has the best spring and fine point retention I've tested. Zero loose bristles after months of intense studio sessions.",
-    name: "Marcus R.",
-    role: "Illustrator & Muralist",
-    location: "Dallas, TX",
-    image: "/img/testimonialsec2.jpg",
-    alt: "Marcus R. in creative art workspace",
-    fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80",
+    quote: "The cold-pressed sketchbook lays completely flat when open. I take it everywhere for plein air watercolor work.",
+    author: "Julian Thorne",
+    role: "Fine Artist & Educator",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
   },
   {
-    id: "03",
-    quote: "Our craft workshops rely on these studio supplies. Consistent surface tension, vibrant paints, and unbeatable archival quality.",
-    name: "Sarah T.",
-    role: "Craft Workshop Director",
-    location: "Daytona Beach, FL",
-    image: "/img/testimonialsec3.jpg",
-    alt: "Sarah T. conducting craft workshop",
-    fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&q=80",
-  },
+    quote: "The sable detail brushes keep their razor-sharp point even after months of intense detailing work.",
+    author: "Clara Sterling",
+    role: "Master Miniaturist",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80"
+  }
 ];
 
 export default function Testimonials() {
@@ -60,16 +44,16 @@ export default function Testimonials() {
   };
 
   const handlePrev = () => {
-    const nextIdx = (currentIndex - 1 + fieldNotes.length) % fieldNotes.length;
+    const nextIdx = (currentIndex - 1 + testimonials.length) % testimonials.length;
     handleNavigate(nextIdx);
   };
 
   const handleNext = () => {
-    const nextIdx = (currentIndex + 1) % fieldNotes.length;
+    const nextIdx = (currentIndex + 1) % testimonials.length;
     handleNavigate(nextIdx);
   };
 
-  const current = fieldNotes[currentIndex];
+  const current = testimonials[currentIndex];
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="testimonials">
@@ -100,7 +84,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-primary-tint rounded-3xl p-6 sm:p-10 border border-black/8 shadow-sm">
           
           {/* Left Column: Quote & Artist Info */}
-          <div className="lg:col-span-6 flex flex-col justify-between min-h-[260px]">
+          <div className="lg:col-span-7 flex flex-col justify-between min-h-[260px]">
             <div>
               <blockquote
                 className={`text-xl sm:text-2xl md:text-3xl font-black text-primary uppercase leading-snug tracking-tight transition-opacity duration-400 ${
@@ -114,10 +98,10 @@ export default function Testimonials() {
             <div className="mt-8 pt-6 border-t border-black/10 flex items-center justify-between">
               <div>
                 <div className="text-base font-black text-primary uppercase tracking-tight">
-                  {current.name}
+                  {current.author}
                 </div>
                 <div className="text-xs font-bold text-black/50 uppercase tracking-wider mt-0.5">
-                  {current.role} · {current.location}
+                  {current.role}
                 </div>
               </div>
 
@@ -142,21 +126,21 @@ export default function Testimonials() {
           </div>
 
           {/* Right Column: Photograph */}
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-2xl bg-black/5 shadow-md">
-              {fieldNotes.map((note, idx) => (
+          <div className="lg:col-span-5">
+            <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-square w-full max-w-[380px] mx-auto overflow-hidden rounded-2xl bg-black/5 shadow-md">
+              {testimonials.map((item, idx) => (
                 <div
-                  key={note.id}
+                  key={item.author}
                   className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
                     currentIndex === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
                   }`}
                 >
                   <img
-                    src={note.image}
-                    alt={note.alt}
+                    src={item.image}
+                    alt={`${item.author} - ${item.role}`}
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
-                      e.currentTarget.src = note.fallback;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80";
                     }}
                   />
                 </div>

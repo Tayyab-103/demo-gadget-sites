@@ -18,30 +18,30 @@ export default function VideoShowcase() {
                 color: "var(--secondary-color)",
               }}
             >
-              Creative Studio in Motion
+              Artist’s Supply &amp; Craft Shops
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary leading-[1.08]">
-            Designed For <span className="text-secondary">Creative Studios</span>
+            Curated For Fine Artists <span className="text-secondary">&amp; Crafters</span>
           </h2>
           <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
-            See our professional stretched canvases, vibrant pigments, and precision brushes in action.
+            From rich acrylic paints and soft oil pastels to complete drawing kits — discover tools designed for every studio discipline.
           </p>
         </div>
 
         {/* Dual Showcase Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
           
-          {/* Card 1: Canvas & Painting */}
+          {/* Card 1: Painting & Pigments */}
           <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl">
             <Image
-              src="/img/lab1.jpg"
-              alt="Artist applying paint to primed canvas"
+              src="/img/cta1.jpg"
+              alt="Artist studio painting with acrylics and pastels"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80";
+                e.currentTarget.src = "/img/hero2.jpg";
               }}
             />
             <div
@@ -56,34 +56,34 @@ export default function VideoShowcase() {
                 className="inline-block px-3 py-1 rounded-full text-[0.62rem] font-black uppercase tracking-widest text-white mb-3 shadow-md border border-white/20"
                 style={{ backgroundColor: "var(--secondary-color)" }}
               >
-                Canvases &amp; Pigments
+                Fine Art Pigments &amp; Inks
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-2">
-                Archival Pigmentation &amp; Texture
+                Vibrant Acrylics &amp; Oil Pastels
               </h3>
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-4">
-                Heavy-body consistency with maximum pigment loading for crisp brush strokes and smooth knife blending.
+                Formulated with high-density pigments for bold lightfast color, velvety smooth blending, and long-lasting canvas durability.
               </p>
               <div
                 className="flex items-center gap-2 text-[0.68rem] font-mono font-bold uppercase tracking-wider"
                 style={{ color: "var(--secondary-color)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                Triple-Primed Cotton Weave
+                Rich Pigment Loading &amp; Lightfast Vibrancy
               </div>
             </div>
           </div>
 
-          {/* Card 2: Brushes & Detailing */}
+          {/* Card 2: Drawing & Crafting Supplies */}
           <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl">
             <Image
-              src="/img/lab2.jpg"
-              alt="Detailed brushwork on studio art piece"
+              src="/img/cta2.jpg"
+              alt="Artist drawing and sketching tools kit"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80";
+                e.currentTarget.src = "/img/hero3.jpg";
               }}
             />
             <div
@@ -98,20 +98,20 @@ export default function VideoShowcase() {
                 className="inline-block px-3 py-1 rounded-full text-[0.62rem] font-black uppercase tracking-widest text-white mb-3 shadow-md border border-white/20"
                 style={{ backgroundColor: "var(--secondary-color)" }}
               >
-                Brushes &amp; Craft Tools
+                Paper &amp; Crafting Supplies
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-2">
-                Precision Control &amp; Zero Shed
+                Complete Sketching &amp; Drawing Kits
               </h3>
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-4">
-                Ergonomic wooden handles with nickel-plated brass ferrules built for watercolor, oil, and acrylics.
+                Comprehensive drawing kits featuring premium graphite, charcoal sticks, and blending tools for detailed shading and expressive gestures.
               </p>
               <div
                 className="flex items-center gap-2 text-[0.68rem] font-mono font-bold uppercase tracking-wider"
                 style={{ color: "var(--secondary-color)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                Tapered Multi-Filament Bristles
+                Multi-Grade Graphite &amp; Precision Blending
               </div>
             </div>
           </div>

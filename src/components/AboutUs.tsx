@@ -106,7 +106,7 @@ export default function AboutUs() {
           {/* Col 2: Center Large Image */}
           <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] bg-black/5 border border-black/5 shadow-sm">
             <Image
-              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80"
+              src="/img/about1.jpg"
               alt="Artist studio painting session"
               fill
               sizes="(max-width: 1024px) 100vw, 500px"
@@ -128,7 +128,7 @@ export default function AboutUs() {
             {/* Studio Craft Image */}
             <div className="relative rounded-3xl overflow-hidden h-[180px] sm:h-[200px] lg:h-[210px] w-full bg-black/5 border border-black/5 shadow-sm">
               <Image
-                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&q=80"
+                src="/img/about2.jpg"
                 alt="Artist craft materials and tools"
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"

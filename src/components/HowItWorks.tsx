@@ -12,7 +12,7 @@ const steps = [
     title: "Select Your Studio Supplies",
     desc: "Browse our curated collection of professional stretched canvases, heavy-body acrylics, fine artist brushes, and studio easels in single units or studio bundles.",
     badge: "1-Pack to 8-Pack",
-    image: "/img/howitworks1.jpg",
+    image: "/img/howit1.jpg",
     fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
   },
   {
@@ -20,7 +20,7 @@ const steps = [
     title: "Fast Tracked Dispatch",
     desc: `Orders are carefully protected with archival-safe packaging and dispatched via ${siteConfig.shippingCarrier} with full tracking within ${siteConfig.shippingPeriod} business days.`,
     badge: `${siteConfig.shippingCarrier} Tracked`,
-    image: "/img/howitworks2.jpg",
+    image: "/img/howit2.jpg",
     fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&q=80",
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     title: "14-Day Studio Guarantee",
     desc: "Test our art and craft supplies in your creative studio. If the texture, pigmentation, or quality does not inspire your work, return for a 100% full refund.",
     badge: "100% Guaranteed",
-    image: "/img/howitworks3.jpg",
+    image: "/img/howit3.jpg",
     fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80",
   },
 ];

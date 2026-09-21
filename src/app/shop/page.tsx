@@ -17,7 +17,7 @@ export default function ShopPage() {
           eyebrow="Complete Studio Catalog"
           title={<>The Artist &amp; Craft Supply Collection</>}
           subtitle="Explore studio-grade stretched cotton canvases, high-viscosity acrylic pigments, fine detailing brushes, and craft accessories."
-          image="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&q=80"
+          image="/img/cta1.jpg"
           currentLabel="Art Supplies"
         />
         <ProductGrid />

@@ -51,11 +51,11 @@ export default function Hero() {
           {/* Right Column: Large Hero Image with Shop Now */}
           <div className="relative rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px] lg:min-h-0 bg-black/5 group shadow-lg border border-black/5">
             <img
-              src="/img/herosection1.jpg"
-              alt={`${siteConfig.brandName} artist supplies and craft collection`}
+              src="/img/hero1.jpg"
+              alt={`${siteConfig.brandName} artist supplies collection`}
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
-                e.currentTarget.src = "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80";
+                e.currentTarget.src = "/img/hero2.jpg";
               }}
             />
             <div
@@ -85,34 +85,34 @@ export default function Hero() {
           {/* Category Card 1 */}
           <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
             <img
-              src="/img/herosection2.jpg"
-              alt="Fine art canvases & paints"
+              src="/img/hero2.jpg"
+              alt="Fine art paints & pigments"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&q=80";
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
             <div className="absolute bottom-3 left-3 text-white">
-              <span className="text-xs font-black uppercase tracking-wider block">Canvases &amp; Paints</span>
-              <span className="text-[0.65rem] text-white/80">Explore Studio Packs →</span>
+              <span className="text-xs font-black uppercase tracking-wider block">Fine Art Paints</span>
+              <span className="text-[0.65rem] text-white/80">Explore Pigments →</span>
             </div>
           </Link>
 
           {/* Category Card 2 */}
           <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
             <img
-              src="/img/herosection3.jpg"
-              alt="Artist brushes & detailing tools"
+              src="/img/hero3.jpg"
+              alt="Drawing kits & studio tools"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80";
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
             <div className="absolute bottom-3 left-3 text-white">
-              <span className="text-xs font-black uppercase tracking-wider block">Brushes &amp; Tools</span>
-              <span className="text-[0.65rem] text-white/80">Precision Detailing →</span>
+              <span className="text-xs font-black uppercase tracking-wider block">Drawing &amp; Craft Kits</span>
+              <span className="text-[0.65rem] text-white/80">View Complete Sets →</span>
             </div>
           </Link>
 

@@ -84,9 +84,9 @@ export default function Header() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Art Supplies", href: "/shop" },
+    { label: "Products", href: "/shop" },
     { label: "About Us", href: "/about" },
-    { label: "Studio Support", href: "/contact" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -98,23 +98,28 @@ export default function Header() {
           : "bg-primary-tint border-b border-black/5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-4 flex items-center justify-between gap-2">
         
-        {/* Left: Brand Logo */}
-        <Link href="/" onClick={closeAll} className="flex flex-col group flex-shrink-0" style={{ textDecoration: "none" }}>
+        {/* Left: Responsive Brand Logo */}
+        <Link
+          href="/"
+          onClick={closeAll}
+          className="flex flex-col group min-w-0 max-w-[65%] sm:max-w-none flex-shrink"
+          style={{ textDecoration: "none" }}
+        >
           {siteConfig.useImageLogo && siteConfig.logoImage ? (
             <img
               src={siteConfig.logoImage}
               alt={siteConfig.brandName}
-              className="max-h-7 sm:max-h-8 w-auto object-contain"
+              className="max-h-6 sm:max-h-8 w-auto object-contain"
             />
           ) : (
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black tracking-tight text-primary uppercase leading-none flex items-center gap-1.5">
-                <span>{siteConfig.brandName}</span>
-                <span className="inline-block w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
+            <div className="flex flex-col min-w-0">
+              <span className="text-sm sm:text-lg md:text-xl font-black tracking-tight text-primary uppercase leading-tight flex items-center gap-1 sm:gap-1.5 truncate">
+                <span className="truncate">{siteConfig.brandName}</span>
+                <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary flex-shrink-0" />
               </span>
-              <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.24em] text-primary/70 mt-0.5">
+              <span className="hidden sm:block text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.24em] text-primary/70 mt-0.5 truncate">
                 {siteConfig.Product || "Artist’s Supply & Craft Shops"}
               </span>
             </div>
@@ -122,14 +127,14 @@ export default function Header() {
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2 flex-shrink-0">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl transition-all duration-200"
+                className="text-xs font-bold uppercase tracking-wider px-3.5 lg:px-4 py-2 rounded-xl transition-all duration-200"
                 style={{
                   backgroundColor: isActive ? "color-mix(in srgb, var(--primary-color) 10%, transparent)" : "transparent",
                   color: isActive ? "var(--primary-color)" : "color-mix(in srgb, var(--primary-color) 75%, black)",
@@ -141,12 +146,12 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Right: Icons */}
-        <div className="flex items-center gap-1.5 sm:gap-2.5">
+        {/* Right: Action Icons */}
+        <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
           {/* Search Icon */}
           <button
             onClick={toggleSearch}
-            className="p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
+            className="p-1.5 sm:p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
             aria-label="Toggle Search"
             aria-expanded={isSearchOpen}
           >
@@ -156,7 +161,7 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* User/Support Account Icon */}
+          {/* User/Support Account Icon (hidden on small mobile) */}
           <Link
             href="/contact"
             className="hidden sm:flex p-2 text-primary hover:text-secondary transition-colors rounded-xl hover:bg-black/5"
@@ -171,7 +176,7 @@ export default function Header() {
           {/* Cart Bag Icon */}
           <button
             onClick={toggleCart}
-            className="relative p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
+            className="relative p-1.5 sm:p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
             aria-label="Toggle Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -180,7 +185,7 @@ export default function Header() {
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
             <span
-              className="absolute -top-0.5 -right-0.5 rounded-full w-[18px] h-[18px] text-[0.62rem] font-black flex items-center justify-center shadow-xs"
+              className="absolute -top-0.5 -right-0.5 rounded-full w-[17px] h-[17px] sm:w-[18px] sm:h-[18px] text-[0.6rem] sm:text-[0.62rem] font-black flex items-center justify-center shadow-xs"
               style={{
                 backgroundColor: "var(--secondary-color)",
                 color: "var(--secondary-text-color)",
@@ -193,17 +198,17 @@ export default function Header() {
           {/* Mobile hamburger button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-primary p-1.5 rounded-xl hover:bg-black/5 transition-colors cursor-pointer"
+            className="md:hidden text-primary p-1 sm:p-1.5 rounded-xl hover:bg-black/5 transition-colors cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="18" x2="21" y2="18" />
@@ -250,8 +255,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search canvases, acrylic paints, brush sets, craft kits..."
-                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 text-black bg-primary-tint border border-black/10 placeholder-black/40"
+                placeholder="Search acrylics, oil pastels, drawing kits..."
+                className="block w-full pl-11 pr-4 py-2.5 sm:py-3 text-xs sm:text-sm rounded-full focus:outline-none focus:ring-2 text-black bg-primary-tint border border-black/10 placeholder-black/40"
                 style={{ "--tw-ring-color": "var(--secondary-color)" } as React.CSSProperties}
               />
             </div>

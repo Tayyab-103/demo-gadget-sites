@@ -37,7 +37,7 @@ export default function Home() {
         <VideoShowcase />
         
         {/* Artist Reviews */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* Conversion CTA Banner */}
         <CTASection />

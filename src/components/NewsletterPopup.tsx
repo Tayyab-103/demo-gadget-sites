@@ -59,47 +59,40 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000);
+      }, 2000); // Close after 2 seconds
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/65 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[500px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
+      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:bg-black/10 transition-all"
+          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
         {/* Visual Header */}
-        <div className="h-[190px] relative">
+        <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80"
-            alt="Creative art studio workspace"
+            src="/img/contact.jpg"
+            alt="Artist workspace with studio supplies"
             className="w-full h-full object-cover absolute inset-0"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to bottom, color-mix(in srgb, var(--primary-color) 40%, transparent), color-mix(in srgb, var(--primary-color) 95%, black))"
-            }}
-          />
+          {/* Transparent Color Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span
-              className="text-[0.7rem] uppercase tracking-[0.2em] font-black block mb-1"
-              style={{ color: "var(--secondary-color)" }}
-            >
-              Artist Studio VIP Pass
+            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
+              Studio Exclusive
             </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
-              Save 15% On Your Next Art Order
+            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
+              Save 15% Today!
             </h3>
           </div>
         </div>
@@ -108,31 +101,25 @@ export default function NewsletterPopup() {
         <div className="p-8">
           {submitted ? (
             <div className="text-center py-4">
-              <div
-                className="w-12 h-12 rounded-full border-2 flex items-center justify-center text-xl mx-auto mb-4 font-bold"
-                style={{
-                  borderColor: "var(--secondary-color)",
-                  color: "var(--secondary-color)",
-                }}
-              >
+              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
                 ✓
               </div>
-              <h4 className="text-primary font-black uppercase text-lg mb-2">Discount Code Activated!</h4>
-              <p className="text-black/60 text-sm">
-                Check your inbox for your 15% art &amp; craft supply coupon.
+              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
+              <p className="text-neutral-text/50 text-sm">
+                Check your inbox for your 15% discount code.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-black/75 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} creative collective. Subscribe today to receive art technique guides, new arrival drops, and <strong>15% off</strong> your first order.
+              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
+                Join the {siteConfig.brandName} community. Subscribe today to get studio guides, early access to small-batch releases, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-5 py-3.5 text-sm border border-black/15 rounded-xl focus:outline-none transition-all text-black bg-white shadow-sm"
-                  placeholder="Enter your artist or studio email"
+                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
+                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -141,17 +128,13 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="inline-block font-black text-center whitespace-nowrap transition-all duration-300 py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:shadow-lg"
-                style={{
-                  backgroundColor: "var(--primary-color)",
-                  color: "var(--primary-text-color)",
-                }}
+                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
               >
-                Claim 15% Studio Discount
+                Unlock 15% Discount
               </button>
 
-              <span className="block text-center text-[0.68rem] text-black/45 mt-3">
-                No spam. Unsubscribe anytime with a single click.
+              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
+                We value your privacy. Unsubscribe at any time.
               </span>
             </form>
           )}

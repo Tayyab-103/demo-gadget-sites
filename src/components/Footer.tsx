@@ -166,8 +166,8 @@ export default function Footer() {
 
           <div className="flex items-center gap-2">
             <span className="text-[0.7rem] uppercase tracking-wider text-white/50 font-medium">Secured:</span>
-            <img src="/img/visa.png" alt="Visa" className="h-5 w-auto rounded-xs bg-white p-0.5" />
-            <img src="/img/mastercard.png" alt="Mastercard" className="h-5 w-auto rounded-xs bg-white p-0.5" />
+            <img src="/img/visa.png" alt="Visa" className="h-8" />
+            <img src="/img/mastercard.png" alt="Mastercard" className="h-8" />
           </div>
         </div>
       </div>

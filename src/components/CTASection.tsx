@@ -9,14 +9,14 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 /* Floating avatar positions — scattered around the edges of the card */
 const avatars = [
-  { src: "/img/testimonialsec1.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", top: "8%", left: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
-  { src: "/img/testimonialsec2.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", top: "5%", left: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
-  { src: "/img/herosection1.jpg", fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200&q=80", bottom: "18%", left: "6%", size: "w-12 h-12 sm:w-14 sm:h-14" },
-  { src: "/img/testimonialsec3.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", bottom: "10%", left: "30%", size: "w-10 h-10 sm:w-12 sm:h-12" },
-  { src: "/img/herosection2.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", top: "10%", right: "5%", size: "w-13 h-13 sm:w-15 sm:h-15" },
-  { src: "/img/howitworks1.jpg", fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200&q=80", top: "6%", right: "26%", size: "w-10 h-10 sm:w-12 sm:h-12" },
-  { src: "/img/herosection3.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", bottom: "12%", right: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
-  { src: "/img/howitworks2.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", bottom: "16%", right: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
+  { src: "/img/about1.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", top: "8%", left: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
+  { src: "/img/hero2.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", top: "5%", left: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
+  { src: "/img/cta1.jpg", fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200&q=80", bottom: "18%", left: "6%", size: "w-12 h-12 sm:w-14 sm:h-14" },
+  { src: "/img/about2.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", bottom: "10%", left: "30%", size: "w-10 h-10 sm:w-12 sm:h-12" },
+  { src: "/img/hero3.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", top: "10%", right: "5%", size: "w-13 h-13 sm:w-15 sm:h-15" },
+  { src: "/img/contact.jpg", fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200&q=80", top: "6%", right: "26%", size: "w-10 h-10 sm:w-12 sm:h-12" },
+  { src: "/img/cta2.jpg", fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80", bottom: "12%", right: "4%", size: "w-14 h-14 sm:w-16 sm:h-16" },
+  { src: "/img/about1.jpg", fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=200&q=80", bottom: "16%", right: "28%", size: "w-11 h-11 sm:w-13 sm:h-13" },
 ];
 
 export default function CTASection() {

@@ -15,6 +15,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import Features from "@/components/Features";
 
 export default function Home() {
   return (
@@ -25,7 +26,8 @@ export default function Home() {
         <Hero />
         
         {/* Step-by-Step Flow */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        <Features/>
         
         {/* Flagship Product Showcase */}
         <ProductGrid />

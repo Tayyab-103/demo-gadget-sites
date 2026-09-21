@@ -15,31 +15,19 @@ export default function NewsletterPopup() {
     const popupDismissed = localStorage.getItem("newsletter_dismissed");
     if (popupDismissed) return;
 
-    let hasSpentTimeOnPage = false;
-    let hasShownScrollIntent = false;
-    let isPopupShown = false;
-
-    const showWhenReady = () => {
-      if (hasSpentTimeOnPage && hasShownScrollIntent && !isPopupShown) {
-        isPopupShown = true;
-        setIsVisible(true);
-      }
-    };
+    // Show after 4 seconds or after 300px scroll
+    const timer = window.setTimeout(() => {
+      setIsVisible(true);
+    }, 4000);
 
     const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight * 0.6) {
-        hasShownScrollIntent = true;
-        showWhenReady();
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+        window.removeEventListener("scroll", handleScroll);
       }
     };
 
-    const timer = window.setTimeout(() => {
-      hasSpentTimeOnPage = true;
-      showWhenReady();
-    }, 12000);
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
 
     return () => {
       window.clearTimeout(timer);
@@ -59,84 +47,89 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      }, 2500);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] max-w-[390px] animate-fade-in">
+      <div className="bg-white rounded-2xl shadow-2xl border border-primary/20 overflow-hidden relative backdrop-blur-sm transition-all duration-300 hover:shadow-primary/10 hover:shadow-3xl">
+        {/* Top Accent Gradient Bar */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-primary via-secondary to-primary" />
+
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          className="absolute top-3 right-3 w-7 h-7 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-500 hover:text-neutral-800 flex items-center justify-center text-sm font-bold transition-all z-10 cursor-pointer"
           aria-label="Close newsletter popup"
         >
-          &times;
+          ✕
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[180px] relative">
-          <img
-            src="/img/contact.jpg"
-            alt="Artist workspace with studio supplies"
-            className="w-full h-full object-cover absolute inset-0"
-          />
-          {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
-
-          <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Studio Exclusive
-            </span>
-            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
-              Save 15% Today!
-            </h3>
-          </div>
-        </div>
-
-        {/* Form Body */}
-        <div className="p-8">
+        <div className="p-5 sm:p-6">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center text-xl mx-auto mb-3">
                 ✓
               </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
+              <h4 className="text-primary font-bold text-lg mb-1">You’re on the VIP list!</h4>
+              <p className="text-neutral-text/70 text-xs">
+                Use code <span className="font-mono font-bold text-secondary bg-secondary/10 px-1.5 py-0.5 rounded">STUDIO15</span> at checkout for 15% off.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get studio guides, early access to small-batch releases, and <strong>15% off</strong> on your first order.
-              </p>
-
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+            <>
+              {/* Badge & Title */}
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[0.68rem] font-bold tracking-wider uppercase bg-secondary/15 text-secondary">
+                  <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+                  Exclusive Offer
+                </span>
               </div>
 
-              <button
-                type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
-              >
-                Unlock 15% Discount
-              </button>
+              <h3 className="text-lg sm:text-xl font-extrabold text-primary tracking-tight leading-snug mb-1.5">
+                Save 15% On Your Next Creation
+              </h3>
 
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
-              </span>
-            </form>
+              <p className="text-xs text-neutral-text/75 leading-relaxed mb-4">
+                Join our {siteConfig.brandName} circle for curated art techniques, new batch drops, and an instant discount.
+              </p>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-2.5">
+                <div className="relative">
+                  <input
+                    type="email"
+                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-neutral-300 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all text-neutral-800 placeholder:text-neutral-400 bg-white"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-secondary-text bg-secondary hover:bg-primary transition-all duration-200 shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <span>Claim 15% Off</span>
+                  <span>→</span>
+                </button>
+              </form>
+
+              <div className="mt-3 flex items-center justify-between text-[0.65rem] text-neutral-text/50">
+                <span>🔒 No spam, ever.</span>
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  className="hover:underline text-neutral-text/60 cursor-pointer"
+                >
+                  No thanks
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -35,8 +35,6 @@ export default function Home() {
 
         {/* Video Showcase In Motion */}
         <VideoShowcase />
-
-
         
         {/* Athlete Testimonials */}
         <Testimonials />

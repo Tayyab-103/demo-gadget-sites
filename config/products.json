@@ -2,17 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Crew & Compression Socks",
-    "description": "Breathable athletic socks designed with arch support, seamless toe construction, and cushioned soles for workouts and everyday training.",
-    "image": "/img/products/product-socks.jpg",
+    "name": "Acrylic Paints - 6 Colors",
+    "description": "A premium set of 6 acrylic paints, formulated for vibrant color, smooth application, and long-lasting durability. Perfect for artists of all levels seeking to create bold and expressive works on canvas, wood, or paper.",
+    "image": "/img/products/product1.png",
     "images": [
-      "/img/products/product-socks.jpg",
-      "/img/products/products-sock2.jpg",
-      "/img/products/products-sock3.jpg"
+      "/img/products/product1.png",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Performance Apparel & Accessories",
+    "category": "Fine Art Pigments & Inks",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Compression Baselayer Top",
-    "description": "Fitted four-way stretch compression shirt that provides muscle support and moisture-wicking comfort during training.",
-    "image": "/img/products/product-compression.jpg",
+    "name": "Oil Pastels - 24 Colors",
+    "description": "A vibrant set of 24 oil pastels, crafted for smooth blending and rich color payoff. Ideal for artists, students, and hobbyists looking to explore expressive techniques in drawing and mixed media.",
+    "image": "/img/products/product2.png",
     "images": [
-      "/img/products/product-compression.jpg",
-      "/img/products/product-compression2.jpg",
-      "/img/products/product-compression3.jpg"
+      "/img/products/product2.png",
+      "/img/products/product2-2.jpg",
+      "/img/products/product2-3.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Technical Baselayers & Tops",
+    "category": "Paper & Crafting Supplies",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Training Hoodie",
-    "description": "Comfortable fleece training hoodie featuring an athletic cut, front pockets, and warm, breathable fabric for warmups and casual wear.",
-    "image": "/img/products/product-hoodie.jpg",
+    "name": "Complete Drawing Kit",
+    "description": "A comprehensive drawing kit that includes a variety of graphite pencils, charcoal sticks, blending tools, and sketching paper. Designed for artists of all skill levels, this kit provides everything needed to create detailed sketches and expressive drawings.",
+    "image": "/img/products/product3.png",
     "images": [
-      "/img/products/product-hoodie.jpg",
-      "/img/products/product-hoodie2.jpg",
-      "/img/products/product-hoodie3.jpg"
+      "/img/products/product3.png",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Performance Outerwear & Fleeces",
+    "category": "Studio Tools & Brushes",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

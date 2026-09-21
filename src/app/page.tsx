@@ -30,13 +30,13 @@ export default function Home() {
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
-        {/* About Brand & Austin Heritage */}
+        {/* About Brand & Studio Heritage */}
         <AboutUs />
 
-        {/* Video Showcase In Motion */}
+        {/* Studio Showcase In Motion */}
         <VideoShowcase />
         
-        {/* Athlete Testimonials */}
+        {/* Artist Reviews */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}

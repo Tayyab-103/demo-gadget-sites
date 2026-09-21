@@ -9,24 +9,27 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const steps = [
   {
     step: "01",
-    title: "Choose Your Apparel",
-    desc: "Browse our collection of compression tops, fleece hoodies, and athletic socks available in individual units or bundle packs.",
+    title: "Select Your Studio Supplies",
+    desc: "Browse our curated collection of professional stretched canvases, heavy-body acrylics, fine artist brushes, and studio easels in single units or studio bundles.",
     badge: "1-Pack to 8-Pack",
     image: "/img/howitworks1.jpg",
+    fallback: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
   },
   {
     step: "02",
-    title: "Fast Shipping",
-    desc: `Orders are packed and dispatched from Austin via ${siteConfig.shippingCarrier} with tracking in ${siteConfig.shippingPeriod} business days.`,
+    title: "Fast Tracked Dispatch",
+    desc: `Orders are carefully protected with archival-safe packaging and dispatched via ${siteConfig.shippingCarrier} with full tracking within ${siteConfig.shippingPeriod} business days.`,
     badge: `${siteConfig.shippingCarrier} Tracked`,
     image: "/img/howitworks2.jpg",
+    fallback: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&q=80",
   },
   {
     step: "03",
-    title: "14-Day Guarantee",
-    desc: "Try our apparel risk-free. If the fit or comfort isn't right for you, return your items within 14 days for a full refund.",
+    title: "14-Day Studio Guarantee",
+    desc: "Test our art and craft supplies in your creative studio. If the texture, pigmentation, or quality does not inspire your work, return for a 100% full refund.",
     badge: "100% Guaranteed",
     image: "/img/howitworks3.jpg",
+    fallback: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80",
   },
 ];
 
@@ -37,11 +40,22 @@ export default function HowItWorks() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0d3b2e] leading-[1.08]">
-            How It <span className="text-[#0d4a36]">Works</span>
+          <div className="mb-3">
+            <span
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider"
+              style={{
+                backgroundColor: "color-mix(in srgb, var(--secondary-color) 12%, transparent)",
+                color: "var(--secondary-color)",
+              }}
+            >
+              Simple &amp; Reliable
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary leading-[1.08]">
+            How It <span className="text-secondary">Works</span>
           </h2>
           <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
-            Simple ordering, fast delivery, and a hassle-free 14-day return policy.
+            Streamlined ordering, studio-safe packaging, and a hassle-free 14-day satisfaction policy.
           </p>
         </div>
 
@@ -50,7 +64,7 @@ export default function HowItWorks() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="group relative flex flex-col rounded-3xl border border-black/8 bg-[#f2f7f4] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#0d4a36]/30 hover:-translate-y-1"
+              className="group relative flex flex-col rounded-3xl border border-black/8 bg-primary-tint overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Image Header */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/5">
@@ -58,11 +72,20 @@ export default function HowItWorks() {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = item.fallback;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 
                 {/* Step Number Badge */}
-                <span className="absolute top-4 left-4 bg-[#0d4a36] text-white font-mono font-black text-xs px-3 py-1 rounded-md shadow-md">
+                <span
+                  className="absolute top-4 left-4 font-mono font-black text-xs px-3 py-1 rounded-md shadow-md"
+                  style={{
+                    backgroundColor: "var(--primary-color)",
+                    color: "var(--primary-text-color)",
+                  }}
+                >
                   STEP {item.step}
                 </span>
 
@@ -73,7 +96,7 @@ export default function HowItWorks() {
 
               {/* Card Body */}
               <div className="p-6 sm:p-7 flex flex-col flex-1">
-                <h3 className="text-lg sm:text-xl font-black uppercase text-[#0d3b2e] mb-2 tracking-tight group-hover:text-black">
+                <h3 className="text-lg sm:text-xl font-black uppercase text-primary mb-2 tracking-tight group-hover:text-black transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-black/65 leading-relaxed">

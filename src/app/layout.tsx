@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade ${siteConfig.Product?.toLowerCase() || "sporting apparel"} engineered for dedicated athletes, high-output conditioning, and peak athletic performance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Premium ${siteConfig.Product?.toLowerCase() || "artist’s supply and craft shops"} curated for fine artists, painters, studio crafters, and creative DIY workshops.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,20 +45,21 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel & Technical Sportswear`,
+  title: `${siteConfig.brandName} | Premium Artist’s Supply & Craft Shops`,
   description: siteDescription,
   keywords: [
-    "sporting apparel",
-    "athletic wear",
-    "technical sportswear",
-    "compression baselayers",
-    "performance hoodies",
-    "athletic socks",
-    "Austin athletics",
-    "Vantage Thread Athletic Works"
+    "artist supply",
+    "craft shops",
+    "fine art materials",
+    "stretched canvas",
+    "acrylic paints",
+    "artist brush set",
+    "studio easel",
+    "craft supplies",
+    siteConfig.brandName
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Premium Artist’s Supply & Craft Shops`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,27 +67,30 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Premium Artist’s Supply & Craft Shops`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  let selectedFontClass = inter.variable;
-  let activeFontVar = "var(--font-inter)";
+  let selectedFontClass = montserrat.variable;
+  let activeFontVar = "var(--font-montserrat)";
 
   if (siteConfig.theme.fontFamily === "Poppins") {
     selectedFontClass = poppins.variable;
     activeFontVar = "var(--font-poppins)";
-  } else if (siteConfig.theme.fontFamily === "Montserrat") {
-    selectedFontClass = montserrat.variable;
-    activeFontVar = "var(--font-montserrat)";
+  } else if (siteConfig.theme.fontFamily === "Inter") {
+    selectedFontClass = inter.variable;
+    activeFontVar = "var(--font-inter)";
   } else if (siteConfig.theme.fontFamily === "Roboto") {
     selectedFontClass = roboto.variable;
     activeFontVar = "var(--font-roboto)";
   } else if (siteConfig.theme.fontFamily === "Playfair Display") {
     selectedFontClass = playfairDisplay.variable;
     activeFontVar = "var(--font-playfair-display)";
+  } else if (siteConfig.theme.fontFamily === "Montserrat") {
+    selectedFontClass = montserrat.variable;
+    activeFontVar = "var(--font-montserrat)";
   }
 
   const {
@@ -99,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" className={`${selectedFontClass} ${inter.variable} ${poppins.variable} ${roboto.variable} ${playfairDisplay.variable} h-full antialiased`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
@@ -113,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}} />
       </head>
-      <body>
+      <body className="min-h-full flex flex-col font-sans">
         <CartProvider>
           {children}
         </CartProvider>

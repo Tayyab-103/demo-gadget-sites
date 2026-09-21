@@ -11,8 +11,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 export default function AboutUs() {
   const features = [
     {
-      title: "Quality Fabrics",
-      description: "Durable, flexible materials designed for training and everyday comfort.",
+      title: "Archival Quality",
+      description: "Non-yellowing, acid-free cotton canvases and high-density pigments built for lasting artwork.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -30,8 +30,8 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "Secure Ordering",
-      description: "Encrypted payment processing and safe customer data handling.",
+      title: "Secure Studio Ordering",
+      description: "Encrypted checkout and safe customer handling for worry-free supply procurement.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -49,8 +49,8 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "Fast Dispatch",
-      description: "Quick order fulfillment with reliable tracking on all packages.",
+      title: "Protected Dispatch",
+      description: "Reinforced protective packaging to ensure canvases and brush tips arrive in mint condition.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -77,18 +77,28 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Col 1: About Us Card */}
-          <div className="lg:col-span-3 bg-[#f2f7f4] rounded-3xl p-7 sm:p-8 flex flex-col justify-between min-h-[260px] lg:min-h-[380px] border border-black/5">
+          <div className="lg:col-span-3 bg-primary-tint rounded-3xl p-7 sm:p-8 flex flex-col justify-between min-h-[260px] lg:min-h-[380px] border border-black/5">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d3b2e] tracking-tight">
+              <span
+                className="text-[0.68rem] font-black uppercase tracking-widest block mb-2"
+                style={{ color: "var(--secondary-color)" }}
+              >
+                Our Studio Story
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
                 About Us
               </h2>
             </div>
             <div className="mt-8 lg:mt-0">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#0d4a36] hover:bg-[#083325] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md hover:scale-105"
+                style={{
+                  backgroundColor: "var(--primary-color)",
+                  color: "var(--primary-text-color)",
+                }}
               >
-                See Our Collection
+                See Our Supplies
               </Link>
             </div>
           </div>
@@ -96,30 +106,30 @@ export default function AboutUs() {
           {/* Col 2: Center Large Image */}
           <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] bg-black/5 border border-black/5 shadow-sm">
             <Image
-              src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1200&q=80"
-              alt="Athletes in training action"
+              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80"
+              alt="Artist studio painting session"
               fill
               sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover object-center transition-transform duration-700 hover:scale-105"
             />
           </div>
 
-          {/* Col 3: Right Introduction & Boxer Image */}
+          {/* Col 3: Right Introduction & Image */}
           <div className="lg:col-span-4 flex flex-col justify-between gap-5">
             <div className="pt-1">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0d3b2e] tracking-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mb-3">
                 About {siteConfig.brandName}
               </h3>
               <p className="text-black/70 text-xs sm:text-sm leading-relaxed">
-                We design and distribute sporting apparel and activewear built for training, workout sessions, and daily athletic comfort.
+                We curate and supply studio-grade artist materials, canvases, and craft essentials built to empower fine artists, students, and passionate makers.
               </p>
             </div>
 
-            {/* Training Image */}
+            {/* Studio Craft Image */}
             <div className="relative rounded-3xl overflow-hidden h-[180px] sm:h-[200px] lg:h-[210px] w-full bg-black/5 border border-black/5 shadow-sm">
               <Image
-                src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80"
-                alt="Athlete training and workout gear"
+                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&q=80"
+                alt="Artist craft materials and tools"
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
@@ -134,14 +144,20 @@ export default function AboutUs() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="relative bg-[#f2f7f4] rounded-3xl pt-10 pb-7 px-6 text-center border border-black/5 hover:border-[#0d4a36]/20 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+              className="relative bg-primary-tint rounded-3xl pt-10 pb-7 px-6 text-center border border-black/5 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
             >
               {/* Floating Circular Icon Badge */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0d4a36] flex items-center justify-center shadow-md">
+              <div
+                className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full flex items-center justify-center shadow-md"
+                style={{
+                  backgroundColor: "var(--primary-color)",
+                  color: "var(--primary-text-color)",
+                }}
+              >
                 {feature.icon}
               </div>
 
-              <h4 className="text-base sm:text-lg font-bold text-[#0d3b2e] mb-1.5 tracking-tight">
+              <h4 className="text-base sm:text-lg font-bold text-primary mb-1.5 tracking-tight">
                 {feature.title}
               </h4>
               <p className="text-xs sm:text-sm text-black/65 leading-relaxed">

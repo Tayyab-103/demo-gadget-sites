@@ -67,7 +67,7 @@ export default async function Image() {
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            ⚡
+            🎨
           </div>
           <div
             style={{
@@ -75,7 +75,7 @@ export default async function Image() {
               fontWeight: 900,
               letterSpacing: 2,
               textTransform: "uppercase",
-              color: "#ffffff",
+              color: siteConfig.theme.primaryTextColor || "#ffffff",
             }}
           >
             {siteConfig.brandName}
@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Pro-Grade Sporting Apparel &amp; Technical Sportswear
+          {siteConfig.Product || "Artist’s Supply and Craft Shops"}
         </div>
 
         <div

@@ -81,7 +81,7 @@
   background: color-mix(in srgb, var(--secondary-color) 50%, transparent);
 }
 
-/* High-Performance Athletic Eyebrow */
+/* Dynamic Studio Eyebrow */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -93,14 +93,7 @@
   color: var(--secondary-color);
   max-width: 100%;
 }
-.eyebrow::before {
-  content: "";
-  width: 16px;
-  height: 2px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-  border-radius: 1px;
-}
+.eyebrow::before,
 .eyebrow::after {
   content: "";
   width: 16px;
@@ -108,16 +101,6 @@
   background: var(--secondary-color);
   flex-shrink: 0;
   border-radius: 1px;
-}
-
-.eyebrow-invert {
-  color: var(--secondary-color);
-}
-.eyebrow-invert::before {
-  background: var(--secondary-color);
-}
-.eyebrow-invert::after {
-  background: var(--secondary-color);
 }
 
 /* Dynamic Ambient Glow */
@@ -144,7 +127,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Hide scrollbar for carousels while keeping native scroll/drag */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -153,8 +136,19 @@
   scrollbar-width: none;
 }
 
-/* Metallic Tech Pattern background */
-.tech-grid-pattern {
-  background-image: radial-gradient(color-mix(in srgb, var(--secondary-color) 14%, transparent) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Dynamic Theme Helper Classes */
+.bg-primary-tint {
+  background-color: color-mix(in srgb, var(--primary-color) 5%, var(--neutral-bg-color));
+}
+
+.bg-primary-tint-medium {
+  background-color: color-mix(in srgb, var(--primary-color) 10%, var(--neutral-bg-color));
+}
+
+.bg-secondary-tint {
+  background-color: color-mix(in srgb, var(--secondary-color) 10%, var(--neutral-bg-color));
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, color-mix(in srgb, var(--primary-color) 75%, black) 100%);
 }

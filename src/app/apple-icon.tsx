@@ -18,17 +18,10 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          fontSize: 90,
         }}
       >
-        <div
-          style={{
-            width: 88,
-            height: 110,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
-          }}
-        />
+        🎨
       </div>
     ),
     { ...size }

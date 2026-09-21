@@ -84,9 +84,9 @@ export default function Header() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
+    { label: "Art Supplies", href: "/shop" },
     { label: "About Us", href: "/about" },
-    { label: "Support", href: "/contact" },
+    { label: "Studio Support", href: "/contact" },
   ];
 
   return (
@@ -94,8 +94,8 @@ export default function Header() {
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-[#0d4a36]/10"
-          : "bg-[#f2f7f4] border-b border-black/5"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-black/5"
+          : "bg-primary-tint border-b border-black/5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between">
@@ -110,32 +110,35 @@ export default function Header() {
             />
           ) : (
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black tracking-tighter text-[#0d3b2e] uppercase leading-none flex items-baseline">
-                <span>VANTAGE</span>
-                <span className="inline-block w-2 h-2 rounded-full bg-[#10b981] ml-0.5" />
+              <span className="text-lg sm:text-xl font-black tracking-tight text-primary uppercase leading-none flex items-center gap-1.5">
+                <span>{siteConfig.brandName}</span>
+                <span className="inline-block w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
               </span>
-              <span className="text-[0.55rem] sm:text-[0.62rem] font-black uppercase tracking-[0.28em] text-[#0d4a36]/70 mt-0.5">
-                ATHLETIC WORKS
+              <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.24em] text-primary/70 mt-0.5">
+                {siteConfig.Product || "Artist’s Supply & Craft Shops"}
               </span>
             </div>
           )}
         </Link>
 
-        {/* Center: Desktop Navigation Links — clean inline */}
+        {/* Center: Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-1 lg:gap-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-all duration-200 ${
-                pathname === link.href
-                  ? "text-[#0d4a36] bg-[#0d4a36]/8"
-                  : "text-[#0d3b2e]/70 hover:text-[#0d4a36] hover:bg-[#0d4a36]/5"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-xl transition-all duration-200"
+                style={{
+                  backgroundColor: isActive ? "color-mix(in srgb, var(--primary-color) 10%, transparent)" : "transparent",
+                  color: isActive ? "var(--primary-color)" : "color-mix(in srgb, var(--primary-color) 75%, black)",
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right: Icons */}
@@ -143,7 +146,7 @@ export default function Header() {
           {/* Search Icon */}
           <button
             onClick={toggleSearch}
-            className="p-2 text-[#0d3b2e] hover:text-[#0d4a36] transition-colors cursor-pointer rounded-lg hover:bg-black/5"
+            className="p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
             aria-label="Toggle Search"
             aria-expanded={isSearchOpen}
           >
@@ -156,8 +159,8 @@ export default function Header() {
           {/* User/Support Account Icon */}
           <Link
             href="/contact"
-            className="hidden sm:flex p-2 text-[#0d3b2e] hover:text-[#0d4a36] transition-colors rounded-lg hover:bg-black/5"
-            aria-label="Athlete Support"
+            className="hidden sm:flex p-2 text-primary hover:text-secondary transition-colors rounded-xl hover:bg-black/5"
+            aria-label="Studio Support"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -168,7 +171,7 @@ export default function Header() {
           {/* Cart Bag Icon */}
           <button
             onClick={toggleCart}
-            className="relative p-2 text-[#0d3b2e] hover:text-[#0d4a36] transition-colors cursor-pointer rounded-lg hover:bg-black/5"
+            className="relative p-2 text-primary hover:text-secondary transition-colors cursor-pointer rounded-xl hover:bg-black/5"
             aria-label="Toggle Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -176,7 +179,13 @@ export default function Header() {
               <path d="M3 6h18" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-            <span className="absolute -top-0.5 -right-0.5 bg-[#0d4a36] text-white rounded-full w-[18px] h-[18px] text-[0.62rem] font-black flex items-center justify-center shadow-xs">
+            <span
+              className="absolute -top-0.5 -right-0.5 rounded-full w-[18px] h-[18px] text-[0.62rem] font-black flex items-center justify-center shadow-xs"
+              style={{
+                backgroundColor: "var(--secondary-color)",
+                color: "var(--secondary-text-color)",
+              }}
+            >
               {mounted ? getCartCount() : 0}
             </span>
           </button>
@@ -184,7 +193,7 @@ export default function Header() {
           {/* Mobile hamburger button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-[#0d3b2e] p-1.5 rounded-lg hover:bg-black/5 transition-colors cursor-pointer"
+            className="md:hidden text-primary p-1.5 rounded-xl hover:bg-black/5 transition-colors cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -207,24 +216,29 @@ export default function Header() {
       {/* Mobile Nav Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden border-t border-black/6 bg-white px-4 py-4 flex flex-col gap-2 shadow-xl">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={closeAll}
-              className={`font-black text-sm py-2.5 px-4 rounded-xl transition-all ${
-                pathname === link.href ? "bg-[#0d4a36] text-white" : "text-[#0d3b2e] hover:bg-[#f2f7f4]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeAll}
+                className="font-black text-sm py-2.5 px-4 rounded-xl transition-all"
+                style={{
+                  backgroundColor: isActive ? "var(--primary-color)" : "transparent",
+                  color: isActive ? "var(--primary-text-color)" : "var(--primary-color)",
+                }}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       )}
 
       {/* Search Dropdown Panel */}
       {isSearchOpen && (
-        <div className="border-t border-[#0d4a36]/10 bg-white px-4 sm:px-6 py-4 shadow-xl">
+        <div className="border-t border-black/10 bg-white px-4 sm:px-6 py-4 shadow-xl">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-black/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -236,8 +250,9 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search sporting apparel, compression tops, hoodies..."
-                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[#0d4a36] text-black bg-[#f2f7f4] border border-black/10 placeholder-black/40"
+                placeholder="Search canvases, acrylic paints, brush sets, craft kits..."
+                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 text-black bg-primary-tint border border-black/10 placeholder-black/40"
+                style={{ "--tw-ring-color": "var(--secondary-color)" } as React.CSSProperties}
               />
             </div>
 
@@ -251,24 +266,27 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-[#f2f7f4] border border-transparent hover:border-black/5 transition-all"
+                        className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-primary-tint border border-transparent hover:border-black/5 transition-all"
                       >
                         <img
                           src={product.image}
                           alt={product.name}
                           className="w-12 h-12 rounded-xl object-cover bg-black/5 flex-shrink-0"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=200&q=80";
+                          }}
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-xs sm:text-sm font-black text-[#0d3b2e] truncate">{product.name}</div>
+                          <div className="text-xs sm:text-sm font-black text-primary truncate">{product.name}</div>
                           <div className="text-[0.65rem] text-black/50 truncate uppercase font-bold">{product.category}</div>
                         </div>
-                        <div className="text-xs sm:text-sm font-black text-[#0d4a36] flex-shrink-0">${price}</div>
+                        <div className="text-xs sm:text-sm font-black text-secondary flex-shrink-0">${price}</div>
                       </Link>
                     );
                   })
                 ) : (
                   <p className="text-xs text-black/50 text-center py-4">
-                    No sporting apparel found for &ldquo;{query}&rdquo;.
+                    No art &amp; craft supplies found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

@@ -18,10 +18,10 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Apparel Heritage"
+          eyebrow="Studio Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding fabric durability."
-          image="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1600&q=80"
+          subtitle="Dedicated to equipping painters, craft creators, and workshops with archival cotton canvases and vibrant fine art mediums."
+          image="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1600&q=80"
           currentLabel="About"
         />
         <AboutUs />

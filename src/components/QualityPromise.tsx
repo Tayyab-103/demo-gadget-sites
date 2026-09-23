@@ -30,7 +30,7 @@ const promises = [
   },
   {
     title: "Certified OEM-Grade Standards",
-    desc: "We partner with vetted automotive manufacturers using premium friction, filtration, and alloy materials.",
+    desc: "We partner with vetted automotive manufacturers using premium shatterproof glass, strong neodymium magnets, and durable materials.",
     icon: (
       <>
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />

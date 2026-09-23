@@ -7,7 +7,7 @@ const videos = [
   {
     src: "/videos/video1.mp4",
     title: "Bench-Tested, Part by Part",
-    desc: "A closer look at how every brake set and filter is checked before it ships.",
+    desc: "A closer look at how every auto accessory and part is checked before it ships.",
   },
   {
     src: "/videos/video2.mp4",

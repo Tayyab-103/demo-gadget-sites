@@ -31,18 +31,18 @@ export default function AboutUs() {
             <p className="mb-6 text-sm leading-relaxed text-neutral-text/65 md:text-base">
               At {siteConfig.brandName}, we believe certified, high-performance
               automotive parts and accessories shouldn&apos;t come with exorbitant
-              dealership markups. We quality-check every brake pad set, oil filter,
-              and specialty tool against rigorous automotive safety benchmarks, so
-              your vehicle runs smoothly and reliably on every drive.
+              retail markups. We quality-check every safety mirror, interior accessory,
+              and automotive essential against rigorous quality and durability standards, so
+              your vehicle remains safe, comfortable, and road ready.
             </p>
 
             <p className="mb-10 text-sm leading-relaxed text-neutral-text/65 md:text-base">
-              Our mission is simple: make reliable, OEM-grade replacement parts and
-              accessories accessible for daily drivers, fleet managers, and DIY car
-              enthusiasts alike. Whether you&apos;re doing a weekend brake upgrade,
-              routine engine maintenance, or equipping your garage, every part is
-              crafted with precision — because your journey deserves components that
-              actually hold up.
+              Our mission is simple: make reliable automotive accessories, safety upgrades,
+              and interior essentials accessible for daily drivers, commuters, and car
+              enthusiasts alike. Whether you&apos;re improving visibility on the highway,
+              adding hands-free convenience, or elevating your cabin comfort, every product is
+              selected with care — because your daily drive deserves accessories that
+              truly hold up.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">

@@ -8,19 +8,19 @@ const specs = ["OEM Standards", "Ships Same Day", "40K+ Orders Shipped"];
 const carouselImages = [
   {
     src: "/img/hero1.jpg",
-    alt: "Certified mechanic inspecting automotive brake systems",
+    alt: "Automotive vehicle and road accessories",
   },
   {
     src: "/img/products/product2.jpg",
-    alt: "Automotive service bay with vehicle on lift",
+    alt: "Magnetic suction car phone mount",
   },
   {
     src: "/img/products/product1.jpg",
-    alt: "Technician performing engine maintenance and filter replacement",
+    alt: "Blind spot car mirror set",
   },
   {
     src: "/img/hero4.jpg",
-    alt: "High-performance sports car tuned and road ready",
+    alt: "High-performance car tuned and road ready",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
-            From ceramic brake pads to synthetic filtration and heavy-duty auto accessories, we stock what mechanics and drivers need — road-tested, OEM-compliant, and ready to ship today.
+            From wide-angle blind-spot mirrors to magnetic suction phone mounts and interior accessories, we stock what drivers need — reliable, durable, and ready to ship today.
           </p>
 
           {/* Spec ticker */}

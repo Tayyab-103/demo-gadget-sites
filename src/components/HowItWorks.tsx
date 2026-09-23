@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Find Your Part",
+    title: "Find Your Accessories",
     description:
-      "Browse our catalog of ceramic brake pads, synthetic filters, and auto tools, and select the exact package quantity your project requires.",
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80",
+      "Browse our catalog of blind spot mirrors, magnetic phone mounts, and car interior accessories, and select the bundle quantity you need.",
+    image: "/img/products/product1.jpg",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />

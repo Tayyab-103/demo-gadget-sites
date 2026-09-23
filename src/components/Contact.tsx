@@ -7,9 +7,9 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=900&q=80",
-  "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=900&q=80",
-  "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=900&q=80",
+  "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80",
+  "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=900&q=80",
+  "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=900&q=80",
 ];
 
 const methods = [
@@ -67,7 +67,7 @@ export default function Contact() {
             Have Questions? <span className="text-secondary">Get in Touch</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base">
-            Our customer care representatives are available to help guide you on products, shipping, or billing support.
+            Our parts specialists and customer care representatives are available to assist with fitment verification, order status, or technical questions.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function Contact() {
               <img
                 key={src}
                 src={src}
-                alt="Electrician testing an electrical panel"
+                alt="Automotive parts specialist and technician"
                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                   idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
                 }`}
@@ -90,7 +90,7 @@ export default function Contact() {
             <div className="relative z-10 h-full flex flex-col justify-end p-8">
               <span className="text-[0.65rem] font-bold uppercase tracking-widest text-secondary mb-2">Real Techs, Real Support</span>
               <p className="text-white text-lg md:text-xl font-bold leading-snug max-w-sm mb-8">
-                &ldquo;They helped me find the exact breaker in stock, same day.&rdquo;
+                &ldquo;They helped me verify exact fitment for my brake upgrade in minutes.&rdquo;
               </p>
 
               {/* Image dots */}

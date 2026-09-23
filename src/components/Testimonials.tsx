@@ -11,57 +11,57 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "The Voltrex 12/2 wire has been solid on every rough-in I've run it on. Consistent gauge, clean jacket, no surprises when the inspector checks the panel.",
+    quote: "The ApexBrake ceramic pads were an exact fit on my truck. Super quiet, virtually zero brake dust, and the stopping power feels even better than factory OEM.",
     name: "Sarah M.",
-    role: "Licensed Electrician",
+    role: "ASE-Certified Mechanic",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
   {
-    quote: "Ordered a dozen Ironclad breakers for a panel upgrade and every single one tripped exactly where it should in testing. Zero returns, which never happens with bulk orders.",
+    quote: "Ordered a case of the VeloMax oil filters for our fleet service bay. Solid steel canister, high-quality silicone valves, and zero leak issues across 50+ changes.",
     name: "David K.",
-    role: "General Contractor",
+    role: "Auto Repair Shop Owner",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
   },
   {
-    quote: "The LED work light survived a drop off the ladder onto concrete and still runs at full brightness. That alone paid for itself on week one.",
+    quote: "The digital tire inflator is easily one of the best tools in my trunk. Accurate to the decimal and makes pre-trip tire checks so quick and effortless.",
     name: "Elena R.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
-    quote: "Restocked the truck with Voltrex wire for a remodel job and the pricing beat my usual supplier by a wide margin. Sizing and gauge were exactly as listed.",
+    quote: "Replaced both front and rear pads with the ApexBrake set before a cross-country road trip. Smooth bite, no fade down mountain passes, and great bundle pricing.",
     name: "Priya N.",
-    role: "Verified Purchaser",
+    role: "Daily Commuter & DIYer",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80",
   },
   {
-    quote: "I'm hard on breakers and the Ironclad has handled every overload test I've thrown at it without a single false trip. Great value for how solid it feels.",
+    quote: "I've been in automotive repair for over 15 years. The build quality on these parts rivals top-tier aftermarket brands at a fraction of dealership prices.",
     name: "Marcus T.",
-    role: "Licensed Electrician",
+    role: "Master Technician",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
-    quote: "The work light's battery life is no joke — I was skeptical but it ran a full 10-hour shift without dimming. Genuinely useful for crawlspace and attic work.",
+    quote: "Fast shipping and parts arrived packed securely with all the necessary hardware clips. Made my weekend brake job completely painless.",
     name: "Grace L.",
     role: "Verified Purchaser",
     image: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=200&q=80",
   },
   {
-    quote: "Pulled 200ft of the Voltrex 12/2 through a tight conduit run without a single snag — the jacket is smoother than what I usually get from the big box store.",
+    quote: "The synthetic blend oil filter provides great oil flow pressure and keeps engine internals clean between extended 7,500-mile service intervals.",
     name: "Daniel R.",
-    role: "Licensed Electrician",
+    role: "Automotive Enthusiast",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
   },
   {
-    quote: "We standardized our facility panels on the Ironclad breakers last year. Consistent trip curves across every unit make troubleshooting so much faster.",
+    quote: "We standardized on Road Ready parts for our commercial delivery vans. Reliable durability means less downtime on the road and significant maintenance savings.",
     name: "Priya S.",
-    role: "Maintenance Supervisor",
+    role: "Fleet Operations Manager",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
   },
   {
-    quote: "Lit up an entire basement remodel with two of the Coppervolt work lights. Battery held a full day and the swivel head made setup painless.",
+    quote: "Tested the tire pressure gauge against our shop's master calibration gauge and it was spot on. Durable rubber housing handles garage drops easily.",
     name: "Tom H.",
-    role: "General Contractor",
+    role: "Service Center Tech",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&q=80",
   },
 ];
@@ -106,10 +106,10 @@ export default function Testimonials() {
       <div className="mx-auto mb-12 max-w-2xl px-6 text-center md:mb-16">
         <span className="eyebrow eyebrow-invert justify-center mb-4">Customer Love</span>
         <h2 className="text-3xl font-black uppercase tracking-tight text-white md:text-5xl">
-          Trusted by <span className="text-secondary">40k+ Pros &amp; DIYers</span>
+          Trusted by <span className="text-secondary">40k+ Drivers &amp; Mechanics</span>
         </h2>
         <p className="mx-auto mt-4 max-w-md text-sm text-white/60 md:text-base">
-          Real stories from electricians, contractors, and DIYers who&apos;ve put our parts to work.
+          Real stories from mechanics, fleet operators, and DIYers who trust our automotive parts.
         </p>
       </div>
 

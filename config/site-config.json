@@ -1,11 +1,12 @@
 {
-  "Product": "Electrical Parts and Equipment",
-  "Processor": "EMP",
-  "brandName": "Coppervolt Electrical Foundry",
-  "websiteUrl": "CoppervoltElectricalFoundry.com",
-  "email": "support@coppervoltelectricalfoundry.com",
-  "descriptor": "CoppervoltElectricalFo",
-  "corpName": "Starpath Marketing Co",
+  "Product": "Automotive Parts and Accessories",
+  "mcc": "5533",
+  "Processor": "APPS- Synovus ",
+  "brandName": "Road Ready Auto Parts Supply",
+  "websiteUrl": "roadreadyautopartssupply.com",
+  "email": "support@roadreadyautopartssupply.com",
+  "descriptor": "RoadReadyAutoPartsSu",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -21,6 +22,6 @@
     "secondaryTextColor": "#FFFFFF",
     "neutralBgColor": "#FFFFFF",
     "neutralTextColor": "#1C1C1C",
-    "fontFamily": "Poppins"
+    "fontFamily": "Montserrat"
   }
 }

@@ -35,9 +35,9 @@ export default function Footer() {
         {/* Top: Newsletter CTA */}
         <div className="flex flex-col gap-8 border-b border-dashed border-white/15 pb-14 lg:flex-row lg:items-center lg:justify-between md:pb-16">
           <div className="max-w-md">
-            <span className="eyebrow eyebrow-invert mb-4">Stay Wired In</span>
+            <span className="eyebrow eyebrow-invert mb-4">Stay Road Ready</span>
             <h2 className="text-2xl font-black uppercase leading-tight tracking-tight md:text-4xl">
-              Get restock alerts &amp; trade pricing
+              Get restock alerts &amp; parts discounts
             </h2>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@company.com"
+                placeholder="you@email.com"
                 required
                 className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white placeholder:text-white/40 focus:outline-none"
               />
@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="col-span-2 flex flex-col md:col-span-1">
             <h4 className="mb-3 text-lg font-black uppercase text-white">{siteConfig.brandName}</h4>
             <p className="mb-5 max-w-xs text-sm text-white/50 leading-relaxed">
-              Certified electrical parts and equipment for electricians, contractors, and DIYers.
+              Certified automotive parts, accessories, and maintenance supplies for drivers and professionals.
             </p>
             <div className="flex flex-col gap-2 text-sm">
               <a href={`tel:${siteConfig.phone}`} className="text-white/70 hover:text-secondary transition-colors">{siteConfig.phone}</a>
@@ -95,9 +95,9 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="text-white/50 text-xs mb-5 font-bold uppercase tracking-widest">Products</h4>
             <ul className="flex flex-col gap-3">
-              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Copper Romex Wire</Link></li>
-              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Circuit Breakers</Link></li>
-              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">LED Work Lights</Link></li>
+              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Ceramic Brake Pads</Link></li>
+              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Synthetic Oil Filters</Link></li>
+              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Digital Tire Inflators</Link></li>
               <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Shop All</Link></li>
             </ul>
           </div>

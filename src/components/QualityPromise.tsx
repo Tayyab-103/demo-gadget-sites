@@ -9,8 +9,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Quality-Tested Components",
-    desc: "Every part is inspected and tested for spec accuracy and build quality before it ships, so it performs on the job.",
+    title: "Road-Tested Components",
+    desc: "Every part is inspected, bench-tested, and verified for exact vehicle fitment and build quality before it ships.",
     icon: (
       <>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -20,7 +20,7 @@ const promises = [
   },
   {
     title: "30-Day Easy Returns",
-    desc: "Wrong part or spec? Send it back within 30 days — no fine print, no restocking headaches.",
+    desc: "Wrong part or fitment? Send it back within 30 days — no fine print, no restocking headaches.",
     icon: (
       <>
         <polyline points="1 4 1 10 7 10" />
@@ -29,8 +29,8 @@ const promises = [
     ),
   },
   {
-    title: "Certified, Code-Compliant Parts",
-    desc: "We partner with vetted manufacturers using UL-listed and code-compliant materials in every part we sell.",
+    title: "Certified OEM-Grade Standards",
+    desc: "We partner with vetted automotive manufacturers using premium friction, filtration, and alloy materials.",
     icon: (
       <>
         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
@@ -55,8 +55,8 @@ export default function QualityPromise() {
           The Premium Quality <span className="text-secondary">You Deserve</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-white/60 md:text-base">
-          We understand how much the parts on your truck have to hold up to.
-          That&apos;s why we back every order with a formal guarantee.
+          We understand how much you rely on your vehicle to get where you need to go safely.
+          That&apos;s why we back every order with a formal quality guarantee.
         </p>
       </div>
 

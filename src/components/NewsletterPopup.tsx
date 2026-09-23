@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=900&q=80"
-            alt="Coiled copper wire spool"
+            src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=900&q=80"
+            alt="Automotive service and parts"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}
@@ -112,7 +112,7 @@ export default function NewsletterPopup() {
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get job-site tips, early access to new stock, and <strong>15% off</strong> on your first order.
+                Join the {siteConfig.brandName} community. Subscribe today to get vehicle maintenance tips, early access to new parts, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">

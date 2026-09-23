@@ -25,22 +25,23 @@ export default function AboutUs() {
             <span className="eyebrow mb-6">Our Story</span>
 
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.05] tracking-tight text-neutral-text md:text-5xl">
-              Electrical Parts, <span className="text-secondary">Built for the Trade</span>
+              Automotive Parts, <span className="text-secondary">Engineered for the Road</span>
             </h2>
 
             <p className="mb-6 text-sm leading-relaxed text-neutral-text/65 md:text-base">
-              At {siteConfig.brandName}, we believe certified, code-compliant
-              electrical parts shouldn&apos;t come with distributor markups. We
-              quality-check every wire spool, breaker, and fixture against our
-              own standards, so it holds up on the job site and passes inspection.
+              At {siteConfig.brandName}, we believe certified, high-performance
+              automotive parts and accessories shouldn&apos;t come with exorbitant
+              dealership markups. We quality-check every brake pad set, oil filter,
+              and specialty tool against rigorous automotive safety benchmarks, so
+              your vehicle runs smoothly and reliably on every drive.
             </p>
 
             <p className="mb-10 text-sm leading-relaxed text-neutral-text/65 md:text-base">
-              Our mission is simple: make reliable electrical parts and
-              equipment accessible for electricians, contractors, and DIYers
-              alike, whether you&apos;re restocking the truck, wiring a
-              remodel, or tackling a weekend project. Every part is chosen
-              with intention — because your work deserves components that
+              Our mission is simple: make reliable, OEM-grade replacement parts and
+              accessories accessible for daily drivers, fleet managers, and DIY car
+              enthusiasts alike. Whether you&apos;re doing a weekend brake upgrade,
+              routine engine maintenance, or equipping your garage, every part is
+              crafted with precision — because your journey deserves components that
               actually hold up.
             </p>
 
@@ -67,8 +68,8 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-4 md:gap-5">
               <div className="group relative row-span-2 overflow-hidden rounded-4xl shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80"
-                  alt={`${siteConfig.brandName} electrician installing wiring on the job`}
+                  src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=900&q=80"
+                  alt={`${siteConfig.brandName} mechanic installing brake pads`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 340px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -76,8 +77,8 @@ export default function AboutUs() {
               </div>
               <div className="group relative aspect-square overflow-hidden rounded-3xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=700&q=80"
-                  alt="Circuit breaker panel with certified components"
+                  src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=700&q=80"
+                  alt="Automotive engine bay maintenance and filter service"
                   fill
                   sizes="(max-width: 1024px) 50vw, 320px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -85,8 +86,8 @@ export default function AboutUs() {
               </div>
               <div className="group relative aspect-square overflow-hidden rounded-3xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=700&q=80"
-                  alt="Coiled copper wire spool"
+                  src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=700&q=80"
+                  alt="Precision automotive tool and tire gauge"
                   fill
                   sizes="(max-width: 1024px) 50vw, 320px"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"

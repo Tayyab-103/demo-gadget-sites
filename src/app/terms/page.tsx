@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer electrical parts and equipment through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer automotive parts and accessories through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}

@@ -74,7 +74,7 @@ export default function ProductDetail() {
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
               <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Electrical Parts"}
+                {product.category || "Automotive Parts"}
               </span>
 
               <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">
@@ -173,7 +173,7 @@ export default function ProductDetail() {
                   <div className="bg-neutral-bg border border-black/5 rounded-xl p-6 flex items-center justify-center shadow-inner">
                     <img
                       src={product.ingredientsImage}
-                      alt="Electrical part, tested and ready to install"
+                      alt="Automotive part, road-tested and ready to install"
                       className="max-w-full h-auto rounded-lg max-h-[350px] object-contain bg-white p-2 border border-black/5"
                       onError={(e) => {
                         e.currentTarget.src = "https://placehold.co/400x300?text=Packaging";

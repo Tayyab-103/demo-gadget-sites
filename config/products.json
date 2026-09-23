@@ -2,16 +2,17 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Voltrex 12/2 Copper Romex Wire — 250ft Spool",
-    "description": "Solid-core 12-gauge copper Romex wire rated for 20-amp residential and light commercial circuits, jacketed in code-compliant NM-B sheathing. Each spool is pull-tested and inspected for consistent gauge and insulation integrity before it ships, so it feeds cleanly through conduit and boxes without kinking.",
-    "image": "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=1000&q=80",
+    "name": "Blind Spot Car Mirror Set",
+    "description": "Never miss a thing with these high-quality, wide-angle blind-spot mirrors. Perfect for cars, trucks, and SUVs. Easy peel-and-stick installation. Shatterproof design with durable ABS frame. Eliminates dangerous blind spots and enhances safety while driving, parking, and reversing.",
+    "image": "/img/products/product1.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=1000&q=80",
-      "https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=1000&q=80"
+      "/img/products/product1.jpg",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=900&q=80",
-    "category": "Wire & Cable",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Auto Safety & Visibility",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -29,16 +30,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Ironclad 20A Single-Pole Circuit Breaker",
-    "description": "A UL-listed 20-amp single-pole circuit breaker built with a reinforced trip mechanism for reliable overload and short-circuit protection. Compatible with standard residential load centers, each unit is factory-tested for trip accuracy before it leaves our warehouse. A dependable swap for a worn breaker or a panel upgrade.",
-    "image": "https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=1000&q=80",
+    "name": "Magnetic Suction Car Phone Mount",
+    "description": "Effortless phone mounting with a powerful magnetic grip. Securely holds your phone on dashboard or windshield without messy adhesives. Fully adjustable with 360° rotation for the perfect viewing angle. One-handed operation for quick phone placement and removal. Universal compatibility with all smartphones. Sleek, compact design that complements any car interior.",
+    "image": "/img/products/product2.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1566417110090-6b15a06ec800?w=1000&q=80",
-      "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=1000&q=80"
+      "/img/products/product2.jpg",
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=900&q=80",
-    "category": "Breakers & Panels",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Phone & Gadget Accessories",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -56,16 +58,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Coppervolt Heavy-Duty LED Work Light",
-    "description": "A rugged, impact-resistant LED work light delivering 5,000 lumens from a rechargeable battery pack, with a folding stand and 360-degree swivel head. Built with a reinforced housing to survive job-site drops, dust, and daily use, and quality-checked for consistent brightness before it ships.",
-    "image": "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1000&q=80",
+    "name": "Fuzzy Leopard Steering Wheel Cover Set",
+    "description": "Add a touch of wild style to your car with this adorable leopard print steering wheel cover set. Made from soft, fuzzy material for extra comfort and grip. Includes steering wheel cover, seat belt covers, and gear shift cover. Elastic band ensures snug fit on most steering wheels. Easy to install and clean. Brighten up your car interior with this fun and fashionable accessory.",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1000&q=80",
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1000&q=80"
+      "/img/products/product3.jpg",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg"
     ],
-    "showIngredients": true,
-    "ingredientsImage": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80",
-    "category": "Tools & Equipment",
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Car Care & Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

@@ -4,8 +4,8 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "UL-Listed & Certified",
-    description: "Every part meets UL and code-compliance standards, so it passes inspection the first time.",
+    title: "OEM-Grade Precision",
+    description: "Every part meets or exceeds strict OEM fitment and safety standards for seamless installation.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -15,7 +15,7 @@ const featuresData = [
   },
   {
     title: "Built for Heavy-Duty Use",
-    description: "No fragile hardware — every part is built to survive job sites, not just showrooms.",
+    description: "Engineered to withstand extreme heat, vibration, and daily road wear without degrading.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94Z" />
@@ -24,7 +24,7 @@ const featuresData = [
   },
   {
     title: "Fair, Transparent Pricing",
-    description: "Bundle pricing that gets better the more you stock up — no hidden costs, no fine print.",
+    description: "Direct-to-driver bundle pricing with no hidden distributor markups or surprise fees.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" />
@@ -33,8 +33,8 @@ const featuresData = [
     ),
   },
   {
-    title: "Trusted by Licensed Electricians",
-    description: "Every part is shaped by feedback from the electricians and contractors who use it daily.",
+    title: "Trusted by Mechanics & Drivers",
+    description: "Every component is road-tested and approved by professional technicians and automotive enthusiasts.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -53,10 +53,10 @@ export default function Features() {
         <div className="mb-12 text-center md:mb-16">
           <span className="eyebrow justify-center mb-4">Why Choose Us</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Built to Be <span className="text-secondary">Kept</span>
+            Engineered to Keep You <span className="text-secondary">Moving</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            We combine certified components with real trade feedback to bring you parts that actually hold up.
+            We combine precision manufacturing with real-world road testing to deliver parts and accessories that truly hold up.
           </p>
         </div>
 

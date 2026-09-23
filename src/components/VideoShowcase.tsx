@@ -6,13 +6,13 @@ import Link from "next/link";
 const videos = [
   {
     src: "/videos/video1.mp4",
-    title: "Tested, Part by Part",
-    desc: "A closer look at how every wire spool and breaker is checked before it ships.",
+    title: "Bench-Tested, Part by Part",
+    desc: "A closer look at how every brake set and filter is checked before it ships.",
   },
   {
     src: "/videos/video2.mp4",
-    title: "Built for the Job Site",
-    desc: "See our parts and equipment the way electricians actually use them.",
+    title: "Engineered for Road Safety",
+    desc: "See our automotive parts and tools perform under real-world conditions.",
   },
 ];
 
@@ -88,10 +88,10 @@ export default function VideoShowcase() {
           <div className="text-center lg:text-left">
             <span className="eyebrow justify-center mb-5 lg:justify-start">See It In Motion</span>
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-5xl">
-              Built to Get the <span className="text-secondary">Job Done</span>
+              Engineered for <span className="text-secondary">Peak Performance</span>
             </h2>
             <p className="mx-auto mb-9 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
-              A closer look at the testing and quality checks behind every part we ship — and how real electricians put it to work.
+              A closer look at the precision engineering and quality control behind every automotive part we ship — keeping you safe on the open road.
             </p>
 
             <div className="mx-auto grid max-w-sm grid-cols-2 gap-4 lg:mx-0">
@@ -101,7 +101,7 @@ export default function VideoShowcase() {
               </div>
               <div className="rounded-2xl border border-black/5 bg-neutral-bg p-5 text-left">
                 <div className="text-2xl font-black text-primary md:text-3xl">4.9★</div>
-                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Trade Rating</div>
+                <div className="mt-1 text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/50">Customer Rating</div>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export default function VideoShowcase() {
               href="/shop"
               className="group mt-9 inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg shadow-primary/15 transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
             >
-              Shop Parts &amp; Equipment
+              Shop Auto Parts &amp; Accessories
               <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </Link>
           </div>

@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Electrical Parts &amp; Equipment For the Trade
+          Automotive Parts &amp; Accessories For Drivers &amp; Pros
         </div>
 
         <div

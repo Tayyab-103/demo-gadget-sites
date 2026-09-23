@@ -2,6 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
@@ -11,8 +15,8 @@ export default function CTASection() {
           {/* Left — Image */}
           <div className="relative min-h-80 md:min-h-120">
             <img
-              src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&q=80"
-              alt="Electrician on the job wearing safety gear"
+              src="https://images.unsplash.com/photo-1613214149922-f1809c99b414?w=1200&q=80"
+              alt="Professional automotive technician working in modern repair garage"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/0 to-transparent md:bg-gradient-to-r" />
@@ -44,11 +48,11 @@ export default function CTASection() {
             </span>
 
             <h2 className="mb-6 text-3xl font-black uppercase leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
-              Ready to Wire Your Next Project?
+              Ready to Upgrade Your Ride?
             </h2>
 
             <p className="mb-9 max-w-md text-sm leading-relaxed text-secondary-text/75 md:text-base">
-              Join thousands of electricians and contractors who&apos;ve restocked the truck with us. Bundle up and save on your first order today.
+              Join thousands of drivers, DIY enthusiasts, and mechanics who trust {siteConfig.brandName} for precision parts and accessories. Bundle up and save today.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">

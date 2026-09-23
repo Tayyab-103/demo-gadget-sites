@@ -29,7 +29,7 @@ export default function Home() {
         <Features />
         
         {/* About Brand Section */}
-        {/* <AboutUs /> */}
+        <AboutUs />
 
         {/* Brand Video Showcase */}
         {/* <VideoShowcase /> */}
@@ -38,7 +38,7 @@ export default function Home() {
         <ProductGrid />
 
         {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
+        {/* <QualityPromise /> */}
         
         {/* Quality Certifications */}
         {/* <Features /> */}

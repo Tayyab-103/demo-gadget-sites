@@ -3,24 +3,24 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const specs = ["UL Listed", "Ships Same Day", "40K+ Orders Shipped"];
+const specs = ["OEM Standards", "Ships Same Day", "40K+ Orders Shipped"];
 
 const carouselImages = [
   {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
-    alt: "Electrician installing wiring on the job",
+    src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80",
+    alt: "Certified mechanic inspecting automotive brake systems",
   },
   {
-    src: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=1200&q=80",
-    alt: "Electrical panel with circuit breakers",
+    src: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=1200&q=80",
+    alt: "Automotive service bay with vehicle on lift",
   },
   {
-    src: "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1200&q=80",
-    alt: "Contractor with drill and hard hat on site",
+    src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200&q=80",
+    alt: "Technician performing engine maintenance and filter replacement",
   },
   {
-    src: "https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=1200&q=80",
-    alt: "Electrician testing a panel with a multimeter",
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80",
+    alt: "High-performance sports car tuned and road ready",
   },
 ];
 
@@ -85,15 +85,15 @@ export default function Hero() {
         <div className="max-w-lg text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-primary shadow-sm">
             <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-            Electrical Parts &amp; Equipment
+            Automotive Parts &amp; Accessories
           </span>
 
           <h1 className="mx-auto mt-6 text-4xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-6xl lg:mx-0">
-            The Parts Pros Trust to Get the <span className="text-secondary">Job Done</span>
+            The Parts Drivers &amp; Pros Trust to <span className="text-secondary">Stay Road Ready</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
-            From copper wire to certified breakers, we stock what contractors and electricians need — tested, code-compliant, and ready to ship today.
+            From ceramic brake pads to synthetic filtration and heavy-duty auto accessories, we stock what mechanics and drivers need — road-tested, OEM-compliant, and ready to ship today.
           </p>
 
           {/* Spec ticker */}
@@ -113,7 +113,7 @@ export default function Hero() {
               href="/shop"
               className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
             >
-              Shop Parts &amp; Equipment
+              Shop Auto Parts &amp; Accessories
               <span className="text-sm">→</span>
             </Link>
           </div>

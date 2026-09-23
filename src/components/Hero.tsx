@@ -7,19 +7,19 @@ const specs = ["OEM Standards", "Ships Same Day", "40K+ Orders Shipped"];
 
 const carouselImages = [
   {
-    src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80",
+    src: "/img/hero1.jpg",
     alt: "Certified mechanic inspecting automotive brake systems",
   },
   {
-    src: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=1200&q=80",
+    src: "/img/products/product2.jpg",
     alt: "Automotive service bay with vehicle on lift",
   },
   {
-    src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200&q=80",
+    src: "/img/products/product1.jpg",
     alt: "Technician performing engine maintenance and filter replacement",
   },
   {
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80",
+    src: "/img/hero4.jpg",
     alt: "High-performance sports car tuned and road ready",
   },
 ];
@@ -111,7 +111,7 @@ export default function Hero() {
           <div className="mt-9 flex justify-center lg:justify-start">
             <Link
               href="/shop"
-              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
+              className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-primary-text shadow-lg shadow-primary/15 transition-all duration-300 hover:bg-secondary hover:text-secondary-text hover:shadow-secondary/20"
             >
               Shop Auto Parts &amp; Accessories
               <span className="text-sm">→</span>

@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -95,10 +97,14 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="text-white/50 text-xs mb-5 font-bold uppercase tracking-widest">Products</h4>
             <ul className="flex flex-col gap-3">
-              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Ceramic Brake Pads</Link></li>
-              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Synthetic Oil Filters</Link></li>
-              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Digital Tire Inflators</Link></li>
-              <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Shop All</Link></li>
+              {products.map((product) => (
+                <li key={product.id}>
+                  <Link href={`/product/${product.id}`} className="text-white text-sm hover:text-secondary transition-colors">
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
+              <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors font-semibold">Shop All</Link></li>
             </ul>
           </div>
 
@@ -125,8 +131,8 @@ export default function Footer() {
           <div className="flex items-center gap-3 order-1 sm:order-2">
             <span className="text-white/50 text-xs font-semibold">We Accept</span>
             <div className="flex items-center gap-2">
-              <img src="/img/visa.png" alt="Visa" className="h-9 w-14 rounded-xl bg-white object-contain p-2 shadow-sm" />
-              <img src="/img/mastercard.png" alt="Mastercard" className="h-9 w-14 rounded-xl bg-white object-contain p-2 shadow-sm" />
+              <img src="/img/visa.png" alt="Visa" className="h-9 w-14" />
+              <img src="/img/mastercard.png" alt="Mastercard" className="h-9 w-14" />
             </div>
           </div>
         </div>

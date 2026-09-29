@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
@@ -11,28 +11,20 @@ const products = productsData as unknown as Product[];
 
 const cardMeta: Record<string, { badge: string; badgeBg: string }> = {
   product1: {
-    badge: "Ergonomic Wrap",
+    badge: "Food-Grade Silicone",
     badgeBg: "bg-primary text-white",
   },
   product2: {
-    badge: "Food-Grade Silicone",
+    badge: "Nursery Organizer",
     badgeBg: "bg-secondary text-primary",
   },
   product3: {
-    badge: "Travel & Diaper Bag",
+    badge: "Ergonomic Carrier",
     badgeBg: "bg-primary text-white",
   },
 };
 
 export default function ProductGrid() {
-  const [liked, setLiked] = useState<Record<string, boolean>>({});
-
-  const toggleLike = (id: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setLiked((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-neutral-bg relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -74,7 +66,6 @@ export default function ProductGrid() {
               badge: "Baby Essential",
               badgeBg: "bg-primary text-white",
             };
-            const isLiked = liked[product.id];
 
             // Secondary image for hover effect
             const primaryImage = product.images && product.images[0] ? product.images[0] : product.image;
@@ -124,17 +115,6 @@ export default function ProductGrid() {
                     >
                       {meta.badge}
                     </span>
-
-                    {/* Top Right Wishlist Heart Button */}
-                    <button
-                      onClick={(e) => toggleLike(product.id, e)}
-                      aria-label="Save to favorites"
-                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-sm shadow-sm hover:scale-110 transition-all cursor-pointer border border-black/[0.06] z-10"
-                    >
-                      <span className={isLiked ? "text-red-500" : "text-stone-400 hover:text-red-500"}>
-                        {isLiked ? "♥" : "♡"}
-                      </span>
-                    </button>
                   </div>
 
                   {/* Title */}

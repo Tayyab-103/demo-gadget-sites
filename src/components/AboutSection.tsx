@@ -9,19 +9,19 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const values = [
   {
-    iconEmoji: "🐾",
-    title: "Committed to Companion Health",
-    description: "Every item is selected to support natural pet instincts, physical activity, and emotional well-being.",
+    iconEmoji: "✨",
+    title: "Committed to Infant Safety & Comfort",
+    description: "Every item is crafted to support natural posture development, soothing relief, and nurturing moments for both parent and baby.",
   },
   {
     iconEmoji: "🌿",
-    title: "100% Non-Toxic & Safe",
-    description: "Strict quality control ensuring all materials, dyes, and silicone are 100% safe for daily chewing and cuddling.",
+    title: "100% Non-Toxic & Hypoallergenic",
+    description: "Rigorous quality checks ensuring all organic fabrics, food-grade silicone, and materials are BPA-free and safe for sensitive newborn skin.",
   },
   {
     iconEmoji: "📦",
-    title: "Domestic Fast Dispatch",
-    description: "Quick, reliable shipping from our domestic fulfillment center with live tracking on every single order.",
+    title: "Domestic Fast Tracked Dispatch",
+    description: "Quick, reliable shipping with protective packaging and live real-time tracking straight to your front door.",
   },
 ];
 
@@ -33,18 +33,18 @@ export default function AboutSection() {
         {/* Section Header at Top */}
         <div className="text-left max-w-3xl mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+            <span className="text-xs">✨</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
               ABOUT {siteConfig.brandName.toUpperCase()}
             </span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Thoughtfully Selected <span className="italic text-secondary font-serif">For Every Pet</span>
+            Thoughtfully Selected <span className="italic text-primary/80 font-serif">For Every Growing Baby</span>
           </h2>
           
           <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed">
-            At {siteConfig.brandName}, we provide premium pet carrier backpacks, engaging dental chew toys, and ergonomic litter care solutions without compromise — ensuring every day is filled with comfort, vitality, and wagging tails.
+            At {siteConfig.brandName}, we provide premium ergonomic baby bouncers, all-position carriers, activity gyms, and nursery organizer solutions without compromise — ensuring every milestone of parenthood is filled with safety, comfort, and peace of mind.
           </p>
         </div>
 
@@ -58,11 +58,11 @@ export default function AboutSection() {
               {/* Primary Image: aboutus.jpg (7 cols) */}
               <div className="col-span-7 relative aspect-[4/5] rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl border border-stone-200/80 bg-stone-100 group">
                 <img
-                  src="/img/aboutus.jpg"
+                  src="/img/hero1.jpg"
                   alt={`About ${siteConfig.brandName}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
-                    e.currentTarget.src = "/img/hero.jpg";
+                    e.currentTarget.src = "/img/products/Solid Wood Baby Gym.jpg";
                   }}
                 />
                 <div className="absolute top-3.5 left-3.5 z-10">
@@ -75,16 +75,16 @@ export default function AboutSection() {
               {/* Secondary Image: aboutus2.jpg (5 cols) */}
               <div className="col-span-5 relative aspect-[4/5] rounded-3xl sm:rounded-[2.5rem] overflow-hidden shadow-xl border border-stone-200/80 bg-stone-100 group">
                 <img
-                  src="/img/aboutus2.jpg"
-                  alt={`Pet care from ${siteConfig.brandName}`}
+                  src="/img/hero2.jpg"
+                  alt={`Baby essentials from ${siteConfig.brandName}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
-                    e.currentTarget.src = "/img/hero1.jpg";
+                    e.currentTarget.src = "/img/products/Baby Play Gym.jpg";
                   }}
                 />
                 <div className="absolute top-3.5 left-3.5 z-10">
-                  <span className="bg-secondary text-white text-[0.62rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                    Pet Wellness
+                  <span className="bg-secondary text-primary text-[0.62rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                    Baby Comfort
                   </span>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function AboutSection() {
                     <span>{item.iconEmoji}</span>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-primary mb-1 group-hover:text-secondary transition-colors font-serif">
+                    <h3 className="text-base sm:text-lg font-bold text-primary mb-1 transition-colors font-serif">
                       {item.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-text/75 leading-relaxed">
@@ -116,7 +116,7 @@ export default function AboutSection() {
             <div className="mt-8 pt-6 border-t border-stone-200">
               <Link
                 href="/shop"
-                className="inline-flex items-center gap-2 bg-secondary text-white hover:bg-primary transition-all duration-300 px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 bg-primary text-white hover:bg-primary/90 transition-all duration-300 px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
               >
                 <span>Explore Full Collection</span>
                 <span>→</span>

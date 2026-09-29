@@ -119,8 +119,8 @@ export default function Checkout() {
       {/* Loading Overlay */}
       {loading && (
         <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center">
-          <div className="w-12 h-12 border-4 border-stone-200 border-t-secondary rounded-full animate-spin" />
-          <h4 className="mt-6 text-lg font-bold text-primary">Processing Secure Pet Order...</h4>
+          <div className="w-12 h-12 border-4 border-stone-200 border-t-primary rounded-full animate-spin" />
+          <h4 className="mt-6 text-lg font-bold text-primary">Processing Secure Order...</h4>
           <p className="text-xs text-neutral-text/60">Please do not refresh or close this window.</p>
         </div>
       )}
@@ -129,13 +129,13 @@ export default function Checkout() {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
             <span className="text-xs">🔒</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
               GUARANTEED 256-BIT ENCRYPTION
             </span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-8">
-            Complete Your <span className="italic text-secondary font-serif">Pet Order</span>
+            Complete Your <span className="italic text-primary/80 font-serif">Baby Order</span>
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -157,42 +157,42 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">First Name</label>
-                    <input type="text" name="firstName" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.firstName} onChange={handleChange} required />
+                    <input type="text" name="firstName" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.firstName} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Last Name</label>
-                    <input type="text" name="lastName" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.lastName} onChange={handleChange} required />
+                    <input type="text" name="lastName" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.lastName} onChange={handleChange} required />
                   </div>
                 </div>
 
                 <div className="flex flex-col mb-4">
                   <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Shipping Address</label>
-                  <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingAddress1} onChange={handleChange} required />
+                  <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingAddress1} onChange={handleChange} required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">City</label>
-                    <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingCity} onChange={handleChange} required />
+                    <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingCity} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">State</label>
-                    <input type="text" name="shippingState" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" placeholder="e.g. TX" value={formData.shippingState} onChange={handleChange} required />
+                    <input type="text" name="shippingState" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" placeholder="e.g. TX" value={formData.shippingState} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">ZIP / Postal Code</label>
-                    <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingZip} onChange={handleChange} required />
+                    <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.shippingZip} onChange={handleChange} required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Phone Number</label>
-                    <input type="tel" name="phone" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.phone} onChange={handleChange} required />
+                    <input type="tel" name="phone" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.phone} onChange={handleChange} required />
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Email Address</label>
-                    <input type="email" name="email" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.email} onChange={handleChange} required />
+                    <input type="email" name="email" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.email} onChange={handleChange} required />
                   </div>
                 </div>
 
@@ -213,7 +213,7 @@ export default function Checkout() {
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs"
+                    className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
@@ -227,7 +227,7 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Expiry Month</label>
-                    <select name="cc_month" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.cc_month} onChange={handleChange} required>
+                    <select name="cc_month" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.cc_month} onChange={handleChange} required>
                       <option value="">Month</option>
                       {months.map((m) => (
                         <option key={m} value={m}>{m}</option>
@@ -236,7 +236,7 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">Expiry Year</label>
-                    <select name="cc_year" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" value={formData.cc_year} onChange={handleChange} required>
+                    <select name="cc_year" className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" value={formData.cc_year} onChange={handleChange} required>
                       <option value="">Year</option>
                       {years.map((y) => (
                         <option key={y} value={y}>{y}</option>
@@ -245,13 +245,13 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col">
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-wider text-neutral-text/75">CVV / CVC</label>
-                    <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-xs" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
+                    <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-neutral-text bg-white shadow-xs" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
                   </div>
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
+                <button type="submit" className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-primary text-white hover:bg-primary/90 transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
                   <span>Complete Secure Order</span>
-                  <span>🐾</span>
+                  <span>✨</span>
                 </button>
               </form>
             </div>

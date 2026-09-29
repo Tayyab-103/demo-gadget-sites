@@ -13,7 +13,7 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Pet Supplies" },
+  { href: "/shop", label: "Products" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -88,57 +88,52 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 bg-[#543625] text-white backdrop-blur-md transition-all duration-300 border-b border-black/15 shadow-md w-full"
+      className="sticky top-0 z-50 bg-primary text-white backdrop-blur-md transition-all duration-300 border-b border-white/10 shadow-md w-full"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3.5">
         
         {/* Left: Brand Logo (Emblem + Title & Subtitle) */}
         <Link
           href="/"
           onClick={closeAll}
-          className="flex items-center gap-2.5 sm:gap-3.5 group flex-shrink-0"
+          className="flex items-center gap-2 sm:gap-3 group flex-shrink min-w-0 pr-2"
           style={{ textDecoration: "none" }}
         >
           {/* Circular Emblem Icon */}
-          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#16A34A] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/20 flex-shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-secondary text-primary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/20 flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-primary"
             >
-              {/* Pet Paw Emblem */}
-              <circle cx="8.5" cy="5.5" r="1.7" />
-              <circle cx="15.5" cy="5.5" r="1.7" />
-              <circle cx="5.5" cy="10" r="1.7" />
-              <circle cx="18.5" cy="10" r="1.7" />
-              <path d="M12 9.5c-3.2 0-5.8 2.2-5.8 5.2 0 2.2 1.8 3.8 3.5 3.8 1.1 0 1.7-.7 2.3-.7s1.2.7 2.3.7c1.7 0 3.5-1.6 3.5-3.8 0-3-2.6-5.2-5.8-5.2z" />
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
           </div>
 
-          {/* Typography: Dynamic Brand Title & Subtitle */}
-          <div className="flex flex-col">
-            <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-white leading-tight">
+          {/* Typography: Responsive Brand Title & Subtitle */}
+          <div className="flex flex-col min-w-0">
+            <span className="font-serif text-sm xs:text-base sm:text-xl lg:text-2xl font-bold tracking-tight text-white leading-tight truncate">
               {siteConfig.brandName}
             </span>
-            <span className="text-[0.55rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.22em] text-[#16A34A] -mt-0.5">
-              PET SHOPS, FOOD &amp; SUPPLIES
+            <span className="text-[0.5rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.14em] sm:tracking-[0.2em] text-[#FFDBE5] -mt-0.5 truncate">
+              PREMIUM BABY PRODUCTS
             </span>
           </div>
         </Link>
 
-        {/* Center: Navigation Links with Active Indicator */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 bg-black/10 px-4 py-1.5 rounded-full border border-white/10">
+        {/* Center: Navigation Links for Large Screens */}
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 flex-shrink-0">
           {navLinks.map((link) => {
             const active = isLinkActive(link.href);
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-semibold transition-all duration-200 tracking-normal relative py-1.5 px-4 rounded-full ${
+                className={`text-xs xl:text-sm font-semibold transition-all duration-200 tracking-normal py-1.5 px-3.5 rounded-full ${
                   active
-                    ? "bg-[#16A34A] text-white shadow-sm font-bold"
-                    : "text-white/85 hover:text-[#16A34A] hover:bg-white/10"
+                    ? "bg-secondary text-primary font-bold shadow-sm"
+                    : "text-white/85 hover:text-secondary hover:bg-white/10"
                 }`}
               >
                 {link.label}
@@ -147,19 +142,19 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Right: Search & Shopping Cart */}
-        <div className="flex items-center gap-3.5 sm:gap-6 flex-shrink-0">
+        {/* Right: Search, Cart & Mobile Menu Buttons */}
+        <div className="flex items-center gap-1.5 sm:gap-4 flex-shrink-0">
           {/* Search Button */}
           <button
             onClick={toggleSearch}
-            className="p-1.5 text-white hover:text-[#16A34A] transition-colors cursor-pointer bg-transparent border-none"
-            aria-label="Search pet products"
+            className="p-1.5 sm:p-2 text-white hover:text-secondary transition-colors cursor-pointer bg-transparent border-none rounded-full hover:bg-white/10"
+            aria-label="Search baby products"
             aria-expanded={isSearchOpen}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -175,13 +170,13 @@ export default function Header() {
           {/* Shopping Bag Button with Badge */}
           <button
             onClick={toggleCart}
-            className="p-1.5 text-white hover:text-[#16A34A] transition-colors cursor-pointer relative bg-transparent border-none"
+            className="p-1.5 sm:p-2 text-white hover:text-secondary transition-colors cursor-pointer relative bg-transparent border-none rounded-full hover:bg-white/10"
             aria-label="Shopping Cart"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -195,16 +190,16 @@ export default function Header() {
             </svg>
 
             {/* Cart Count Badge */}
-            <span className="absolute -top-1 -right-1 bg-[#16A34A] text-white rounded-full w-4 h-4 text-[0.62rem] font-bold flex items-center justify-center border border-[#543625] shadow-xs">
+            <span className="absolute 0 top-0.5 right-0.5 bg-secondary text-primary rounded-full w-4 h-4 text-[0.62rem] font-bold flex items-center justify-center border border-primary shadow-xs">
               {getCartCount()}
             </span>
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-1.5 text-white hover:text-[#16A34A] cursor-pointer bg-transparent border-none"
-            aria-label="Toggle menu"
+            className="lg:hidden p-1.5 sm:p-2 text-white hover:text-secondary cursor-pointer bg-transparent border-none rounded-full hover:bg-white/10"
+            aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
@@ -223,9 +218,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu with Active Highlights */}
+      {/* Mobile Drawer Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#3B2314] text-white border-t border-white/10 shadow-2xl px-6 py-6 flex flex-col gap-2 transition-all animate-fadeIn">
+        <div className="lg:hidden bg-primary text-white border-t border-white/10 shadow-2xl px-4 sm:px-6 py-5 flex flex-col gap-2 transition-all animate-fadeIn">
           {navLinks.map((link) => {
             const active = isLinkActive(link.href);
             return (
@@ -233,10 +228,10 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={closeAll}
-                className={`text-base font-semibold py-2.5 px-4 rounded-xl transition-all ${
+                className={`text-sm sm:text-base font-semibold py-3 px-4 rounded-xl transition-all ${
                   active
-                    ? "bg-[#16A34A] text-white font-bold shadow-xs"
-                    : "text-white/90 hover:text-[#16A34A] hover:bg-white/5"
+                    ? "bg-secondary text-primary font-bold shadow-xs"
+                    : "text-white/90 hover:text-secondary hover:bg-white/5"
                 }`}
               >
                 {link.label}
@@ -244,11 +239,11 @@ export default function Header() {
             );
           })}
           <Link
-            href="/#shop"
+            href="/shop"
             onClick={closeAll}
-            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#16A34A] text-white hover:bg-white hover:text-primary py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+            className="mt-2 w-full inline-flex items-center justify-center gap-2 bg-secondary text-primary hover:bg-white py-3.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all shadow-md"
           >
-            <span>Explore Pet Catalog</span>
+            <span>Explore Baby Catalog</span>
             <span>→</span>
           </Link>
         </div>
@@ -256,7 +251,7 @@ export default function Header() {
 
       {/* Search Dropdown Overlay */}
       {isSearchOpen && (
-        <div className="bg-[#FAF8F5] text-[#3B2314] border-t border-black/10 shadow-2xl px-6 py-6 max-h-[75vh] overflow-y-auto">
+        <div className="bg-[#F8F9FE] text-primary border-t border-black/10 shadow-2xl px-4 sm:px-6 py-4 sm:py-6 max-h-[75vh] overflow-y-auto">
           <div className="max-w-3xl mx-auto">
             <div className="relative">
               <svg
@@ -269,7 +264,7 @@ export default function Header() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#3B2314]/40"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/40"
               >
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -279,13 +274,13 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search carrier backpacks, chew toys, self-cleaning litter scoops..."
-                className="w-full pl-12 pr-4 py-3.5 text-sm bg-white border border-stone-300 rounded-full focus:outline-none focus:border-[#16A34A] transition-colors text-[#3B2314] placeholder:text-[#3B2314]/40 shadow-xs"
+                placeholder="Search baby bouncers, teethers, carriers..."
+                className="w-full pl-11 pr-4 py-3 text-xs sm:text-sm bg-white border border-[#13275B]/20 rounded-full focus:outline-none focus:border-primary transition-colors text-primary placeholder:text-primary/40 shadow-xs"
               />
             </div>
 
             {trimmedQuery && (
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mt-3 flex flex-col gap-2">
                 {filteredProducts.length > 0 ? (
                   filteredProducts.map((product) => {
                     const price = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;
@@ -294,26 +289,29 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-4 p-3 rounded-2xl bg-white hover:border-[#16A34A] border border-stone-200 transition-all shadow-xs"
+                        className="flex items-center gap-3 p-2.5 sm:p-3 rounded-2xl bg-white hover:border-primary border border-stone-200 transition-all shadow-xs"
                       >
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-12 h-12 rounded-xl object-cover bg-neutral-100 flex-shrink-0"
+                          className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover bg-neutral-100 flex-shrink-0"
+                          onError={(e) => {
+                            e.currentTarget.src = "/img/hero1.jpg";
+                          }}
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-bold text-[#3B2314] truncate">{product.name}</div>
-                          <div className="text-[0.68rem] text-[#16A34A] font-bold uppercase tracking-wider">{product.category}</div>
+                          <div className="text-xs sm:text-sm font-bold text-primary truncate">{product.name}</div>
+                          <div className="text-[0.62rem] sm:text-[0.68rem] text-primary/70 font-bold uppercase tracking-wider">{product.category}</div>
                         </div>
-                        <div className="text-sm font-bold text-[#3B2314] flex-shrink-0">
+                        <div className="text-xs sm:text-sm font-bold text-primary flex-shrink-0">
                           ${price}
                         </div>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="text-xs text-[#3B2314]/60 text-center py-6">
-                    No pet items found for &ldquo;{query}&rdquo;.
+                  <p className="text-xs text-primary/60 text-center py-5">
+                    No baby items found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

@@ -11,15 +11,15 @@ const products = productsData as unknown as Product[];
 
 const cardMeta: Record<string, { badge: string; badgeBg: string }> = {
   product1: {
-    badge: "Travel Essential",
+    badge: "Ergonomic Wrap",
     badgeBg: "bg-primary text-white",
   },
   product2: {
-    badge: "Dental Care",
-    badgeBg: "bg-secondary text-white",
+    badge: "Food-Grade Silicone",
+    badgeBg: "bg-secondary text-primary",
   },
   product3: {
-    badge: "Bestseller",
+    badge: "Travel & Diaper Bag",
     badgeBg: "bg-primary text-white",
   },
 };
@@ -40,18 +40,18 @@ export default function ProductGrid() {
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              {siteConfig.brandName.toUpperCase()} CATALOG
+            <span className="text-xs">✨</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
+              {siteConfig.brandName.toUpperCase()} COLLECTION
             </span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Curated <span className="italic text-secondary font-serif">Pet Supplies &amp; Essentials</span>
+            Curated <span className="italic text-primary/80 font-serif">Baby Essentials &amp; Gear</span>
           </h2>
 
           <p className="text-neutral-text/75 text-sm sm:text-base leading-relaxed">
-            Thoughtfully engineered for pet comfort, joyful play, and daily convenience.
+            Thoughtfully engineered for baby comfort, gentle development, and everyday parenting peace of mind.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function ProductGrid() {
               : minPrice;
 
             const meta = cardMeta[product.id] || {
-              badge: "Essential",
+              badge: "Baby Essential",
               badgeBg: "bg-primary text-white",
             };
             const isLiked = liked[product.id];
@@ -85,11 +85,11 @@ export default function ProductGrid() {
             return (
               <div
                 key={product.id}
-                className="bg-white rounded-[2rem] border border-stone-200/80 p-5 sm:p-6 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-[2rem] border border-stone-200/80 p-5 sm:p-6 shadow-xs hover:shadow-xl hover:border-secondary transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* 1:1 Aspect Ratio Image Container with Hover Swap to Secondary Image */}
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-neutral-bg mb-5 border border-stone-100">
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#F8F9FE] mb-5 border border-stone-100">
                     <Link href={`/product/${product.id}`} className="block w-full h-full relative">
                       {/* Primary Image */}
                       <img
@@ -138,7 +138,7 @@ export default function ProductGrid() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2.5 leading-snug group-hover:text-secondary transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2.5 leading-snug group-hover:text-primary/80 transition-colors">
                     <Link href={`/product/${product.id}`}>
                       {product.name}
                     </Link>
@@ -153,9 +153,9 @@ export default function ProductGrid() {
 
                   {/* Savings Tag */}
                   <div className="mb-6">
-                    <span className="inline-flex items-center gap-1 bg-neutral-bg border border-stone-200/80 text-secondary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
+                    <span className="inline-flex items-center gap-1 bg-[#F8F9FE] border border-stone-200 text-primary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
                       <span>✓</span>
-                      <span>1 to 8 Unit Pack Volume Tiers</span>
+                      <span>1 to 8 Unit Bundle Savings</span>
                     </span>
                   </div>
                 </div>
@@ -164,9 +164,9 @@ export default function ProductGrid() {
                 <div className="pt-2">
                   <Link
                     href={`/product/${product.id}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-primary transition-all duration-300 py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90 transition-all duration-300 py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg"
                   >
-                    <span>View Product &amp; Tiers</span>
+                    <span>View Product &amp; Bundles</span>
                     <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </Link>
                 </div>

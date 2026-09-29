@@ -1,11 +1,12 @@
 {
-  "Product": "Pet Shops, Pet Food & Supplies",
-  "Processor": "Quantum",
-  "brandName": "Tailsworth Pet Supply Collective",
-  "websiteUrl": "TailsworthPetSupplyCollective.com",
-  "email": "support@tailsworthpetsupplycollective.com",
-  "descriptor": "TailsworthPetSupplyCol",
-  "corpName": "Starpath Marketing Co.",
+  "Product": "Baby Products",
+  "mcc": "5641",
+  "Processor": "APPS- Synovus",
+  "brandName": "Bright Nest Baby Goods Store",
+  "websiteUrl": "brightnestbabygoodsstore.com",
+  "email": "support@brightnestbabygoodsstore.com",
+  "descriptor": "BrightNestBabyGoodsS",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#3B2314",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#16A34A",
-    "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#FBFBFA",
-    "neutralTextColor": "#3B2314",
+    "primaryColor": "#FE4B7B",
+    "primaryTextColor": "#FFDBE5",
+    "secondaryColor": "#FFDBE5",
+    "secondaryTextColor": "#13275B",
+    "neutralBgColor": "#FFDBE5",
+    "neutralTextColor": "#",
     "fontFamily": "Montserrat"
   }
 }

@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from "react";
 
 const images = [
-  "/img/hero1.png",
-  "/img/hero2.png",
-  "/img/hero3.png",
-  "/img/hero4.jpg",
-  "/img/hero5.jpg",
+  "/img/hero1.jpg",
+  "/img/hero2.jpg",
+  "/img/products/Baby Bouncer.jpg",
+  "/img/products/Baby Carrier.jpg",
+  "/img/products/Baby Play Gym.jpg",
 ];
 
 export default function HeroCarousel() {

@@ -31,12 +31,12 @@ export default function CartDrawer() {
       >
         <div className="p-6 border-b border-black/5 flex items-center justify-between bg-neutral-bg">
           <div className="flex items-center gap-2">
-            <span className="text-xl">🐾</span>
-            <h3 className="m-0 text-lg font-black text-primary tracking-tight uppercase">Your Pet Cart</h3>
+            <span className="text-xl">✨</span>
+            <h3 className="m-0 text-lg font-black text-primary tracking-tight uppercase">Your Baby Cart</h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-2xl cursor-pointer text-neutral-text/50 hover:text-secondary leading-none transition-colors"
+            className="bg-transparent border-none text-2xl cursor-pointer text-neutral-text/50 hover:text-primary leading-none transition-colors"
             aria-label="Close Cart"
           >
             ✕
@@ -46,14 +46,14 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-5xl mb-4">🐶</div>
+              <div className="text-5xl mb-4">🍼</div>
               <h4 className="text-base font-bold text-primary mb-1">Your cart is empty</h4>
-              <p className="text-neutral-text/60 text-xs">Treat your companion to our curated pet supplies.</p>
+              <p className="text-neutral-text/60 text-xs">Treat your little one to our curated baby essentials.</p>
               <button
-                className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer"
+                className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-primary/90 transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Shop Pet Supplies
+                Shop Baby Essentials
               </button>
             </div>
           ) : (
@@ -93,7 +93,7 @@ export default function CartDrawer() {
                   />
                   <div className="flex-1 min-w-0">
                     <div className="font-bold text-sm text-primary mb-0.5 truncate">{item.Name}</div>
-                    <div className="text-[0.62rem] text-secondary mb-3 uppercase tracking-wider font-bold">
+                    <div className="text-[0.62rem] text-primary/70 mb-3 uppercase tracking-wider font-bold">
                       {item.Label || "Single Pack"}
                     </div>
 
@@ -145,11 +145,11 @@ export default function CartDrawer() {
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-3"
+              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-primary text-white hover:bg-primary/90 transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-3"
               onClick={() => setIsCartOpen(false)}
             >
               <span>Proceed to Checkout</span>
-              <span>🐾</span>
+              <span>✨</span>
             </Link>
 
             <button

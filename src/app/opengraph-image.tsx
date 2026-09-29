@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Premium Baby Products &amp; Essentials
         </div>
 
         <div

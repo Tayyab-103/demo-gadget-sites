@@ -21,18 +21,18 @@ export default function ContactPage() {
           {/* Page Header */}
           <div className="text-left max-w-3xl mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
-              <span className="text-xs">🐾</span>
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+              <span className="text-xs">✨</span>
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
                 GET IN TOUCH
               </span>
             </div>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-              Pet Concierge <span className="italic text-secondary font-serif">Inquiry &amp; Support</span>
+              Parent Concierge <span className="italic text-primary/80 font-serif">Inquiry &amp; Support</span>
             </h1>
 
             <p className="text-neutral-text/75 text-sm sm:text-base leading-relaxed">
-              Have questions about carrier backpacks, chew toy materials, litter scoops, or multi-pack savings? Fill out the form below or contact our team directly.
+              Have questions about wrap carrier sizing, silicone feeding safety, diaper bags, or bundle savings? Fill out the form below or reach our team directly.
             </p>
           </div>
 
@@ -44,16 +44,16 @@ export default function ContactPage() {
               {/* Image Card */}
               <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-md border border-stone-200/80 bg-stone-100">
                 <img
-                  src="/img/contact.jpg"
-                  alt="Pet Concierge Care"
+                  src="/img/hero1.jpg"
+                  alt="Parent Concierge Care"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.currentTarget.src = "/img/hero.jpg";
+                    e.currentTarget.src = "/img/products/Baby Carrier.jpg";
                   }}
                 />
                 <div className="absolute top-3.5 left-3.5">
                   <span className="bg-primary/95 text-white text-[0.65rem] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md">
-                    🐾 Dedicated Pet Support
+                    ✨ Dedicated Parent Support
                   </span>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                   href={`tel:${siteConfig.phone}`}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-bg hover:bg-stone-100 border border-stone-200 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-secondary text-white flex items-center justify-center flex-shrink-0 text-lg shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-secondary text-primary flex items-center justify-center flex-shrink-0 text-lg shadow-xs">
                     📞
                   </div>
                   <div>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   href={`mailto:${siteConfig.email}`}
                   className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-bg hover:bg-stone-100 border border-stone-200 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-secondary text-white flex items-center justify-center flex-shrink-0 text-lg shadow-xs">
+                  <div className="w-10 h-10 rounded-xl bg-secondary text-primary flex items-center justify-center flex-shrink-0 text-lg shadow-xs">
                     ✉️
                   </div>
                   <div>
@@ -101,15 +101,15 @@ export default function ContactPage() {
             <div className="lg:col-span-7 bg-white rounded-3xl sm:rounded-[2.5rem] p-8 sm:p-10 border border-stone-200/80 shadow-md">
               {submitted ? (
                 <div className="text-center py-12 flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-secondary flex items-center justify-center text-3xl mb-4 font-bold shadow-sm">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-primary flex items-center justify-center text-3xl mb-4 font-bold shadow-sm">
                     ✓
                   </div>
                   <h2 className="text-primary font-serif font-bold text-2xl mb-2">Message Sent with Care!</h2>
                   <p className="text-neutral-text/75 text-sm max-w-sm mb-8 leading-relaxed">
-                    Thank you for contacting {siteConfig.brandName}. One of our animal advocates will review your inquiry and get back to you within 24 hours.
+                    Thank you for contacting {siteConfig.brandName}. One of our parent advocates will review your inquiry and get back to you within 24 hours.
                   </p>
                   <button
-                    className="bg-secondary text-white font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-primary transition-all cursor-pointer shadow-md"
+                    className="bg-primary text-white font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-primary/90 transition-all cursor-pointer shadow-md"
                     onClick={() => setSubmitted(false)}
                   >
                     Send Another Message
@@ -128,7 +128,7 @@ export default function ContactPage() {
                     Send Us a Message
                   </h3>
                   <p className="text-xs text-neutral-text/60 mb-6">
-                    Fill in your details below and our team will be delighted to assist with your pet care needs.
+                    Fill in your details below and our team will be delighted to assist with your baby care questions.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -139,8 +139,8 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Sarah & Bella (Golden Retriever)"
-                        className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors"
+                        placeholder="e.g. Sarah Jenkins"
+                        className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                         type="email"
                         required
                         placeholder="e.g. sarah@example.com"
-                        className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors"
+                        className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                   </div>
@@ -161,13 +161,13 @@ export default function ContactPage() {
                       Inquiry Topic
                     </label>
                     <select
-                      className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors cursor-pointer"
+                      className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-primary transition-colors cursor-pointer"
                     >
-                      <option>Product Sizing &amp; Recommendations</option>
-                      <option>Multi-Pack Pet Bundle Discounts</option>
-                      <option>UPS Tracking &amp; Delivery Update</option>
-                      <option>14-Day Happy Tail Guarantee Return</option>
-                      <option>General Pet Care Question</option>
+                      <option>Product Sizing &amp; Usage Guidance</option>
+                      <option>Baby Product Bundle Savings</option>
+                      <option>Tracked Delivery &amp; Shipping Status</option>
+                      <option>14-Day Parent Guarantee Return</option>
+                      <option>General Baby Care Question</option>
                     </select>
                   </div>
 
@@ -178,17 +178,17 @@ export default function ContactPage() {
                     <textarea
                       rows={5}
                       required
-                      placeholder="Tell us about your pet and what you need assistance with..."
-                      className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors resize-none"
+                      placeholder="Tell us about what you need assistance with for your baby..."
+                      className="w-full bg-neutral-bg border border-stone-300 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-primary transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-primary font-black text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg mt-2"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90 font-black text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg mt-2"
                   >
                     <span>Submit Inquiry</span>
-                    <span>🐾</span>
+                    <span>✨</span>
                   </button>
                 </form>
               )}

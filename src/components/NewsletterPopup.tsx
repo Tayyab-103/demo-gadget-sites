@@ -65,7 +65,7 @@ export default function NewsletterPopup() {
   return (
     <div
       role="dialog"
-      aria-label="Exclusive Pet Discount Offer"
+      aria-label="Exclusive Baby Discount Offer"
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-sm sm:max-w-md w-[calc(100%-2rem)] sm:w-[420px] animate-fadeIn transition-all duration-500 ease-out"
     >
       <div className="bg-white/95 backdrop-blur-md rounded-3xl border border-stone-200/90 shadow-2xl p-5 sm:p-6 relative overflow-hidden flex flex-col gap-3.5">
@@ -74,9 +74,9 @@ export default function NewsletterPopup() {
 
         {/* Header Row: Badge & Close Button */}
         <div className="flex items-center justify-between gap-3 pt-1">
-          <div className="inline-flex items-center gap-1.5 bg-secondary/15 border border-secondary/30 px-3 py-1 rounded-full text-[0.68rem] font-black uppercase tracking-wider text-secondary">
-            <span>🐾</span>
-            <span>VIP Pet Club • Save 15%</span>
+          <div className="inline-flex items-center gap-1.5 bg-secondary/30 border border-secondary/40 px-3 py-1 rounded-full text-[0.68rem] font-black uppercase tracking-wider text-primary">
+            <span>✨</span>
+            <span>VIP Parent Club • Save 15%</span>
           </div>
 
           <button
@@ -91,11 +91,11 @@ export default function NewsletterPopup() {
         {/* Content Body */}
         {submitted ? (
           <div className="py-4 text-center flex flex-col items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-emerald-100 text-secondary flex items-center justify-center text-xl font-bold mb-2 shadow-xs">
+            <div className="w-12 h-12 rounded-full bg-emerald-100 text-primary flex items-center justify-center text-xl font-bold mb-2 shadow-xs">
               ✓
             </div>
             <h4 className="text-primary font-serif font-bold text-lg mb-1">
-              Welcome to the Pack!
+              Welcome to the Family!
             </h4>
             <p className="text-neutral-text/75 text-xs leading-relaxed max-w-xs">
               Check your inbox for your 15% promotional discount voucher code for {siteConfig.brandName}.
@@ -105,10 +105,10 @@ export default function NewsletterPopup() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
             <div>
               <h3 className="font-serif text-lg sm:text-xl font-bold text-primary leading-tight mb-1">
-                Unlock 15% Off Pet Supplies
+                Unlock 15% Off Baby Essentials
               </h3>
               <p className="text-neutral-text/75 text-xs leading-relaxed">
-                Join our pet parent collective for veterinarian care guidance, exclusive bundle releases, and an instant <strong>15% voucher</strong>.
+                Join our parenting collective for gentle baby care guidance, exclusive product releases, and an instant <strong>15% voucher</strong>.
               </p>
             </div>
 
@@ -120,7 +120,7 @@ export default function NewsletterPopup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="w-full bg-neutral-bg border border-stone-300 rounded-full px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutral-text placeholder:text-neutral-text/40 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all shadow-xs"
+                className="w-full bg-neutral-bg border border-stone-300 rounded-full px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-neutral-text placeholder:text-neutral-text/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-xs"
               />
             </div>
 
@@ -128,10 +128,10 @@ export default function NewsletterPopup() {
             <div className="flex items-center gap-2 pt-1">
               <button
                 type="submit"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-primary font-black text-[0.7rem] uppercase tracking-wider py-2.5 sm:py-3 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer text-center whitespace-nowrap"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90 font-black text-[0.7rem] uppercase tracking-wider py-2.5 sm:py-3 px-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer text-center whitespace-nowrap"
               >
                 <span>Claim 15% Off</span>
-                <span>🐾</span>
+                <span>✨</span>
               </button>
 
               <button
@@ -144,7 +144,7 @@ export default function NewsletterPopup() {
             </div>
 
             <span className="text-center text-[0.62rem] text-neutral-text/50">
-              No spam ever. 100% pet-friendly privacy.
+              No spam ever. 100% family-friendly privacy.
             </span>
           </form>
         )}

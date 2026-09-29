@@ -19,40 +19,40 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#3B2314] text-white border-t border-white/10 relative overflow-hidden" id="footer">
+    <footer className="bg-primary text-white border-t border-white/10 relative overflow-hidden" id="footer">
       {/* Subtle Ambient Decorative Glows */}
-      <div className="absolute top-0 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-black/20 rounded-full blur-2xl pointer-events-none" />
+      {/* <div className="absolute top-0 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-black/20 rounded-full blur-2xl pointer-events-none" /> */}
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
         
         {/* Top Newsletter Card Banner */}
-        <div className="bg-[#27160C] border border-white/10 rounded-3xl p-8 sm:p-10 mb-16 shadow-xl relative overflow-hidden">
+        <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-3xl p-8 sm:p-10 mb-16 shadow-xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content (7 cols) */}
             <div className="lg:col-span-7 text-left">
-              <div className="inline-flex items-center gap-2 bg-secondary/20 px-3.5 py-1.5 rounded-full border border-secondary/30 text-secondary text-xs font-bold uppercase tracking-wider mb-3">
-                <span>🎁 VIP PET CLUB</span>
+              <div className="inline-flex items-center gap-2 bg-secondary/30 px-3.5 py-1.5 rounded-full border border-secondary/40 text-[#FFDBE5] text-xs font-bold uppercase tracking-wider mb-3">
+                <span>✨ VIP PARENT CLUB</span>
                 <span>•</span>
                 <span>SAVE 15%</span>
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
-                Unlock 15% Off Your Next Pet Supply Order
+                Unlock 15% Off Your Next Baby Essentials Order
               </h3>
 
               <p className="text-white/75 text-xs sm:text-sm leading-relaxed max-w-lg">
-                Join our caring pet parent community to receive vet wellness tips, early access to new releases, and an instant 15% promotional voucher.
+                Join our caring parenting community to receive gentle baby care tips, early access to new releases, and an instant 15% promotional voucher.
               </p>
             </div>
 
             {/* Right Form (5 cols) */}
             <div className="lg:col-span-5">
               {subscribed ? (
-                <div className="flex items-center gap-2.5 text-secondary text-xs font-bold bg-white/10 p-4 rounded-2xl border border-secondary/40">
+                <div className="flex items-center gap-2.5 text-[#FFDBE5] text-xs font-bold bg-white/10 p-4 rounded-2xl border border-secondary/40">
                   <span className="text-base">✓</span>
-                  <span>Welcome to the pack! Check your inbox for your 15% discount code.</span>
+                  <span>Welcome to the family! Check your inbox for your 15% discount code.</span>
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5">
@@ -66,7 +66,7 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="bg-secondary text-white font-bold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full hover:bg-white hover:text-primary transition-all cursor-pointer whitespace-nowrap shadow-md"
+                    className="bg-secondary text-primary font-bold text-xs uppercase tracking-widest px-7 py-3.5 rounded-full hover:bg-white transition-all cursor-pointer whitespace-nowrap shadow-md"
                   >
                     Get 15% Off
                   </button>
@@ -83,8 +83,8 @@ export default function Footer() {
           {/* Brand Info (4 cols) */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center text-xl shadow-md flex-shrink-0">
-                🐾
+              <div className="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center text-xl shadow-md flex-shrink-0">
+                ✨
               </div>
               <span className="font-serif text-xl font-bold tracking-tight text-white leading-tight">
                 {siteConfig.brandName}
@@ -92,39 +92,39 @@ export default function Footer() {
             </div>
 
             <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 max-w-sm">
-              Dedicated to companion animal health and comfort with thoughtfully designed travel carrier backpacks, dental chew toys, and ergonomic litter care essentials.
+              Dedicated to infant safety, comfort, and soothing peaceful moments with ergonomically engineered bouncers, carriers, play gyms, and nursery organizers.
             </p>
 
             <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full text-[0.68rem] text-white/80 font-medium">
               <span className="text-secondary font-bold">✓</span>
-              <span>100% Non-Toxic &amp; Pet-Safe Certified</span>
+              <span>100% Non-Toxic &amp; BPA-Free Certified</span>
             </div>
           </div>
 
           {/* Catalog Links (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4">
-              Pet Catalog
+            <h4 className="text-[#FFDBE5] text-xs font-bold uppercase tracking-[0.2em] mb-4">
+              Baby Essentials
             </h4>
             <ul className="space-y-2.5 text-xs text-white/75">
               <li>
                 <Link href="/product/product1" className="hover:text-secondary transition-colors">
-                  Pet Carrier Backpack
+                  Twist Ball Baby Teether
                 </Link>
               </li>
               <li>
                 <Link href="/product/product2" className="hover:text-secondary transition-colors">
-                  Small Dog Chew Toys
+                  Diaper Caddy Organizer
                 </Link>
               </li>
               <li>
                 <Link href="/product/product3" className="hover:text-secondary transition-colors">
-                  Self-Cleaning Litter Scoop
+                  All-Position Baby Carrier
                 </Link>
               </li>
               <li className="pt-1">
-                <Link href="/shop" className="text-secondary font-bold hover:underline inline-flex items-center gap-1">
-                  <span>View All Supplies</span>
+                <Link href="/shop" className="text-[#FFDBE5] font-bold hover:underline inline-flex items-center gap-1">
+                  <span>View All Essentials</span>
                   <span>→</span>
                 </Link>
               </li>
@@ -133,21 +133,21 @@ export default function Footer() {
 
           {/* Quick Links (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            <h4 className="text-[#FFDBE5] text-xs font-bold uppercase tracking-[0.2em] mb-4">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs text-white/75">
               <li><Link href="/" className="hover:text-secondary transition-colors">Home</Link></li>
-              <li><Link href="/shop" className="hover:text-secondary transition-colors">Products</Link></li>
+              <li><Link href="/shop" className="hover:text-secondary transition-colors">Baby Products</Link></li>
               <li><Link href="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-secondary transition-colors">Pet Concierge</Link></li>
+              <li><Link href="/contact" className="hover:text-secondary transition-colors">Parent Support</Link></li>
             </ul>
           </div>
 
           {/* Concierge Support (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-4">
-              Concierge Care
+            <h4 className="text-[#FFDBE5] text-xs font-bold uppercase tracking-[0.2em] mb-4">
+              Parent Concierge
             </h4>
             <ul className="space-y-2.5 text-xs text-white/75">
               <li className="text-white font-bold text-sm">{siteConfig.phone}</li>
@@ -202,7 +202,7 @@ export default function Footer() {
           </div>
 
           <div className="text-[0.68rem] text-center md:text-right text-white/50 max-w-md">
-            Statement descriptor: <strong className="text-white/80">{siteConfig.descriptor}</strong>. All items backed by our {siteConfig.trialPeriod}-day Happy Tail satisfaction guarantee.
+            Statement descriptor: <strong className="text-white/80">{siteConfig.descriptor}</strong>. All items backed by our {siteConfig.trialPeriod}-day parent happiness satisfaction guarantee.
           </div>
         </div>
 

@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium pet supplies, wholesome nutrition, grooming essentials, interactive toys, and orthopedic calming beds online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium baby products, gentle essentials, ergonomic carriers, organic feeding sets, and travel gear designed with love and care for your little one.`;
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -44,7 +44,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pet Shops, Pet Food & Supplies`,
+  title: `${siteConfig.brandName} | Premium Baby Products & Essentials`,
   description: siteDescription,
   openGraph: {
     title: siteConfig.brandName,

@@ -14,15 +14,15 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF8F5] py-16 md:py-24 relative overflow-hidden">
+      <main className="bg-neutral-bg py-16 md:py-24 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-25 pointer-events-none" />
 
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              MERCANTILE POLICIES
+            <span className="text-xs">✨</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
+              STORE POLICIES
             </span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-8 border-b border-stone-200/80 pb-6 tracking-tight">
@@ -38,18 +38,18 @@ export default function Terms() {
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/or purchasing pet essentials from us, you engage in our “Service” and agree to be
+              By visiting our site and/or purchasing baby essentials from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
 
             <h3 className="text-base font-black text-primary uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer premium, veterinarian-approved pet products and essentials through one-time purchases (Straight Sale) under the following transparent pricing structures:
+              We offer premium baby products, ergonomic carriers, and nursery essentials through one-time purchases (Straight Sale) under the following transparent pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-[#FAF8F5] border border-black/[0.06] rounded-2xl p-6 sm:p-8 my-6 shadow-inner">
+            <div className="bg-neutral-bg border border-black/[0.06] rounded-2xl p-6 sm:p-8 my-6 shadow-inner">
               {products.map((product) => (
                 <div key={product.id} className="mb-6 pb-6 border-b border-black/[0.06] last:border-0 last:mb-0 last:pb-0">
                   <h4 className="text-sm md:text-base font-black text-primary mb-3">
@@ -76,23 +76,23 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-black text-primary uppercase tracking-wider">SECTION 1 - PET STORE &amp; USAGE TERMS</h3>
+            <h3 className="text-base font-black text-primary uppercase tracking-wider">SECTION 1 - BABY STORE &amp; USAGE TERMS</h3>
             <p>
               By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state
-              or province of residence. Our pet supplies are designed specifically for domestic companion animals (dogs, cats).
+              or province of residence. Our baby products and essentials are designed with care for infants, toddlers, and parents.
             </p>
 
             <h3 className="text-base font-black text-primary uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
               All orders are processed and dispatched within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your pet order is dispatched.
+              You will receive a tracking number via email once your order is dispatched.
             </p>
 
-            <h3 className="text-base font-black text-primary uppercase tracking-wider">SECTION 3 - 14-DAY HAPPY TAIL RETURN &amp; REFUND POLICY</h3>
+            <h3 className="text-base font-black text-primary uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod}-DAY PARENT HAPPINESS RETURN &amp; REFUND POLICY</h3>
             <p>
-              We stand behind our quality with a {siteConfig.trialPeriod}-day Happy Tail satisfaction guarantee. If for any reason you or your pet are not completely delighted with your purchase,
-              please contact our pet care concierge team at <strong className="text-primary font-bold">{siteConfig.phone}</strong> or email us at{" "}
+              We stand behind our quality with a {siteConfig.trialPeriod}-day parent happiness satisfaction guarantee. If for any reason you or your little one are not completely delighted with your purchase,
+              please contact our parent support team at <strong className="text-primary font-bold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-bold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA).
             </p>
             <p>

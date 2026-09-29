@@ -22,26 +22,26 @@ const faqList: FaqItem[] = [
   },
   {
     category: "Safety & Care",
-    question: "Are your pet supplies and materials safe for all breeds & sizes?",
+    question: "Are your baby products and materials safe for newborns & sensitive skin?",
     answer:
-      `Yes! Every ${siteConfig.brandName} essential is crafted from 100% non-toxic, BPA-free, hypoallergenic food-grade silicone and gentle rounded massage bristles tested safe for dogs and cats of all breeds, ages, and sizes.`,
+      `Yes! Every ${siteConfig.brandName} essential is crafted from 100% non-toxic, BPA-free, hypoallergenic food-grade silicone and certified ultra-soft organic cotton blends tested completely safe for newborns, infants, and sensitive skin.`,
   },
   {
     category: "Guarantee & Returns",
-    question: `How does the ${siteConfig.trialPeriod}-Day Happy Tail trial work?`,
-    answer: `If for any reason you or your companion are not 100% delighted with your purchase within ${siteConfig.trialPeriod} days of receiving it, simply contact our concierge team via phone at ${siteConfig.phone} or email at ${siteConfig.email} for a complete, hassle-free refund.`,
+    question: `How does the ${siteConfig.trialPeriod}-Day Parent Guarantee trial work?`,
+    answer: `If for any reason you or your little one are not 100% delighted with your purchase within ${siteConfig.trialPeriod} days of receiving it, simply contact our parent support team via phone at ${siteConfig.phone} or email at ${siteConfig.email} for a complete, hassle-free refund.`,
   },
   {
     category: "Safety & Care",
-    question: "How do I clean and charge the Smart Interactive Activity Ball?",
+    question: "How do I care for and wash the Baby Carrier and Nursing Pillow covers?",
     answer:
-      "The smart motion ball charges via the included USB cable in 45 minutes for up to 4 hours of continuous motion play. The water-resistant silicone casing easily wipes clean with a damp pet-safe cloth.",
+      "All fabric wraps, carrier pads, and pillow covers are machine-washable on a gentle cold cycle using mild, baby-safe detergent. We recommend air drying to preserve fabric integrity, softness, and elasticity.",
   },
   {
     category: "Safety & Care",
-    question: "How does the self-cleaning slicker brush mechanism work?",
+    question: "How do I clean and sterilize the Twist Ball Teether & toys?",
     answer:
-      "After grooming your pet and collecting loose undercoat hair, simply click the ergonomic push-button on the handle. The bristles retract instantly, allowing the collected fur bundle to drop cleanly into the trash with zero mess.",
+      "The food-grade silicone teether is boil-safe and top-rack dishwasher-safe. For everyday cleaning, simply rinse with warm soapy water or sterilize in boiling water for 2–3 minutes.",
   },
   {
     category: "Orders & Shipping",
@@ -81,14 +81,14 @@ export default function Faq() {
         {/* Left-Aligned Header Block */}
         <div className="text-left max-w-3xl mb-12 sm:mb-14">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/80 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+            <span className="text-xs">✨</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
               COMMON INQUIRIES
             </span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-6">
-            Frequently Asked <span className="italic text-secondary font-serif">Questions</span>
+            Frequently Asked <span className="italic text-primary/80 font-serif">Questions</span>
           </h2>
 
           {/* Category Filter Tabs */}
@@ -118,23 +118,23 @@ export default function Faq() {
           {/* LEFT COLUMN: STICKY CONCIERGE CARD (4 cols) */}
           <div className="lg:col-span-4 lg:sticky lg:top-28">
             <div className="bg-primary text-white rounded-[2.5rem] p-7 sm:p-9 shadow-xl relative overflow-hidden border border-white/10">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/30 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center text-2xl mb-6 shadow-inner">
-                🐾
+              <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center text-2xl mb-6 shadow-inner">
+                ✨
               </div>
 
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
-                Pet Care Concierge
+                Parent Care Concierge
               </h3>
 
               <p className="text-white/80 text-xs sm:text-sm leading-relaxed mb-8">
-                Need sizing, breed recommendations, or order updates? Talk with our dedicated pet care specialists.
+                Need guidance on wrap sizing, feeding essentials, or order updates? Talk with our dedicated parent care specialists.
               </p>
 
               <a
                 href="#contact"
-                className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white hover:bg-[#27160C] font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all mb-6"
+                className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-primary hover:bg-white font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all mb-6"
               >
                 <span>Ask Our Concierge</span>
                 <span>→</span>
@@ -142,7 +142,7 @@ export default function Faq() {
 
               <div className="pt-6 border-t border-white/10 flex items-center gap-2.5 text-xs text-white/80">
                 <span className="text-secondary font-bold">✓</span>
-                <span className="text-[0.72rem] font-medium">100% Vet-Verified Guidance</span>
+                <span className="text-[0.72rem] font-medium">100% Certified Baby-Safe Guidance</span>
               </div>
             </div>
           </div>
@@ -160,15 +160,15 @@ export default function Faq() {
                       className="w-full flex items-center justify-between gap-4 text-left bg-transparent border-none cursor-pointer focus:outline-none group py-1"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-serif text-base sm:text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <span className="font-serif text-base sm:text-lg font-bold text-primary group-hover:text-primary/70 transition-colors leading-snug">
                         {faq.question}
                       </span>
 
                       <span
                         className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-200 ${
                           isOpen
-                            ? "bg-secondary text-white"
-                            : "bg-neutral-bg text-neutral-text/50 group-hover:bg-stone-200"
+                            ? "bg-primary text-white"
+                            : "bg-[#F8F9FE] text-primary/50 group-hover:bg-stone-200"
                         }`}
                       >
                         {isOpen ? "−" : "+"}

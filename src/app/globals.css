@@ -56,7 +56,7 @@
   background: color-mix(in srgb, var(--secondary-color) 60%, transparent);
 }
 
-/* Eyebrow label: refined warm pet mercantile badge */
+/* Eyebrow label: refined baby boutique badge */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -65,10 +65,10 @@
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 .eyebrow::before {
-  content: "🐾";
+  content: "✨";
   font-size: 0.85rem;
   line-height: 1;
 }

@@ -2,78 +2,80 @@
 
 import React from "react";
 import Image from "next/image";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const steps = [
   {
     step: "01",
-    label: "SELECTION & SAVINGS",
-    title: "Curate Pet Essentials",
+    label: "PRECISION HARDWARE SELECTION",
+    title: "Choose Your Circuit Gear",
     description:
-      "Choose from vet-approved grooming tools, smart interactive toys, and orthopedic beds with automatic volume savings.",
-    image: "/img/how_step1.png",
-    highlight: "Volume discounts applied automatically",
+      "Explore our catalog of smart watches, hi-fi acoustic headphones, and high-performance gaming consoles with bundle discounts.",
+    image: "/img/products/product01.jpg",
+    highlight: "Multi-device volume savings",
   },
   {
     step: "02",
-    label: "DOMESTIC DISPATCH",
-    title: "Fast UPS Delivery",
+    label: "EXPEDITED DISPATCH",
+    title: `Fast ${siteConfig.shippingCarrier} Delivery`,
     description:
-      "Carefully packed in pet-safe recyclable boxes and dispatched within 1–2 days with live UPS tracking.",
-    image: "/img/how_step2.png",
-    highlight: "Fast 3–5 business days delivery",
+      `Precision-packed in anti-static protective packaging and dispatched within 24–48 hours with live ${siteConfig.shippingCarrier} tracking.`,
+    image: "/img/products/product2.png",
+    highlight: `Fast ${siteConfig.shippingPeriod} business days delivery`,
   },
   {
     step: "03",
-    label: "PEACE OF MIND",
-    title: "14-Day Happy Tail Guarantee",
+    label: "GUARANTEED PERFORMANCE",
+    title: `${siteConfig.trialPeriod}-Day Circuit Guarantee`,
     description:
-      "Enjoy 100% satisfaction. If your companion isn't completely delighted, our concierge provides an easy refund.",
-    image: "/img/how_step3.png",
-    highlight: "100% risk-free guarantee",
+      "Experience zero-risk tech exploration. If you aren't completely thrilled by the performance and build quality, our support team makes returns easy.",
+    image: "/img/products/product3.jpg",
+    highlight: "100% money-back satisfaction guarantee",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="relative bg-[#FAF8F5] py-12 sm:py-16 md:py-20 overflow-hidden" id="how-it-works">
+    <section className="relative bg-neutral-bg py-12 sm:py-16 md:py-20 overflow-hidden" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Left-Aligned Section Header */}
+        {/* Section Header */}
         <div className="max-w-3xl text-left mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              THE WHISKER VALE EXPERIENCE
+          <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
+            <span className="text-xs">⚡</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em]">
+              THE MODERN CIRCUIT EXPERIENCE
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Thoughtfully Crafted, <span className="italic text-secondary font-serif">Delivered with Care</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-primary tracking-tight leading-tight mb-3">
+            Engineered For Excellence, <span className="text-secondary">Delivered Fast</span>
           </h2>
-          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            From our mercantile to your living room, we make nurturing your pet&apos;s daily health, play, and rest a completely effortless experience.
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            From our testing laboratory to your doorstep, we make upgrading your daily consumer tech and electronics effortless.
           </p>
         </div>
 
-        {/* 3-Column Editorial Grid */}
+        {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {steps.map((item) => (
             <div
               key={item.step}
-              className="bg-white rounded-[2rem] p-7 sm:p-8 border border-stone-200/60 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-7 sm:p-8 border border-gray-200/80 shadow-xs hover:shadow-xl hover:border-secondary transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Image Container with Elegant Rounded Corners */}
-                <div className="relative aspect-[16/11] w-full rounded-2xl overflow-hidden mb-7 bg-neutral-100 shadow-inner">
-                  <Image
+                {/* Image Container */}
+                <div className="relative aspect-[16/11] w-full rounded-2xl overflow-hidden mb-7 bg-slate-900 shadow-inner flex items-center justify-center p-4">
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Elegant Number Pill */}
-                  <span className="absolute top-3.5 left-3.5 bg-[#182825]/90 backdrop-blur-md text-[#FAF8F5] text-xs font-serif font-bold px-3 py-1 rounded-full shadow-sm">
+                  {/* Step Number Pill */}
+                  <span className="absolute top-3.5 left-3.5 bg-primary/90 backdrop-blur-md text-secondary text-xs font-bold px-3 py-1 rounded-full shadow-sm border border-secondary/30">
                     {item.step}
                   </span>
                 </div>
@@ -83,17 +85,17 @@ export default function HowItWorks() {
                   {item.label}
                 </span>
 
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold uppercase text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-neutral-text/70 text-xs sm:text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
                   {item.description}
                 </p>
               </div>
 
               {/* Bottom Feature Tag */}
-              <div className="pt-4 border-t border-stone-200/60 flex items-center gap-2 text-xs font-medium text-neutral-text/80">
+              <div className="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-primary">
                 <span className="text-secondary text-sm">✓</span>
                 <span className="text-[0.75rem]">{item.highlight}</span>
               </div>

@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium pet grooming brushes, interactive smart motion toys, and orthopedic calming beds online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Engineered high-performance GaN fast chargers, ANC wireless acoustics, and magnetic multi-device circuit charging docks.`;
 
 export const viewport: Viewport = {
   width: "device-width",

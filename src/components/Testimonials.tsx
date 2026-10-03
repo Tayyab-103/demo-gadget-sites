@@ -1,37 +1,38 @@
 "use client";
 
 import React, { useState } from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const reviews = [
   {
     quote:
-      "The WhiskerCare slicker brush transformed grooming. The fine bristles gently glide through Bella’s coat with zero pulling, and the one-click button drops shed hair right into the trash!",
-    owner: "Sarah Jenkins",
-    pet: "Bella (Golden Retriever)",
-    role: "Verified Pet Parent",
+      "The Watch 42mm Smartwatch is sleek and responsive. The display is crystal clear even in direct sunlight, and biometric tracking has been incredibly accurate throughout my workouts.",
+    owner: "Marcus Vance",
+    role: "Verified Tech Reviewer",
     rating: 5,
-    product: "WhiskerCare™ Slicker Grooming Brush",
-    petImage: "/img/hero3.png",
+    product: "Watch 42mm Smartwatch",
+    image: "/img/products/product01.jpg",
   },
   {
     quote:
-      "Milo loves the PawPulse smart ball! The automated obstacle sensor is so responsive, and the LED ring keeps him active and captivated for hours.",
-    owner: "David Keller",
-    pet: "Milo (Scottish Fold Tabby)",
-    role: "Verified Pet Parent",
+      "The AeroFit Pro Hi-Fi Headphones are by far the most comfortable headset I've worn during long editing sessions. The CNC aluminum brackets feel indestructible, and the soundstage is pristine.",
+    owner: "Elena Rostova",
+    role: "Audio Producer & Tech Creator",
     rating: 5,
-    product: "PawPulse™ Smart Interactive LED Ball",
-    petImage: "/img/hero5.jpg",
+    product: "Modern Circuit AeroFit Pro Hi-Fi Headphones",
+    image: "/img/products/product2.png",
   },
   {
     quote:
-      "Rocky has hip stiffness, and this CloudRest bed made an immediate difference. The memory foam is dense and supportive, and the bolsters support his neck perfectly.",
-    owner: "Elena Ross",
-    pet: "Rocky (French Bulldog)",
-    role: "Verified Pet Parent",
+      "Super smooth 4K output, responsive handheld controllers, and lightning-fast loading times. The Ninja Gaming Console is a powerhouse for gaming and media streaming.",
+    owner: "David Chen",
+    role: "Software Architect & Gamer",
     rating: 5,
-    product: "CloudRest™ Orthopedic Calming Nest Bed",
-    petImage: "/img/contact3.png",
+    product: "Ninja Gaming Console",
+    image: "/img/products/product3.jpg",
   },
 ];
 
@@ -49,57 +50,56 @@ export default function Testimonials() {
   const current = reviews[activeIndex];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="testimonials">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50/80 relative overflow-hidden" id="testimonials">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Left-Aligned Header Block */}
+        {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-              <span className="text-xs">🐾</span>
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-                PET PARENT STORIES
+            <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
+              <span className="text-xs">⚡</span>
+              <span className="text-[0.68rem] font-black uppercase tracking-[0.2em]">
+                VERIFIED TECH EXPERIENCES
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
-              Loved by Pets, <span className="italic text-secondary font-serif">Adored by Parents</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight leading-tight uppercase">
+              Engineered For Power Users, <span className="text-secondary">Proven Daily</span>
             </h2>
-            <p className="text-neutral-text/75 text-sm sm:text-base mt-2.5 leading-relaxed">
-              Read real feedback from our devoted community of dog lovers and cat owners across the country.
+            <p className="text-gray-600 text-sm sm:text-base mt-2.5 leading-relaxed font-medium">
+              See how creators, engineers, and tech enthusiasts power their daily setups with {siteConfig.brandName}.
             </p>
           </div>
 
           {/* Aggregate Rating Chip */}
-          <div className="flex items-center gap-4 bg-white border border-stone-200/70 px-6 py-3.5 rounded-2xl flex-shrink-0 shadow-xs">
+          <div className="flex items-center gap-4 bg-white border border-gray-200 px-6 py-3.5 rounded-2xl flex-shrink-0 shadow-xs">
             <div className="flex text-amber-500 text-lg">
               {"★★★★★"}
             </div>
-            <div className="border-l border-stone-200 pl-4">
-              <div className="text-base font-bold text-primary leading-none">4.9 / 5.0</div>
-              <div className="text-[0.65rem] uppercase tracking-wider text-neutral-text/50 font-bold mt-1">1,200+ Verified Paws</div>
+            <div className="border-l border-gray-200 pl-4">
+              <div className="text-base font-black text-primary leading-none">4.9 / 5.0</div>
+              <div className="text-[0.65rem] uppercase tracking-wider text-gray-500 font-bold mt-1">2,400+ Verified Buyers</div>
             </div>
           </div>
         </div>
 
-        {/* Featured Pet Review Showcase Card (Light Theme) */}
-        <div className="bg-white border border-stone-200/70 rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-sm">
+        {/* Featured Review Card */}
+        <div className="bg-white border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left: Pet Photo & Tag (5 cols) */}
+            {/* Left: Product Photo & Tag (5 cols) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-square w-full rounded-3xl overflow-hidden shadow-md border border-stone-200/60 bg-[#FAF8F5]">
+              <div className="relative aspect-square w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-gray-200 bg-gray-950">
                 <img
-                  src={current.petImage}
-                  alt={current.pet}
+                  src={current.image}
+                  alt={current.product}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[0.65rem] font-bold uppercase tracking-wider bg-[#182825] text-white px-3 py-1 rounded-full inline-block mb-1.5 shadow-sm">
+                  <span className="text-[0.65rem] font-black uppercase tracking-wider bg-primary text-secondary px-3 py-1 rounded-md inline-block mb-1.5 shadow-sm border border-secondary/30">
                     {current.product}
                   </span>
-                  <div className="text-sm font-serif font-bold text-white/95">{current.pet}</div>
                 </div>
               </div>
             </div>
@@ -112,37 +112,37 @@ export default function Testimonials() {
                   <div className="flex text-amber-500 text-lg">
                     {"★★★★★"}
                   </div>
-                  <span className="text-[0.68rem] uppercase font-bold text-secondary tracking-widest bg-[#FAF8F5] border border-stone-200/60 px-3 py-1 rounded-full">
-                    5.0 Verified Purchase
+                  <span className="text-[0.68rem] uppercase font-black text-secondary tracking-widest bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
+                    5.0 Verified Hardware Purchase
                   </span>
                 </div>
 
-                {/* Big Quote */}
-                <blockquote className="font-serif text-lg sm:text-xl md:text-2xl text-primary font-medium leading-relaxed mb-8">
+                {/* Quote */}
+                <blockquote className="text-lg sm:text-xl md:text-2xl text-primary font-bold leading-relaxed mb-8">
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-3.5 mb-8">
-                  <div className="w-11 h-11 rounded-full bg-[#182825] text-white flex items-center justify-center font-serif font-bold text-base shadow-sm">
+                  <div className="w-11 h-11 rounded-xl bg-primary text-secondary flex items-center justify-center font-black text-base shadow-sm border border-secondary/30">
                     {current.owner.charAt(0)}
                   </div>
                   <div>
-                    <div className="text-base font-serif font-bold text-primary leading-tight">{current.owner}</div>
-                    <div className="text-xs text-neutral-text/60 font-medium">{current.role} • Companion to {current.pet}</div>
+                    <div className="text-base font-black text-primary leading-tight">{current.owner}</div>
+                    <div className="text-xs text-gray-500 font-semibold">{current.role}</div>
                   </div>
                 </div>
               </div>
 
               {/* Slider Controls */}
-              <div className="flex items-center justify-between pt-6 border-t border-stone-200/70">
+              <div className="flex items-center justify-between pt-6 border-t border-gray-100">
                 <div className="flex items-center gap-2">
                   {reviews.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setActiveIndex(i)}
                       className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                        i === activeIndex ? "w-8 bg-secondary" : "w-2.5 bg-stone-300 hover:bg-stone-400"
+                        i === activeIndex ? "w-8 bg-primary" : "w-2.5 bg-gray-300 hover:bg-gray-400"
                       }`}
                       aria-label={`Go to review ${i + 1}`}
                     />
@@ -152,14 +152,14 @@ export default function Testimonials() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full bg-[#FAF8F5] text-primary flex items-center justify-center hover:bg-secondary hover:text-white transition-all cursor-pointer border border-stone-200 shadow-xs"
+                    className="w-10 h-10 rounded-xl bg-gray-100 text-primary flex items-center justify-center hover:bg-primary hover:text-secondary transition-all cursor-pointer border border-gray-200 shadow-xs"
                     aria-label="Previous review"
                   >
                     ←
                   </button>
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full bg-[#FAF8F5] text-primary flex items-center justify-center hover:bg-secondary hover:text-white transition-all cursor-pointer border border-stone-200 shadow-xs"
+                    className="w-10 h-10 rounded-xl bg-gray-100 text-primary flex items-center justify-center hover:bg-primary hover:text-secondary transition-all cursor-pointer border border-gray-200 shadow-xs"
                     aria-label="Next review"
                   >
                     →

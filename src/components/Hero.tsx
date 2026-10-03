@@ -1,156 +1,168 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
 
-const heroGallery = [
+const siteConfig = siteConfigData as unknown as SiteConfig;
+
+const heroImages = [
   {
-    image: "/img/hero1.png",
-    badge: "Bestseller",
-    tag: "🐾 Comfort & Sleep",
-    title: "Orthopedic Rest",
-    description: "Cloud-soft memory foam beds designed for deep, restorative pet sleep and joint relief.",
+    id: "hero1",
+    image: "/img/her01.jpg",
+    fallbackImage: "/img/hero1.jpg",
+    alt: "Electronics Hero 1",
   },
   {
-    image: "/img/hero2.png",
-    badge: "Staff Pick",
-    tag: "🎾 Active Play",
-    title: "Interactive Toys",
-    description: "Smart durable enrichment toys engineered to stimulate natural instinct and ease anxiety.",
+    id: "hero2",
+    image: "/img/hero2.jpg",
+    fallbackImage: "/img/products/product2.png",
+    alt: "Electronics Hero 2",
   },
   {
-    image: "/img/hero3.png",
-    badge: "Top Rated",
-    tag: "✨ Coat Care",
-    title: "Grooming Essentials",
-    description: "Ergonomic slicker brushes designed for silky soft, tangle-free coats and shedding relief.",
+    id: "hero3",
+    image: "/img/hero3.jpg",
+    fallbackImage: "/img/products/product3.jpg",
+    alt: "Electronics Hero 3",
   },
 ];
 
 export default function Hero() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [isAutoPlay, setIsAutoPlay] = useState<boolean>(true);
+
+  // Auto rotation
+  useEffect(() => {
+    if (!isAutoPlay) return;
+    const interval = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isAutoPlay]);
 
   return (
-    <section className="relative bg-[#FAF8F5] pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 overflow-hidden w-full">
-      {/* Subtle Ambient Backdrop Glow */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[450px] bg-gradient-to-b from-[#EFE5D8]/70 via-[#FAF8F5]/30 to-transparent blur-3xl pointer-events-none rounded-full" />
+    <section className="relative bg-white pt-6 pb-12 sm:pt-10 sm:pb-16 md:pt-14 md:pb-20 overflow-hidden w-full border-b border-gray-100">
+      {/* Ambient Glow */}
+      <div className="absolute top-0 right-1/4 w-72 sm:w-[500px] h-72 sm:h-[400px] bg-secondary/10 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute bottom-0 left-5 sm:left-10 w-60 sm:w-[380px] h-60 sm:h-[300px] bg-primary/5 blur-3xl pointer-events-none rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main 2-Column Hero Section */}
+        {/* Main 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Left Column: Typography & Actions (5 cols) */}
+          {/* Left Column: Typography & CTAs (5 cols) */}
           <div className="lg:col-span-5 text-left z-10">
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold text-primary tracking-tight leading-[1.12] mb-4 sm:mb-5">
-              Everything <br />
-              <span className="text-secondary italic font-serif">They Love,</span> <br />
-              All in One Place
+            {/* Top Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary text-secondary font-extrabold text-xs tracking-widest uppercase mb-4 shadow-sm border border-secondary/30">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <span>Next-Gen Consumer Tech</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-primary tracking-tight leading-[1.12] mb-3 sm:mb-4 uppercase">
+              Engineered For <br />
+              <span className="text-secondary inline-block">Peak Power</span> <br />
+              &amp; Precision
             </h1>
 
-            <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-7">
-              Thoughtfully engineered grooming, interactive smart toys, and orthopedic beds for happier, healthier pets.
+            <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-7 font-medium">
+              Discover cutting-edge smart gadgets, hi-fi studio headphones, and high-performance gaming consoles built for modern digital lifestyle.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
               <Link
                 href="/shop"
-                className="group inline-flex items-center gap-2.5 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 px-7 sm:px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
+                className="group inline-flex items-center justify-center gap-2.5 bg-primary text-primary-text hover:text-secondary transition-all duration-300 px-6 sm:px-8 py-3.5 rounded-xl text-xs font-black uppercase tracking-widest shadow-md hover:shadow-lg border border-primary cursor-pointer w-full sm:w-auto text-center"
               >
-                <span>Explore Collection</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span>Shop Electronics</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1 text-secondary">→</span>
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-white text-primary hover:text-secondary border border-stone-300/80 hover:border-secondary/40 transition-all duration-300 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-xs"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-gray-50 border border-gray-300 hover:border-primary transition-all duration-300 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider shadow-xs cursor-pointer w-full sm:w-auto text-center"
               >
-                <span>Our Story</span>
+                <span>Our Engineering</span>
               </Link>
             </div>
 
             {/* Trust Highlights */}
-            <div className="flex items-center flex-wrap gap-x-5 gap-y-1.5 text-[0.7rem] sm:text-xs text-neutral-text/70 font-medium pt-2 border-t border-stone-200/60">
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Vet Endorsed</span>
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 100% Non-Toxic</span>
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 14-Day Guarantee</span>
+            <div className="flex items-center flex-wrap gap-x-4 sm:gap-x-5 gap-y-2 text-[0.7rem] sm:text-xs text-gray-500 font-semibold pt-3 border-t border-gray-200">
+              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> Fast UPS Delivery</span>
+              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> CE / FCC Certified</span>
+              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> {siteConfig.trialPeriod}-Day Guarantee</span>
             </div>
           </div>
 
-          {/* Right Column: Expanding Image Gallery (7 cols) */}
-          <div className="lg:col-span-7 relative w-full">
-            <div className="flex items-center gap-3 sm:gap-4 h-[360px] sm:h-[420px] md:h-[450px] w-full">
-              {heroGallery.map((item, idx) => {
+          {/* Right Column: Clean Visual Image Cards (7 cols) */}
+          <div
+            className="lg:col-span-7 relative w-full"
+            onMouseEnter={() => setIsAutoPlay(false)}
+            onMouseLeave={() => setIsAutoPlay(true)}
+          >
+            {/* Desktop / Tablet View: Pure Visual Gallery Deck */}
+            <div className="hidden sm:flex items-center gap-3 md:gap-4 h-[380px] md:h-[450px] w-full">
+              {heroImages.map((item, idx) => {
                 const isActive = activeIdx === idx;
                 return (
                   <div
-                    key={idx}
+                    key={item.id}
+                    onClick={() => setActiveIdx(idx)}
                     onMouseEnter={() => setActiveIdx(idx)}
-                    className={`relative group transition-all duration-500 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-neutral-200 h-full ${
-                      isActive ? "flex-[2.5] md:flex-[2.8]" : "flex-1 opacity-80 hover:opacity-100"
+                    className={`relative group transition-all duration-500 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-slate-900 h-full border border-gray-200/80 ${
+                      isActive ? "flex-[2.8] md:flex-[3]" : "flex-1 opacity-75 hover:opacity-100"
                     }`}
                   >
+                    {/* Hero Image */}
                     <img
                       src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      alt={item.alt}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      onError={(e) => {
+                        if (item.fallbackImage && e.currentTarget.src !== item.fallbackImage) {
+                          e.currentTarget.src = item.fallbackImage;
+                        }
+                      }}
                     />
-
-                    {/* Top Floating Badge */}
-                    <div className="absolute top-3.5 left-3.5 z-10">
-                      <span className="bg-[#182825]/90 text-white backdrop-blur-md text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    {/* Collapsed State Title Label */}
-                    <div
-                      className={`absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-300 pointer-events-none ${
-                        isActive ? "opacity-0" : "opacity-100"
-                      }`}
-                    >
-                      <p className="text-white text-[0.68rem] sm:text-xs font-bold truncate">
-                        {item.title}
-                      </p>
-                    </div>
-
-                    {/* Expanded Hover Overlay with Details */}
-                    <div
-                      className={`absolute inset-0 flex flex-col justify-end p-5 sm:p-8 text-white bg-gradient-to-t from-black/85 via-black/40 to-transparent transition-opacity duration-300 pointer-events-none ${
-                        isActive ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <span className="inline-block text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-secondary bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full w-fit mb-2">
-                        {item.tag}
-                      </span>
-                      <h2 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-1.5 leading-snug">
-                        {item.title}
-                      </h2>
-                      <p className="text-xs sm:text-sm text-white/90 max-w-xs leading-relaxed mb-2 line-clamp-2">
-                        {item.description}
-                      </p>
-                      <span className="inline-flex items-center gap-1 text-[0.72rem] font-bold uppercase tracking-wider text-secondary">
-                        <span>Shop Now</span>
-                        <span>→</span>
-                      </span>
-                    </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Selection indicator dots */}
-            <div className="flex items-center justify-center gap-2 mt-4">
-              {heroGallery.map((_, idx) => (
+            {/* Mobile View: Single Clean Image Display */}
+            <div className="block sm:hidden w-full">
+              {(() => {
+                const current = heroImages[activeIdx];
+                return (
+                  <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden shadow-xl bg-slate-900 border border-gray-200">
+                    <img
+                      src={current.image}
+                      alt={current.alt}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        if (current.fallbackImage && e.currentTarget.src !== current.fallbackImage) {
+                          e.currentTarget.src = current.fallbackImage;
+                        }
+                      }}
+                    />
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Navigation Indicators */}
+            <div className="flex items-center justify-center gap-2 mt-4 sm:mt-5">
+              {heroImages.map((item, idx) => (
                 <button
-                  key={idx}
+                  key={item.id}
                   type="button"
                   onClick={() => setActiveIdx(idx)}
-                  aria-label={`Select ${heroGallery[idx].title}`}
+                  aria-label={`Select Hero Image ${idx + 1}`}
                   className={`transition-all duration-300 rounded-full cursor-pointer ${
                     activeIdx === idx
-                      ? "w-6 h-1.5 bg-[#182825]"
-                      : "w-1.5 h-1.5 bg-stone-300 hover:bg-stone-400"
+                      ? "w-7 h-2 bg-secondary"
+                      : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
               ))}

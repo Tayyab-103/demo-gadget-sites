@@ -59,10 +59,10 @@ function ConfirmContent() {
       <div className="mt-8">
         <Link
           href="/"
-          className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
+          className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-primary text-secondary hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg border border-secondary/30"
         >
-          <span>Return to Pet Mercantile</span>
-          <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">🐾</span>
+          <span>Return to Electronics Catalog</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">⚡</span>
         </Link>
       </div>
     </div>

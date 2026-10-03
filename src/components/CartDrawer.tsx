@@ -25,35 +25,37 @@ export default function CartDrawer() {
       />
       {/* Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[420px] bg-white z-1000 border-l border-black/10 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
+        className={`fixed top-0 bottom-0 right-0 w-full max-w-[420px] bg-white z-1000 border-l border-gray-200 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">🐾</span>
-            <h3 className="m-0 text-lg font-black text-primary tracking-tight uppercase">Your Pet Cart</h3>
+        <div className="p-5 sm:p-6 border-b border-gray-100 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-primary text-secondary flex items-center justify-center text-sm font-black border border-secondary/40">
+              ⚡
+            </div>
+            <h3 className="m-0 text-base font-black text-primary tracking-tight uppercase">Your Hardware Cart</h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-2xl cursor-pointer text-neutral-text/50 hover:text-secondary leading-none transition-colors"
+            className="bg-transparent border-none text-xl cursor-pointer text-gray-400 hover:text-primary leading-none transition-colors"
             aria-label="Close Cart"
           >
             ✕
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-5xl mb-4">🐶</div>
-              <h4 className="text-base font-bold text-primary mb-1">Your cart is empty</h4>
-              <p className="text-neutral-text/50 text-xs">Treat your furry friend to our curated essentials.</p>
+              <div className="text-4xl mb-4">⚡</div>
+              <h4 className="text-base font-black text-primary mb-1 uppercase">Your cart is empty</h4>
+              <p className="text-gray-500 text-xs">Explore our cutting-edge electronic devices and GaN chargers.</p>
               <button
-                className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-secondary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer"
+                className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-primary text-secondary hover:bg-slate-800 transition-all duration-300 py-3 px-7 rounded-xl text-xs uppercase tracking-widest mt-6 shadow-sm cursor-pointer border border-primary"
                 onClick={() => setIsCartOpen(false)}
               >
-                Shop Pet Essentials
+                Shop Electronics
               </button>
             </div>
           ) : (
@@ -82,28 +84,28 @@ export default function CartDrawer() {
               };
 
               return (
-                <div className="flex gap-4 pb-5 mb-5 border-b border-black/5 items-start relative group" key={item.Id}>
+                <div className="flex gap-4 pb-5 mb-5 border-b border-gray-100 items-start relative group" key={item.Id}>
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-2xl bg-neutral-bg border border-black/5 flex-shrink-0"
+                    className="w-[70px] h-[70px] object-cover rounded-xl bg-gray-50 border border-gray-200 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/100x100?text=Pet+Item";
+                      e.currentTarget.src = "/img/products/charger.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">
                     <div className="font-bold text-sm text-primary mb-0.5 truncate">{item.Name}</div>
                     <div className="text-[0.62rem] text-secondary mb-3 uppercase tracking-wider font-bold">
-                      {item.Label || "Single Pack"}
+                      {item.Label || "Single Unit"}
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
                       {/* Stepper Controls */}
-                      <div className="flex items-center gap-1.5 bg-[#FAF8F5] p-1 rounded-xl border border-black/5">
+                      <div className="flex items-center gap-1.5 bg-gray-50 p-1 rounded-lg border border-gray-200">
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg hover:border-secondary/20 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-gray-200 w-6 h-6 rounded flex items-center justify-center cursor-pointer hover:bg-gray-100 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
@@ -111,7 +113,7 @@ export default function CartDrawer() {
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg hover:border-secondary/20 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-gray-200 w-6 h-6 rounded flex items-center justify-center cursor-pointer hover:bg-gray-100 text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
@@ -123,7 +125,7 @@ export default function CartDrawer() {
 
                   <button
                     onClick={() => removeFromCart(item.Id)}
-                    className="bg-transparent border-none text-neutral-text/30 hover:text-red-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
+                    className="bg-transparent border-none text-gray-300 hover:text-red-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
                     aria-label="Remove item"
                   >
                     &times;
@@ -135,8 +137,8 @@ export default function CartDrawer() {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-6 border-t border-black/5 bg-[#FAF8F5]">
-            <div className="flex items-center justify-between mb-6">
+          <div className="p-5 sm:p-6 border-t border-gray-100 bg-gray-50">
+            <div className="flex items-center justify-between mb-5">
               <span className="font-black text-primary uppercase text-xs tracking-wider">Subtotal</span>
               <span className="font-black text-xl text-primary">
                 ${getCartTotal()}
@@ -145,25 +147,25 @@ export default function CartDrawer() {
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-3"
+              className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-primary text-secondary hover:bg-slate-800 transition-all duration-300 py-3.5 px-8 rounded-xl text-xs uppercase tracking-widest w-full shadow-md hover:shadow-lg mb-2.5 border border-primary"
               onClick={() => setIsCartOpen(false)}
             >
               <span>Proceed to Checkout</span>
-              <span>🐾</span>
+              <span>→</span>
             </Link>
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border-2 border-primary/20 text-primary hover:border-primary hover:bg-primary/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer mb-4"
+              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-gray-300 text-primary hover:bg-gray-100 transition-all duration-300 py-3 px-8 rounded-xl text-xs uppercase tracking-wider w-full cursor-pointer mb-3"
             >
-              Continue Shopping
+              Continue Browsing
             </button>
 
             {/* Payment Trust Badges */}
-            <div className="flex flex-col items-center gap-2 pt-3 border-t border-black/5">
-              <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
-                <span className="text-emerald-600">🔒</span>
-                <span>Guaranteed Safe &amp; Secure Checkout</span>
+            <div className="flex flex-col items-center gap-1.5 pt-2.5 border-t border-gray-200">
+              <div className="flex items-center gap-1.5 text-[0.68rem] text-gray-500 font-semibold">
+                <span className="text-secondary">🔒</span>
+                <span>256-Bit SSL Encrypted &amp; PCI-DSS Level 1</span>
               </div>
               <div className="flex items-center gap-2">
                 <img

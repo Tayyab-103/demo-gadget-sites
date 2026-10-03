@@ -12,15 +12,15 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF8F5] py-16 md:py-24 relative overflow-hidden">
+      <main className="bg-slate-50 py-16 md:py-24 relative overflow-hidden">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              MERCANTILE POLICIES
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-slate-200 shadow-xs mb-3.5">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary">
+              SECURITY & LEGAL POLICIES
             </span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-8 border-b border-stone-200/80 pb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-primary mb-8 border-b border-slate-200 pb-6 tracking-tight">
             Privacy Policy
           </h1>
 

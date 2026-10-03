@@ -1,15 +1,19 @@
 [
   {
     "id": "product1",
-    "name": "Pet Grooming Brush",
-    "image": "/img/products/brush.jpg",
+    "name": "watch 42mm smartwatch",
+    "image": "/img/products/product01.jpg",
     "images": [
-      "/img/products/brush.jpg",
-      "/img/products/brush2.jpg",
-      "/img/products/brush3.jpg"
+      "/img/products/product1.jpg",
+      "/img/products/product1-1.jpg",
+      "/img/products/product1-2.jpg",
+      "/img/products/product1-3.jpg",
+      "/img/products/product1-4.jpg",
+      "/img/products/product1-5.jpg",
+      "/img/products/product1-6.jpg"
     ],
-    "description": "Ergonomic slicker brush engineered with fine stainless steel massage beads and a one-click retractable bristle release. Effortlessly removes loose undercoat shedding and dander without scratching delicate pet skin.",
-    "category": "Grooming & Coat Care",
+    "description": "A 42mm smartwatch is the ideal sweet spot for individuals with small-to-medium wrists (typically under 16 cm), providing a compact footprint without sacrificing screen real estate",
+    "category": "Smart Watches",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "6.95",
@@ -26,15 +30,15 @@
   },
   {
     "id": "product2",
-    "name": "Chew Toys for Small Dogs",
-    "image": "/img/products/chew-toy.jpg",
+    "name": "Modern Circuit AeroFit Pro Hi-Fi Headphones",
+    "image": "/img/products/product2.png",
     "images": [
-      "/img/products/chew-toy.jpg",
-      "/img/products/chew-toy2.jpg",
-      "/img/products/chew-toy3.jpg"
+      "/img/products/product2.png",
+      "/img/products/product2-1.jpg",
+      "/img/products/product2-2.jpg"
     ],
-    "description": "Interactive chew toys with natural rubber material and appealing texture satisfy your small dog's natural chewing instincts, reduce anxiety, and promote healthy teeth and gums through engaging play and stress-relieving chewing. Perfect for teething puppies and adult dogs seeking enrichment and dental stimulation.",
-    "category": "Chew Toys",
+    "description": "Ultra-lightweight ergonomic studio headphones featuring precision CNC aluminum headband brackets, custom soundstage tuning, and zero-distortion low impedance drivers.",
+    "category": "Hi-Fi Acoustic",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "11.95",
@@ -51,15 +55,17 @@
   },
   {
     "id": "product3",
-    "name": "Adjustable Pet Collar for Small Dogs and Cats",
-    "image": "/img/products/collar.jpg",
+    "name": "Ninja Gaming Console",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "/img/products/collar.jpg",
-      "/img/products/collar2.jpg",
-      "/img/products/collar3.jpg"
+      "/img/products/product3.jpg",
+      "/img/products/product3-1.jpg",
+      "/img/products/product3-2.jpg",
+      "/img/products/product3-3.jpg"
+
     ],
-    "description": "Adjustable Pet Collar",
-    "category": "Collars and Harnesses",
+    "description": "A gaming console is a specialized device with dedicated hardware for high-performance video games. It offers a simple plug-and-play TV setup using handheld controllers. Modern systems also function as media hubs for streaming apps and online multiplayer.",
+    "category": "Consoles",
     "showIngredients": false,
     "ingredientsImage": "",
     "ssPrice": "14.95",

@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 
 const messages = [
-  "🐾 Free Express Shipping on All Pet Orders Nationwide",
-  "⭐ 14-Day 100% Happy Tail Satisfaction Guarantee",
-  "🌿 100% Non-Toxic & Pet-Safe Certified Materials",
-  "🩺 Veterinarian Recommended Grooming & Play Essentials",
+  "⚡ Free Express Courier Delivery on All Circuit Orders",
+  "🛡️ 30-Day Hardware Satisfaction Guarantee",
+  "⚡ Ultra-High Thermal Efficiency GaN III & Silicon Architecture",
+  "🔧 Direct Engineering Support & 24/7 Dispatch",
 ];
 
 export default function AnnouncementBar() {

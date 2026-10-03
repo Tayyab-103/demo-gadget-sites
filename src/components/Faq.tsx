@@ -6,7 +6,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-type CategoryType = "All" | "Orders & Shipping" | "Safety & Care" | "Guarantee & Returns";
+type CategoryType = "All" | "Orders & Shipping" | "Hardware Specs" | "Warranty & Returns";
 
 interface FaqItem {
   category: CategoryType;
@@ -18,43 +18,43 @@ const faqList: FaqItem[] = [
   {
     category: "Orders & Shipping",
     question: "What shipping carrier do you use and how fast is delivery?",
-    answer: `All orders are processed and dispatched within 1–2 business days from our domestic fulfillment center. We ship nationwide using ${siteConfig.shippingCarrier}, and delivery typically takes between ${siteConfig.shippingPeriod} business days with live real-time tracking straight to your door.`,
+    answer: `All circuit hardware orders are packed and dispatched within 1–2 business days from our domestic fulfillment facility. We ship via ${siteConfig.shippingCarrier}, and delivery typically takes between ${siteConfig.shippingPeriod} business days with real-time end-to-end tracking straight to your address.`,
   },
   {
-    category: "Safety & Care",
-    question: "Are products safe for all breeds & sizes?",
+    category: "Hardware Specs",
+    question: "Are your GaN chargers and charging docks universally compatible?",
     answer:
-      "Yes! Every Whisker Vale essential is constructed from 100% non-toxic, BPA-free, hypoallergenic food-grade silicone and gentle rounded bristles tested safe for dogs and cats of all breeds, ages, and sizes.",
+      "Yes! Our GaN fast chargers and MagGrid charging stands support USB-PD 3.1, QC 4.0+, Qi2 wireless standards, and PPS dynamic power delivery. They are engineered to safely charge Apple, Samsung, Google, Dell, MacBook, and Windows USB-C devices at peak speeds.",
   },
   {
-    category: "Guarantee & Returns",
-    question: "How does the 14-Day Happy Tail trial work?",
-    answer: `If for any reason you or your companion are not 100% delighted with your purchase within ${siteConfig.trialPeriod} days of receiving it, simply contact our concierge team via phone at ${siteConfig.phone} or email at ${siteConfig.email} for a complete, hassle-free refund.`,
+    category: "Warranty & Returns",
+    question: `How does the ${siteConfig.trialPeriod}-Day Hardware Satisfaction Guarantee work?`,
+    answer: `If you are not 100% satisfied with your Modern Circuit Electronics hardware within ${siteConfig.trialPeriod} days of receiving it, simply reach out to our engineering support team via phone at ${siteConfig.phone} or email at ${siteConfig.email} for a complete, hassle-free refund.`,
   },
   {
-    category: "Safety & Care",
-    question: "How do I clean and charge the PawPulse motion ball?",
+    category: "Hardware Specs",
+    question: "What audio codecs and latency does the VoltAudio Cyber Earbuds support?",
     answer:
-      "The PawPulse Smart Ball charges via the included USB cable in 45 minutes for up to 4 hours of continuous motion play. The water-resistant silicone casing easily wipes clean with a damp, pet-safe cloth.",
+      "VoltAudio Cyber Earbuds utilize Bluetooth 5.4 with aptX HD, AAC, and SBC audio codec decoding, alongside an ultra-low latency gaming mode of under 28ms and active hybrid noise cancellation up to -45dB.",
   },
   {
-    category: "Safety & Care",
-    question: "How does the self-cleaning slicker brush mechanism work?",
+    category: "Hardware Specs",
+    question: "What safety and thermal protections are built into the circuits?",
     answer:
-      "After grooming your pet and collecting loose undercoat hair, simply click the ergonomic button on the handle. The bristles retract instantly, allowing the collected fur mat to drop cleanly into the trash with zero mess.",
+      "Every unit integrates multi-stage active thermal monitoring (over 100,000 temperature checks per second), surge protection, over-current cutoff, short-circuit isolation, and flame-retardant aerospace-grade polycarbonate casing.",
   },
   {
     category: "Orders & Shipping",
     question: "How will the charge appear on my credit card statement?",
-    answer: `To maintain transparent transaction records, your credit card statement will display the charge descriptor as "${siteConfig.descriptor}".`,
+    answer: `For transparent billing, your card statement will accurately display the descriptor "${siteConfig.descriptor}".`,
   },
 ];
 
 const categories: CategoryType[] = [
   "All",
   "Orders & Shipping",
-  "Safety & Care",
-  "Guarantee & Returns",
+  "Hardware Specs",
+  "Warranty & Returns",
 ];
 
 export default function Faq() {
@@ -75,23 +75,23 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="faq">
+    <section className="py-16 sm:py-24 bg-white relative overflow-hidden" id="faq">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Left-Aligned Header Block */}
         <div className="text-left max-w-3xl mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              COMMON INQUIRIES
+          <div className="inline-flex items-center gap-2 bg-slate-100 px-4 py-1.5 rounded-full border border-slate-200 shadow-xs mb-3.5">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="text-[0.68rem] font-black uppercase tracking-[0.22em] text-primary">
+              HARDWARE ARCHITECTURE FAQ
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-6">
-            Frequently Asked <span className="italic text-secondary font-serif">Questions</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight leading-tight mb-6">
+            Frequently Asked <span className="text-primary underline decoration-secondary decoration-4">Questions</span>
           </h2>
 
-          {/* Category Filter Tabs (Left-Aligned) */}
+          {/* Category Filter Tabs */}
           <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
@@ -99,10 +99,10 @@ export default function Faq() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-[#182825] text-white shadow-sm"
-                      : "bg-white text-neutral-text/75 hover:text-primary hover:bg-stone-100 border border-stone-200/60"
+                      ? "bg-primary text-white shadow-md"
+                      : "bg-slate-100 text-slate-600 hover:text-primary hover:bg-slate-200 border border-slate-200"
                   }`}
                 >
                   {cat}
@@ -115,41 +115,41 @@ export default function Faq() {
         {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* LEFT COLUMN: STICKY CONCIERGE CARD (4 cols) */}
+          {/* LEFT COLUMN: STICKY DESK CARD (4 cols) */}
           <div className="lg:col-span-4 lg:sticky lg:top-28">
-            <div className="bg-[#182825] text-white rounded-[2.5rem] p-7 sm:p-9 shadow-xl relative overflow-hidden border border-white/10">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="bg-primary text-white rounded-[2rem] p-7 sm:p-9 shadow-xl relative overflow-hidden border border-slate-800">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/15 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center text-2xl mb-6 shadow-inner">
-                🐾
+              <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center font-black text-2xl mb-6 shadow-inner">
+                ⚡
               </div>
 
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
-                Pet Care Concierge
+              <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-snug">
+                Hardware Engineering Desk
               </h3>
 
-              <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-8">
-                Need sizing, breed advice, or order updates? Talk with our dedicated animal care specialists.
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-8">
+                Have technical inquiries regarding voltage curves, charging protocols, or component testing? Speak with our engineering desk.
               </p>
 
               <a
                 href="#contact"
-                className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-white hover:brightness-110 font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all mb-6"
+                className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-secondary-text hover:brightness-110 font-black text-xs uppercase tracking-wider py-3.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all mb-6 cursor-pointer"
               >
-                <span>Ask Our Concierge</span>
+                <span>Contact Engineering</span>
                 <span>→</span>
               </a>
 
-              <div className="pt-6 border-t border-white/10 flex items-center gap-2.5 text-xs text-white/80">
-                <span className="text-emerald-400 font-bold">✓</span>
-                <span className="text-[0.72rem] font-medium">100% Vet-Verified Guidance</span>
+              <div className="pt-6 border-t border-slate-800 flex items-center gap-2.5 text-xs text-slate-400">
+                <span className="text-secondary font-bold">✓</span>
+                <span className="text-[0.72rem] font-medium">Direct US-Based Support</span>
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: MINIMAL FILTERABLE ACCORDION (8 cols) */}
-          <div className="lg:col-span-8 bg-white rounded-[2.5rem] p-6 sm:p-10 border border-stone-200/60 shadow-xs flex flex-col">
-            <div className="divide-y divide-stone-200/70">
+          {/* RIGHT COLUMN: ACCORDION (8 cols) */}
+          <div className="lg:col-span-8 bg-slate-50 rounded-[2rem] p-6 sm:p-10 border border-slate-200/80 shadow-xs flex flex-col">
+            <div className="divide-y divide-slate-200">
               {filteredFaqs.map((faq, idx) => {
                 const isOpen = openIndices.includes(idx);
 
@@ -160,15 +160,15 @@ export default function Faq() {
                       className="w-full flex items-center justify-between gap-4 text-left bg-transparent border-none cursor-pointer focus:outline-none group py-1"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-serif text-base sm:text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
+                      <span className="text-base sm:text-lg font-bold text-primary group-hover:text-secondary transition-colors leading-snug">
                         {faq.question}
                       </span>
 
                       <span
-                        className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-200 ${
+                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all duration-200 ${
                           isOpen
-                            ? "bg-secondary text-white"
-                            : "bg-[#FAF8F5] text-neutral-text/50 group-hover:bg-stone-200"
+                            ? "bg-secondary text-secondary-text"
+                            : "bg-white text-slate-600 border border-slate-200 group-hover:border-secondary"
                         }`}
                       >
                         {isOpen ? "−" : "+"}
@@ -176,7 +176,7 @@ export default function Faq() {
                     </button>
 
                     {isOpen && (
-                      <div className="mt-3 pr-8 text-xs sm:text-sm text-neutral-text/75 leading-relaxed animate-fadeIn">
+                      <div className="mt-3 pr-8 text-xs sm:text-sm text-slate-600 leading-relaxed animate-fadeIn">
                         {faq.answer}
                       </div>
                     )}

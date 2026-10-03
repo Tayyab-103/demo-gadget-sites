@@ -78,15 +78,15 @@ export default function NewsletterPopup() {
         {/* Compact Hero Banner */}
         <div className="h-28 relative overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80"
-            alt="Harmonic Hollow Acoustic Instrument"
+            src="/img/book read.jpg"
+            alt="Chapterhouse Classic Books"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#4C0519] via-[#4C0519]/70 to-transparent" />
 
           <div className="absolute bottom-3 left-4 right-10 text-white">
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#D2446D]/90 text-[0.6rem] font-bold tracking-wider uppercase text-white mb-1 shadow-sm">
-              <span>𝄞</span> Workshop VIP
+              <span>📖</span> Reader Circle VIP
             </span>
             <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug uppercase text-white drop-shadow">
               Claim 15% Off Your First Order
@@ -105,16 +105,16 @@ export default function NewsletterPopup() {
                 You&apos;re On The List!
               </h4>
               <p className="text-gray-600 text-xs mb-3 font-medium">
-                Use your workshop discount code at checkout:
+                Use your reader discount code at checkout:
               </p>
               <div className="inline-block bg-rose-50 border border-dashed border-[#D2446D] px-4 py-2 rounded-xl text-[#4C0519] font-mono font-bold text-sm tracking-widest select-all">
-                HARMONIC15
+                CHAPTER15
               </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-xs text-gray-600 leading-relaxed mb-3.5 font-medium">
-                Subscribe for exclusive instrument drops, score releases, and an instant <strong>15% discount</strong> voucher.
+                Subscribe for exclusive collector drops, first-edition alerts, and an instant <strong>15% discount</strong> voucher.
               </p>
 
               <div className="flex flex-col gap-2">

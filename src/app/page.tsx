@@ -24,29 +24,28 @@ export default function Home() {
         {/* 1. Hero Carousel Banner */}
         <Hero />
         
-        {/* 2. Brand Story & Luthier Standard */}
+        {/* 2. Brand Story & Chapterhouse Standard */}
         <AboutUs />
 
         {/* 3. Product Catalog Showcase */}
         <ProductGrid />
 
-        {/* 4. Visual Workshop Gallery */}
+        {/* 4. Visual Library Gallery */}
         <LatestCreations />
 
-        {/* 5. Step-by-Step Workshop Journey */}
-        {/* <HowItWorks /> */}
-        <Features/>
+        {/* 5. Bookmaking Features */}
+        <Features />
 
         {/* 6. Credibility & Guarantee Standards */}
         <QualityPromise />
         
-        {/* 7. Musician Social Proof */}
-        {/* <Testimonials /> */}
+        {/* 7. Reader Social Proof */}
+        <Testimonials />
 
-        {/* 8. Conversion CTA & Musician Circle */}
+        {/* 8. Conversion CTA & Reader Circle */}
         <CTASection />
 
-        {/* 9. Workshop Contact Hub (Form on /contact page) */}
+        {/* 9. Bookstore Contact Hub */}
         <Contact showForm={false} />
       </main>
 

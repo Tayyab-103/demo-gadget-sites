@@ -15,7 +15,7 @@ export default function Privacy() {
       <main className="bg-[#FAFAFA] py-16 md:py-24 relative overflow-hidden">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-            <span>𝄞 Privacy &amp; Data</span>
+            <span>📖 Privacy &amp; Data</span>
           </div>
 
           <h1 className="text-3xl md:text-4xl font-black uppercase text-[#000000] mb-8 border-b border-rose-100 pb-6 tracking-tight">
@@ -25,14 +25,14 @@ export default function Privacy() {
           <div className="bg-[#FDFDFD] rounded-3xl p-6 sm:p-10 border border-rose-100 shadow-md leading-relaxed text-gray-700 text-xs md:text-sm space-y-6 font-medium">
             <p>
               This Privacy Policy describes how your personal information is collected, used, and shared when you visit
-              or make an instrument purchase from <strong className="text-[#000000] font-bold">{siteConfig.websiteUrl}</strong> (the “Site”).
+              or make a book purchase from <strong className="text-[#000000] font-bold">{siteConfig.websiteUrl}</strong> (the “Site”).
             </p>
 
             <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">PERSONAL INFORMATION WE COLLECT</h3>
             <p>
               When you visit the Site, we automatically collect certain information about your device, including information
               about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
-              Additionally, as you browse the Site, we collect information about the individual instruments or sheet music folios that you view.
+              Additionally, as you browse the Site, we collect information about the individual books, collections, or journals that you view.
             </p>
             <p>
               Additionally, when you make a purchase or attempt to make a purchase through the Site, we collect certain information
@@ -55,7 +55,7 @@ export default function Privacy() {
             <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">CONTACT US</h3>
             <p>
               For more information about our privacy practices, if you have questions, or if you would like to make an inquiry,
-              please contact our workshop team by e-mail at <strong className="text-[#000000] font-bold">{siteConfig.email}</strong> or by phone at <strong className="text-[#000000] font-bold">{siteConfig.phone}</strong>.
+              please contact our reader concierge team by e-mail at <strong className="text-[#000000] font-bold">{siteConfig.email}</strong> or by phone at <strong className="text-[#000000] font-bold">{siteConfig.phone}</strong>.
             </p>
           </div>
         </div>

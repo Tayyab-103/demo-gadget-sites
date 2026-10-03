@@ -3,11 +3,10 @@
 import React, { useEffect, useState } from "react";
 
 const images = [
-  "/img/hero1.png",
-  "/img/hero2.png",
-  "/img/hero3.png",
+  "/img/hero1.jpg",
+  "/img/hero2.jpg",
+  "/img/hero3.jpg",
   "/img/hero4.jpg",
-  "/img/hero5.jpg",
 ];
 
 export default function HeroCarousel() {
@@ -26,7 +25,7 @@ export default function HeroCarousel() {
         <img
           key={src}
           src={src}
-          alt="Velvet Echo artisan musical hardware and studio instruments"
+          alt="Chapterhouse Book Marketplace curated literature and collector editions"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             idx === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
           }`}

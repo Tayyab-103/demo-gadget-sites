@@ -12,7 +12,7 @@ export default function ProductCarousel({
   const [activeIndex, setActiveIndex] = useState(0);
 
   if (!images || images.length <= 1) {
-    const singleImg = images && images.length === 1 ? images[0] : "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80";
+    const singleImg = images && images.length === 1 ? images[0] : "/img/gallery1.jpg";
     return (
       <div className="lg:sticky top-[120px]">
         <div className="relative bg-[#FAFAFA] shadow-xl rounded-3xl overflow-hidden h-[380px] md:h-[480px] flex items-center justify-center border border-rose-100">
@@ -47,8 +47,7 @@ export default function ProductCarousel({
                 src={img}
                 alt={`${name} - view ${idx + 1}`}
                 onError={(e) => {
-                  e.currentTarget.src =
-                    "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80";
+                  e.currentTarget.src = "/img/gallery1.jpg";
                 }}
               />
 

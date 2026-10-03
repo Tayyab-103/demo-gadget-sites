@@ -30,21 +30,21 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col">
             {/* Logo */}
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] flex items-center justify-center shadow-lg shadow-black/50 text-2xl text-white font-black">
-                𝄞
-              </div>
+              {/* <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] flex items-center justify-center shadow-lg shadow-black/50 text-2xl text-white font-black">
+                📚
+              </div> */}
               <div>
                 <span className="text-xl font-black text-white tracking-tight uppercase leading-none block">
                   {siteConfig.brandName}
                 </span>
                 <span className="text-[0.62rem] text-[#D2446D] font-bold tracking-widest uppercase">
-                  Artisanal Tonewoods &amp; Scores
+                  Collector Hardcovers &amp; Journals
                 </span>
               </div>
             </div>
 
             <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-sm font-normal">
-              Dedicated to acoustic purity and musical devotion. From solid Sitka spruce guitars to classical score anthologies — crafted to inspire every stage and session.
+              Dedicated to literary preservation and the timeless joy of physical books. From deluxe foil-stamped classics to artisan journals — crafted to inspire every reader&apos;s library.
             </p>
 
             {/* Contact Info */}
@@ -69,7 +69,7 @@ export default function Footer() {
             {/* Dynamic Products Column */}
             <div>
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
-                Instruments &amp; Scores
+                Books &amp; Editions
               </h4>
               <ul className="flex flex-col gap-2.5">
                 {products.map((product) => (
@@ -97,7 +97,7 @@ export default function Footer() {
             {/* Company Column */}
             <div>
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
-                Workshop
+                Marketplace
               </h4>
               <ul className="flex flex-col gap-2.5">
                 <li>
@@ -106,7 +106,7 @@ export default function Footer() {
                     className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    About Our Luthiers
+                    About Our Marketplace
                   </Link>
                 </li>
                 <li>
@@ -124,7 +124,7 @@ export default function Footer() {
                     className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Contact Workshop
+                    Reader Concierge
                   </Link>
                 </li>
               </ul>
@@ -169,7 +169,7 @@ export default function Footer() {
                     className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Tone Guarantee &amp; Returns
+                    Reader Guarantee &amp; Returns
                   </Link>
                 </li>
               </ul>
@@ -187,11 +187,11 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span className="text-[0.65rem] text-white/40 font-bold uppercase tracking-wider">Secure Payment Gateway:</span>
             <div className="flex items-center gap-3">
-              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
-                <img src="/img/visa.png" alt="Visa" className="h-4 w-auto object-contain opacity-80" />
+              <div className="">
+                <img src="/img/visa.png" alt="Visa" className="h-4 w-auto " />
               </div>
-              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
-                <img src="/img/mastercard.png" alt="Mastercard" className="h-4 w-auto object-contain opacity-80" />
+              <div className="">
+                <img src="/img/mastercard.png" alt="Mastercard" className="h-4 w-auto " />
               </div>
             </div>
           </div>

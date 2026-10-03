@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Solid Tonewood Seasoning & Acoustic Voicing",
-    desc: "Every solid Sitka spruce and European maple soundboard is seasoned for years and individually hand-voiced by master luthiers to achieve full harmonic projection.",
+    title: "Archival Paper & Acid-Free Printing",
+    desc: "Every edition is printed on 120gsm acid-free cream parchment that prevents fading and page brittleness over decades of reading.",
   },
   {
-    title: "1-Year Comprehensive Workshop Warranty",
-    desc: "We stand firmly behind our instruments and binding craftsmanship. Any structural or manufacturing defect within 365 days is covered under our direct workshop warranty.",
+    title: "Smyth-Sewn Binding Guarantee",
+    desc: "We stand firmly behind our bookbinding craftsmanship. Any structural binding defect or loose pages within 365 days is covered under our direct replacement guarantee.",
   },
   {
-    title: "Archival Acid-Free Sheet Music Preserves",
-    desc: "Our sheet music editions are printed with fade-resistant inks on 120gsm acid-free paper, featuring lay-flat binding designed for decades of rehearsal and stage performance.",
+    title: "Foil Embossing & Heirloom Packaging",
+    desc: "Our collector editions feature intricate hot-stamped gold foil covers and protective custom slipcases engineered for safe transport and pristine shelf storage.",
   },
 ];
 
@@ -49,8 +49,8 @@ export default function QualityPromise() {
             "
           >
             <img
-              src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80"
-              alt={`${siteConfig.brandName} Acoustic Craftsmanship`}
+              src="/img/QualityPromise1.jpg"
+              alt={`${siteConfig.brandName} Book Craftsmanship`}
               className="
                 absolute
                 inset-0
@@ -67,10 +67,10 @@ export default function QualityPromise() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#4C0519]/90 via-[#4C0519]/30 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 text-white">
               <span className="text-xs font-black uppercase tracking-widest text-[#D2446D] block mb-1">
-                𝄞 Luthier Master Standard
+                📖 The Bookmaker Master Standard
               </span>
               <h3 className="text-xl md:text-2xl font-black">
-                Where Hand-Selected Tonewoods Meet Pure Acoustic Devotion
+                Where Timeless Storytelling Meets Archival Craftsmanship
               </h3>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function QualityPromise() {
               {/* EYEBROW */}
               <div className="mb-4 inline-flex items-center gap-2">
                 <span className="text-xs font-black uppercase tracking-[0.24em] text-[#D2446D]">
-                  𝄞 Our Tone &amp; Score Promise
+                  📖 Our Literary &amp; Binding Promise
                 </span>
               </div>
 
@@ -126,7 +126,7 @@ export default function QualityPromise() {
                   md:text-5xl
                 "
               >
-                The Musical Standard <br />
+                The Reader&apos;s Standard <br />
                 <span className="text-[#D2446D]">
                   You Deserve
                 </span>
@@ -134,7 +134,7 @@ export default function QualityPromise() {
 
               {/* DESCRIPTION */}
               <p className="mb-8 max-w-xl text-sm leading-relaxed text-gray-600 font-medium">
-                We understand how essential rich acoustic timbre, effortless fretwork, and legible scores are to your craft. Every instrument and music folio undergoes comprehensive bench inspection before leaving our workshop.
+                We understand how essential clear typography, comfortable page turn, and durable heirloom bindings are to your reading sanctuary. Every book and journal undergoes careful bench inspection before leaving our marketplace.
               </p>
 
               {/* GUARANTEE POINTS */}

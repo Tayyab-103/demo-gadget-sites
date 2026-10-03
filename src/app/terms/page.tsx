@@ -17,7 +17,7 @@ export default function Terms() {
       <main className="bg-[#FAFAFA] py-16 md:py-24 relative overflow-hidden">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-            <span>𝄞 Legal Policy</span>
+            <span>📖 Legal Policy</span>
           </div>
 
           <h1 className="text-3xl md:text-4xl font-black uppercase text-[#000000] mb-8 border-b border-rose-100 pb-6 tracking-tight">
@@ -27,7 +27,7 @@ export default function Terms() {
           <div className="bg-[#FDFDFD] rounded-3xl p-6 sm:p-10 border border-rose-100 shadow-md leading-relaxed text-gray-700 text-xs md:text-sm space-y-6 font-medium">
             <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
-              This website is operated by <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+              This website is operated by <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong> (a brand of <strong className="text-[#000000] font-bold">{siteConfig.corpName}</strong>). Throughout the site, the terms “we”,
               “us” and “our” refer to <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong>. <strong className="text-[#000000] font-bold">{siteConfig.brandName}</strong> offers
               this website, including all information, tools and services available from this site to you, the user,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
@@ -42,7 +42,7 @@ export default function Terms() {
 
             <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer handcrafted acoustic instruments, luthier accessories, and archival sheet music editions through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer curated classic literature collector editions, artisan leather journals, and historical anthologies through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
@@ -61,7 +61,7 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-gray-700">
-                          Upon ordering a <strong className="text-[#000000] font-bold">{bundle.quantity} {bundle.quantity > 1 ? "Units Studio Bundle" : "Unit Edition"}</strong>,
+                          Upon ordering a <strong className="text-[#000000] font-bold">{bundle.quantity} {bundle.quantity > 1 ? "Volumes Collector Set" : "Single Volume Edition"}</strong>,
                           you will be charged a singular transaction fee of <strong className="text-[#4C0519] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
                           The credit card charge will appear on your statement as <strong className="text-[#000000] font-bold">“{siteConfig.descriptor}”</strong>.
@@ -82,19 +82,19 @@ export default function Terms() {
 
             <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 2 - SHIPPING &amp; DELIVERY POLICY</h3>
             <p>
-              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our instruments and sheet music via{" "}
+              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our books and journals via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days in protective, moisture-sealed packaging.
               You will receive a tracking number via email once your order has been dispatched.
             </p>
 
-            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; TONE GUARANTEE</h3>
+            <h3 className="text-base font-black text-[#4C0519] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - RETURN &amp; READER GUARANTEE</h3>
             <p>
-              We stand behind our craftsmanship with a 30-day tone satisfaction trial. If you are not satisfied with your purchase,
-              please contact our workshop service center at <strong className="text-[#000000] font-bold">{siteConfig.phone}</strong> or email us at{" "}
+              We stand behind our craftsmanship with a 30-day reader satisfaction trial. If you are not satisfied with your purchase,
+              please contact our reader concierge center at <strong className="text-[#000000] font-bold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-[#000000] font-bold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated workshop facility at: <strong className="text-[#000000] font-bold">{siteConfig.address}</strong>.
+              Returns must be shipped to our designated facility at: <strong className="text-[#000000] font-bold">{siteConfig.address}</strong>.
             </p>
           </div>
         </div>

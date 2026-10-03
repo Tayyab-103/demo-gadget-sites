@@ -13,50 +13,50 @@ interface CreationCard {
 const creations: CreationCard[] = [
   {
     id: "creation-1",
-    title: "Solid Spruce Acoustic",
-    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop",
+    title: "Classic Literature Hardcovers",
+    image: "/img/gallery1.jpg",
     href: "/shop",
   },
   {
     id: "creation-2",
-    title: "Classical European Violin",
-    image: "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?q=80&w=800&auto=format&fit=crop",
+    title: "Artisan Leather Journal",
+    image: "/img/gallery2.jpg",
     href: "/shop",
   },
   {
     id: "creation-3",
-    title: "17-Key Mahogany Kalimba",
-    image: "/img/hero4.jpg",
+    title: "Vintage Reading Experience",
+    image: "/img/book read.jpg",
     href: "/shop",
   },
   {
     id: "creation-4",
-    title: "Archival Sonata Score",
-    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800&auto=format&fit=crop",
+    title: "Ancient Philosophy Folios",
+    image: "/img/gallery4.jpg",
     href: "/shop",
   },
   {
     id: "creation-5",
-    title: "Artisan Luthier Workshop",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop",
+    title: "Collector's Library Edition",
+    image: "/img/gallery5.jpg",
     href: "/shop",
   },
   {
     id: "creation-6",
-    title: "Concert Grand Piano",
-    image: "/img/hero2.jpg",
+    title: "Gold Gilded Classics",
+    image: "/img/gallery6.jpg",
     href: "/shop",
   },
   {
     id: "creation-7",
-    title: "Gold-Foil Chord Folio",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=800&auto=format&fit=crop",
+    title: "Heirloom Bookbinding",
+    image: "/img/gsllery7.jpg",
     href: "/shop",
   },
   {
     id: "creation-8",
-    title: "Chamber Orchestral Cello",
-    image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=800&auto=format&fit=crop",
+    title: "World History Anthologies",
+    image: "/img/gallery8.jpg",
     href: "/shop",
   },
 ];
@@ -69,14 +69,14 @@ export default function LatestCreations() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-            <span>𝄞 Visual Workshop Gallery</span>
+            <span>📖 Visual Library Gallery</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#000000] tracking-tight">
-            Our Latest Creations
+            Our Curated Editions
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mt-2 max-w-lg mx-auto font-medium">
-            A visual collection of our most recent works — each piece crafted with intention, emotion, and style.
+            A visual showcase of our finest publications and booklover essentials — crafted to be read, cherished, and preserved.
           </p>
         </div>
 

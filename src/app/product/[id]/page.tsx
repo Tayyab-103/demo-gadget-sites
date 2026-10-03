@@ -62,7 +62,7 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
-    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item Edition";
+    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item";
     
     addToCart(product, selectedBundle.quantity, unitPrice, label);
     setAddedToast(true);
@@ -71,7 +71,7 @@ export default function ProductDetail() {
 
   const handleBuyNow = () => {
     const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
-    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item Edition";
+    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Item";
     
     addToCart(product, selectedBundle.quantity, unitPrice, label);
     setIsCartOpen(true);
@@ -138,7 +138,7 @@ export default function ProductDetail() {
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80";
+                    e.currentTarget.src = "/img/gallery1.jpg";
                   }}
                 />
               </div>
@@ -161,7 +161,7 @@ export default function ProductDetail() {
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mt-6">
                   <p className="text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">
-                    Select Quantity Tier:
+                    Select Volume / Set Tier:
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {product.bundles.map((bundle) => {
@@ -177,7 +177,7 @@ export default function ProductDetail() {
                               : "border-gray-300 bg-white text-gray-700 hover:border-gray-400"
                           }`}
                         >
-                          {bundle.quantity} {bundle.quantity === 1 ? "Unit" : "Units"} • ${bundle.price}
+                          {bundle.quantity} {bundle.quantity === 1 ? "Volume" : "Volumes"} • ${bundle.price}
                         </button>
                       );
                     })}
@@ -186,12 +186,12 @@ export default function ProductDetail() {
               )}
 
               {/* About Product */}
-              <p className="text-base font-medium mt-6 text-[#000000]">About Product</p>
+              <p className="text-base font-medium mt-6 text-[#000000]">About This Edition</p>
               <ul className="list-disc ml-4 text-gray-500/70 space-y-1 mt-2 text-sm">
                 <li>{product.description}</li>
-                <li>High-quality materials &amp; precision construction</li>
-                <li>Tested for durability, tone, and reliability</li>
-                <li>Fast shipping with safe packaging</li>
+                <li>120gsm acid-free cream paper with Smyth-sewn lay-flat binding</li>
+                <li>Deluxe hot-stamped foil details and custom bookmark ribbon</li>
+                <li>Fast courier delivery in reinforced moisture-barrier packaging</li>
               </ul>
 
               {/* Action Buttons */}

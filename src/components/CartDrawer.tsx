@@ -31,8 +31,8 @@ export default function CartDrawer() {
       >
         <div className="p-6 border-b border-rose-100 flex items-center justify-between bg-[#FAFAFA]">
           <div className="flex items-center gap-2">
-            <span className="text-[#D2446D] text-lg font-black">𝄞</span>
-            <h3 className="m-0 text-base font-black text-[#4C0519] tracking-tight uppercase">Your Gear Cart</h3>
+            <span className="text-[#D2446D] text-lg font-black">📖</span>
+            <h3 className="m-0 text-base font-black text-[#4C0519] tracking-tight uppercase">Your Book Cart</h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
@@ -46,13 +46,13 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-14">
-              <div className="text-rose-200 text-6xl mb-4 font-serif">𝄞</div>
-              <p className="text-gray-500 text-sm font-medium">Your instrument cart is currently empty.</p>
+              <div className="text-rose-200 text-6xl mb-4 font-serif">📚</div>
+              <p className="text-gray-500 text-sm font-medium">Your book cart is currently empty.</p>
               <button
                 className="inline-block font-black text-center whitespace-nowrap bg-[#4C0519] text-white hover:bg-[#D2446D] transition-all duration-300 py-3.5 px-8 rounded-full text-[0.7rem] uppercase tracking-widest mt-6 shadow-md cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Browse Instruments
+                Browse Book Collections
               </button>
             </div>
           ) : (
@@ -87,7 +87,7 @@ export default function CartDrawer() {
                     alt={item.Name}
                     className="w-[72px] h-[72px] object-cover rounded-xl bg-[#FAFAFA] border border-rose-100 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=200&q=80";
+                      e.currentTarget.src = "/img/gallery1.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">

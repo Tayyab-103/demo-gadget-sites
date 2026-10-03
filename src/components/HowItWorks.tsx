@@ -5,27 +5,27 @@ import React from "react";
 const steps = [
   {
     number: "01",
-    title: "Select Your Instrument & Scores",
+    title: "Select Your Books & Sets",
     description:
-      "Explore our catalog of handcrafted solid spruce guitars, European maple violins, African mahogany kalimbas, and archival gold-embossed sheet music folios.",
-    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80",
-    icon: "𝄞",
+      "Explore our curated catalog of deluxe classic literature, artisan leather journals, and world history anthologies.",
+    image: "/img/gallery1.jpg",
+    icon: "📚",
   },
   {
     number: "02",
-    title: "Workshop Acoustic Voicing & Setup",
+    title: "Archival Quality & Bench Inspection",
     description:
-      "Every instrument is hand-calibrated by master luthiers — checking string action, intonation, bridge alignment, and acoustic resonance before leaving the workshop.",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80",
-    icon: "⚙️",
+      "Every volume is hand-inspected for crisp foil embossing, flawless binding alignment, and pristine page gilding before packing.",
+    image: "/img/about1.jpg",
+    icon: "🔍",
   },
   {
     number: "03",
-    title: "Climate-Controlled Insured Dispatch",
+    title: "Protective Insured Dispatch",
     description:
-      "Packed inside custom humidity-sealed protective hard casing and dispatched nationwide with full tracking, arriving at your studio in 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800&q=80",
-    icon: "🚚",
+      "Packed inside reinforced moisture-barrier packaging and dispatched nationwide with full tracking, arriving at your reading room in 3-5 business days.",
+    image: "/img/QualityPromise1.jpg",
+    icon: "📦",
   },
 ];
 
@@ -43,16 +43,16 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="mb-16 text-center md:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-            <span>𝄞 The Luthier Journey</span>
+            <span>📖 The Literary Journey</span>
           </div>
 
           <h2 className="mb-4 text-3xl font-black uppercase tracking-tight text-[#000000] md:text-5xl">
-            From Our Workshop <br />
-            <span className="text-[#D2446D]">To Your Studio Sanctuary</span>
+            From Our Marketplace <br />
+            <span className="text-[#D2446D]">To Your Reading Sanctuary</span>
           </h2>
 
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base font-medium">
-            Every instrument and sheet music collection is crafted, inspected, and packaged with unwavering devotion to musical excellence.
+            Every book and collector edition is inspected, protected, and delivered with unwavering devotion to the reading experience.
           </p>
         </div>
 

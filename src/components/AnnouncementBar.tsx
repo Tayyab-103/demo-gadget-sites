@@ -25,9 +25,9 @@ export default function AnnouncementBar() {
     <div className="bg-[#4C0519] text-white relative overflow-hidden border-b border-[#D2446D]/20">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2">
         <div className="flex-1 flex items-center justify-center gap-2.5 text-center">
-          <span className="text-[#D2446D] text-xs">𝄞</span>
+          <span className="text-[#D2446D] text-xs">📖</span>
           <span className="text-[0.68rem] md:text-[0.74rem] font-bold uppercase tracking-[0.18em] text-white/95">
-            Master-Crafted Instruments &amp; Archival Sheet Music &bull; Free Insured Express Delivery
+            Curated Classic Literature &amp; Collector Hardcovers &bull; Free Insured Express Delivery
           </span>
         </div>
 

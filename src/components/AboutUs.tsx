@@ -10,18 +10,18 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const pillars = [
   {
     step: "01",
-    title: "Artisan Tonewood Selection",
-    desc: "Hand-selected solid Sitka spruce soundboards, seasoned European flame maple, and resonant African mahogany — naturally aged for maximum acoustic vibration.",
+    title: "Heirloom Bookbinding Craftsmanship",
+    desc: "Printed on 120gsm acid-free cream paper with Smyth-sewn lay-flat bindings, gold foil embossing, and durable cloth or leather spine finishes.",
   },
   {
     step: "02",
-    title: "Master Luthier Voicing",
-    desc: "Every instrument is individually tap-tested, hand-carved, and calibrated for optimal string response, silky action, and rich harmonic overtones.",
+    title: "Curated Literary Selection",
+    desc: "Every title, anthology, and journal is meticulously selected and annotated by our editorial curators to celebrate timeless human wisdom and storytelling.",
   },
   {
     step: "03",
-    title: "Archival Score Preserves",
-    desc: "Printed on 120gsm acid-free archival parchment with lay-flat stitched binding — designed to endure decades of rigorous rehearsals and concert stages.",
+    title: "Archival Preservation Standard",
+    desc: "Engineered to endure generations of reading, bookmarking, and library shelf display without page yellowing, ink fading, or spine cracking.",
   },
 ];
 
@@ -41,17 +41,17 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 sm:mb-20">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-4 border border-rose-200 shadow-xs">
-              <span>𝄞 The Harmonic Hollow Standard</span>
+              <span>📖 The Chapterhouse Standard</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#000000] tracking-tight leading-[1.12]">
-              Crafting Pure Resonance for <br className="hidden sm:inline" />
-              <span className="text-[#D2446D]">Dedicated Musicians &amp; Composers.</span>
+              Curating Enduring Stories for <br className="hidden sm:inline" />
+              <span className="text-[#D2446D]">Dedicated Readers &amp; Collectors.</span>
             </h2>
           </div>
 
           <div className="lg:col-span-5">
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-medium">
-              We believe every melody deserves the highest standard of acoustic craftsmanship. From concert guitars to classical violin anthologies, each piece in our workshop is born from a reverent marriage of traditional European woodworking and modern acoustic physics.
+              We believe every great book deserves the highest standard of physical craftsmanship. From classic literature anthologies to artisan leatherbound journals, each volume in our catalog is created with reverence for traditional book arts and modern typography.
             </p>
           </div>
         </div>
@@ -66,18 +66,18 @@ export default function AboutUs() {
               {/* Main Photo Card */}
               <div className="relative rounded-[2.5rem] overflow-hidden bg-white shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[16/11]">
                 <img
-                  src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1000&q=80"
-                  alt="Harmonic Hollow Luthier Workshop Bench"
+                  src="/img/about1.jpg"
+                  alt="Chapterhouse Rare Books & Reading Room"
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#4C0519]/85 via-[#4C0519]/20 to-transparent" />
                 
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <span className="text-xs font-black uppercase tracking-widest text-[#D2446D] block mb-1">
-                    Austin, Texas Workshop
+                    Columbus, Ohio Book Marketplace
                   </span>
                   <p className="text-base sm:text-lg font-black leading-tight">
-                    Where acoustic physics meets generational luthier artistry.
+                    Where literary passion meets heirloom archival printing.
                   </p>
                 </div>
               </div>
@@ -85,25 +85,25 @@ export default function AboutUs() {
               {/* Offset Secondary Floating Card */}
               <div className="absolute -bottom-8 -right-4 sm:-right-8 w-44 sm:w-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden sm:block bg-white aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&q=80"
-                  alt="Handcrafted Guitar Soundboard Detailing"
+                  src="/img/about2.jpg"
+                  alt="Deluxe Foil Stamped Hardcovers"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[0.65rem] font-bold text-white/80 block">Solid Spruce</span>
-                  <span className="text-xs font-black text-white">Hand-Voiced Bracing</span>
+                  <span className="text-[0.65rem] font-bold text-white/80 block">Acid-Free Paper</span>
+                  <span className="text-xs font-black text-white">Gilded Edge Binding</span>
                 </div>
               </div>
 
               {/* Floating Badge */}
               <div className="absolute -top-4 -left-4 sm:-left-6 bg-white rounded-2xl p-3 sm:p-4 shadow-xl border border-rose-100 flex items-center gap-3 z-20">
                 <div className="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center text-[#4C0519] font-black text-lg">
-                  𝄞
+                  📚
                 </div>
                 <div>
-                  <p className="text-[0.68rem] font-bold text-gray-400 uppercase leading-none">Workshop Bench</p>
-                  <p className="text-xs font-black text-[#000000] leading-tight">100% Tested &amp; Tuned</p>
+                  <p className="text-[0.68rem] font-bold text-gray-400 uppercase leading-none">Curated Vault</p>
+                  <p className="text-xs font-black text-[#000000] leading-tight">100% Archival Grade</p>
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export default function AboutUs() {
                 href="/shop"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#4C0519] hover:bg-[#D2446D] text-white font-black text-xs sm:text-sm uppercase tracking-widest shadow-lg shadow-[#4C0519]/20 transition-all duration-200"
               >
-                <span>Explore Instrument Store</span>
+                <span>Explore Book Catalog</span>
                 <span>→</span>
               </Link>
 
@@ -149,7 +149,7 @@ export default function AboutUs() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border-2 border-rose-200 hover:border-[#4C0519] bg-transparent text-[#4C0519] font-bold text-xs sm:text-sm uppercase tracking-widest transition-all duration-200"
               >
-                Workshop Consultation
+                Reader Concierge
               </Link>
             </div>
           </div>

@@ -15,12 +15,9 @@ export default function CTASection() {
       <div className="md:grid md:grid-cols-2 max-w-7xl bg-[#FDFDFD] mx-4 md:mx-auto rounded-2xl overflow-hidden shadow-xl border border-rose-200/80">
         <div className="hidden md:block w-full h-full relative min-h-[360px]">
           <img
-            src="/img/cta_bg.jpg"
-            alt="Harmonic Hollow promotional workshop"
+            src="/img/cta1.jpg"
+            alt="Chapterhouse promotional book collection"
             className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              e.currentTarget.src = "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/promotional/image.png";
-            }}
           />
         </div>
 
@@ -44,18 +41,18 @@ export default function CTASection() {
 
           <div className="max-md:py-12 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] leading-tight">
-              <span className="text-[#D2446D]">Don&apos;t miss out</span> on our discounted products.
+              <span className="text-[#D2446D]">Expand your personal library</span> with special collector bundles.
             </h2>
 
             <p className="mt-4 text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
-              Don&apos;t miss out on amazing discounts—shop now before they&apos;re gone!
+              Save up to 40% when you bundle classic literature sets and hand-bound journals today.
             </p>
 
             <Link
               href="/shop"
               className="inline-block rounded-xl bg-[#4C0519] hover:bg-[#D2446D] transition-all duration-300 text-sm font-bold px-10 sm:px-14 py-3.5 mt-6 text-white cursor-pointer shadow-md hover:shadow-lg"
             >
-              Check out the products
+              Check out Book Collections
             </Link>
 
             <button

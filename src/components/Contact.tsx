@@ -8,9 +8,9 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1000&q=80",
-  "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80",
-  "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1000&q=80",
+  "/img/about1.jpg",
+  "/img/QualityPromise1.jpg",
+  "/img/gallery1.jpg",
 ];
 
 interface ContactProps {
@@ -28,13 +28,13 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
         {showHeader && (
           <div className="max-w-[760px] mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-              <span>𝄞 Workshop Support</span>
+              <span>📖 Reader Concierge</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[#000000] mb-3 tracking-tight">
-              Connect With Our <span className="text-[#D2446D]">Luthier Team</span>
+              Connect With Our <span className="text-[#D2446D]">Literary Curators</span>
             </h2>
             <p className="text-gray-600 text-sm md:text-base font-medium">
-              Have questions about tonewood selection, custom instrument setups, archival sheet music folios, or warranty support? We are here to assist.
+              Have questions about classic book editions, leatherbound journal sets, custom library orders, or order status? We are here to assist.
             </p>
           </div>
         )}
@@ -48,7 +48,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                 <img
                   key={src}
                   src={src}
-                  alt="Harmonic Hollow Music Workshop luthier studio"
+                  alt={`${siteConfig.brandName} reading room and bookstore`}
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                     idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
                   }`}
@@ -66,14 +66,14 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                       className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                         idx === activeImage ? "w-8 bg-[#D2446D]" : "w-3 bg-white/40"
                       }`}
-                      aria-label={`Show workshop image ${idx + 1}`}
+                      aria-label={`Show bookstore image ${idx + 1}`}
                     />
                   ))}
                 </div>
 
                 <div className="mb-6 text-white">
                   <span className="text-xs font-black uppercase tracking-widest text-[#D2446D] block mb-1">
-                    Workshop Headquarters
+                    Bookstore Headquarters
                   </span>
                   <p className="text-sm font-semibold text-white/90 leading-relaxed">
                     {siteConfig.address}
@@ -89,7 +89,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                       📞
                     </div>
                     <div>
-                      <div className="text-xs text-white/60 uppercase tracking-widest font-bold">Call Workshop</div>
+                      <div className="text-xs text-white/60 uppercase tracking-widest font-bold">Call Concierge</div>
                       <div className="font-bold text-sm text-white mt-0.5">{siteConfig.phone}</div>
                     </div>
                   </a>
@@ -121,7 +121,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                     Inquiry Received!
                   </h3>
                   <p className="text-gray-600 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                    Thank you for reaching out to Harmonic Hollow Music Workshop. Our master luthier team will review your message and reply within 24 hours.
+                    Thank you for reaching out to {siteConfig.brandName}. Our literary concierge team will review your message and reply within 24 hours.
                   </p>
                   <button
                     className="inline-block font-black text-center whitespace-nowrap bg-[#4C0519] text-white hover:bg-[#D2446D] transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
@@ -153,18 +153,18 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                       <input
                         type="email"
                         className="block w-full px-4 py-3.5 text-sm border border-rose-200 rounded-xl focus:outline-none focus:border-[#D2446D] focus:ring-1 focus:ring-[#D2446D] transition-all text-[#000000] bg-[#FAFAFA]"
-                        placeholder="e.g. julian@musician.com"
+                        placeholder="e.g. julian@reader.com"
                         required
                       />
                     </div>
                   </div>
 
                   <div className="flex flex-col mb-5">
-                    <label className="block font-black mb-2 text-[0.65rem] uppercase tracking-widest text-gray-500">Subject / Instrument Inquiry</label>
+                    <label className="block font-black mb-2 text-[0.65rem] uppercase tracking-widest text-gray-500">Subject / Book Inquiry</label>
                     <input
                       type="text"
                       className="block w-full px-4 py-3.5 text-sm border border-rose-200 rounded-xl focus:outline-none focus:border-[#D2446D] focus:ring-1 focus:ring-[#D2446D] transition-all text-[#000000] bg-[#FAFAFA]"
-                      placeholder="e.g. Acoustic guitar tonewoods or classical score order"
+                      placeholder="e.g. Classic literature anthology inquiry or gift set order"
                       required
                     />
                   </div>
@@ -174,7 +174,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                     <textarea
                       className="block w-full px-4 py-3.5 text-sm border border-rose-200 rounded-xl focus:outline-none focus:border-[#D2446D] focus:ring-1 focus:ring-[#D2446D] transition-all text-[#000000] bg-[#FAFAFA] resize-none"
                       rows={4}
-                      placeholder="How can our luthier team assist your musical setup or order?"
+                      placeholder="How can our reader concierge team assist your order or reading request?"
                       required
                     ></textarea>
                   </div>
@@ -183,7 +183,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
                     type="submit"
                     className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-[#4C0519] text-white hover:bg-[#D2446D] transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-lg hover:shadow-xl"
                   >
-                    <span>Send Message to Workshop</span>
+                    <span>Send Message to Concierge</span>
                     <span>→</span>
                   </button>
                 </form>
@@ -198,8 +198,8 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
               <div className="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl mb-4 text-[#4C0519]">
                 📞
               </div>
-              <h3 className="text-lg font-black text-[#000000] mb-1">Direct Workshop Line</h3>
-              <p className="text-xs text-gray-500 mb-4 font-medium">Mon &ndash; Fri, 9:00 AM &ndash; 6:00 PM CST</p>
+              <h3 className="text-lg font-black text-[#000000] mb-1">Direct Concierge Line</h3>
+              <p className="text-xs text-gray-500 mb-4 font-medium">Mon &ndash; Fri, 9:00 AM &ndash; 6:00 PM EST</p>
               <a
                 href={`tel:${siteConfig.phone}`}
                 className="text-sm font-black text-[#4C0519] hover:text-[#D2446D] transition-colors"
@@ -213,7 +213,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
               <div className="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl mb-4 text-[#4C0519]">
                 ✉️
               </div>
-              <h3 className="text-lg font-black text-[#000000] mb-1">Luthier Support Desk</h3>
+              <h3 className="text-lg font-black text-[#000000] mb-1">Reader Support Desk</h3>
               <p className="text-xs text-gray-500 mb-4 font-medium">Average response within 24 hours</p>
               <a
                 href={`mailto:${siteConfig.email}`}
@@ -228,7 +228,7 @@ export default function Contact({ showHeader = true, showForm = true }: ContactP
               <div className="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-2xl mb-4 text-[#4C0519]">
                 📍
               </div>
-              <h3 className="text-lg font-black text-[#000000] mb-1">Workshop Headquarters</h3>
+              <h3 className="text-lg font-black text-[#000000] mb-1">Bookstore Headquarters</h3>
               <p className="text-xs text-gray-500 mb-4 font-medium">{siteConfig.address}</p>
               <Link
                 href="/contact"

@@ -10,11 +10,12 @@ const features = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
       </svg>
     ),
-    title: "Acoustic-Grade Metallurgy",
-    description: "High-density zinc-brass alloy castings and 24K gold plating for zero signal attenuation and sustained resonance."
+    title: "Archival Smyth-Sewn Binding",
+    description: "Durable stitched spine construction ensuring books open flat effortlessly without cracking or loose pages."
   },
   {
     icon: (
@@ -23,18 +24,17 @@ const features = [
         <path d="m9 12 2 2 4-4"></path>
       </svg>
     ),
-    title: "100% Intonation Certified",
-    description: "Every item is bench-tested with strobe calibration to ensure buzz-free, precise pitch tracking."
+    title: "120gsm Acid-Free Paper",
+    description: "Museum-grade cream parchment paper with zero bleed-through that naturally resists aging and yellowing."
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-        <path d="m9 12 2 2 4-4"></path>
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
       </svg>
     ),
-    title: "1-Year Workshop Warranty",
-    description: "Comprehensive 365-day warranty against any manufacturing defect on all cables, tuners, and capos."
+    title: "Handcrafted Gold Foiling",
+    description: "Deluxe embossed gold foil titles, gilded edges, and genuine leather accents crafted for timeless shelf beauty."
   },
   {
     icon: (
@@ -43,8 +43,8 @@ const features = [
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
     ),
-    title: "30-Day Tone Satisfaction",
-    description: "Try your new gear in your studio risk-free with our 30-day money-back satisfaction guarantee."
+    title: "30-Day Reader Guarantee",
+    description: "Read every page risk-free in your personal library with our 30-day money-back satisfaction guarantee."
   }
 ];
 
@@ -53,12 +53,12 @@ export default function Features() {
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16 md:mb-20">
-          <span className="eyebrow justify-center mb-3">The Velvet Standard</span>
+          <span className="eyebrow justify-center mb-3">The Chapterhouse Standard</span>
           <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Crafted for <span className="text-secondary">True Resonance</span>
+            Crafted for <span className="text-secondary">Lifelong Reading</span>
           </h2>
           <p className="text-neutral-text/65 text-sm md:text-base max-w-2xl mx-auto">
-            At {siteConfig.brandName}, we combine premium materials with real musician feedback to bring you accessories that elevate your sound.
+            At {siteConfig.brandName}, we combine premium materials with timeless literary curation to bring you books that inspire for generations.
           </p>
         </div>
 

@@ -47,16 +47,16 @@ export default function Header() {
             onClick={closeAll}
             className="flex items-center gap-3 group flex-shrink-0 select-none"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] p-1 flex items-center justify-center shadow-md text-white font-black text-xl">
-              𝄞
-            </div>
+            {/* <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] p-1 flex items-center justify-center shadow-md text-white font-black text-xl">
+              📚
+            </div> */}
 
             <div className="flex flex-col">
               <span className="text-lg sm:text-xl font-black text-[#4C0519] tracking-tight uppercase leading-none">
-                Harmonic <span className="text-[#D2446D]">Hollow</span>
+                Chapterhouse
               </span>
               <span className="text-[0.62rem] text-gray-500 font-extrabold tracking-[0.2em] uppercase mt-0.5">
-                Music Workshop
+                Book Marketplace
               </span>
             </div>
           </Link>
@@ -86,7 +86,7 @@ export default function Header() {
               href="/shop"
               className="hidden sm:inline-flex items-center gap-2 font-black text-center whitespace-nowrap bg-[#4C0519] text-white hover:bg-[#D2446D] transition-all duration-300 py-2.5 px-5 rounded-full text-[0.7rem] uppercase tracking-widest shadow-sm"
             >
-              <span>Explore Gear</span>
+              <span>Explore Books</span>
               <span>→</span>
             </Link>
 

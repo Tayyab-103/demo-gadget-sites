@@ -13,30 +13,27 @@ interface CarouselSlide {
 const carouselSlides: CarouselSlide[] = [
   {
     id: "slide-1",
-    image:"/img/hero1.jpg",
-    title: "Solid Sitka Spruce Acoustic Guitars",
-    category: "Master Luthier Voicing",
+    image: "/img/hero1.jpg",
+    title: "Deluxe Leatherbound Classic Literature Sets",
+    category: "Foil-Stamped Collector Editions",
   },
   {
     id: "slide-2",
-    image:
-      "/img/hero2.jpg",
-    title: "European Maple Classical Violins",
-    category: "Orchestral Strings Collection",
+    image: "/img/hero2.jpg",
+    title: "Archival History & Philosophy Anthologies",
+    category: "Acid-Free Lay-Flat Binding",
   },
   {
     id: "slide-3",
-    image:
-      "/img/hero3.jpg",
-    title: "Archival Score Anthologies & Folios",
-    category: "Acid-Free 120gsm Parchment",
+    image: "/img/hero3.jpg",
+    title: "Handmade Full-Grain Leather Journals & Reading Sets",
+    category: "Artisan Stationery & Amber Lights",
   },
   {
     id: "slide-4",
-    image:
-      "/img/hero4.jpg",
-    title: "Hand-Tuned 17-Key African Mahogany Kalimbas",
-    category: "Harmonic C Major Tuning",
+    image: "/img/hero4.jpg",
+    title: "Curated Rare Editions & Literary Masterpieces",
+    category: "Chapterhouse Exclusive Releases",
   },
 ];
 
@@ -71,16 +68,16 @@ export default function Hero() {
       <main className="flex-grow flex flex-col items-center max-w-7xl mx-auto w-full relative z-10">
         {/* Main Headline */}
         <h1 className="text-center text-[#000000] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-5xl leading-tight tracking-tight">
-          Preferred choice of musicians in{" "}
+          Preferred destination of bibliophiles in{" "}
           <span className="text-[#D2446D]">
-            every concert hall &amp; studio
+            every study &amp; library
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="mt-4 text-center text-gray-600 max-w-lg text-sm sm:text-base leading-relaxed font-medium">
-          Discover why performers trust our handcrafted tonewood instruments and
-          archival sheet music for acoustic perfection.
+          Discover why book lovers trust Chapterhouse for heirloom hardcover classics,
+          archival journals, and curated literary treasures.
         </p>
 
         {/* CTA Button */}
@@ -88,7 +85,7 @@ export default function Hero() {
           href="/shop"
           className="mt-8 bg-[#4C0519] text-white px-7 pr-3 py-3 rounded-full text-sm font-extrabold flex items-center space-x-2.5 hover:bg-[#D2446D] transition shadow-lg shadow-[#4C0519]/20 hover:scale-105 active:scale-95"
         >
-          <span>Explore Collection &amp; Scores</span>
+          <span>Explore Book Collections</span>
           <svg
             width="20"
             height="20"
@@ -133,11 +130,11 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                   {/* Floating Top Tag */}
-                  <div className="absolute top-5 left-5 sm:top-6 sm:left-7 z-20">
+                  {/* <div className="absolute top-5 left-5 sm:top-6 sm:left-7 z-20">
                     <span className="bg-white/95 backdrop-blur-md text-[#4C0519] text-[0.7rem] sm:text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md">
-                      𝄞 {slide.category}
+                      📖 {slide.category}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Floating Bottom Info */}
                   <div className="absolute bottom-6 left-6 right-20 sm:bottom-8 sm:left-8 z-20 text-white">

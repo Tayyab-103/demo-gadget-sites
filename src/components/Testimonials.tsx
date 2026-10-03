@@ -4,22 +4,22 @@ import React, { useState } from "react";
 
 const testimonials = [
   {
-    quote: "The solid Sitka spruce acoustic guitar has breathtaking dynamic range. The trebles are glassy and singing, while the low-end is punchy and warm. The included gold-foil chord anthology is museum quality.",
+    quote: "The Classic Literature Hardcover Anthology is magnificent. The Smyth-sewn binding opens completely flat, and the gold-foil cover is an heirloom work of art on my study bookshelf.",
     author: "Elena Rostova",
-    role: "Concert Classical Guitarist & Composer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80"
+    role: "Professor of Comparative Literature",
+    image: "/img/testimonial_1.jpg"
   },
   {
-    quote: "Harmonic Hollow's European maple violin has incredible acoustic projection. The oil varnish finish is sublime and the string action was set up flawlessly straight out of the case.",
+    quote: "Chapterhouse's artisan leather journal is the finest I have ever used. The unlined cotton paper holds fountain pen ink without any bleeding or feathering.",
     author: "David Vance",
-    role: "Orchestral First Violinist",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+    role: "Author & Historical Novelist",
+    image: "/img/testimonial_2.jpg"
   },
   {
-    quote: "The 17-key mahogany kalimba has pure, crystalline bell-like sustain with zero tine buzzing. Perfect for ambient film scoring and songwriting sessions in my studio.",
+    quote: "The World History Anthology plates and typography are museum grade. Fast insured shipping and packaged with extraordinary care.",
     author: "Marcus Thorne",
-    role: "Soundtrack Producer & Composer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80"
+    role: "Book Collector & Archivist",
+    image: "/img/testimonial_3.jpg"
   }
 ];
 
@@ -42,13 +42,13 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
           <div className="max-w-[600px]">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-100 text-[#4C0519] font-extrabold text-xs tracking-widest uppercase mb-3 border border-rose-200 shadow-xs">
-              <span>𝄞 Musician Endorsements</span>
+              <span>📖 Reader Reviews</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[#000000] mb-3 tracking-tight">
-              Trusted On <span className="text-[#D2446D]">Concert Stages &amp; Studios</span>
+              Loved By <span className="text-[#D2446D]">Bibliophiles &amp; Collectors</span>
             </h2>
             <p className="text-gray-600 text-sm md:text-base font-medium">
-              Real reviews from recording artists, orchestral performers, and studio composers who perform with Harmonic Hollow instruments.
+              Real reviews from authors, book collectors, and passionate readers who curate their libraries with Chapterhouse editions.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Testimonials() {
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-black text-[#4C0519] leading-none">4.9 / 5</span>
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">1,800+ Verified Musicians</span>
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mt-1">2,400+ Verified Readers</span>
             </div>
           </div>
         </div>

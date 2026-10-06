@@ -70,17 +70,17 @@ export default function Testimonials() {
 
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-gradient-to-b from-[#f8fafc] to-[#edf2f7] border-b border-gray-200 relative overflow-hidden" id="reviews">
-      {/* Background Soft Blue Glow Accents */}
+      {/* Background Soft Emerald Glow Accents */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ────────────────── SECTION HEADER ────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-8 border-b border-gray-200/80">
           <div className="flex items-center gap-2.5">
-            <span className="w-5 h-5 rounded-full border-2 border-blue-600 flex items-center justify-center flex-shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+            <span className="w-5 h-5 rounded-full border-2 border-emerald-600 flex items-center justify-center flex-shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
             </span>
             <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
               CUSTOMER TESTIMONIALS
@@ -100,7 +100,7 @@ export default function Testimonials() {
             type="button"
             onClick={handlePrev}
             aria-label="Previous Testimonial"
-            className="absolute left-0 -translate-x-4 sm:-translate-x-14 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white border border-gray-200 shadow-lg text-gray-700 hover:text-blue-600 hover:border-blue-500 hover:scale-110 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
+            className="absolute left-0 -translate-x-4 sm:-translate-x-14 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white border border-gray-200 shadow-lg text-gray-700 hover:text-emerald-600 hover:border-emerald-500 hover:scale-110 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="m15 18-6-6 6-6" />
@@ -112,7 +112,7 @@ export default function Testimonials() {
             type="button"
             onClick={handleNext}
             aria-label="Next Testimonial"
-            className="absolute right-0 translate-x-4 sm:translate-x-14 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white border border-gray-200 shadow-lg text-gray-700 hover:text-blue-600 hover:border-blue-500 hover:scale-110 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
+            className="absolute right-0 translate-x-4 sm:translate-x-14 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white border border-gray-200 shadow-lg text-gray-700 hover:text-emerald-600 hover:border-emerald-500 hover:scale-110 active:scale-95 transition-all flex items-center justify-center cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="m9 18 6-6-6-6" />
@@ -120,9 +120,9 @@ export default function Testimonials() {
           </button>
 
           {/* ── CARD ELEMENT ── */}
-          <div className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-blue-50 overflow-hidden relative">
-            {/* Frosted / Tinted Blue Top Banner */}
-            <div className="h-28 sm:h-32 bg-gradient-to-r from-blue-100/70 via-indigo-50/50 to-blue-50/70 relative">
+          <div className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-emerald-50 overflow-hidden relative">
+            {/* Frosted / Tinted Emerald Top Banner */}
+            <div className="h-28 sm:h-32 bg-gradient-to-r from-emerald-100/70 via-teal-50/50 to-emerald-50/70 relative">
               {/* Circular Avatar Overlapping the seam */}
               <div className="absolute left-1/2 -bottom-12 sm:-bottom-14 -translate-x-1/2 w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-900 z-20">
                 <img
@@ -141,9 +141,9 @@ export default function Testimonials() {
             {/* Card Body Content */}
             <div className="pt-16 sm:pt-18 pb-8 px-6 sm:px-10 flex flex-col items-center text-center">
               {/* Double Quotes Icon */}
-              <div className="text-blue-600 mb-3 select-none flex justify-center">
+              <div className="text-emerald-600 mb-3 select-none flex justify-center">
                 <svg
-                  className="w-7 h-7 text-blue-600 fill-current"
+                  className="w-7 h-7 text-emerald-600 fill-current"
                   viewBox="0 0 24 24"
                 >
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -168,7 +168,7 @@ export default function Testimonials() {
                     isFading ? "opacity-0" : "opacity-100"
                   }`}
                 >
-                  {activeTestimonial.name} <span className="text-gray-400 font-normal">/</span> <span className="text-blue-600 font-medium text-xs sm:text-sm">{activeTestimonial.role}</span>
+                  {activeTestimonial.name} <span className="text-gray-400 font-normal">/</span> <span className="text-emerald-600 font-medium text-xs sm:text-sm">{activeTestimonial.role}</span>
                 </h4>
               </div>
 
@@ -182,8 +182,8 @@ export default function Testimonials() {
                     aria-label={`Go to slide ${idx + 1}`}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       currentIndex === idx
-                        ? "bg-blue-600 scale-125 ring-2 ring-blue-600/30"
-                        : "bg-transparent border border-gray-400 hover:border-blue-600"
+                        ? "bg-emerald-600 scale-125 ring-2 ring-emerald-600/30"
+                        : "bg-transparent border border-gray-400 hover:border-emerald-600"
                     }`}
                   />
                 ))}

@@ -45,7 +45,7 @@ export default function Faq() {
           <div className="w-full md:w-1/2 max-w-md flex-shrink-0">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=830&h=844&auto=format&fit=crop"
+                src="https://plus.unsplash.com/premium_photo-1661964291917-b20c2648fac6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Automotive Performance Workshop"
                 className="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
@@ -54,7 +54,7 @@ export default function Faq() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-blue-300 block mb-0.5">
+                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-emerald-300 block mb-0.5">
                   VERIFIED FITMENT
                 </span>
                 <p className="text-xs sm:text-sm font-semibold text-white/90">
@@ -66,7 +66,7 @@ export default function Faq() {
 
           {/* Right Side: FAQ Questions & Accordions */}
           <div className="w-full md:w-1/2 flex flex-col justify-start">
-            <p className="text-blue-600 text-xs sm:text-sm font-bold uppercase tracking-wider">
+            <p className="text-emerald-600 text-xs sm:text-sm font-bold uppercase tracking-wider">
               FAQ&apos;S
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mt-1 tracking-tight">
@@ -89,7 +89,7 @@ export default function Faq() {
                   >
                     <div className="flex items-center justify-between gap-4 select-none">
                       <h3 className={`text-sm sm:text-base font-semibold transition-colors ${
-                        isOpen ? "text-blue-600" : "text-slate-900 hover:text-blue-600"
+                        isOpen ? "text-emerald-600" : "text-slate-900 hover:text-emerald-600"
                       }`}>
                         {faq.question}
                       </h3>
@@ -100,7 +100,7 @@ export default function Faq() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className={`transition-transform duration-300 ease-in-out flex-shrink-0 ${
-                          isOpen ? "rotate-180 text-blue-600 stroke-blue-600" : "text-slate-700 stroke-[#1D293D]"
+                          isOpen ? "rotate-180 text-emerald-600 stroke-emerald-600" : "text-slate-700 stroke-[#1D293D]"
                         }`}
                       >
                         <path

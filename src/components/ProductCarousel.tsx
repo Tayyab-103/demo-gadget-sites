@@ -27,7 +27,7 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
               onClick={showPrev}
               type="button"
               aria-label="Previous image"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-red-600 hover:text-white text-gray-800 w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md flex items-center justify-center cursor-pointer transition-colors border border-gray-200"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-emerald-600 hover:text-white text-gray-800 w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md flex items-center justify-center cursor-pointer transition-colors border border-gray-200"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -37,7 +37,7 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
               onClick={showNext}
               type="button"
               aria-label="Next image"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-red-600 hover:text-white text-gray-800 w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md flex items-center justify-center cursor-pointer transition-colors border border-gray-200"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-emerald-600 hover:text-white text-gray-800 w-8 h-8 sm:w-10 sm:h-10 rounded-full shadow-md flex items-center justify-center cursor-pointer transition-colors border border-gray-200"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -57,7 +57,7 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
               onClick={() => setActiveIndex(idx)}
               aria-label={`View image ${idx + 1}`}
               className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 cursor-pointer transition-all bg-white p-1 flex-shrink-0 ${
-                activeIndex === idx ? "border-red-600 ring-2 ring-red-600/20" : "border-gray-200 opacity-60 hover:opacity-100"
+                activeIndex === idx ? "border-emerald-600 ring-2 ring-emerald-600/20" : "border-gray-200 opacity-60 hover:opacity-100"
               }`}
             >
               <img src={img} alt="" className="w-full h-full object-contain mix-blend-multiply" />

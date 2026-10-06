@@ -48,8 +48,8 @@ export default function QualityPromise() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-8 border-b border-gray-200">
           {/* Left Title: ⦿ GUARANTEE & PROMISE */}
           <div className="flex items-center gap-2.5">
-            <span className="w-5 h-5 rounded-full border-2 border-red-600 flex items-center justify-center flex-shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+            <span className="w-5 h-5 rounded-full border-2 border-emerald-600 flex items-center justify-center flex-shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
             </span>
             <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
               GUARANTEE &amp; PROMISE
@@ -59,7 +59,7 @@ export default function QualityPromise() {
           {/* Right Action: VIEW ALL GUARANTEES */}
           <Link
             href="/terms"
-            className="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-red-600 border-b-2 border-red-600 pb-0.5 self-start sm:self-auto transition-colors"
+            className="text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-900 hover:text-emerald-600 border-b-2 border-emerald-600 pb-0.5 self-start sm:self-auto transition-colors"
           >
             VIEW ALL GUARANTEES
           </Link>
@@ -70,12 +70,12 @@ export default function QualityPromise() {
           {guaranteeCards.map((card, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-red-300 transition-all duration-300 flex flex-col group"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col group"
             >
-              {/* Image Container with Floating Red Badge */}
+              {/* Image Container with Floating Emerald Badge */}
               <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-900">
-                {/* Red Square Badge Top Left */}
-                <div className="absolute top-3.5 left-3.5 z-20 bg-red-600 text-white rounded-md w-11 h-12 flex flex-col items-center justify-center shadow-lg leading-none p-1">
+                {/* Emerald Square Badge Top Left */}
+                <div className="absolute top-3.5 left-3.5 z-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-md w-11 h-12 flex flex-col items-center justify-center shadow-lg leading-none p-1">
                   <span className="text-sm font-black tracking-tight">{card.badgeTop}</span>
                   <span className="text-[0.6rem] font-bold uppercase tracking-wider mt-0.5 opacity-90">{card.badgeBottom}</span>
                 </div>
@@ -100,7 +100,7 @@ export default function QualityPromise() {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors leading-snug mb-3 line-clamp-2">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-snug mb-3 line-clamp-2">
                   <Link href={card.link}>
                     {card.title}
                   </Link>
@@ -114,7 +114,7 @@ export default function QualityPromise() {
                 {/* Action Link */}
                 <Link
                   href={card.link}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-red-600 transition-colors mt-auto"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-900 group-hover:text-emerald-600 transition-colors mt-auto"
                 >
                   <span>READ MORE</span>
                   <span className="text-sm font-bold transition-transform group-hover:translate-x-1">&rarr;</span>

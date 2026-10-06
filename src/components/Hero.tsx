@@ -53,15 +53,15 @@ export default function Hero() {
         <div className="max-w-2xl flex flex-col items-start text-left">
           
           {/* Top Live Badge */}
-          {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/30 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md shadow-md">
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+          {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-600/30 border border-rose-400/40 text-rose-300 text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md shadow-md">
+            <span className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
             <span>2026 PRECISION AUTOMOTIVE LINE</span>
           </div> */}
 
           {/* Constant Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-4 drop-shadow-lg">
             Engineered For The{" "}
-            <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200">
+            <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
               Road Ahead.
             </span>
           </h1>
@@ -74,7 +74,7 @@ export default function Hero() {
           {/* Primary CTA Button */}
           <Link
             href="/shop"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-blue-600/40 hover:shadow-blue-600/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-emerald-600/40 hover:shadow-emerald-600/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
           >
             <span>Explore Catalog</span>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -94,7 +94,7 @@ export default function Hero() {
             aria-label={`Go to slide ${index + 1}`}
             className={`transition-all duration-300 cursor-pointer rounded-full ${
               index === currentSlide
-                ? "w-6 h-1.5 bg-gradient-to-r from-blue-400 to-indigo-400"
+                ? "w-6 h-1.5 bg-gradient-to-r from-emerald-400 to-teal-400"
                 : "w-1.5 h-1.5 bg-white/40 hover:bg-white/80"
             }`}
           />

@@ -8,7 +8,7 @@ const steps = [
     tag: "TIERED BUNDLE SAVINGS",
     title: "Select Your Part & Bundle",
     desc: "Choose your part and select single or volume bundles to save up to 50%.",
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&auto=format&fit=crop&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1661964291917-b20c2648fac6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     fallbackImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&auto=format&fit=crop&q=80",
     icon: (
       <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -39,7 +39,7 @@ const steps = [
     tag: "PLUG & PLAY FITMENT",
     title: "Seamless 20-Min Fitment",
     desc: "Calibrated to strict OEM tolerances for effortless DIY bolt-on installation.",
-    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1758536368333-1d06be21642d?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     fallbackImage: "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=800&auto=format&fit=crop&q=80",
     icon: (
       <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,8 +56,8 @@ export default function HowItWorks() {
         {/* ────────────────── SECTION HEADER ────────────────── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-10 border-b border-gray-200">
           <div className="flex items-center gap-2.5">
-            <span className="w-5 h-5 rounded-full border-2 border-red-600 flex items-center justify-center flex-shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-600" />
+            <span className="w-5 h-5 rounded-full border-2 border-emerald-600 flex items-center justify-center flex-shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
             </span>
             <h2 className="text-xl sm:text-2xl font-black tracking-tight text-gray-900 uppercase">
               HOW IT WORKS
@@ -78,12 +78,12 @@ export default function HowItWorks() {
             {steps.map((item) => (
               <div
                 key={item.step}
-                className="bg-[#fafafa] rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-red-400 transition-all duration-300 flex flex-col group"
+                className="bg-[#fafafa] rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col group"
               >
                 {/* Image Header Area with Step Badge */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-900">
                   {/* Step Number Badge */}
-                  <div className="absolute top-3.5 left-3.5 z-20 bg-red-600 text-white rounded-lg w-10 h-10 flex items-center justify-center shadow-lg font-black text-base">
+                  <div className="absolute top-3.5 left-3.5 z-20 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-lg w-10 h-10 flex items-center justify-center shadow-lg font-black text-base">
                     {item.step}
                   </div>
 
@@ -107,12 +107,12 @@ export default function HowItWorks() {
                 {/* Card Body */}
                 <div className="p-6 flex flex-col flex-1">
                   {/* Tag */}
-                  <span className="text-[0.65rem] font-extrabold uppercase tracking-widest text-red-600 mb-2">
+                  <span className="text-[0.65rem] font-extrabold uppercase tracking-widest text-emerald-700 mb-2">
                     {item.tag}
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors leading-snug mb-2.5">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-snug mb-2.5">
                     {item.title}
                   </h3>
 

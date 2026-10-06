@@ -13,9 +13,9 @@ export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
 
   const logoWords = siteConfig.brandName.split(" ");
-  const firstWord = logoWords[0] || "Axlethorne";
-  const secondWord = logoWords[1] || "Automotive";
-  const remainingWords = logoWords.slice(2).join(" ");
+  const firstWord = logoWords[0] || "Motorway";
+  const secondWord = logoWords[1] || "Parts";
+  const remainingWords = logoWords.slice(2).join(" ") || "AND ACCESSORIES";
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,14 +26,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="flex flex-col justify-end bg-black pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden w-full relative z-10 font-sans" id="footer">
+    <footer className="flex flex-col justify-end bg-[#040D0A] pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden w-full relative z-10 font-sans" id="footer">
       <div className="w-full max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
 
           {/* ─── Column 1: Brand Info & Overview ─── */}
           <div className="w-full md:w-[45%] lg:w-[35%] flex flex-col items-start text-left">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0F172A] via-[#1E293B] to-[#2563EB] flex items-center justify-center text-white shadow-md flex-shrink-0 border border-blue-900/50 group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#061A14] via-[#0B251D] to-[#059669] flex items-center justify-center text-white shadow-md flex-shrink-0 border border-emerald-900/50 group-hover:scale-105 transition-transform">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -44,23 +44,23 @@ export default function Footer() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-blue-400"
+                  className="text-emerald-400"
                 >
                   <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                  <circle cx="12" cy="12" r="3" fill="#3b82f6" stroke="#ffffff" strokeWidth="1.5" />
+                  <circle cx="12" cy="12" r="3" fill="#059669" stroke="#ffffff" strokeWidth="1.5" />
                 </svg>
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-2xl font-black italic tracking-tight text-white">
-                  {firstWord} <span className="text-blue-400">{secondWord}</span>
+                  {firstWord} <span className="text-emerald-400">{secondWord}</span>
                 </span>
-                <span className="text-[0.62rem] font-bold tracking-[0.2em] text-blue-200/60 uppercase">
-                  {remainingWords || "AUTOMOTIVE FOUNDRY"}
+                <span className="text-[0.62rem] font-bold tracking-[0.2em] text-emerald-200/60 uppercase">
+                  {remainingWords || "AND ACCESSORIES"}
                 </span>
               </div>
             </Link>
 
-            <div className="w-full max-w-52 h-0.5 mt-6 bg-gradient-to-r from-[#24212D] to-[#24212D]/0" />
+            <div className="w-full max-w-52 h-0.5 mt-6 bg-gradient-to-r from-[#103426] to-[#103426]/0" />
 
             <p className="text-sm text-white/60 mt-5 max-w-[350px] leading-relaxed">
               Precision-tested automotive upgrades and pro-grade accessories engineered for peak durability, vehicle safety, and performance.
@@ -112,11 +112,11 @@ export default function Footer() {
             <p className="text-xs text-white/50 mt-2">Get exclusive volume bundle deals &amp; part drops.</p>
 
             {subscribed ? (
-              <div className="mt-4 bg-blue-950/80 border border-blue-500/50 text-blue-300 text-xs font-bold px-4 py-3 rounded-xl w-full">
-                ✓ Thank you for subscribing to Driver&apos;s Club!
+              <div className="mt-4 bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 text-xs font-bold px-4 py-3 rounded-xl w-full">
+                ✓ Thank you for subscribing to Motorway Driver&apos;s Club!
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex items-center border gap-1 border-white/20 h-12 max-w-84 w-full rounded-full overflow-hidden mt-4 bg-white/5 focus-within:border-blue-500 transition-colors">
+              <form onSubmit={handleSubscribe} className="flex items-center border gap-1 border-white/20 h-12 max-w-84 w-full rounded-full overflow-hidden mt-4 bg-white/5 focus-within:border-emerald-500 transition-colors">
                 <input
                   type="email"
                   required
@@ -127,7 +127,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 active:scale-95 transition w-28 sm:w-32 h-9 rounded-full text-xs font-bold text-white cursor-pointer mr-1.5 flex-shrink-0 focus:outline-none shadow-sm"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-90 active:scale-95 transition w-28 sm:w-32 h-9 rounded-full text-xs font-bold text-white cursor-pointer mr-1.5 flex-shrink-0 focus:outline-none shadow-sm"
                 >
                   Subscribe
                 </button>
@@ -142,7 +142,7 @@ export default function Footer() {
         </div>
 
         {/* ─── Divider ─── */}
-        <div className="w-full h-0.5 mt-14 mb-6 bg-gradient-to-r from-[#24212D]/0 via-[#24212D] to-[#24212D]/0" />
+        <div className="w-full h-0.5 mt-14 mb-6 bg-gradient-to-r from-[#103426]/0 via-[#103426] to-[#103426]/0" />
 
         {/* ─── Legal & Copyright Bar ─── */}
         <div className="flex flex-wrap sm:flex-row items-center justify-between gap-y-4 gap-x-2 relative z-10 pb-4">
@@ -162,7 +162,7 @@ export default function Footer() {
 
         {/* ─── Large Watermark Brand Name ─── */}
         <div className="w-full flex justify-center mt-4 md:mt-8 md:mb-[-1.5%] overflow-hidden pointer-events-none select-none">
-          <h1 className="text-center font-black tracking-tighter leading-[0.70] text-zinc-900 text-[clamp(3.5rem,15.5vw,18rem)] uppercase truncate">
+          <h1 className="text-center font-black tracking-tighter leading-[0.70] text-[#0A1F18] text-[clamp(3.5rem,15.5vw,18rem)] uppercase truncate">
             {firstWord}
           </h1>
         </div>

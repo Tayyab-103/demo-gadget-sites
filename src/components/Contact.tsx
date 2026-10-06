@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <section className="relative py-14 sm:py-20 bg-[#fafafa] text-gray-900 overflow-hidden border-b border-gray-200 font-sans" id="contact">
       {/* Soft Ambient Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-emerald-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
@@ -30,7 +30,7 @@ export default function Contact() {
           {/* ────────────────── LEFT COLUMN: CONTACT CARDS ────────────────── */}
           <div className="lg:col-span-5 flex flex-col">
             <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-1.5 rounded-full w-fit mb-4 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_6px_#2563eb]" />
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_6px_#059669]" />
               <span className="text-xs font-bold uppercase tracking-wider text-gray-700">
                 Contact &amp; Support
               </span>
@@ -48,10 +48,10 @@ export default function Contact() {
               {/* Card 1: Email Us */}
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="bg-white hover:bg-blue-50/40 border border-gray-200 hover:border-blue-400 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between transition-all duration-200 group shadow-xs hover:shadow-md"
+                className="bg-white hover:bg-emerald-50/40 border border-gray-200 hover:border-emerald-400 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between transition-all duration-200 group shadow-xs hover:shadow-md"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 text-gray-700 group-hover:text-blue-600 group-hover:bg-blue-100/60 group-hover:border-blue-200 flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 text-gray-700 group-hover:text-emerald-600 group-hover:bg-emerald-100/60 group-hover:border-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <rect width="20" height="16" x="2" y="4" rx="2" />
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -59,13 +59,13 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0">
                     <span className="text-[0.68rem] text-gray-400 block font-semibold">Email us</span>
-                    <strong className="text-xs sm:text-sm font-bold text-gray-900 block truncate lowercase group-hover:text-blue-600 transition-colors">
+                    <strong className="text-xs sm:text-sm font-bold text-gray-900 block truncate lowercase group-hover:text-emerald-600 transition-colors">
                       {siteConfig.email}
                     </strong>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-600 text-gray-600 group-hover:text-white flex items-center justify-center text-xs transition-all flex-shrink-0 ml-2 shadow-xs">
+                <div className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-emerald-600 text-gray-600 group-hover:text-white flex items-center justify-center text-xs transition-all flex-shrink-0 ml-2 shadow-xs">
                   ↗
                 </div>
               </a>
@@ -73,23 +73,23 @@ export default function Contact() {
               {/* Card 2: Call Us */}
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="bg-white hover:bg-blue-50/40 border border-gray-200 hover:border-blue-400 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between transition-all duration-200 group shadow-xs hover:shadow-md"
+                className="bg-white hover:bg-emerald-50/40 border border-gray-200 hover:border-emerald-400 rounded-2xl p-4 sm:p-4.5 flex items-center justify-between transition-all duration-200 group shadow-xs hover:shadow-md"
               >
                 <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 text-gray-700 group-hover:text-blue-600 group-hover:bg-blue-100/60 group-hover:border-blue-200 flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 text-gray-700 group-hover:text-emerald-600 group-hover:bg-emerald-100/60 group-hover:border-emerald-200 flex items-center justify-center flex-shrink-0 transition-colors">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
                   </div>
                   <div className="min-w-0">
                     <span className="text-[0.68rem] text-gray-400 block font-semibold">Call us</span>
-                    <strong className="text-xs sm:text-sm font-bold text-gray-900 block truncate group-hover:text-blue-600 transition-colors">
+                    <strong className="text-xs sm:text-sm font-bold text-gray-900 block truncate group-hover:text-emerald-600 transition-colors">
                       {siteConfig.phone}
                     </strong>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-blue-600 text-gray-600 group-hover:text-white flex items-center justify-center text-xs transition-all flex-shrink-0 ml-2 shadow-xs">
+                <div className="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-emerald-600 text-gray-600 group-hover:text-white flex items-center justify-center text-xs transition-all flex-shrink-0 ml-2 shadow-xs">
                   ↗
                 </div>
               </a>
@@ -123,7 +123,7 @@ export default function Contact() {
             <div className="bg-white border border-gray-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-gray-200/60 relative">
               {submitted ? (
                 <div className="text-center py-12 animate-in fade-in zoom-in-95 duration-300">
-                  <div className="w-16 h-16 rounded-full bg-blue-50 border-2 border-blue-500 text-blue-600 flex items-center justify-center text-2xl font-black mx-auto mb-5 shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-600 flex items-center justify-center text-2xl font-black mx-auto mb-5 shadow-md">
                     ✓
                   </div>
                   <h3 className="text-xl sm:text-2xl font-black uppercase text-gray-900 mb-2">
@@ -135,7 +135,7 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3 rounded-xl transition-all cursor-pointer shadow-md"
+                    className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3 rounded-xl transition-all cursor-pointer shadow-md"
                   >
                     Send Another Message
                   </button>
@@ -152,7 +152,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your full name"
-                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     />
                   </div>
 
@@ -166,7 +166,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="Your email address"
-                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
+                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                     />
                   </div>
 
@@ -180,13 +180,13 @@ export default function Contact() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your vehicle model, part requirements, or fitment questions..."
-                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors resize-none"
+                      className="w-full bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3.5 text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-blue-600/30 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer mt-2"
+                    className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl shadow-lg shadow-emerald-600/30 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer mt-2"
                   >
                     Submit Inquiry
                   </button>

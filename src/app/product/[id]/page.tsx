@@ -37,7 +37,7 @@ export default function ProductDetail() {
       <>
         <Header />
         <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center bg-[#f8fafc]">
-          <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-4 text-2xl font-black">
+          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-2xl font-black">
             !
           </div>
           <h2 className="text-2xl font-black uppercase text-gray-900 mb-2">Part Assembly Not Found</h2>
@@ -45,7 +45,7 @@ export default function ProductDetail() {
             The automotive part you are looking for does not exist or has been relocated.
           </p>
           <button
-            className="inline-block font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all py-3.5 px-8 rounded-xl text-xs uppercase tracking-widest cursor-pointer shadow-md"
+            className="inline-block font-bold text-center bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-600 text-white transition-all py-3.5 px-8 rounded-xl text-xs uppercase tracking-widest cursor-pointer shadow-md shadow-emerald-900/20"
             onClick={() => router.push("/shop")}
           >
             Explore Catalog
@@ -87,9 +87,9 @@ export default function ProductDetail() {
           
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6 flex-wrap">
-            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-emerald-600 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/shop" className="hover:text-blue-600 transition-colors">Catalog</Link>
+            <Link href="/shop" className="hover:text-emerald-600 transition-colors">Catalog</Link>
             <span>/</span>
             <span className="text-gray-900 truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </nav>
@@ -106,18 +106,18 @@ export default function ProductDetail() {
 
                 {/* Quick Trust Badges Strip Under Image */}
                 <div className="grid grid-cols-3 gap-2 mt-6 pt-6 border-t border-gray-100 text-center">
-                  <div className="p-2 bg-blue-50/50 rounded-xl border border-blue-100">
-                    <span className="text-blue-600 text-sm block mb-0.5">⚙️</span>
+                  <div className="p-2 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                    <span className="text-emerald-600 text-sm block mb-0.5">⚙️</span>
                     <span className="text-[0.65rem] font-bold text-gray-900 uppercase block">±0.01mm Fit</span>
                     <span className="text-[0.58rem] text-gray-500 block">Direct Bolt-On</span>
                   </div>
-                  <div className="p-2 bg-blue-50/50 rounded-xl border border-blue-100">
-                    <span className="text-blue-600 text-sm block mb-0.5">🛡️</span>
+                  <div className="p-2 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                    <span className="text-emerald-600 text-sm block mb-0.5">🛡️</span>
                     <span className="text-[0.65rem] font-bold text-gray-900 uppercase block">60-Day Trial</span>
                     <span className="text-[0.58rem] text-gray-500 block">100% Refundable</span>
                   </div>
-                  <div className="p-2 bg-blue-50/50 rounded-xl border border-blue-100">
-                    <span className="text-blue-600 text-sm block mb-0.5">⚡</span>
+                  <div className="p-2 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                    <span className="text-emerald-600 text-sm block mb-0.5">⚡</span>
                     <span className="text-[0.65rem] font-bold text-gray-900 uppercase block">Same-Day</span>
                     <span className="text-[0.58rem] text-gray-500 block">US Dispatch</span>
                   </div>
@@ -131,7 +131,7 @@ export default function ProductDetail() {
                 
                 {/* Category & Stock Status */}
                 <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
-                  <span className="text-[0.68rem] font-black uppercase text-blue-600 tracking-[0.2em] bg-blue-50 border border-blue-200 px-3 py-1 rounded-full">
+                  <span className="text-[0.68rem] font-black uppercase text-emerald-700 tracking-[0.2em] bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
                     {product.category || "OEM Performance Hardware"}
                   </span>
                   <div className="flex items-center gap-1.5 text-xs text-green-700 font-bold bg-green-50 px-2.5 py-0.5 rounded-md">
@@ -157,7 +157,7 @@ export default function ProductDetail() {
 
                 {/* Price Display */}
                 <div className="flex items-baseline gap-3 mb-6">
-                  <span className="text-3xl sm:text-4xl font-black text-blue-600">
+                  <span className="text-3xl sm:text-4xl font-black text-emerald-600">
                     ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                   </span>
                   {selectedBundle.quantity > 1 && (
@@ -178,12 +178,12 @@ export default function ProductDetail() {
                 </p>
 
                 {/* ────────────────── PACKAGE QUANTITY DROPDOWN SELECTOR ────────────────── */}
-                <div className="mb-6 p-4.5 bg-blue-50/40 rounded-2xl border border-blue-100">
+                <div className="mb-6 p-4.5 bg-emerald-50/40 rounded-2xl border border-emerald-100">
                   <div className="flex items-center justify-between mb-2">
                     <label htmlFor="package-select" className="text-xs font-bold uppercase tracking-wider text-gray-900 flex items-center gap-2">
                       <span>Select Package Quantity:</span>
                     </label>
-                    <span className="text-[0.68rem] text-blue-600 font-bold uppercase tracking-wider">
+                    <span className="text-[0.68rem] text-emerald-700 font-bold uppercase tracking-wider">
                       Bundle &amp; Save
                     </span>
                   </div>
@@ -193,7 +193,7 @@ export default function ProductDetail() {
                       id="package-select"
                       value={selectedBundle.quantity}
                       onChange={handleBundleChange}
-                      className="w-full appearance-none bg-white border-2 border-gray-300 hover:border-blue-500 focus:border-blue-600 focus:outline-none rounded-xl px-4 py-3.5 text-xs sm:text-sm font-bold text-gray-900 cursor-pointer shadow-xs transition-colors pr-10"
+                      className="w-full appearance-none bg-white border-2 border-gray-300 hover:border-emerald-500 focus:border-emerald-600 focus:outline-none rounded-xl px-4 py-3.5 text-xs sm:text-sm font-bold text-gray-900 cursor-pointer shadow-xs transition-colors pr-10"
                     >
                       {product.bundles && product.bundles.length > 0 ? (
                         product.bundles.map((bundle) => {
@@ -224,7 +224,7 @@ export default function ProductDetail() {
                   className={`w-full font-black text-sm uppercase tracking-wider py-4.5 px-8 rounded-xl shadow-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer ${
                     addedAnimation
                       ? "bg-green-600 text-white scale-[1.02]"
-                      : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-[0.99] text-white shadow-blue-600/30 hover:shadow-blue-600/50"
+                      : "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-[0.99] text-white shadow-emerald-600/30 hover:shadow-emerald-600/50"
                   }`}
                 >
                   <span>{addedAnimation ? "✓ Added To Cart!" : "Add To Cart"}</span>
@@ -244,7 +244,7 @@ export default function ProductDetail() {
                     onClick={() => setActiveTab("specs")}
                     className={`text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${
                       activeTab === "specs"
-                        ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
@@ -254,7 +254,7 @@ export default function ProductDetail() {
                     onClick={() => setActiveTab("fitment")}
                     className={`text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${
                       activeTab === "fitment"
-                        ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >
@@ -264,7 +264,7 @@ export default function ProductDetail() {
                     onClick={() => setActiveTab("shipping")}
                     className={`text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap ${
                       activeTab === "shipping"
-                        ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white"
                         : "text-gray-600 hover:bg-gray-100"
                     }`}
                   >

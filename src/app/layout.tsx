@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
+import { Plus_Jakarta_Sans, Poppins, Inter, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -9,7 +9,14 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
 const siteDescription = `Welcome to ${siteConfig.brandName}. Explore pro-grade automotive parts and accessories with fast US shipping and guaranteed fitment.`;
 
-// Preload the most common fonts
+// Preload fonts
+const plusJakartaSans = Plus_Jakarta_Sans({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -56,10 +63,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Select dynamic font variable class
-  let selectedFontClass = poppins.variable;
-  let activeFontVar = "var(--font-poppins)";
+  let selectedFontClass = plusJakartaSans.variable;
+  let activeFontVar = "var(--font-plus-jakarta)";
 
-  if (siteConfig.theme.fontFamily === "Inter") {
+  if (siteConfig.theme.fontFamily === "Plus Jakarta Sans") {
+    selectedFontClass = plusJakartaSans.variable;
+    activeFontVar = "var(--font-plus-jakarta)";
+  } else if (siteConfig.theme.fontFamily === "Poppins") {
+    selectedFontClass = poppins.variable;
+    activeFontVar = "var(--font-poppins)";
+  } else if (siteConfig.theme.fontFamily === "Inter") {
     selectedFontClass = inter.variable;
     activeFontVar = "var(--font-inter)";
   } else if (siteConfig.theme.fontFamily === "Montserrat") {

@@ -33,7 +33,7 @@ export default function CartDrawer() {
           <h3 className="m-0 text-lg font-black text-gray-900 tracking-tight uppercase">Shopping Cart</h3>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-2xl cursor-pointer text-gray-400 hover:text-blue-600 leading-none transition-colors p-1"
+            className="bg-transparent border-none text-2xl cursor-pointer text-gray-400 hover:text-emerald-600 leading-none transition-colors p-1"
             aria-label="Close Cart"
           >
             &times;
@@ -43,10 +43,10 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-12">
-              <div className="text-blue-200 text-6xl mb-4">🛒</div>
+              <div className="text-emerald-200 text-6xl mb-4">🛒</div>
               <p className="text-gray-500 text-sm">Your cart is currently empty.</p>
               <button
-                className="inline-block font-bold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider mt-6 shadow-sm cursor-pointer"
+                className="inline-block font-bold text-center whitespace-nowrap bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider mt-6 shadow-sm cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
                 Continue Shopping
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                   />
                   <div className="flex-1 min-w-0">
                     <div className="font-bold text-sm text-gray-900 mb-0.5 truncate">{item.Name}</div>
-                    <div className="text-[0.62rem] text-blue-600 mb-3.5 uppercase tracking-wider font-semibold">
+                    <div className="text-[0.62rem] text-emerald-700 mb-3.5 uppercase tracking-wider font-semibold">
                       {item.Label || "Single Pack"}
                     </div>
 
@@ -99,7 +99,7 @@ export default function CartDrawer() {
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="bg-white border border-gray-200 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 hover:border-blue-400 text-xs font-bold text-gray-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-gray-200 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 hover:border-emerald-400 text-xs font-bold text-gray-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
@@ -107,19 +107,19 @@ export default function CartDrawer() {
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="bg-white border border-gray-200 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 hover:border-blue-400 text-xs font-bold text-gray-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-white border border-gray-200 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 hover:border-emerald-400 text-xs font-bold text-gray-900 disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
                       </div>
 
-                      <div className="text-sm font-black text-blue-600">${item.Price}</div>
+                      <div className="text-sm font-black text-emerald-600">${item.Price}</div>
                     </div>
                   </div>
 
                   <button
                     onClick={() => removeFromCart(item.Id)}
-                    className="bg-transparent border-none text-gray-300 hover:text-blue-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
+                    className="bg-transparent border-none text-gray-300 hover:text-emerald-600 cursor-pointer text-xl px-1.5 transition-colors self-start leading-none"
                     aria-label="Remove item"
                   >
                     &times;
@@ -134,14 +134,14 @@ export default function CartDrawer() {
           <div className="p-6 border-t border-gray-100 bg-gray-50/80 backdrop-blur-sm">
             <div className="flex items-center justify-between mb-6">
               <span className="font-bold text-gray-700 uppercase text-xs tracking-widest">Subtotal</span>
-              <span className="font-black text-xl text-blue-600">
+              <span className="font-black text-xl text-emerald-600">
                 ${getCartTotal()}
               </span>
             </div>
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all duration-300 py-4 px-8 rounded-xl text-xs uppercase tracking-wider w-full shadow-lg shadow-blue-600/30 mb-3 cursor-pointer"
+              className="inline-flex items-center justify-center font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white transition-all duration-300 py-4 px-8 rounded-xl text-xs uppercase tracking-wider w-full shadow-lg shadow-emerald-600/30 mb-3 cursor-pointer"
               onClick={() => setIsCartOpen(false)}
             >
               Proceed to Checkout &rarr;
@@ -149,7 +149,7 @@ export default function CartDrawer() {
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 transition-all duration-300 py-3 px-8 rounded-xl text-xs uppercase tracking-wider w-full cursor-pointer"
+              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border-2 border-gray-300 text-gray-700 hover:border-emerald-600 hover:text-emerald-600 transition-all duration-300 py-3 px-8 rounded-xl text-xs uppercase tracking-wider w-full cursor-pointer"
             >
               Continue Shopping
             </button>

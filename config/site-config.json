@@ -1,13 +1,14 @@
 {
   "Product": "Automotive Parts and Accessories",
-  "Processor": "Netevia Evolve",
-  "brandName": "Axlethorne Automotive Foundry",
-  "websiteUrl": "AxlethorneAutomotiveFoundry.com",
-  "email": "support@axlethorneautomotivefoundry.com",
-  "descriptor": "AxlethorneAutomotiveFo",
-  "corpName": "Starpath Marketing Co",
-  "phone": "1-800-762-7529",
-  "address": "480 Athletic Way, Austin, TX 78701",
+  "mcc": "5533",
+  "Processor": "Quantam - FFB",
+  "brandName": "Motorway Parts and Accessories",
+  "websiteUrl": "motorwaypartsandaccessories.com",
+  "email": "support@motorwaypartsandaccessories.com",
+  "descriptor": "MotorwayPartsAndAcce",
+  "corpName": "Blitzing Branding LLC.",
+  "phone": "1-800-762-7125",
+  "address": "480 Motorway Blvd, Austin, TX 78701",
   "shippingCarrier": "UPS",
   "shippingPeriod": "3-5",
   "trialPeriod": 14,
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0B192C",
+    "primaryColor": "#061A14",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#2563EB",
+    "secondaryColor": "#059669",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F8FAFC",
+    "neutralBgColor": "#F4FBF7",
     "neutralTextColor": "#0F172A",
-    "fontFamily": "Montserrat"
+    "fontFamily": "Plus Jakarta Sans"
   }
 }

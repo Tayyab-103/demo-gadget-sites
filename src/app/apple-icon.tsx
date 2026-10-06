@@ -14,21 +14,19 @@ export default function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
-          background: siteConfig.theme.primaryColor,
+          borderRadius: 36,
+          background: "linear-gradient(135deg, #061A14 0%, #0B2920 50%, #059669 100%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          color: "#ffffff",
+          fontSize: 105,
+          fontWeight: 900,
+          fontFamily: "sans-serif",
+          fontStyle: "italic",
         }}
       >
-        <div
-          style={{
-            width: 88,
-            height: 110,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
-          }}
-        />
+        M
       </div>
     ),
     { ...size }

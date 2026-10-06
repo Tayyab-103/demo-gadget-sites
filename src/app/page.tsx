@@ -26,29 +26,31 @@ export default function Home() {
         {/* 1. Hero Section */}
         <Hero />
         
-        {/* 2. 4 Guarantee / Trust Cards Strip */}
-        {/* <TrustBar /> */}
-         <Features />
+        {/* 2. Trust Assurance Strip */}
+        <TrustBar />
 
         {/* 3. Products Catalog Showcase */}
         <ProductGrid />
 
         {/* 4. Deal of the Day & Limited Offers */}
-        {/* <DealOfTheDay /> */}
+        <DealOfTheDay />
 
         {/* 5. Features Grid */}
-        {/* <Features /> */}
+        <Features />
         
+        {/* 6. Simple Upgrade Steps */}
+        <HowItWorks />
+
         {/* 7. Verified Customer Reviews */}
-        {/* <Testimonials /> */}
+        <Testimonials />
 
         {/* 8. VIP Club Discount Banner */}
         <CTASection />
-        {/* <HowItWorks /> */}
 
         {/* 9. FAQ Accordions */}
         <Faq />
 
+        {/* 10. Direct Contact & Support */}
         <Contact />
       </main>
 

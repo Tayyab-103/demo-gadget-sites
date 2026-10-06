@@ -92,22 +92,22 @@ export default function Features() {
   return (
     <section className="py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden" id="features">
       {/* Background Decorative Ambient Circles */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-indigo-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-teal-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 mb-4 shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-widest text-blue-700">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 mb-4 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="text-[0.68rem] sm:text-xs font-bold uppercase tracking-widest text-emerald-800">
               ENGINEERED FOR EXCELLENCE
             </span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight leading-tight mb-4">
             Why Drivers Trust{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
               {siteConfig.brandName}
             </span>
           </h2>
@@ -122,24 +122,24 @@ export default function Features() {
           {featureList.map((item) => (
             <div
               key={item.id}
-              className="group relative bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/80 hover:border-blue-300 shadow-xs hover:shadow-xl hover:shadow-blue-600/5 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
+              className="group relative bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/80 hover:border-emerald-300 shadow-xs hover:shadow-xl hover:shadow-emerald-600/5 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
             >
               {/* Subtle top accent gradient line on hover */}
-              <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+              <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-emerald-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
 
               <div>
                 {/* Icon & Category Badge Row */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-[0.65rem] font-black uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+                  <span className="text-[0.65rem] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
                     {item.badge}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2.5 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2.5 group-hover:text-emerald-600 transition-colors">
                   {item.title}
                 </h3>
 
@@ -150,7 +150,7 @@ export default function Features() {
               </div>
 
               {/* Bottom Quick Link */}
-              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
+              <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-semibold text-emerald-600 group-hover:text-emerald-700">
                 <span>Learn more</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ export default function Features() {
         <div className="text-center mt-10">
           <Link
             href="/shop"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wider hover:from-emerald-700 hover:to-teal-700 shadow-md hover:shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
             <span>Explore All Performance Accessories</span>
             <svg

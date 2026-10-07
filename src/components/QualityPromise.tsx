@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Field-Tested Durability",
-    desc: "Every gadget is stress-tested through real training sessions before it ships, so it holds up to daily use.",
+    title: "Museum-Grade Lightfastness",
+    desc: "Every pigment formulation is evaluated for ASTM Class I & II permanence, preventing fading or discoloration across generations.",
   },
   {
-    title: "1-Year Warranty, Every Order",
-    desc: "Manufacturing defects are covered for a full year — no fine print, no hidden exclusions.",
+    title: "Master Studio Craftsmanship",
+    desc: "Seamless nickel ferrules, balanced birch handles, and double-primed Belgian linens designed for rigorous creative demands.",
   },
   {
-    title: "Responsible Component Sourcing",
-    desc: "We partner with vetted manufacturers using quality-checked materials and components in every build.",
+    title: "Acid-Free & Non-Toxic Formulas",
+    desc: "We ethically source raw materials and non-toxic binders to ensure archival stability and a safe studio environment.",
   },
 ];
 
@@ -28,14 +28,10 @@ export default function QualityPromise() {
       className="relative overflow-hidden bg-neutral-bg py-12 md:py-16 lg:py-20"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1450px] px-5 sm:px-6 lg:px-8">
-        {/* =========================================================
-            MAIN TWO-CARD LAYOUT
-            ========================================================= */}
+        {/* MAIN TWO-CARD LAYOUT */}
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
 
-          {/* =======================================================
-              LEFT — IMAGE CARD
-              ======================================================= */}
+          {/* LEFT — IMAGE CARD */}
           <div
             className="
               group
@@ -48,15 +44,13 @@ export default function QualityPromise() {
               min-h-[520px]
               md:min-h-[620px]
               lg:min-h-[720px]
+              border
+              border-black/[0.04]
             "
           >
-            {/* Full Image
-                object-fill keeps the COMPLETE image visible.
-                Nothing on the left or right gets cropped.
-            */}
             <img
-              src="https://images.unsplash.com/photo-1517344368193-41552b6ad3f5?w=1200&q=80"
-              alt={`${siteConfig.brandName} Quality Assurance`}
+              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&q=80"
+              alt={`${siteConfig.brandName} Fine Art Quality Assurance`}
               className="
                 absolute
                 inset-0
@@ -70,14 +64,11 @@ export default function QualityPromise() {
                 group-hover:scale-[1.01]
               "
             />
-
             {/* Very subtle overlay */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
 
-          {/* =======================================================
-              RIGHT — GUARANTEE CARD
-              ======================================================= */}
+          {/* RIGHT — GUARANTEE CARD */}
           <div
             className="
               relative
@@ -118,9 +109,7 @@ export default function QualityPromise() {
               "
             />
 
-            {/* =====================================================
-                CARD CONTENT
-                ===================================================== */}
+            {/* CARD CONTENT */}
             <div
               className="
                 relative
@@ -136,13 +125,9 @@ export default function QualityPromise() {
                 xl:p-16
               "
             >
-
-              {/* =================================================
-                  EYEBROW
-                  ================================================= */}
+              {/* EYEBROW */}
               <div className="mb-7 flex items-center gap-4">
                 <span className="h-px w-8 bg-secondary md:w-10" />
-
                 <span
                   className="
                     text-xs
@@ -153,15 +138,12 @@ export default function QualityPromise() {
                     md:text-sm
                   "
                 >
-                  Our Guarantee
+                  Our Studio Promise
                 </span>
-
                 <span className="h-px w-8 bg-secondary md:w-10" />
               </div>
 
-              {/* =================================================
-                  HEADING
-                  ================================================= */}
+              {/* HEADING */}
               <h2
                 className="
                   mb-7
@@ -174,42 +156,36 @@ export default function QualityPromise() {
                   text-primary
                   sm:text-5xl
                   md:text-5xl
-                  lg:text-[3.5rem]
-                  xl:text-[4rem]
+                  lg:text-[3.25rem]
+                  xl:text-[3.75rem]
                 "
               >
-                The Premium
+                The Archival
                 <br />
-                Quality
+                Standard
                 <br />
                 <span className="text-secondary">
                   You Deserve
                 </span>
               </h2>
 
-              {/* =================================================
-                  DESCRIPTION
-                  ================================================= */}
+              {/* DESCRIPTION */}
               <p
                 className="
                   mb-10
                   max-w-xl
                   text-sm
                   leading-[1.8]
-                  text-neutral-text/65
+                  text-neutral-text/70
                   sm:text-base
                   md:mb-12
                   md:text-[1.05rem]
                 "
               >
-                We understand how much your gear has to withstand. That&apos;s
-                why we maintain strict, end-to-end testing standards across
-                every product we build and ship.
+                We understand that your artwork is meant to endure for generations. That&apos;s why we maintain rigorous pigment purity, viscosity consistency, and tensile substrate standards across every product.
               </p>
 
-              {/* =================================================
-                  GUARANTEE POINTS
-                  ================================================= */}
+              {/* GUARANTEE POINTS */}
               <div className="flex flex-col">
                 {promises.map((promise, idx) => (
                   <div
@@ -250,7 +226,7 @@ export default function QualityPromise() {
                           duration-300
                           group-hover/item:border-secondary
                           group-hover/item:bg-secondary
-                          group-hover/item:text-primary-text
+                          group-hover/item:text-primary
                         "
                       >
                         {String(idx + 1).padStart(2, "0")}
@@ -286,7 +262,7 @@ export default function QualityPromise() {
                           max-w-xl
                           text-xs
                           leading-[1.75]
-                          text-neutral-text/60
+                          text-neutral-text/65
                           sm:text-sm
                           md:text-[0.95rem]
                         "
@@ -298,9 +274,7 @@ export default function QualityPromise() {
                 ))}
               </div>
 
-              {/* =================================================
-                  BOTTOM ACCENT
-                  ================================================= */}
+              {/* BOTTOM ACCENT */}
               <div className="mt-10 flex items-center gap-3 md:mt-12">
                 <div className="h-1 w-12 rounded-full bg-secondary" />
                 <div className="h-1 w-3 rounded-full bg-secondary/30" />

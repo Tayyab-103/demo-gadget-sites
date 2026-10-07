@@ -9,23 +9,23 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqData = [
   {
     question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `All orders are dispatched within 1-2 business days. We ship using ${siteConfig.shippingCarrier} nationwide, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive at your door.`
+    answer: `All studio orders are packed in protective archival wrapping and dispatched within 1-2 business days. We ship nationwide using ${siteConfig.shippingCarrier}, and delivery typically takes between ${siteConfig.shippingPeriod} business days to reach your doorstep or atelier.`
   },
   {
-    question: "Do you offer a money-back guarantee?",
-    answer: `Yes, we back all our products with a 60-day money-back guarantee. If you are not satisfied with your purchase, contact our support team via email or phone to initiate a hassle-free return and refund.`
+    question: "Do you offer a satisfaction guarantee on art and craft supplies?",
+    answer: `Yes, we back every product with our 60-day satisfaction guarantee. If any paint set, brush suite, or canvas fails to meet your creative standards, simply contact our studio support team for a prompt replacement or refund.`
   },
   {
-    question: "Are your gadgets covered by a warranty?",
-    answer: "Yes. Every product ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
+    question: "Are your pigments, paints, and canvases archival grade?",
+    answer: "Absolutely. Our pigments are formulated for ASTM Class I & II lightfastness to resist fading and yellowing. Our canvases are acid-free, double-primed Belgian linens and cotton designed for long-term museum permanence."
   },
   {
     question: "How will the charge appear on my credit card statement?",
-    answer: `Your card statement will display the charge descriptor as "${siteConfig.descriptor}" to ensure a clean transaction history.`
+    answer: `Your card statement will display the billing descriptor as "${siteConfig.descriptor}" for clean and straightforward accounting.`
   },
   {
-    question: "How do I contact customer support?",
-    answer: `You can reach our customer support team Monday through Friday during business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. We aim to respond to all inquiries within 24 hours.`
+    question: "How can I contact the North Star studio support team?",
+    answer: `You can reach our customer support team Monday through Friday during business hours at ${siteConfig.phone}, or via email at ${siteConfig.email}. We answer all artist inquiries within 24 hours.`
   }
 ];
 
@@ -43,40 +43,35 @@ export default function Faq() {
 
           {/* Left Column — Header, Decoration & CTA */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-28 lg:self-start">
-            <span className="eyebrow mb-4">Got Questions?</span>
+            <span className="eyebrow mb-4">Studio Inquiries</span>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
               Frequently Asked <span className="text-secondary">Questions</span>
             </h2>
-            <p className="text-neutral-text/60 text-sm md:text-base mb-10">
-              Find immediate answers to common questions about our products, shipping, and return policies.
+            <p className="text-neutral-text/70 text-sm md:text-base mb-10">
+              Find immediate answers regarding our artist formulations, craft tools, dispatch timelines, and guarantee standards.
             </p>
 
-            {/* Decorative Leaf Illustration */}
+            {/* Decorative Palette / Brush Illustration */}
             <div className="hidden lg:block relative mb-10">
-              <svg viewBox="0 0 200 200" className="w-48 h-48 text-primary/10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 10 C40 40, 10 100, 30 160 C50 200, 100 190, 100 190 C100 190, 150 200, 170 160 C190 100, 160 40, 100 10Z" />
-                <path d="M100 30 C100 30, 100 190, 100 190" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/20" />
-                <path d="M100 60 C100 60, 60 90, 50 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 60 C100 60, 140 90, 150 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 70 110, 55 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 130 110, 145 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
+              <svg viewBox="0 0 200 200" className="w-44 h-44 text-secondary/20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 20 C50 20 10 60 10 110 C10 160 50 190 90 190 C110 190 120 175 120 165 C120 155 110 145 110 135 C110 120 125 110 140 110 L160 110 C180 110 190 95 190 80 C190 45 150 20 100 20 Z M45 90 C37 90 30 83 30 75 C30 67 37 60 45 60 C53 60 60 67 60 75 C60 83 53 90 45 90 Z M85 60 C77 60 70 53 70 45 C70 37 77 30 85 30 C93 30 100 37 100 45 C100 53 93 60 85 60 Z M135 65 C127 65 120 58 120 50 C120 42 127 35 135 35 C143 35 150 42 150 50 C150 58 143 65 135 65 Z" />
               </svg>
             </div>
 
-            {/* CTA */}
-            <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+            {/* CTA Box */}
+            <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden border border-white/10 shadow-xl">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2" />
               <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
+                <h3 className="text-xl font-bold mb-2">Need Custom Advice?</h3>
                 <p className="text-white/70 text-sm mb-6 leading-relaxed">
-                  Our customer care team is here to help you with anything you need.
+                  Our dedicated studio support team is here to assist with product specs, bulk orders, or recommendations.
                 </p>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-bold text-sm px-6 py-3 rounded-full hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 bg-secondary text-primary font-bold text-sm px-6 py-3 rounded-full hover:bg-white transition-all shadow-md"
                 >
-                  Get in Touch
+                  Contact Our Atelier
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -106,7 +101,7 @@ export default function Faq() {
                   >
                     <div className="flex items-center gap-4">
                       <span className={`text-xs font-black tracking-widest transition-colors duration-300 flex-shrink-0 ${
-                        isOpen ? "text-secondary" : "text-neutral-text/25"
+                        isOpen ? "text-secondary" : "text-neutral-text/30"
                       }`}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
@@ -119,7 +114,7 @@ export default function Faq() {
                     <span
                       className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-300 ${
                         isOpen
-                          ? "bg-secondary text-primary-text rotate-45 shadow-md"
+                          ? "bg-secondary text-primary rotate-45 shadow-md font-bold"
                           : "bg-neutral-bg border border-black/10 text-primary hover:border-secondary/40 hover:text-secondary rotate-0"
                       }`}
                     >
@@ -134,7 +129,7 @@ export default function Faq() {
                       maxHeight: isOpen ? "400px" : "0px",
                     }}
                   >
-                    <div className="pb-7 text-sm text-neutral-text/65 leading-relaxed border-t border-black/5 pt-5 pl-10">
+                    <div className="pb-7 text-sm text-neutral-text/75 leading-relaxed border-t border-black/5 pt-5 pl-10">
                       {item.answer}
                     </div>
                   </div>

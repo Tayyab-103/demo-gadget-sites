@@ -4,46 +4,42 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "Field-Tested Materials",
-    description: "Every component we use is selected for durability, free of cheap fillers or brittle plastics.",
+    title: "Pure Mineral Pigments",
+    description: "Formulated with unadulterated, lightfast mineral pigments for superior color saturation and blending control.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z"></path>
-        <path d="M12 12v10"></path>
-        <path d="M8 22h8"></path>
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
       </svg>
     )
   },
   {
-    title: "Quality-Controlled Production",
-    description: "Our gear is manufactured under strict quality-control checkpoints before it ever ships.",
+    title: "Handcrafted Studio Brushes",
+    description: "Every brush is balanced with ergonomic birchwood handles and rustproof nickel ferrules.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+      </svg>
+    )
+  },
+  {
+    title: "Archival Linen Supports",
+    description: "Double-primed, acid-free Belgian linen and cotton canvases built to resist humidity and warping.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+    )
+  },
+  {
+    title: "60-Day Studio Guarantee",
+    description: "Experiment freely with our materials. If they don't surpass your expectations, return them within 60 days.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-    )
-  },
-  {
-    title: "Third-Party Stress Tested",
-    description: "Every batch is verified by independent testers to confirm durability, accuracy, and safety.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 2v7.31"></path>
-        <path d="M14 2v7.31"></path>
-        <path d="M8.5 2h7"></path>
-        <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
-        <path d="M5.52 16h12.96"></path>
-      </svg>
-    )
-  },
-  {
-    title: "Risk-Free Guarantee",
-    description: "Not satisfied? We stand behind our quality with a 60-day money-back guarantee, no questions asked.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
-        <path d="M12 6v12"></path>
+        <polyline points="9 12 11.5 14.5 15 9"></polyline>
       </svg>
     )
   }
@@ -54,20 +50,20 @@ export default function Features() {
     <section className="py-12 md:py-16 bg-neutral-bg" id="features">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[600px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built for Real Performance</h2>
-          <p className="text-neutral-text/60">
-            We combine durable materials with real athlete feedback to bring you gear that actually holds up.
+          <span className="eyebrow mb-4">Atelier Benchmark</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built for Fine Artists &amp; Crafters</h2>
+          <p className="text-neutral-text/70">
+            We combine historical pigment traditions with modern archival engineering to deliver tools you can trust on every canvas.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresData.map((feature, idx) => (
             <div
-              className="bg-white rounded-xl p-6 border-2 border-black/10 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="bg-white rounded-2xl p-6 border border-black/5 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               key={idx}
             >
-              <div className="mb-5 w-14 h-14 rounded-xl border-2 border-primary text-primary flex items-center justify-center">
+              <div className="mb-5 w-14 h-14 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
                 {feature.icon}
               </div>
               <h3 className="text-lg font-bold mb-2 text-primary">{feature.title}</h3>

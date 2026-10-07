@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 
 const messages = [
-  "Free Shipping on All Orders Nationwide",
-  "60-Day Money-Back Satisfaction Guarantee",
-  "1-Year Warranty on Every Gadget",
+  "Free Shipping on All Studio Supplies Nationwide",
+  "60-Day Satisfaction & Craft Quality Guarantee",
+  "Master-Grade Archival Pigments & Handcrafted Brushes",
 ];
 
 export default function AnnouncementBar() {

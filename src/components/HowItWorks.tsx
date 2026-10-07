@@ -6,10 +6,10 @@ import Image from "next/image";
 const steps = [
   {
     number: "01",
-    title: "Choose Your Gear",
+    title: "Curate Your Atelier Supplies",
     description:
-      "Browse our range of training gadgets and pick a bundle pack sized for your goals, from a single unit to a full team kit.",
-    image: "https://images.unsplash.com/photo-1616803689943-5601631c7fec?w=900&q=80",
+      "Explore our catalog of archival paints, handcrafted brushes, and fine canvases. Select single packs or value studio bundles suited to your creative ambition.",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,10 @@ const steps = [
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <path d="M16 10a4 4 0 0 1-8 0" />
+        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+        <path d="M2 2l7.586 7.586" />
+        <circle cx="11" cy="11" r="2" />
       </svg>
     ),
   },
@@ -33,7 +34,7 @@ const steps = [
     number: "02",
     title: "Fast Secure Checkout",
     description:
-      "Fill in your shipping details and complete your order safely. Our checkout is secured with military-grade 256-bit encryption for your peace of mind.",
+      "Enter your delivery address and complete payment safely. Our studio order gateway is secured with bank-grade 256-bit encryption for complete peace of mind.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
     icon: (
       <svg
@@ -55,10 +56,10 @@ const steps = [
   },
   {
     number: "03",
-    title: "Nationwide Dispatch",
+    title: "Studio-Grade Dispatch",
     description:
-      "Your gear is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
+      "Your order is meticulously packaged in archival protection and dispatched via UPS nationwide, arriving at your studio or doorstep within 3-5 business days.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -88,15 +89,14 @@ export default function HowItWorks() {
       id="how-it-works"
     >
       {/* Background ambient blur */}
-      <div className="pointer-events-none absolute right-0 top-0 h-150 w-150 -translate-y-1/2 translate-x-1/3 rounded-full bg-secondary/5 blur-3xl" />
-
+      <div className="pointer-events-none absolute right-0 top-0 h-150 w-150 -translate-y-1/2 translate-x-1/3 rounded-full bg-secondary/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-125 w-125 -translate-x-1/3 translate-y-1/3 rounded-full bg-primary/5 blur-3xl" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         {/* Header */}
         <div className="mb-16 text-center md:mb-24">
           <span className="eyebrow mb-6 justify-center">
-            Simple Steps
+            Seamless Process
           </span>
 
           <h2 className="mb-6 text-3xl font-black uppercase tracking-tight text-primary md:text-5xl">
@@ -106,9 +106,8 @@ export default function HowItWorks() {
             </span>
           </h2>
 
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            Getting geared up is simple. Follow these three steps to get
-            premium training gear delivered straight to your door.
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-neutral-text/70 md:text-base">
+            Equipping your art studio or craft workshop is effortless. Follow three straightforward steps to have premium artistic materials delivered to your door.
           </p>
         </div>
 
@@ -153,7 +152,7 @@ export default function HowItWorks() {
                         {step.title}
                       </h3>
 
-                      <p className="text-sm leading-relaxed text-neutral-text/65 md:text-base">
+                      <p className="text-sm leading-relaxed text-neutral-text/70 md:text-base">
                         {step.description}
                       </p>
                     </div>
@@ -161,13 +160,13 @@ export default function HowItWorks() {
 
                   {/* Desktop Center Node */}
                   <div className="absolute left-1/2 z-20 hidden h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full border border-black/10 bg-white shadow-lg lg:flex">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary">
                       {step.icon}
                     </div>
                   </div>
 
                   {/* Mobile Icon */}
-                  <div className="relative z-20 -my-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-white shadow-lg lg:hidden">
+                  <div className="relative z-20 -my-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-primary shadow-lg lg:hidden">
                     {step.icon}
                   </div>
 
@@ -179,7 +178,7 @@ export default function HowItWorks() {
                         : "lg:justify-start"
                     }`}
                   >
-                    <div className="group relative aspect-4/3 w-full max-w-110 overflow-hidden rounded-4xl bg-white shadow-2xl">
+                    <div className="group relative aspect-4/3 w-full max-w-110 overflow-hidden rounded-4xl bg-white shadow-2xl border border-black/5">
                       {/* Soft overlay */}
                       <div className="pointer-events-none absolute inset-0 z-10 bg-primary/5 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
 

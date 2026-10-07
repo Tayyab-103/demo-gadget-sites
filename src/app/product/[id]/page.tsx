@@ -74,7 +74,7 @@ export default function ProductDetail() {
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
               <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Dietary Supplement"}
+                {product.category || "Fine Art Supplies"}
               </span>
 
               <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">

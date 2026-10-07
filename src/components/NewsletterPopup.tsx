@@ -59,19 +59,19 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      }, 2000);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black/60 z-9999 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-xs">
+      <div className="bg-white rounded-2xl w-full max-w-[500px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          className="absolute top-4 right-4 bg-white/90 border border-black/10 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
           aria-label="Close newsletter popup"
         >
           &times;
@@ -80,46 +80,46 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=900&q=80"
-            alt="Athlete stretching with training gear"
+            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80"
+            alt="Artist palette with vibrant oil pigments"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/60 to-primary/90" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Exclusive Gear Drop
+              Exclusive Atelier Drop
             </span>
             <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
-              Save 15% Today!
+              Unlock 15% Studio Discount
             </h3>
           </div>
         </div>
 
         {/* Form Body */}
-        <div className="p-8">
+        <div className="p-8 bg-white">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-xl mx-auto mb-4 bg-secondary/10 font-bold">
                 ✓
               </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
+              <h4 className="text-primary font-bold text-lg mb-2">Welcome to the Atelier!</h4>
+              <p className="text-neutral-text/60 text-sm">
+                Check your inbox for your 15% studio promo code.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get training tips, early access to new gear, and <strong>15% off</strong> on your first order.
+              <p className="text-sm text-neutral-text/75 leading-relaxed mb-6">
+                Join the {siteConfig.brandName} artist collective. Subscribe today to receive master tips, early access to new craft batches, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
+                  className="block w-full px-4 py-3.5 text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary transition-all text-neutral-text bg-neutral-bg"
+                  placeholder="Enter your artist email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -128,13 +128,13 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
+                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-primary hover:bg-primary hover:text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:shadow-lg"
               >
-                Unlock 15% Discount
+                Claim 15% Studio Discount
               </button>
 
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
+              <span className="block text-center text-[0.7rem] text-neutral-text/45 mt-3">
+                We respect your privacy. Unsubscribe anytime.
               </span>
             </form>
           )}

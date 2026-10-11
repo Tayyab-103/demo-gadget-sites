@@ -2,17 +2,16 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "MasterSeries Archival Pigment Paint Studio Set",
-    "description": "A master-grade 24-tube collection of ultra-rich, lightfast acrylic and oil pigments formulated for studio artists and craft creators. Crafted with pure mineral pigments for unmatched saturation, buttery impasto texture, and archival museum permanence across canvas, wood, and linen.",
-    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
+    "name": "Wooden Painting Palette Oval A3 Size",
+    "description": "Expertly crafted from natural polished birch wood, this classic oval A3-sized artist palette features a comfortable ergonomic thumb hole and lightweight balance for effortless studio sessions. Specially treated with a smooth, non-absorbent finish ideal for oil, acrylic, and alkyd pigment mixing.",
+    "image": "/img/products/product 1 image 1.webp",
     "images": [
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&q=80",
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1000&q=80",
-      "https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?w=1000&q=80"
+      "/img/products/product 1 image 1.webp",
+      "/img/products/product 1 image 2.webp"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Fine Art Pigments & Paints",
+    "category": "Studio Tools & Painting Palettes",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +29,17 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Celestial Kolinsky & Precision Studio Brush Suite",
-    "description": "A premier 12-piece handcrafted brush suite engineered with balanced hardwood birch handles, seamless nickel ferrules, and hybrid sable-grade filaments. Delivers razor-sharp detail work, buttery oil strokes, sweeping watercolor washes, and effortless craft finishing.",
-    "image": "https://images.unsplash.com/photo-1596548438137-d51ea5c83ca5?w=1000&q=80",
+    "name": "Keep Smiling Fine Quality Acrylic Paint Set 75mL",
+    "description": "A premium collection of high-density, richly pigmented acrylic paints formulated for artists, students, and crafters. Each 75mL tube provides exceptional coverage, smooth buttery texture, fast-drying archival permanence, and brilliant mixability across canvas, wood, paper, and craft surfaces.",
+    "image": "/img/products/product 2 image 1.webp",
     "images": [
-      "https://images.unsplash.com/photo-1596548438137-d51ea5c83ca5?w=1000&q=80",
-      "https://images.unsplash.com/photo-1580481077195-c9462fc1498b?w=1000&q=80",
-      "https://images.unsplash.com/photo-1572945753563-804956783134?w=1000&q=80"
+      "/img/products/product 2 image 1.webp",
+      "/img/products/product 2 image 2.webp",
+      "/img/products/product 2 image 3.webp"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Handcrafted Studio Brushes",
+    "category": "Fine Art Pigments & Acrylics",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +57,17 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Artisan Primed Linen Canvas & Studio Easel Kit",
-    "description": "Triple-primed archival Belgian linen canvas stretched over warp-resistant kiln-dried pine, complemented by a solid beechwood adjustable studio H-frame tabletop easel. Optimized for heavy body acrylics, delicate oil glazing, multi-media craft, and permanent gallery display.",
-    "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1000&q=80",
+    "name": "Mungyo Professional Water Color Cake Set",
+    "description": "Formulated with pure concentrated artist-grade pigments and natural gum arabic, this professional watercolor pan set offers vibrant color payoff, superior wash blending, and exceptional lightfast transparency. Packaged in a durable studio and travel case with integrated palette wells.",
+    "image": "/img/products/product 3 image 1.webp",
     "images": [
-      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1000&q=80",
-      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&q=80",
-      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1000&q=80"
+      "/img/products/product 3 image 1.webp",
+      "/img/products/product 3 image 2.webp",
+      "/img/products/product 3 image 3.avif"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Stretched Canvases & Studio Equipment",
+    "category": "Professional Watercolors & Sets",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

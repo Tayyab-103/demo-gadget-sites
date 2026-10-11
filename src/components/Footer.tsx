@@ -196,19 +196,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Featured Collections */}
-          <div className="lg:col-span-3 flex flex-col">
-            <h4 className="text-secondary text-xs uppercase tracking-[0.16em] font-bold mb-4">
-              Featured Supplies
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-white/75">
-              <li><Link href="/product/product1" className="hover:text-white transition-colors">MasterSeries Paint Set</Link></li>
-              <li><Link href="/product/product2" className="hover:text-white transition-colors">Kolinsky Brush Suite</Link></li>
-              <li><Link href="/product/product3" className="hover:text-white transition-colors">Primed Linen Canvas Kit</Link></li>
-              <li><Link href="/shop" className="hover:text-white transition-colors">All Studio Bundles</Link></li>
-            </ul>
-          </div>
-
           {/* Assurance & Social */}
           <div className="lg:col-span-3 flex flex-col">
             <h4 className="text-secondary text-xs uppercase tracking-[0.16em] font-bold mb-4">
@@ -229,12 +216,20 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              {["Instagram", "Pinterest", "YouTube"].map((plat) => (
-                <span key={plat} className="text-[0.68rem] font-bold uppercase tracking-wider text-white/50 hover:text-secondary cursor-pointer transition-colors">
-                  {plat}
-                </span>
-              ))}
+            {/* Accepted Payment Cards */}
+            <div className="mb-4">
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/img/visa.png"
+                  alt="Visa"
+                  className="h-7 w-auto object-contain rounded shadow-xs hover:scale-105 transition-transform"
+                />
+                <img
+                  src="/img/mastercard.png"
+                  alt="Mastercard"
+                  className="h-7 w-auto object-contain rounded shadow-xs hover:scale-105 transition-transform"
+                />
+              </div>
             </div>
           </div>
 

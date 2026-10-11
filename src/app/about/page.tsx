@@ -102,7 +102,7 @@ export default function AboutPage() {
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-4/3 w-full rounded-3xl overflow-hidden shadow-2xl border border-black/5">
                   <Image
-                    src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=900&q=80"
+                    src="/img/photo-1513364776144-60967b0f800f.jpg"
                     alt="Fine art studio craftsmanship"
                     fill
                     sizes="(max-width: 1024px) 100vw, 600px"
@@ -208,24 +208,6 @@ export default function AboutPage() {
                   </span>
                   <h4 className="text-base font-bold text-primary mb-2">{evt.title}</h4>
                   <p className="text-xs text-neutral-text/70 leading-relaxed">{evt.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Strip */}
-        <section className="bg-primary text-white py-14 border-y border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              {stats.map((st, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <span className="text-3xl sm:text-5xl font-black text-secondary mb-2">
-                    {st.value}
-                  </span>
-                  <span className="text-xs sm:text-sm font-semibold text-white/80 uppercase tracking-wider">
-                    {st.label}
-                  </span>
                 </div>
               ))}
             </div>

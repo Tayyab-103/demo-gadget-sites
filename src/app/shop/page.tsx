@@ -14,9 +14,7 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const categories = [
   "All Collections",
-  "Fine Art Pigments & Paints",
-  "Fine Art Studio Brushes",
-  "Stretched Canvases & Studio Equipment",
+  ...Array.from(new Set(products.map((p) => p.category).filter(Boolean))),
 ];
 
 const faqs = [
@@ -113,21 +111,6 @@ export default function ShopPage() {
             <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
               Curated fine art pigments, handcrafted Kolinsky &amp; synthetic brushes, and triple-primed Belgian linen canvases engineered for professional studios and dedicated creators.
             </p>
-
-            {/* Quick Guarantees Strip */}
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
-              {[
-                { icon: "✦", text: "ASTM Class I & II Lightfast" },
-                { icon: "📦", text: `Tracked ${siteConfig.shippingCarrier} Dispatch` },
-                { icon: "🛡️", text: "60-Day Satisfaction Guarantee" },
-                { icon: "🎨", text: "Pure Pigment Chemistry" },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-semibold text-white/90">
-                  <span className="text-secondary text-sm">{item.icon}</span>
-                  <span className="truncate">{item.text}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -279,31 +262,17 @@ export default function ShopPage() {
                       {/* Product Thumbnail Container */}
                       <Link href={`/product/${product.id}`} className="relative aspect-4/3 w-full overflow-hidden bg-neutral-bg block">
                         <img
-                          src={product.image}
+                          src={product.image || product.images?.[0] || ""}
                           alt={product.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           onError={(e) => {
                             e.currentTarget.src = "https://placehold.co/500x400?text=Art+Supply";
                           }}
                         />
-                        <div className="absolute top-4 left-4 flex flex-col gap-1.5">
-                          <span className="bg-secondary text-primary text-[0.6rem] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
-                            {product.category}
-                          </span>
-                        </div>
-                        <span className="absolute bottom-4 right-4 bg-primary/90 backdrop-blur-sm text-white text-[0.65rem] font-bold px-2.5 py-1 rounded-lg">
-                          {bundleCount} Studio Bundle Options
-                        </span>
                       </Link>
 
                       {/* Card Body */}
                       <div className="p-6 flex flex-col flex-1">
-                        <div className="flex items-center gap-1 text-secondary text-xs mb-2">
-                          {"★★★★★".split("").map((star, i) => (
-                            <span key={i}>{star}</span>
-                          ))}
-                          <span className="text-[0.68rem] font-bold text-neutral-text/50 ml-1.5">(4.9 Studio Score)</span>
-                        </div>
 
                         <Link href={`/product/${product.id}`} className="block">
                           <h3 className="text-lg sm:text-xl font-black uppercase text-primary tracking-tight group-hover:text-secondary transition-colors line-clamp-2">
@@ -314,15 +283,6 @@ export default function ShopPage() {
                         <p className="text-xs sm:text-sm text-neutral-text/70 mt-2 line-clamp-3 leading-relaxed flex-1">
                           {product.description}
                         </p>
-
-                        {/* Feature Badges */}
-                        <div className="mt-4 pt-4 border-t border-black/5 flex items-center justify-between gap-2 text-[0.68rem] text-neutral-text/60">
-                          <span className="flex items-center gap-1 font-semibold text-primary">
-                            <span className="text-green-600">✓</span> In Stock
-                          </span>
-                          <span className="font-semibold text-secondary">ASTM Archival</span>
-                          <span className="text-neutral-text/50">FedEx Tracked</span>
-                        </div>
 
                         {/* Price & Action Row */}
                         <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between gap-3">
@@ -375,7 +335,7 @@ export default function ShopPage() {
                     >
                       <Link href={`/product/${product.id}`} className="w-full md:w-64 aspect-4/3 rounded-2xl overflow-hidden bg-neutral-bg flex-shrink-0 relative">
                         <img
-                          src={product.image}
+                          src={product.image || product.images?.[0] || ""}
                           alt={product.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />

@@ -23,8 +23,8 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         
-        {/* Step-by-Step Flow */}
-        <HowItWorks />
+        {/* Step-by-Step Flow
+        <HowItWorks /> */}
         
         {/* About Brand Section */}
         <AboutUs />

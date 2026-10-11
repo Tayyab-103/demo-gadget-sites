@@ -109,61 +109,56 @@ export default function ProductDetail() {
               {/* Bundle Packages Selector */}
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mb-8">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Select Package Quantity:</h4>
-                  <div className="flex flex-col gap-3.5">
-                    {product.bundles.map((bundle) => {
-                      const isActive = selectedBundle.quantity === bundle.quantity;
-                      // Calculate savings relative to base price * quantity
-                      const baseItemPrice = startingPrice;
-                      const regularPrice = baseItemPrice * bundle.quantity;
-                      const savings = regularPrice - bundle.price;
-                      
-                      return (
-                        <div
-                          key={bundle.quantity}
-                          onClick={() => setSelectedBundle(bundle)}
-                          className={`border rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all duration-300 ${
-                            isActive
-                              ? "border-secondary bg-secondary/5 shadow-sm"
-                              : "border-black/5 bg-white hover:border-black/15"
-                          }`}
-                        >
-                          <div className="flex items-center gap-4">
-                            <div
-                              className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 transition-all ${
-                                isActive ? "border-secondary" : "border-black/25"
-                              }`}
-                            >
-                              {isActive && (
-                                <div className="w-2.5 h-2.5 rounded-full bg-secondary" />
-                              )}
-                            </div>
+                  <label
+                    htmlFor="package-quantity-select"
+                    className="block text-xs font-bold uppercase tracking-wider text-primary mb-3"
+                  >
+                    SELECT PACKAGE QUANTITY:
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="package-quantity-select"
+                      value={selectedBundle.quantity}
+                      onChange={(e) => {
+                        const qty = Number(e.target.value);
+                        const match = product.bundles?.find((b) => b.quantity === qty);
+                        if (match) setSelectedBundle(match);
+                      }}
+                      className="w-full appearance-none bg-white border-2 border-secondary rounded-2xl py-3.5 px-5 pr-12 text-sm md:text-base font-bold text-primary focus:outline-none focus:ring-2 focus:ring-secondary/20 cursor-pointer shadow-sm transition-all"
+                    >
+                      {product.bundles.map((bundle) => {
+                        const baseItemPrice = startingPrice;
+                        const regularPrice = baseItemPrice * bundle.quantity;
+                        const savings = regularPrice - bundle.price;
+                        const label =
+                          bundle.quantity === 1
+                            ? `Single Unit — $${parseFloat(String(bundle.price)).toFixed(2)}`
+                            : `Pack of ${bundle.quantity} — $${parseFloat(String(bundle.price)).toFixed(2)}${
+                                savings > 0 ? ` (Save $${savings.toFixed(2)})` : ""
+                              }`;
 
-                            <div>
-                              <strong className="text-sm font-bold text-primary">
-                                {bundle.quantity > 1 ? `Pack of ${bundle.quantity}` : "Single Unit"}
-                              </strong>
-                              {bundle.quantity > 1 && savings > 0 && (
-                                <span className="bg-secondary text-primary text-[0.62rem] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md ml-3 inline-block">
-                                  Save ${savings.toFixed(2)}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="text-right">
-                            <div className="font-extrabold text-base text-primary">
-                              ${parseFloat(String(bundle.price)).toFixed(2)}
-                            </div>
-                            {bundle.quantity > 1 && (
-                              <div className="text-[0.65rem] text-neutral-text/40 mt-0.5">
-                                ${((parseFloat(String(bundle.price)) / bundle.quantity)).toFixed(2)} / unit
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                        return (
+                          <option
+                            key={bundle.quantity}
+                            value={bundle.quantity}
+                            className="text-primary font-medium py-1"
+                          >
+                            {label}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-5 text-primary">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               )}

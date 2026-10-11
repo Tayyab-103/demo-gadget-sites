@@ -107,7 +107,6 @@ export default function Header() {
 
   return (
     <>
-      <AnnouncementBar />
 
       {/* Utility Top Strip */}
       <div className="bg-primary text-white/80 border-b border-white/10 text-xs transition-colors">

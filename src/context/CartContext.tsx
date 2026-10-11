@@ -49,7 +49,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const newItem: CartItem = {
         Id: product.id,
         Name: product.name,
-        Image: product.image,
+        Image: product.image || product.images?.[0] || "",
         Price: price,
         Qty: quantity,
         Total: (parseFloat(String(price)) * quantity).toFixed(2),
@@ -85,7 +85,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         const newItem: CartItem = {
           Id: product.id,
           Name: product.name,
-          Image: product.image,
+          Image: product.image || product.images?.[0] || "",
           Price: price,
           Qty: quantity,
           Total: (parseFloat(String(price)) * quantity).toFixed(2),

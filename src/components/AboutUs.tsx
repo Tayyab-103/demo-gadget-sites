@@ -133,7 +133,7 @@ export default function AboutUs() {
             {/* Main Image */}
             <div className="group relative w-full max-w-110 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border border-black/5">
               <Image
-                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=900&q=80"
+                src="/img/photo-1513364776144-60967b0f800f.jpg"
                 alt={`${siteConfig.brandName} painting studio atelier`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 440px"

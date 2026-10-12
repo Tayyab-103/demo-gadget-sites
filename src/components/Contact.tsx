@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -17,6 +18,7 @@ const inquiryTopics = [
 export default function Contact() {
   const [selectedTopic, setSelectedTopic] = useState<string>("Order & Tracking");
   const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [ticketId, setTicketId] = useState<number | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
@@ -136,7 +138,7 @@ export default function Contact() {
               {siteConfig.address}
             </p>
             <div className="flex items-center gap-1.5 text-[0.7rem] text-gray-500 font-semibold pt-2 border-t border-gray-100">
-              <span className="text-secondary font-black">✓</span>
+              <CheckIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
               <span>Domestic Tech Fulfillment Hub</span>
             </div>
           </div>
@@ -152,7 +154,7 @@ export default function Contact() {
               
               <div>
                 <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-black uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full border border-white/10 text-secondary mb-4">
-                  <span>⚡</span>
+                  <BoltIcon className="w-3 h-3 fill-secondary text-secondary shrink-0" />
                   <span>Priority Helpdesk</span>
                 </div>
                 
@@ -167,20 +169,20 @@ export default function Contact() {
                 {/* Assurance Points */}
                 <div className="space-y-3.5">
                   <div className="flex items-center gap-3 text-xs text-gray-200">
-                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0">
-                      ✓
+                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
+                      <CheckIcon className="w-3.5 h-3.5 text-secondary" />
                     </div>
                     <span>Certified Hardware Specialists</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-gray-200">
-                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0">
-                      ✓
+                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
+                      <CheckIcon className="w-3.5 h-3.5 text-secondary" />
                     </div>
                     <span>{siteConfig.trialPeriod}-Day Risk-Free Guarantee Support</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-gray-200">
-                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0">
-                      ✓
+                    <div className="w-6 h-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
+                      <CheckIcon className="w-3.5 h-3.5 text-secondary" />
                     </div>
                     <span>Prompt &amp; Courteous Resolution</span>
                   </div>
@@ -198,17 +200,20 @@ export default function Contact() {
             <div className="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center">
               {contactSubmitted ? (
                 <div className="text-center py-8 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-300">
-                  <div className="w-16 h-16 rounded-full bg-secondary text-secondary-text flex items-center justify-center text-3xl mb-4 font-black shadow-lg">
-                    ✓
+                  <div className="w-16 h-16 rounded-full bg-secondary text-secondary-text flex items-center justify-center mb-4 shadow-lg">
+                    <CheckIcon className="w-8 h-8 text-secondary-text" />
                   </div>
                   <h3 className="text-primary font-black text-2xl mb-2 tracking-tight uppercase">Inquiry Dispatched</h3>
                   <p className="text-gray-600 text-xs sm:text-sm max-w-sm mb-6 leading-relaxed">
-                    Thank you for reaching out to {siteConfig.brandName}. Ticket #{Math.floor(100000 + Math.random() * 900000)} has been created and assigned to our electronics engineering team.
+                    Thank you for reaching out to {siteConfig.brandName}. Ticket #{ticketId ?? 582491} has been created and assigned to our electronics engineering team.
                   </p>
                   <button
                     type="button"
                     className="bg-primary text-primary-text hover:bg-slate-800 hover:text-secondary font-black text-xs uppercase tracking-widest px-7 py-3 rounded-xl transition-all cursor-pointer shadow-md"
-                    onClick={() => setContactSubmitted(false)}
+                    onClick={() => {
+                      setContactSubmitted(false);
+                      setTicketId(null);
+                    }}
                   >
                     Send Another Message
                   </button>
@@ -217,6 +222,7 @@ export default function Contact() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
+                    setTicketId(Math.floor(100000 + Math.random() * 900000));
                     setContactSubmitted(true);
                   }}
                   className="space-y-5"

@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -22,8 +23,8 @@ function ConfirmContent() {
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/5 text-center max-w-[600px] mx-auto shadow-md">
       {/* Success Badge */}
-      <div className="w-[64px] h-[64px] rounded-full border border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-secondary/10 shadow-sm">
-        ✓
+      <div className="w-[64px] h-[64px] rounded-full border border-secondary text-secondary flex items-center justify-center mx-auto mb-6 bg-secondary/10 shadow-sm">
+        <CheckIcon className="w-8 h-8 text-secondary" />
       </div>
 
       <h2 className="text-2xl md:text-3xl font-black uppercase text-primary mb-4 tracking-tight">Order Confirmed!</h2>
@@ -62,7 +63,7 @@ function ConfirmContent() {
           className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-primary text-secondary hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg border border-secondary/30"
         >
           <span>Return to Electronics Catalog</span>
-          <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">⚡</span>
+          <BoltIcon className="w-4 h-4 fill-secondary text-secondary transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
     </div>

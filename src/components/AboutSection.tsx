@@ -3,24 +3,25 @@
 import React from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, MicroscopeIcon, ShieldCheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const aboutFeatures = [
   {
-    iconEmoji: "⚡",
+    icon: <BoltIcon className="w-5 h-5 text-secondary" />,
     iconBg: "bg-primary border-secondary/40 text-secondary",
     title: "GaN Fast Silicon Innovations",
     description: "Engineered with ultra-pure Gallium Nitride crystals for high-density power delivery, 40% cooler operating temperatures, and maximum charging efficiency.",
   },
   {
-    iconEmoji: "🔬",
+    icon: <MicroscopeIcon className="w-5 h-5 text-secondary" />,
     iconBg: "bg-primary border-secondary/40 text-secondary",
     title: "100% Laboratory Quality Control",
     description: "Each circuit component undergoes automated oscilloscope frequency testing, drop resistance certification, and thermal stress analysis.",
   },
   {
-    iconEmoji: "🛡️",
+    icon: <ShieldCheckIcon className="w-5 h-5 text-secondary" />,
     iconBg: "bg-primary border-secondary/40 text-secondary",
     title: `${siteConfig.trialPeriod}-Day Risk-Free Performance Guarantee`,
     description: `Enjoy fast tracked shipping via ${siteConfig.shippingCarrier} with full coverage, responsive support, and hassle-free returns on all electronic gear.`,
@@ -35,7 +36,7 @@ export default function AboutSection() {
         {/* Section Header at Top */}
         <div className="text-left max-w-3xl mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
-            <span className="text-xs">⚡</span>
+            <BoltIcon className="w-3.5 h-3.5 text-secondary fill-secondary" />
             <span className="text-[0.68rem] font-black uppercase tracking-[0.2em]">
               ABOUT {siteConfig.brandName}
             </span>
@@ -75,7 +76,7 @@ export default function AboutSection() {
                   <div
                     className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl border flex items-center justify-center text-lg sm:text-xl flex-shrink-0 shadow-xs group-hover:scale-105 transition-transform duration-200 ${item.iconBg}`}
                   >
-                    <span>{item.iconEmoji}</span>
+                    {item.icon}
                   </div>
                   <div>
                     <h3 className="text-sm sm:text-base font-bold text-primary mb-1 group-hover:text-secondary transition-colors">

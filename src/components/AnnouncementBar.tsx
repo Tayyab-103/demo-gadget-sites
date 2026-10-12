@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { BoltIcon, ShieldCheckIcon, WrenchIcon } from "@/components/Icons";
 
 const messages = [
-  "⚡ Free Express Courier Delivery on All Circuit Orders",
-  "🛡️ 30-Day Hardware Satisfaction Guarantee",
-  "⚡ Ultra-High Thermal Efficiency GaN III & Silicon Architecture",
-  "🔧 Direct Engineering Support & 24/7 Dispatch",
+  { text: "Free Express Courier Delivery on All Circuit Orders", icon: "bolt" },
+  { text: "30-Day Hardware Satisfaction Guarantee", icon: "shield" },
+  { text: "Ultra-High Thermal Efficiency GaN III & Silicon Architecture", icon: "bolt" },
+  { text: "Direct Engineering Support & 24/7 Dispatch", icon: "wrench" },
 ];
 
 export default function AnnouncementBar() {
@@ -35,13 +36,16 @@ export default function AnnouncementBar() {
       <div className="flex items-center">
         <div className="flex-1 overflow-hidden py-2.5">
           <div className="marquee-track flex items-center gap-12 w-max">
-            {track.map((msg, idx) => (
+            {track.map((item, idx) => (
               <span
                 key={idx}
-                className="text-[0.7rem] md:text-[0.75rem] font-bold uppercase tracking-[0.14em] flex items-center gap-3 whitespace-nowrap"
+                className="text-[0.7rem] md:text-[0.75rem] font-bold uppercase tracking-[0.14em] flex items-center gap-2 whitespace-nowrap"
               >
-                <span>{msg}</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/40 inline-block" />
+                {item.icon === "bolt" && <BoltIcon className="w-3.5 h-3.5 fill-white text-white shrink-0" />}
+                {item.icon === "shield" && <ShieldCheckIcon className="w-3.5 h-3.5 text-white shrink-0" />}
+                {item.icon === "wrench" && <WrenchIcon className="w-3.5 h-3.5 text-white shrink-0" />}
+                <span>{item.text}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-white/40 inline-block ml-2" />
               </span>
             ))}
           </div>

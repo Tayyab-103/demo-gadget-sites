@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -20,7 +21,7 @@ export default function CTASection() {
             {/* Left Content (8 cols) */}
             <div className="lg:col-span-8 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary/20 border border-secondary/40 text-secondary text-xs font-black uppercase tracking-wider mb-4">
-                <span>⚡</span>
+                <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary shrink-0" />
                 <span>Special Hardware Offer</span>
               </div>
 
@@ -55,19 +56,19 @@ export default function CTASection() {
             {/* Right Mini Trust Box (4 cols) */}
             <div className="lg:col-span-4 bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 flex flex-col gap-3.5 text-xs text-gray-300">
               <div className="flex items-center gap-2.5">
-                <span className="text-secondary font-black">✓</span>
+                <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                 <span>{siteConfig.trialPeriod}-Day Performance Guarantee</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <span className="text-secondary font-black">✓</span>
+                <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                 <span>Certified GaN Semiconductor Tech</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <span className="text-secondary font-black">✓</span>
+                <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                 <span>{siteConfig.shippingCarrier} Tracked Dispatch</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <span className="text-secondary font-black">✓</span>
+                <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                 <span>Direct Hardware Support: {siteConfig.phone}</span>
               </div>
             </div>

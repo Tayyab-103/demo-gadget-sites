@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { CheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -11,7 +12,7 @@ const heroImages = [
   {
     id: "hero1",
     image: "/img/her01.jpg",
-    fallbackImage: "/img/hero1.jpg",
+    fallbackImage: "/img/products/product01.jpg",
     alt: "Electronics Hero 1",
   },
   {
@@ -89,9 +90,9 @@ export default function Hero() {
 
             {/* Trust Highlights */}
             <div className="flex items-center flex-wrap gap-x-4 sm:gap-x-5 gap-y-2 text-[0.7rem] sm:text-xs text-gray-500 font-semibold pt-3 border-t border-gray-200">
-              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> Fast UPS Delivery</span>
-              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> CE / FCC Certified</span>
-              <span className="flex items-center gap-1.5"><span className="text-secondary font-black">✓</span> {siteConfig.trialPeriod}-Day Guarantee</span>
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3.5 h-3.5 text-secondary shrink-0" /> Fast UPS Delivery</span>
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3.5 h-3.5 text-secondary shrink-0" /> CE / FCC Certified</span>
+              <span className="flex items-center gap-1.5"><CheckIcon className="w-3.5 h-3.5 text-secondary shrink-0" /> {siteConfig.trialPeriod}-Day Guarantee</span>
             </div>
           </div>
 

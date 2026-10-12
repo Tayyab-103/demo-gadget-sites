@@ -12,32 +12,32 @@ const defaultGalleryData: GalleryCard[] = [
   {
     title: "Precision Audio & Cyber Acoustics",
     subtitle: "Active Noise Cancellation Studio",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/Precision Audio & Cyber Acoustics.jpg",
   },
   {
     title: "Next-Gen GaN Fast Charging",
     subtitle: "100W Multi-Port Power Station",
-    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/Next-Gen GaN Fast Charging.jpg",
   },
   {
     title: "Minimalist Smart Circuit Workspace",
     subtitle: "Engineered For Seamless Flow",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/Minimalist Smart Circuit Workspace.jpg",
   },
   {
     title: "Wireless Smart Docking Stations",
     subtitle: "High-Speed Qi2 Magnetic Power",
-    image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/Wireless Smart Docking Stations.jpg",
   },
   {
     title: "Ultra-Portable High-Capacity Banks",
     subtitle: "Pocket-Sized Aviation Safe Energy",
-    image: "https://images.unsplash.com/photo-1609081219090-a6d8173087ec?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/Ultra-Portable High-Capacity Banks.jpg",
   },
   {
     title: "Smart Wearable & Sensor Ecosystem",
     subtitle: "Connected Tech Hardware",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&auto=format&fit=crop&q=80",
+    image: "/img/products/product1-1.jpg",
   },
 ];
 

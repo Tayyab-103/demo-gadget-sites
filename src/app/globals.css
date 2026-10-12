@@ -68,8 +68,8 @@
   color: var(--secondary-color);
 }
 .eyebrow::before {
-  content: "⚡";
-  font-size: 0.85rem;
+  content: "•";
+  font-size: 1rem;
   line-height: 1;
 }
 

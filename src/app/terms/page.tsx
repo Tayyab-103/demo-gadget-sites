@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
 import productsData from "../../../config/products.json";
 import { SiteConfig, Product } from "@/types";
+import { BoltIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
@@ -17,7 +18,7 @@ export default function Terms() {
       <main className="bg-white py-12 md:py-20 relative overflow-hidden">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
-            <span className="text-xs">⚡</span>
+            <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary shrink-0" />
             <span className="text-[0.68rem] font-black uppercase tracking-[0.2em]">
               POLICIES &amp; COMPLIANCE
             </span>

@@ -90,11 +90,6 @@ export default function Header() {
           className="flex items-center gap-2 group flex-shrink min-w-0 select-none mr-2"
           style={{ textDecoration: "none" }}
         >
-          {/* Subtle Circuit Icon Accent on Large Screens */}
-          {/* <div className="w-8 h-8 rounded-lg bg-primary text-secondary flex items-center justify-center text-sm font-black shadow-xs border border-secondary/30 shrink-0">
-            ⚡
-          </div> */}
-
           {/* Typography */}
           <div className="flex flex-col min-w-0">
             <span className="text-sm xs:text-base sm:text-lg md:text-xl font-black text-primary tracking-tight uppercase leading-tight truncate">

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import siteConfigData from "../../../config/site-config.json";
 import { useCart } from "@/context/CartContext";
 import { SiteConfig } from "@/types";
+import { LockIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -129,7 +130,7 @@ export default function Checkout() {
       <main className="bg-[#FAF8F5] py-12 md:py-20 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🔒</span>
+            <LockIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
               GUARANTEED 256-BIT ENCRYPTION
             </span>
@@ -250,9 +251,9 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
+                <button type="submit" className="inline-flex items-center justify-center gap-2.5 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
                   <span>Complete Secure Order</span>
-                  <span>🐾</span>
+                  <LockIcon className="w-4 h-4 text-white shrink-0" />
                 </button>
               </form>
             </div>
@@ -327,8 +328,9 @@ export default function Checkout() {
 
               {/* Safety Disclosures */}
               <div className="py-6 text-center text-[0.68rem] text-neutral-text/40 leading-relaxed bg-white border border-black/5 rounded-2xl shadow-inner">
-                <p className="font-semibold">
-                  🔒 256-Bit SSL Encrypted Connection.
+                <p className="font-semibold flex items-center justify-center gap-1.5">
+                  <LockIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
+                  <span>256-Bit SSL Encrypted Connection.</span>
                 </p>
                 <p className="mt-1">
                   Your card statement details will appear as: <strong>{siteConfig.descriptor}</strong>.

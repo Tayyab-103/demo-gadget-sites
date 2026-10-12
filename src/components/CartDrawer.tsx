@@ -3,6 +3,7 @@
 import React from "react";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
+import { BoltIcon, CloseIcon, LockIcon } from "@/components/Icons";
 
 export default function CartDrawer() {
   const {
@@ -31,24 +32,26 @@ export default function CartDrawer() {
       >
         <div className="p-5 sm:p-6 border-b border-gray-100 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-primary text-secondary flex items-center justify-center text-sm font-black border border-secondary/40">
-              ⚡
+            <div className="w-8 h-8 rounded-lg bg-primary text-secondary flex items-center justify-center text-sm font-black border border-secondary/40 shadow-xs">
+              <BoltIcon className="w-4 h-4 fill-secondary text-secondary" />
             </div>
             <h3 className="m-0 text-base font-black text-primary tracking-tight uppercase">Your Hardware Cart</h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-xl cursor-pointer text-gray-400 hover:text-primary leading-none transition-colors"
+            className="bg-transparent border-none p-1 cursor-pointer text-gray-400 hover:text-primary transition-colors flex items-center justify-center"
             aria-label="Close Cart"
           >
-            ✕
+            <CloseIcon className="w-4 h-4" />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-5 sm:p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-4xl mb-4">⚡</div>
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-4">
+                <BoltIcon className="w-7 h-7 text-secondary fill-secondary" />
+              </div>
               <h4 className="text-base font-black text-primary mb-1 uppercase">Your cart is empty</h4>
               <p className="text-gray-500 text-xs">Explore our cutting-edge electronic devices and GaN chargers.</p>
               <button
@@ -90,7 +93,7 @@ export default function CartDrawer() {
                     alt={item.Name}
                     className="w-[70px] h-[70px] object-cover rounded-xl bg-gray-50 border border-gray-200 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "/img/products/charger.jpg";
+                      e.currentTarget.src = "/img/products/product01.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">
@@ -164,7 +167,7 @@ export default function CartDrawer() {
             {/* Payment Trust Badges */}
             <div className="flex flex-col items-center gap-1.5 pt-2.5 border-t border-gray-200">
               <div className="flex items-center gap-1.5 text-[0.68rem] text-gray-500 font-semibold">
-                <span className="text-secondary">🔒</span>
+                <LockIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
                 <span>256-Bit SSL Encrypted &amp; PCI-DSS Level 1</span>
               </div>
               <div className="flex items-center gap-2">

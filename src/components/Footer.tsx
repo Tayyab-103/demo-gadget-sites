@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon, LockIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -29,9 +30,6 @@ export default function Footer() {
           <div className="lg:col-span-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                {/* <div className="w-9 h-9 rounded-xl bg-secondary text-secondary-text flex items-center justify-center text-lg font-black shadow-md">
-                  ⚡
-                </div> */}
                 <h3 className="text-2xl font-black tracking-tight text-white uppercase">
                   {siteConfig.brandName}
                 </h3>
@@ -44,7 +42,8 @@ export default function Footer() {
             {/* Newsletter */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <h4 className="text-sm font-black text-white uppercase tracking-wider mb-2 flex items-center gap-2">
-                <span>⚡ Join the Hardware Insider — Save 15%</span>
+                <BoltIcon className="w-4 h-4 fill-secondary text-secondary shrink-0" />
+                <span>Join the Hardware Insider — Save 15%</span>
               </h4>
               <p className="text-xs text-gray-400 mb-4 leading-relaxed">
                 Subscribe for hardware firmware releases, early tech product drops, and an instant 15% discount on your first order.
@@ -52,7 +51,7 @@ export default function Footer() {
               
               {subscribed ? (
                 <div className="flex items-center gap-2 text-secondary text-xs font-bold bg-secondary/10 p-3 rounded-xl border border-secondary/30">
-                  <span>✓</span>
+                  <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                   <span>Thank you! Check your inbox for your 15% voucher code.</span>
                 </div>
               ) : (
@@ -166,7 +165,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-2 text-[0.72rem] text-gray-400 font-medium">
-            <span className="text-[#B8CD06]">🔒</span>
+            <LockIcon className="w-3.5 h-3.5 text-[#B8CD06] shrink-0" />
             <span>256-Bit SSL Encrypted &amp; PCI-DSS Level 1 Compliant</span>
           </div>
         </div>
@@ -182,7 +181,7 @@ export default function Footer() {
           </div>
 
           <div className="text-[0.68rem] text-center md:text-right text-gray-400 max-w-md">
-            Statement descriptor: <strong className="text-white">{siteConfig.descriptor}</strong>. MCC Code: <strong className="text-white">{siteConfig.mcc}</strong> ({siteConfig.Product}).
+            Statement descriptor: <strong className="text-white">{siteConfig.descriptor}</strong>.
           </div>
         </div>
 

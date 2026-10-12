@@ -5,6 +5,7 @@ import Link from "next/link";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
+import { BoltIcon } from "@/components/Icons";
 
 const products = productsData as unknown as Product[];
 
@@ -46,7 +47,8 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
         {showHeader && (
           <div className="text-center mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary text-secondary font-extrabold text-xs tracking-widest uppercase mb-3 border border-secondary/30 shadow-xs">
-              <span>⚡ Advanced Hardware Collection</span>
+              <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary shrink-0" />
+              <span>Advanced Hardware Collection</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase text-primary mb-3 tracking-tight">
               Featured <span className="text-secondary">Products</span>

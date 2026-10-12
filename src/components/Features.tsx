@@ -3,6 +3,7 @@
 import React from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -76,7 +77,8 @@ export default function Features() {
         {/* Top Centered Pill Badge */}
         <div className="flex justify-center mb-10 sm:mb-14">
           <div className="inline-flex items-center justify-center gap-2 bg-primary text-secondary px-6 sm:px-7 py-2.5 rounded-full text-xs font-black uppercase tracking-widest shadow-md border border-secondary/30 cursor-default">
-            <span>⚡ The Circuit Advantage</span>
+            <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary" />
+            <span>The Circuit Advantage</span>
           </div>
         </div>
 

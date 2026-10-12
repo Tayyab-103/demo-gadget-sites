@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, StarRating } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -57,7 +58,7 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl text-left">
             <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
-              <span className="text-xs">⚡</span>
+              <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary shrink-0" />
               <span className="text-[0.68rem] font-black uppercase tracking-[0.2em]">
                 VERIFIED TECH EXPERIENCES
               </span>
@@ -73,9 +74,7 @@ export default function Testimonials() {
 
           {/* Aggregate Rating Chip */}
           <div className="flex items-center gap-4 bg-white border border-gray-200 px-6 py-3.5 rounded-2xl flex-shrink-0 shadow-xs">
-            <div className="flex text-amber-500 text-lg">
-              {"★★★★★"}
-            </div>
+            <StarRating count={5} />
             <div className="border-l border-gray-200 pl-4">
               <div className="text-base font-black text-primary leading-none">4.9 / 5.0</div>
               <div className="text-[0.65rem] uppercase tracking-wider text-gray-500 font-bold mt-1">2,400+ Verified Buyers</div>
@@ -109,9 +108,7 @@ export default function Testimonials() {
               <div>
                 {/* Stars & Tag */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="flex text-amber-500 text-lg">
-                    {"★★★★★"}
-                  </div>
+                  <StarRating count={5} />
                   <span className="text-[0.68rem] uppercase font-black text-secondary tracking-widest bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
                     5.0 Verified Hardware Purchase
                   </span>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -10,6 +10,7 @@ import productsData from "../../../../config/products.json";
 import siteConfigData from "../../../../config/site-config.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle, SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon, LockIcon, StarRating } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
@@ -27,21 +28,24 @@ export default function ProductDetail() {
     : { quantity: 1, price: parseFloat(product?.ssPrice || "0") };
 
   const [selectedBundle, setSelectedBundle] = useState<Bundle>(defaultBundle);
-  const [selectedImage, setSelectedImage] = useState<string>(product?.image || "");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentProductId, setCurrentProductId] = useState<string>(productId);
   const [addedNotice, setAddedNotice] = useState(false);
 
-  useEffect(() => {
-    if (product?.image) {
-      setSelectedImage(product.image);
-    }
-  }, [product?.id, product?.image]);
+  if (currentProductId !== productId) {
+    setCurrentProductId(productId);
+    setSelectedImage(null);
+    setSelectedBundle(defaultBundle);
+  }
 
   if (!product) {
     return (
       <>
         <Header />
         <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center bg-white min-h-[60vh] flex flex-col items-center justify-center">
-          <div className="text-4xl mb-3">⚡</div>
+          <div className="w-14 h-14 mx-auto rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-3">
+            <BoltIcon className="w-7 h-7 text-secondary fill-secondary" />
+          </div>
           <h2 className="text-2xl font-black text-primary mb-3 uppercase">Device Not Found</h2>
           <p className="text-gray-500 mb-6 max-w-md mx-auto text-sm">
             The electronic product you are looking for is currently unavailable or has been relocated.
@@ -143,8 +147,9 @@ export default function ProductDetail() {
 
             {/* Right: Product Details & Dropdown Selector (6 cols) */}
             <div className="lg:col-span-6 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-gray-200 shadow-sm">
-              <span className="text-[0.65rem] sm:text-xs font-black uppercase text-[#869600] tracking-[0.2em] bg-gray-100 border border-gray-200 px-3 py-1 rounded-full inline-block mb-3">
-                ⚡ {product.category}
+              <span className="text-[0.65rem] sm:text-xs font-black uppercase text-[#869600] tracking-[0.2em] bg-gray-100 border border-gray-200 px-3 py-1 rounded-full inline-flex items-center gap-1.5 mb-3">
+                <BoltIcon className="w-3 h-3 fill-[#869600] text-[#869600] shrink-0" />
+                <span>{product.category}</span>
               </span>
 
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-3 leading-snug tracking-tight uppercase">
@@ -153,9 +158,7 @@ export default function ProductDetail() {
 
               {/* Star Ratings */}
               <div className="flex items-center gap-2.5 mb-5 pb-5 border-b border-gray-100">
-                <div className="flex text-amber-500 text-xs sm:text-sm">
-                  {"★★★★★"}
-                </div>
+                <StarRating count={5} />
                 <span className="text-xs text-gray-500 font-semibold">5.0 (420+ Verified Reviews)</span>
               </div>
 
@@ -222,7 +225,10 @@ export default function ProductDetail() {
                   </div>
 
                   <div className="mt-2.5 flex items-center justify-between text-[0.68rem] text-gray-500 font-semibold">
-                    <span>⚡ Multi-tier hardware discounts</span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <BoltIcon className="w-3 h-3 fill-secondary text-secondary shrink-0" />
+                      <span>Multi-tier hardware discounts</span>
+                    </span>
                     <span className="text-secondary font-bold">{siteConfig.shippingCarrier} Tracked Delivery</span>
                   </div>
                 </div>
@@ -239,15 +245,16 @@ export default function ProductDetail() {
                 </button>
 
                 {addedNotice && (
-                  <div className="text-center text-xs font-black text-secondary-text bg-secondary/20 py-2.5 rounded-xl border border-secondary animate-fadeIn">
-                    ✓ Device added to your cart!
+                  <div className="text-center text-xs font-black text-secondary-text bg-secondary/20 py-2.5 rounded-xl border border-secondary animate-fadeIn flex items-center justify-center gap-1.5">
+                    <CheckIcon className="w-4 h-4 text-secondary-text shrink-0" />
+                    <span>Device added to your cart!</span>
                   </div>
                 )}
 
                 {/* Guaranteed Safe Checkout Badges */}
                 <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col items-center gap-2">
                   <div className="flex items-center gap-2 text-[0.68rem] text-gray-500 font-semibold">
-                    <span className="text-secondary">🔒</span>
+                    <LockIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
                     <span>Guaranteed Safe &amp; Secure Checkout</span>
                   </div>
                   <div className="flex items-center gap-2">

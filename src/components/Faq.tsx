@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import { BoltIcon, CheckIcon } from "@/components/Icons";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -120,8 +121,8 @@ export default function Faq() {
             <div className="bg-primary text-white rounded-[2rem] p-7 sm:p-9 shadow-xl relative overflow-hidden border border-slate-800">
               <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/15 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center font-black text-2xl mb-6 shadow-inner">
-                ⚡
+              <div className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center mb-6 shadow-inner">
+                <BoltIcon className="w-6 h-6 fill-secondary text-secondary" />
               </div>
 
               <h3 className="text-xl sm:text-2xl font-black text-white mb-2 leading-snug">
@@ -141,7 +142,7 @@ export default function Faq() {
               </a>
 
               <div className="pt-6 border-t border-slate-800 flex items-center gap-2.5 text-xs text-slate-400">
-                <span className="text-secondary font-bold">✓</span>
+                <CheckIcon className="w-4 h-4 text-secondary shrink-0" />
                 <span className="text-[0.72rem] font-medium">Direct US-Based Support</span>
               </div>
             </div>

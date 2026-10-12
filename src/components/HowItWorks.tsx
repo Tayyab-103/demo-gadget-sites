@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { BoltIcon, CheckIcon } from "@/components/Icons";
 import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
@@ -45,7 +46,7 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="max-w-3xl text-left mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-primary text-secondary px-4 py-1.5 rounded-full border border-secondary/30 shadow-xs mb-3.5">
-            <span className="text-xs">⚡</span>
+            <BoltIcon className="w-3.5 h-3.5 fill-secondary text-secondary shrink-0" />
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em]">
               THE MODERN CIRCUIT EXPERIENCE
             </span>
@@ -96,7 +97,7 @@ export default function HowItWorks() {
 
               {/* Bottom Feature Tag */}
               <div className="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-primary">
-                <span className="text-secondary text-sm">✓</span>
+                <CheckIcon className="w-3.5 h-3.5 text-secondary shrink-0" />
                 <span className="text-[0.75rem]">{item.highlight}</span>
               </div>
             </div>

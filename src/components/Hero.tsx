@@ -76,7 +76,7 @@ export default function Hero() {
             href="/shop"
             className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-emerald-600/40 hover:shadow-emerald-600/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer"
           >
-            <span>Explore Catalog</span>
+            <span>Explore Products</span>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

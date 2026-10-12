@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Blind Spot Car Mirror Set",
-    "description": "Never miss a thing with these high-quality, wide-angle blind-spot mirrors. Perfect for cars, trucks, and SUVs. Easy peel-and-stick installation. Shatterproof design with durable ABS frame. Eliminates dangerous blind spots and enhances safety while driving, parking, and reversing.",
+    "name": "Mopar Engine Oil Filter Kit",
+    "description": "Engineered to rigorous OEM specifications, the Mopar Engine Oil Filter Kit delivers superior filtration and extended engine protection. Features advanced multi-fiber filter media to trap microscopic contaminants, a durable heat-resistant anti-drainback valve, and precision seal rings for leak-proof installation. Ensures optimal oil circulation and peak engine performance.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
@@ -12,7 +12,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Auto Safety & Visibility",
+    "category": "Engine & Oil Filters",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,8 +30,8 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Magnetic Suction Car Phone Mount",
-    "description": "Effortless phone mounting with a powerful magnetic grip. Securely holds your phone on dashboard or windshield without messy adhesives. Fully adjustable with 360° rotation for the perfect viewing angle. One-handed operation for quick phone placement and removal. Universal compatibility with all smartphones. Sleek, compact design that complements any car interior.",
+    "name": "ACDelco Gold 213-4514 (19236568) Engine Coolant Temperature Sensor",
+    "description": "The ACDelco Gold Engine Coolant Temperature Sensor provides high-precision thermal monitoring of your vehicle's engine coolant. Relays accurate, real-time operating data to the Engine Control Module (ECM) to optimize fuel delivery, ignition timing, and cooling fan operation. Built with durable brass housing and corrosion-resistant electrical pins for OE-caliber reliability.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
@@ -40,7 +40,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Phone & Gadget Accessories",
+    "category": "Cooling & Engine Sensors",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -59,7 +59,7 @@
     "id": "product3",
     "stickyId": 3,
     "name": "Fuzzy Leopard Steering Wheel Cover Set",
-    "description": "Add a touch of wild style to your car with this adorable leopard print steering wheel cover set. Made from soft, fuzzy material for extra comfort and grip. Includes steering wheel cover, seat belt covers, and gear shift cover. Elastic band ensures snug fit on most steering wheels. Easy to install and clean. Brighten up your car interior with this fun and fashionable accessory.",
+    "description": "Add bold style and year-round comfort to your cabin with this plush leopard print steering wheel cover set. Crafted from high-density, anti-slip microfiber material that shields hands from scorching summer heat and bitter winter chill. The complete 3-piece kit includes a universal steering wheel cover, matching seat belt strap pads, and a gear shift cover.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",
@@ -68,7 +68,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Car Care & Accessories",
+    "category": "Interior & Steering Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

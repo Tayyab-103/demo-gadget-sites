@@ -89,7 +89,7 @@ export default function ProductDetail() {
           <nav className="flex items-center gap-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-6 flex-wrap">
             <Link href="/" className="hover:text-emerald-600 transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/shop" className="hover:text-emerald-600 transition-colors">Catalog</Link>
+            <Link href="/shop" className="hover:text-emerald-600 transition-colors">Product</Link>
             <span>/</span>
             <span className="text-gray-900 truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </nav>

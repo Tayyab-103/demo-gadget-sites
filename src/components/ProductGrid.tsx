@@ -103,64 +103,66 @@ export default function ProductGrid({ showHeader = true }: ProductGridProps) {
                   </h3>
                 </div>
 
-                {/* 2. Image Container with Centered Hover Overlay Buttons */}
+                {/* 2. Image Container */}
                 <div className="relative aspect-square w-full rounded-2xl overflow-hidden flex items-center justify-center p-4 my-2">
-                  {/* Product Image */}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="max-h-full max-w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.src = "/img/products/product01.jpg";
-                    }}
-                  />
+                  <Link
+                    href={`/product/${product.id}`}
+                    className="w-full h-full flex items-center justify-center"
+                    aria-label={`View details for ${product.name}`}
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="max-h-full max-w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.src = "/img/products/product01.jpg";
+                      }}
+                    />
+                  </Link>
+                </div>
 
-                  {/* Hover Backdrop Overlay */}
-                  <div className="absolute inset-0 bg-white/75 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 z-20 pointer-events-none group-hover:pointer-events-auto">
-                    {/* LEARN MORE Button */}
+                {/* 3. Footer: Price & Responsive Action Buttons */}
+                <div className="pt-3 border-t border-gray-100 flex flex-col gap-3">
+                  <div className="flex items-baseline justify-between">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xl sm:text-2xl font-black text-primary group-hover:text-secondary transition-colors duration-200 tracking-tight">
+                        ${currentPrice}
+                      </span>
+                      <span className="text-sm font-semibold text-gray-400 line-through">
+                        ${originalPrice}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Responsive Equal-Sized Action Buttons */}
+                  <div className="grid grid-cols-2 gap-2 sm:gap-2.5 w-full">
                     <Link
                       href={`/product/${product.id}`}
-                      className="w-40 sm:w-44 py-2.5 px-4 rounded-full bg-[#2A2B2E] hover:bg-primary text-white font-extrabold text-xs uppercase tracking-wider text-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95 cursor-pointer"
+                      className="h-10 px-3 rounded-xl bg-gray-100 hover:bg-gray-200 active:scale-95 text-primary font-bold text-xs uppercase tracking-wider flex items-center justify-center text-center transition-all border border-gray-200"
                     >
-                      Learn More
+                      Details
                     </Link>
-
-                    {/* ADD TO CART Button (Shows cart icon on button hover) */}
                     <button
                       type="button"
                       onClick={(e) => handleAddToCart(product, currentPrice, e)}
-                      className="group/btn w-40 sm:w-44 py-2.5 px-4 rounded-full bg-secondary text-secondary-text font-extrabold text-xs uppercase tracking-wider text-center shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center gap-1.5"
+                      className="h-10 px-3 rounded-xl bg-secondary hover:brightness-105 active:scale-95 text-secondary-text font-black text-xs uppercase tracking-wider shadow-sm hover:shadow flex items-center justify-center gap-1.5 cursor-pointer transition-all border border-secondary/40"
                     >
-                      {/* Animated Shopping Cart Icon (Reveals smoothly when hovering this button) */}
-                      <span className="inline-flex items-center justify-center overflow-hidden transition-all duration-300 max-w-0 opacity-0 group-hover/btn:max-w-6 group-hover/btn:opacity-100 group-hover/btn:mr-1">
-                        <svg
-                          className="w-4 h-4 shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2.5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                          />
-                        </svg>
-                      </span>
-                      <span>Add To Cart</span>
+                      <svg
+                        className="w-4 h-4 shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2.5"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                      <span>Add</span>
                     </button>
-                  </div>
-                </div>
-
-                {/* 3. Footer: Price */}
-                <div className="pt-3 border-t border-gray-100 flex items-baseline justify-between">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-xl sm:text-2xl font-black text-primary group-hover:text-secondary transition-colors duration-200 tracking-tight">
-                      ${currentPrice}
-                    </span>
-                    <span className="text-sm font-semibold text-gray-400 line-through">
-                      ${originalPrice}
-                    </span>
                   </div>
                 </div>
               </div>

@@ -146,11 +146,17 @@ export default function Footer() {
           
           {/* Brand & Identity Column */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-secondary text-primary flex items-center justify-center font-black">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
+            <Link
+              href="/"
+              className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.01]"
+              aria-label={`${siteConfig.brandName} Homepage`}
+            >
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-neutral-bg flex items-center justify-center border border-white/10 shadow-sm p-0.5">
+                <img
+                  src={siteConfig.footerLogoImage || siteConfig.logoImage || "/img/logo.jpg"}
+                  alt={`${siteConfig.brandName} Logo`}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-black uppercase tracking-tight text-white leading-none">

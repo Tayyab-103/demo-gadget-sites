@@ -35,7 +35,7 @@ export default function ProductGrid() {
         </div>
 
         {/* 3-Column Product Cards Grid (Matching ShopPage Design) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 xl:gap-8 mb-14">
           {products.map((product) => {
             const firstBundle = product.bundles?.[0];
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
@@ -63,7 +63,7 @@ export default function ProductGrid() {
                 </Link>
 
                 {/* Card Body */}
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-5 xl:p-6 flex flex-col flex-1">
 
                   <Link href={`/product/${product.id}`} className="block">
                     <h3 className="text-lg sm:text-xl font-black uppercase text-primary tracking-tight group-hover:text-secondary transition-colors line-clamp-2">
@@ -76,26 +76,26 @@ export default function ProductGrid() {
                   </p>
 
                   {/* Price & Action Row */}
-                  <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between gap-3">
-                    <div>
+                  <div className="mt-5 pt-4 border-t border-black/5 flex flex-wrap items-center justify-between gap-y-3 gap-x-2">
+                    <div className="shrink-0">
                       <span className="text-[0.62rem] uppercase tracking-wider text-neutral-text/50 block">From</span>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-2xl font-black text-primary">${currentPrice}</span>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xl xl:text-2xl font-black text-primary">${currentPrice}</span>
                         <span className="text-xs font-bold text-neutral-text/40 line-through">${originalPrice}</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 xl:gap-2 shrink-0">
                       <button
                         onClick={(e) => handleQuickAdd(product, e)}
-                        className="p-3 rounded-full bg-secondary/15 text-primary hover:bg-secondary transition-colors cursor-pointer"
+                        className="p-2.5 xl:p-3 rounded-full bg-secondary/15 text-primary hover:bg-secondary hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer shrink-0"
                         title="Quick Add 1 Unit"
                         aria-label="Quick Add"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
+                          width="15"
+                          height="15"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -108,9 +108,24 @@ export default function ProductGrid() {
                       </button>
                       <Link
                         href={`/product/${product.id}`}
-                        className="bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-full transition-all duration-200 shadow-sm"
+                        className="inline-flex items-center justify-center gap-1.5 bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text font-bold text-[0.68rem] xl:text-xs uppercase tracking-wider px-3.5 py-2.5 xl:px-4.5 xl:py-2.5 rounded-full transition-all duration-200 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap group/btn shrink-0"
                       >
-                        Configure
+                        <span>Select Options</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="transition-transform duration-200 group-hover/btn:translate-x-0.5"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m12 5 7 7-7 7" />
+                        </svg>
                       </Link>
                     </div>
                   </div>

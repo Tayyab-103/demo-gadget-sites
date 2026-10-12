@@ -164,10 +164,12 @@ export default function Header() {
             aria-label={`${siteConfig.brandName} Homepage`}
           >
             {/* Atelier Star Monogram Badge */}
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-primary text-secondary flex items-center justify-center shadow-md group-hover:bg-secondary group-hover:text-primary transition-all duration-300 relative overflow-hidden border border-secondary/20">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-500 group-hover:rotate-45">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-neutral-bg flex items-center justify-center border border-black/5 shadow-xs p-0.5 flex-shrink-0"> 
+              <img
+                src={siteConfig.logoImage || "/img/logo.jpg"}
+                alt={`${siteConfig.brandName} Logo`}
+                className="w-full h-full object-contain"
+              />
             </div>
 
             <div className="flex flex-col">

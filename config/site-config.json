@@ -12,9 +12,9 @@
   "shippingCarrier": "UPS",
   "shippingPeriod": "3-5",
   "trialPeriod": 14,
-  "useImageLogo": false,
-  "logoImage": "/img/logo.png",
-  "footerLogoImage": "/img/logo.png",
+  "useImageLogo": true,
+  "logoImage": "/img/logo.jpg",
+  "footerLogoImage": "/img/logo.jpg",
   "theme": {
     "primaryColor": "#141A29",
     "primaryTextColor": "#ffffff",

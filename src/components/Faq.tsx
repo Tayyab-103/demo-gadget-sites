@@ -82,7 +82,7 @@ export default function Faq() {
         </div>
 
         {/* Centered Category Filters */}
-        <div className="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
           {categories.map((cat) => {
             const isActive = activeCategory === cat;
             return (

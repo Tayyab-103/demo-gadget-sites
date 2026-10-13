@@ -104,7 +104,7 @@ export default function Header() {
           <div className="flex items-center">
             <button
               onClick={toggleMenu}
-              className="flex items-center justify-center text-[#11281A] hover:text-[#265C1E] transition-colors cursor-pointer p-1.5 focus:outline-none"
+              className="md:hidden flex items-center justify-center text-[#11281A] hover:text-[#265C1E] transition-colors cursor-pointer p-2.5 -m-1 focus:outline-none"
               aria-label="Toggle Navigation Menu"
               aria-expanded={isMenuOpen}
             >

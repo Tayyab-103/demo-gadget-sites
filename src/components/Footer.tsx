@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Newsletter Box */}
-          <div className="w-full lg:w-auto min-w-[320px] max-w-md">
+          <div className="w-full lg:w-auto lg:min-w-[320px] max-w-md">
             <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-2 font-serif">
               Join The Gardeners Guild
             </h4>

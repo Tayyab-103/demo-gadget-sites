@@ -78,7 +78,7 @@ export default function Hero() {
           />
           
           {/* Header Visibility Protection Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/60 lg:via-black/20 lg:to-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#173822]/60 via-transparent to-transparent" />
         </div>
 
@@ -103,8 +103,9 @@ export default function Hero() {
         <div className="flex items-center gap-3.5">
           <button
             onClick={() => setIsMenuOpen((v) => !v)}
-            className="text-[#132A1C] hover:text-[#255236] transition-colors p-1 cursor-pointer"
+            className="md:hidden text-white hover:text-emerald-300 transition-colors p-2.5 -m-1 cursor-pointer"
             aria-label="Toggle Menu"
+            aria-expanded={isMenuOpen}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="6" x2="21" y2="6" />
@@ -113,7 +114,7 @@ export default function Hero() {
             </svg>
           </button>
           
-          <Link href="/" className="font-extrabold text-sm sm:text-base tracking-[0.22em] uppercase text-[#132A1C] font-sans">
+          <Link href="/" className="font-extrabold text-sm sm:text-base tracking-[0.22em] uppercase text-white lg:text-[#132A1C] font-sans drop-shadow-sm lg:drop-shadow-none">
             THORNWICK
           </Link>
         </div>
@@ -212,20 +213,20 @@ export default function Hero() {
           
           {/* Eyebrow: HEALTHY GARDENS. HEIRLOOM TOOLS. with horizontal line */}
           <div className="flex items-center gap-3.5 mb-4">
-            <span className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#1E432A]">
+            <span className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#78C470] lg:text-[#1E432A]">
               HEALTHY GARDENS. HEIRLOOM TOOLS.
             </span>
-            <span className="w-9 h-[1.5px] bg-[#1E432A]/50 rounded-full" />
+            <span className="w-9 h-[1.5px] bg-[#78C470]/60 lg:bg-[#1E432A]/50 rounded-full shrink-0" />
           </div>
 
           {/* Headline: Great Gardens / Start Here */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] xl:text-[4rem] font-extrabold tracking-tight text-[#11281A] leading-[1.06] mb-5 font-sans">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] xl:text-[4rem] font-extrabold tracking-tight text-white lg:text-[#11281A] leading-[1.06] mb-5 font-sans">
             Great Gardens <br />
-            <span className="text-[#153820]">Start Here</span>
+            <span className="text-[#78C470] lg:text-[#153820]">Start Here</span>
           </h1>
 
           {/* Product Brand Description */}
-          <p className="text-[#132A1C]/80 text-xs sm:text-sm md:text-[0.92rem] leading-relaxed max-w-sm sm:max-w-md mb-6">
+          <p className="text-white/90 lg:text-[#132A1C]/80 text-sm md:text-[0.92rem] leading-relaxed max-w-sm sm:max-w-md mb-6">
             Hand-forged carbon steel tools engineered for a lifetime of planting and cultivating.
           </p>
 
@@ -241,13 +242,13 @@ export default function Hero() {
           </div>
 
           {/* 4 Tool Feature Categories Row */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-4 pt-4 border-t border-black/5 max-w-sm sm:max-w-md">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4 pt-4 border-t border-white/25 lg:border-black/5 max-w-sm sm:max-w-md">
             {toolCategories.map((cat, idx) => (
               <div key={idx} className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                <div className="text-[#265C1E] mb-1">
+                <div className="text-[#78C470] lg:text-[#265C1E] mb-1">
                   {cat.icon}
                 </div>
-                <span className="text-[0.52rem] sm:text-[0.58rem] font-extrabold uppercase tracking-wider text-[#11281A]">
+                <span className="text-[0.6rem] sm:text-[0.62rem] font-extrabold uppercase tracking-wide sm:tracking-wider text-white lg:text-[#11281A]">
                   {cat.label}
                 </span>
               </div>

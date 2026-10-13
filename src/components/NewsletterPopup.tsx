@@ -66,7 +66,8 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-[9999] flex items-center justify-center p-6 transition-opacity duration-300">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-[9999] overflow-y-auto transition-opacity duration-300">
+      <div className="min-h-full flex items-center justify-center p-6">
       <div className="bg-white rounded-[2rem] w-full max-w-[480px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl">
         {/* Close Button */}
         <button
@@ -138,6 +139,7 @@ export default function NewsletterPopup() {
             </form>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

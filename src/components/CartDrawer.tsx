@@ -53,13 +53,13 @@ export default function CartDrawer() {
                 ✦
               </div>
               <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">
-                Your atelier bag is currently empty.
+                Your cart is empty.
               </p>
               <button
                 className="inline-block font-bold text-center whitespace-nowrap bg-[#18121E] text-white hover:bg-[#C59B7E] hover:text-[#18121E] transition-all py-3.5 px-7 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-md"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Couture Collection
+                Continue Shopping
               </button>
             </div>
           ) : (

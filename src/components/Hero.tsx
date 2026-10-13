@@ -26,7 +26,7 @@ export default function Hero() {
           
           {/* Eyebrow */}
           <span className="text-[0.68rem] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#E6C2AC] block mb-4 select-none">
-            THE 2026 COUTURE REPERTOIRE
+            THE 2026 COLLECTION
           </span>
 
           {/* Headline */}

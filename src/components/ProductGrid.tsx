@@ -57,7 +57,7 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
         {!hideHeader ? (
           <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.3em] text-[#C59B7E] block mb-2 select-none">
-              SIGNATURE COUTURE REPERTOIRE
+              OUR COLLECTION
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-[#18121E] leading-[1.12] mb-3">
               The Atelier <span className="italic text-[#C59B7E]">Creations.</span>
@@ -218,7 +218,7 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
                       className="inline-flex items-center justify-center rounded-full bg-[#18121E] hover:bg-[#C59B7E] hover:text-[#18121E] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-all cursor-pointer shadow-md"
                       aria-label={`Add ${product.name} to shopping bag`}
                     >
-                      Acquire Piece
+                      Add to Cart
                     </button>
                   </div>
                 </div>

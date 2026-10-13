@@ -203,7 +203,7 @@ export default function Features() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#18121E]/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-4 right-4">
                 <span className="inline-block px-3 py-1 rounded-full bg-[#18121E]/80 backdrop-blur-md text-[0.62rem] font-bold uppercase tracking-wider text-white border border-[#C59B7E]/40">
-                  Austin Repertoire
+                  Austin Collection
                 </span>
               </div>
             </div>

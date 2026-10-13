@@ -10,7 +10,6 @@ import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
 import ProductCarousel from "@/components/ProductCarousel";
-import Features from "@/components/Features";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
 const products = productsData as unknown as Product[];
@@ -165,7 +164,7 @@ export default function ProductDetail() {
                   className="group inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-gradient-to-r from-[#E6C2AC] via-[#C59B7E] to-[#B88564] hover:brightness-110 text-[#18121E] transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-lg shadow-[#C59B7E]/20"
                   onClick={handleAddToCart}
                 >
-                  Acquire Atelier Piece
+                  Add to Cart
                   <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
               </div>
@@ -196,7 +195,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </main>
-      <Features />
       <Footer />
       <CartDrawer />
       <NewsletterPopup />

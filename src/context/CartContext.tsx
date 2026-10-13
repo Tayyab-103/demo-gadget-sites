@@ -24,13 +24,18 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 let memoryCart: CartItem[] = [];
 let isLoadedFromStorage = false;
 const listeners = new Set<() => void>();
+const EMPTY_CART: CartItem[] = [];
+
+function getServerCart(): CartItem[] {
+  return EMPTY_CART;
+}
 
 function emitChange() {
   listeners.forEach((l) => l());
 }
 
 function getStoredCart(): CartItem[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return EMPTY_CART;
   if (!isLoadedFromStorage) {
     isLoadedFromStorage = true;
     try {
@@ -81,7 +86,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const cart = useSyncExternalStore(
     subscribeCart,
     getStoredCart,
-    () => []
+    getServerCart
   );
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {

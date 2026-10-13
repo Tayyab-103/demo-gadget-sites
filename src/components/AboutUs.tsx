@@ -158,7 +158,7 @@ export default function AboutUs() {
             })}
 
             {/* CTAs */}
-            <div className="flex items-center gap-4 pt-4 pl-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-4 sm:pl-2">
               <Link
                 href="/about"
                 className="inline-flex items-center justify-center font-bold text-xs sm:text-sm text-white bg-[#18121E] hover:bg-[#C59B7E] hover:text-[#18121E] transition-all py-3.5 px-8 rounded-full text-center uppercase tracking-wider shadow-md"
@@ -169,7 +169,7 @@ export default function AboutUs() {
                 href="/shop"
                 className="inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-[#18121E] hover:text-[#8C654B] transition-colors py-3.5 px-4 underline underline-offset-8 decoration-1 decoration-[#C59B7E]/50 uppercase tracking-wider"
               >
-                View Repertoire
+                Shop Collection
               </Link>
             </div>
 

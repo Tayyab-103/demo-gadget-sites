@@ -29,7 +29,7 @@ export default function CartDrawer() {
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-white/10 flex items-center justify-between">
+        <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between">
           <h3 className="m-0 text-base font-black text-white tracking-tight uppercase">Workshop Cart</h3>
           <button
             onClick={() => setIsCartOpen(false)}
@@ -40,7 +40,7 @@ export default function CartDrawer() {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
               <div className="text-white/20 text-5xl mb-4">🛒</div>
@@ -99,7 +99,8 @@ export default function CartDrawer() {
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="bg-[#16171A] border border-white/10 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-white/10 text-xs font-bold text-white disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          aria-label="Decrease quantity"
+                          className="bg-[#16171A] border border-white/10 w-8 h-8 sm:w-6 sm:h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-white/10 text-xs font-bold text-white disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
@@ -107,7 +108,8 @@ export default function CartDrawer() {
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="bg-[#16171A] border border-white/10 w-6 h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-white/10 text-xs font-bold text-white disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          aria-label="Increase quantity"
+                          className="bg-[#16171A] border border-white/10 w-8 h-8 sm:w-6 sm:h-6 rounded-md flex items-center justify-center cursor-pointer hover:bg-white/10 text-xs font-bold text-white disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
@@ -131,7 +133,7 @@ export default function CartDrawer() {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-6 border-t border-white/10 bg-[#1A1C20]">
+          <div className="p-4 sm:p-6 border-t border-white/10 bg-[#1A1C20]">
             <div className="flex items-center justify-between mb-5">
               <span className="font-bold text-white uppercase text-xs tracking-widest">Subtotal</span>
               <span className="font-black text-lg text-[#E5F2C9]">

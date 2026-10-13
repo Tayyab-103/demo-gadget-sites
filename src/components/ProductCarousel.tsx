@@ -11,7 +11,7 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
   return (
     <div className="lg:sticky top-[100px]">
       <div className="rounded-2xl overflow-hidden border border-white/10">
-        <div className="relative bg-[#23252B] shadow-xl overflow-hidden h-[340px] sm:h-[420px] md:h-[460px] flex items-center justify-center">
+        <div className="relative bg-[#23252B] shadow-xl overflow-hidden h-[280px] sm:h-[420px] md:h-[460px] flex items-center justify-center">
           <img
             src={images[activeIndex]}
             alt={`${name} - image ${activeIndex + 1}`}
@@ -44,7 +44,7 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
       </div>
 
       {images.length > 1 && (
-        <div className="flex gap-3 mt-4">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mt-4">
           {images.map((img, idx) => (
             <button
               key={img}

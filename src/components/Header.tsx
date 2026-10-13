@@ -79,22 +79,22 @@ export default function Header() {
       ref={headerRef}
       className="sticky top-0 z-50 bg-[#0E0F11]/95 backdrop-blur-md border-b border-white/8 text-white transition-all duration-300"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-6 lg:px-10 py-5">
-        
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 px-4 sm:px-6 lg:px-10 py-4 sm:py-5">
+
         {/* Left: Brand Logo matching the reference KM style */}
         <Link
           href="/"
           onClick={closeAll}
-          className="flex items-center gap-3 text-white no-underline group flex-shrink-0"
+          className="flex items-center gap-2 sm:gap-3 text-white no-underline group min-w-0"
         >
-          <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white group-hover:text-[#E5E0D8] transition-colors font-sans">
+          <span className="text-xl sm:text-3xl font-black tracking-tighter text-white group-hover:text-[#E5E0D8] transition-colors font-sans">
             CW
           </span>
-          <div className="flex flex-col leading-tight border-l border-white/20 pl-3">
-            <span className="text-xs sm:text-sm font-bold text-white tracking-wide">
+          <div className="flex flex-col leading-tight border-l border-white/20 pl-2 sm:pl-3 min-w-0">
+            <span className="text-xs sm:text-sm font-bold text-white tracking-wide truncate">
               Copper Whisk
             </span>
-            <span className="text-[0.65rem] text-white/50 tracking-wider">
+            <span className="text-[0.65rem] text-white/50 tracking-wider truncate">
               Kitchen Workshop
             </span>
           </div>
@@ -114,7 +114,7 @@ export default function Header() {
         </nav>
 
         {/* Right: Phone Contact + Controls */}
-        <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-6 flex-shrink-0">
           
           {/* Phone block matching reference */}
           <a
@@ -146,7 +146,7 @@ export default function Header() {
           </a>
 
           {/* Action Buttons: Search, Cart & Mobile Menu */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5">
             {/* Search Button */}
             <button
               onClick={toggleSearch}

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-[92vh] bg-[#0E0F11] text-white flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-[85svh] sm:min-h-[90svh] lg:min-h-[92svh] bg-[#0E0F11] text-white flex flex-col justify-center overflow-hidden">
       
       {/* Background Seamless Kitchen Visual */}
       <div className="absolute inset-0 z-0 pointer-events-none flex justify-end">
@@ -13,11 +13,11 @@ export default function Hero() {
           <img
             src="/hero-kitchen.jpg"
             alt="Modern luxury dark kitchen with wooden island, copper whisk, shears, and digital scale"
-            className="w-full h-full object-cover object-center sm:object-right opacity-40 sm:opacity-80 lg:opacity-100"
+            className="w-full h-full object-cover object-center sm:object-right opacity-90 lg:opacity-100"
           />
 
-          {/* Full dark overlay on small screens to guarantee text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0E0F11] via-[#0E0F11]/80 to-[#0E0F11]/50 lg:hidden" />
+          {/* Light overlay on small screens: image stays visible, text stays legible */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0E0F11]/90 via-[#0E0F11]/45 to-[#0E0F11]/20 lg:hidden" />
 
           {/* Left blend gradient for desktop */}
           <div className="hidden lg:block absolute inset-y-0 left-0 w-[45%] bg-gradient-to-r from-[#0E0F11] via-[#0E0F11]/90 to-transparent" />
@@ -58,7 +58,7 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xs sm:text-base text-white/75 leading-relaxed max-w-md mb-8 sm:mb-10 drop-shadow-sm font-normal">
+          <p className="text-xs sm:text-base text-white/90 sm:text-white/75 leading-relaxed max-w-md mb-8 sm:mb-10 drop-shadow-md font-normal">
             Order direct from our workshop and receive free nationwide shipping, 1-year warranty coverage, and a 60-day risk-free culinary trial.
           </p>
 

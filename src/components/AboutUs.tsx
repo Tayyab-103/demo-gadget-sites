@@ -51,7 +51,7 @@ export default function AboutUs() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#121316]/90 via-transparent to-transparent" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-white flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white flex flex-wrap items-end justify-between gap-2">
                 <div>
                   <span className="text-[0.62rem] uppercase tracking-widest font-bold text-[#E5F2C9] block">
                     Verified Craftsmanship

@@ -127,7 +127,7 @@ export default function Checkout() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
             {/* Form Column */}
-            <div className="lg:col-span-7 bg-[#16171A] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-2xl">
+            <div className="lg:col-span-7 bg-[#16171A] rounded-2xl p-5 sm:p-8 border border-white/10 shadow-2xl">
               {errorMsg && (
                 <div className="bg-red-950/80 border border-red-500/50 text-red-200 p-4 rounded-xl mb-6 text-xs md:text-sm">
                   <strong>Transaction Status:</strong> {errorMsg}
@@ -253,7 +253,7 @@ export default function Checkout() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-[#E5F2C9] text-[#0E0F11] hover:bg-white transition-all duration-300 py-4 px-8 rounded-xl text-xs uppercase tracking-widest cursor-pointer shadow-lg mt-2 disabled:opacity-50"
+                  className="w-full inline-flex items-center justify-center font-bold text-center bg-[#E5F2C9] text-[#0E0F11] hover:bg-white transition-all duration-300 py-4 px-4 sm:px-8 rounded-xl text-xs uppercase tracking-widest cursor-pointer shadow-lg mt-2 disabled:opacity-50"
                 >
                   {loading ? "Authorizing Security Protocol..." : `Complete Order — $${grandTotal}`}
                 </button>
@@ -274,14 +274,14 @@ export default function Checkout() {
               <div className="flex flex-col gap-4 mb-6">
                 {cart.map((item) => (
                   <div key={item.Id} className="flex items-center justify-between gap-4 pb-4 border-b border-white/5">
-                    <div className="flex items-center gap-3">
-                      <img src={item.Image} alt={item.Name} className="w-12 h-12 object-contain rounded-lg bg-[#23252B] p-1 border border-white/10" />
-                      <div>
+                    <div className="flex items-center gap-3 min-w-0">
+                      <img src={item.Image} alt={item.Name} className="w-12 h-12 object-contain rounded-lg bg-[#23252B] p-1 border border-white/10 flex-shrink-0" />
+                      <div className="min-w-0">
                         <div className="text-xs font-bold text-white line-clamp-1">{item.Name}</div>
                         <div className="text-[0.65rem] text-white/50">{item.Label || `${item.Qty} Units`}</div>
                       </div>
                     </div>
-                    <div className="text-xs font-bold text-[#E5F2C9]">
+                    <div className="text-xs font-bold text-[#E5F2C9] flex-shrink-0">
                       ${(parseFloat(String(item.Price)) * item.Qty).toFixed(2)}
                     </div>
                   </div>

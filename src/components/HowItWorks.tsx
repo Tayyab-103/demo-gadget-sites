@@ -59,14 +59,14 @@ export default function HowItWorks() {
         </div>
 
         {/* 3 Step Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {steps.map((item) => (
             <div
               key={item.step}
               className="group bg-[#16171A] rounded-2xl p-6 border border-white/10 hover:border-white/25 hover:bg-[#1A1C20] transition-all duration-300 flex flex-col justify-between shadow-xl"
             >
               {/* Top Row */}
-              <div className="flex items-center justify-between gap-2 mb-6">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                 <span className="text-3xl font-black text-white/20 group-hover:text-[#E5F2C9] transition-colors duration-300">
                   {item.step}
                 </span>

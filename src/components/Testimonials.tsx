@@ -51,7 +51,7 @@ export default function Testimonials() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <div className="flex text-[#E5F2C9] gap-1">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -66,11 +66,11 @@ export default function Testimonials() {
         </div>
 
         {/* 3 Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-[#16171A] rounded-2xl p-8 border border-white/8 hover:border-white/20 transition-all duration-300 flex flex-col justify-between shadow-xl"
+              className="bg-[#16171A] rounded-2xl p-6 sm:p-8 border border-white/8 hover:border-white/20 transition-all duration-300 flex flex-col justify-between shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-6">

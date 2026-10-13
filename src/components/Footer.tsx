@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="text-2xl font-black tracking-tight text-white">
                 CW
               </span>
-              <span className="text-lg font-bold uppercase tracking-wide text-white border-l border-white/20 pl-3">
+              <span className="text-base sm:text-lg font-bold uppercase tracking-wide text-white border-l border-white/20 pl-3">
                 {siteConfig.brandName}
               </span>
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
               Chef-grade culinary utensils, high-accuracy digital scales, and ergonomic prep tools forged for passionate cooks, bakers, and pastry artisans.
             </p>
 
-            <div className="flex items-center gap-4 text-xs text-white/40">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/40">
               <span>Austin, TX Workshop</span>
               <span>&bull;</span>
               <span>100% Food Safe</span>

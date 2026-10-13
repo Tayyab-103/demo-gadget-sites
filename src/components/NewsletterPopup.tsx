@@ -67,7 +67,7 @@ export default function NewsletterPopup() {
 
   return (
     <div className="fixed inset-0 bg-black/75 backdrop-blur-md z-9999 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
-      <div className="bg-[#16171A] rounded-2xl w-full max-w-[480px] border border-white/15 relative flex flex-col overflow-hidden shadow-2xl text-white">
+      <div className="bg-[#16171A] rounded-2xl w-full max-w-[480px] max-h-[90dvh] border border-white/15 relative flex flex-col overflow-y-auto shadow-2xl text-white">
         
         {/* Close Button */}
         <button
@@ -79,7 +79,7 @@ export default function NewsletterPopup() {
         </button>
 
         {/* Visual Header */}
-        <div className="h-[160px] relative bg-[#23252B]">
+        <div className="h-[140px] sm:h-[160px] relative bg-[#23252B] flex-shrink-0">
           <img
             src="/images/whisk-action-1.jpg"
             alt="Pastry chef holding copper balloon whisk"

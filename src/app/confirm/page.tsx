@@ -16,7 +16,7 @@ function ConfirmContent() {
   const today = "September 2, 2026";
 
   return (
-    <div className="bg-[#16171A] rounded-2xl p-8 md:p-12 border border-white/10 text-center max-w-[580px] mx-auto shadow-2xl text-white">
+    <div className="bg-[#16171A] rounded-2xl p-6 sm:p-8 md:p-12 border border-white/10 text-center max-w-[580px] mx-auto shadow-2xl text-white">
       {/* Success Badge */}
       <div className="w-16 h-16 rounded-full border-2 border-[#E5F2C9] text-[#E5F2C9] flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-[#E5F2C9]/10 shadow-sm">
         ✓
@@ -29,21 +29,21 @@ function ConfirmContent() {
 
       {/* Order Info Table */}
       <div className="bg-[#1A1C20] border border-white/10 rounded-xl p-5 text-left mb-8 text-xs leading-relaxed">
-        <div className="flex justify-between items-center mb-3">
+        <div className="flex justify-between items-center gap-4 mb-3">
           <span className="text-white/40 uppercase tracking-wider text-[0.65rem] font-bold">Order Reference:</span>
-          <strong className="text-[#E5F2C9] font-bold tracking-wider">{orderId}</strong>
+          <strong className="text-[#E5F2C9] font-bold tracking-wider text-right break-all">{orderId}</strong>
         </div>
-        <div className="flex justify-between items-center mb-3">
+        <div className="flex justify-between items-center gap-4 mb-3">
           <span className="text-white/40 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
-          <span className="text-white font-medium">{today}</span>
+          <span className="text-white font-medium text-right">{today}</span>
         </div>
-        <div className="flex justify-between items-center mb-3">
+        <div className="flex justify-between items-center gap-4 mb-3">
           <span className="text-white/40 uppercase tracking-wider text-[0.65rem] font-bold">Carrier:</span>
-          <span className="text-white font-medium">{siteConfig.shippingCarrier}</span>
+          <span className="text-white font-medium text-right">{siteConfig.shippingCarrier}</span>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-4">
           <span className="text-white/40 uppercase tracking-wider text-[0.65rem] font-bold">Estimated Delivery:</span>
-          <span className="text-white font-medium">{siteConfig.shippingPeriod} Business Days</span>
+          <span className="text-white font-medium text-right">{siteConfig.shippingPeriod} Business Days</span>
         </div>
       </div>
 

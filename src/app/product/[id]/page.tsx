@@ -84,19 +84,19 @@ export default function ProductDetail() {
             <span className="text-white/80 font-semibold truncate max-w-[200px] sm:max-w-none">{product.name}</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-start">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start">
+
             {/* Product Image Gallery Column */}
-            <div className="bg-[#16171A] rounded-2xl p-6 border border-white/10 shadow-2xl">
+            <div className="bg-[#16171A] rounded-2xl p-4 sm:p-6 border border-white/10 shadow-2xl">
               <ProductCarousel images={product.images && product.images.length > 0 ? product.images : [product.image]} name={product.name} />
             </div>
 
             {/* Product Details & Dropdown Column */}
-            <div className="bg-[#16171A] rounded-2xl p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
-              
+            <div className="bg-[#16171A] rounded-2xl p-5 sm:p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col justify-between">
+
               <div>
                 {/* Category & Badge */}
-                <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="text-[0.68rem] font-bold uppercase text-[#E5F2C9] tracking-[0.2em] bg-white/5 px-3 py-1 rounded border border-white/10">
                     {product.category || "Culinary Workshop Tool"}
                   </span>
@@ -123,10 +123,10 @@ export default function ProductDetail() {
                 </div>
 
                 {/* Main Dynamic Price Display */}
-                <div className="bg-[#1A1C20] rounded-xl p-5 border border-white/10 mb-6 flex items-baseline justify-between">
+                <div className="bg-[#1A1C20] rounded-xl p-5 border border-white/10 mb-6 flex flex-wrap items-baseline justify-between gap-3">
                   <div>
                     <div className="text-[0.65rem] text-white/40 uppercase tracking-widest font-bold mb-1">Total Price</div>
-                    <div className="text-3xl font-black text-[#E5F2C9] flex items-baseline gap-2">
+                    <div className="text-2xl sm:text-3xl font-black text-[#E5F2C9] flex flex-wrap items-baseline gap-x-2">
                       ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                       {selectedBundle.quantity > 1 && (
                         <span className="text-xs text-white/50 font-normal">
@@ -187,7 +187,7 @@ export default function ProductDetail() {
                       </div>
                     </div>
 
-                    <div className="mt-2 text-[0.7rem] text-white/40 flex items-center justify-between">
+                    <div className="mt-2 text-[0.7rem] text-white/40 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
                       <span>✓ Selected: {selectedBundle.quantity} {selectedBundle.quantity > 1 ? "Units Multi-Pack" : "Single Unit"}</span>
                       <span>✓ Free Nationwide Delivery</span>
                     </div>
@@ -199,7 +199,7 @@ export default function ProductDetail() {
               {/* Add to Cart Actions */}
               <div className="pt-4 border-t border-white/10">
                 <button
-                  className="w-full inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-[#E5F2C9] text-[#0E0F11] hover:bg-white hover:shadow-[0_0_30px_rgba(229,242,201,0.5)] transition-all duration-300 py-4 px-8 rounded-xl cursor-pointer text-xs uppercase tracking-widest shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2 font-bold text-center bg-[#E5F2C9] text-[#0E0F11] hover:bg-white hover:shadow-[0_0_30px_rgba(229,242,201,0.5)] transition-all duration-300 py-4 px-4 sm:px-8 rounded-xl cursor-pointer text-xs uppercase tracking-widest shadow-lg"
                   onClick={handleAddToCart}
                 >
                   Add to Workshop Cart &rarr;

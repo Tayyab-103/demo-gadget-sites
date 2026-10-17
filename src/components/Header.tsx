@@ -67,11 +67,11 @@ export default function Header() {
             {/* Left Column: Menu Button & Logo & Desktop Nav */}
             <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
               
-              {/* Hamburger Menu Button */}
+              {/* Hamburger Menu Button (Mobile / Tablet only) */}
               <button
                 type="button"
                 onClick={() => setIsMobOpen(true)}
-                className="p-1.5 -ml-1 text-primary hover:text-secondary transition-colors focus:outline-none flex flex-col justify-center items-center gap-[4px] w-7 h-7"
+                className="lg:hidden p-1.5 -ml-1 text-primary hover:text-secondary transition-colors focus:outline-none flex flex-col justify-center items-center gap-[4px] w-7 h-7"
                 aria-label="Open navigation menu"
               >
                 <span className="w-[18px] h-[2px] bg-primary block rounded-full transition-colors"></span>

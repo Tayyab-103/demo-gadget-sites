@@ -161,8 +161,12 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span className="text-[0.7rem] uppercase tracking-wider">Payment methods:</span>
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-1 bg-white/10 rounded text-[0.65rem] font-bold text-white tracking-wider">VISA</span>
-              <span className="px-2.5 py-1 bg-white/10 rounded text-[0.65rem] font-bold text-white tracking-wider">MASTERCARD</span>
+              <div className="flex items-center justify-center h-6 shadow-xs">
+                <img src="/img/visa.png" alt="Visa" className="h-8 w-auto object-contain" />
+              </div>
+              <div className="flex items-center justify-center h-6 shadow-xs">
+                <img src="/img/mastercard.png" alt="Mastercard" className="h-8 w-auto object-contain" />
+              </div>
             </div>
           </div>
         </div>

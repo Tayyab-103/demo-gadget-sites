@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
+import { Josefin_Sans, Raleway } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,38 +7,26 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium sports gear and training gadgets online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Explore curated contemporary women's fashion, elegant knitwear, seasonal dresses, and chic wardrobe essentials.`;
 
-// Preload the most common fonts
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800"],
+// Preload Fashionee's authentic fonts
+const josefinSans = Josefin_Sans({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-josefin",
   display: "swap",
 });
 
-const inter = Inter({
+const raleway = Raleway({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-raleway",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: siteConfig.brandName,
+  title: `${siteConfig.brandName} - Contemporary Women's Fashion & Apparel`,
   description: siteDescription,
   openGraph: {
     title: siteConfig.brandName,
@@ -55,21 +43,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Select dynamic font variable class
-  let selectedFontClass = poppins.variable;
-  let activeFontVar = "var(--font-poppins)";
-
-  if (siteConfig.theme.fontFamily === "Inter") {
-    selectedFontClass = inter.variable;
-    activeFontVar = "var(--font-inter)";
-  } else if (siteConfig.theme.fontFamily === "Montserrat") {
-    selectedFontClass = montserrat.variable;
-    activeFontVar = "var(--font-montserrat)";
-  } else if (siteConfig.theme.fontFamily === "Roboto") {
-    selectedFontClass = roboto.variable;
-    activeFontVar = "var(--font-roboto)";
-  }
-
   // Extract theme values
   const {
     primaryColor,
@@ -81,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" className={`${josefinSans.variable} ${raleway.variable} h-full antialiased`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
@@ -91,11 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             --secondary-text-color: ${secondaryTextColor};
             --neutral-bg-color: ${neutralBgColor};
             --neutral-text-color: ${neutralTextColor};
-            --font-family: ${activeFontVar};
+            --font-josefin: var(--font-josefin);
+            --font-raleway: var(--font-raleway);
           }
         `}} />
       </head>
-      <body>
+      <body className="min-h-full flex flex-col font-sans">
         <CartProvider>
           {children}
         </CartProvider>

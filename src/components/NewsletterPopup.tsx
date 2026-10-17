@@ -36,7 +36,7 @@ export default function NewsletterPopup() {
     const timer = window.setTimeout(() => {
       hasSpentTimeOnPage = true;
       showWhenReady();
-    }, 12000);
+    }, 10000);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -59,39 +59,38 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      }, 2000);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-6 transition-opacity duration-300 backdrop-blur-sm">
+      <div className="bg-white rounded-3xl w-full max-w-[500px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl animate-fadeIn">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:text-secondary shadow transition-all"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
         {/* Visual Header */}
-        <div className="h-[180px] relative">
+        <div className="h-[200px] relative">
           <img
-            src="https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=900&q=80"
-            alt="Athlete stretching with training gear"
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80"
+            alt="Modern Meadow VIP Collection"
             className="w-full h-full object-cover absolute inset-0"
           />
-          {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Exclusive Gear Drop
+            <span className="text-[0.68rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
+              VIP Atelier Access
             </span>
-            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
+            <h3 className="font-heading text-2xl font-bold text-white m-0 tracking-tight uppercase">
               Save 15% Today!
             </h3>
           </div>
@@ -101,41 +100,37 @@ export default function NewsletterPopup() {
         <div className="p-8">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
+              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4 font-bold">
                 ✓
               </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
+              <h4 className="font-heading text-primary font-bold text-lg mb-2 uppercase">Welcome to Modern Meadow!</h4>
+              <p className="text-neutral-text/60 text-xs">
+                Use code <strong className="text-secondary font-bold">MEADOW15</strong> at checkout for 15% off.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get training tips, early access to new gear, and <strong>15% off</strong> on your first order.
+              <p className="text-xs sm:text-sm text-neutral-text/70 leading-relaxed mb-6">
+                Join the {siteConfig.brandName} circle. Subscribe for private seasonal sales, lookbooks, and <strong>15% off</strong> on your first order.
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
                   required
+                  className="w-full bg-[#FAF9F7] border border-black/15 rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-secondary"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
+                className="fashion-button w-full text-xs py-3.5"
               >
-                Unlock 15% Discount
+                Claim My 15% Discount
               </button>
-
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
-              </span>
             </form>
           )}
         </div>

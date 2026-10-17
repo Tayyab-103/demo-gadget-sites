@@ -1,180 +1,202 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const contactImages = [
-  "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=900&q=80",
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
-  "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80",
-];
-
 export default function Contact() {
-  const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % contactImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (name.trim() && email.trim() && message.trim()) {
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    }
+  };
 
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="contact">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-[800px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">Reach Out</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Have Questions? <span className="text-secondary">Get in Touch</span>
-          </h2>
-          <p className="text-neutral-text/60 text-sm md:text-base">
-            Our customer care representatives are available to help guide you on products, shipping, or billing support.
-          </p>
-        </div>
+    <div>
+      {/* Inner Top Header Banner */}
+      <section className="bg-[#FAF9F7] py-12 md:py-16 border-b border-black/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="font-heading text-4xl sm:text-5xl font-bold uppercase tracking-tight text-primary mb-3">
+                Contact Us
+              </h1>
+              <nav aria-label="Breadcrumb" className="breadcrumbs-list">
+                <Link href="/">Home</Link>
+                <span className="breadcrumbs-separator" />
+                <span className="text-primary font-bold">Contact</span>
+              </nav>
+            </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
-          {/* Visual + Info Column */}
-          <div className="relative rounded-[2rem] overflow-hidden min-h-[350px] lg:min-h-0 shadow-xl">
-            {contactImages.map((src, idx) => (
+            <div className="relative aspect-[2/1] rounded-2xl overflow-hidden shadow-sm bg-[#EAE6E1]">
               <img
-                key={src}
-                src={src}
-                alt="Friendly customer support team ready to help"
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                }`}
-                style={{ transitionProperty: "opacity, transform" }}
+                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1000&q=80"
+                alt="Modern Meadow Customer Concierge"
+                className="w-full h-full object-cover"
               />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-primary/10" />
-
-            <div className="relative z-10 h-full flex flex-col justify-end p-8">
-              {/* Image dots */}
-              <div className="flex gap-2 mb-8">
-                {contactImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === activeImage ? "w-8 bg-secondary" : "w-4 bg-white/30"
-                    }`}
-                    aria-label={`Show image ${idx + 1}`}
-                  />
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </div>
-                  <div>
-                    <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Call Us</div>
-                    <div className="font-bold text-sm text-white mt-0.5">{siteConfig.phone}</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </div>
-                  <div>
-                    <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Email Us</div>
-                    <div className="font-bold text-sm text-white mt-0.5 break-all">{siteConfig.email}</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Form Column */}
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-black/5">
-            {contactSubmitted ? (
-              <div className="text-center py-10 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md bg-secondary/5">
-                  ✓
-                </div>
-                <h3 className="text-primary font-bold text-xl mb-3">
-                  Message Sent Successfully!
-                </h3>
-                <p className="text-neutral-text/60 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out. We have received your query and will reply within 24 hours.
+      {/* Main Contacts Section */}
+      <div className="py-16 md:py-24 bg-white border-b border-black/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Left Column: Get In Touch Form (7 cols) */}
+            <div className="lg:col-span-7 bg-[#FAF9F7] rounded-3xl p-8 sm:p-12 border border-black/5 shadow-sm">
+              <div className="mb-8">
+                <span className="category-subtitle">
+                  we are <b>here</b> for you
+                </span>
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold uppercase tracking-tight text-primary mt-1 mb-2">
+                  Get In Touch
+                </h2>
+                <p className="text-xs sm:text-sm text-neutral-text/60">
+                  Write us your impressions, sizing questions, or styling requests.
                 </p>
-                <button
-                  className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
-                  onClick={() => setContactSubmitted(false)}
-                >
-                  Send Another Message
-                </button>
               </div>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setContactSubmitted(true);
-                  (e.target as HTMLFormElement).reset();
-                }}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Full Name</label>
-                    <input
-                      type="text"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                      placeholder="Enter your name"
+
+              {submitted ? (
+                <div className="p-8 bg-green-50 border border-green-200 text-green-800 rounded-2xl text-center space-y-2">
+                  <div className="text-2xl">✓</div>
+                  <h3 className="font-heading text-lg font-bold uppercase">Message Received</h3>
+                  <p className="text-xs leading-relaxed">
+                    Thank you for reaching out to Modern Meadow! A dedicated fashion consultant will respond within 24 business hours.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSubmitted(false)}
+                    className="fashion-button mt-4 text-xs"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-[0.7rem] uppercase font-bold tracking-wider text-neutral-text/60 block mb-1">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Enter your name"
+                        required
+                        className="w-full bg-white border border-black/15 rounded-xl px-4 py-3 text-xs sm:text-sm text-primary focus:outline-none focus:border-secondary"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-[0.7rem] uppercase font-bold tracking-wider text-neutral-text/60 block mb-1">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email"
+                        required
+                        className="w-full bg-white border border-black/15 rounded-xl px-4 py-3 text-xs sm:text-sm text-primary focus:outline-none focus:border-secondary"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-[0.7rem] uppercase font-bold tracking-wider text-neutral-text/60 block mb-1">
+                      Message
+                    </label>
+                    <textarea
+                      rows={5}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Write us your feedback or question..."
                       required
+                      className="w-full bg-white border border-black/15 rounded-xl p-4 text-xs sm:text-sm text-primary focus:outline-none focus:border-secondary"
                     />
                   </div>
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Email Address</label>
-                    <input
-                      type="email"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                      placeholder="Enter your email"
-                      required
-                    />
+
+                  <button
+                    type="submit"
+                    className="fashion-button w-full sm:w-auto text-xs py-3.5 px-8"
+                  >
+                    Send a Message
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* Right Column: Contact Details (5 cols) */}
+            <div className="lg:col-span-5 space-y-8">
+              
+              {/* Contact Card 1: Phone & Email */}
+              <section className="bg-[#FAF9F7] p-8 rounded-3xl border border-black/5">
+                <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-secondary mb-3">
+                  Contacts:
+                </h3>
+                <div className="space-y-1.5 text-sm sm:text-base font-bold text-primary">
+                  <div>
+                    <a href={`tel:${siteConfig.phone}`} className="hover:text-secondary transition-colors">
+                      {siteConfig.phone}
+                    </a>
+                  </div>
+                  <div>
+                    <a href={`mailto:${siteConfig.email}`} className="text-xs sm:text-sm text-neutral-text/70 hover:text-secondary transition-colors font-medium break-all">
+                      {siteConfig.email}
+                    </a>
                   </div>
                 </div>
+              </section>
 
-                <div className="flex flex-col mb-5">
-                  <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Subject</label>
-                  <input
-                    type="text"
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                    placeholder="What can we help you with?"
-                    required
-                  />
+              {/* Contact Card 2: Location */}
+              <section className="bg-[#FAF9F7] p-8 rounded-3xl border border-black/5">
+                <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-secondary mb-3">
+                  Location &amp; Corporate:
+                </h3>
+                <div className="text-xs sm:text-sm leading-relaxed text-neutral-text/80">
+                  <strong className="text-primary block font-bold mb-1">{siteConfig.corpName}</strong>
+                  <span>{siteConfig.address}</span>
+                  <div className="text-[0.72rem] text-neutral-text/50 mt-2">
+                    Billing Descriptor: <span className="font-mono text-primary font-bold">{siteConfig.descriptor}</span>
+                  </div>
                 </div>
+              </section>
 
-                <div className="flex flex-col mb-8">
-                  <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Message</label>
-                  <textarea
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg resize-none placeholder:text-neutral-text/30"
-                    rows={5}
-                    placeholder="Write your message here..."
-                    required
-                  ></textarea>
+              {/* Contact Card 3: Find Us */}
+              <section className="bg-[#FAF9F7] p-8 rounded-3xl border border-black/5">
+                <h3 className="font-heading text-xs font-bold uppercase tracking-widest text-secondary mb-3">
+                  Find Us:
+                </h3>
+                <div className="flex items-center gap-6 text-sm font-bold text-primary">
+                  <a href="#" className="hover:text-secondary">Fb</a>
+                  <a href="#" className="hover:text-secondary">Tw</a>
+                  <a href="#" className="hover:text-secondary">Ins</a>
+                  <a href="#" className="hover:text-secondary">Pt</a>
                 </div>
+              </section>
 
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-md hover:shadow-lg"
-                >
-                  Send Message
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
-                </button>
-              </form>
-            )}
+            </div>
+
           </div>
+
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ interface CartContextType {
   cart: CartItem[];
   isCartOpen: boolean;
   setIsCartOpen: (isOpen: boolean) => void;
-  addToCart: (product: Product, quantity: number, price: number | string, label?: string) => void;
+  addToCart: (product: Product, quantity: number, price: number | string, label?: string, size?: string) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -41,7 +41,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem("cartPdtArr", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
+  const addToCart = (product: Product, quantity: number, price: number | string, label = "", size = "M") => {
     // If site configuration limits cart to one product
     const limitOne = siteConfig.oneProductCartLimit === "yes";
 
@@ -58,7 +58,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
         trlPrice: product.ssPrice,
         EnableMaxqty: product.bundles ? product.bundles.length : 1,
         Label: label,
-        bundles: product.bundles
+        bundles: product.bundles,
+        size: size,
+        oldPrice: product.oldPrice,
       };
       setCart([newItem]);
       setIsCartOpen(true);
@@ -66,7 +68,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     setCart((prevCart) => {
-      const existingItemIndex = prevCart.findIndex((item) => item.Id === product.id);
+      // Find item with matching Id AND matching size
+      const existingItemIndex = prevCart.findIndex((item) => item.Id === product.id && (item.size || "M") === size);
 
       if (existingItemIndex > -1) {
         // Update existing item
@@ -94,7 +97,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
           trlPrice: product.ssPrice,
           EnableMaxqty: product.bundles ? product.bundles.length : 1,
           Label: label,
-          bundles: product.bundles
+          bundles: product.bundles,
+          size: size,
+          oldPrice: product.oldPrice,
         };
         return [...prevCart, newItem];
       }
@@ -117,8 +122,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       prevCart.map((item) => {
         if (item.Id !== productId) return item;
 
-        // Snap to the real configured bundle tier price instead of unit price x qty,
-        // since sticky.io bundle pricing is non-linear per tier.
         const matchedBundle = item.bundles?.find((b) => b.quantity === quantity);
         if (matchedBundle) {
           return {
@@ -151,7 +154,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   };
 
   const getCartCount = () => {
-    return cart.reduce((count, item) => count + item.Qty, 0);
+    return cart.reduce((total, item) => total + item.Qty, 0);
   };
 
   return (

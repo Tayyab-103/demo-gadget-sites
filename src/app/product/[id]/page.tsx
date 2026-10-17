@@ -2,17 +2,50 @@
 
 import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
+import BestSellers from "@/components/BestSellers";
 import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
-import { Product, Bundle } from "@/types";
-import ProductCarousel from "@/components/ProductCarousel";
+import { Product } from "@/types";
 
 const products = productsData as unknown as Product[];
 
-export default function ProductDetail() {
+interface Review {
+  id: number;
+  author: string;
+  date: string;
+  rating: number;
+  text: string;
+}
+
+const initialReviews: Review[] = [
+  {
+    id: 1,
+    author: "Melissa Johnson",
+    date: "August 12, 2026",
+    rating: 5,
+    text: "The fabric drape is exquisite. The seams are cleanly tailored, and the fit is wonderfully flattering for both casual days and dinners.",
+  },
+  {
+    id: 2,
+    author: "Patricia Filips",
+    date: "July 28, 2026",
+    rating: 5,
+    text: "Such lovely organic cotton! It breathed beautifully in the afternoon sun and washed without any shrinkage. Will order in another shade.",
+  },
+  {
+    id: 3,
+    author: "Olivia Jenkins",
+    date: "June 15, 2026",
+    rating: 5,
+    text: "Arrived within 3 business days in lovely packaging. The European sizing was accurate and comfortable. 10/10 recommend.",
+  },
+];
+
+export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const { addToCart } = useCart();
@@ -20,25 +53,36 @@ export default function ProductDetail() {
   const productId = typeof params.id === "string" ? params.id : Array.isArray(params.id) ? params.id[0] : "";
   const product = products.find((p) => p.id === productId);
 
-  // Set default selected bundle (usually the 1 bottle or the most popular one)
-  const defaultBundle: Bundle = product?.bundles && product.bundles.length > 0
-    ? product.bundles[0]
-    : { quantity: 1, price: parseFloat(product?.ssPrice || "0") };
+  const [selectedImage, setSelectedImage] = useState<string>(product?.image || "");
+  const [selectedSize, setSelectedSize] = useState<string>(product?.sizes ? product.sizes[0] : "M");
+  const [quantity, setQuantity] = useState(1);
+  const [activeTab, setActiveTab] = useState<"description" | "reviews">("description");
+  const [isWishlisted, setIsWishlisted] = useState(false);
 
-  const [selectedBundle, setSelectedBundle] = useState<Bundle>(defaultBundle);
+  // Reviews state
+  const [reviewsList, setReviewsList] = useState<Review[]>(initialReviews);
+  const [newReviewAuthor, setNewReviewAuthor] = useState("");
+  const [newReviewEmail, setNewReviewEmail] = useState("");
+  const [newReviewText, setNewReviewText] = useState("");
+  const [newReviewRating, setNewReviewRating] = useState(5);
+  const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
   if (!product) {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
-          <h2 className="text-2xl font-black uppercase text-primary mb-4">Product Not Found</h2>
-          <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The product you are looking for does not exist or has been removed from our catalog.</p>
+        <main className="max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
+          <h2 className="font-heading text-3xl font-bold uppercase text-primary mb-4">
+            Product Not Found
+          </h2>
+          <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">
+            The garment you are looking for does not exist or has been moved from our boutique catalog.
+          </p>
           <button
-            className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
-            onClick={() => router.push("/")}
+            className="fashion-button"
+            onClick={() => router.push("/shop")}
           >
-            Return to Home
+            Return to Shop
           </button>
         </main>
         <Footer />
@@ -47,162 +91,398 @@ export default function ProductDetail() {
   }
 
   const handleAddToCart = () => {
-    // Calculate unit price for cart context
-    const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
-    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Single Pack";
-    
-    addToCart(product, selectedBundle.quantity, unitPrice, label);
+    addToCart(product, quantity, product.ssPrice, `Size: ${selectedSize}`, selectedSize);
   };
 
-  const startingPrice = parseFloat(product.ssPrice);
+  const handleAddReview = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newReviewAuthor.trim() && newReviewText.trim()) {
+      const newReviewItem: Review = {
+        id: Date.now(),
+        author: newReviewAuthor,
+        date: "Just now",
+        rating: newReviewRating,
+        text: newReviewText,
+      };
+      setReviewsList([newReviewItem, ...reviewsList]);
+      setNewReviewAuthor("");
+      setNewReviewEmail("");
+      setNewReviewText("");
+      setReviewSubmitted(true);
+      setTimeout(() => setReviewSubmitted(false), 4000);
+    }
+  };
+
+  const productImages = product.images && product.images.length > 0 ? product.images : [product.image];
+  const activeDisplayImage = selectedImage || product.image;
 
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg py-12 md:py-20 relative overflow-hidden">
-        {/* Background decorative glow spot */}
-        <div className="glow-bg absolute top-[10%] right-[-250px] opacity-30 pointer-events-none" />
+      <main className="flex-grow bg-[#FAF9F7]">
+        
+        {/* Inner Top Header Banner with Breadcrumbs */}
+        <section className="bg-white py-8 md:py-12 border-b border-black/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="font-heading text-2xl sm:text-3xl font-bold uppercase tracking-tight text-primary mb-2">
+              Shop Details
+            </h1>
+            <nav aria-label="Breadcrumb" className="breadcrumbs-list">
+              <Link href="/">Home</Link>
+              <span className="breadcrumbs-separator" />
+              <Link href="/shop">Shop</Link>
+              <span className="breadcrumbs-separator" />
+              <span className="text-primary font-bold">{product.name}</span>
+            </nav>
+          </div>
+        </section>
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
-            
-            {/* Product Image Section */}
-            <div className="bg-white rounded-3xl p-6 border border-black/5 shadow-md">
-              <ProductCarousel images={product.images && product.images.length > 0 ? product.images : [product.image]} name={product.name} />
-            </div>
+        {/* Product Card Section */}
+        <section className="py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-3xl border border-black/5 p-6 sm:p-10 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              
+              {/* Left Column: Gallery & Thumbnails (6 cols) */}
+              <div className="lg:col-span-6 space-y-4">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[#FAF9F7] border border-black/5 shadow-inner">
+                  <img
+                    src={activeDisplayImage}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-all duration-300"
+                  />
 
-            {/* Product Details Section */}
-            <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
-              <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Dietary Supplement"}
-              </span>
+                  {/* Corner Badges */}
+                  <div className="absolute top-4 left-4 flex flex-col gap-1.5 pointer-events-none">
+                    {product.tag === "Sale" && (
+                      <span className="item-tag item-tag_red">Sale</span>
+                    )}
+                    {product.tag === "New" && (
+                      <span className="item-tag item-tag_green">New</span>
+                    )}
+                  </div>
 
-              <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">
-                {product.name}
-              </h1>
-
-              {/* Star Ratings */}
-              <div className="flex items-center gap-2.5 mb-6">
-                <div className="flex gap-0.5 text-secondary">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  {/* Wishlist Heart */}
+                  <button
+                    type="button"
+                    onClick={() => setIsWishlisted(!isWishlisted)}
+                    className={`absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm shadow flex items-center justify-center transition-all ${
+                      isWishlisted ? "text-red-500 scale-110" : "text-black/40 hover:text-red-500"
+                    }`}
+                    aria-label="Save to Wishlist"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                     </svg>
-                  ))}
+                  </button>
                 </div>
-                <span className="text-xs text-neutral-text/45 font-medium">(14 Verified Customer Reviews)</span>
-              </div>
 
-              <div className="text-2xl font-extrabold text-primary mb-6 flex items-baseline gap-2">
-                ${parseFloat(String(selectedBundle.price)).toFixed(2)}
-                {selectedBundle.quantity > 1 && (
-                  <span className="text-xs md:text-sm font-medium text-neutral-text/40 ml-1">
-                    (${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} / unit)
-                  </span>
+                {/* Thumbnails Row */}
+                {productImages.length > 1 && (
+                  <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-2">
+                    {productImages.map((img, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedImage(img)}
+                        className={`w-20 h-24 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 cursor-pointer ${
+                          activeDisplayImage === img ? "border-primary shadow-md" : "border-black/10 opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img src={img} alt={`${product.name} thumb ${idx}`} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
 
-              <p className="text-neutral-text/75 mb-8 text-xs md:text-sm leading-relaxed border-t border-black/5 pt-5">
-                {product.description}
-              </p>
+              {/* Right Column: Product Info & Actions (6 cols) */}
+              <div className="lg:col-span-6 flex flex-col justify-between">
+                <div>
+                  <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary block mb-2">
+                    {product.category}
+                  </span>
 
-              {/* Bundle Packages Selector */}
-              {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-8">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Select Package Quantity:</h4>
-                  <div className="flex flex-col gap-3.5">
-                    {product.bundles.map((bundle) => {
-                      const isActive = selectedBundle.quantity === bundle.quantity;
-                      // Calculate savings relative to base price * quantity
-                      const baseItemPrice = startingPrice;
-                      const regularPrice = baseItemPrice * bundle.quantity;
-                      const savings = regularPrice - bundle.price;
-                      
-                      return (
-                        <div
-                          key={bundle.quantity}
-                          onClick={() => setSelectedBundle(bundle)}
-                          className={`border rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all duration-300 ${
-                            isActive
-                              ? "border-secondary bg-secondary/5 shadow-sm"
-                              : "border-black/5 bg-white hover:border-black/15"
-                          }`}
-                        >
-                          <div className="flex items-center gap-4">
-                            <div
-                              className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 transition-all ${
-                                isActive ? "border-secondary" : "border-black/25"
-                              }`}
-                            >
-                              {isActive && (
-                                <div className="w-2.5 h-2.5 rounded-full bg-secondary" />
-                              )}
-                            </div>
+                  <h2 className="font-heading text-3xl sm:text-4xl font-bold uppercase tracking-tight text-primary mb-3 leading-tight">
+                    {product.name}
+                  </h2>
 
-                            <div>
-                              <strong className="text-sm font-bold text-primary">
-                                {bundle.quantity > 1 ? `Pack of ${bundle.quantity}` : "Single Unit"}
-                              </strong>
-                              {bundle.quantity > 1 && savings > 0 && (
-                                <span className="bg-secondary text-primary text-[0.62rem] font-bold tracking-widest uppercase px-2 py-0.5 rounded-md ml-3 inline-block">
-                                  Save ${savings.toFixed(2)}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="text-right">
-                            <div className="font-extrabold text-base text-primary">
-                              ${parseFloat(String(bundle.price)).toFixed(2)}
-                            </div>
-                            {bundle.quantity > 1 && (
-                              <div className="text-[0.65rem] text-neutral-text/40 mt-0.5">
-                                ${((parseFloat(String(bundle.price)) / bundle.quantity)).toFixed(2)} / unit
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                  {/* Rating & Feedback text */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-1 text-secondary text-sm">
+                      {"★".repeat(5)}
+                    </div>
+                    <span className="text-xs text-neutral-text/50 font-medium">
+                      ({reviewsList.length} verified customer reviews)
+                    </span>
                   </div>
-                </div>
-              )}
 
-              {/* Add to Cart Actions */}
-              <div className="flex gap-4 mb-10 mt-6">
-                <button
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
-                  onClick={handleAddToCart}
-                >
-                  Add to Cart
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </button>
-              </div>
-
-              {/* What's In The Box */}
-              {product.showIngredients && product.ingredientsImage && (
-                <div className="border-t border-black/5 pt-8 mt-10">
-                  <h3 className="text-base md:text-lg font-bold text-primary mb-3">What&apos;s In The Box</h3>
-                  <p className="text-xs text-neutral-text/50 mb-6 leading-relaxed">
-                    Every unit ships fully assembled and ready to use, backed by a 1-year manufacturer&apos;s warranty against defects.
+                  <p className="text-neutral-text/75 text-xs sm:text-sm leading-relaxed mb-6 pb-6 border-b border-black/10">
+                    {product.description}
                   </p>
 
-                  <div className="bg-neutral-bg border border-black/5 rounded-xl p-6 flex items-center justify-center shadow-inner">
-                    <img
-                      src={product.ingredientsImage}
-                      alt="Product packaging"
-                      className="max-w-full h-auto rounded-lg max-h-[350px] object-contain bg-white p-2 border border-black/5"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/400x300?text=Packaging";
-                      }}
-                    />
+                  {/* Characteristics Table */}
+                  <ul className="space-y-2.5 text-xs mb-6">
+                    <li className="flex items-center gap-4">
+                      <span className="text-neutral-text/50 uppercase tracking-wider w-24">Status:</span>
+                      <span className="font-bold text-green-700 flex items-center gap-1">
+                        <span className="w-2 h-2 rounded-full bg-green-600 inline-block" />
+                        In Stock &amp; Ready to Ship
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <span className="text-neutral-text/50 uppercase tracking-wider w-24">Article / SKU:</span>
+                      <span className="font-bold text-primary font-mono">{product.sku || "000845DZ1"}</span>
+                    </li>
+                    <li className="flex items-center gap-4">
+                      <span className="text-neutral-text/50 uppercase tracking-wider w-24">Fabric:</span>
+                      <span className="font-medium text-primary">100% Organic European Blend</span>
+                    </li>
+                  </ul>
+
+                  {/* Pricing */}
+                  <div className="flex items-baseline gap-3 mb-8">
+                    <span className="font-heading text-3xl font-extrabold text-primary">
+                      ${product.ssPrice}
+                    </span>
+                    {product.oldPrice && (
+                      <span className="text-lg text-neutral-text/40 line-through">
+                        ${product.oldPrice}
+                      </span>
+                    )}
                   </div>
+
+                  {/* Size Selector */}
+                  {product.sizes && product.sizes.length > 0 && (
+                    <div className="mb-8">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                          Select Size:
+                        </span>
+                        <span className="text-xs text-neutral-text/50 cursor-pointer underline hover:text-primary">
+                          Size Guide
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        {product.sizes.map((size) => (
+                          <label key={size} className="size-option-label">
+                            <input
+                              type="radio"
+                              name="apparel-size"
+                              value={size}
+                              checked={selectedSize === size}
+                              onChange={() => setSelectedSize(size)}
+                              className="sr-only"
+                            />
+                            <span className="size-badge uppercase">
+                              {size}
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Quantity & Add to Cart */}
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-black/10">
+                    <div className="count-stepper self-center sm:self-auto">
+                      <button
+                        type="button"
+                        onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                        aria-label="Decrease Quantity"
+                      >
+                        -
+                      </button>
+                      <input type="text" readOnly value={quantity} />
+                      <button
+                        type="button"
+                        onClick={() => setQuantity((q) => q + 1)}
+                        aria-label="Increase Quantity"
+                      >
+                        +
+                      </button>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={handleAddToCart}
+                      className="fashion-button flex-1 py-4 text-center cursor-pointer"
+                    >
+                      Add To Shopping Bag
+                    </button>
+                  </div>
+
                 </div>
-              )}
+              </div>
 
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Product Tabs: Description & Reviews */}
+        <section className="py-12 border-b border-black/5 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Tabs Header */}
+            <div className="flex items-center gap-8 border-b border-black/10 mb-8">
+              <button
+                type="button"
+                onClick={() => setActiveTab("description")}
+                className={`py-3 text-sm font-bold uppercase tracking-wider border-b-2 cursor-pointer transition-colors ${
+                  activeTab === "description" ? "border-primary text-primary" : "border-transparent text-neutral-text/40 hover:text-primary"
+                }`}
+              >
+                Description &amp; Care
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("reviews")}
+                className={`py-3 text-sm font-bold uppercase tracking-wider border-b-2 cursor-pointer transition-colors ${
+                  activeTab === "reviews" ? "border-primary text-primary" : "border-transparent text-neutral-text/40 hover:text-primary"
+                }`}
+              >
+                Customer Reviews ({reviewsList.length})
+              </button>
+            </div>
+
+            {/* Description Tab Content */}
+            {activeTab === "description" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs sm:text-sm text-neutral-text/75 leading-relaxed">
+                <div>
+                  <h3 className="font-heading text-base font-bold uppercase text-primary mb-3">
+                    Fabrication &amp; Craftsmanship
+                  </h3>
+                  <p className="mb-4">
+                    Every piece in the Modern Meadow ready-to-wear edit is tailored with meticulous attention to line, drape, and movement. Sourced directly from certified heritage mills, the yarns are pre-washed for shrink resistance and lasting tactile softness.
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1.5 text-xs text-neutral-text/70">
+                    <li>100% natural, breathable organic weave</li>
+                    <li>French bound seams and reinforced stress points</li>
+                    <li>Environmentally responsible low-impact dyes</li>
+                    <li>Machine wash delicate cycle in cold water; hang to dry</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-heading text-base font-bold uppercase text-primary mb-3">
+                    Shipping &amp; Complimentary Returns
+                  </h3>
+                  <p className="mb-4">
+                    We ship swiftly via USPS / UPS in sustainable recyclable mailers. If your fit or color isn&apos;t completely ideal, return or exchange within 30 days of arrival with tags attached.
+                  </p>
+                  <p className="text-xs text-neutral-text/60">
+                    Boutique Support: support@modernmeadowwomenswearshop.com
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Reviews Tab Content */}
+            {activeTab === "reviews" && (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                {/* Reviews List (7 cols) */}
+                <div className="lg:col-span-7 space-y-6">
+                  {reviewsList.map((rev) => (
+                    <article key={rev.id} className="p-6 rounded-2xl bg-[#FAF9F7] border border-black/5">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-heading font-bold text-sm text-primary uppercase">
+                          {rev.author}
+                        </h4>
+                        <span className="text-[0.68rem] text-neutral-text/40 uppercase tracking-wider">
+                          {rev.date}
+                        </span>
+                      </div>
+                      <div className="text-secondary text-xs mb-2">
+                        {"★".repeat(rev.rating)}
+                      </div>
+                      <p className="text-xs sm:text-sm text-neutral-text/75 leading-relaxed">
+                        {rev.text}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+
+                {/* Leave a Review Form (5 cols) */}
+                <div className="lg:col-span-5 bg-[#FAF9F7] p-8 rounded-3xl border border-black/5">
+                  <h3 className="font-heading text-lg font-bold uppercase tracking-wider text-primary mb-2">
+                    Leave a Review
+                  </h3>
+                  <p className="text-xs text-neutral-text/60 mb-6">
+                    Share your impressions of the fit, fabric, and styling with our community.
+                  </p>
+
+                  {reviewSubmitted ? (
+                    <div className="p-4 bg-green-50 border border-green-200 text-green-700 text-xs font-bold rounded-xl text-center">
+                      ✓ Thank you! Your review has been posted.
+                    </div>
+                  ) : (
+                    <form onSubmit={handleAddReview} className="space-y-4">
+                      {/* Rating Selector */}
+                      <div>
+                        <label className="text-xs uppercase tracking-wider font-bold text-neutral-text/70 block mb-1">
+                          Rating
+                        </label>
+                        <div className="flex gap-2 text-xl text-secondary cursor-pointer">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <button
+                              key={star}
+                              type="button"
+                              onClick={() => setNewReviewRating(star)}
+                              className="focus:outline-none"
+                            >
+                              {star <= newReviewRating ? "★" : "☆"}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <textarea
+                        value={newReviewText}
+                        onChange={(e) => setNewReviewText(e.target.value)}
+                        placeholder="Write your feedback on fit, material, and sizing..."
+                        required
+                        rows={4}
+                        className="w-full bg-white border border-black/15 rounded-xl p-3 text-xs focus:outline-none focus:border-secondary"
+                      />
+
+                      <input
+                        type="text"
+                        value={newReviewAuthor}
+                        onChange={(e) => setNewReviewAuthor(e.target.value)}
+                        placeholder="Your full name"
+                        required
+                        className="w-full bg-white border border-black/15 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-secondary"
+                      />
+
+                      <input
+                        type="email"
+                        value={newReviewEmail}
+                        onChange={(e) => setNewReviewEmail(e.target.value)}
+                        placeholder="Your email address"
+                        required
+                        className="w-full bg-white border border-black/15 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-secondary"
+                      />
+
+                      <button
+                        type="submit"
+                        className="fashion-button w-full text-xs"
+                      >
+                        Post a Review
+                      </button>
+                    </form>
+                  )}
+                </div>
+
+              </div>
+            )}
+
+          </div>
+        </section>
+
+        {/* You Viewed / Recommended Products */}
+        <BestSellers />
+
       </main>
       <Footer />
       <CartDrawer />

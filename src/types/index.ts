@@ -17,6 +17,12 @@ export interface Product {
   ssPrice: string;
   ssShipping: string;
   bundles?: Bundle[];
+  oldPrice?: string;
+  sizes?: string[];
+  sku?: string;
+  tag?: string;
+  rating?: number;
+  reviewCount?: number;
 }
 
 export interface CartItem {
@@ -32,6 +38,8 @@ export interface CartItem {
   EnableMaxqty: number;
   Label: string;
   bundles?: Bundle[];
+  size?: string;
+  oldPrice?: string;
 }
 
 export interface ThemeConfig {
@@ -45,6 +53,9 @@ export interface ThemeConfig {
 }
 
 export interface SiteConfig {
+  Product?: string;
+  mcc?: string;
+  Processor?: string;
   brandName: string;
   websiteUrl: string;
   email: string;

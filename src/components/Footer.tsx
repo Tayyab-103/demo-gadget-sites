@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import Logo from "@/components/Logo";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -14,133 +15,156 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubscribed(true);
-    setEmail("");
+    if (email.trim()) {
+      setSubscribed(true);
+      setEmail("");
+    }
   };
 
   return (
-    <footer className="bg-primary text-white py-16 md:py-24" id="footer">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10">
+    <footer className="bg-[#181818] text-[#FAF9F7] pt-16 pb-12 border-t border-white/5 relative overflow-hidden" id="footer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 mb-24 md:mb-32">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
           
-          {/* Left Column: CTA & Subscribe */}
-          <div className="w-full lg:w-[40%] flex flex-col">
-            <h2 className="text-3xl md:text-4xl font-normal leading-tight mb-8">
-              Talk with <br />
-              an expert at {siteConfig.brandName}
-            </h2>
-            
+          {/* Col 1: Brand & Socials (4 cols) */}
+          <div className="lg:col-span-4 flex flex-col justify-between">
+            <div>
+              <Link href="/" className="inline-block mb-4" aria-label={siteConfig.brandName}>
+                <Logo className="h-6 w-auto text-white hover:text-secondary transition-colors" />
+              </Link>
+              <p className="text-white/60 text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
+                Curated contemporary womenswear crafted with timeless silhouettes, premium natural fabrics, and effortless daily comfort.
+              </p>
+            </div>
+          </div>
+
+          {/* Col 2: Navigation Links (4 cols) */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">
+                About
+              </h4>
+              <ul className="space-y-3 text-xs tracking-wide">
+                <li>
+                  <Link href="/about" className="text-white/60 hover:text-white transition-colors">
+                    About us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#collections" className="text-white/60 hover:text-white transition-colors">
+                    Collections
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/shop" className="text-white/60 hover:text-white transition-colors">
+                    Shop Catalog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#journal" className="text-white/60 hover:text-white transition-colors">
+                    Blog / Journal
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
+                    Contact us
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">
+                Useful links
+              </h4>
+              <ul className="space-y-3 text-xs tracking-wide">
+                <li>
+                  <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
+                    Terms of use
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-colors">
+                    Customer Support
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#faq" className="text-white/60 hover:text-white transition-colors">
+                    Shipping details
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#faq" className="text-white/60 hover:text-white transition-colors">
+                    FAQs
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Col 3: Newsletter Form (4 cols) */}
+          <div className="lg:col-span-4">
+            <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-white mb-2">
+              Newsletter
+            </h4>
+            <p className="text-white/60 text-xs leading-relaxed mb-6">
+              Subscribe to be the first to hear about private deals, seasonal releases, and capsule collections.
+            </p>
+
             {subscribed ? (
-              <div className="flex items-center gap-3 text-secondary text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
-                Thanks for subscribing!
+              <div className="bg-secondary/20 border border-secondary text-secondary p-4 rounded-xl text-xs flex items-center gap-2">
+                <span>✓</span> Thank you for joining our community!
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-mail Address"
-                  required
-                  className="w-full bg-transparent border border-white/20 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-secondary transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="bg-secondary text-primary font-medium text-sm px-8 py-3 rounded-md hover:brightness-110 transition-all whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
+              <form onSubmit={handleSubscribe} className="space-y-3">
+                <div className="flex rounded-full overflow-hidden border border-white/20 focus-within:border-secondary bg-white/5 transition-colors">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    required
+                    className="w-full bg-transparent px-5 py-3 text-xs text-white placeholder:text-white/40 focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-secondary text-white px-6 text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all flex items-center justify-center cursor-pointer"
+                  >
+                    <span>→</span>
+                  </button>
+                </div>
               </form>
             )}
+
+            <div className="mt-8 pt-6 border-t border-white/10 text-white/50 text-[0.72rem] leading-relaxed">
+              <div><strong className="text-white/80">Corporate:</strong> {siteConfig.corpName}</div>
+              <div><strong className="text-white/80">Descriptor:</strong> {siteConfig.descriptor}</div>
+              <div><strong className="text-white/80">Address:</strong> {siteConfig.address}</div>
+            </div>
           </div>
 
-          {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[60%] grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-            
-            {/* Column 1 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Company</h4>
-              <ul className="flex flex-col gap-3">
-                <li><Link href="/" className="text-white text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Products</Link></li>
-                <li><Link href="/about" className="text-white text-sm hover:text-secondary transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-white text-sm hover:text-secondary transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
-              <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Resistance Band Set</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Smart Fitness Tracker</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Percussion Massage Gun</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Gear</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Contact</h4>
-              <ul className="flex flex-col gap-3">
-                <li className="text-white text-sm break-all">{siteConfig.email}</li>
-                <li className="text-white text-sm">{siteConfig.phone}</li>
-                <li className="text-white text-sm max-w-[150px]">{siteConfig.address}</li>
-              </ul>
-            </div>
-
-            {/* Column 4 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Social Media</h4>
-              <ul className="flex flex-col gap-3">
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">Instagram, {siteConfig.brandName}</a></li>
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">Facebook, {siteConfig.brandName}</a></li>
-                <li><a href="#" className="text-white text-sm hover:text-secondary transition-colors">X (Twitter), {siteConfig.brandName}</a></li>
-              </ul>
-            </div>
-
-          </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 lg:gap-4 pt-10 border-t border-white/10">
-          
-          {/* Logo & Copyright */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-end gap-6 sm:gap-20">
-            {siteConfig.useImageLogo && siteConfig.footerLogoImage ? (
-              <div className="bg-white rounded-md px-3 py-2 w-fit">
-                <img
-                  src={siteConfig.footerLogoImage}
-                  alt={siteConfig.brandName}
-                  className="max-h-[36px] w-auto object-contain block"
-                />
-              </div>
-            ) : (
-              <h4 className="text-white text-2xl font-black uppercase">{siteConfig.brandName}</h4>
-            )}
-            
-            <span className="text-white/50 text-xs">
-              &copy;{currentYear} {siteConfig.brandName}
-            </span>
+        {/* Footer Bottom Strip */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <div>
+            &copy; {currentYear} {siteConfig.corpName}. All rights reserved.
           </div>
 
-          {/* Legal Links */}
-          <div className="flex flex-col gap-2">
-            <Link href="/privacy" className="text-white/50 text-xs hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-white/50 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
-            <div className="text-white/50 text-[10px] max-w-xs mt-2">
-              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual gear may vary slightly.
+          <div className="flex items-center gap-4">
+            <span className="text-[0.7rem] uppercase tracking-wider">Payment methods:</span>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-1 bg-white/10 rounded text-[0.65rem] font-bold text-white tracking-wider">VISA</span>
+              <span className="px-2.5 py-1 bg-white/10 rounded text-[0.65rem] font-bold text-white tracking-wider">MASTERCARD</span>
             </div>
           </div>
-
-          {/* All Rights Reserved */}
-          <div className="text-white/50 text-xs">
-            All Rights Reserved.
-          </div>
-
         </div>
 
       </div>

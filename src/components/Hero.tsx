@@ -1,141 +1,200 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-import TypewriterText from "@/components/TypewriterText";
 
-const rotatingPhrases = ["Train Harder", "Recover Faster", "Move Smarter", "Perform Longer"];
+interface Slide {
+  id: number;
+  subtitle: string;
+  titleLine1: string;
+  titleLine2: string;
+  image: string;
+}
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
+const slides: Slide[] = [
+  {
+    id: 1,
+    subtitle: "NEW COLLECTION",
+    titleLine1: "Meet New",
+    titleLine2: "Fashion Week",
+    image: "/img/hero1.png",
+  },
+  {
+    id: 2,
+    subtitle: "AUTUMN CAPSULE",
+    titleLine1: "Effortless",
+    titleLine2: "Modern Lines",
+    image: "/img/hero2.png",
+  },
+  {
+    id: 3,
+    subtitle: "EXCLUSIVE ATELIER",
+    titleLine1: "Timeless",
+    titleLine2: "Daily Comfort",
+    image: "/img/hero3.png",
+  },
+];
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-advance slide every 7 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  const active = slides[currentSlide];
+
   return (
-    <section className="relative overflow-hidden bg-primary">
-      {/* Angled accent shape */}
-      <div
-        className="pointer-events-none absolute -top-40 -right-40 h-125 w-125 rounded-full bg-secondary/10 blur-3xl"
-        aria-hidden="true"
-      />
+    <section className="relative w-full bg-white overflow-hidden select-none border-b border-black/5">
+      <div className="relative w-full min-h-[640px] md:min-h-[720px] lg:h-[780px] xl:h-[840px] flex">
+        
+        {/* ================= LEFT RAIL ================= */}
+        <div className="w-16 sm:w-20 lg:w-24 flex-shrink-0 flex flex-col justify-between items-center py-8 z-30 bg-white">
+          {/* Top spacer */}
+          <div className="h-10" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 pt-14 pb-16 md:pt-20 md:pb-24 lg:grid-cols-2 lg:gap-8">
-        {/* Left: Copy */}
-        <div className="text-center lg:text-left">
-          <div className="mb-6 flex justify-center lg:justify-start">
-            <span className="eyebrow eyebrow-invert">{siteConfig.brandName} Gear Lab</span>
+          {/* Vertical Stacked Socials */}
+          <div className="flex flex-col items-center gap-3 text-[0.68rem] tracking-[0.2em] font-medium text-neutral-800">
+            <a href="#" className="hover:text-black transition-colors">FB</a>
+            <span className="w-2.5 h-[1px] bg-neutral-300" />
+            <a href="#" className="hover:text-black transition-colors">TW</a>
+            <span className="w-2.5 h-[1px] bg-neutral-300" />
+            <a href="#" className="hover:text-black transition-colors">INS</a>
+            <span className="w-2.5 h-[1px] bg-neutral-300" />
+            <a href="#" className="hover:text-black transition-colors">PT</a>
           </div>
 
-          <h1 className="mx-auto max-w-xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-white md:text-6xl lg:mx-0 lg:text-[3.6rem]">
-            Gear Built to{" "}
-            <span className="block text-secondary">
-              <TypewriterText phrases={rotatingPhrases} />
+          {/* Bottom Left Slide Number: 1/3 */}
+          <div className="font-heading leading-none">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
+              {currentSlide + 1}
             </span>
-          </h1>
+            <span className="text-xs sm:text-sm font-normal text-neutral-400">
+              /{slides.length}
+            </span>
+          </div>
+        </div>
 
-          <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/60 md:text-base lg:mx-0">
-            Engineered training gadgets for strength, recovery, and everyday performance — tested by athletes, priced for real training budgets.
-          </p>
+        {/* ================= CENTER HERO STAGE ================= */}
+        <div className="relative flex-1 flex items-center justify-start h-full">
+          
+          {/* 1. Large Fashion Image Box (Occupies left ~60% of stage) */}
+          <div className="relative w-full md:w-[60%] lg:w-[58%] h-[500px] sm:h-[600px] lg:h-[720px] xl:h-[780px] bg-[#D4D4D8] overflow-hidden my-auto flex items-center justify-center shadow-sm">
+            <img
+              key={active.image}
+              src={active.image}
+              alt={active.titleLine1}
+              className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+            />
+            
+            {/* Subtle light overlay to ensure soft fashion aesthetic */}
+            <div className="absolute inset-0 bg-black/10" />
 
-          <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            {/* Optional dimension watermark accent as in prototype placeholder */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+              <span className="font-heading text-4xl sm:text-6xl text-white font-light tracking-widest">
+                1040 x 800
+              </span>
+            </div>
+          </div>
+
+          {/* 2. Dotted Matrix Pattern on the Right */}
+          <div
+            className="hidden md:block absolute top-16 right-16 lg:right-28 w-[380px] lg:w-[480px] h-[360px] lg:h-[440px] pointer-events-none z-0"
+            style={{
+              backgroundImage: "radial-gradient(#181818 1.4px, transparent 1.4px)",
+              backgroundSize: "28px 28px",
+              opacity: 0.18,
+            }}
+          />
+
+          {/* 3. Overlapping Typography & Button Block */}
+          <div className="absolute left-6 sm:left-12 md:left-[42%] lg:left-[40%] xl:left-[41%] z-20 flex flex-col items-start pr-4">
+            
+            {/* Subtitle */}
+            <span className="text-[0.7rem] sm:text-xs uppercase tracking-[0.28em] font-medium text-neutral-600 mb-2 sm:mb-3">
+              {active.subtitle}
+            </span>
+
+            {/* Main Headline (overlapping image and white dotted background) */}
+            <h1 className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[6.2rem] font-normal tracking-tight text-[#111111] leading-[1.04] mb-6 sm:mb-8">
+              <span>{active.titleLine1}</span>
+              <br />
+              <span className="block">{active.titleLine2}</span>
+            </h1>
+
+            {/* Shop Now Button */}
             <Link
-              href="/#shop"
-              className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-secondary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary shadow-lg shadow-secondary/20 transition-all duration-300 hover:bg-white"
+              href="/shop"
+              className="inline-flex items-center justify-center bg-[#111111] hover:bg-black text-white px-8 sm:px-10 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-xl"
             >
-              Shop The Range
-              <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-            </Link>
-            <Link
-              href="/#how-it-works"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-9 py-3.5 text-center text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-white hover:bg-white/10"
-            >
-              How It Works
+              Shop Now
             </Link>
           </div>
 
-          {/* Trust strip */}
-          <div className="mt-12 flex items-center justify-center gap-6 lg:justify-start">
-            {["Free Shipping", "60-Day Returns", "1-Yr Warranty"].map((point) => (
-              <div key={point} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-                <span className="text-[0.62rem] font-bold uppercase tracking-widest text-white/55 md:text-xs">{point}</span>
-              </div>
+          {/* 4. Scroll Down Indicator at bottom edge of image */}
+          <div className="hidden md:flex absolute bottom-8 left-[58%] -translate-x-1/2 flex-col items-center gap-2 z-20 pointer-events-none">
+            <span
+              className="text-[0.62rem] uppercase tracking-[0.22em] text-neutral-500 font-medium"
+              style={{ writingMode: "vertical-rl" }}
+            >
+              Scroll Down
+            </span>
+            <div className="w-[1.5px] h-6 bg-neutral-800" />
+          </div>
+
+        </div>
+
+        {/* ================= RIGHT RAIL ================= */}
+        <div className="w-16 sm:w-20 lg:w-24 flex-shrink-0 flex flex-col justify-between items-center py-8 z-30 bg-white">
+          {/* Top spacer */}
+          <div className="h-10" />
+
+          {/* Vertical Slider Dash Indicators */}
+          <div className="flex flex-col items-center gap-3">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                className={`transition-all duration-300 cursor-pointer ${
+                  currentSlide === idx
+                    ? "w-7 h-[2.5px] bg-[#111111]"
+                    : "w-4 h-[1.5px] bg-neutral-300 hover:bg-neutral-500"
+                }`}
+                aria-label={`Slide ${idx + 1}`}
+              />
             ))}
           </div>
-        </div>
 
-        {/* Right: Visual collage */}
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <div className="relative aspect-4/5 w-full overflow-hidden rounded-[2.5rem] shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=900&q=80"
-              alt="Athlete training with performance gear"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-          </div>
-
-          {/* Floating stat card */}
-          <div className="animate-float absolute -left-4 top-8 z-20 rounded-2xl border border-black/5 bg-white px-5 py-4 shadow-xl md:-left-10">
-            <div className="text-2xl font-black text-primary">10k+</div>
-            <div className="text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/50">Athletes Equipped</div>
-          </div>
-
-          {/* Floating secondary image */}
-          <div
-            className="animate-float absolute -bottom-8 -right-4 z-20 h-32 w-32 overflow-hidden rounded-2xl border-4 border-primary shadow-xl md:-right-10 md:h-40 md:w-40"
-            style={{ animationDelay: "1.2s" }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1616803689943-5601631c7fec?w=500&q=80"
-              alt="Athlete completing a training rep outdoors"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          {/* Rating chip */}
-          <div
-            className="animate-float absolute right-4 top-4 z-20 flex items-center gap-2 rounded-full bg-secondary px-4 py-2.5 shadow-xl md:right-8"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-primary">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-            <span className="text-xs font-black text-primary">4.9/5 Rated</span>
+          {/* Bottom Right Horizontal Arrows: ← and → */}
+          <div className="flex items-center gap-4 text-xl sm:text-2xl text-neutral-800">
+            <button
+              type="button"
+              onClick={prevSlide}
+              className="hover:text-black transition-colors cursor-pointer"
+              aria-label="Previous Slide"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              onClick={nextSlide}
+              className="hover:text-black transition-colors cursor-pointer"
+              aria-label="Next Slide"
+            >
+              →
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Stats bar */}
-      <div className="relative z-10 border-t border-white/10 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-10 md:py-14">
-          <div className="grid grid-cols-3 gap-4 text-center md:gap-8">
-            <div>
-              <div className="text-2xl font-extrabold text-primary md:text-4xl">10k+</div>
-              <div className="mt-1.5 text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/50 md:text-[0.7rem]">Athletes Equipped</div>
-            </div>
-            <div className="border-l border-primary/15">
-              <div className="text-2xl font-extrabold text-primary md:text-4xl">1-Yr</div>
-              <div className="mt-1.5 text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/50 md:text-[0.7rem]">Warranty Coverage</div>
-            </div>
-            <div className="border-l border-primary/15">
-              <div className="text-2xl font-extrabold text-secondary md:text-4xl">4.9★</div>
-              <div className="mt-1.5 text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/50 md:text-[0.7rem]">Average Rating</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Proof points */}
-      <div className="relative z-10 border-t border-black/5 bg-neutral-bg">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4">
-          {["Field Tested", "1-Year Warranty", "60-Day Returns", "Free Shipping"].map((point) => (
-            <div key={point} className="flex items-center justify-center gap-3 border-b border-black/5 py-5 text-center even:border-l even:border-black/5 md:py-6 lg:border-b-0 lg:border-l lg:first:border-l-0">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-text text-xs font-bold" aria-hidden="true">✓</span>
-              <span className="text-[0.65rem] font-bold uppercase tracking-widest text-primary md:text-xs">{point}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

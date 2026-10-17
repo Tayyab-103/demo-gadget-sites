@@ -63,11 +63,11 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 64,
+              fontSize: 60,
               fontWeight: 900,
-              letterSpacing: -2,
+              letterSpacing: -1,
               textTransform: "uppercase",
-              color: siteConfig.theme.neutralTextColor,
+              color: siteConfig.theme.primaryColor,
             }}
           >
             {siteConfig.brandName}
@@ -77,12 +77,12 @@ export default async function Image() {
         <div
           style={{
             marginTop: 36,
-            fontSize: 32,
+            fontSize: 28,
             fontWeight: 600,
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Contemporary Women&apos;s Fashion &amp; Ready-To-Wear
         </div>
 
         <div

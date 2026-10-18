@@ -45,19 +45,19 @@ export default function QualityPromise() {
           {/* Left Column: Clean Eyebrow */}
           <div className="lg:col-span-4 flex items-center">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 select-none">
-              FAMILY WARDROBE PROMISE
+              BUILT FOR EVERYDAY LIFE
             </span>
           </div>
 
           {/* Right Column: Headline & Subtitle */}
           <div className="lg:col-span-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-4">
-              Designed for Everyday Life. <br />
-              <span className="font-bold text-[#0A0F1D]">Made for Every Family.</span>
+              Dressed for Every <br />
+              <span className="font-bold text-[#0A0F1D]">Family Moment.</span>
             </h2>
 
             <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-normal mb-5">
-              Ultra-soft breathable fabrics, modern silhouettes, and easy machine-washable care backed by our 14-day family fit guarantee.
+              Soft cotton basics, cozy loungewear, and play-ready kids&apos; styles, all backed by our {siteConfig.trialPeriod || 14}-day happy fit guarantee.
             </p>
 
             <div>

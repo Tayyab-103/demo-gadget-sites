@@ -34,7 +34,7 @@ export default function Footer() {
               Stay Updated With {siteConfig.brandName}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-normal">
-              Receive seasonal collection releases, family wardrobe promotions, and special bundle offers directly to your inbox.
+              Receive new arrivals, seasonal family styles, and special offers directly to your inbox.
             </p>
           </div>
 
@@ -71,14 +71,14 @@ export default function Footer() {
           <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4 group">
               <span className="w-7 h-7 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-xs">
-                🛍️
+                👕
               </span>
               <span className="font-extrabold text-base tracking-wider text-white uppercase">
                 {siteConfig.brandName}
               </span>
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed font-normal mb-4">
-              Premium everyday apparel, cozy knitwear, and modern casual styles designed for women, men, and children everywhere.
+              Comfortable, affordable everyday clothing for babies, kids, and adults, from Winston-Salem, North Carolina.
             </p>
             <div className="text-[0.68rem] text-slate-400 font-mono font-medium">
               Descriptor: {siteConfig.descriptor}

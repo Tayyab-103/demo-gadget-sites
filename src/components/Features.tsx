@@ -19,33 +19,33 @@ interface FeatureItem {
 const featuresList: FeatureItem[] = [
   {
     id: 1,
-    title: "Breathable Premium Knits",
-    description: "Lightweight and breathable natural fabric blends that keep mom, dad, and kids comfortable from morning until bedtime.",
-    image: "/img/feature.jpg",
+    title: "Soft Breathable Cotton",
+    description: "Gentle, skin-friendly cotton and cotton blends that feel great on sensitive skin, from newborns to adults.",
+    image: "/img/feature1.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 2,
-    title: "Versatile Modern Styling",
-    description: "Effortless wardrobe staples that transition seamlessly from weekend family outings to casual workdays.",
-    image: "/img/hero2.jpg",
+    title: "Sizes For Every Age",
+    description: "Baby, kids, teens, women, and men in one place, so outfitting the whole family takes a single stop.",
+    image: "/img/feature2.jpg",
     link: "/shop",
     imagePosition: "bottom",
   },
   {
     id: 3,
-    title: "Easy Care & Wash Durability",
-    description: "Pre-shrunk, durable fabrics that retain their softness, shape, and rich color through endless laundry cycles.",
-    image: "/img/about.jpg",
+    title: "Wash-Tested Durability",
+    description: "Reinforced seams and pre-shrunk, colorfast fabrics hold their shape and color through countless laundry days.",
+    image: "/img/uniform-tailoring-atelier.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 4,
-    title: `${siteConfig.trialPeriod || 14}-Day Family Fit Guarantee`,
-    description: "Shop risk-free with fast UPS delivery, complimentary size exchanges, and 100% money-back coverage.",
-    image: "/img/cta.jpg",
+    title: `${siteConfig.trialPeriod || 14}-Day Happy Fit Guarantee`,
+    description: "Shop risk-free for the whole family with 100% money-back coverage and easy size exchanges for growing kids.",
+    image: "/img/feature3.jpg",
     link: "/shop",
     imagePosition: "bottom",
   },
@@ -62,13 +62,13 @@ export default function Features() {
           {/* Centered Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
-              Apparel Highlights
+              Why Families Choose Us
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] mb-4">
-              Crafted for Every Family Moment
+              Made For Real Family Life
             </h2>
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
-              Every garment from Family Clothing Stores everywhere is designed to bring you all-day comfort, effortless style, and honest everyday value.
+              Every piece from {siteConfig.brandName} is designed to keep up with school runs, playdates, weekend outings, and busy everyday routines.
             </p>
           </div>
 

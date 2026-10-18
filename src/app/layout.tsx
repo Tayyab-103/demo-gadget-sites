@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Discover everyday clothing, premium knitwear, and modern apparel collections tailored for women, men, and children everywhere.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Comfortable, affordable everyday clothing for the whole family: soft cotton basics, kids' play sets, and cozy matching pajamas for babies, kids, and adults.`;
 
 // Preload fonts
 const montserrat = Montserrat({
@@ -46,22 +46,23 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
+  title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
   description: siteDescription,
   keywords: [
-    "family clothing",
+    "family clothing store",
     "family apparel",
-    "clothing stores everywhere",
-    "women's fashion",
-    "men's apparel",
     "kids clothing",
-    "everyday knitwear",
-    "family wardrobe",
-    "casual wear",
-    "family outfits"
+    "baby clothes",
+    "matching family pajamas",
+    "cotton t-shirts",
+    "kids jogger sets",
+    "affordable family clothing",
+    "everyday basics",
+    "family loungewear",
+    siteConfig.brandName
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
+    title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
+    title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
     description: siteDescription,
   },
 };

@@ -18,10 +18,10 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Customer Care & Styling"
+          eyebrow="Family Customer Care"
           title={<>Connect With {siteConfig.brandName}</>}
-          subtitle="Questions about family sizing, seasonal collections, or order tracking? Our dedicated customer care team is here to assist you."
-          image="/img/contact.jpg"
+          subtitle="Questions about sizing, orders, returns, or matching family outfits? Our friendly support team responds within 24 hours."
+          image="/img/hero-uniforms.jpg"
           currentLabel="Contact"
         />
         <Contact />

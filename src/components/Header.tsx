@@ -109,9 +109,15 @@ export default function Header() {
             />
           ) : (
             <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-sm shadow-xs">
+                👕
+              </div>
               <div className="flex flex-col">
-                <span className="text-sm sm:text-base font-bold tracking-wider text-white uppercase leading-none">
-                  {siteConfig.brandName}
+                <span className="text-base sm:text-lg font-bold tracking-widest text-white uppercase leading-none">
+                  EVERYDAY
+                </span>
+                <span className="text-[0.55rem] sm:text-[0.58rem] font-bold uppercase tracking-[0.26em] text-slate-400 mt-0.5">
+                  FAMILY APPAREL
                 </span>
               </div>
             </div>
@@ -147,7 +153,7 @@ export default function Header() {
           <button
             onClick={toggleSearch}
             className="p-2 text-slate-300 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
-            aria-label="Search Family Clothing and Apparel"
+            aria-label="Search Family Clothing"
             aria-expanded={isSearchOpen}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -233,7 +239,7 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search dresses, crewnecks, sweatshirts, and family clothing..."
+                placeholder="Search tees, kids' joggers, family pajamas..."
                 className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none text-white bg-slate-900 border border-slate-700 placeholder-slate-400"
               />
             </div>
@@ -265,7 +271,7 @@ export default function Header() {
                   })
                 ) : (
                   <p className="text-xs text-slate-400 text-center py-4">
-                    No clothing apparel found for &ldquo;{query}&rdquo;.
+                    No clothing found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

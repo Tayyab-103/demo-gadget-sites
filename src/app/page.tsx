@@ -23,7 +23,7 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
         
-        {/* Our Apparel Standard */}
+        {/* How We Make It */}
         <HowItWorks />
         
         {/* Curated Products Collection */}
@@ -32,19 +32,19 @@ export default function Home() {
         {/* Alternating Features Section */}
         <Features />
 
-        {/* About Brand & Story */}
+        {/* About Brand */}
         <AboutUs />
 
         {/* Customer Testimonials */}
         <Testimonials />
 
-        {/* Family Wardrobe CTA Banner */}
+        {/* Family Conversion Banner */}
         <CTASection />
 
         {/* FAQ Accordions */}
         <Faq />
 
-        {/* Customer Care & Styling Contact Form */}
+        {/* Family Support Contact Form */}
         <Contact />
       </main>
 

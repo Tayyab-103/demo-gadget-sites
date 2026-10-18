@@ -67,7 +67,7 @@ export default async function Image() {
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            🛍️
+            👕
           </div>
           <div
             style={{
@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Family Clothing Stores Everywhere
+          Everyday Clothing For The Whole Family
         </div>
 
         <div

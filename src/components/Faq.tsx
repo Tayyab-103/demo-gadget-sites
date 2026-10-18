@@ -19,29 +19,29 @@ const faqItems: FaqItem[] = [
     id: "sizing",
     category: "sizing",
     categoryLabel: "Sizing",
-    question: "How do your clothes fit across women, men, and children?",
-    answer: "Our garments feature true-to-size, relaxed-yet-tailored silhouettes with comfortable stretch. We recommend ordering your usual size; size up if you prefer an oversized or layered fit.",
+    question: "How do your sizes run for kids and adults?",
+    answer: "Our clothing runs true to size with a relaxed, comfortable fit. For growing kids, we recommend sizing up if they are between sizes. Each product page includes a size guide for babies, kids, and adults.",
   },
   {
     id: "trial",
     category: "sizing",
     categoryLabel: "Guarantee",
-    question: `How does the ${siteConfig.trialPeriod || 14}-day family fit guarantee work?`,
-    answer: `Try on your selections at home. If the fit, size, or style isn't completely perfect for your family, return or exchange within ${siteConfig.trialPeriod || 14} days for a 100% full refund.`,
+    question: `How does the ${siteConfig.trialPeriod || 14}-day happy fit guarantee work?`,
+    answer: `If anything doesn't fit or your family isn't happy for any reason, return or exchange it within ${siteConfig.trialPeriod || 14} days for a 100% money-back refund or a different size.`,
   },
   {
     id: "laundry",
     category: "durability",
     categoryLabel: "Care",
-    question: "How should I wash and care for our family clothing pieces?",
-    answer: "Machine wash cold with similar colors using mild detergent. Tumble dry low or air dry to maintain the ultra-soft fiber texture, silhouette, and vibrant color through everyday wear.",
+    question: "How should I wash and care for my clothes?",
+    answer: "Machine wash cold with like colors and tumble dry low. Our fabrics are pre-shrunk and colorfast, so they keep their size, softness, and color through regular family laundry.",
   },
   {
     id: "shipping",
     category: "shipping",
     categoryLabel: "Shipping",
-    question: "How quickly will my family's order ship?",
-    answer: `All orders are carefully packed and dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracking, typically arriving within ${siteConfig.shippingPeriod} business days.`,
+    question: "How quickly will my order ship?",
+    answer: `Dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracked delivery arriving in ${siteConfig.shippingPeriod} business days.`,
   },
   {
     id: "billing",
@@ -53,16 +53,16 @@ const faqItems: FaqItem[] = [
   {
     id: "bundles",
     category: "durability",
-    categoryLabel: "Bundles",
-    question: "Do you offer bundle savings when shopping for the whole family?",
-    answer: "Yes! We offer curated bundle savings when outfitting multiple family members. Enjoy multi-item volume savings directly in your cart.",
+    categoryLabel: "Sizes",
+    question: "Do you carry sizes for the whole family?",
+    answer: "Yes. We carry sizes for babies, toddlers, kids, teens, women, and men, including matching family sets so everyone can coordinate for photos, holidays, and outings.",
   },
 ];
 
 const categories = [
   { key: "all", label: "All" },
   { key: "sizing", label: "Sizing" },
-  { key: "durability", label: "Durability" },
+  { key: "durability", label: "Care & Sizes" },
   { key: "shipping", label: "Shipping" },
 ];
 
@@ -86,13 +86,13 @@ export default function Faq() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-            Customer Guidance
+            Family Shopping Help
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
             Frequently Answered Questions.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md mx-auto">
-            Quick guidance on family clothing sizing, fabric care, shipping, and fit guarantee.
+            Quick answers on sizing, garment care, shipping, and returns.
           </p>
 
           {/* Category Filter Pills */}

@@ -19,10 +19,10 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Crafted For Life"
+          eyebrow="Our Family Story"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Dedicated to timeless style, gentle skin-friendly materials, and durable craftsmanship designed for families everywhere."
-          image="/img/about.jpg"
+          subtitle="Based in Winston-Salem, North Carolina. Dedicated to comfortable, affordable everyday clothing for babies, kids, teens, and adults."
+          image="/img/uniform-tailoring-atelier.jpg"
           currentLabel="About"
         />
         <AboutUs />

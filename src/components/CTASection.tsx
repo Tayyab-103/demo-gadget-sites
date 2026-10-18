@@ -16,8 +16,8 @@ export default function CTASection() {
           {/* Left — Image */}
           <div className="relative min-h-64 sm:min-h-80 md:min-h-full bg-black/10">
             <img
-              src="/img/cta.jpg"
-              alt="Family Clothing Stores everywhere apparel collection"
+              src="/img/hero-uniforms.jpg"
+              alt="Family wearing everyday clothing"
               className="absolute inset-0 h-full w-full object-cover opacity-90"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0A0F1D] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-[#0A0F1D]/20 md:to-[#0A0F1D]" />
@@ -42,7 +42,7 @@ export default function CTASection() {
               <div>
                 <div className="text-xs font-extrabold text-white">50,000+</div>
                 <div className="text-[0.6rem] font-mono uppercase tracking-wider text-slate-300">
-                  Happy Families
+                  Families Dressed
                 </div>
               </div>
             </div>
@@ -51,16 +51,16 @@ export default function CTASection() {
           {/* Right — Content */}
           <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 text-white">
             <div className="mb-3 text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-400 select-none">
-              Family Clothing Stores Everywhere
+              Family Wardrobe Refresh
             </div>
 
             <h2 className="mb-3 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white">
-              Elevate Your Family&apos;s <br />
+              Refresh Your Family&apos;s <br />
               <span className="text-slate-300 font-semibold text-2xl sm:text-3xl md:text-4xl">Everyday Wardrobe.</span>
             </h2>
 
             <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-300 font-normal">
-              Flattering women&apos;s maxi dresses, men&apos;s quilted crewnecks, and cozy everyday essentials. Dispatched promptly via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day risk-free fit guarantee.
+              Soft basics, play-ready kids&apos; sets, and cozy matching pajamas. Dispatched via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day fit guarantee.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -74,7 +74,7 @@ export default function CTASection() {
                 href="/contact"
                 className="inline-flex items-center justify-center text-xs sm:text-sm uppercase tracking-wider border border-white/20 px-7 py-3.5 rounded-full transition-all hover:bg-white/10 text-center text-white font-bold"
               >
-                Customer Care
+                Contact Us
               </Link>
             </div>
           </div>

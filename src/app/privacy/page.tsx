@@ -36,12 +36,12 @@ export default function Privacy() {
             <p>
               When you visit the Site, we automatically collect certain information about your device, including information
               about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
-              Additionally, as you browse the Site, we collect information about the individual clothing items, knitwear, or family apparel collections that you view,
+              Additionally, as you browse the Site, we collect information about the individual clothing items and family collections that you view,
               what websites or search terms referred you to the Site, and information about how you interact with the Site.
             </p>
             <p>
-              Additionally, when you place an order for family clothing or apparel items through the Site, we collect certain information
-              from you, including your name, billing address, shipping address, payment information (including encrypted credit card numbers),
+              Additionally, when you place an order for family clothing through the Site, we collect certain information
+              from you, including your name, company/organization name, billing address, shipping address, payment information (including encrypted credit card numbers),
               email address, and phone number. We refer to this information as “Order Information.”
             </p>
 
@@ -52,9 +52,9 @@ export default function Privacy() {
               Additionally, we use this Order Information to:
             </p>
             <ul className="list-disc pl-5 mb-6 space-y-2">
-              <li>Communicate with you regarding order fulfillment and tracking updates;</li>
+              <li>Communicate with you regarding order dispatch and tracking updates;</li>
               <li>Screen our orders for potential risk or payment fraud; and</li>
-              <li>Provide you with seasonal apparel collection releases or exclusive family promotions relating to our products.</li>
+              <li>Provide you with new collection releases or promotions relating to our products or services.</li>
             </ul>
 
             <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SHARING YOUR PERSONAL INFORMATION</h3>

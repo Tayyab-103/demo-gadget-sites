@@ -37,13 +37,13 @@ export default function ProductDetail() {
         <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-28 text-center bg-[#F8FAFC] text-[#0A0F1D]">
           <h2 className="text-2xl font-black uppercase text-[#0A0F1D] mb-4">Product Not Found</h2>
           <p className="text-slate-500 mb-8 max-w-md mx-auto text-sm font-normal">
-            The clothing item you are looking for does not exist or has been moved in our catalog.
+            The item you are looking for does not exist or is no longer available in our collection.
           </p>
           <button
             className="inline-block font-extrabold text-center whitespace-nowrap bg-[#0A0F1D] text-white border border-blue-500 hover:bg-blue-600 transition-all py-3.5 px-8 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-lg"
             onClick={() => router.push("/shop")}
           >
-            Return to Shop Catalog
+            Return to Shop
           </button>
         </main>
         <Footer />
@@ -53,7 +53,7 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     const unitPrice = (parseFloat(String(selectedBundle.price)) / selectedBundle.quantity).toFixed(2);
-    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Family Bundle` : "Single Unit";
+    const label = selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Piece Family Pack` : "Single Item";
     addToCart(product, selectedBundle.quantity, unitPrice, label);
   };
 
@@ -78,7 +78,7 @@ export default function ProductDetail() {
             <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-blue-500/20 shadow-xl shadow-blue-500/5 flex flex-col">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[0.68rem] font-mono font-bold uppercase tracking-[0.2em] text-blue-700 w-fit mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-                {product.category || "Family Apparel"}
+                {product.category || "Family Clothing"}
               </div>
 
               <h1 className="text-2xl sm:text-3xl font-black text-[#0A0F1D] mt-1 mb-3 leading-snug tracking-tight uppercase">
@@ -94,7 +94,7 @@ export default function ProductDetail() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">(148 Verified Customer Reviews)</span>
+                <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">(148 Verified Family Reviews)</span>
               </div>
 
               {/* Price Display */}
@@ -115,7 +115,7 @@ export default function ProductDetail() {
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mb-6">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#0A0F1D] mb-2">
-                    Select Bundle Package:
+                    Select Family Pack:
                   </h4>
                   <div className="relative">
                     <select
@@ -129,7 +129,7 @@ export default function ProductDetail() {
                       {product.bundles.map((bundle) => {
                         const regularPrice = startingPrice * bundle.quantity;
                         const savings = regularPrice - bundle.price;
-                        const label = bundle.quantity > 1 ? `Family Bundle of ${bundle.quantity} Items` : "Single Item";
+                        const label = bundle.quantity > 1 ? `Family Pack of ${bundle.quantity} (Bundle & Save)` : "Single Item";
                         const price = parseFloat(String(bundle.price)).toFixed(2);
                         const savingsText = bundle.quantity > 1 && savings > 0 ? ` (Save $${savings.toFixed(2)})` : "";
 
@@ -164,7 +164,7 @@ export default function ProductDetail() {
                   className="group inline-flex items-center justify-center gap-2 font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white transition-all duration-200 py-3.5 sm:py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-xl shadow-blue-500/20 hover:scale-[1.01]"
                   onClick={handleAddToCart}
                 >
-                  Add to Shopping Bag
+                  Add to Bag
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </button>
               </div>
@@ -173,10 +173,10 @@ export default function ProductDetail() {
               {product.showIngredients && product.ingredientsImage && (
                 <div className="border-t border-blue-500/15 pt-6 mt-4">
                   <h3 className="text-sm sm:text-base font-black text-[#0A0F1D] mb-1.5 uppercase tracking-tight">
-                    Fabric Quality &amp; Material Details
+                    Fabric &amp; Care Details
                   </h3>
                   <p className="text-xs text-slate-500 mb-4 leading-relaxed font-normal">
-                    Crafted with premium soft breathable weaves, reinforced seams, and color-lock dye. Engineered for all-day family comfort and easy everyday care. Backed by our 14-day fit guarantee.
+                    Made with soft, breathable cotton and cotton-blend fabrics that are pre-shrunk, colorfast, and machine washable. Backed by our 14-day happy fit guarantee.
                   </p>
 
                   <div className="bg-[#F8FAFC] border border-blue-500/20 rounded-xl p-3 flex items-center justify-center">

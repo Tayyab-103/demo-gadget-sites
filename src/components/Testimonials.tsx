@@ -20,33 +20,33 @@ interface CustomerStory {
 const customerStories: CustomerStory[] = [
   {
     id: "01",
-    logo: "WOMEN'S APPAREL",
-    logoSub: "VERIFIED BUYER",
+    logo: "THE CARTER FAMILY",
+    logoSub: "FAMILY OF 5",
     quote:
-      "“The leaf print maxi dress is stunning and so flattering! The fabric is lightweight, breathable, and so soft. Family Clothing Stores everywhere has become our household go-to.”",
-    authorName: "Sarah Jenkins",
-    authorRole: "Verified Family Shopper",
-    image: "/img/about.jpg",
+      "“With three kids growing out of everything, finding one store that fits all of us is a lifesaver. The tees still look new after months of washing.”",
+    authorName: "Jessica Carter",
+    authorRole: "Mom of Three",
+    image: "/img/stories/story-tactical.jpg",
   },
   {
     id: "02",
-    logo: "MEN'S APPAREL",
-    logoSub: "VERIFIED BUYER",
+    logo: "THE NGUYEN FAMILY",
+    logoSub: "FAMILY OF 4",
     quote:
-      "“The quilted crewneck sweatshirt is my new daily favorite. Premium soft interior, sharp diamond stitching, and holds its shape wash after wash. Outstanding quality!”",
-    authorName: "Marcus Vance",
-    authorRole: "Verified Customer",
-    image: "/img/hero2.jpg",
+      "“The jogger sets survive recess, mud puddles, and the washing machine. Soft enough that my son actually asks to wear them.”",
+    authorName: "David Nguyen",
+    authorRole: "Dad of Two",
+    image: "/img/stories/story-medical.jpg",
   },
   {
     id: "03",
-    logo: "FAMILY WARDROBE",
-    logoSub: "VERIFIED BUYER",
+    logo: "THE MORALES FAMILY",
+    logoSub: "THREE GENERATIONS",
     quote:
-      "“Shopping for our whole household was seamless. Fast UPS delivery, true-to-size fits, and the 14-day fit trial gave us complete confidence. Wonderful shopping experience!”",
-    authorName: "Dr. Claire Sterling",
-    authorRole: "Verified Customer",
-    image: "/img/newletterpopup.jpg",
+      "“We ordered matching pajamas for the holidays, from grandma down to the baby. Everything fit, felt cozy, and the photos were priceless.”",
+    authorName: "Maria Morales",
+    authorRole: "Mom & Grandma",
+    image: "/img/stories/story-culinary.jpg",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function Testimonials() {
             Inspiring Stories, Real Families.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
-            Discover why thousands of households choose Family Clothing Stores everywhere for daily comfort and wardrobe essentials.
+            From busy parents to proud grandparents, families across the country trust us for everyday clothing.
           </p>
         </div>
 

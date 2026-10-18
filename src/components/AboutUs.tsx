@@ -9,10 +9,10 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const metrics = [
-  { value: "50,000+", label: "Families Outfitted" },
-  { value: "100%", label: "Comfort Knits" },
+  { value: "45,000+", label: "Families Dressed" },
+  { value: "0-14Y+", label: "Baby To Adult Sizes" },
   { value: `${siteConfig.trialPeriod || 14}-Day`, label: "Fit Guarantee" },
-  { value: "4.9★", label: "Customer Rating" },
+  { value: "4.9★", label: "Parent Rating" },
 ];
 
 export default function AboutUs() {
@@ -25,16 +25,16 @@ export default function AboutUs() {
           {/* Left Column: Narrative & Metrics */}
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-              Family Clothing Stores Everywhere
+              Our Family Promise
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A0F1D] leading-tight tracking-tight mb-4">
-              Crafting Comfort &amp; Style <br />
-              <span className="text-slate-600 font-semibold text-2xl sm:text-3xl md:text-4xl">For The Entire Family.</span>
+              Clothing The Whole <br />
+              <span className="text-slate-600 font-semibold text-2xl sm:text-3xl md:text-4xl">Family, Every Day.</span>
             </h2>
 
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-normal mb-6 max-w-lg">
-              At Family Clothing Stores everywhere, we believe exceptional everyday apparel should combine effortless elegance, cozy durability, and honest accessible pricing. From graceful women&apos;s maxi dresses to comfortable men&apos;s quilted crewnecks and cozy sweatshirts, we dress every family with confidence.
+              Based in Winston-Salem, North Carolina. We bring together comfortable, affordable everyday clothing for babies, kids, teens, and adults, so busy families can find quality basics, play clothes, and loungewear all in one place.
             </p>
 
             {/* Metrics Cards */}
@@ -62,12 +62,12 @@ export default function AboutUs() {
             </Link>
           </div>
 
-          {/* Right Column: In-Store Family Photo */}
+          {/* Right Column: Family Photo */}
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-3xl bg-slate-900 shadow-md border border-slate-200">
               <Image
-                src="/img/about.jpg"
-                alt="Family clothing shopping experience at Family Clothing Stores everywhere"
+                src="/img/tailoringstandards.jpg"
+                alt={`${siteConfig.brandName} family clothing`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center"

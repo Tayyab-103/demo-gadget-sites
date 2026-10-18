@@ -80,15 +80,15 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[190px] relative">
           <img
-            src="/img/newletterpopup.jpg"
-            alt="Family Clothing Stores everywhere collection offer"
+            src="/img/hero-uniforms.jpg"
+            alt="Family clothing collection"
             className="w-full h-full object-cover absolute inset-0 opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/50 to-[#0A0F1D]/95" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.68rem] uppercase tracking-[0.24em] font-bold text-slate-300 block mb-1">
-              WELCOME INVITATION
+              FAMILY CLUB INVITATION
             </span>
             <h3 className="text-2xl font-bold text-white m-0 tracking-tight">
               Claim $15 Off Your Family's Order
@@ -105,13 +105,13 @@ export default function NewsletterPopup() {
               </div>
               <h4 className="text-[#0A0F1D] font-bold uppercase text-lg mb-2">Voucher Code Dispatched!</h4>
               <p className="text-slate-600 text-sm font-normal">
-                Check your inbox for your $15 family wardrobe voucher code.
+                Check your inbox for your $15 family wardrobe credit code.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
-                Join {siteConfig.brandName}. Subscribe today to receive seasonal collection drops, exclusive family bundle offers, and <strong>$15 off</strong> your next order.
+                Join {siteConfig.brandName}. Subscribe today to receive new arrivals, seasonal family styles, and <strong>$15 off</strong> your first order.
               </p>
 
               <div className="mb-4">

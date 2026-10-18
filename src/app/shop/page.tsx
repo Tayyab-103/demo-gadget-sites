@@ -14,10 +14,10 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Family Apparel Catalog"
-          title={<>Family Clothing Stores Everywhere</>}
-          subtitle="Explore curated collections designed for every family member — from comfortable essentials to elegant occasion wear."
-          image="/img/hero1.jpg"
+          eyebrow="The Family Collection"
+          title={<>Everyday Family Clothing</>}
+          subtitle="Explore soft cotton essentials, play-ready kids&apos; sets, and cozy matching pajamas for the whole family."
+          image="/img/hero-uniforms.jpg"
           currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />

@@ -23,21 +23,21 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        
-        {/* Step-by-Step Flow */}
-        <HowItWorks />
+
+        {/* Product Catalog Showcase */}
+        <ProductGrid />
         
         {/* About Brand Section */}
-        <AboutUs />
+        {/* <AboutUs /> */}
 
         {/* Brand Video Showcase */}
         <VideoShowcase />
 
-        {/* Product Catalog Showcase */}
-        <ProductGrid />
+        {/* Step-by-Step Flow */}
+        <HowItWorks />
 
         {/* Credibility & Guarantee Standards */}
-        <QualityPromise />
+        {/* <QualityPromise /> */}
         
         {/* Quality Certifications */}
         {/* <Features /> */}

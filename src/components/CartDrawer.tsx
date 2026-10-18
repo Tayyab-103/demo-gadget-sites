@@ -17,10 +17,13 @@ export default function CartDrawer() {
   const totalNum = parseFloat(getCartTotal());
 
   return (
-    <>
+    <div
+      className={`fixed inset-0 z-999 overflow-hidden ${isCartOpen ? "" : "pointer-events-none"}`}
+      aria-hidden={!isCartOpen}
+    >
       {/* Overlay Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-999 transition-all duration-300 ${
+        className={`absolute inset-0 bg-black/60 backdrop-blur-xs transition-all duration-300 ${
           isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setIsCartOpen(false)}
@@ -28,8 +31,8 @@ export default function CartDrawer() {
 
       {/* Slide-out Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[420px] bg-white z-1000 border-l border-purple-100 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
-          isCartOpen ? "translate-x-0" : "translate-x-full"
+        className={`absolute top-0 bottom-0 right-0 w-full max-w-[420px] bg-white border-l border-purple-100 flex flex-col transition-[transform,visibility] duration-300 ease-in-out transform shadow-2xl ${
+          isCartOpen ? "translate-x-0 visible" : "translate-x-full invisible"
         }`}
       >
         {/* Drawer Header */}
@@ -179,6 +182,6 @@ export default function CartDrawer() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

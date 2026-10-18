@@ -164,7 +164,7 @@ export default function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen((v) => !v)}
-            className="lg:hidden text-[#2B2D42] p-1 ml-1"
+            className="lg:hidden text-[#2B2D42] p-2 -mr-1"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -187,11 +187,11 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 p-5 flex flex-col gap-3 animate-in slide-in-from-top-2 duration-150">
-          <Link href="/" onClick={closeAll} className="text-sm font-black text-[#FF6B8B]">HOME</Link>
-          <Link href="/shop" onClick={closeAll} className="text-sm font-bold text-gray-800">SHOP</Link>
-          <Link href="/about" onClick={closeAll} className="text-sm font-bold text-gray-800">ABOUT US</Link>
-          <Link href="/contact" onClick={closeAll} className="text-sm font-bold text-gray-800">CONTACT</Link>
+        <div className="lg:hidden bg-white border-t border-gray-100 p-5 flex flex-col gap-1 max-h-[calc(100dvh-4.5rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-150">
+          <Link href="/" onClick={closeAll} className="text-sm font-black text-[#FF6B8B] py-2.5">HOME</Link>
+          <Link href="/shop" onClick={closeAll} className="text-sm font-bold text-gray-800 py-2.5">SHOP</Link>
+          <Link href="/about" onClick={closeAll} className="text-sm font-bold text-gray-800 py-2.5">ABOUT US</Link>
+          <Link href="/contact" onClick={closeAll} className="text-sm font-bold text-gray-800 py-2.5">CONTACT</Link>
         </div>
       )}
     </header>

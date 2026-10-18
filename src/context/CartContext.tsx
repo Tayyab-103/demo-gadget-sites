@@ -33,13 +33,22 @@ function loadCartFromStorage(): CartItem[] {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
-  // Save cart to localStorage whenever it changes
+  // Load cart after hydration so server and client first renders match
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCart(loadCartFromStorage());
+    setHasLoaded(true);
+  }, []);
+
+  // Save cart to localStorage whenever it changes (only after initial load)
+  useEffect(() => {
+    if (!hasLoaded) return;
     localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-  }, [cart]);
+  }, [cart, hasLoaded]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     // If site configuration limits cart to one product

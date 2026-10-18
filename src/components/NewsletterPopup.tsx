@@ -66,8 +66,8 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-9999 flex items-center justify-center p-4 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[480px] border border-purple-100 shadow-2xl relative flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black/60 z-9999 flex items-center justify-center p-3 sm:p-4 overflow-y-auto transition-opacity duration-300">
+      <div className="bg-white rounded-3xl w-full max-w-[480px] max-h-full overflow-y-auto border border-purple-100 shadow-2xl relative flex flex-col my-auto">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -78,7 +78,7 @@ export default function NewsletterPopup() {
         </button>
 
         {/* Visual Header */}
-        <div className="h-[170px] relative">
+        <div className="h-[140px] sm:h-[170px] shrink-0 relative">
           <img
             src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80"
             alt="Organic baby clothing and accessories"
@@ -90,7 +90,7 @@ export default function NewsletterPopup() {
             <span className="text-[0.68rem] uppercase tracking-wider font-extrabold text-pink-300 block mb-1">
               🍼 Welcome Little Parent!
             </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight leading-tight">
+            <h3 className="text-xl sm:text-2xl font-black text-white m-0 tracking-tight leading-tight">
               Enjoy 15% Off Your Baby Bundle
             </h3>
           </div>

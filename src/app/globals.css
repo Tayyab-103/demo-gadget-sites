@@ -14,11 +14,14 @@
 /* Base Styles */
 @layer base {
   html {
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
   }
   
   body {
+    overflow-x: clip;
+    max-width: 100vw;
     background-color: var(--neutral-bg-color);
     color: var(--neutral-text-color);
     font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

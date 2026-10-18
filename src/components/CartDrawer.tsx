@@ -31,9 +31,9 @@ export default function CartDrawer() {
       >
         <div className="p-6 border-b border-slate-200 flex items-center justify-between bg-white">
           <div className="flex items-center gap-2.5">
-            <span className="text-base">🛡️</span>
+            <span className="text-base">👕</span>
             <h3 className="m-0 text-sm font-bold text-[#0A0F1D] tracking-widest uppercase">
-              WORKFORCE UNIFORM BAG
+              YOUR SHOPPING BAG
             </h3>
           </div>
           <button
@@ -49,7 +49,7 @@ export default function CartDrawer() {
           {cart.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-6">
-                Your uniform bag is currently empty.
+                Your shopping bag is currently empty.
               </p>
               <Link
                 href="/shop"

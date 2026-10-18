@@ -121,7 +121,7 @@ export default function Checkout() {
         <div className="fixed inset-0 bg-[#0A0F1D]/95 z-50 flex flex-col items-center justify-center p-4">
           <div className="w-12 h-12 border-4 border-blue-500/20 border-t-cyan-400 rounded-full animate-spin" />
           <h4 className="mt-6 text-base sm:text-lg font-bold text-white uppercase tracking-tight text-center">
-            Processing Secure Uniform Outfitting Acquisition...
+            Processing Your Secure Order...
           </h4>
           <p className="text-xs text-slate-400 text-center mt-1">
             Please do not refresh or close this window.
@@ -365,7 +365,7 @@ export default function Checkout() {
             <div className="lg:col-span-5 sticky top-28 flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-blue-500/20 shadow-xl shadow-blue-500/5">
                 <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D]">
-                  Uniform Manifest Summary
+                  Order Summary
                 </h3>
 
                 {cart.map((item) => (
@@ -401,7 +401,7 @@ export default function Checkout() {
                   />
                   <div>
                     <strong className="text-xs font-bold text-[#0A0F1D] block">
-                      Add Workforce Transit &amp; Damage Insurance
+                      Add Shipping Protection &amp; Damage Insurance
                     </strong>
                     <span className="text-[0.65rem] text-slate-500">
                       Guarantees expedited replacement if lost or damaged in transit ($1.00)
@@ -412,7 +412,7 @@ export default function Checkout() {
                 {/* Subtotals & Grand Total */}
                 <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-3">
                   <div className="flex justify-between items-center text-slate-600">
-                    <span>Uniform Subtotal:</span>
+                    <span>Subtotal:</span>
                     <span className="font-bold text-[#0A0F1D]">${cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center text-slate-600">

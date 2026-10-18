@@ -19,34 +19,34 @@ const steps: ProtocolStep[] = [
   {
     id: "step-1",
     stepNumber: "01",
-    title: "Fabric selection",
-    description: "1000D Cordura® ripstop weaves, Silvadur™ antimicrobial silver-ion twill, and DuPont Teflon™ fluid-repellent barriers.",
-    tagline: "Industrial-Grade Textiles",
-    specs: ["1000D Ripstop", "Silvadur™ Silver-Ion", "Teflon™ Barrier"],
+    title: "Thoughtful fabrics",
+    description: "Soft combed cotton, cozy brushed fleece, and breathable jersey knits chosen for comfort on every member of the family.",
+    tagline: "Comfort-First Materials",
+    specs: ["Combed Cotton", "Brushed Fleece", "Jersey Knit"],
   },
   {
     id: "step-2",
     stepNumber: "02",
-    title: "Shift-tested fit",
-    description: "3D articulated joints, four-way stretch gussets, and breathable CoolVent™ back panels engineered for 12-hour shifts.",
-    tagline: "Ergonomic Mobility",
-    specs: ["Articulated Knees", "4-Way Stretch", "CoolVent™ Airflow"],
+    title: "Family-tested fit",
+    description: "Relaxed, true-to-size cuts with comfy stretch waistbands and room to move for climbing, running, and lounging.",
+    tagline: "Room To Grow",
+    specs: ["True-To-Size", "Stretch Waistbands", "Tagless Comfort"],
   },
   {
     id: "step-3",
     stepNumber: "03",
-    title: "Reinforced construction",
-    description: "Triple-needle stress seam locking, bar-tacked utility cargo pockets, and heavy-duty YKK brass zippers.",
-    tagline: "Heavy-Duty Assembly",
-    specs: ["Triple-Needle Stitching", "YKK Brass Zips", "Bar-Tack Anchors"],
+    title: "Built to last",
+    description: "Double-stitched seams, reinforced knees, and pre-shrunk, colorfast fabric that holds up wash after wash.",
+    tagline: "Everyday Durability",
+    specs: ["Double Stitching", "Reinforced Knees", "Colorfast Dyes"],
   },
   {
     id: "step-4",
     stepNumber: "04",
-    title: "Fleet fulfillment",
-    description: `Dispatched in ${siteConfig.shippingPeriod || "3-5"} business days via ${siteConfig.shippingCarrier || "UPS"} with custom embroidery and a ${siteConfig.trialPeriod || 14}-day workforce fit guarantee.`,
-    tagline: "Workforce Deployment",
-    specs: [`${siteConfig.shippingCarrier || "UPS"} Express`, `${siteConfig.trialPeriod || 14}-Day Trial`, "Custom Branding"],
+    title: "Delivered to your door",
+    description: `Dispatched in ${siteConfig.shippingPeriod || "3-5"} business days via ${siteConfig.shippingCarrier || "UPS"} with a ${siteConfig.trialPeriod || 14}-day happy fit guarantee and easy size exchanges.`,
+    tagline: "Fast Family Delivery",
+    specs: [`${siteConfig.shippingCarrier || "UPS"} Express`, `${siteConfig.trialPeriod || 14}-Day Trial`, "Easy Exchanges"],
   },
 ];
 
@@ -64,16 +64,16 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 sm:pb-16 items-start">
           <div className="lg:col-span-7">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-              Outfitting Protocol
+              How We Make It
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-[1.12]">
-              A uniform is what people see. <br />
-              Engineering is what makes it work.
+              Style is what people see. <br />
+              Comfort is what your family feels.
             </h2>
           </div>
           <div className="lg:col-span-5 flex lg:justify-end">
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md lg:text-right font-normal">
-              We craft both: the immaculate commercial presentation for your crew and the heavy-duty endurance built into every fiber, pocket, and seam.
+              We design for both: fresh, easy-to-wear looks for every age and the everyday comfort built into every fabric, seam, and stitch.
             </p>
           </div>
         </div>

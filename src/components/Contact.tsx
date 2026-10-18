@@ -31,13 +31,13 @@ export default function Contact() {
           {/* Main Headline */}
           <div className="max-w-3xl mb-12 sm:mb-16">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-              Fleet Concierge
+              Family Support
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] uppercase leading-tight mb-4">
               Contact Our Team
             </h2>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-normal">
-              Have an outfitting inquiry or custom fleet requirement? Don&apos;t hesitate to reach out, and let&apos;s have a conversation.
+              Have a question about sizing, an order, or our family collection? Don&apos;t hesitate to reach out, and let&apos;s have a conversation.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default function Contact() {
                   GET IN TOUCH
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-4 max-w-md">
-                  Simply want to connect or have a general fleet inquiry? Feel free to reach out, and our outfitting specialists will get back to you promptly.
+                  Simply want to connect or have a general question? Feel free to reach out, and our friendly support team will get back to you promptly.
                 </p>
                 <a
                   href={`mailto:${siteConfig.email}`}
@@ -74,7 +74,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="font-mono text-[0.68rem] uppercase tracking-wider text-slate-400 font-bold block mb-1">
-                    Austin Atelier &amp; Dispatch
+                    Store Office &amp; Dispatch
                   </span>
                   <div className="font-bold text-sm text-[#0A0F1D]">
                     {siteConfig.address}
@@ -87,13 +87,13 @@ export default function Contact() {
             {/* Right Column: Action Blocks */}
             <div className="lg:col-span-6 flex flex-col gap-8">
               
-              {/* Action Block 1: Fleet Inquiries */}
+              {/* Action Block 1: Family Orders */}
               <div className="p-6 sm:p-7 rounded-2xl bg-[#F8FAFC] border border-slate-200">
                 <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#0A0F1D] mb-2">
-                  FLEET &amp; VOLUME INQUIRIES
+                  SIZING &amp; FAMILY ORDERS
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-5">
-                  Request custom embroidery, department volume orders, or sizing fit trial kits for your commercial workforce.
+                  Need help picking sizes for the whole family, planning matching outfits, or placing a larger family order? We&apos;re happy to help.
                 </p>
                 <button
                   onClick={() => setIsMessageModalOpen(true)}
@@ -144,10 +144,10 @@ export default function Contact() {
 
             <div className="mb-6">
               <div className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 mb-1">
-                {isMessageModalOpen ? "Fleet Concierge" : "Customer Support"}
+                {isMessageModalOpen ? "Family Support" : "Customer Support"}
               </div>
               <h4 className="text-2xl font-extrabold text-[#0A0F1D]">
-                {isMessageModalOpen ? "Send Outfitting Spec" : "Request Support & Exchange"}
+                {isMessageModalOpen ? "Send Us A Message" : "Request Support & Exchange"}
               </h4>
             </div>
 
@@ -190,7 +190,7 @@ export default function Contact() {
                   <textarea
                     rows={3}
                     required
-                    placeholder={isMessageModalOpen ? "Describe crew size, uniforms needed, or embroidery requirements..." : "Describe order or fit exchange inquiry..."}
+                    placeholder={isMessageModalOpen ? "Tell us your family's sizes, the styles you love, or any questions..." : "Describe order or fit exchange inquiry..."}
                     className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-[#0A0F1D] focus:border-[#0A0F1D] focus:outline-none"
                   />
                 </div>

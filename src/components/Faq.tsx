@@ -19,28 +19,28 @@ const faqItems: FaqItem[] = [
     id: "sizing",
     category: "sizing",
     categoryLabel: "Sizing",
-    question: "How do your sizing cuts fit compared to standard workwear?",
-    answer: "Our uniforms feature ergonomic athletic cuts with four-way stretch. Order your standard crew size; size up if layering over duty armor.",
+    question: "How do your sizes run for kids and adults?",
+    answer: "Our clothing runs true to size with a relaxed, comfortable fit. For growing kids, we recommend sizing up if they are between sizes. Each product page includes a size guide for babies, kids, and adults.",
   },
   {
     id: "trial",
     category: "sizing",
     categoryLabel: "Guarantee",
-    question: `How does the ${siteConfig.trialPeriod || 14}-day workforce fit trial work?`,
-    answer: `Wear our uniforms on active shift duty. If unsatisfied for any reason, return or exchange within ${siteConfig.trialPeriod || 14} days with 100% full money-back coverage.`,
+    question: `How does the ${siteConfig.trialPeriod || 14}-day happy fit guarantee work?`,
+    answer: `If anything doesn't fit or your family isn't happy for any reason, return or exchange it within ${siteConfig.trialPeriod || 14} days for a 100% money-back refund or a different size.`,
   },
   {
     id: "laundry",
     category: "durability",
     categoryLabel: "Care",
-    question: "Can Ironvale uniforms withstand commercial high-heat laundry?",
-    answer: "Yes. Lab-certified for commercial autoclave and wash cycles up to 160°F without shrinkage, pilling, or color bleeding.",
+    question: "How should I wash and care for my clothes?",
+    answer: "Machine wash cold with like colors and tumble dry low. Our fabrics are pre-shrunk and colorfast, so they keep their size, softness, and color through regular family laundry.",
   },
   {
     id: "shipping",
     category: "shipping",
     categoryLabel: "Shipping",
-    question: "How quickly will my order ship from the Austin facility?",
+    question: "How quickly will my order ship?",
     answer: `Dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracked delivery arriving in ${siteConfig.shippingPeriod} business days.`,
   },
   {
@@ -53,16 +53,16 @@ const faqItems: FaqItem[] = [
   {
     id: "embroidery",
     category: "durability",
-    categoryLabel: "Branding",
-    question: "Can we add custom corporate logo embroidery?",
-    answer: "Yes. Our Austin atelier provides commercial embroidery and custom department badges for hospital networks, security teams, and culinary brigades.",
+    categoryLabel: "Sizes",
+    question: "Do you carry sizes for the whole family?",
+    answer: "Yes. We carry sizes for babies, toddlers, kids, teens, women, and men, including matching family sets so everyone can coordinate for photos, holidays, and outings.",
   },
 ];
 
 const categories = [
   { key: "all", label: "All" },
   { key: "sizing", label: "Sizing" },
-  { key: "durability", label: "Durability" },
+  { key: "durability", label: "Care & Sizes" },
   { key: "shipping", label: "Shipping" },
 ];
 
@@ -86,13 +86,13 @@ export default function Faq() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-            Workforce Guidance
+            Family Shopping Help
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
             Frequently Answered Questions.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md mx-auto">
-            Quick guidance on uniform sizing, commercial laundry care, shipping, and warranty.
+            Quick answers on sizing, garment care, shipping, and returns.
           </p>
 
           {/* Category Filter Pills */}

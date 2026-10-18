@@ -20,32 +20,32 @@ interface CustomerStory {
 const customerStories: CustomerStory[] = [
   {
     id: "01",
-    logo: "VANGUARD DEFENSE",
-    logoSub: "SECURITY",
+    logo: "THE CARTER FAMILY",
+    logoSub: "FAMILY OF 5",
     quote:
-      "“Ironvale provides a standard of durability that’s paramount to our officer safety across 350+ patrol personnel in Texas.”",
-    authorName: "Marcus Vance",
-    authorRole: "VP of Security Operations",
+      "“With three kids growing out of everything, finding one store that fits all of us is a lifesaver. The tees still look new after months of washing.”",
+    authorName: "Jessica Carter",
+    authorRole: "Mom of Three",
     image: "/img/stories/story-tactical.jpg",
   },
   {
     id: "02",
-    logo: "METRO HEALTH",
-    logoSub: "HOSPITAL",
+    logo: "THE NGUYEN FAMILY",
+    logoSub: "FAMILY OF 4",
     quote:
-      "“The Apex-Core scrubs endure hospital autoclave sterilization without color fade. Our surgical staff enjoys true all-shift comfort.”",
-    authorName: "Dr. Claire Sterling, MD",
-    authorRole: "Chief Nursing Director",
+      "“The jogger sets survive recess, mud puddles, and the washing machine. Soft enough that my son actually asks to wear them.”",
+    authorName: "David Nguyen",
+    authorRole: "Dad of Two",
     image: "/img/stories/story-medical.jpg",
   },
   {
     id: "03",
-    logo: "L'ARTISAN",
-    logoSub: "CULINARY",
+    logo: "THE MORALES FAMILY",
+    logoSub: "THREE GENERATIONS",
     quote:
-      "“The CoolVent airflow panels keep our brigade cool during dinner rushes while preserving the crisp polish our dining room demands.”",
-    authorName: "Antoine Moreau",
-    authorRole: "Executive Head Chef",
+      "“We ordered matching pajamas for the holidays, from grandma down to the baby. Everything fit, felt cozy, and the photos were priceless.”",
+    authorName: "Maria Morales",
+    authorRole: "Mom & Grandma",
     image: "/img/stories/story-culinary.jpg",
   },
 ];
@@ -85,7 +85,7 @@ export default function Testimonials() {
             Inspiring Stories, Real Customers.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
-            From municipal police forces to premier hospital networks and culinary academies across the nation.
+            From busy parents to proud grandparents, families across the country trust us for everyday clothing.
           </p>
         </div>
 

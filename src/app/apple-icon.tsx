@@ -24,7 +24,7 @@ export default function AppleIcon() {
           border: `2px solid ${siteConfig.theme.secondaryColor}`,
         }}
       >
-        <div style={{ fontSize: 72 }}>🛡️</div>
+        <div style={{ fontSize: 72 }}>👕</div>
         <div
           style={{
             fontSize: 16,
@@ -35,7 +35,7 @@ export default function AppleIcon() {
             textTransform: "uppercase",
           }}
         >
-          Ironvale
+          Everyday
         </div>
       </div>
     ),

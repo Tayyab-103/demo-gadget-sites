@@ -19,32 +19,32 @@ interface FeatureItem {
 const featuresList: FeatureItem[] = [
   {
     id: 1,
-    title: "1000D Cordura® Ripstop",
-    description: "High-tenacity nylon ripstop with DuPont Teflon™ shield resisting friction, chemical spills, and heavy abrasion.",
+    title: "Soft Breathable Cotton",
+    description: "Gentle, skin-friendly cotton and cotton blends that feel great on sensitive skin, from newborns to adults.",
     image: "/img/feature1.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 2,
-    title: "Silvadur™ Antimicrobial",
-    description: "Silver-ion polymer technology providing 99.9% clinical pathogen and odor defense through 100+ industrial washes.",
+    title: "Sizes For Every Age",
+    description: "Baby, kids, teens, women, and men in one place, so outfitting the whole family takes a single stop.",
     image: "/img/feature2.jpg",
     link: "/shop",
     imagePosition: "bottom",
   },
   {
     id: 3,
-    title: "Triple-Needle Stitching",
-    description: "Reinforced high-stress bar-tacking and heavy-gauge YKK zippers engineered for zero seam blowouts under tactical duty.",
+    title: "Wash-Tested Durability",
+    description: "Reinforced seams and pre-shrunk, colorfast fabrics hold their shape and color through countless laundry days.",
     image: "/img/uniform-tailoring-atelier.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 4,
-    title: `${siteConfig.trialPeriod || 14}-Day Shift Guarantee`,
-    description: "Deploy our uniform suites risk-free across your crew with 100% money-back coverage and complimentary size exchanges.",
+    title: `${siteConfig.trialPeriod || 14}-Day Happy Fit Guarantee`,
+    description: "Shop risk-free for the whole family with 100% money-back coverage and easy size exchanges for growing kids.",
     image: "/img/feature3.jpg",
     link: "/shop",
     imagePosition: "bottom",
@@ -62,13 +62,13 @@ export default function Features() {
           {/* Centered Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
-              Performance Architecture
+              Why Families Choose Us
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] mb-4">
-              Workforce Performance Features
+              Made For Real Family Life
             </h2>
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
-              Every uniform suite from {siteConfig.brandName} is precision-engineered to withstand severe shift environments, commercial autoclaves, and active daily movement.
+              Every piece from {siteConfig.brandName} is designed to keep up with school runs, playdates, weekend outings, and busy everyday routines.
             </p>
           </div>
 

@@ -81,14 +81,14 @@ export default function NewsletterPopup() {
         <div className="h-[190px] relative">
           <img
             src="/img/hero-uniforms.jpg"
-            alt="Ironvale workforce uniforms"
+            alt="Family clothing collection"
             className="w-full h-full object-cover absolute inset-0 opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/50 to-[#0A0F1D]/95" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.68rem] uppercase tracking-[0.24em] font-bold text-slate-300 block mb-1">
-              ENTERPRISE INVITATION
+              FAMILY CLUB INVITATION
             </span>
             <h3 className="text-2xl font-bold text-white m-0 tracking-tight">
               Claim $15 Off Your First Order
@@ -105,20 +105,20 @@ export default function NewsletterPopup() {
               </div>
               <h4 className="text-[#0A0F1D] font-bold uppercase text-lg mb-2">Voucher Code Dispatched!</h4>
               <p className="text-slate-600 text-sm font-normal">
-                Check your inbox for your $15 uniform outfitting credit code.
+                Check your inbox for your $15 family wardrobe credit code.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
-                Join {siteConfig.brandName}. Subscribe today to receive new workforce fabric releases, fleet discounts, and <strong>$15 off</strong> your first order.
+                Join {siteConfig.brandName}. Subscribe today to receive new arrivals, seasonal family styles, and <strong>$15 off</strong> your first order.
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
                   className="block w-full px-5 py-3.5 text-sm border border-slate-300 rounded-full focus:outline-none focus:border-[#0A0F1D] transition-all text-[#0A0F1D] bg-white shadow-2xs"
-                  placeholder="Enter your workforce email address"
+                  placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -129,7 +129,7 @@ export default function NewsletterPopup() {
                 type="submit"
                 className="inline-block font-bold text-center whitespace-nowrap bg-[#0A0F1D] hover:bg-slate-800 text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md"
               >
-                Claim $15 Uniform Credit
+                Claim $15 Family Credit
               </button>
 
               <span className="block text-center text-[0.68rem] text-slate-400 mt-3">

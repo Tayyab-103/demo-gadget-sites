@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-tailored heavy-duty tactical uniforms, antimicrobial healthcare scrubs, and executive hospitality chef coats engineered in Austin, Texas.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Comfortable, affordable everyday clothing for the whole family: soft cotton basics, kids' play sets, and cozy matching pajamas for babies, kids, and adults.`;
 
 // Preload fonts
 const montserrat = Montserrat({
@@ -46,23 +46,23 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+  title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
   description: siteDescription,
   keywords: [
-    "commercial uniforms",
-    "tactical workwear",
-    "medical scrubs",
-    "chef coats",
-    "culinary uniforms",
-    "antimicrobial scrubs",
-    "cordura work pants",
-    "enterprise uniform outfitter",
-    "austin uniform supplier",
-    "hospitality uniforms",
-    "Ironvale Uniform Outfitters"
+    "family clothing store",
+    "family apparel",
+    "kids clothing",
+    "baby clothes",
+    "matching family pajamas",
+    "cotton t-shirts",
+    "kids jogger sets",
+    "affordable family clothing",
+    "everyday basics",
+    "family loungewear",
+    siteConfig.brandName
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Everyday Clothing for the Whole Family`,
     description: siteDescription,
   },
 };

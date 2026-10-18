@@ -37,7 +37,7 @@ export default function Terms() {
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing commercial uniforms, tactical workwear, medical scrubs, or chef apparel from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing family clothing and apparel from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -49,7 +49,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer commercial uniform apparel suites and accessories through one-time acquisitions (Straight Sale) under the following pricing structures:
+              We offer family clothing and apparel through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
@@ -68,7 +68,7 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-slate-600">
-                          Upon ordering a <strong className="text-[#0A0F1D] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Fleet Outfitting Package` : "Single Unit Sample"}</strong>,
+                          Upon ordering a <strong className="text-[#0A0F1D] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Piece Family Pack` : "Single Item"}</strong>,
                           you will be charged a singular transaction fee of <strong className="text-[#0A0F1D] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
                           The credit card charge will appear on your statement as <strong className="text-[#0A0F1D] font-bold">“{siteConfig.descriptor}”</strong>.
@@ -95,13 +95,13 @@ export default function Terms() {
             <p>
               All orders are processed, inspected, and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched from our Austin, TX facility.
+              You will receive a tracking number via email once your order has been dispatched from our facility.
             </p>
 
-            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod || 14}-DAY WORKFORCE PERFECT FIT GUARANTEE &amp; RETURN POLICY</h3>
+            <h3 className="text-base font-bold text-[#0A0F1D] mt-8 mb-4 uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod || 14}-DAY HAPPY FIT GUARANTEE &amp; RETURN POLICY</h3>
             <p>
-              We stand behind our workforce apparel with a {siteConfig.trialPeriod || 14}-day workforce perfect fit guarantee. If you are not satisfied with the fit, comfort, or performance of your purchase,
-              please contact our outfitting concierge desk at <strong className="text-[#0A0F1D] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              We stand behind our family clothing with a {siteConfig.trialPeriod || 14}-day happy fit guarantee. If you are not satisfied with the fit, comfort, or performance of your purchase,
+              please contact our customer support team at <strong className="text-[#0A0F1D] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-[#0A0F1D] font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>

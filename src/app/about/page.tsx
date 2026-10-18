@@ -19,9 +19,9 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="The Outfitting Standard"
+          eyebrow="Our Family Story"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Engineered in Austin, Texas. Dedicated to precision-tailored tactical workwear, antimicrobial clinical scrubs, and executive culinary uniforms."
+          subtitle="Based in Winston-Salem, North Carolina. Dedicated to comfortable, affordable everyday clothing for babies, kids, teens, and adults."
           image="/img/uniform-tailoring-atelier.jpg"
           currentLabel="About"
         />

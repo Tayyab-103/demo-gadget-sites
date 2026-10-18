@@ -14,9 +14,9 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Commercial Outfitting Catalog"
-          title={<>Commercial Uniforms &amp; Workwear</>}
-          subtitle="Explore tactical industrial utility suites, Silvadur™ antimicrobial medical scrubs, and executive double-breasted culinary coats."
+          eyebrow="The Family Collection"
+          title={<>Everyday Family Clothing</>}
+          subtitle="Explore soft cotton essentials, play-ready kids&apos; sets, and cozy matching pajamas for the whole family."
           image="/img/hero-uniforms.jpg"
           currentLabel="Shop"
         />

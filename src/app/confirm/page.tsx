@@ -26,15 +26,15 @@ function ConfirmContent() {
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-[#0A0F1D] mb-3 tracking-tight">Uniform Order Confirmed!</h2>
+      <h2 className="text-2xl md:text-3xl font-black uppercase text-[#0A0F1D] mb-3 tracking-tight">Order Confirmed!</h2>
       <p className="text-slate-600 text-sm md:text-base mb-8 leading-relaxed font-normal">
-        Thank you for equipping with {siteConfig.brandName}. Your uniform acquisition has been scheduled for multi-point inspection and priority dispatch from our Austin, TX atelier.
+        Thank you for shopping with {siteConfig.brandName}. Your family&apos;s order is being carefully packed and will be dispatched soon.
       </p>
 
       {/* Order Info Table */}
       <div className="bg-[#F8FAFC] border border-blue-500/20 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-slate-400 uppercase tracking-wider text-[0.68rem] font-bold">Uniform Order ID:</span>
+          <span className="text-slate-400 uppercase tracking-wider text-[0.68rem] font-bold">Order ID:</span>
           <strong className="text-[#0A0F1D] font-black">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
@@ -53,7 +53,7 @@ function ConfirmContent() {
 
       <p className="text-[0.72rem] md:text-xs text-slate-500 leading-relaxed mb-8 font-normal">
         A dispatch confirmation email containing your UPS tracking number will be sent to your registered inbox shortly.
-        For outfitting concierge assistance, contact our team at <strong className="text-[#0A0F1D] font-bold">{siteConfig.email}</strong> or call <strong className="text-[#0A0F1D] font-bold">{siteConfig.phone}</strong>.
+        For order assistance, contact our team at <strong className="text-[#0A0F1D] font-bold">{siteConfig.email}</strong> or call <strong className="text-[#0A0F1D] font-bold">{siteConfig.phone}</strong>.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -61,7 +61,7 @@ function ConfirmContent() {
           href="/shop"
           className="group inline-flex items-center justify-center gap-2.5 font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-blue-500/20 hover:shadow-xl w-full sm:w-auto hover:scale-105"
         >
-          Explore More Uniforms
+          Continue Shopping
           <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
         </Link>
         <Link

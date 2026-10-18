@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Heavy-Duty Utility Uniform Suite",
-    "description": "Engineered from 1000D Cordura® reinforced ripstop flex weave with DuPont Teflon™ stain & water-repellent finish. Features articulated knee & elbow armor pockets, 14 multi-tool utility cargo pockets, heavy-duty YKK brass zippers, and reinforced triple-needle stitching for severe industrial and field duty.",
+    "name": "Everyday Family Essentials Tee Pack",
+    "description": "Soft, breathable crew-neck tees cut from 100% combed ring-spun cotton in sizes for the whole family, from toddlers to adults. Pre-shrunk fabric, tagless printed labels for itch-free comfort, reinforced shoulder seams, and fade-resistant colors that stay bright wash after wash.",
     "image": "/img/products/product-tactical-workwear.jpg",
     "images": [
       "/img/products/product-tactical-workwear.jpg",
@@ -12,7 +12,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Industrial & Tactical Workwear",
+    "category": "Family Basics & Tees",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
@@ -30,8 +30,8 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Medical Scrub Suite",
-    "description": "Tailored for surgical teams and clinical healthcare professionals with Silvadur™ antimicrobial silver-ion fabric technology. Features fluid-resistant four-way stretch micro-twill, 9-pocket ergonomic utility cargo scrub pants, and breathable mesh ventilation panels for 24-hour shift comfort.",
+    "name": "Kids' Play-Ready Jogger Set",
+    "description": "A cozy two-piece set made for school days, playgrounds, and everything in between. Brushed cotton-blend fleece with a soft-stretch waistband, adjustable drawcord, reinforced double-layer knees, and ribbed cuffs that keep up with active kids and hold up to frequent washing.",
     "image": "/img/products/product-medical-scrubs.jpg",
     "images": [
       "/img/products/product-medical-scrubs.jpg",
@@ -40,7 +40,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Medical & Healthcare Uniforms",
+    "category": "Kids' Clothing",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,8 +58,8 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Culinary & Chef Uniform Coat",
-    "description": "Master-crafted from 240 GSM organic ring-spun cotton twill with dual CoolVent™ breathable back air-flow panels. Includes stain-release coating, concealed magnetic apron-stay collar tab, dual sleeve thermometer pockets, and handcrafted cloth knot buttons.",
+    "name": "Cozy Family Matching Pajama Set",
+    "description": "Matching long-sleeve pajamas for movie nights, holidays, and lazy weekend mornings. Made from breathable, brushed jersey cotton with a relaxed fit, covered elastic waistband, and soft ribbed cuffs. Available in sizes for babies, kids, and adults so the whole family can match.",
     "image": "/img/products/product-chef-coat.jpg",
     "images": [
       "/img/products/product-chef-coat.jpg",
@@ -68,7 +68,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Culinary & Hospitality Uniforms",
+    "category": "Family Loungewear & Sleepwear",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",

@@ -120,8 +120,8 @@ export default function Checkout() {
       {/* Loading Overlay */}
       {loading && (
         <div className="fixed inset-0 bg-neutral-bg/95 backdrop-blur-md z-50 flex flex-col items-center justify-center">
-          <div className="w-12 h-12 border-4 border-black/10 border-t-primary rounded-full animate-spin" />
-          <h4 className="mt-6 font-serif text-xl uppercase tracking-wider text-primary">Processing Secure Order...</h4>
+          <div className="w-12 h-12 border-4 border-secondary border-t-primary rounded-full animate-spin" />
+          <h4 className="mt-6 font-serif text-xl text-neutral-text">Processing Secure Order...</h4>
           <p className="text-xs text-neutral-text/55 uppercase tracking-widest mt-1">Please do not refresh or close this window.</p>
         </div>
       )}
@@ -134,7 +134,7 @@ export default function Checkout() {
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-neutral-text/50 block mb-2">
               SECURE ENCRYPTED CHECKOUT
             </span>
-            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.04em] text-primary leading-tight">
+            <h1 className="font-serif font-medium text-3xl sm:text-4xl md:text-5xl text-neutral-text leading-tight">
               COMPLETE YOUR ORDER
             </h1>
           </div>
@@ -142,7 +142,7 @@ export default function Checkout() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
 
             {/* Form Column */}
-            <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/8 shadow-md">
+            <div className="lg:col-span-7 bg-neutral-bg rounded-3xl p-6 sm:p-8 md:p-10 border border-secondary/60 shadow-md">
               {errorMsg && (
                 <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-2xl mb-6 text-xs sm:text-sm">
                   <strong>Transaction Status:</strong> {errorMsg}
@@ -151,7 +151,7 @@ export default function Checkout() {
 
               <form onSubmit={handleSubmit}>
                 {/* 1. Shipping Information */}
-                <h2 className="font-serif font-normal text-lg sm:text-xl uppercase tracking-[0.04em] border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h2 className="font-serif font-medium text-lg sm:text-xl border-b border-secondary/50 pb-3.5 mb-6 text-neutral-text">
                   1. Shipping Information
                 </h2>
                 
@@ -161,7 +161,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="firstName"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.firstName}
                       onChange={handleChange}
                       required
@@ -172,7 +172,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="lastName"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.lastName}
                       onChange={handleChange}
                       required
@@ -185,7 +185,7 @@ export default function Checkout() {
                   <input
                     type="text"
                     name="shippingAddress1"
-                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                     value={formData.shippingAddress1}
                     onChange={handleChange}
                     required
@@ -198,7 +198,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingCity"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.shippingCity}
                       onChange={handleChange}
                       required
@@ -209,7 +209,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingState"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       placeholder="e.g. CA"
                       value={formData.shippingState}
                       onChange={handleChange}
@@ -221,7 +221,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingZip"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.shippingZip}
                       onChange={handleChange}
                       required
@@ -235,7 +235,7 @@ export default function Checkout() {
                     <input
                       type="tel"
                       name="phone"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -246,7 +246,7 @@ export default function Checkout() {
                     <input
                       type="email"
                       name="email"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -255,7 +255,7 @@ export default function Checkout() {
                 </div>
 
                 {/* 2. Payment Details */}
-                <h2 className="font-serif font-normal text-lg sm:text-xl uppercase tracking-[0.04em] border-b border-black/5 pb-3.5 mb-6 text-primary mt-10">
+                <h2 className="font-serif font-medium text-lg sm:text-xl border-b border-secondary/50 pb-3.5 mb-6 text-neutral-text mt-10">
                   2. Payment Details
                 </h2>
 
@@ -265,7 +265,7 @@ export default function Checkout() {
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
@@ -281,7 +281,7 @@ export default function Checkout() {
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Expiry Month</label>
                     <select
                       name="cc_month"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg cursor-pointer"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface cursor-pointer"
                       value={formData.cc_month}
                       onChange={handleChange}
                       required
@@ -296,7 +296,7 @@ export default function Checkout() {
                     <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Expiry Year</label>
                     <select
                       name="cc_year"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg cursor-pointer"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface cursor-pointer"
                       value={formData.cc_year}
                       onChange={handleChange}
                       required
@@ -313,7 +313,7 @@ export default function Checkout() {
                       type="password"
                       name="CVV"
                       maxLength={4}
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
+                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface"
                       placeholder="•••"
                       value={formData.CVV}
                       onChange={handleChange}
@@ -324,7 +324,7 @@ export default function Checkout() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-4 text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-4 text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg"
                 >
                   <span>Complete Secure Purchase</span>
                   <span>→</span>
@@ -334,13 +334,13 @@ export default function Checkout() {
 
             {/* Cart Summary Column */}
             <div className="lg:col-span-5 sticky top-[100px] flex flex-col gap-6">
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/8 shadow-md">
-                <h2 className="font-serif font-normal text-lg sm:text-xl uppercase tracking-[0.04em] border-b border-black/5 pb-3.5 mb-6 text-primary">
+              <div className="bg-neutral-bg rounded-3xl p-6 sm:p-8 border border-secondary/60 shadow-md">
+                <h2 className="font-serif font-medium text-lg sm:text-xl border-b border-secondary/50 pb-3.5 mb-6 text-neutral-text">
                   Order Summary
                 </h2>
 
                 {/* Cart list items */}
-                <div className="flex flex-col divide-y divide-black/5 mb-6">
+                <div className="flex flex-col divide-y divide-secondary/50 mb-6">
                   {cart.map((item) => (
                     <div className="flex justify-between items-center py-3.5 first:pt-0 last:pb-0" key={item.Id}>
                       <div className="flex-1 pr-4">
@@ -358,7 +358,7 @@ export default function Checkout() {
 
                 {/* Shipping Insurance Checkbox */}
                 <div
-                  className="p-4 bg-neutral-bg border border-black/10 rounded-2xl mb-6 flex items-center gap-3.5 cursor-pointer hover:border-black/20 transition-all"
+                  className="p-4 bg-surface border border-secondary/70 rounded-2xl mb-6 flex items-center gap-3.5 cursor-pointer hover:border-secondary-dark/50 transition-all"
                   onClick={() => setShippingInsurance(prev => !prev)}
                 >
                   <input
@@ -379,14 +379,14 @@ export default function Checkout() {
                 </div>
 
                 {/* Subtotals & Grand Total */}
-                <div className="flex flex-col gap-3 text-xs sm:text-sm border-t border-black/5 pt-4">
+                <div className="flex flex-col gap-3 text-xs sm:text-sm border-t border-secondary/50 pt-4">
                   <div className="flex justify-between items-center text-neutral-text/70">
                     <span>Cart Subtotal:</span>
                     <span className="font-semibold text-primary">${cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center text-neutral-text/70">
                     <span>Shipping:</span>
-                    <span className="text-green-700 font-bold tracking-wider uppercase text-xs">FREE</span>
+                    <span className="text-primary font-bold tracking-wider uppercase text-xs">FREE</span>
                   </div>
                   {shippingInsurance && (
                     <div className="flex justify-between items-center text-neutral-text/70">
@@ -395,15 +395,15 @@ export default function Checkout() {
                     </div>
                   )}
 
-                  <div className="flex justify-between items-center border-t border-black/10 pt-4 mt-2">
-                    <span className="font-serif font-normal text-base sm:text-lg text-primary uppercase tracking-wide">Grand Total:</span>
-                    <span className="font-serif font-bold text-xl sm:text-2xl text-primary">${grandTotal}</span>
+                  <div className="flex justify-between items-center border-t border-secondary/70 pt-4 mt-2">
+                    <span className="font-serif font-medium text-base sm:text-lg text-neutral-text">Grand Total:</span>
+                    <span className="font-serif font-bold text-xl sm:text-2xl text-neutral-text">${grandTotal}</span>
                   </div>
                 </div>
               </div>
 
               {/* Safety Disclosures */}
-              <div className="p-5 text-center text-[0.68rem] text-neutral-text/50 leading-relaxed bg-white border border-black/8 rounded-2xl shadow-2xs">
+              <div className="p-5 text-center text-[0.68rem] text-neutral-text/50 leading-relaxed bg-surface border border-secondary/60 rounded-2xl shadow-2xs">
                 <p className="font-semibold text-primary">
                   🔒 256-Bit SSL Encrypted Connection
                 </p>

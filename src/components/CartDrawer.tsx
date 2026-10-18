@@ -18,19 +18,19 @@ export default function CartDrawer() {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-999 transition-all duration-300 ${
+        className={`fixed inset-0 bg-primary-dark/50 backdrop-blur-sm z-999 transition-all duration-300 ${
           isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setIsCartOpen(false)}
       />
       {/* Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[420px] bg-white z-1000 border-l border-black/10 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
+        className={`fixed top-0 bottom-0 right-0 w-full max-w-[420px] bg-neutral-bg z-1000 border-l border-secondary/70 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/5 flex items-center justify-between">
-          <h3 className="m-0 font-serif font-normal text-xl uppercase tracking-[0.04em] text-primary">Shopping Cart</h3>
+        <div className="p-6 border-b border-secondary/50 flex items-center justify-between">
+          <h3 className="m-0 font-serif font-medium text-xl text-neutral-text">Your Cart</h3>
           <button
             onClick={() => setIsCartOpen(false)}
             className="bg-transparent border-none text-2xl cursor-pointer text-neutral-text/50 hover:text-primary leading-none transition-colors"
@@ -43,14 +43,16 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-14">
-              <div className="text-neutral-text/20 text-5xl mb-4">🛒</div>
-              <h4 className="font-serif font-normal text-lg uppercase tracking-wider text-primary mb-2">Your Bag Is Empty</h4>
-              <p className="text-neutral-text/50 text-xs uppercase tracking-wider mb-6">Discover handcrafted living furnishings.</p>
+              <div className="w-16 h-16 rounded-full bg-surface border border-secondary text-primary flex items-center justify-center mx-auto mb-5">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              </div>
+              <h4 className="font-serif font-medium text-lg text-neutral-text mb-2">Your Bag Is Empty</h4>
+              <p className="text-neutral-text/50 text-xs uppercase tracking-wider mb-6">Find a warm new piece for your home.</p>
               <button
-                className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] shadow-sm cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] shadow-sm cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Collection
+                Continue Shopping
               </button>
             </div>
           ) : (
@@ -79,28 +81,28 @@ export default function CartDrawer() {
               };
 
               return (
-                <div className="flex gap-4 pb-5 mb-5 border-b border-black/5 items-start relative group" key={item.Id}>
+                <div className="flex gap-4 pb-5 mb-5 border-b border-secondary/50 items-start relative group" key={item.Id}>
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-2xl bg-neutral-bg border border-black/5 flex-shrink-0"
+                    className="w-[70px] h-[70px] object-cover rounded-2xl bg-neutral-bg border border-secondary/50 flex-shrink-0"
                     onError={(e) => {
                       e.currentTarget.src = "https://placehold.co/100x100?text=Product";
                     }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="font-serif font-normal text-sm sm:text-base text-primary uppercase tracking-wide truncate">{item.Name}</div>
+                    <div className="font-serif font-medium text-sm sm:text-base text-neutral-text truncate">{item.Name}</div>
                     <div className="text-[0.62rem] text-neutral-text/50 mb-3 uppercase tracking-wider font-semibold">
                       {item.Label || "Single Pack"}
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
                       {/* Stepper Controls */}
-                      <div className="flex items-center gap-1.5 bg-neutral-bg p-1 rounded-xl border border-black/10">
+                      <div className="flex items-center gap-1.5 bg-neutral-bg p-1 rounded-xl border border-secondary/70">
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-neutral-bg border border-secondary/50 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-surface text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
@@ -108,7 +110,7 @@ export default function CartDrawer() {
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="bg-white border border-black/5 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-neutral-bg text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="bg-neutral-bg border border-secondary/50 w-6 h-6 rounded-lg flex items-center justify-center cursor-pointer hover:bg-surface text-xs font-bold text-primary disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
@@ -132,9 +134,9 @@ export default function CartDrawer() {
         </div>
 
         {cart.length > 0 && (
-          <div className="p-6 border-t border-black/5 bg-neutral-bg/60 backdrop-blur-sm">
+          <div className="p-6 border-t border-secondary/50 bg-surface">
             <div className="flex items-center justify-between mb-5">
-              <span className="font-serif font-normal text-primary uppercase text-sm tracking-widest">Subtotal</span>
+              <span className="font-serif font-medium text-neutral-text text-sm">Subtotal</span>
               <span className="font-bold text-lg text-primary">
                 ${getCartTotal()}
               </span>
@@ -142,7 +144,7 @@ export default function CartDrawer() {
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-[0.16em] w-full shadow-md hover:shadow-lg mb-3"
+              className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-[0.16em] w-full shadow-md hover:shadow-lg mb-3"
               onClick={() => setIsCartOpen(false)}
             >
               <span>Proceed to Checkout</span>
@@ -151,7 +153,7 @@ export default function CartDrawer() {
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-black/20 text-primary hover:border-black/40 hover:bg-black/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] w-full cursor-pointer"
+              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-secondary-dark/50 text-primary hover:border-primary hover:bg-surface transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] w-full cursor-pointer"
             >
               Continue Shopping
             </button>

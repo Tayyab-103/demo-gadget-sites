@@ -19,18 +19,18 @@ export default function Privacy() {
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-neutral-text/50 block mb-2">
               LEGAL NOTICE
             </span>
-            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.04em] text-primary leading-tight">
+            <h1 className="font-serif font-medium text-3xl sm:text-4xl md:text-5xl text-neutral-text leading-tight">
               PRIVACY POLICY
             </h1>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-black/8 shadow-md leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
+          <div className="bg-neutral-bg rounded-3xl p-6 sm:p-10 md:p-12 border border-secondary/60 shadow-md leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
             <p>
               This Privacy Policy describes how your personal information is collected, used, and shared when you visit
               or make a purchase from <strong className="text-primary font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               PERSONAL INFORMATION WE COLLECT
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default function Privacy() {
               email address, and phone number. We refer to this information as “Order Information.”
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               HOW DO WE USE YOUR PERSONAL INFORMATION?
             </h2>
             <p>
@@ -59,7 +59,7 @@ export default function Privacy() {
               <li>Provide you with information or updates relating to our handcrafted furnishings or services.</li>
             </ul>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               SHARING YOUR PERSONAL INFORMATION
             </h2>
             <p>
@@ -71,7 +71,7 @@ export default function Privacy() {
               subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               DATA RETENTION
             </h2>
             <p>
@@ -79,12 +79,12 @@ export default function Privacy() {
               you ask us to delete this information.
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               CONTACT US
             </h2>
             <p>
               For more information about our privacy practices, if you have questions, or if you would like to make an inquiry,
-              please contact our concierge support center at <strong className="text-primary font-semibold">{siteConfig.email}</strong> or call <strong className="text-primary font-semibold">{siteConfig.phone}</strong>.
+              please contact our customer support team at <strong className="text-primary font-semibold">{siteConfig.email}</strong> or call <strong className="text-primary font-semibold">{siteConfig.phone}</strong>.
             </p>
           </div>
         </div>

@@ -1,123 +1,86 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
+import SectionHeading from "@/components/SectionHeading";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const contactImages = [
-  "/img/brand/hero_interior.jpg",
-  "/img/brand/about_studio.jpg",
-  "/img/brand/how_step3.jpg",
-];
+const inputClass =
+  "block w-full px-4 py-3.5 text-sm border border-secondary/70 rounded-2xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-secondary/40 transition-all text-neutral-text bg-surface placeholder:text-neutral-text/35";
+const labelClass = "block font-bold mb-2 text-[0.65rem] uppercase tracking-[0.16em] text-neutral-text/60";
 
-export default function Contact({ showHeader = true, badgeNumber = "06" }: { showHeader?: boolean; badgeNumber?: string }) {
+export default function Contact({ showHeader = true }: { showHeader?: boolean }) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % contactImages.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
+  const details = [
+    { label: "Call us", value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
+    { label: "Email us", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    { label: "Mailing address", value: siteConfig.address },
+  ];
 
   return (
-    <section className="py-10 sm:py-14 md:py-16 bg-neutral-bg relative" id="contact">
+    <section className="py-16 sm:py-20 md:py-24 bg-neutral-bg relative" id="contact">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
-        
-        {/* Top Section Header (Shown only when enabled) */}
+
         {showHeader && (
-          <>
-            <div className="flex items-center gap-3 sm:gap-6 mb-6">
-              <span className="bg-primary text-white font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl px-3.5 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
-                {badgeNumber}
-              </span>
-
-              <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none break-words">
-                GET IN TOUCH
-              </h2>
-            </div>
-
-            <div className="w-full h-px bg-black/10 mb-6 sm:mb-10 md:mb-12" />
-          </>
+          <SectionHeading
+            eyebrow="Get in Touch"
+            title={<>We&apos;d love to <span className="italic text-primary">hear from you.</span></>}
+            description="Questions about a piece, an order, or a return? Send us a note and our team will reply within one business day."
+          />
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-stretch">
-          
-          {/* Visual Showcase Card (Clean Light Styling) */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[400px] lg:min-h-0 shadow-md border border-black/8 bg-white flex flex-col justify-end p-6 sm:p-8">
-            {contactImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt="Alderwyn Home Living Interiors design consultation"
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                }`}
-                style={{ transitionProperty: "opacity, transform" }}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+
+          {/* Info card */}
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden bg-primary text-primary-text flex flex-col">
+            <div className="relative h-56 sm:h-64">
+              <Image
+                src="/img/brand/product2-2.jpg"
+                alt="Table lamp glowing warmly in a cozy corner"
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover"
               />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-            <div className="relative z-10 flex flex-col justify-end">
-              {/* Image Indicator Dots */}
-              <div className="flex gap-2 mb-6 sm:mb-8">
-                {contactImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === activeImage ? "w-8 bg-white" : "w-4 bg-white/40"
-                    }`}
-                    aria-label={`Show image ${idx + 1}`}
-                  />
+              <div className="absolute inset-0 bg-linear-to-t from-primary to-transparent" />
+            </div>
+            <div className="p-6 sm:p-8 pt-2 flex flex-col gap-5 flex-1">
+              <h3 className="font-serif text-2xl sm:text-3xl">Customer care</h3>
+              <ul className="flex flex-col gap-4">
+                {details.map((d) => (
+                  <li key={d.label} className="border-t border-primary-text/15 pt-4">
+                    <span className="block text-[0.62rem] font-bold uppercase tracking-[0.18em] text-secondary">{d.label}</span>
+                    {d.href ? (
+                      <a href={d.href} className="block mt-1 text-sm sm:text-base font-semibold hover:underline break-all">{d.value}</a>
+                    ) : (
+                      <span className="block mt-1 text-sm sm:text-base font-semibold">{d.value}</span>
+                    )}
+                  </li>
                 ))}
-              </div>
-
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3.5 bg-white/95 backdrop-blur-md px-4 sm:px-5 py-3 rounded-2xl border border-black/5 text-primary shadow-sm">
-                  <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
-                    ☎
-                  </div>
-                  <div>
-                    <div className="text-[0.6rem] text-neutral-text/50 uppercase tracking-widest font-bold">Studio Phone</div>
-                    <div className="font-bold text-xs sm:text-sm text-primary">{siteConfig.phone}</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3.5 bg-white/95 backdrop-blur-md px-4 sm:px-5 py-3 rounded-2xl border border-black/5 text-primary shadow-sm">
-                  <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
-                    ✉
-                  </div>
-                  <div>
-                    <div className="text-[0.6rem] text-neutral-text/50 uppercase tracking-widest font-bold">Email Inquiries</div>
-                    <div className="font-bold text-xs sm:text-sm text-primary break-all">{siteConfig.email}</div>
-                  </div>
-                </div>
-              </div>
+              </ul>
+              <p className="text-xs text-primary-text/70 mt-auto">Monday &ndash; Friday, 9am &ndash; 6pm CT</p>
             </div>
           </div>
 
-          {/* Form Card (Light Theme) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-md border border-black/8">
+          {/* Form */}
+          <div className="lg:col-span-7 bg-neutral-bg rounded-3xl p-6 sm:p-8 md:p-12 border border-secondary/70 shadow-xl shadow-primary/5">
             {contactSubmitted ? (
               <div className="text-center py-12 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md">
-                  ✓
+                <div className="w-16 h-16 rounded-full bg-primary text-primary-text flex items-center justify-center text-2xl mx-auto mb-6">
+                  &#10003;
                 </div>
-                <h3 className="text-primary font-serif font-normal text-2xl sm:text-3xl mb-3 uppercase tracking-wide">
-                  Inquiry Received
-                </h3>
-                <p className="text-neutral-text/60 text-xs sm:text-sm mb-8 max-w-sm mx-auto leading-relaxed uppercase tracking-wider">
-                  Thank you for contacting {siteConfig.brandName}. Our concierge team will reply within 24 business hours.
+                <h3 className="text-neutral-text font-serif text-3xl mb-3">Message received</h3>
+                <p className="text-neutral-text/60 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+                  Thank you for contacting {siteConfig.brandName}. Our team will reply within one business day.
                 </p>
                 <button
-                  className="inline-flex items-center justify-center font-bold bg-primary text-white hover:bg-neutral-text transition-all py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+                  className="inline-flex items-center justify-center font-bold bg-primary text-primary-text hover:bg-primary-dark transition-all py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] cursor-pointer"
                   onClick={() => setContactSubmitted(false)}
                 >
-                  Send Another Message
+                  Send another message
                 </button>
               </div>
             ) : (
@@ -128,58 +91,38 @@ export default function Contact({ showHeader = true, badgeNumber = "06" }: { sho
                   (e.target as HTMLFormElement).reset();
                 }}
               >
+                <h3 className="font-serif text-2xl sm:text-3xl text-neutral-text mb-6">Send us a message</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Full Name</label>
-                    <input
-                      type="text"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
-                      placeholder="e.g. Eleanor Vance"
-                      required
-                    />
+                  <div>
+                    <label htmlFor="contact-name" className={labelClass}>Full name</label>
+                    <input id="contact-name" type="text" className={inputClass} placeholder="Jane Carter" required />
                   </div>
-                  <div className="flex flex-col">
-                    <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Email Address</label>
-                    <input
-                      type="email"
-                      className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
-                      placeholder="e.g. eleanor@example.com"
-                      required
-                    />
+                  <div>
+                    <label htmlFor="contact-email" className={labelClass}>Email address</label>
+                    <input id="contact-email" type="email" className={inputClass} placeholder="jane@example.com" required />
                   </div>
                 </div>
 
-                <div className="flex flex-col mb-4 sm:mb-5">
-                  <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Subject</label>
-                  <input
-                    type="text"
-                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg"
-                    placeholder="e.g. Styling consultation or product inquiry"
-                    required
-                  />
+                <div className="mb-4 sm:mb-5">
+                  <label htmlFor="contact-subject" className={labelClass}>Subject</label>
+                  <input id="contact-subject" type="text" className={inputClass} placeholder="Order question, product info, returns..." required />
                 </div>
 
-                <div className="flex flex-col mb-6 sm:mb-8">
-                  <label className="block font-bold mb-2 text-[0.65rem] uppercase tracking-widest text-neutral-text/60">Message</label>
-                  <textarea
-                    className="block w-full px-4 py-3.5 text-xs sm:text-sm border border-black/10 rounded-2xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-neutral-bg resize-none"
-                    rows={4}
-                    placeholder="How may our design specialists help you?"
-                    required
-                  ></textarea>
+                <div className="mb-6 sm:mb-8">
+                  <label htmlFor="contact-message" className={labelClass}>Message</label>
+                  <textarea id="contact-message" className={`${inputClass} resize-none`} rows={5} placeholder="How can we help?" required></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-3 bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full font-bold text-xs uppercase tracking-[0.16em] w-full shadow-md cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-4 px-8 rounded-full font-bold text-xs uppercase tracking-[0.16em] w-full sm:w-auto cursor-pointer"
                 >
-                  <span>Submit Inquiry</span>
-                  <span>→</span>
+                  <span>Send message</span>
+                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
                 </button>
               </form>
             )}
           </div>
-
         </div>
       </div>
     </section>

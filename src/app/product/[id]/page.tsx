@@ -8,10 +8,12 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
-import { Product, Bundle } from "@/types";
+import { Product, Bundle, SiteConfig } from "@/types";
+import siteConfigData from "../../../../config/site-config.json";
 import ProductCarousel from "@/components/ProductCarousel";
 
 const products = productsData as unknown as Product[];
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function ProductDetail() {
   const params = useParams();
@@ -36,14 +38,14 @@ export default function ProductDetail() {
           <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-neutral-text/50 block mb-2">
             CATALOG SEARCH
           </span>
-          <h1 className="font-serif font-normal text-3xl sm:text-4xl uppercase tracking-[0.04em] text-primary mb-3">
+          <h1 className="font-serif font-medium text-3xl sm:text-4xl text-neutral-text mb-3">
             Piece Not Found
           </h1>
           <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-xs uppercase tracking-wider leading-relaxed">
-            The furnishing piece you are looking for does not exist or has been archived from our collection.
+            The piece you are looking for is no longer available in our collection.
           </p>
           <button
-            className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] cursor-pointer shadow-md"
+            className="inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-[0.16em] cursor-pointer shadow-md"
             onClick={() => router.push("/shop")}
           >
             <span>Return to Collection</span>
@@ -82,33 +84,21 @@ export default function ProductDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             
             {/* Product Image Section */}
-            <div className="lg:col-span-6 bg-white rounded-3xl p-4 sm:p-6 md:p-8 border border-black/8 shadow-md">
+            <div className="lg:col-span-7">
               <ProductCarousel images={product.images && product.images.length > 0 ? product.images : [product.image]} name={product.name} />
             </div>
 
             {/* Product Details Section */}
-            <div className="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/8 shadow-md">
-              <span className="text-[0.68rem] font-bold uppercase text-neutral-text/50 tracking-[0.2em] block">
-                {product.category || "BESPOKE HOME FURNISHING"}
+            <div className="lg:col-span-5 lg:pt-4">
+              <span className="eyebrow">
+                {product.category || "Home Furnishing"}
               </span>
 
-              <h1 className="font-serif font-normal text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.04em] text-primary mt-2 mb-3 leading-tight">
+              <h1 className="font-serif font-medium text-4xl sm:text-5xl tracking-tight text-neutral-text mt-4 mb-4 leading-[1.05]">
                 {product.name}
               </h1>
 
-              {/* Star Ratings */}
-              <div className="flex items-center gap-2.5 mb-6">
-                <div className="flex gap-0.5 text-primary">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-xs text-neutral-text/50 font-medium">(28 Verified Customer Reviews)</span>
-              </div>
-
-              <div className="text-3xl font-serif font-bold text-primary mb-6 flex items-baseline gap-2">
+              <div className="text-3xl sm:text-4xl font-serif text-primary mb-6 flex items-baseline gap-2">
                 ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 {selectedBundle.quantity > 1 && (
                   <span className="text-xs md:text-sm font-sans font-medium text-neutral-text/50 ml-1">
@@ -117,14 +107,14 @@ export default function ProductDetail() {
                 )}
               </div>
 
-              <p className="text-neutral-text/75 mb-8 text-xs sm:text-sm leading-relaxed border-t border-black/5 pt-5">
+              <p className="text-neutral-text/70 mb-8 text-sm sm:text-base leading-relaxed border-t border-secondary pt-6">
                 {product.description}
               </p>
 
               {/* Dropdown Selector for Set Quantity */}
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mb-8">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-primary mb-2.5">
+                  <label className="block text-[0.68rem] font-bold uppercase tracking-[0.16em] text-neutral-text/60 mb-2.5">
                     Select Set Quantity:
                   </label>
                   <div className="relative">
@@ -135,7 +125,7 @@ export default function ProductDetail() {
                         const found = product.bundles?.find((b) => b.quantity === qty);
                         if (found) setSelectedBundle(found);
                       }}
-                      className="w-full bg-neutral-bg border border-black/10 rounded-2xl px-5 py-4 text-xs sm:text-sm font-semibold text-primary appearance-none cursor-pointer focus:outline-none focus:border-primary transition-all hover:border-black/30 pr-10"
+                      className="w-full bg-surface border border-secondary/70 rounded-2xl px-5 py-4 text-xs sm:text-sm font-semibold text-primary appearance-none cursor-pointer focus:outline-none focus:border-primary transition-all hover:border-secondary-dark/50 pr-10"
                     >
                       {product.bundles.map((bundle) => {
                         const savings = (startingPrice * bundle.quantity) - bundle.price;
@@ -160,9 +150,9 @@ export default function ProductDetail() {
               )}
 
               {/* Add to Cart Actions */}
-              <div className="flex gap-4 mb-8 mt-4">
+              <div className="flex gap-4 mb-6 mt-4">
                 <button
-                  className="group inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-white hover:bg-neutral-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg"
+                  className="group inline-flex items-center justify-center gap-3 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-primary-dark transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-[0.16em] shadow-md hover:shadow-lg"
                   onClick={handleAddToCart}
                 >
                   <span>Add to Cart</span>
@@ -170,20 +160,34 @@ export default function ProductDetail() {
                 </button>
               </div>
 
+              {/* Purchase assurances */}
+              <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                {[
+                  { title: "Free shipping", text: `${siteConfig.shippingCarrier}, ${siteConfig.shippingPeriod} business days` },
+                  { title: `${siteConfig.trialPeriod}-day returns`, text: "Simple return process" },
+                  { title: "One-time charge", text: "No subscription" },
+                ].map((item) => (
+                  <li key={item.title} className="bg-surface border border-secondary/60 rounded-2xl p-4">
+                    <span className="block font-serif text-lg text-neutral-text leading-tight">{item.title}</span>
+                    <span className="block text-xs text-neutral-text/60 mt-1">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+
               {/* Presentation & Packaging */}
               {product.showIngredients && product.ingredientsImage && (
-                <div className="border-t border-black/5 pt-6 mt-8">
-                  <h2 className="font-serif font-normal text-lg sm:text-xl text-primary mb-2 uppercase tracking-wide">
+                <div className="border-t border-secondary/50 pt-6 mt-8">
+                  <h2 className="font-serif font-medium text-lg sm:text-xl text-neutral-text mb-2">
                     Presentation &amp; Packaging
                   </h2>
                   <p className="text-xs text-neutral-text/60 mb-4 leading-relaxed">
-                    Each order is hand-inspected, wrapped in archival tissue paper, and placed in eco-friendly presentation boxing, complete with our certificate of craftsmanship authenticity.
+                    Each order is checked by hand, wrapped with care, and packed in a sturdy box so it arrives ready for your home.
                   </p>
 
-                  <div className="bg-neutral-bg border border-black/5 rounded-2xl p-4 flex items-center justify-center overflow-hidden">
+                  <div className="bg-surface border border-secondary/60 rounded-2xl p-4 flex items-center justify-center overflow-hidden">
                     <img
                       src={product.ingredientsImage}
-                      alt="Bespoke packaging"
+                      alt="Order packaging"
                       className="w-full h-auto max-h-[260px] rounded-xl object-cover"
                     />
                   </div>

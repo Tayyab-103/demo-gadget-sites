@@ -11,14 +11,14 @@ export default function ShopPage() {
     <>
       <Header />
       <main className="flex-grow bg-neutral-bg">
-        {/* Page Editorial Header */}
-        <section className="pt-10 sm:pt-14 md:pt-16 pb-2 sm:pb-4">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 text-center">
-            <h1 className="font-serif font-normal text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.06em] text-primary mb-3 leading-tight">
-              PRODUCTS
+        <section className="bg-surface border-b border-secondary/60">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 py-14 sm:py-20 text-center flex flex-col items-center">
+            <span className="eyebrow mb-4">Home / Shop</span>
+            <h1 className="font-serif font-medium text-4xl sm:text-5xl md:text-6xl tracking-tight text-neutral-text leading-tight">
+              The Collection
             </h1>
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] leading-relaxed text-neutral-text/60 max-w-xl mx-auto">
-              EXPLORE OUR COLLECTION OF BESPOKE LIVING TEXTILES, SCULPTURAL AMBIENT LIGHTING, AND NATURAL STONE ACCENTS.
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-neutral-text/65 max-w-xl">
+              Soft knit throws, warm stoneware lamps, and natural oak trays &mdash; everyday pieces with free shipping and easy returns.
             </p>
           </div>
         </section>

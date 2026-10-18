@@ -19,28 +19,13 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
-        {/* Hero Section */}
         <Hero />
-        
-        {/* 01 About Alderwyn */}
-        <AboutUs />
-
-        {/* 02 Our Standards (Dark Section) */}
-        <QualityPromise />
-
-        {/* 03 Our Products (3 Furnishings Grid) */}
         <ProductGrid />
-        
-        {/* 04 Client Stories (Dark Section) */}
+        <AboutUs />
+        <QualityPromise />
         <Testimonials />
-
-        {/* 05 Frequently Asked Questions */}
         <Faq />
-
-        {/* Newsletter Section */}
         <NewsletterSection />
-
-        {/* 06 Get In Touch Form */}
         <Contact />
       </main>
 

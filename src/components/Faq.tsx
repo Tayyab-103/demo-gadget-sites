@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -8,112 +9,118 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `Orders ship via ${siteConfig.shippingCarrier} nationwide within 1-2 business days, with typical delivery in ${siteConfig.shippingPeriod} business days.`
+    question: "How much is shipping and how long does delivery take?",
+    answer: `Shipping is free on every order. Orders are dispatched within 1-2 business days and ship with ${siteConfig.shippingCarrier}, arriving in ${siteConfig.shippingPeriod} business days. You'll receive a tracking number by email once your order ships.`,
   },
   {
-    question: "Do you offer an in-home satisfaction guarantee?",
-    answer: "Yes. We offer a 60-day in-home satisfaction guarantee. Contact our concierge team for an effortless return and full refund."
+    question: "What is your return policy?",
+    answer: `You have ${siteConfig.trialPeriod} days from delivery to decide. If a piece isn't right for your home, contact us at ${siteConfig.email} or ${siteConfig.phone} for a return authorization, and your refund will be issued to your original payment method once the item is received.`,
   },
   {
-    question: "Are your home furnishings covered by a warranty?",
-    answer: "Yes. Every Alderwyn piece includes a 1-year craftsmanship warranty covering materials, stitching, and joinery."
+    question: "Is this a one-time purchase or a subscription?",
+    answer: "Every order is a one-time purchase. You are charged once for the items in your cart and will never be enrolled in a subscription or recurring billing.",
   },
   {
-    question: "How do I care for and clean my Alderwyn pieces?",
-    answer: "Spot-clean or dry-clean throw blankets. Gently wipe ceramic lamps and travertine trays with a dry microfiber cloth."
+    question: "How do I care for my throw, lamp, and tray?",
+    answer: "Spot clean or gently hand wash the knit throw and lay flat to dry. Dust the stoneware lamp base and linen shade with a soft dry cloth. Wipe the oak tray with a slightly damp cloth and dry it right away.",
   },
   {
-    question: "How will the charge appear on my credit card statement?",
-    answer: `Your card statement will display the descriptor "${siteConfig.descriptor}".`
+    question: "How will the charge appear on my card statement?",
+    answer: `Your purchase will appear on your statement as "${siteConfig.descriptor}".`,
   },
   {
-    question: "How do I contact customer support or design advice?",
-    answer: `Reach our concierge team Monday through Friday at ${siteConfig.phone}, or email us at ${siteConfig.email}.`
-  }
+    question: "How can I reach customer support?",
+    answer: `Call us at ${siteConfig.phone} or email ${siteConfig.email}. Our team replies to every message within one business day.`,
+  },
 ];
 
 export default function Faq() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <section className="py-10 sm:py-14 md:py-16 bg-neutral-bg relative" id="faq">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
-        
-        {/* Top Section Header */}
-        <div className="flex items-center gap-3 sm:gap-6 mb-6">
-          {/* Black Pill Badge with '05' */}
-          <span className="bg-primary text-white font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl px-3.5 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
-            05
-          </span>
+    <section className="py-16 sm:py-20 md:py-24 bg-surface relative" id="faq">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
-          {/* Heading */}
-          <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-primary leading-none break-words">
-            FREQUENTLY ASKED QUESTIONS
+        {/* Left: heading + help card */}
+        <div className="lg:col-span-5 lg:sticky lg:top-32 flex flex-col items-start">
+          <span className="eyebrow mb-4">Questions &amp; Answers</span>
+          <h2 className="font-serif font-medium text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight text-neutral-text">
+            Good to know <span className="italic text-primary">before you order.</span>
           </h2>
+          <p className="mt-4 text-sm sm:text-base text-neutral-text/65 leading-relaxed max-w-md">
+            Shipping, returns, care, and billing &mdash; everything in one place. Still curious? We&apos;re happy to help.
+          </p>
+
+          <div className="mt-8 w-full bg-primary text-primary-text rounded-3xl p-6 sm:p-8">
+            <h3 className="font-serif text-2xl">Still have a question?</h3>
+            <p className="mt-2 text-sm text-primary-text/80 leading-relaxed">
+              Our support team is a call or email away.
+            </p>
+            <div className="mt-6 flex flex-col gap-2 text-sm font-semibold">
+              <a href={`tel:${siteConfig.phone}`} className="hover:underline">{siteConfig.phone}</a>
+              <a href={`mailto:${siteConfig.email}`} className="hover:underline break-all">{siteConfig.email}</a>
+            </div>
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-2 bg-neutral-bg text-neutral-text hover:bg-secondary hover:text-secondary-text px-6 py-3 rounded-full text-[0.68rem] font-bold uppercase tracking-[0.16em] transition-colors"
+            >
+              Contact us &rarr;
+            </Link>
+          </div>
         </div>
 
-        {/* Thin Horizontal Divider */}
-        <div className="w-full h-px bg-black/10 mb-6 sm:mb-10 md:mb-12" />
-
-        {/* FAQ Accordion List */}
-        <div className="max-w-4xl mx-auto flex flex-col gap-3.5 sm:gap-4">
+        {/* Right: accordion */}
+        <div className="lg:col-span-7 flex flex-col gap-3">
           {faqData.map((item, idx) => {
             const isOpen = activeIndex === idx;
 
             return (
               <div
-                key={idx}
-                className={`bg-white rounded-2xl border transition-all duration-300 ${
-                  isOpen ? "border-primary shadow-md" : "border-black/5 hover:border-black/15 shadow-2xs"
+                key={item.question}
+                className={`rounded-2xl border transition-all duration-300 ${
+                  isOpen ? "bg-neutral-bg border-secondary shadow-lg shadow-primary/5" : "bg-neutral-bg/60 border-secondary/50 hover:bg-neutral-bg"
                 }`}
               >
-                {/* Accordion Header */}
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex justify-between items-center p-5 sm:p-6 md:p-7 bg-transparent border-none cursor-pointer text-left focus:outline-none gap-3 sm:gap-4"
+                  className="w-full flex justify-between items-center gap-4 p-5 sm:p-6 text-left cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <div className="flex items-center gap-3 sm:gap-6">
-                    <span className="font-serif text-sm sm:text-base md:text-lg font-bold text-primary tracking-wider flex-shrink-0">
+                  <span className="flex items-start gap-4">
+                    <span className="font-serif text-sm text-primary pt-0.5 flex-shrink-0">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-serif font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-primary uppercase tracking-[0.02em] leading-snug">
+                    <span className="font-serif text-lg sm:text-xl text-neutral-text leading-snug">
                       {item.question}
-                    </h3>
-                  </div>
-
+                    </span>
+                  </span>
                   <span
-                    className={`flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-bold text-sm sm:text-base transition-all duration-300 ${
-                      isOpen
-                        ? "bg-primary text-white rotate-45 shadow-sm"
-                        : "bg-neutral-bg text-primary border border-black/10"
+                    className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-lg transition-all duration-300 ${
+                      isOpen ? "bg-primary text-primary-text rotate-45" : "bg-surface text-primary border border-secondary"
                     }`}
                   >
                     +
                   </span>
                 </button>
 
-                {/* Accordion Body */}
                 <div
-                  className="overflow-hidden transition-all duration-500 ease-in-out px-5 sm:px-6 md:px-7"
-                  style={{
-                    maxHeight: isOpen ? "400px" : "0px",
-                  }}
+                  className="grid transition-all duration-500 ease-in-out"
+                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                 >
-                  <div className="pb-6 sm:pb-7 text-xs sm:text-sm text-neutral-text/75 leading-relaxed border-t border-black/5 pt-4 sm:pt-5 pl-7 sm:pl-12">
-                    {item.answer}
+                  <div className="overflow-hidden">
+                    <p className="px-5 sm:px-6 pb-6 pl-12 sm:pl-14 text-sm text-neutral-text/70 leading-relaxed">
+                      {item.answer}
+                    </p>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

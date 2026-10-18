@@ -57,7 +57,7 @@ export default async function Image() {
             padding: "28px 56px",
             borderRadius: 24,
             background: "#ffffff",
-            boxShadow: "0 12px 32px rgba(14, 16, 19, 0.12)",
+            boxShadow: "0 12px 32px rgba(58, 44, 31, 0.12)",
           }}
         >
           <div
@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Throws, Lamps &amp; Home Accents
         </div>
 
         <div

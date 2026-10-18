@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Discover handcrafted home furnishings, bespoke living textiles, sculptural ambient lighting, and timeless interior decor.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop soft knit throws, stoneware table lamps, and oak catchall trays with free shipping and easy returns.`;
 
 // Preload fonts
 const cormorant = Cormorant_Garamond({

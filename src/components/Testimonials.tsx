@@ -2,106 +2,91 @@
 
 import React from "react";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
 
 const stories = [
   {
-    id: "story-1",
-    tag: "LIVING ROOM SANCTUARY",
-    title: "AUSTIN HILLSIDE RESIDENCE",
-    quote: "The Alderwyn throw blanket transformed our living space. Impossibly soft with the exact warm, tactile aesthetic we needed.",
-    author: "Camilla V.",
-    location: "Austin, TX",
-    image: "/img/brand/hero_interior.jpg",
+    quote: "The knit throw is so soft and the color is exactly the warm oatmeal I wanted. It lives on our reading chair now and nobody wants to give it up.",
+    author: "Rachel M.",
+    location: "Portland, OR",
+    product: "Harbor Knit Throw Blanket",
+    image: "/img/brand/product1_blanket.jpg",
   },
   {
-    id: "story-2",
-    tag: "ARCHITECTURAL AMBIENCE",
-    title: "MODERN PENTHOUSE LOUNGE",
-    quote: "The sculptural lamp radiates the most soothing ambient glow. Exquisite lighting that doubles as an architectural art piece.",
-    author: "Marcus T.",
-    location: "Dallas, TX",
-    image: "/img/brand/how_step3.jpg",
+    quote: "I bought one lamp for the bedroom and came back for a second one for the living room. The linen shade gives such a cozy glow in the evenings.",
+    author: "Daniel K.",
+    location: "Charlotte, NC",
+    product: "Stoneware Table Lamp",
+    image: "/img/brand/product2_lamp.jpg",
+  },
+  {
+    quote: "Finally something to keep my coffee table tidy that actually looks good. The oak is lovely and it arrived well packed and fast.",
+    author: "Priya S.",
+    location: "Denver, CO",
+    product: "Oak & Stone Catchall Tray",
+    image: "/img/brand/product3_tray.jpg",
   },
 ];
 
+function Stars() {
+  return (
+    <div className="flex gap-0.5 text-primary" aria-label="5 out of 5 stars">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 export default function Testimonials() {
   return (
-    <section className="py-10 sm:py-14 md:py-16 bg-primary text-white relative" id="testimonials">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
-        
-        {/* Top Section Header */}
-        <div className="flex items-center gap-3 sm:gap-6 mb-6">
-          {/* White Oval Pill Badge with '04' */}
-          <span className="bg-white text-primary font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl px-3.5 sm:px-6 md:px-7 py-1 sm:py-1.5 md:py-2 rounded-full font-normal tracking-wide shadow-sm flex items-center justify-center flex-shrink-0">
-            04
-          </span>
+    <section className="py-16 sm:py-20 md:py-24 bg-primary relative overflow-hidden" id="testimonials">
+      {/* Decorative circles */}
+      <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full border border-primary-text/10" aria-hidden="true" />
+      <div className="absolute -bottom-32 -left-20 w-96 h-96 rounded-full border border-primary-text/10" aria-hidden="true" />
 
-          {/* Heading */}
-          <h2 className="font-serif font-normal text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-[0.06em] text-white leading-none break-words">
-            CLIENT STORIES
-          </h2>
+      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-14">
+        <SectionHeading
+          eyebrow="Kind Words"
+          title={<>Loved in homes <span className="italic text-secondary">across the country.</span></>}
+          tone="dark"
+          align="center"
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+          {stories.map((story) => (
+            <figure
+              key={story.author}
+              className="flex flex-col bg-neutral-bg rounded-3xl p-6 sm:p-8 shadow-xl shadow-primary-dark/20"
+            >
+              <div className="flex items-center justify-between mb-5">
+                <Stars />
+                <span className="font-serif text-5xl leading-none text-secondary h-6">&ldquo;</span>
+              </div>
+
+              <blockquote className="text-sm sm:text-[0.95rem] text-neutral-text/80 leading-relaxed flex-1">
+                {story.quote}
+              </blockquote>
+
+              <figcaption className="mt-6 pt-5 border-t border-secondary/60 flex items-center gap-3">
+                <span className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-surface">
+                  <Image src={story.image} alt={story.product} fill sizes="48px" className="object-cover" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold text-neutral-text">
+                    {story.author} <span className="font-medium text-neutral-text/50">&middot; {story.location}</span>
+                  </span>
+                  <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-primary truncate">
+                    {story.product}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
-
-        {/* Thin Horizontal Divider */}
-        <div className="w-full h-px bg-white/10 mb-6 sm:mb-10 md:mb-12" />
-
-        {/* Asymmetrical 2-Card Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-          
-          {/* Left Case Study Card */}
-          <div className="lg:col-span-6 flex flex-col items-start">
-            <div className="relative w-full aspect-square overflow-hidden shadow-2xl border border-white/10 bg-black/20 mb-5 sm:mb-6">
-              <Image
-                src={stories[0].image}
-                alt={stories[0].title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 650px"
-                className="object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </div>
-
-            <span className="text-[0.62rem] sm:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#E2D9C8] mb-1">
-              {stories[0].tag}
-            </span>
-
-            <h3 className="font-serif font-normal text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.04em] text-white mb-2 sm:mb-3 leading-tight">
-              {stories[0].title}
-            </h3>
-
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed italic max-w-lg">
-              &ldquo;{stories[0].quote}&rdquo; &mdash; <span className="font-semibold not-italic text-white">{stories[0].author}, {stories[0].location}</span>
-            </p>
-          </div>
-
-          {/* Right Case Study Card */}
-          <div className="lg:col-span-6 flex flex-col items-start lg:pt-12">
-            <div className="relative w-full aspect-16/11 overflow-hidden shadow-2xl border border-white/10 bg-black/20 mb-5 sm:mb-6">
-              <Image
-                src={stories[1].image}
-                alt={stories[1].title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 650px"
-                className="object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </div>
-
-            <span className="text-[0.62rem] sm:text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#E2D9C8] mb-1">
-              {stories[1].tag}
-            </span>
-
-            <h3 className="font-serif font-normal text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.04em] text-white mb-2 sm:mb-3 leading-tight">
-              {stories[1].title}
-            </h3>
-
-            <p className="text-xs sm:text-sm text-white/70 leading-relaxed italic max-w-lg">
-              &ldquo;{stories[1].quote}&rdquo; &mdash; <span className="font-semibold not-italic text-white">{stories[1].author}, {stories[1].location}</span>
-            </p>
-          </div>
-
-        </div>
-
       </div>
     </section>
   );
 }
-

@@ -1,11 +1,12 @@
 {
   "Product": "Home Furnishing",
-  "Processor": "Synovus PPS",
-  "brandName": "Alderwyn Home Living Interiors",
-  "websiteUrl": "AlderwynHomeLivingInteriors.com",
-  "email": "support@alderwynhomelivinginteriors.com",
-  "descriptor": "AlderwynHomeLivingInte",
-  "corpName": "Starpath Marketing Co.",
+  "mcc": "5719",
+  "Processor": "Priority - Synovus",
+  "brandName": "Harbor Home Furnishing Market",
+  "websiteUrl": "harborhomefurnishingmarket.com",
+  "email": "support@harborhomefurnishingmarket.com",
+  "descriptor": "HarborHomeFurnishing",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0E1013",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C6FF3D",
-    "secondaryTextColor": "#0E1013",
-    "neutralBgColor": "#F4F5F7",
-    "neutralTextColor": "#12141A",
+    "primaryColor": "#8B6A4B",
+    "primaryTextColor": "#FFFFFF",
+    "secondaryColor": "#D8C3A5",
+    "secondaryTextColor": "#3A2C1F",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#2F261D",
     "fontFamily": "Montserrat"
   }
 }

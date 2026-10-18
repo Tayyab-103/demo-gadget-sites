@@ -21,13 +21,13 @@ export default function Terms() {
             <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-neutral-text/50 block mb-2">
               LEGAL TERMS
             </span>
-            <h1 className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.04em] text-primary leading-tight">
+            <h1 className="font-serif font-medium text-3xl sm:text-4xl md:text-5xl text-neutral-text leading-tight">
               TERMS &amp; CONDITIONS
             </h1>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-black/8 shadow-md leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary">
+          <div className="bg-neutral-bg rounded-3xl p-6 sm:p-10 md:p-12 border border-secondary/60 shadow-md leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text">
               OVERVIEW
             </h2>
             <p>
@@ -42,18 +42,18 @@ export default function Terms() {
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               PRODUCTS OFFERED &amp; BILLING TERMS
             </h2>
             <p>
-              We offer bespoke handcrafted home furnishings, living textiles, ambient lighting, and interior accents through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer home furnishings including throw blankets, table lamps, and decorative trays through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/8 rounded-2xl p-6 sm:p-8 my-6">
+            <div className="bg-surface border border-secondary/60 rounded-2xl p-6 sm:p-8 my-6">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
-                  <h3 className="font-serif font-normal text-sm sm:text-base uppercase tracking-wider text-primary mb-3">
+                <div key={product.id} className="mb-6 pb-6 border-b border-secondary/50 last:border-0 last:mb-0 last:pb-0">
+                  <h3 className="font-serif font-medium text-sm sm:text-base text-neutral-text mb-3">
                     {product.name}
                   </h3>
                   <ul className="list-disc pl-5 m-0 space-y-2.5">
@@ -77,7 +77,7 @@ export default function Terms() {
               ))}
             </div>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               SECTION 1 - ONLINE STORE TERMS
             </h2>
             <p>
@@ -86,7 +86,7 @@ export default function Terms() {
               violate any laws in your jurisdiction.
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
               SECTION 2 - SHIPPING &amp; DELIVERY POLICY
             </h2>
             <p>
@@ -95,12 +95,12 @@ export default function Terms() {
               You will receive tracking information via email once your order has been dispatched.
             </p>
 
-            <h2 className="font-serif font-normal text-base sm:text-lg uppercase tracking-[0.04em] text-primary pt-4 border-t border-black/5">
-              SECTION 3 - 60-DAY IN-HOME TRIAL &amp; RETURN POLICY
+            <h2 className="font-serif font-medium text-base sm:text-lg text-neutral-text pt-4 border-t border-secondary/50">
+              SECTION 3 - {siteConfig.trialPeriod}-DAY RETURN POLICY
             </h2>
             <p>
-              We stand behind our quality with a 60-day in-home satisfaction guarantee. If you are not completely satisfied with your purchase,
-              please contact our concierge customer support center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              You may return your purchase within {siteConfig.trialPeriod} days of delivery. If you are not completely satisfied with your purchase,
+              please contact our customer support team at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>

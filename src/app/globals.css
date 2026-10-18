@@ -7,6 +7,10 @@
   --color-secondary-text: var(--secondary-text-color);
   --color-neutral-bg: var(--neutral-bg-color);
   --color-neutral-text: var(--neutral-text-color);
+  --color-primary-dark: color-mix(in srgb, var(--primary-color) 78%, black);
+  --color-secondary-dark: color-mix(in srgb, var(--secondary-color) 82%, black);
+  --color-accent-light: color-mix(in srgb, var(--secondary-color) 45%, white);
+  --color-surface: color-mix(in srgb, var(--neutral-bg-color) 55%, white);
   --font-sans: var(--font-family);
   --font-serif: var(--font-serif);
 }
@@ -75,13 +79,13 @@
   border-radius: 1px;
 }
 .eyebrow-invert {
-  color: var(--secondary-color);
+  color: var(--color-accent-light);
 }
 .eyebrow-invert::before {
-  background: var(--secondary-color);
+  background: var(--color-accent-light);
 }
 .eyebrow-invert::after {
-  background: var(--secondary-color);
+  background: var(--color-accent-light);
 }
 
 /* Artisan offset badge / frame */
@@ -113,17 +117,17 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 .glass-card-dark {
-  background: rgba(21, 36, 29, 0.88);
+  background: color-mix(in srgb, var(--primary-color) 88%, transparent);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(198, 124, 56, 0.25);
+  border: 1px solid color-mix(in srgb, var(--secondary-color) 25%, transparent);
 }
 
 /* Bronze Metallic Gradient & Accent Highlights */
 .bronze-gradient {
-  background: linear-gradient(135deg, #E29B58 0%, #C67C38 50%, #9F581C 100%);
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--secondary-color) 50%, var(--color-secondary-dark) 100%);
 }
 .bronze-text {
-  background: linear-gradient(135deg, #E29B58 0%, #C67C38 60%, #9F581C 100%);
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--secondary-color) 60%, var(--color-secondary-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -146,7 +150,7 @@
   width: 550px;
   height: 550px;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(38, 70, 53, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary-color) 25%, transparent) 0%, transparent 70%);
   filter: blur(120px);
   pointer-events: none;
   z-index: 0;
@@ -179,6 +183,39 @@
 }
 .animate-float {
   animation: float 5s ease-in-out infinite;
+}
+
+/* Hero entrance + Ken Burns */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+.animate-ken-burns {
+  animation: ken-burns 9s ease-out both;
+}
+
+/* Section heading serif accent */
+.heading-serif {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 @media (prefers-reduced-motion: reduce) {

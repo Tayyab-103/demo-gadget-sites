@@ -13,25 +13,25 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         {/* Products Page Dedicated Header Banner */}
-        <section className="bg-[#132B1C] text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
+        <section className="bg-primary text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 text-left">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50 mb-3">
-              <Link href="/" className="hover:text-[#78C470] transition-colors">Home</Link>
+              <Link href="/" className="hover:text-accent-light transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-[#78C470]">Products Catalog</span>
+              <span className="text-accent-light">Products Catalog</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-sans mb-3">
-              The Foundry <span className="text-[#78C470]">Collection</span>
+            <h1 className="heading-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+              Shop <em className="text-accent-light">Garden Tools</em>
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
-              Drop-forged high-carbon steel trowels, Japanese SK5 bypass pruners, and triple-tine hand cultivators crafted for lifetime performance.
+              Hand trowels, bypass pruners and claw cultivators for every job in the garden — buy one or bundle up and save on each tool.
             </p>
           </div>
         </section>
 
         {/* Strictly Products Catalog */}
-        <ProductGrid />
+        <ProductGrid showHeader={false} />
       </main>
 
       <Footer />

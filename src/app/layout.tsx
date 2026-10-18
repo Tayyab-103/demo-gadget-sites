@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `${siteConfig.brandName} — Hand-forged carbon steel trowels, Japanese SK5 bypass pruners, and heritage garden cultivation tools crafted for a lifetime of growing.`;
+const siteDescription = `${siteConfig.brandName} — Dependable hand trowels, bypass pruners and claw cultivators for planting, pruning and soil care. Free UPS shipping on every order.`;
 
 // Preload the most common fonts
 const poppins = Poppins({
@@ -44,7 +44,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Hand-Forged Artisan Garden Tools`,
+  title: `${siteConfig.brandName} | Garden Hand Tools for Every Grower`,
   description: siteDescription,
   openGraph: {
     title: siteConfig.brandName,

@@ -5,9 +5,22 @@ import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
 import { SiteConfig, Product } from "@/types";
+import { BrandMark } from "@/components/Header";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
+
+const pageLinks = [
+  { href: "/", label: "Home" },
+  { href: "/shop", label: "Shop All Tools" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact" },
+];
+
+const legalLinks = [
+  { href: "/terms", label: "Terms & Conditions" },
+  { href: "/privacy", label: "Privacy Policy" },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,207 +35,109 @@ export default function Footer() {
     }
   };
 
+  const linkClass = "text-sm text-white/70 hover:text-accent-light transition-colors";
+
   return (
-    <footer className="bg-[#0D2115] text-white border-t border-white/10 select-none" id="footer">
-
-      {/* 2. Main Footer Navigation & Brand Content */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-          
-          {/* Brand Info & Mission (Col 1 - 4 Cols) */}
-          <div className="lg:col-span-4 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#265C1E] text-white flex items-center justify-center font-serif text-lg font-bold border border-white/20 shadow-xs">
-                  BF
-                </div>
-                <div>
-                  <span className="font-extrabold text-lg uppercase tracking-tight text-white font-sans block">
-                    {siteConfig.brandName}
-                  </span>
-                  <span className="text-[0.62rem] font-bold uppercase tracking-[0.22em] text-[#78C470]">
-                    Artisan Garden Toolmakers • Est. 1994
-                  </span>
-                </div>
-              </div>
-              
-              <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-6">
-                Hand-forged carbon steel and sustainable hardwood garden instruments crafted for a lifetime of planting, pruning, and soil preparation.
-              </p>
-
-              {/* Trust Badge Pill */}
-              <div className="inline-flex items-center gap-2.5 bg-white/5 border border-white/10 px-3.5 py-2 rounded-xl">
-                <span className="w-2 h-2 rounded-full bg-[#78C470] animate-pulse"></span>
-                <span className="text-[0.68rem] text-white/80 font-medium tracking-wide">
-                  100% Satisfaction &amp; Hardness Guarantee
-                </span>
-              </div>
+    <footer className="bg-primary-dark text-white" id="footer">
+      {/* Newsletter band */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 pt-14 md:pt-20">
+        <div className="rounded-[2rem] bg-primary border border-white/10 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+          <div>
+            <h3 className="heading-serif text-2xl sm:text-3xl md:text-4xl leading-tight">
+              Seasonal tips, straight to your <em className="text-accent-light">inbox</em>.
+            </h3>
+            <p className="mt-2 text-sm text-white/65">Planting calendars, tool-care guides and early access to bundle deals. No spam.</p>
+          </div>
+          {subscribed ? (
+            <div className="flex items-center gap-3 text-accent-light text-sm font-semibold bg-white/5 rounded-full px-5 py-4 border border-white/10">
+              <span>✓</span> You&apos;re subscribed — welcome to the garden!
             </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                required
+                aria-label="Email address"
+                className="flex-1 min-w-0 bg-white/10 border border-white/15 rounded-full px-5 py-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-accent-light transition-colors"
+              />
+              <button
+                type="submit"
+                className="bg-secondary hover:bg-secondary-dark text-white font-semibold text-sm px-7 py-4 rounded-full transition-colors cursor-pointer whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+
+      {/* Links */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-14">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-10">
+          <div className="col-span-2 lg:col-span-4">
+            <BrandMark invert />
+            <p className="mt-5 text-sm text-white/65 leading-relaxed max-w-sm">
+              Dependable hand tools for planting, pruning and soil care — chosen for everyday gardeners and built to come back season after season.
+            </p>
           </div>
 
-          {/* Quick Links (Col 2 - 2 Cols) */}
           <div className="lg:col-span-2">
-            <h5 className="text-xs font-bold uppercase tracking-[0.2em] text-[#78C470] mb-4">
-              Navigation
-            </h5>
-            <ul className="flex flex-col gap-2.5 text-xs text-white/80">
-              <li>
-                <Link href="/" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  Home Overview
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  Foundry Heritage
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  Workshop Support
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-[#78C470] transition-colors inline-block py-0.5">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Products Series (Col 3 - 3 Cols) */}
-          <div className="lg:col-span-3">
-            <h5 className="text-xs font-bold uppercase tracking-[0.2em] text-[#78C470] mb-4">
-              Featured Tools
-            </h5>
-            <ul className="flex flex-col gap-2.5 text-xs text-white/80">
-              {products.map((p) => (
-                <li key={p.id}>
-                  <Link
-                    href={`/product/${p.id}`}
-                    className="hover:text-[#78C470] transition-colors line-clamp-1 py-0.5"
-                  >
-                    {p.name}
-                  </Link>
+            <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-light mb-4">Explore</h5>
+            <ul className="flex flex-col gap-3">
+              {[...pageLinks, ...legalLinks].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={linkClass}>{l.label}</Link>
                 </li>
               ))}
-              <li className="pt-2">
-                <Link
-                  href="/shop"
-                  className="text-[#78C470] hover:text-white font-bold text-xs inline-flex items-center gap-1 transition-colors"
-                >
-                  <span>Explore Full Catalog</span>
-                  <span>→</span>
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Workshop Contact & Newsletter (Col 4 - 3 Cols) */}
           <div className="lg:col-span-3">
-            <h5 className="text-xs font-bold uppercase tracking-[0.2em] text-[#78C470] mb-4">
-              Workshop &amp; Guild
-            </h5>
-            
-            <div className="flex flex-col gap-2.5 text-xs text-white/80 mb-6">
-              <div className="flex items-center gap-2">
-                <span className="text-[#78C470] font-bold">☎</span>
-                <a href={`tel:${siteConfig.phone}`} className="hover:text-[#78C470] transition-colors">
-                  {siteConfig.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[#78C470] font-bold">✉</span>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-[#78C470] transition-colors break-all">
-                  {siteConfig.email}
-                </a>
-              </div>
-              <div className="flex items-start gap-2 text-white/60 leading-relaxed mt-1">
-                <span className="text-[#78C470] font-bold mt-0.5">⚲</span>
-                <span>{siteConfig.address}</span>
-              </div>
-            </div>
-
-            {/* Newsletter Sign up */}
-            <div>
-              <p className="text-[0.72rem] text-white/70 mb-2 font-medium">
-                Subscribe for seasonal planting &amp; maintenance guides:
-              </p>
-              {subscribed ? (
-                <div className="flex items-center gap-2 text-[#78C470] text-xs font-bold py-2 bg-white/5 rounded-xl px-3 border border-[#265C1E]">
-                  <span>✓</span> Subscribed to the Guild!
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex gap-2">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-[#78C470] transition-colors"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-[#265C1E] hover:bg-[#1E4A17] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-xl transition-all cursor-pointer whitespace-nowrap shadow-sm"
-                  >
-                    Join
-                  </button>
-                </form>
-              )}
-            </div>
+            <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-light mb-4">Our Tools</h5>
+            <ul className="flex flex-col gap-3">
+              {products.map((p) => (
+                <li key={p.id}>
+                  <Link href={`/product/${p.id}`} className={linkClass}>{p.name}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
+          <div className="col-span-2 sm:col-span-1 lg:col-span-3">
+            <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-light mb-4">Get in Touch</h5>
+            <ul className="flex flex-col gap-3 text-sm text-white/70">
+              <li>
+                <a href={`tel:${siteConfig.phone}`} className="hover:text-accent-light transition-colors">{siteConfig.phone}</a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-accent-light transition-colors break-all">{siteConfig.email}</a>
+              </li>
+              <li className="text-white/55 leading-relaxed">{siteConfig.address}</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* 3. Bottom Copyright & Payment Trust Bar */}
-      <div className="border-t border-white/10 bg-[#08150D]">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 py-6 flex flex-col md:flex-row items-center justify-between gap-5 text-xs text-white/50">
-          
-          <div className="text-center md:text-left">
-            &copy; {currentYear} {siteConfig.brandName}. All rights reserved. Operating under {siteConfig.corpName}.
-          </div>
-
-          {/* Secure Payment Options */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="text-[0.65rem] uppercase tracking-widest text-white/40 font-bold hidden sm:inline">
-              Guaranteed Safe Checkout:
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <p className="text-center md:text-left">
+            &copy; {currentYear} {siteConfig.brandName}. All rights reserved. Operated by {siteConfig.corpName}.
+          </p>
+          <div className="flex items-center gap-3">
+            <span className="uppercase tracking-widest text-[0.65rem] font-semibold">Secure checkout</span>
+            <span className="">
+              <img src="/img/visa.png" alt="Visa accepted" className="h-8 w-auto object-contain" />
             </span>
-            
-            <div className="flex items-center gap-3">
-              {/* Visa */}
-              <div className="flex items-center justify-center h-7 sm:h-8" title="Visa">
-                <img
-                  src="/img/visa.png"
-                  alt="Visa Accepted"
-                  className="h-full w-auto object-contain max-h-5 sm:max-h-6"
-                />
-              </div>
-
-              {/* Mastercard */}
-              <div className="flex items-center justify-center h-7 sm:h-8" title="MasterCard">
-                <img
-                  src="/img/mastercard.png"
-                  alt="Mastercard Accepted"
-                  className="h-full w-auto object-contain max-h-5 sm:max-h-6"
-                />
-              </div>
-            </div>
+            <span className="">
+              <img src="/img/mastercard.png" alt="Mastercard accepted" className="h-8 w-auto object-contain" />
+            </span>
           </div>
-
         </div>
       </div>
-
     </footer>
   );
 }

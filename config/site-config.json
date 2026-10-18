@@ -1,11 +1,12 @@
 {
   "Product": "Garden Tools",
-  "Processor": "Netevia Evolve",
-  "brandName": "Briarforge Garden Collective",
-  "websiteUrl": "BriarforgeGardenCollective.com",
-  "email": "support@briarforgegardencollective.com",
-  "descriptor": "BriarforgeGardenCollec",
-  "corpName": "Starpath Marketing Co.",
+  "mcc": "5261",
+  "Processor": "Priority - Synovus",
+  "brandName": "Greenfield Garden Tool Shop",
+  "websiteUrl": "greenfieldgardentoolshop.com",
+  "email": "support@greenfieldgardentoolshop.com",
+  "descriptor": "GreenfieldGardenTool",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Foundry Way, Suite 100, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#132B1C",
+    "primaryColor": "#1F3D33",
     "primaryTextColor": "#FFFFFF",
-    "secondaryColor": "#265C1E",
+    "secondaryColor": "#B85C2E",
     "secondaryTextColor": "#FFFFFF",
-    "neutralBgColor": "#FAF9F6",
-    "neutralTextColor": "#11281A",
-    "fontFamily": "Montserrat"
+    "neutralBgColor": "#F7F3EC",
+    "neutralTextColor": "#1A2420",
+    "fontFamily": "Inter"
   }
 }

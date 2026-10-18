@@ -33,7 +33,7 @@ export default function CartDrawer() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-secondary" />
             <h3 className="m-0 text-base font-extrabold text-primary tracking-wider uppercase font-serif">
-              Foundry Basket
+              Your Cart
             </h3>
           </div>
           <button

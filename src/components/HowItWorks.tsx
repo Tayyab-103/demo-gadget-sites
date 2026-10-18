@@ -1,127 +1,73 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const steps = [
   {
-    number: "01",
-    label: "METALLURGY",
-    title: "58 HRC Forged Steel",
-    desc: "High-carbon steel oil-quenched for zero bending and superior edge retention.",
-    stat: "58 HRC Hardness",
+    title: "Pick your tools",
+    desc: "Choose a single tool or bundle up for the whole season. Every bundle tier lowers the price per tool.",
     image: "/img/how_it_works_1.jpg",
-    caption: "Drop-forged carbon steel trowel",
+    alt: "Hand trowel, fork and cultivator laid out on burlap with potting soil",
   },
   {
-    number: "02",
-    label: "TIMBER CRAFT",
-    title: "Solid Ash Hardwood",
-    desc: "Sustainably harvested white ash handles sealed with natural linseed oil.",
-    stat: "100% Hardwood",
+    title: "Checked & packed",
+    desc: "Each order is inspected for fit and finish, then packed carefully so it arrives ready for the garden.",
     image: "/img/how_it_works_2.jpg",
-    caption: "Precision bypass pruners with alloy handles",
+    alt: "Craftsman finishing a hardwood piece on a lathe",
   },
   {
-    number: "03",
-    label: "WORKSHOP DISPATCH",
-    title: "25° Honed Edge",
-    desc: "Razor-beveled, hand-inspected, and shipped in plastic-free packaging.",
-    stat: "25° Razor Bevel",
+    title: "Get growing",
+    desc: `${siteConfig.shippingCarrier} delivers in ${siteConfig.shippingPeriod} business days — then you have ${siteConfig.trialPeriod} days to put it to work in your own beds.`,
     image: "/img/how_it_works_3.jpg",
-    caption: "3-prong cultivator aerating topsoil",
+    alt: "Trowel and pruners on a wooden table with herbs and seed packets",
   },
 ];
 
 export default function HowItWorks() {
-  const [activeStep, setActiveStep] = useState(0);
-  const current = steps[activeStep];
-
   return (
-    <section className="bg-white py-16 md:py-20 border-b border-black/5" id="foundry-standards">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">
+    <section className="bg-surface py-16 md:py-24" id="how-it-works">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10 md:mb-14">
           <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-2.5">
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
-                FOUNDRY STANDARDS
-              </span>
-              <span className="w-8 h-[1.5px] bg-[#265C1E]/50 rounded-full" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#11281A] uppercase tracking-tight font-sans">
-              How Our Tools <br />
-              <span className="text-[#265C1E]">Are Engineered</span>
+            <span className="eyebrow">How It Works</span>
+            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-primary mt-4 leading-tight">
+              From our shelf to <em className="text-secondary">your soil</em>.
             </h2>
           </div>
-          <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md leading-relaxed">
-            Hand-forged from Japanese SK5 and carbon manganese steel, built to endure generations of planting.
+          <p className="text-sm text-neutral-text/70 max-w-sm leading-relaxed">
+            Three simple steps, free shipping, and a real person on the phone if you ever need a hand.
           </p>
         </div>
 
-        {/* Innovative Horizontal Split Blueprint Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF9F6] rounded-3xl p-6 sm:p-10 border border-black/5 shadow-sm">
-          
-          {/* Left Column: Interactive Garden Tool Visual Showcase */}
-          <div className="lg:col-span-6 relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-md bg-neutral-200">
-            <img
-              key={current.image}
-              src={current.image}
-              alt={current.title}
-              className="w-full h-full object-cover transition-opacity duration-500 animate-fadeIn"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            
-            {/* Top Floating Badge */}
-            <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-lg text-[#132B1C] text-xs font-black uppercase tracking-wider shadow-sm flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#265C1E]" />
-              {current.stat}
-            </div>
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {steps.map((step, idx) => (
+            <li key={step.title} className="group relative">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] rounded-[1.75rem] overflow-hidden">
+                <Image
+                  src={step.image}
+                  alt={step.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+                <span className="absolute top-4 left-4 w-12 h-12 rounded-full bg-neutral-bg text-primary heading-serif text-xl flex items-center justify-center shadow-md">
+                  {idx + 1}
+                </span>
+              </div>
 
-            {/* Bottom Caption */}
-            <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-bold drop-shadow-sm">
-              {current.caption}
-            </div>
-          </div>
-
-          {/* Right Column: 3 Stepped Process Cards */}
-          <div className="lg:col-span-6 flex flex-col gap-4">
-            {steps.map((step, idx) => {
-              const isActive = activeStep === idx;
-              return (
-                <div
-                  key={step.number}
-                  onClick={() => setActiveStep(idx)}
-                  className={`p-5 rounded-2xl cursor-pointer transition-all duration-300 border ${
-                    isActive
-                      ? "bg-white border-[#265C1E] shadow-md translate-x-1"
-                      : "bg-white/50 border-black/5 hover:bg-white hover:border-black/15"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className={`text-[0.62rem] font-bold uppercase tracking-[0.2em] ${isActive ? "text-[#265C1E]" : "text-neutral-text/50"}`}>
-                      STEP {step.number} • {step.label}
-                    </span>
-                    <span className={`text-xs font-extrabold px-2 py-0.5 rounded ${isActive ? "bg-[#265C1E]/10 text-[#265C1E]" : "text-neutral-text/40"}`}>
-                      {step.stat}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-base font-extrabold text-[#11281A] mb-1.5 tracking-tight">
-                    {step.title}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-[0.82rem] text-neutral-text/75 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-
+              <div className="pt-5 pr-2">
+                <h3 className="text-xl font-bold text-primary tracking-tight">{step.title}</h3>
+                <p className="mt-2 text-sm text-neutral-text/70 leading-relaxed">{step.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

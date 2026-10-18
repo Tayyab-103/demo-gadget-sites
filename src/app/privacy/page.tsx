@@ -13,21 +13,21 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="flex-grow bg-[#FAF9F6]">
+      <main className="flex-grow bg-neutral-bg">
         {/* Dedicated Legal Header Banner */}
-        <section className="bg-[#132B1C] text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
+        <section className="bg-primary text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 text-left">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50 mb-3">
-              <Link href="/" className="hover:text-[#78C470] transition-colors">Home</Link>
+              <Link href="/" className="hover:text-accent-light transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-[#78C470]">Legal</span>
+              <span className="text-accent-light">Legal</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-sans mb-3">
-              Privacy <span className="text-[#78C470]">Policy</span>
+            <h1 className="heading-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+              Privacy <span className="text-accent-light">Policy</span>
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
-              How we collect, protect, and handle your data when shopping for heirloom garden tools at {siteConfig.brandName}.
+              How we collect, protect, and handle your data when shopping for garden tools at {siteConfig.brandName}.
             </p>
           </div>
         </section>
@@ -38,17 +38,17 @@ export default function Privacy() {
             <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-black/5 shadow-sm leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-6">
               
               <div className="border-b border-black/5 pb-6">
-                <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E] block mb-2">
+                <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-secondary block mb-2">
                   DATA PROTECTION &amp; PRIVACY
                 </span>
                 <p>
                   This Privacy Policy describes how your personal information is collected, used, and shared when you visit
-                  or make a purchase from <strong className="text-[#11281A] font-bold">{siteConfig.websiteUrl}</strong> (the “Site”).
+                  or make a purchase from <strong className="text-neutral-text font-bold">{siteConfig.websiteUrl}</strong> (the “Site”).
                 </p>
               </div>
 
               <div>
-                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                <h3 className="text-sm sm:text-base font-extrabold text-neutral-text mb-3 uppercase tracking-wider font-sans">
                   Personal Information We Collect
                 </h3>
                 <p className="mb-3">
@@ -65,7 +65,7 @@ export default function Privacy() {
               </div>
 
               <div className="border-t border-black/5 pt-6">
-                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                <h3 className="text-sm sm:text-base font-extrabold text-neutral-text mb-3 uppercase tracking-wider font-sans">
                   How Do We Use Your Personal Information?
                 </h3>
                 <p className="mb-4">
@@ -74,14 +74,14 @@ export default function Privacy() {
                   Additionally, we use this Order Information to:
                 </p>
                 <ul className="list-disc pl-5 space-y-2 text-neutral-text/80">
-                  <li>Communicate with you regarding your workshop tool order or warranty claim;</li>
+                  <li>Communicate with you regarding your order, delivery or return;</li>
                   <li>Screen our orders for potential risk or fraud; and</li>
                   <li>Provide you with seasonal planting tips, tool maintenance guides, or promotions when in line with your preferences.</li>
                 </ul>
               </div>
 
               <div className="border-t border-black/5 pt-6">
-                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                <h3 className="text-sm sm:text-base font-extrabold text-neutral-text mb-3 uppercase tracking-wider font-sans">
                   Sharing Your Personal Information
                 </h3>
                 <p className="mb-3">
@@ -95,7 +95,7 @@ export default function Privacy() {
               </div>
 
               <div className="border-t border-black/5 pt-6">
-                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-3 uppercase tracking-wider font-sans">
+                <h3 className="text-sm sm:text-base font-extrabold text-neutral-text mb-3 uppercase tracking-wider font-sans">
                   Data Retention
                 </h3>
                 <p>
@@ -104,24 +104,24 @@ export default function Privacy() {
                 </p>
               </div>
 
-              <div className="border-t border-black/5 pt-6 bg-[#FAF9F6] p-6 rounded-2xl">
-                <h3 className="text-sm sm:text-base font-extrabold text-[#11281A] mb-2 uppercase tracking-wider font-sans">
-                  Contact Workshop Support
+              <div className="border-t border-black/5 pt-6 bg-neutral-bg p-6 rounded-2xl">
+                <h3 className="text-sm sm:text-base font-extrabold text-neutral-text mb-2 uppercase tracking-wider font-sans">
+                  Contact Customer Support
                 </h3>
                 <p className="text-xs text-neutral-text/80 mb-3">
                   For more information about our privacy practices, or if you have questions regarding your data:
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 text-xs font-bold text-[#11281A]">
+                <div className="flex flex-col sm:flex-row gap-4 text-xs font-bold text-neutral-text">
                   <div>
-                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Email:</span>
-                    <a href={`mailto:${siteConfig.email}`} className="hover:text-[#265C1E] transition-colors">{siteConfig.email}</a>
+                    <span className="text-secondary uppercase text-[0.65rem] tracking-wider block">Email:</span>
+                    <a href={`mailto:${siteConfig.email}`} className="hover:text-secondary transition-colors">{siteConfig.email}</a>
                   </div>
                   <div>
-                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Phone:</span>
-                    <a href={`tel:${siteConfig.phone}`} className="hover:text-[#265C1E] transition-colors">{siteConfig.phone}</a>
+                    <span className="text-secondary uppercase text-[0.65rem] tracking-wider block">Phone:</span>
+                    <a href={`tel:${siteConfig.phone}`} className="hover:text-secondary transition-colors">{siteConfig.phone}</a>
                   </div>
                   <div>
-                    <span className="text-[#265C1E] uppercase text-[0.65rem] tracking-wider block">Foundry:</span>
+                    <span className="text-secondary uppercase text-[0.65rem] tracking-wider block">Address:</span>
                     <span>{siteConfig.address}</span>
                   </div>
                 </div>

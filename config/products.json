@@ -3,7 +3,7 @@
     "id": "product1",
     "stickyId": 1,
     "name": "Carbon Steel Hand Trowel",
-    "description": "Hand-forged from heat-tempered high-carbon steel with an FSC-certified solid ash hardwood handle, calibrated depth markings, and a sharpened beveled scoop. Slices through compacted root systems, heavy clay, and stony soil with zero blade bend.",
+    "description": "A sturdy carbon steel hand trowel with a deep, tapered scoop and soil depth markings for accurate planting. The comfortable grip keeps your hand steady while you dig, transplant and fill pots, from soft potting mix to compacted garden beds.",
     "image": "/img/products/garden_tools/trowel_1.jpg",
     "images": [
       "/img/products/garden_tools/trowel_1.jpg",
@@ -12,26 +12,50 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Hand Cultivation & Soil Prep",
+    "category": "Planting & Digging",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
     "name": "Pruning Shears (SK5 Steel)",
-    "description": "Precision-ground Japanese SK5 carbon steel blades coated in non-stick titanium nitride, with drop-forged alloy handles, shock-absorbing springs, and a brass thumb latch. Delivers effortless surgical cuts up to 1-inch thick without crushing delicate plant fibers.",
+    "description": "Sharp SK5 steel bypass blades make clean, healthy cuts on stems and branches up to about 3/4 inch thick. Ergonomic non-slip handles, a smooth return spring and a one-hand safety lock make roses, shrubs and herbs easy to keep in shape.",
     "image": "/img/products/garden_tools/pruner_1.jpg",
     "images": [
       "/img/products/garden_tools/pruner_1.jpg",
@@ -40,26 +64,50 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Botanical Pruning & Arbor Snips",
+    "category": "Pruning & Cutting",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
     "name": "3-Prong Claw Cultivator",
-    "description": "Heavy-duty drop-forged manganese steel triple tines riveted into a weather-sealed kiln-dried European beechwood grip with brass ferrules. Built to break up crusted topsoil, aerate root zones, and extract deep-rooted weeds effortlessly.",
+    "description": "Three rigid steel tines loosen crusted topsoil, work in compost and pull out weeds by the root. A smooth hardwood handle gives you leverage and control in raised beds, borders and containers.",
     "image": "/img/products/garden_tools/cultivator_2.jpg",
     "images": [
       "/img/products/garden_tools/cultivator_1.jpg",
@@ -68,19 +116,43 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Aeration & Subsoil Prep",
+    "category": "Weeding & Soil Care",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

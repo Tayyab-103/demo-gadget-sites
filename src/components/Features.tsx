@@ -1,107 +1,132 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
+
+const features = [
+  {
+    title: "Built for tough soil",
+    desc: "Rigid carbon steel heads that bite into clay, roots and stony beds without bending or flexing.",
+    icon: (
+      <>
+        <path d="M14 4.1 12 6" />
+        <path d="m5.1 8-2.9-.8" />
+        <path d="m6 12-1.9 2" />
+        <path d="M7.2 2.2 8 5.1" />
+        <path d="M9.04 12.18a1 1 0 0 1 .17-1.6l9.97-5.86a.5.5 0 0 1 .7.69l-5.86 9.97a1 1 0 0 1-1.6.17Z" />
+        <path d="m13.5 13.5 7.3 7.3" />
+      </>
+    ),
+  },
+  {
+    title: "Comfortable all-day grip",
+    desc: "Balanced, ergonomic handles that sit naturally in the hand — so a long afternoon of planting doesn't end in sore wrists.",
+    icon: (
+      <>
+        <path d="M18 11V6a2 2 0 0 0-4 0v1" />
+        <path d="M14 10V4a2 2 0 0 0-4 0v2" />
+        <path d="M10 10.5V6a2 2 0 0 0-4 0v8" />
+        <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+      </>
+    ),
+  },
+  {
+    title: "Sharp, clean cuts",
+    desc: "Precision bypass blades snip stems cleanly instead of crushing them, helping plants heal faster after pruning.",
+    icon: (
+      <>
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <line x1="20" y1="4" x2="8.12" y2="15.88" />
+        <line x1="14.47" y1="14.48" x2="20" y2="20" />
+        <line x1="8.12" y1="8.12" x2="12" y2="12" />
+      </>
+    ),
+  },
+  {
+    title: `Try it for ${siteConfig.trialPeriod} days`,
+    desc: "Put every tool to work in your own beds. If it isn't right for your garden, our support team will make it right.",
+    icon: (
+      <>
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+        <path d="m9 12 2 2 4-4" />
+      </>
+    ),
+  },
+];
 
 export default function Features() {
   return (
-    <section className="bg-[#FAF9F6] py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-black/5" id="features">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-14">
-          <span className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#265C1E] bg-white rounded-full px-6 py-2 shadow-xs border border-black/5 inline-block">
-            FOUNDRY FEATURES
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-[40px] font-extrabold text-[#11281A] mt-5 tracking-tight font-sans">
-            Engineered for a Lifetime of Growing
-          </h2>
-          <p className="text-xs sm:text-sm md:text-base text-neutral-text/75 max-w-lg mx-auto mt-3 leading-relaxed">
-            Drop-forged carbon metallurgy, lathe-turned hardwoods, and surgical Japanese cutting blades crafted to endure generations.
-          </p>
-        </div>
-
-        {/* Bento Grid */}
-        <div className="flex flex-col gap-5">
-          {/* Row 1 */}
-          <div className="flex flex-col md:flex-row gap-5">
-            {/* Row 1 - Left: 60% with Image */}
-            <div className="md:w-[60%] md:h-64 bg-white rounded-2xl border border-black/5 hover:border-[#265C1E]/30 hover:shadow-md transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
-              <img
-                src="/img/how_it_works_1.jpg"
-                alt="Drop-forged carbon steel garden trowel in soil"
-                className="w-full h-48 md:h-full md:w-[45%] object-cover rounded-xl"
-                onError={(e) => {
-                  e.currentTarget.src = "/img/products/garden_tools/trowel_1.jpg";
-                }}
-              />
-              <div className="flex flex-col justify-center flex-1">
-                <div className="w-11 h-11 bg-[#132B1C] rounded-lg flex items-center justify-center mb-4 text-white flex-shrink-0">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 12v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M8 22h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <h3 className="text-base font-extrabold text-[#11281A] tracking-tight">58 HRC Forged Steel</h3>
-                <p className="text-xs sm:text-[0.82rem] text-neutral-text/75 mt-2 leading-relaxed">
-                  High-carbon manganese steel oil-quenched for extreme soil impact resistance and zero blade flex under heavy leverage.
-                </p>
-              </div>
-            </div>
-
-            {/* Row 1 - Right: 40% Card */}
-            <div className="md:w-[40%] bg-white rounded-2xl border border-black/5 hover:border-[#265C1E]/30 hover:shadow-md transition-all duration-300 px-6 py-6 md:pt-7 flex flex-col justify-center">
-              <div className="w-11 h-11 bg-[#132B1C] rounded-lg flex items-center justify-center mb-4 text-white flex-shrink-0">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="m9 12 2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h3 className="text-base font-extrabold text-[#11281A] tracking-tight">Japanese SK5 Steel</h3>
-              <p className="text-xs sm:text-[0.82rem] text-neutral-text/75 mt-2 leading-relaxed">
-                Titanium nitride-coated bypass pruners delivering clean 1-inch branch cuts without crushing delicate botanical vascular fibers.
+    <section className="bg-neutral-bg py-16 md:py-24" id="features">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+          {/* Story panel */}
+          <div className="lg:col-span-5 relative min-h-[420px] sm:min-h-[480px] rounded-[2rem] overflow-hidden">
+            <Image
+              src="/img/newsletter_garden.jpg"
+              alt="Bypass pruners and a trowel on a potting bench beside fresh herbs"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-accent-light">
+                Why {siteConfig.brandName.split(" ")[0]}
+              </span>
+              <h2 className="heading-serif text-3xl sm:text-4xl mt-3 leading-tight">
+                Fewer tools. <br />Better ones.
+              </h2>
+              <p className="mt-3 text-sm text-white/80 leading-relaxed max-w-sm">
+                We keep our shelf small on purpose — only the hand tools gardeners reach for every single week.
               </p>
+              <Link
+                href="/about"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white border-b border-white/40 hover:border-white pb-0.5 transition-colors"
+              >
+                Our story <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="flex flex-col md:flex-row gap-5">
-            {/* Row 2 - Left: 40% Card */}
-            <div className="md:w-[40%] bg-white rounded-2xl border border-black/5 hover:border-[#265C1E]/30 hover:shadow-md transition-all duration-300 px-6 py-6 md:pt-7 flex flex-col justify-center">
-              <div className="w-11 h-11 bg-[#132B1C] rounded-lg flex items-center justify-center mb-4 text-white flex-shrink-0">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <polyline points="9 12 11.5 14.5 15 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h3 className="text-base font-extrabold text-[#11281A] tracking-tight">Solid Ash Hardwood</h3>
-              <p className="text-xs sm:text-[0.82rem] text-neutral-text/75 mt-2 leading-relaxed">
-                Turned on traditional wood lathes and sealed with botanical linseed oil. Naturally absorbs vibration and molds to your grip.
-              </p>
-            </div>
-
-            {/* Row 2 - Right: 60% with Image */}
-            <div className="md:w-[60%] md:h-64 bg-white rounded-2xl border border-black/5 hover:border-[#265C1E]/30 hover:shadow-md transition-all duration-300 p-5 flex flex-col md:flex-row gap-5">
-              <img
-                src="/img/how_it_works_3.jpg"
-                alt="3-prong claw cultivator aerating garden soil"
-                className="w-full h-48 md:h-full md:w-[45%] object-cover rounded-xl"
-                onError={(e) => {
-                  e.currentTarget.src = "/img/products/garden_tools/cultivator_1.jpg";
-                }}
-              />
-              <div className="flex flex-col justify-center flex-1">
-                <div className="w-11 h-11 bg-[#132B1C] rounded-lg flex items-center justify-center mb-4 text-white flex-shrink-0">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+          {/* Feature cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            {features.map((f, idx) => (
+              <div
+                key={f.title}
+                className={`group rounded-[1.75rem] p-6 sm:p-7 border transition-all duration-300 hover:-translate-y-1 ${
+                  idx === 1
+                    ? "bg-primary text-white border-primary"
+                    : "bg-surface border-black/5 hover:border-secondary/30 hover:shadow-lg"
+                }`}
+              >
+                <div className="flex items-center justify-between mb-8 sm:mb-10">
+                  <span
+                    className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
+                      idx === 1 ? "bg-white/10 text-accent-light" : "bg-secondary/10 text-secondary"
+                    }`}
+                  >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                      {f.icon}
+                    </svg>
+                  </span>
+                  <span className={`heading-serif text-3xl ${idx === 1 ? "text-white/20" : "text-primary/10"}`}>
+                    0{idx + 1}
+                  </span>
                 </div>
-                <h3 className="text-base font-extrabold text-[#11281A] tracking-tight">Lifetime Foundry Warranty</h3>
-                <p className="text-xs sm:text-[0.82rem] text-neutral-text/75 mt-2 leading-relaxed">
-                  Every tool is backed by our unconditional lifetime guarantee against metallurgical defects, accompanied by a 60-day garden soil trial.
+                <h3 className={`text-lg font-bold tracking-tight ${idx === 1 ? "text-white" : "text-primary"}`}>
+                  {f.title}
+                </h3>
+                <p className={`mt-2 text-sm leading-relaxed ${idx === 1 ? "text-white/75" : "text-neutral-text/70"}`}>
+                  {f.desc}
                 </p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

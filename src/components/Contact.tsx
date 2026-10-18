@@ -1,252 +1,187 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const contactImages = [
-  "/img/contact_workshop.jpg",
-  "/img/how_it_works_1.jpg",
-  "/img/quality_promise_banner.jpg",
-];
-
 interface ContactProps {
   showForm?: boolean;
 }
 
+const channels = [
+  {
+    label: "Call us",
+    value: siteConfig.phone,
+    href: `tel:${siteConfig.phone}`,
+    note: "Speak with our support team",
+    icon: (
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    ),
+  },
+  {
+    label: "Email us",
+    value: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
+    note: "We reply within one business day",
+    icon: (
+      <>
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      </>
+    ),
+  },
+  {
+    label: "Mailing address",
+    value: siteConfig.address,
+    href: undefined,
+    note: siteConfig.corpName,
+    icon: (
+      <>
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+        <circle cx="12" cy="10" r="3" />
+      </>
+    ),
+  },
+];
+
 export default function Contact({ showForm = false }: ContactProps) {
   const [contactSubmitted, setContactSubmitted] = useState(false);
-  const [activeImage, setActiveImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % contactImages.length);
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setContactSubmitted(true);
   };
 
+  const inputClass =
+    "w-full bg-neutral-bg border border-black/10 rounded-xl px-4 py-3.5 text-sm text-neutral-text placeholder:text-neutral-text/40 focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition";
+
   return (
-    <section className="py-16 md:py-24 bg-[#FAF9F6] relative overflow-hidden border-b border-black/5" id="contact">
-      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
-        
-        {/* Standardized Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <div className="flex items-center justify-center gap-3 mb-2.5">
-            <span className="w-6 h-[1.5px] bg-[#265C1E]/50 rounded-full" />
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
-              WORKSHOP SUPPORT
-            </span>
-            <span className="w-6 h-[1.5px] bg-[#265C1E]/50 rounded-full" />
+    <section className="py-16 md:py-24 bg-surface" id="contact">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          {/* Info column */}
+          <div className="lg:col-span-5 flex flex-col">
+            <span className="eyebrow">Need a Hand?</span>
+            <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-primary mt-4 leading-tight">
+              Talk to a <em className="text-secondary">real gardener</em>.
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-neutral-text/70 leading-relaxed max-w-md">
+              Questions about an order, which tool fits your beds, or how to keep blades sharp? Our support team is happy to help.
+            </p>
+
+            <ul className="mt-8 flex flex-col gap-3">
+              {channels.map((c) => {
+                const content = (
+                  <>
+                    <span className="w-11 h-11 rounded-xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white flex items-center justify-center flex-shrink-0 transition-colors">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        {c.icon}
+                      </svg>
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-neutral-text/50">{c.label}</span>
+                      <span className="block text-sm font-semibold text-primary break-words">{c.value}</span>
+                      <span className="block text-xs text-neutral-text/50 mt-0.5">{c.note}</span>
+                    </span>
+                  </>
+                );
+                return (
+                  <li key={c.label}>
+                    {c.href ? (
+                      <a href={c.href} className="group flex items-center gap-4 bg-white rounded-2xl p-4 border border-black/5 hover:border-secondary/30 hover:shadow-md transition-all">
+                        {content}
+                      </a>
+                    ) : (
+                      <div className="group flex items-center gap-4 bg-white rounded-2xl p-4 border border-black/5">{content}</div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#11281A] uppercase tracking-tight font-sans">
-            Get in Touch with <span className="text-[#265C1E]">Our Foundry</span>
-          </h2>
-
-          <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Have questions about our tools, metallurgy, or care? Our blacksmiths and customer care team are here to assist.
-          </p>
-        </div>
-
-        {showForm ? (
-          /* FULL FORM VIEW (Used on /contact page) */
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            {/* Visual + Info Column */}
-            <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[380px] lg:min-h-0 shadow-md border border-black/5 bg-neutral-900">
-              {contactImages.map((src, idx) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt="Briarforge Garden Collective craftsmanship"
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                    idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                  }`}
-                  style={{ transitionProperty: "opacity, transform" }}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#132B1C]/95 via-[#132B1C]/50 to-[#132B1C]/20" />
-
-              <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                      ☎
+          {/* Form / image column */}
+          <div className="lg:col-span-7">
+            {showForm ? (
+              <div className="h-full bg-white rounded-[2rem] border border-black/5 shadow-sm p-6 sm:p-10 flex flex-col justify-center">
+                {contactSubmitted ? (
+                  <div className="text-center py-10">
+                    <div className="w-16 h-16 rounded-full bg-secondary/10 text-secondary mx-auto flex items-center justify-center mb-4">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
                     </div>
-                    <div>
-                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Call Support</div>
-                      <a href={`tel:${siteConfig.phone}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors">
-                        {siteConfig.phone}
-                      </a>
-                    </div>
+                    <h3 className="heading-serif text-2xl text-primary mb-2">Message sent!</h3>
+                    <p className="text-neutral-text/70 text-sm max-w-md mx-auto mb-6">
+                      Thanks for reaching out to {siteConfig.brandName}. We&apos;ll get back to you within one business day.
+                    </p>
+                    <button
+                      onClick={() => setContactSubmitted(false)}
+                      className="font-semibold bg-secondary text-white hover:bg-secondary-dark transition-colors py-3.5 px-7 rounded-full text-sm cursor-pointer"
+                    >
+                      Send another message
+                    </button>
                   </div>
-                  
-                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                      ✉
-                    </div>
-                    <div>
-                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Direct Email</div>
-                      <a href={`mailto:${siteConfig.email}`} className="font-bold text-xs sm:text-sm text-white hover:text-[#78C470] transition-colors break-all">
-                        {siteConfig.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/15">
-                    <div className="w-8 h-8 rounded-xl bg-[#265C1E] text-white flex items-center justify-center flex-shrink-0 text-xs font-bold">
-                      ⚲
-                    </div>
-                    <div>
-                      <div className="text-[0.6rem] text-white/60 uppercase tracking-widest font-bold">Workshop &amp; Foundry</div>
-                      <div className="font-medium text-xs text-white/90">{siteConfig.address}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Form Column */}
-            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-black/5 shadow-xs flex flex-col justify-center">
-              {contactSubmitted ? (
-                <div className="text-center py-10">
-                  <div className="w-14 h-14 rounded-full bg-[#265C1E]/15 text-[#265C1E] mx-auto flex items-center justify-center text-xl font-bold mb-3">
-                    ✓
-                  </div>
-                  <h3 className="text-xl font-extrabold text-[#11281A] uppercase tracking-tight mb-2">Inquiry Dispatched!</h3>
-                  <p className="text-neutral-text/70 text-xs sm:text-sm max-w-md mx-auto mb-6">
-                    Thank you for reaching out to {siteConfig.brandName}. One of our workshop team members will reply within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => setContactSubmitted(false)}
-                    className="font-bold bg-[#265C1E] text-white hover:bg-[#1E4A17] transition-all py-3 px-7 rounded-lg text-xs uppercase tracking-wider cursor-pointer"
-                  >
-                    Send Another Inquiry
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                        Your Full Name
+                ) : (
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <h3 className="heading-serif text-2xl text-primary mb-1">Send us a message</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <label className="block">
+                        <span className="block text-xs font-semibold text-neutral-text/70 mb-1.5">Full name</span>
+                        <input type="text" required placeholder="Jane Gardener" className={inputClass} />
                       </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="e.g. Eleanor Vance"
-                        className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                        Email Address
+                      <label className="block">
+                        <span className="block text-xs font-semibold text-neutral-text/70 mb-1.5">Email address</span>
+                        <input type="email" required placeholder="jane@example.com" className={inputClass} />
                       </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="e.g. eleanor@garden.com"
-                        className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors"
-                      />
                     </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#11281A] mb-1.5">
-                      Message to Toolmakers
+                    <label className="block">
+                      <span className="block text-xs font-semibold text-neutral-text/70 mb-1.5">Order number (optional)</span>
+                      <input type="text" placeholder="e.g. 10482" className={inputClass} />
                     </label>
-                    <textarea
-                      rows={4}
-                      required
-                      placeholder="Tell us about your garden inquiry, order, or tool needs..."
-                      className="w-full bg-[#FAF9F6] border border-black/10 rounded-lg px-4 py-3 text-xs sm:text-sm text-[#11281A] focus:outline-none focus:border-[#265C1E] transition-colors resize-none"
-                    />
+                    <label className="block">
+                      <span className="block text-xs font-semibold text-neutral-text/70 mb-1.5">How can we help?</span>
+                      <textarea rows={5} required placeholder="Tell us about your question, order or garden project..." className={`${inputClass} resize-none`} />
+                    </label>
+                    <button
+                      type="submit"
+                      className="w-full font-semibold text-sm bg-secondary hover:bg-secondary-dark text-white transition-colors py-4 px-6 rounded-full cursor-pointer mt-1"
+                    >
+                      Send Message →
+                    </button>
+                  </form>
+                )}
+              </div>
+            ) : (
+              <div className="relative h-full min-h-[360px] rounded-[2rem] overflow-hidden">
+                <Image
+                  src="/img/contact_workshop.jpg"
+                  alt="Garden tools hanging on a rustic potting-shed wall"
+                  fill
+                  sizes="(min-width: 1024px) 55vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-5 text-white">
+                  <div>
+                    <h3 className="heading-serif text-2xl sm:text-3xl">Prefer to write it down?</h3>
+                    <p className="text-sm text-white/75 mt-1">Send a message and we&apos;ll reply within one business day.</p>
                   </div>
-
-                  <button
-                    type="submit"
-                    className="w-full font-bold uppercase tracking-widest text-xs bg-[#265C1E] hover:bg-[#1E4A17] text-white transition-all py-3.5 px-6 rounded-lg shadow-sm cursor-pointer mt-1"
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-secondary hover:text-white text-sm font-semibold px-6 py-3.5 rounded-full transition-colors whitespace-nowrap"
                   >
-                    Send Message to Workshop
-                  </button>
-                </form>
-              )}
-            </div>
+                    Contact Form <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
-        ) : (
-          /* FORM-FREE OVERVIEW CARDS (Default Contact Component for Homepage) */
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* 1. Phone Card */}
-            <div className="bg-white rounded-3xl p-7 border border-black/5 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#265C1E]/10 text-[#265C1E] flex items-center justify-center text-lg font-bold mb-5 group-hover:bg-[#265C1E] group-hover:text-white transition-colors">
-                  ☎
-                </div>
-                <h3 className="text-lg font-bold text-[#11281A] mb-1">Direct Telephone</h3>
-                <p className="text-xs text-neutral-text/70 mb-4 leading-relaxed">
-                  Connect directly with our tool specialists for immediate product advice or order help.
-                </p>
-              </div>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="font-bold text-sm text-[#265C1E] hover:text-[#132B1C] transition-colors inline-flex items-center gap-1.5"
-              >
-                <span>{siteConfig.phone}</span>
-                <span>→</span>
-              </a>
-            </div>
-
-            {/* 2. Email Card */}
-            <div className="bg-white rounded-3xl p-7 border border-black/5 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#265C1E]/10 text-[#265C1E] flex items-center justify-center text-lg font-bold mb-5 group-hover:bg-[#265C1E] group-hover:text-white transition-colors">
-                  ✉
-                </div>
-                <h3 className="text-lg font-bold text-[#11281A] mb-1">Workshop Email</h3>
-                <p className="text-xs text-neutral-text/70 mb-4 leading-relaxed">
-                  Send warranty inquiries, wholesale requests, or custom blacksmithing questions.
-                </p>
-              </div>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="font-bold text-sm text-[#265C1E] hover:text-[#132B1C] transition-colors inline-flex items-center gap-1.5 break-all"
-              >
-                <span>{siteConfig.email}</span>
-                <span>→</span>
-              </a>
-            </div>
-
-            {/* 3. Foundry Address & Full Contact Action Card */}
-            <div className="bg-[#132B1C] text-white rounded-3xl p-7 shadow-md flex flex-col justify-between relative overflow-hidden group">
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-white/15 text-[#78C470] flex items-center justify-center text-lg font-bold mb-5">
-                  ⚲
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Foundry Headquarters</h3>
-                <p className="text-xs text-white/75 mb-4 leading-relaxed">
-                  {siteConfig.address}
-                </p>
-              </div>
-              <div className="relative z-10 pt-2">
-                <Link
-                  href="/contact"
-                  className="w-full text-center inline-block font-bold text-xs uppercase tracking-wider bg-[#265C1E] hover:bg-[#1E4A17] text-white py-3 px-5 rounded-xl transition-all shadow-sm"
-                >
-                  Open Contact Page Form →
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-
+        </div>
       </div>
     </section>
   );

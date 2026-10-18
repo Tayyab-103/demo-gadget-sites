@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Artisan Hand-Forged Garden Tools
+          Garden Hand Tools for Every Grower
         </div>
 
         <div

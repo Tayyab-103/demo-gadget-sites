@@ -127,21 +127,21 @@ export default function Checkout() {
         </div>
       )}
 
-      <main className="flex-grow bg-[#FAF9F6]">
+      <main className="flex-grow bg-neutral-bg">
         {/* Dedicated Checkout Header Banner */}
-        <section className="bg-[#132B1C] text-white py-12 md:py-16 relative overflow-hidden border-b border-black/10">
+        <section className="bg-primary text-white py-12 md:py-16 relative overflow-hidden border-b border-black/10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 text-left">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50 mb-3">
-              <Link href="/" className="hover:text-[#78C470] transition-colors">Home</Link>
+              <Link href="/" className="hover:text-accent-light transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-[#78C470]">Secure Checkout</span>
+              <span className="text-accent-light">Secure Checkout</span>
             </div>
             
             <h1 className="text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white font-sans mb-2">
-              Secure <span className="text-[#78C470]">Checkout</span>
+              Secure <span className="text-accent-light">Checkout</span>
             </h1>
             <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed">
-              Complete your workshop order. Free tracked express shipping and 60-day garden trial included.
+              Complete your order. Free tracked {siteConfig.shippingCarrier} shipping and a {siteConfig.trialPeriod}-day satisfaction trial included.
             </p>
           </div>
         </section>
@@ -161,60 +161,60 @@ export default function Checkout() {
 
                 <form onSubmit={handleSubmit}>
                   {/* Billing/Shipping Address */}
-                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-[#11281A] font-sans">
+                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-neutral-text font-sans">
                     1. Shipping Information
                   </h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">First Name</label>
-                      <input type="text" name="firstName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.firstName} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">First Name</label>
+                      <input type="text" name="firstName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.firstName} onChange={handleChange} required />
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Last Name</label>
-                      <input type="text" name="lastName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.lastName} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Last Name</label>
+                      <input type="text" name="lastName" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.lastName} onChange={handleChange} required />
                     </div>
                   </div>
 
                   <div className="flex flex-col mb-4">
-                    <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Shipping Address</label>
-                    <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.shippingAddress1} onChange={handleChange} required />
+                    <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Shipping Address</label>
+                    <input type="text" name="shippingAddress1" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.shippingAddress1} onChange={handleChange} required />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">City</label>
-                      <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.shippingCity} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">City</label>
+                      <input type="text" name="shippingCity" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.shippingCity} onChange={handleChange} required />
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">State</label>
-                      <input type="text" name="shippingState" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" placeholder="e.g. CA" value={formData.shippingState} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">State</label>
+                      <input type="text" name="shippingState" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" placeholder="e.g. CA" value={formData.shippingState} onChange={handleChange} required />
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">ZIP Code</label>
-                      <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.shippingZip} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">ZIP Code</label>
+                      <input type="text" name="shippingZip" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.shippingZip} onChange={handleChange} required />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Email Address</label>
-                      <input type="email" name="email" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.email} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Email Address</label>
+                      <input type="email" name="email" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.email} onChange={handleChange} required />
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Phone Number</label>
-                      <input type="tel" name="phone" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.phone} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Phone Number</label>
+                      <input type="tel" name="phone" className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.phone} onChange={handleChange} required />
                     </div>
                   </div>
 
                   {/* Payment Details */}
-                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-[#11281A] font-sans">
+                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-neutral-text font-sans">
                     2. Payment Information
                   </h3>
 
                   <div className="flex flex-col mb-4">
-                    <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Card Number</label>
-                    <input type="text" name="cc_no" maxLength={19} className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" placeholder="•••• •••• •••• ••••" value={formData.cc_no} onChange={(e) => {
+                    <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Card Number</label>
+                    <input type="text" name="cc_no" maxLength={19} className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" placeholder="•••• •••• •••• ••••" value={formData.cc_no} onChange={(e) => {
                       const val = e.target.value.replace(/\s?/g, "").replace(/(\d{4})/g, "$1 ").trim();
                       setFormData(prev => ({ ...prev, cc_no: val }));
                     }} required />
@@ -222,8 +222,8 @@ export default function Checkout() {
 
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Month</label>
-                      <select name="cc_month" className="block w-full px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.cc_month} onChange={handleChange} required>
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Month</label>
+                      <select name="cc_month" className="block w-full px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.cc_month} onChange={handleChange} required>
                         <option value="">MM</option>
                         {months.map((m) => (
                           <option key={m} value={m}>{m}</option>
@@ -231,8 +231,8 @@ export default function Checkout() {
                       </select>
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">Year</label>
-                      <select name="cc_year" className="block w-full px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" value={formData.cc_year} onChange={handleChange} required>
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">Year</label>
+                      <select name="cc_year" className="block w-full px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" value={formData.cc_year} onChange={handleChange} required>
                         <option value="">YYYY</option>
                         {years.map((y) => (
                           <option key={y} value={y}>{y}</option>
@@ -240,12 +240,12 @@ export default function Checkout() {
                       </select>
                     </div>
                     <div className="flex flex-col">
-                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-[#11281A]">CVV</label>
-                      <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#265C1E] text-[#11281A] bg-[#FAF9F6]" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
+                      <label className="block font-bold mb-1.5 text-xs uppercase tracking-wider text-neutral-text">CVV</label>
+                      <input type="password" name="CVV" maxLength={4} className="block w-full px-4 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-secondary text-neutral-text bg-neutral-bg" placeholder="•••" value={formData.CVV} onChange={handleChange} required />
                     </div>
                   </div>
 
-                  <button type="submit" className="inline-flex items-center justify-center gap-2 font-bold text-center bg-[#265C1E] hover:bg-[#1E4A17] text-white transition-all py-4 px-8 rounded-lg w-full cursor-pointer mt-4 text-xs uppercase tracking-wider shadow-md hover:shadow-lg">
+                  <button type="submit" className="inline-flex items-center justify-center gap-2 font-bold text-center bg-secondary hover:bg-secondary-dark text-white transition-all py-4 px-8 rounded-lg w-full cursor-pointer mt-4 text-xs uppercase tracking-wider shadow-md hover:shadow-lg">
                     Complete Secure Order — ${grandTotal}
                     <span>→</span>
                   </button>
@@ -255,7 +255,7 @@ export default function Checkout() {
               {/* Cart Summary Column */}
               <div className="lg:col-span-5 sticky top-[120px] flex flex-col gap-6">
                 <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 shadow-sm">
-                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-[#11281A] font-sans">
+                  <h3 className="text-sm sm:text-base font-extrabold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-neutral-text font-sans">
                     Order Summary
                   </h3>
 
@@ -263,12 +263,12 @@ export default function Checkout() {
                   {cart.map((item) => (
                     <div className="flex justify-between items-center py-3.5 border-b border-dashed border-black/10 last:border-b-0" key={item.Id}>
                       <div className="flex-1 pr-4">
-                        <strong className="text-xs sm:text-sm font-bold text-[#11281A] block">{item.Name}</strong>
-                        <span className="text-[0.62rem] font-bold text-[#265C1E] uppercase tracking-wide">
+                        <strong className="text-xs sm:text-sm font-bold text-neutral-text block">{item.Name}</strong>
+                        <span className="text-[0.62rem] font-bold text-secondary uppercase tracking-wide">
                           {item.Label} (Qty: {item.Qty})
                         </span>
                       </div>
-                      <span className="font-extrabold text-xs sm:text-sm text-[#11281A]">
+                      <span className="font-extrabold text-xs sm:text-sm text-neutral-text">
                         ${item.Total}
                       </span>
                     </div>
@@ -276,7 +276,7 @@ export default function Checkout() {
 
                   {/* Shipping Insurance Checkbox */}
                   <div
-                    className="p-3.5 bg-[#FAF9F6] border border-black/10 rounded-2xl my-5 flex items-center gap-3 cursor-pointer hover:border-[#265C1E]/40 transition-colors"
+                    className="p-3.5 bg-neutral-bg border border-black/10 rounded-2xl my-5 flex items-center gap-3 cursor-pointer hover:border-secondary/40 transition-colors"
                     onClick={() => setShippingInsurance(prev => !prev)}
                   >
                     <input
@@ -284,10 +284,10 @@ export default function Checkout() {
                       checked={shippingInsurance}
                       onChange={handleInsuranceChange}
                       onClick={(e) => e.stopPropagation()}
-                      className="w-4 h-4 cursor-pointer accent-[#265C1E]"
+                      className="w-4 h-4 cursor-pointer accent-secondary"
                     />
                     <div>
-                      <strong className="text-xs font-bold text-[#11281A] block">
+                      <strong className="text-xs font-bold text-neutral-text block">
                         Add Shipping Insurance (+$1.00)
                       </strong>
                       <span className="text-[0.62rem] text-neutral-text/60">
@@ -300,33 +300,33 @@ export default function Checkout() {
                   <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-4">
                     <div className="flex justify-between items-center text-neutral-text/70">
                       <span>Cart Subtotal:</span>
-                      <span className="font-bold text-[#11281A]">${cartTotal.toFixed(2)}</span>
+                      <span className="font-bold text-neutral-text">${cartTotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center text-neutral-text/70">
                       <span>Tracked Express Shipping:</span>
-                      <span className="text-[#265C1E] font-bold uppercase tracking-wider">FREE</span>
+                      <span className="text-secondary font-bold uppercase tracking-wider">FREE</span>
                     </div>
                     {shippingInsurance && (
                       <div className="flex justify-between items-center text-neutral-text/70">
                         <span>Shipping Insurance:</span>
-                        <span className="font-bold text-[#11281A]">$1.00</span>
+                        <span className="font-bold text-neutral-text">$1.00</span>
                       </div>
                     )}
 
                     <div className="flex justify-between items-center border-t border-black/5 pt-4 mt-2 font-bold">
-                      <span className="text-[#11281A] uppercase tracking-wider text-xs sm:text-sm font-extrabold">Total Due:</span>
-                      <span className="text-lg sm:text-xl font-black text-[#132B1C]">${grandTotal}</span>
+                      <span className="text-neutral-text uppercase tracking-wider text-xs sm:text-sm font-extrabold">Total Due:</span>
+                      <span className="text-lg sm:text-xl font-black text-neutral-text">${grandTotal}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Safety Disclosures */}
                 <div className="p-4 text-center text-xs text-neutral-text/60 bg-white border border-black/5 rounded-2xl shadow-xs">
-                  <p className="font-bold text-[#11281A]">
+                  <p className="font-bold text-neutral-text">
                     🔒 256-Bit Bank-Grade SSL Encryption
                   </p>
                   <p className="mt-1 text-[0.68rem]">
-                    Your statement descriptor will appear as: <strong className="text-[#11281A]">{siteConfig.descriptor}</strong>.
+                    Your statement descriptor will appear as: <strong className="text-neutral-text">{siteConfig.descriptor}</strong>.
                   </p>
                 </div>
               </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
 import { useCart } from "@/context/CartContext";
@@ -9,140 +10,123 @@ import { useCart } from "@/context/CartContext";
 const products = productsData as unknown as Product[];
 
 const productHighlights: { [key: string]: string[] } = {
-  product1: ["58 HRC Manganese Steel", "FSC Ash Hardwood Handle", "Calibrated Soil Depth Marks"],
-  product2: ["Japanese SK5 Steel Blades", "Drop-Forged Alloy Handles", "1-Inch Clean Branch Cut"],
-  product3: ["Triple Manganese Tines", "European Beechwood Grip", "Root Bed Aeration"],
+  product1: ["Carbon steel scoop", "Depth markings", "Comfort grip"],
+  product2: ["SK5 steel blades", "Spring-loaded action", "Safety lock"],
+  product3: ["Three rigid tines", "Hardwood handle", "Weeds & aerates"],
 };
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  showHeader?: boolean;
+}
+
+export default function ProductGrid({ showHeader = true }: ProductGridProps) {
   const { addToCart } = useCart();
 
   const handleQuickAdd = (product: Product) => {
     const bundle = product.bundles && product.bundles[0] ? product.bundles[0] : { quantity: 1, price: parseFloat(product.ssPrice) };
     const unitPrice = (parseFloat(String(bundle.price)) / bundle.quantity).toFixed(2);
-    const label = bundle.quantity > 1 ? `${bundle.quantity}-Tool Pack Bundle` : "Single Instrument";
+    const label = bundle.quantity > 1 ? `${bundle.quantity}-Tool Pack Bundle` : "Single Tool";
     addToCart(product, bundle.quantity, unitPrice, label);
   };
 
   return (
-    <section className="py-16 md:py-20 bg-white relative overflow-hidden border-b border-black/5" id="shop">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10">
-        
-        {/* Left-Aligned Section Header (Matching First Two Sections) */}
-        <div className="max-w-2xl mb-10 md:mb-14 text-left">
-          <div className="flex items-center gap-3 mb-2.5">
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#265C1E]">
-              THE FOUNDRY COLLECTION
-            </span>
-            <span className="w-8 h-[1.5px] bg-[#265C1E]/50 rounded-full" />
+    <section className="py-16 md:py-24 bg-surface" id="shop">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        {showHeader && (
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10 md:mb-14">
+            <div className="max-w-2xl">
+              <span className="eyebrow">The Collection</span>
+              <h2 className="heading-serif text-3xl sm:text-4xl md:text-5xl text-primary mt-4 leading-tight">
+                Three tools. <em className="text-secondary">Every</em> garden job.
+              </h2>
+            </div>
+            <p className="text-sm text-neutral-text/70 max-w-sm leading-relaxed">
+              Dig, prune and weed with a hand-tool kit that covers the whole growing season — buy one or bundle up and save.
+            </p>
           </div>
+        )}
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#11281A] uppercase tracking-tight font-sans">
-            Heirloom Hand <span className="text-[#265C1E]">Garden Tools</span>
-          </h2>
-
-          <p className="mt-2.5 text-neutral-text/70 text-xs sm:text-sm leading-relaxed">
-            Drop-forged carbon steel and FSC-certified hardwood garden tools crafted for a lifetime of planting.
-          </p>
-        </div>
-
-        {/* Clean Alternating Product Showcases */}
-        <div className="flex flex-col gap-10 md:gap-14">
-          {products.map((product, idx) => {
-            const isEven = idx % 2 === 0;
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {products.map((product) => {
             const minPrice = product.bundles && product.bundles[0] ? product.bundles[0].price.toFixed(2) : product.ssPrice;
             const originalPrice = (Number(minPrice) * 1.35).toFixed(2);
-            const highlights = productHighlights[product.id] || ["Forged Steel", "Solid Hardwood", "Lifetime Warranty"];
+            const highlights = productHighlights[product.id] || ["Built to last", "Comfort grip", "Garden tested"];
+            const altImage = product.images?.find((img) => img !== product.image);
 
             return (
-              <div
+              <article
                 key={product.id}
-                className={`flex flex-col ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-8 lg:gap-12 bg-[#FAF9F6] p-6 sm:p-8 lg:p-10 rounded-3xl border border-black/5 shadow-xs hover:shadow-md transition-all duration-300`}
+                className="group flex flex-col bg-white rounded-[1.75rem] border border-black/5 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                {/* Product Image Frame */}
-                <div className="w-full lg:w-1/2 relative group">
-                  <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm bg-neutral-200 border border-black/5">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "/img/products/garden_tools/trowel_1.jpg";
-                      }}
+                <Link href={`/product/${product.id}`} className="relative block aspect-[4/3] overflow-hidden bg-neutral-bg">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className={`object-cover transition-all duration-700 group-hover:scale-105 ${altImage ? "group-hover:opacity-0" : ""}`}
+                  />
+                  {altImage && (
+                    <Image
+                      src={altImage}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700"
+                      aria-hidden
                     />
-                    
-                    {/* Category badge */}
-                    <span className="absolute top-3 left-3 bg-[#132B1C]/90 backdrop-blur-sm text-white text-[0.6rem] font-bold uppercase tracking-widest px-3 py-1 rounded-md shadow-xs">
-                      {product.category}
-                    </span>
+                  )}
+                  <span className="absolute top-4 left-4 bg-white/95 text-primary text-[0.65rem] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+                    {product.category}
+                  </span>
+                  <span className="absolute top-4 right-4 bg-secondary text-white text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-1.5 rounded-full">
+                    Save 25%
+                  </span>
+                </Link>
 
-                    {/* Lifetime Guarantee Badge */}
-                    <span className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm text-[#265C1E] text-[0.6rem] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md shadow-xs">
-                      ★ Lifetime Warranty
-                    </span>
-                  </div>
-                </div>
+                <div className="flex flex-col flex-1 p-5 sm:p-6">
+                  <h3 className="text-lg font-bold text-primary tracking-tight leading-snug">
+                    <Link href={`/product/${product.id}`} className="hover:text-secondary transition-colors">
+                      {product.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm text-neutral-text/70 leading-relaxed line-clamp-3">
+                    {product.description}
+                  </p>
 
-                {/* Product Summary Content */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-between">
-                  <div>
-                    <div className="text-[0.65rem] font-extrabold uppercase tracking-widest text-[#265C1E] mb-1.5">
-                      Foundry Instrument #0{product.stickyId}
-                    </div>
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="inline-flex items-center gap-1.5 bg-neutral-bg px-2.5 py-1 rounded-full text-[0.7rem] font-medium text-neutral-text/80"
+                      >
+                        <span className="w-1 h-1 rounded-full bg-secondary" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
 
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#11281A] tracking-tight mb-3 font-sans leading-tight">
-                      <Link href={`/product/${product.id}`} className="hover:text-[#265C1E] transition-colors">
-                        {product.name}
-                      </Link>
-                    </h3>
-
-                    <p className="text-neutral-text/75 text-xs sm:text-sm leading-relaxed mb-5">
-                      {product.description}
-                    </p>
-
-                    {/* 3 Key Feature Chips */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {highlights.map((item, hIdx) => (
-                        <span
-                          key={hIdx}
-                          className="inline-flex items-center gap-1.5 bg-white border border-black/5 px-3 py-1.5 rounded-lg text-[0.68rem] font-bold text-[#11281A] shadow-2xs"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#265C1E]" />
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Price & Actions Strip */}
-                  <div className="pt-4 border-t border-black/5 flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xs font-bold text-neutral-text/50 uppercase tracking-wider">
-                        From
-                      </span>
-                      <span className="text-3xl font-black text-[#132B1C]">
-                        ${minPrice}
-                      </span>
-                      <span className="text-sm font-bold text-neutral-text/40 line-through">
-                        ${originalPrice}
+                  <div className="mt-auto pt-6">
+                    <div className="flex items-baseline justify-between gap-3 pb-4 border-b border-black/5">
+                      <span className="text-[0.65rem] uppercase tracking-wider text-neutral-text/50 font-semibold">Starting from</span>
+                      <span className="flex items-baseline gap-2">
+                        <span className="text-sm text-neutral-text/40 line-through">${originalPrice}</span>
+                        <span className="text-2xl font-extrabold text-primary">${minPrice}</span>
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
+                    <div className="pt-4 grid grid-cols-2 gap-2 sm:gap-2.5">
                       <Link
                         href={`/product/${product.id}`}
-                        className="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider py-3 px-5 rounded-lg bg-white border border-black/15 text-[#11281A] hover:border-[#265C1E] hover:text-[#265C1E] transition-colors"
+                        className="inline-flex items-center justify-center h-11 px-3 rounded-full border border-black/10 text-primary text-sm font-semibold hover:border-primary transition-colors whitespace-nowrap"
                       >
                         View Details
                       </Link>
-
                       <button
                         onClick={() => handleQuickAdd(product)}
-                        className="inline-flex items-center justify-center gap-1.5 font-bold text-xs uppercase tracking-wider py-3 px-5 rounded-lg bg-[#265C1E] hover:bg-[#1E4A17] text-white transition-colors cursor-pointer"
+                        className="inline-flex items-center justify-center gap-2 h-11 px-3 rounded-full bg-secondary hover:bg-secondary-dark text-white text-sm font-semibold transition-colors cursor-pointer whitespace-nowrap"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 hidden min-[360px]:block">
                           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                           <line x1="3" y1="6" x2="21" y2="6" />
                           <path d="M16 10a4 4 0 0 1-8 0" />
@@ -151,13 +135,11 @@ export default function ProductGrid() {
                       </button>
                     </div>
                   </div>
-
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
-
       </div>
     </section>
   );

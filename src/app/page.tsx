@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import HowItWorks from "@/components/HowItWorks";
@@ -19,39 +20,41 @@ import ProductMarquee from "@/components/ProductMarquee";
 export default function Home() {
   return (
     <>
+      <Header overlay />
       <main className="flex-grow">
-        {/* 1. Hero & Integrated Header */}
+        {/* 1. Hero */}
         <Hero />
 
-        {/* 2. Seamless Product Carousel Marquee */}
+        {/* 2. Highlights ticker */}
         <ProductMarquee />
 
-        <Features />
-        {/* <AboutUs /> */}
-        
-        {/* 2. Product Catalog Showcase (Immediate value for buyers) */}
+        {/* 3. Product collection (immediate value for buyers) */}
         <ProductGrid />
 
-        {/* 3. Visual Infinite Gallery Marquee */}
-        <Gallery />
+        {/* 4. Why shop with us */}
+        <Features />
+        {/* <AboutUs /> */}
 
-        {/* 4. Foundry Standards & Metallurgy */}
+        {/* 5. How ordering works */}
         <HowItWorks />
 
-        {/* 4. Quality Guarantee & Hardness Standards */}
+        {/* 6. Tools in the garden */}
+        <Gallery />
+
+        {/* 7. Store promises */}
         <QualityPromise />
 
-        {/* 5. Seasonal Bundle Offer CTA */}
+        {/* 8. Bundle CTA */}
         <CTASection />
 
-        {/* 8. Foundry Knowledge Base & 5 FAQs */}
+        {/* 9. FAQs */}
         {/* <Faq /> */}
 
-        {/* 9. Direct Workshop Assistance & Support Form */}
+        {/* 10. Contact overview */}
         <Contact />
       </main>
 
-      {/* 10. Footer & Global Modals */}
+      {/* Footer & global overlays */}
       <Footer />
       <CartDrawer />
       <NewsletterPopup />

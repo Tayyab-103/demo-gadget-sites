@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 
 const messages = [
-  "Hand-Forged Carbon Steel & Japanese SK5 Blades",
+  "Garden Hand Tools for Every Grower",
   "Complimentary Free Shipping on All Orders Nationwide",
-  "60-Day Risk-Free Field Satisfaction Guarantee",
-  "Lifetime Craftsmanship & Metallurgy Warranty",
+  "Free UPS Shipping on Every Order",
+  "Friendly, Real-Person Customer Support",
   "Sustainably Harvested FSC European Beech & Ash Handles",
 ];
 

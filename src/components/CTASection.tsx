@@ -2,53 +2,42 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CTASection() {
   return (
-    <section className="relative py-16 md:py-20 overflow-hidden bg-[#132B1C]" id="cta">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-25"
-        style={{ backgroundImage: `url('/img/cta_garden_bg.jpg')` }}
+    <section className="relative isolate overflow-hidden py-24 md:py-32" id="cta">
+      <Image
+        src="/img/cta_garden_bg.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover -z-10"
+        aria-hidden
       />
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#132B1C] via-[#132B1C]/90 to-[#132B1C]/75" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/75 to-primary/30" />
 
-      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 flex justify-center">
-        {/* Content Card */}
-        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-white/15">
-          
-          <div className="flex items-center justify-center gap-3 mb-2.5">
-            <span className="w-6 h-[1.5px] bg-[#78C470]/60 rounded-full" />
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#78C470]">
-              SEASONAL SAVINGS
-            </span>
-            <span className="w-6 h-[1.5px] bg-[#78C470]/60 rounded-full" />
-          </div>
-          
-          <h2 className="text-3xl sm:text-4xl font-extrabold uppercase text-white mb-3 tracking-tight leading-tight font-sans">
-            Equip Your Garden with <br />
-            <span className="text-[#78C470]">Heirloom Hand Tools</span>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="max-w-xl text-white">
+          <span className="eyebrow eyebrow-invert">Bundle &amp; Save</span>
+          <h2 className="heading-serif text-4xl sm:text-5xl md:text-6xl mt-5 leading-[1.05]">
+            Kit out the whole <em className="text-accent-light">season</em>.
           </h2>
-
-          <p className="text-white/80 text-xs sm:text-sm mb-7 max-w-lg mx-auto leading-relaxed">
-            Hand-forged instruments engineered to endure decades of seasonal planting.
+          <p className="mt-5 text-sm sm:text-base text-white/80 leading-relaxed">
+            Grab extras for the potting shed, the allotment, or a gardener friend — the more tools in your bundle, the less you pay for each one.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-3.5 justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Link
               href="/shop"
-              className="inline-flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider bg-[#265C1E] hover:bg-[#1E4A17] text-white py-3.5 px-8 rounded-lg shadow-md transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white text-sm font-semibold px-7 py-4 rounded-full transition-colors shadow-lg shadow-black/20"
             >
-              Explore Tool Bundles
-              <span>→</span>
+              Build Your Bundle <span aria-hidden>→</span>
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-bold text-xs uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/20 py-3.5 px-8 rounded-lg transition-colors"
+              className="inline-flex items-center justify-center bg-white/10 hover:bg-white hover:text-primary backdrop-blur-sm border border-white/25 text-white text-sm font-semibold px-7 py-4 rounded-full transition-colors"
             >
-              Contact Workshop
+              Ask a Question
             </Link>
           </div>
         </div>

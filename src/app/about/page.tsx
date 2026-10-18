@@ -15,19 +15,19 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         {/* About Page Dedicated Header Banner */}
-        <section className="bg-[#132B1C] text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
+        <section className="bg-primary text-white py-14 md:py-20 relative overflow-hidden border-b border-black/10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 relative z-10 text-left">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50 mb-3">
-              <Link href="/" className="hover:text-[#78C470] transition-colors">Home</Link>
+              <Link href="/" className="hover:text-accent-light transition-colors">Home</Link>
               <span>/</span>
-              <span className="text-[#78C470]">About Us</span>
+              <span className="text-accent-light">About Us</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white font-sans mb-3">
-              Our Forge &amp; <span className="text-[#78C470]">Heritage</span>
+            <h1 className="heading-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+              Rooted in the <em className="text-accent-light">garden</em>
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-2xl leading-relaxed">
-              Founded on the belief that gardening tools should last generations. We hand-forge high-carbon steel and turn solid hardwood handles in small batches.
+              We started with a simple idea: gardeners deserve a short list of really good hand tools — and a shop that's easy to reach when they need help.
             </p>
           </div>
         </section>
@@ -35,10 +35,10 @@ export default function AboutPage() {
         {/* Narrative & Craft Pillars */}
         <AboutUs />
 
-        {/* Metallurgy & Woodworking Standards */}
+        {/* How ordering works */}
         <HowItWorks />
 
-        {/* Quality & Metallurgy Promise */}
+        {/* Store promises */}
         <QualityPromise />
       </main>
 

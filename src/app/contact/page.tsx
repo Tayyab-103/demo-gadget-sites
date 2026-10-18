@@ -18,10 +18,10 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Reach Our Collective"
+          eyebrow="Commercial Support"
           title={<>Contact {siteConfig.brandName}</>}
-          subtitle="Questions about apparel sizing, volume team orders, or logistics? Our Austin athletic support desk typically responds within 24 hours."
-          image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
+          subtitle="Questions about uniform sizing, bulk crew procurement, or shipments? Our Dallas commercial support desk responds within 24 hours."
+          image="/img/howitworks1.jpg"
           currentLabel="Contact"
         />
         <Contact />

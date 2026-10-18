@@ -12,34 +12,34 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-[#f2f7f4] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b border-black/6">
+      <main className="bg-[#f0f4f8] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b border-black/6">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#0d3b2e] mb-8 border-b border-black/8 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#0f2b48] mb-8 border-b border-black/8 pb-6 tracking-tight">
             Privacy Policy
           </h1>
 
           <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/8 shadow-sm leading-relaxed text-black/75 text-xs md:text-sm space-y-6">
             <p>
               This Privacy Policy describes how your personal information is collected, used, and shared when you visit
-              or make a purchase from <strong className="text-[#0d3b2e] font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
+              or make a purchase from <strong className="text-[#0f2b48] font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
               PERSONAL INFORMATION WE COLLECT
             </h3>
             <p>
               When you visit the Site, we automatically collect certain information about your device, including information
               about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
-              Additionally, as you browse the Site, we collect information about the individual web pages or sporting apparel that you view,
+              Additionally, as you browse the Site, we collect information about the individual web pages or commercial work uniforms that you view,
               what websites or search terms referred you to the Site, and information about how you interact with the Site.
             </p>
             <p>
-              Additionally, when you place an order for sporting apparel, compression tops, technical hoodies, or socks through the Site, we collect certain information
+              Additionally, when you place an order for commercial work uniforms, industrial work shirts, utility cargo pants, or safety jackets through the Site, we collect certain information
               from you, including your name, billing address, shipping address, payment information (including encrypted credit card numbers),
               email address, and phone number. We refer to this information as “Order Information.”
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
               HOW DO WE USE YOUR PERSONAL INFORMATION?
             </h3>
             <p>
@@ -50,10 +50,10 @@ export default function Privacy() {
             <ul className="list-disc pl-5 mb-6 space-y-2">
               <li>Communicate with you regarding delivery and tracking updates;</li>
               <li>Screen our orders for potential risk or payment fraud; and</li>
-              <li>Provide you with athletic apparel releases or promotions relating to our products or services.</li>
+              <li>Provide you with commercial uniform releases or procurement promotions relating to our products or services.</li>
             </ul>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
               SHARING YOUR PERSONAL INFORMATION
             </h3>
             <p>
@@ -65,7 +65,7 @@ export default function Privacy() {
               subpoena, search warrant or other lawful request for information we receive, or to otherwise protect our rights.
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
               DATA RETENTION
             </h3>
             <p>
@@ -73,12 +73,12 @@ export default function Privacy() {
               you ask us to delete this information.
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
               CONTACT US
             </h3>
             <p>
               For more information about our privacy practices, if you have questions, or if you would like to make a request,
-              please contact us by e-mail at <strong className="text-[#0d3b2e] font-semibold">{siteConfig.email}</strong> or by phone at <strong className="text-[#0d3b2e] font-semibold">{siteConfig.phone}</strong>.
+              please contact us by e-mail at <strong className="text-[#0f2b48] font-semibold">{siteConfig.email}</strong> or by phone at <strong className="text-[#0f2b48] font-semibold">{siteConfig.phone}</strong>.
             </p>
           </div>
         </div>

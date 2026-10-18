@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade ${siteConfig.Product?.toLowerCase() || "sporting apparel"} engineered for dedicated athletes, high-output conditioning, and peak athletic performance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade commercial ${siteConfig.Product?.toLowerCase() || "uniforms"}, industrial work shirts, utility trousers, and safety workwear engineered for workforce durability, comfort, and compliance.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,20 +45,21 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel & Technical Sportswear`,
+  title: `${siteConfig.brandName} | Commercial Work Uniforms & Industrial Workwear`,
   description: siteDescription,
   keywords: [
-    "sporting apparel",
-    "athletic wear",
-    "technical sportswear",
-    "compression baselayers",
-    "performance hoodies",
-    "athletic socks",
-    "Austin athletics",
-    "Vantage Thread Athletic Works"
+    "commercial uniforms",
+    "work uniforms",
+    "industrial workwear",
+    "work shirts",
+    "cargo work pants",
+    "safety jackets",
+    "high visibility uniforms",
+    "Pro Work Uniform Supply Shop",
+    "commercial clothing"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Commercial Work Uniforms & Workwear`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Commercial Work Uniforms & Workwear`,
     description: siteDescription,
   },
 };

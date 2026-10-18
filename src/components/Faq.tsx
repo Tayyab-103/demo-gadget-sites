@@ -10,23 +10,23 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqItems = [
   {
     number: "01",
-    question: "How does the 14-day return policy work?",
-    answer: `Try our apparel during your workouts. If you're not satisfied with the fit or quality, return it within ${siteConfig.trialPeriod || 14} days for a full refund.`,
+    question: "How does the 14-day trial & return policy work?",
+    answer: `Outfit your crew with confidence. If you're not completely satisfied with the uniform fit, fabric, or finish, return items within ${siteConfig.trialPeriod || 14} days for a full refund.`,
   },
   {
     number: "02",
-    question: "What fabrics are used in our apparel?",
-    answer: "Our products are made from breathable four-way stretch polyester/spandex blends, soft fleece, and cushioned knit fabrics with reinforced flatlock stitching.",
+    question: "What fabrics and construction are used in our uniforms?",
+    answer: "Our commercial workwear is manufactured using soil-release poly-cotton poplin, rugged ripstop twill, and weatherproof ANSI-rated polyester shells with reinforced double and triple-stitched stress points.",
   },
   {
     number: "03",
     question: "How quickly does my order ship?",
-    answer: `Orders are packed and dispatched within 1-2 business days from Austin, TX via ${siteConfig.shippingCarrier}, typically arriving in ${siteConfig.shippingPeriod} business days.`,
+    answer: `Orders are packed and dispatched within 1-2 business days from our distribution center via ${siteConfig.shippingCarrier}, typically arriving in ${siteConfig.shippingPeriod} business days with tracking.`,
   },
   {
     number: "04",
-    question: "How do I choose the right size?",
-    answer: "Our items fit true to standard US athletic sizing. For a snug compression fit, choose your standard size; for a more relaxed feel, order one size up.",
+    question: "How do I choose the right uniform sizing for my crew?",
+    answer: "Our uniforms fit true to standard US commercial sizing with relaxed articulated cuts designed for ease of movement over base layers and through full work shifts.",
   },
   {
     number: "05",
@@ -35,8 +35,8 @@ const faqItems = [
   },
   {
     number: "06",
-    question: "How should I care for and wash the apparel?",
-    answer: "Machine wash cold with similar colors. Tumble dry on low heat or hang dry to maintain fabric elasticity and fit.",
+    question: "How should our facility wash and care for the uniforms?",
+    answer: "Our uniforms are commercial-laundry friendly. Machine wash warm with like colors; tumble dry medium or hang dry to maintain soil-release properties and seam durability.",
   },
 ];
 
@@ -53,11 +53,11 @@ export default function Faq() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0d3b2e] leading-[1.08]">
-            Frequently Asked <span className="text-[#0d4a36]">Questions</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f2b48] leading-[1.08]">
+            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
           </h2>
-          <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
-            Common questions about sizing, materials, shipping, and returns.
+          <p className="text-black/70 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
+            Common questions regarding commercial uniform sizing, materials, shipping, and returns.
           </p>
         </div>
 
@@ -65,19 +65,19 @@ export default function Faq() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Support Box */}
-          <div className="lg:col-span-4 rounded-3xl bg-[#0a2e22] text-white p-7 sm:p-9 shadow-xl flex flex-col justify-between border border-[#0d4a36]/40">
+          <div className="lg:col-span-4 rounded-3xl bg-[#0b2238] text-white p-7 sm:p-9 shadow-xl flex flex-col justify-between border border-[#0f2b48]/40">
             <div>
               <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-3 text-white">
                 Have a Question?
               </h3>
               <p className="text-xs sm:text-sm text-white/75 leading-relaxed mb-6 font-normal">
-                Our support team is ready to assist you with sizing recommendations, orders, or tracking details.
+                Our uniform support desk is ready to assist you with sizing recommendations, volume orders, and carrier tracking.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-[#0a2e22] text-xs bg-white hover:bg-[#f2f7f4] transition-all py-3.5 px-6 rounded-xl shadow-sm text-center"
+              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-[#0b2238] text-xs bg-[#f59e0b] hover:bg-[#d97706] transition-all py-3.5 px-6 rounded-xl shadow-sm text-center"
             >
               Contact Support →
             </Link>
@@ -92,7 +92,7 @@ export default function Faq() {
                 <div
                   key={item.number}
                   className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                    isOpen ? "border-[#0d4a36]/30 bg-[#f2f7f4] shadow-sm" : "border-black/8 bg-white hover:border-[#0d4a36]/20"
+                    isOpen ? "border-[#0f2b48]/30 bg-[#f8fafc] shadow-sm" : "border-black/8 bg-white hover:border-[#0f2b48]/20"
                   }`}
                 >
                   <button
@@ -101,17 +101,17 @@ export default function Faq() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-3.5 sm:gap-4 flex-1">
-                      <span className="text-xs font-mono font-bold text-[#0d4a36]">
+                      <span className="text-xs font-mono font-bold text-[#f59e0b]">
                         {item.number}
                       </span>
-                      <h4 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0d3b2e]">
+                      <h4 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0f2b48]">
                         {item.question}
                       </h4>
                     </div>
 
                     <span
                       className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-transform duration-200 flex-shrink-0 ${
-                        isOpen ? "bg-[#0d4a36] text-white rotate-45" : "bg-black/5 text-black"
+                        isOpen ? "bg-[#0f2b48] text-white rotate-45" : "bg-black/5 text-black"
                       }`}
                     >
                       +

@@ -119,9 +119,9 @@ export default function Checkout() {
 
       {loading && (
         <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center p-4">
-          <div className="w-12 h-12 border-4 border-black/10 border-t-[#0d4a36] rounded-full animate-spin" />
-          <h4 className="mt-6 text-base sm:text-lg font-black text-[#0d3b2e] uppercase tracking-tight text-center">
-            Processing Secure Apparel Order...
+          <div className="w-12 h-12 border-4 border-black/10 border-t-[#0f2b48] rounded-full animate-spin" />
+          <h4 className="mt-6 text-base sm:text-lg font-black text-[#0f2b48] uppercase tracking-tight text-center">
+            Processing Secure Uniform Order...
           </h4>
           <p className="text-xs text-black/50 text-center mt-1">
             Please do not refresh or close this window.
@@ -134,8 +134,8 @@ export default function Checkout() {
           
           <div className="mb-8 sm:mb-10">
 
-            <h2 className="text-3xl sm:text-4xl font-black uppercase text-[#0d3b2e] tracking-tight">
-              Athlete <span className="text-[#0d4a36]">Checkout</span>
+            <h2 className="text-3xl sm:text-4xl font-black uppercase text-[#0f2b48] tracking-tight">
+              Uniform <span className="text-[#f59e0b]">Checkout</span>
             </h2>
           </div>
 
@@ -150,7 +150,7 @@ export default function Checkout() {
               )}
 
               <form onSubmit={handleSubmit}>
-                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0d3b2e] font-mono">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0f2b48] font-mono">
                   1. Shipping Information
                 </h3>
 
@@ -162,7 +162,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="firstName"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.firstName}
                       onChange={handleChange}
                       required
@@ -175,7 +175,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="lastName"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.lastName}
                       onChange={handleChange}
                       required
@@ -190,7 +190,7 @@ export default function Checkout() {
                   <input
                     type="text"
                     name="shippingAddress1"
-                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                     value={formData.shippingAddress1}
                     onChange={handleChange}
                     required
@@ -205,7 +205,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingCity"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.shippingCity}
                       onChange={handleChange}
                       required
@@ -218,7 +218,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingState"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       placeholder="e.g. TX"
                       value={formData.shippingState}
                       onChange={handleChange}
@@ -232,7 +232,7 @@ export default function Checkout() {
                     <input
                       type="text"
                       name="shippingZip"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.shippingZip}
                       onChange={handleChange}
                       required
@@ -248,7 +248,7 @@ export default function Checkout() {
                     <input
                       type="tel"
                       name="phone"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -261,7 +261,7 @@ export default function Checkout() {
                     <input
                       type="email"
                       name="email"
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -270,7 +270,7 @@ export default function Checkout() {
                 </div>
 
                 {/* Credit Card Details */}
-                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0d3b2e] mt-8 font-mono">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0f2b48] mt-8 font-mono">
                   2. Payment Details
                 </h3>
 
@@ -282,7 +282,7 @@ export default function Checkout() {
                     type="text"
                     name="cc_no"
                     maxLength={19}
-                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs font-mono"
+                    className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs font-mono"
                     placeholder="•••• •••• •••• ••••"
                     value={formData.cc_no}
                     onChange={(e) => {
@@ -300,7 +300,7 @@ export default function Checkout() {
                     </label>
                     <select
                       name="cc_month"
-                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.cc_month}
                       onChange={handleChange}
                       required
@@ -319,7 +319,7 @@ export default function Checkout() {
                     </label>
                     <select
                       name="cc_year"
-                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs"
+                      className="block w-full px-2 sm:px-3 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs"
                       value={formData.cc_year}
                       onChange={handleChange}
                       required
@@ -340,7 +340,7 @@ export default function Checkout() {
                       type="password"
                       name="CVV"
                       maxLength={4}
-                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-xs font-mono"
+                      className="block w-full px-3.5 py-3 text-xs sm:text-sm border border-black/10 rounded-xl focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all text-black bg-white shadow-xs font-mono"
                       placeholder="•••"
                       value={formData.CVV}
                       onChange={handleChange}
@@ -351,7 +351,7 @@ export default function Checkout() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-[#0d4a36] hover:bg-[#083325] text-white transition-all duration-200 py-4 px-8 rounded-xl w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
+                  className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-[#0f2b48] hover:bg-[#0b2238] text-white transition-all duration-200 py-4 px-8 rounded-xl w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
                 >
                   Complete Secure Purchase →
                 </button>
@@ -361,7 +361,7 @@ export default function Checkout() {
             {/* Cart Summary Column */}
             <div className="lg:col-span-5 sticky top-28 flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/8 shadow-sm">
-                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0d3b2e] font-mono">
+                <h3 className="text-sm font-black uppercase tracking-wider border-b border-black/8 pb-3 mb-5 text-[#0f2b48] font-mono">
                   Order Summary
                 </h3>
 
@@ -371,14 +371,14 @@ export default function Checkout() {
                     key={item.Id}
                   >
                     <div className="flex-1 pr-3">
-                      <strong className="text-xs sm:text-sm font-black text-[#0d3b2e] uppercase tracking-tight block truncate">
+                      <strong className="text-xs sm:text-sm font-black text-[#0f2b48] uppercase tracking-tight block truncate">
                         {item.Name}
                       </strong>
-                      <span className="block text-[0.65rem] font-bold text-[#0d4a36] uppercase tracking-wide mt-0.5 font-mono">
+                      <span className="block text-[0.65rem] font-bold text-[#0f2b48] uppercase tracking-wide mt-0.5 font-mono">
                         {item.Label} (Qty: {item.Qty})
                       </span>
                     </div>
-                    <span className="font-black text-sm sm:text-base text-[#0d3b2e] font-mono flex-shrink-0">
+                    <span className="font-black text-sm sm:text-base text-[#0f2b48] font-mono flex-shrink-0">
                       ${item.Total}
                     </span>
                   </div>
@@ -386,7 +386,7 @@ export default function Checkout() {
 
                 {/* Insurance Toggle */}
                 <div
-                  className="p-3.5 bg-[#f2f7f4] border border-dashed border-[#0d4a36]/20 rounded-xl my-5 flex items-center gap-3 cursor-pointer hover:bg-[#0d4a36]/10 transition-colors"
+                  className="p-3.5 bg-[#f0f4f8] border border-dashed border-[#0f2b48]/20 rounded-xl my-5 flex items-center gap-3 cursor-pointer hover:bg-[#0f2b48]/10 transition-colors"
                   onClick={() => setShippingInsurance((prev) => !prev)}
                 >
                   <input
@@ -394,10 +394,10 @@ export default function Checkout() {
                     checked={shippingInsurance}
                     onChange={handleInsuranceChange}
                     onClick={(e) => e.stopPropagation()}
-                    className="w-4 h-4 cursor-pointer accent-[#0d4a36]"
+                    className="w-4 h-4 cursor-pointer accent-[#0f2b48]"
                   />
                   <div>
-                    <strong className="text-xs font-black text-[#0d3b2e] block">
+                    <strong className="text-xs font-black text-[#0f2b48] block">
                       Add Rush Shipping Insurance
                     </strong>
                     <span className="text-[0.65rem] text-black/60">
@@ -409,12 +409,12 @@ export default function Checkout() {
                 {/* Subtotals & Grand Total */}
                 <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-3">
                   <div className="flex justify-between items-center text-black/70">
-                    <span>Apparel Subtotal:</span>
+                    <span>Uniform Subtotal:</span>
                     <span className="font-mono font-bold">${cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center text-black/70">
                     <span>UPS Shipping:</span>
-                    <span className="text-[#0d4a36] font-mono font-black">FREE</span>
+                    <span className="text-[#0f2b48] font-mono font-black">FREE</span>
                   </div>
                   {shippingInsurance && (
                     <div className="flex justify-between items-center text-black/70">
@@ -424,10 +424,10 @@ export default function Checkout() {
                   )}
 
                   <div className="flex justify-between items-center border-t border-black/8 pt-3 mt-1 font-black text-base">
-                    <span className="text-[#0d3b2e] uppercase tracking-wider text-xs">
+                    <span className="text-[#0f2b48] uppercase tracking-wider text-xs">
                       Grand Total:
                     </span>
-                    <span className="text-[#0d4a36] font-mono font-black text-xl">
+                    <span className="text-[#0f2b48] font-mono font-black text-xl">
                       ${grandTotal}
                     </span>
                   </div>
@@ -435,8 +435,8 @@ export default function Checkout() {
               </div>
 
               {/* Safety Disclosures */}
-              <div className="py-5 px-6 text-center text-[0.68rem] text-black/50 leading-relaxed bg-[#f2f7f4] border border-black/8 rounded-2xl shadow-xs">
-                <p className="font-bold text-[#0d3b2e]">
+              <div className="py-5 px-6 text-center text-[0.68rem] text-black/50 leading-relaxed bg-[#f0f4f8] border border-black/8 rounded-2xl shadow-xs">
+                <p className="font-bold text-[#0f2b48]">
                   🔒 256-Bit SSL Encrypted Bank Gateway.
                 </p>
                 <p className="mt-0.5">

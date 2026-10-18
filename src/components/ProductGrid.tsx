@@ -24,11 +24,11 @@ export default function ProductGrid() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0d3b2e] leading-[1.08]">
-            Sporting Apparel <span className="text-[#0d4a36]">&amp; Activewear</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f2b48] leading-[1.08]">
+            Commercial Uniforms <span className="text-[#f59e0b]">&amp; Workwear</span>
           </h2>
-          <p className="text-black/65 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-xl mx-auto font-normal">
-            Quality compression baselayers, training hoodies, and athletic socks designed for workouts and daily movement.
+          <p className="text-black/70 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-xl mx-auto font-normal">
+            Pro-grade industrial work shirts, reinforced utility cargo pants, and safety jackets engineered for heavy shifts and field operations.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function ProductGrid() {
             return (
               <div
                 key={product.id}
-                className="group flex flex-col overflow-hidden rounded-3xl border border-black/8 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#0d4a36]/30 hover:-translate-y-1"
+                className="group flex flex-col overflow-hidden rounded-3xl border border-black/8 bg-white shadow-sm transition-all duration-300 hover:shadow-xl hover:border-[#0f2b48]/30 hover:-translate-y-1"
               >
                 {/* Image Container */}
                 <Link
@@ -61,13 +61,13 @@ export default function ProductGrid() {
                   />
 
                   {/* Category Pill on Card */}
-                  <span className="absolute top-3.5 left-3.5 rounded-full bg-[#0d4a36]/90 px-3 py-1 text-[0.62rem] font-black uppercase tracking-wider text-white shadow-md backdrop-blur-md">
+                  <span className="absolute top-3.5 left-3.5 rounded-full bg-[#0f2b48]/90 px-3 py-1 text-[0.62rem] font-black uppercase tracking-wider text-white shadow-md backdrop-blur-md">
                     {product.category}
                   </span>
 
                   {/* Discount Pill */}
                   {savingsPercent > 0 && (
-                    <span className="absolute top-3.5 right-3.5 rounded-full bg-[#10b981] px-2.5 py-1 text-[0.62rem] font-black uppercase tracking-wider text-white shadow-md">
+                    <span className="absolute top-3.5 right-3.5 rounded-full bg-[#f59e0b] text-[#0f2b48] px-2.5 py-1 text-[0.62rem] font-black uppercase tracking-wider shadow-md">
                       Save {savingsPercent}%
                     </span>
                   )}
@@ -76,23 +76,23 @@ export default function ProductGrid() {
                 {/* Content */}
                 <div className="flex flex-1 flex-col p-6">
                   <Link href={`/product/${product.id}`}>
-                    <h3 className="mb-2 text-base font-black text-[#0d3b2e] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#0d4a36] uppercase tracking-tight">
+                    <h3 className="mb-2 text-base font-black text-[#0f2b48] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#f59e0b] uppercase tracking-tight">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-xs text-black/65 line-clamp-2 mb-5 leading-relaxed">
+                  <p className="text-xs text-black/70 line-clamp-2 mb-5 leading-relaxed">
                     {product.description}
                   </p>
 
                   <div className="mt-auto flex items-center justify-between gap-2 border-t border-black/5 pt-4">
                     <div className="flex items-baseline gap-1.5 font-mono">
-                      <span className="text-lg sm:text-xl font-black text-[#0d3b2e]">${currentPrice}</span>
+                      <span className="text-lg sm:text-xl font-black text-[#0f2b48]">${currentPrice}</span>
                       <span className="text-xs font-semibold text-black/40 line-through">${originalPrice}</span>
                     </div>
 
                     <button
                       onClick={() => handleQuickAdd(product)}
-                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0d4a36] text-white shadow-md transition-all duration-200 hover:bg-[#083325] hover:scale-105 cursor-pointer"
+                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0f2b48] text-white shadow-md transition-all duration-200 hover:bg-[#f59e0b] hover:text-[#0f2b48] hover:scale-105 cursor-pointer"
                       aria-label={`Add ${product.name} to cart`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

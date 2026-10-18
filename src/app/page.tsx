@@ -30,7 +30,7 @@ export default function Home() {
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
-        {/* About Brand & Austin Heritage */}
+        {/* About Brand & Commercial Heritage */}
         <AboutUs />
 
         {/* Video Showcase In Motion */}
@@ -38,7 +38,7 @@ export default function Home() {
 
 
         
-        {/* Athlete Testimonials */}
+        {/* Commercial Client Testimonials */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}

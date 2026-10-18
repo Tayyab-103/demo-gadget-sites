@@ -11,8 +11,8 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 export default function AboutUs() {
   const features = [
     {
-      title: "Quality Fabrics",
-      description: "Durable, flexible materials designed for training and everyday comfort.",
+      title: "Commercial Durability",
+      description: "Reinforced double-needle stitching, heavy-duty hardware, and soil-release fabrics built for demanding work environments.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -30,8 +30,8 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "Secure Ordering",
-      description: "Encrypted payment processing and safe customer data handling.",
+      title: "Secure Procurement",
+      description: "Encrypted payment gateway and PCI-compliant processing for individual and commercial supply orders.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -49,8 +49,8 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "Fast Dispatch",
-      description: "Quick order fulfillment with reliable tracking on all packages.",
+      title: "Fast Tracked Dispatch",
+      description: "Prompt fulfillment and reliable nationwide UPS carrier delivery with tracking on all packages.",
       icon: (
         <svg
           className="w-5 h-5 text-white"
@@ -77,18 +77,18 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Col 1: About Us Card */}
-          <div className="lg:col-span-3 bg-[#f2f7f4] rounded-3xl p-7 sm:p-8 flex flex-col justify-between min-h-[260px] lg:min-h-[380px] border border-black/5">
+          <div className="lg:col-span-3 bg-[#f8fafc] rounded-3xl p-7 sm:p-8 flex flex-col justify-between min-h-[260px] lg:min-h-[380px] border border-black/5">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d3b2e] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f2b48] tracking-tight">
                 About Us
               </h2>
             </div>
             <div className="mt-8 lg:mt-0">
               <Link
                 href="/shop"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#0d4a36] hover:bg-[#083325] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#0f2b48] hover:bg-[#0b2238] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md"
               >
-                See Our Collection
+                See Uniform Catalog
               </Link>
             </div>
           </div>
@@ -96,30 +96,30 @@ export default function AboutUs() {
           {/* Col 2: Center Large Image */}
           <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] bg-black/5 border border-black/5 shadow-sm">
             <Image
-              src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=1200&q=80"
-              alt="Athletes in training action"
+              src="/img/howitworks1.jpg"
+              alt="Uniform supply consultation and fabrics"
               fill
               sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover object-center transition-transform duration-700 hover:scale-105"
             />
           </div>
 
-          {/* Col 3: Right Introduction & Boxer Image */}
+          {/* Col 3: Right Introduction & Lab Image */}
           <div className="lg:col-span-4 flex flex-col justify-between gap-5">
             <div className="pt-1">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0d3b2e] tracking-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0f2b48] tracking-tight mb-3">
                 About {siteConfig.brandName}
               </h3>
               <p className="text-black/70 text-xs sm:text-sm leading-relaxed">
-                We design and distribute sporting apparel and activewear built for training, workout sessions, and daily athletic comfort.
+                We supply commercial-grade uniforms, work shirts, and protective apparel built for facility technicians, logistics crews, and service personnel. Our focus is long-lasting durability, professional team presentation, and all-day comfort.
               </p>
             </div>
 
-            {/* Training Image */}
+            {/* Quality testing image */}
             <div className="relative rounded-3xl overflow-hidden h-[180px] sm:h-[200px] lg:h-[210px] w-full bg-black/5 border border-black/5 shadow-sm">
               <Image
-                src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80"
-                alt="Athlete training and workout gear"
+                src="/img/lab1.jpg"
+                alt="Uniform fabric quality inspection"
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"
@@ -134,17 +134,17 @@ export default function AboutUs() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="relative bg-[#f2f7f4] rounded-3xl pt-10 pb-7 px-6 text-center border border-black/5 hover:border-[#0d4a36]/20 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+              className="relative bg-[#f8fafc] rounded-3xl pt-10 pb-7 px-6 text-center border border-black/5 hover:border-[#0f2b48]/20 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
             >
               {/* Floating Circular Icon Badge */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0d4a36] flex items-center justify-center shadow-md">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0f2b48] flex items-center justify-center shadow-md">
                 {feature.icon}
               </div>
 
-              <h4 className="text-base sm:text-lg font-bold text-[#0d3b2e] mb-1.5 tracking-tight">
+              <h4 className="text-base sm:text-lg font-bold text-[#0f2b48] mb-1.5 tracking-tight">
                 {feature.title}
               </h4>
-              <p className="text-xs sm:text-sm text-black/65 leading-relaxed">
+              <p className="text-xs sm:text-sm text-black/70 leading-relaxed">
                 {feature.description}
               </p>
             </div>

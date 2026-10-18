@@ -64,7 +64,7 @@ export default async function Image() {
           <div
             style={{
               fontSize: 48,
-              color: siteConfig.theme.secondaryColor,
+              color: "#38bdf8",
             }}
           >
             ⚡
@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Pro-Grade Sporting Apparel &amp; Technical Sportswear
+          Commercial Work Uniforms &amp; Industrial Workwear
         </div>
 
         <div

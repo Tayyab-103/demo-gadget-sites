@@ -29,11 +29,11 @@ export default function CartDrawer() {
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/10 flex items-center justify-between bg-[#f2f7f4]">
+        <div className="p-6 border-b border-black/10 flex items-center justify-between bg-[#f0f4f8]">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#0d4a36]" />
-            <h3 className="m-0 text-sm font-black text-[#0d3b2e] tracking-widest uppercase font-mono">
-              ATHLETE CART
+            <span className="w-2 h-2 rounded-full bg-[#f59e0b]" />
+            <h3 className="m-0 text-sm font-black text-[#0f2b48] tracking-widest uppercase font-mono">
+              UNIFORM CART
             </h3>
           </div>
           <button
@@ -49,13 +49,13 @@ export default function CartDrawer() {
           {cart.length === 0 ? (
             <div className="text-center py-16">
               <p className="text-black/50 text-xs font-mono uppercase tracking-wider mb-6">
-                Your athlete cart is empty.
+                Your uniform cart is empty.
               </p>
               <button
-                className="inline-block font-black text-center whitespace-nowrap bg-[#0d4a36] hover:bg-[#083325] text-white transition-all py-3.5 px-7 rounded-xl text-xs uppercase tracking-wider cursor-pointer shadow-sm"
+                className="inline-block font-black text-center whitespace-nowrap bg-[#0f2b48] hover:bg-[#0b2238] text-white transition-all py-3.5 px-7 rounded-xl text-xs uppercase tracking-wider cursor-pointer shadow-sm"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Apparel Catalog
+                Explore Uniform Catalog
               </button>
             </div>
           ) : (
@@ -94,11 +94,11 @@ export default function CartDrawer() {
                     className="w-[70px] h-[70px] object-cover rounded-xl bg-black/5 flex-shrink-0"
                     onError={(e) => {
                       e.currentTarget.src =
-                        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=150&q=80";
+                        "/img/products/product-shirt.jpg";
                     }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="font-black text-xs sm:text-sm text-[#0d3b2e] mb-0.5 truncate uppercase tracking-tight">
+                    <div className="font-black text-xs sm:text-sm text-[#0f2b48] mb-0.5 truncate uppercase tracking-tight">
                       {item.Name}
                     </div>
                     <div className="text-[0.62rem] text-black/50 mb-3 uppercase tracking-wider font-mono">
@@ -127,7 +127,7 @@ export default function CartDrawer() {
                         </button>
                       </div>
 
-                      <div className="text-sm font-black text-[#0d3b2e] font-mono">
+                      <div className="text-sm font-black text-[#0f2b48] font-mono">
                         ${item.Price}
                       </div>
                     </div>
@@ -152,14 +152,14 @@ export default function CartDrawer() {
               <span className="font-black text-black uppercase text-xs tracking-wider">
                 Subtotal
               </span>
-              <span className="font-black text-lg text-[#0d3b2e]">
+              <span className="font-black text-lg text-[#0f2b48]">
                 ${getCartTotal()}
               </span>
             </div>
 
             <Link
               href="/checkout"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-[#0d4a36] hover:bg-[#083325] text-white transition-all py-3.5 px-6 rounded-xl text-xs w-full shadow-md mb-2.5"
+              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-[#0f2b48] hover:bg-[#0b2238] text-white transition-all py-3.5 px-6 rounded-xl text-xs w-full shadow-md mb-2.5"
               onClick={() => setIsCartOpen(false)}
             >
               Proceed to Checkout →
@@ -167,7 +167,7 @@ export default function CartDrawer() {
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-transparent border border-black/20 text-[#0d3b2e] hover:bg-[#f2f7f4] transition-all py-3 px-6 rounded-xl text-xs w-full cursor-pointer"
+              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-transparent border border-black/20 text-[#0f2b48] hover:bg-[#f0f4f8] transition-all py-3 px-6 rounded-xl text-xs w-full cursor-pointer"
             >
               Continue Shopping
             </button>

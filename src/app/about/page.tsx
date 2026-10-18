@@ -18,10 +18,10 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Apparel Heritage"
+          eyebrow="Commercial Heritage"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding fabric durability."
-          image="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1600&q=80"
+          subtitle="Headquartered in Dallas, Texas. Dedicated to outfitting commercial crews, field technicians, and industrial teams with unyielding uniform durability."
+          image="/img/lab1.jpg"
           currentLabel="About"
         />
         <AboutUs />

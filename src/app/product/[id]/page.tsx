@@ -35,15 +35,15 @@ export default function ProductDetail() {
       <>
         <Header />
         <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-28 text-center bg-white text-black">
-          <h2 className="text-2xl font-black uppercase text-[#0d3b2e] mb-4">Apparel Not Found</h2>
+          <h2 className="text-2xl font-black uppercase text-[#0f2b48] mb-4">Uniform Not Found</h2>
           <p className="text-black/60 mb-8 max-w-md mx-auto text-sm">
-            The sporting apparel item you are looking for does not exist or has been updated in our catalog.
+            The commercial uniform item you are looking for does not exist or has been updated in our catalog.
           </p>
           <button
-            className="inline-block font-black text-center whitespace-nowrap bg-[#0d4a36] text-white hover:bg-[#083325] transition-all py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider cursor-pointer"
+            className="inline-block font-black text-center whitespace-nowrap bg-[#0f2b48] text-white hover:bg-[#0b2238] transition-all py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider cursor-pointer"
             onClick={() => router.push("/shop")}
           >
-            Return to Apparel Catalog
+            Return to Uniform Catalog
           </button>
         </main>
         <Footer />
@@ -67,7 +67,7 @@ export default function ProductDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-start">
             
             {/* Product Image Section */}
-            <div className="bg-[#f2f7f4] rounded-3xl p-4 sm:p-6 border border-black/8 shadow-xs">
+            <div className="bg-[#f0f4f8] rounded-3xl p-4 sm:p-6 border border-black/8 shadow-xs">
               <ProductCarousel
                 images={product.images && product.images.length > 0 ? product.images : [product.image]}
                 name={product.name}
@@ -76,12 +76,12 @@ export default function ProductDetail() {
 
             {/* Product Details Section */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/8 shadow-sm flex flex-col">
-              <h1 className="text-2xl sm:text-3xl font-black uppercase text-[#0d3b2e] mt-1 mb-3 leading-snug tracking-tight">
+              <h1 className="text-2xl sm:text-3xl font-black uppercase text-[#0f2b48] mt-1 mb-3 leading-snug tracking-tight">
                 {product.name}
               </h1>
 
               {/* Price Display */}
-              <div className="text-3xl font-black text-[#0d3b2e] mb-4 flex items-baseline gap-2 font-mono">
+              <div className="text-3xl font-black text-[#0f2b48] mb-4 flex items-baseline gap-2 font-mono">
                 ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 {selectedBundle.quantity > 1 && (
                   <span className="text-xs sm:text-sm font-bold text-black/40">
@@ -107,7 +107,7 @@ export default function ProductDetail() {
                         const bundle = product.bundles?.find((b) => b.quantity === Number(e.target.value));
                         if (bundle) setSelectedBundle(bundle);
                       }}
-                      className="w-full appearance-none border border-black/15 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-bold text-black bg-white cursor-pointer focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all shadow-xs"
+                      className="w-full appearance-none border border-black/15 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-bold text-black bg-white cursor-pointer focus:outline-none focus:border-[#0f2b48] focus:ring-1 focus:ring-[#0f2b48] transition-all shadow-xs"
                     >
                       {product.bundles.map((bundle) => {
                         const regularPrice = startingPrice * bundle.quantity;
@@ -144,7 +144,7 @@ export default function ProductDetail() {
               {/* Add to Cart Actions */}
               <div className="flex gap-4 mb-6">
                 <button
-                  className="group inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-[#0d4a36] text-white hover:bg-[#083325] transition-all duration-200 py-3.5 sm:py-4 px-8 rounded-xl w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
+                  className="group inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-[#0f2b48] text-white hover:bg-[#0b2238] transition-all duration-200 py-3.5 sm:py-4 px-8 rounded-xl w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
@@ -155,21 +155,21 @@ export default function ProductDetail() {
               {/* Specifications & Fabric Construction */}
               {product.showIngredients && product.ingredientsImage && (
                 <div className="border-t border-black/6 pt-6 mt-4">
-                  <h3 className="text-sm sm:text-base font-black text-[#0d3b2e] mb-1.5 uppercase tracking-tight">
+                  <h3 className="text-sm sm:text-base font-black text-[#0f2b48] mb-1.5 uppercase tracking-tight">
                     Product Details &amp; Materials
                   </h3>
                   <p className="text-xs text-black/60 mb-4 leading-relaxed">
-                    Designed in Austin, TX with four-way stretch fabric and reinforced stitching. Backed by our 14-day field trial.
+                    Designed in Dallas, TX with commercial heavy-duty twill and double-needle reinforced stitching. Backed by our 14-day fit trial.
                   </p>
 
-                  <div className="bg-[#f2f7f4] border border-black/6 rounded-xl p-3 flex items-center justify-center">
+                  <div className="bg-[#f0f4f8] border border-black/6 rounded-xl p-3 flex items-center justify-center">
                     <img
                       src={product.ingredientsImage}
                       alt={`${product.name} specifications and fabric details`}
                       className="max-w-full h-auto rounded-lg max-h-[260px] object-cover bg-white p-1 border border-black/5"
                       onError={(e) => {
                         e.currentTarget.src =
-                          "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&q=80";
+                          "/img/products/product-shirt.jpg";
                       }}
                     />
                   </div>

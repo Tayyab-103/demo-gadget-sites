@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-12 md:pt-16 pb-8 w-full bg-[#07241b] text-white/70 border-t border-white/10 font-sans">
+    <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-12 md:pt-16 pb-8 w-full bg-[#0b2238] text-white/70 border-t border-white/10 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Main Content Row */}
         <div className="flex flex-col lg:flex-row justify-between w-full gap-10 lg:gap-16 border-b border-white/10 pb-10">
@@ -37,24 +37,25 @@ export default function Footer() {
               ) : (
                 <div className="flex flex-col">
                   <span className="text-2xl font-black tracking-tighter text-white uppercase leading-none flex items-baseline">
-                    <span>VANTAGE</span>
-                    <span className="inline-block w-2 h-2 rounded-full bg-[#10b981] ml-0.5" />
+                    <span>PRO WORK</span>
+                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#f59e0b] ml-1" />
                   </span>
-                  <span className="text-[0.62rem] font-black uppercase tracking-[0.28em] text-[#10b981] mt-1">
-                    ATHLETIC WORKS
+                  <span className="text-[0.58rem] font-black uppercase tracking-[0.24em] text-[#f59e0b] mt-1">
+                    UNIFORM SUPPLY SHOP
                   </span>
                 </div>
               )}
             </Link>
 
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Engineered high-performance compression wear and athletic apparel designed for athletes who demand peak endurance, precision fit, and uncompromising durability.
+              Commercial-grade work uniforms, heavy-duty industrial work shirts, and protective apparel engineered for workforce durability, compliance, and all-day team comfort.
             </p>
 
             {/* Quick Contact Badges */}
             <div className="flex flex-col gap-1.5 text-xs text-white/60">
               <span className="font-medium text-white/90">{siteConfig.address}</span>
               <span>{siteConfig.phone} • {siteConfig.email}</span>
+              <span className="text-white/40 mt-1">Operated by {siteConfig.corpName}</span>
             </div>
           </div>
 
@@ -68,32 +69,32 @@ export default function Footer() {
               </h2>
               <ul className="text-sm space-y-2.5">
                 <li>
-                  <Link href="/" className="text-white/70 hover:text-[#10b981] transition-colors">
+                  <Link href="/" className="text-white/70 hover:text-[#f59e0b] transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/shop" className="text-white/70 hover:text-[#10b981] transition-colors">
-                    All Apparel
+                  <Link href="/shop" className="text-white/70 hover:text-[#f59e0b] transition-colors">
+                    All Uniforms
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-white/70 hover:text-[#10b981] transition-colors">
+                  <Link href="/about" className="text-white/70 hover:text-[#f59e0b] transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/70 hover:text-[#10b981] transition-colors">
+                  <Link href="/contact" className="text-white/70 hover:text-[#f59e0b] transition-colors">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-white/70 hover:text-[#10b981] transition-colors">
+                  <Link href="/privacy" className="text-white/70 hover:text-[#f59e0b] transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-white/70 hover:text-[#10b981] transition-colors">
+                  <Link href="/terms" className="text-white/70 hover:text-[#f59e0b] transition-colors">
                     Terms &amp; Conditions
                   </Link>
                 </li>
@@ -107,11 +108,11 @@ export default function Footer() {
               </h2>
               <div className="text-sm space-y-3">
                 <p className="text-white/70 leading-relaxed text-sm">
-                  The latest gear drops, training guides, and exclusive athlete discounts, sent to your inbox weekly.
+                  The latest commercial uniform releases, compliance guides, and exclusive volume supply discounts, sent to your inbox.
                 </p>
 
                 {subscribed ? (
-                  <div className="flex items-center gap-2 text-[#10b981] bg-[#10b981]/15 border border-[#10b981]/30 rounded-xl p-3 text-xs font-semibold">
+                  <div className="flex items-center gap-2 text-[#f59e0b] bg-[#f59e0b]/15 border border-[#f59e0b]/30 rounded-xl p-3 text-xs font-semibold">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -125,11 +126,11 @@ export default function Footer() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
                       required
-                      className="border border-white/20 bg-white/10 placeholder-white/40 focus:ring-2 focus:ring-[#10b981] focus:border-[#10b981] outline-none w-full sm:w-64 h-10 rounded-lg px-3.5 text-sm text-white transition-all shadow-xs"
+                      className="border border-white/20 bg-white/10 placeholder-white/40 focus:ring-2 focus:ring-[#f59e0b] focus:border-[#f59e0b] outline-none w-full sm:w-64 h-10 rounded-lg px-3.5 text-sm text-white transition-all shadow-xs"
                     />
                     <button
                       type="submit"
-                      className="bg-[#10b981] hover:bg-[#0d9668] text-[#07241b] font-black h-10 px-5 rounded-lg text-sm transition-all duration-200 whitespace-nowrap shadow-xs cursor-pointer hover:brightness-110 uppercase tracking-wider text-xs"
+                      className="bg-[#f59e0b] hover:bg-[#d97706] text-[#0b2238] font-black h-10 px-5 rounded-lg text-sm transition-all duration-200 whitespace-nowrap shadow-xs cursor-pointer hover:brightness-110 uppercase tracking-wider text-xs"
                     >
                       Subscribe
                     </button>
@@ -144,7 +145,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Payment Badges */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p className="text-center sm:text-left">
-            Copyright {currentYear} © <span className="font-semibold text-white/80">{siteConfig.brandName}</span>. All Rights Reserved.
+            Copyright {currentYear} © <span className="font-semibold text-white/80">{siteConfig.brandName}</span>. All Rights Reserved. Statement Descriptor: <strong className="text-white/70">{siteConfig.descriptor}</strong>.
           </p>
 
           <div className="flex items-center gap-2">

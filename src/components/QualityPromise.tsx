@@ -45,19 +45,19 @@ export default function QualityPromise() {
           {/* Left Column: Clean Eyebrow */}
           <div className="lg:col-span-4 flex items-center">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-[#0A0F1D]/70 select-none">
-              BUILT FOR EXTREMES
+              FAMILY WARDROBE PROMISE
             </span>
           </div>
 
           {/* Right Column: Headline & Subtitle */}
           <div className="lg:col-span-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#0A0F1D] leading-[1.08] mb-4">
-              Built for Where <br />
-              <span className="font-bold text-[#0A0F1D]">Limits Begin.</span>
+              Designed for Everyday Life. <br />
+              <span className="font-bold text-[#0A0F1D]">Made for Every Family.</span>
             </h2>
 
             <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-normal mb-5">
-              1000D Cordura® ripstop, DuPont Teflon™ fluid barrier, and Silvadur™ antimicrobial protection backed by our 14-day fit trial.
+              Ultra-soft breathable fabrics, modern silhouettes, and easy machine-washable care backed by our 14-day family fit guarantee.
             </p>
 
             <div>
@@ -80,8 +80,8 @@ export default function QualityPromise() {
         <div className="w-full h-2 bg-[#0A0F1D] rounded-full relative z-20" />
         <div className="relative -mt-2 w-full aspect-[16/9] sm:aspect-[2.2/1] overflow-hidden">
           <Image
-            src="/img/hanging-uniforms-rail.jpg"
-            alt={`${siteConfig.brandName} collection`}
+            src="/img/hero3.jpg"
+            alt="Family Clothing Stores everywhere hanging apparel collection"
             fill
             sizes="(max-width: 1280px) 100vw, 1280px"
             className="object-cover object-top"

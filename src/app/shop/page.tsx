@@ -14,10 +14,10 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Commercial Outfitting Catalog"
-          title={<>Commercial Uniforms &amp; Workwear</>}
-          subtitle="Explore tactical industrial utility suites, Silvadur™ antimicrobial medical scrubs, and executive double-breasted culinary coats."
-          image="/img/hero-uniforms.jpg"
+          eyebrow="Family Apparel Catalog"
+          title={<>Family Clothing Stores Everywhere</>}
+          subtitle="Explore curated collections designed for every family member — from comfortable essentials to elegant occasion wear."
+          image="/img/hero1.jpg"
           currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />

@@ -29,13 +29,13 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
         {!hideHeader && (
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
-              Commercial Uniform Suites
+              Family Clothing Stores Everywhere
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
-              Precision Workwear. Built for the Shift.
+              Everyday Essentials. Styled for the Whole Family.
             </h2>
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
-              Tactical ripstop workwear, antimicrobial clinical scrubs, and executive culinary coats engineered for continuous durability.
+              Discover flattering women&apos;s maxi dresses, cozy men&apos;s quilted crewnecks, and versatile layerable quarter zips crafted for modern family lifestyles.
             </p>
           </div>
         )}

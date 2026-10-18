@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Precision-tailored heavy-duty tactical uniforms, antimicrobial healthcare scrubs, and executive hospitality chef coats engineered in Austin, Texas.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Discover everyday clothing, premium knitwear, and modern apparel collections tailored for women, men, and children everywhere.`;
 
 // Preload fonts
 const montserrat = Montserrat({
@@ -46,23 +46,22 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+  title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
   description: siteDescription,
   keywords: [
-    "commercial uniforms",
-    "tactical workwear",
-    "medical scrubs",
-    "chef coats",
-    "culinary uniforms",
-    "antimicrobial scrubs",
-    "cordura work pants",
-    "enterprise uniform outfitter",
-    "austin uniform supplier",
-    "hospitality uniforms",
-    "Ironvale Uniform Outfitters"
+    "family clothing",
+    "family apparel",
+    "clothing stores everywhere",
+    "women's fashion",
+    "men's apparel",
+    "kids clothing",
+    "everyday knitwear",
+    "family wardrobe",
+    "casual wear",
+    "family outfits"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Commercial Uniforms, Scrubs & Workwear`,
+    title: `${siteConfig.brandName} | Family Clothing Stores Everywhere`,
     description: siteDescription,
   },
 };

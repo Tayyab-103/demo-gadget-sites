@@ -19,29 +19,29 @@ const faqItems: FaqItem[] = [
     id: "sizing",
     category: "sizing",
     categoryLabel: "Sizing",
-    question: "How do your sizing cuts fit compared to standard workwear?",
-    answer: "Our uniforms feature ergonomic athletic cuts with four-way stretch. Order your standard crew size; size up if layering over duty armor.",
+    question: "How do your clothes fit across women, men, and children?",
+    answer: "Our garments feature true-to-size, relaxed-yet-tailored silhouettes with comfortable stretch. We recommend ordering your usual size; size up if you prefer an oversized or layered fit.",
   },
   {
     id: "trial",
     category: "sizing",
     categoryLabel: "Guarantee",
-    question: `How does the ${siteConfig.trialPeriod || 14}-day workforce fit trial work?`,
-    answer: `Wear our uniforms on active shift duty. If unsatisfied for any reason, return or exchange within ${siteConfig.trialPeriod || 14} days with 100% full money-back coverage.`,
+    question: `How does the ${siteConfig.trialPeriod || 14}-day family fit guarantee work?`,
+    answer: `Try on your selections at home. If the fit, size, or style isn't completely perfect for your family, return or exchange within ${siteConfig.trialPeriod || 14} days for a 100% full refund.`,
   },
   {
     id: "laundry",
     category: "durability",
     categoryLabel: "Care",
-    question: "Can Ironvale uniforms withstand commercial high-heat laundry?",
-    answer: "Yes. Lab-certified for commercial autoclave and wash cycles up to 160°F without shrinkage, pilling, or color bleeding.",
+    question: "How should I wash and care for our family clothing pieces?",
+    answer: "Machine wash cold with similar colors using mild detergent. Tumble dry low or air dry to maintain the ultra-soft fiber texture, silhouette, and vibrant color through everyday wear.",
   },
   {
     id: "shipping",
     category: "shipping",
     categoryLabel: "Shipping",
-    question: "How quickly will my order ship from the Austin facility?",
-    answer: `Dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracked delivery arriving in ${siteConfig.shippingPeriod} business days.`,
+    question: "How quickly will my family's order ship?",
+    answer: `All orders are carefully packed and dispatched within 1 business day via ${siteConfig.shippingCarrier} with tracking, typically arriving within ${siteConfig.shippingPeriod} business days.`,
   },
   {
     id: "billing",
@@ -51,11 +51,11 @@ const faqItems: FaqItem[] = [
     answer: `Your billing statement will display the merchant descriptor "${siteConfig.descriptor}".`,
   },
   {
-    id: "embroidery",
+    id: "bundles",
     category: "durability",
-    categoryLabel: "Branding",
-    question: "Can we add custom corporate logo embroidery?",
-    answer: "Yes. Our Austin atelier provides commercial embroidery and custom department badges for hospital networks, security teams, and culinary brigades.",
+    categoryLabel: "Bundles",
+    question: "Do you offer bundle savings when shopping for the whole family?",
+    answer: "Yes! We offer curated bundle savings when outfitting multiple family members. Enjoy multi-item volume savings directly in your cart.",
   },
 ];
 
@@ -86,13 +86,13 @@ export default function Faq() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-            Workforce Guidance
+            Customer Guidance
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
             Frequently Answered Questions.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md mx-auto">
-            Quick guidance on uniform sizing, commercial laundry care, shipping, and warranty.
+            Quick guidance on family clothing sizing, fabric care, shipping, and fit guarantee.
           </p>
 
           {/* Category Filter Pills */}

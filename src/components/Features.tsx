@@ -19,33 +19,33 @@ interface FeatureItem {
 const featuresList: FeatureItem[] = [
   {
     id: 1,
-    title: "1000D Cordura® Ripstop",
-    description: "High-tenacity nylon ripstop with DuPont Teflon™ shield resisting friction, chemical spills, and heavy abrasion.",
-    image: "/img/feature1.jpg",
+    title: "Breathable Premium Knits",
+    description: "Lightweight and breathable natural fabric blends that keep mom, dad, and kids comfortable from morning until bedtime.",
+    image: "/img/feature.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 2,
-    title: "Silvadur™ Antimicrobial",
-    description: "Silver-ion polymer technology providing 99.9% clinical pathogen and odor defense through 100+ industrial washes.",
-    image: "/img/feature2.jpg",
+    title: "Versatile Modern Styling",
+    description: "Effortless wardrobe staples that transition seamlessly from weekend family outings to casual workdays.",
+    image: "/img/hero2.jpg",
     link: "/shop",
     imagePosition: "bottom",
   },
   {
     id: 3,
-    title: "Triple-Needle Stitching",
-    description: "Reinforced high-stress bar-tacking and heavy-gauge YKK zippers engineered for zero seam blowouts under tactical duty.",
-    image: "/img/uniform-tailoring-atelier.jpg",
+    title: "Easy Care & Wash Durability",
+    description: "Pre-shrunk, durable fabrics that retain their softness, shape, and rich color through endless laundry cycles.",
+    image: "/img/about.jpg",
     link: "/shop",
     imagePosition: "top",
   },
   {
     id: 4,
-    title: `${siteConfig.trialPeriod || 14}-Day Shift Guarantee`,
-    description: "Deploy our uniform suites risk-free across your crew with 100% money-back coverage and complimentary size exchanges.",
-    image: "/img/feature3.jpg",
+    title: `${siteConfig.trialPeriod || 14}-Day Family Fit Guarantee`,
+    description: "Shop risk-free with fast UPS delivery, complimentary size exchanges, and 100% money-back coverage.",
+    image: "/img/cta.jpg",
     link: "/shop",
     imagePosition: "bottom",
   },
@@ -62,13 +62,13 @@ export default function Features() {
           {/* Centered Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
-              Performance Architecture
+              Apparel Highlights
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] mb-4">
-              Workforce Performance Features
+              Crafted for Every Family Moment
             </h2>
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
-              Every uniform suite from {siteConfig.brandName} is precision-engineered to withstand severe shift environments, commercial autoclaves, and active daily movement.
+              Every garment from Family Clothing Stores everywhere is designed to bring you all-day comfort, effortless style, and honest everyday value.
             </p>
           </div>
 

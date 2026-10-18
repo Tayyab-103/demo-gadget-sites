@@ -9,10 +9,10 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const metrics = [
-  { value: "45,000+", label: "Personnel Outfitted" },
-  { value: "100%", label: "Industrial Certified" },
+  { value: "50,000+", label: "Families Outfitted" },
+  { value: "100%", label: "Comfort Knits" },
   { value: `${siteConfig.trialPeriod || 14}-Day`, label: "Fit Guarantee" },
-  { value: "4.9★", label: "Enterprise Rating" },
+  { value: "4.9★", label: "Customer Rating" },
 ];
 
 export default function AboutUs() {
@@ -25,16 +25,16 @@ export default function AboutUs() {
           {/* Left Column: Narrative & Metrics */}
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-blue-600 mb-3 select-none">
-              Tailoring Standards
+              Family Clothing Stores Everywhere
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0A0F1D] leading-tight tracking-tight mb-4">
-              Mastering The Art <br />
-              <span className="text-slate-600 font-semibold text-2xl sm:text-3xl md:text-4xl">Of Commercial Workwear.</span>
+              Crafting Comfort &amp; Style <br />
+              <span className="text-slate-600 font-semibold text-2xl sm:text-3xl md:text-4xl">For The Entire Family.</span>
             </h2>
 
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-normal mb-6 max-w-lg">
-              Crafted in Austin, Texas. We engineer reinforced tactical utility apparel, clinical scrubs, and culinary coats built to withstand continuous industrial laundry and grueling 24-hour shifts.
+              At Family Clothing Stores everywhere, we believe exceptional everyday apparel should combine effortless elegance, cozy durability, and honest accessible pricing. From graceful women&apos;s maxi dresses to comfortable men&apos;s quilted crewnecks and cozy sweatshirts, we dress every family with confidence.
             </p>
 
             {/* Metrics Cards */}
@@ -62,12 +62,12 @@ export default function AboutUs() {
             </Link>
           </div>
 
-          {/* Right Column: Atelier Photo */}
+          {/* Right Column: In-Store Family Photo */}
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-3xl bg-slate-900 shadow-md border border-slate-200">
               <Image
-                src="/img/tailoringstandards.jpg"
-                alt={`${siteConfig.brandName} tailoring standards`}
+                src="/img/about.jpg"
+                alt="Family clothing shopping experience at Family Clothing Stores everywhere"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover object-center"

@@ -2,45 +2,35 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Heavy-Duty Utility Uniform Suite",
-    "description": "Engineered from 1000D Cordura® reinforced ripstop flex weave with DuPont Teflon™ stain & water-repellent finish. Features articulated knee & elbow armor pockets, 14 multi-tool utility cargo pockets, heavy-duty YKK brass zippers, and reinforced triple-needle stitching for severe industrial and field duty.",
-    "image": "/img/products/product-tactical-workwear.jpg",
-    "images": [
-      "/img/products/product-tactical-workwear.jpg",
-      "/img/products/uniform1.jpg",
-      "/img/products/uniform2.jpg"
-    ],
+    "name": "Women Leaf Print Maxi Dress",
+    "description": "This women's maxi dress features a stylish leaf print design with a crew neckline, short sleeves, and a tiered silhouette that offers a comfortable and flattering fit, making it ideal for casual outings, vacations, or everyday wear.",
+    "image": "/img/products/product1.jpg",
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Industrial & Tactical Workwear",
+    "category": "Women's Collection",
     "billingModel": 1,
-    "ssPrice": "14.95",
+    "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      { "quantity": 1, "price": 6.95 },
+      { "quantity": 2, "price": 9.95 },
+      { "quantity": 3, "price": 12.79 },
+      { "quantity": 4, "price": 16.95 },
+      { "quantity": 5, "price": 18.27 },
+      { "quantity": 6, "price": 21.97 },
+      { "quantity": 7, "price": 24.95 },
+      { "quantity": 8, "price": 34.95 }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Medical Scrub Suite",
-    "description": "Tailored for surgical teams and clinical healthcare professionals with Silvadur™ antimicrobial silver-ion fabric technology. Features fluid-resistant four-way stretch micro-twill, 9-pocket ergonomic utility cargo scrub pants, and breathable mesh ventilation panels for 24-hour shift comfort.",
-    "image": "/img/products/product-medical-scrubs.jpg",
-    "images": [
-      "/img/products/product-medical-scrubs.jpg",
-      "/img/products/scrub1.jpg",
-      "/img/products/scrub2.jpg"
-    ],
+    "name": "Men Quilted Crewneck Sweatshirt",
+    "description": "This men's quilted long sleeve sweatshirt features a classic crewneck design with a lightweight yet soft feel, offering comfort and warmth for casual wear during autumn and winter seasons.",
+    "image": "/img/products/product2.jpg",
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Medical & Healthcare Uniforms",
+    "category": "Men's Collection",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,29 +48,24 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Culinary & Chef Uniform Coat",
-    "description": "Master-crafted from 240 GSM organic ring-spun cotton twill with dual CoolVent™ breathable back air-flow panels. Includes stain-release coating, concealed magnetic apron-stay collar tab, dual sleeve thermometer pockets, and handcrafted cloth knot buttons.",
-    "image": "/img/products/product-chef-coat.jpg",
-    "images": [
-      "/img/products/product-chef-coat.jpg",
-      "/img/products/chef1.jpg",
-      "/img/products/chef2.jpg"
-    ],
+    "name": "Women Quarter Zip Sweatshirt",
+    "description": "This women's quarter zip sweatshirt features a soft fabric with a cowl neck design, long sleeves, and a relaxed fit, making it a comfortable choice for casual wear during fall and cooler weather.",
+    "image": "/img/products/product3.jpg",
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Culinary & Hospitality Uniforms",
+    "category": "Women's Collection",
     "billingModel": 1,
-    "ssPrice": "6.95",
+    "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      { "quantity": 1, "price": 14.95 },
+      { "quantity": 2, "price": 21.95 },
+      { "quantity": 3, "price": 29.72 },
+      { "quantity": 4, "price": 37.95 },
+      { "quantity": 5, "price": 42.55 },
+      { "quantity": 6, "price": 52.79 },
+      { "quantity": 7, "price": 59.95 },
+      { "quantity": 8, "price": 76.65 }
     ]
   }
 ]

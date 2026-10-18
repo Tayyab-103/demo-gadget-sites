@@ -20,33 +20,33 @@ interface CustomerStory {
 const customerStories: CustomerStory[] = [
   {
     id: "01",
-    logo: "VANGUARD DEFENSE",
-    logoSub: "SECURITY",
+    logo: "WOMEN'S APPAREL",
+    logoSub: "VERIFIED BUYER",
     quote:
-      "“Ironvale provides a standard of durability that’s paramount to our officer safety across 350+ patrol personnel in Texas.”",
-    authorName: "Marcus Vance",
-    authorRole: "VP of Security Operations",
-    image: "/img/stories/story-tactical.jpg",
+      "“The leaf print maxi dress is stunning and so flattering! The fabric is lightweight, breathable, and so soft. Family Clothing Stores everywhere has become our household go-to.”",
+    authorName: "Sarah Jenkins",
+    authorRole: "Verified Family Shopper",
+    image: "/img/about.jpg",
   },
   {
     id: "02",
-    logo: "METRO HEALTH",
-    logoSub: "HOSPITAL",
+    logo: "MEN'S APPAREL",
+    logoSub: "VERIFIED BUYER",
     quote:
-      "“The Apex-Core scrubs endure hospital autoclave sterilization without color fade. Our surgical staff enjoys true all-shift comfort.”",
-    authorName: "Dr. Claire Sterling, MD",
-    authorRole: "Chief Nursing Director",
-    image: "/img/stories/story-medical.jpg",
+      "“The quilted crewneck sweatshirt is my new daily favorite. Premium soft interior, sharp diamond stitching, and holds its shape wash after wash. Outstanding quality!”",
+    authorName: "Marcus Vance",
+    authorRole: "Verified Customer",
+    image: "/img/hero2.jpg",
   },
   {
     id: "03",
-    logo: "L'ARTISAN",
-    logoSub: "CULINARY",
+    logo: "FAMILY WARDROBE",
+    logoSub: "VERIFIED BUYER",
     quote:
-      "“The CoolVent airflow panels keep our brigade cool during dinner rushes while preserving the crisp polish our dining room demands.”",
-    authorName: "Antoine Moreau",
-    authorRole: "Executive Head Chef",
-    image: "/img/stories/story-culinary.jpg",
+      "“Shopping for our whole household was seamless. Fast UPS delivery, true-to-size fits, and the 14-day fit trial gave us complete confidence. Wonderful shopping experience!”",
+    authorName: "Dr. Claire Sterling",
+    authorRole: "Verified Customer",
+    image: "/img/newletterpopup.jpg",
   },
 ];
 
@@ -82,10 +82,10 @@ export default function Testimonials() {
             Customer Stories
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0F1D] leading-tight mb-4">
-            Inspiring Stories, Real Customers.
+            Inspiring Stories, Real Families.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
-            From municipal police forces to premier hospital networks and culinary academies across the nation.
+            Discover why thousands of households choose Family Clothing Stores everywhere for daily comfort and wardrobe essentials.
           </p>
         </div>
 

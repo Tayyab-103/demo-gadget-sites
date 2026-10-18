@@ -121,7 +121,7 @@ export default function Checkout() {
         <div className="fixed inset-0 bg-[#0A0F1D]/95 z-50 flex flex-col items-center justify-center p-4">
           <div className="w-12 h-12 border-4 border-blue-500/20 border-t-cyan-400 rounded-full animate-spin" />
           <h4 className="mt-6 text-base sm:text-lg font-bold text-white uppercase tracking-tight text-center">
-            Processing Secure Uniform Outfitting Acquisition...
+            Processing Secure Payment...
           </h4>
           <p className="text-xs text-slate-400 text-center mt-1">
             Please do not refresh or close this window.
@@ -135,10 +135,10 @@ export default function Checkout() {
           <div className="mb-8 sm:mb-10">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-blue-700 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-              <span>[ 256-BIT SSL PRIORITY ENCRYPTION ]</span>
+              <span>[ 256-BIT SSL ENCRYPTED CHECKOUT ]</span>
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0A0F1D] tracking-tight uppercase">
-              Priority <span className="gradient-heading font-black">Checkout</span>
+              Secure <span className="gradient-heading font-black">Checkout</span>
             </h2>
           </div>
 
@@ -154,7 +154,7 @@ export default function Checkout() {
 
               <form onSubmit={handleSubmit}>
                 <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D]">
-                  1. Dispatch Destination
+                  1. Shipping Information
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -356,7 +356,7 @@ export default function Checkout() {
                   type="submit"
                   className="inline-flex items-center justify-center font-extrabold text-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white transition-all duration-200 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-xl shadow-blue-500/20 hover:scale-[1.01]"
                 >
-                  Complete Priority Dispatch →
+                  Complete Order →
                 </button>
               </form>
             </div>
@@ -365,7 +365,7 @@ export default function Checkout() {
             <div className="lg:col-span-5 sticky top-28 flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-6 sm:p-8 border border-blue-500/20 shadow-xl shadow-blue-500/5">
                 <h3 className="text-sm font-black uppercase tracking-wider border-b border-blue-500/20 pb-3 mb-5 text-[#0A0F1D]">
-                  Uniform Manifest Summary
+                  Order Summary
                 </h3>
 
                 {cart.map((item) => (
@@ -401,7 +401,7 @@ export default function Checkout() {
                   />
                   <div>
                     <strong className="text-xs font-bold text-[#0A0F1D] block">
-                      Add Workforce Transit &amp; Damage Insurance
+                      Add Package Protection &amp; Shipping Insurance
                     </strong>
                     <span className="text-[0.65rem] text-slate-500">
                       Guarantees expedited replacement if lost or damaged in transit ($1.00)
@@ -412,11 +412,11 @@ export default function Checkout() {
                 {/* Subtotals & Grand Total */}
                 <div className="flex flex-col gap-2.5 text-xs sm:text-sm mt-3">
                   <div className="flex justify-between items-center text-slate-600">
-                    <span>Uniform Subtotal:</span>
+                    <span>Order Subtotal:</span>
                     <span className="font-bold text-[#0A0F1D]">${cartTotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between items-center text-slate-600">
-                    <span>{siteConfig.shippingCarrier} Priority Air Delivery:</span>
+                    <span>{siteConfig.shippingCarrier} Tracked Delivery:</span>
                     <span className="text-emerald-700 font-bold">FREE</span>
                   </div>
                   {shippingInsurance && (

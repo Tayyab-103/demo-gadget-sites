@@ -23,28 +23,28 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
         
-        {/* Uniform Protocol Flow */}
+        {/* Our Apparel Standard */}
         <HowItWorks />
         
-        {/* Flagship Product Showcase */}
+        {/* Curated Products Collection */}
         <ProductGrid />
 
         {/* Alternating Features Section */}
         <Features />
 
-        {/* About Brand & Austin Heritage */}
+        {/* About Brand & Story */}
         <AboutUs />
 
         {/* Customer Testimonials */}
         <Testimonials />
 
-        {/* Fleet Conversion Banner */}
+        {/* Family Wardrobe CTA Banner */}
         <CTASection />
 
         {/* FAQ Accordions */}
         <Faq />
 
-        {/* Fleet Concierge Contact Form */}
+        {/* Customer Care & Styling Contact Form */}
         <Contact />
       </main>
 

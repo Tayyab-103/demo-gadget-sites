@@ -34,7 +34,7 @@ export default function Footer() {
               Stay Updated With {siteConfig.brandName}
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1.5 font-normal">
-              Receive private uniform releases, fabric test reports, and special offers directly to your inbox.
+              Receive seasonal collection releases, family wardrobe promotions, and special bundle offers directly to your inbox.
             </p>
           </div>
 
@@ -71,14 +71,14 @@ export default function Footer() {
           <div className="sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4 group">
               <span className="w-7 h-7 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-xs">
-                🛡️
+                🛍️
               </span>
               <span className="font-extrabold text-base tracking-wider text-white uppercase">
                 {siteConfig.brandName}
               </span>
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed font-normal mb-4">
-              Tactical workwear, antimicrobial medical scrubs, and executive chef uniform coats engineered in Austin, Texas.
+              Premium everyday apparel, cozy knitwear, and modern casual styles designed for women, men, and children everywhere.
             </p>
             <div className="text-[0.68rem] text-slate-400 font-mono font-medium">
               Descriptor: {siteConfig.descriptor}
@@ -179,18 +179,18 @@ export default function Footer() {
               Payment Methods:
             </span>
             <div className="flex items-center gap-2">
-              <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center shadow-sm h-7.5 hover:opacity-90 transition-opacity">
+              <div className="">
                 <img
                   src="/img/visa.png"
                   alt="Visa"
-                  className="h-4 w-auto object-contain"
+                  className="h-8 w-auto object-contain"
                 />
               </div>
-              <div className="bg-white rounded-md px-2.5 py-1 flex items-center justify-center shadow-sm h-7.5 hover:opacity-90 transition-opacity">
+              <div className="">
                 <img
                   src="/img/mastercard.png"
                   alt="Mastercard"
-                  className="h-5 w-auto object-contain"
+                  className="h-8 w-auto object-contain"
                 />
               </div>
             </div>

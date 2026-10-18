@@ -85,53 +85,49 @@ export default function Header() {
       <AnnouncementBar />
 
       {/* Utility strip */}
-      <div className="hidden md:block bg-primary text-primary-text/80 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-end gap-6 text-[0.72rem] font-bold uppercase tracking-wider">
-          <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+      <div className="hidden md:block bg-ink text-white/75">
+        <div className="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between gap-6 text-[0.72rem] font-bold uppercase tracking-wider">
+          <span className="text-white/55">Fine Jewelry &middot; Watches &middot; Clocks</span>
+          <div className="flex items-center gap-6">
+          <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             {siteConfig.phone}
           </a>
-          <span className="w-1.5 h-1.5 rounded-full bg-secondary/40 flex-shrink-0" />
-          <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0" />
+          <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-primary transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             {siteConfig.email}
           </a>
+          </div>
         </div>
       </div>
 
       <header
         ref={headerRef}
-        className="sticky top-0 z-50 bg-neutral-bg/85 backdrop-blur-md border-b border-black/5"
+        className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-black/5 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-6 lg:px-8 py-5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
           <Link
             href="/"
             onClick={closeAll}
-            className="text-xl lg:text-2xl font-extrabold text-primary flex items-center flex-shrink-0"
+            className="text-xl lg:text-2xl font-extrabold text-ink flex items-center flex-shrink-0"
             style={{ textDecoration: "none" }}
           >
             {siteConfig.useImageLogo && siteConfig.logoImage ? (
-              <>
-                <img
-                  src="/product-logo.png"
-                  alt={siteConfig.brandName}
-                  className="max-h-11 max-w-[145px] sm:max-w-none w-auto object-contain lg:hidden mix-blend-multiply"
-                />
-                <img
-                  src={siteConfig.logoImage}
-                  alt={siteConfig.brandName}
-                  className="max-h-11 w-auto object-contain hidden lg:block mix-blend-multiply"
-                />
-              </>
+              <img
+                src={siteConfig.logoImage}
+                alt={siteConfig.brandName}
+                className="max-h-11 max-w-[145px] sm:max-w-none w-auto object-contain mix-blend-multiply"
+              />
             ) : (
-              <span className="flex items-center gap-2 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
-                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-primary text-xs font-black">
-                  {firstWord.charAt(0)}
+              <span className="flex items-center gap-3 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
+                <span className="flex h-8 w-8 flex-shrink-0 rotate-45 items-center justify-center rounded-md bg-primary shadow-sm shadow-primary/40">
+                  <span className="-rotate-45 text-xs font-black text-primary-text">{firstWord.charAt(0)}</span>
                 </span>
                 {firstWord}
-                <span className="text-secondary">
+                <span className="hidden sm:inline text-secondary">
                   {secondWord ? ` ${secondWord}` : ""}
-                  {trailingWords ? <span className="hidden sm:inline">{` ${trailingWords}`}</span> : ""}
+                  {trailingWords ? <span className="hidden xl:inline">{` ${trailingWords}`}</span> : ""}
                 </span>
               </span>
             )}
@@ -144,10 +140,10 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group relative text-neutral-text font-bold text-xs uppercase tracking-widest hover:text-secondary transition-colors duration-300 py-1"
+                    className="group relative text-neutral-text font-bold text-xs uppercase tracking-widest hover:text-ink transition-colors duration-300 py-1"
                   >
                     {link.label}
-                    <span className="absolute left-1/2 -bottom-1 h-[2px] w-0 bg-secondary group-hover:w-full group-hover:left-0 transition-all duration-300 rounded-full" />
+                    <span className="absolute left-1/2 -bottom-1 h-[3px] w-0 bg-primary group-hover:w-full group-hover:left-0 transition-all duration-300 rounded-full" />
                   </Link>
                 </li>
               ))}
@@ -158,11 +154,11 @@ export default function Header() {
             {/* Search Icon */}
             <button
               onClick={toggleSearch}
-              className="bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary hover:text-secondary hover:shadow-md transition-all duration-300"
+              className="bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-primary hover:bg-accent-light hover:shadow-md transition-all duration-300"
               aria-label="Toggle Search"
               aria-expanded={isSearchOpen}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-primary hover:stroke-secondary transition-colors" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-ink" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
@@ -171,7 +167,7 @@ export default function Header() {
             {/* Cart Icon */}
             <button
               onClick={toggleCart}
-              className="bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary hover:shadow-md transition-all duration-300"
+              className="bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-primary hover:bg-accent-light hover:shadow-md transition-all duration-300"
               aria-label="Toggle Cart"
             >
               <svg
@@ -180,7 +176,7 @@ export default function Header() {
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="stroke-primary"
+                className="stroke-ink"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -191,7 +187,7 @@ export default function Header() {
               </svg>
 
               {getCartCount() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-secondary text-primary rounded-full w-[18px] h-[18px] text-[0.6rem] font-bold flex items-center justify-center border-2 border-neutral-bg">
+                <span className="absolute -top-1 -right-1 bg-ink text-white rounded-full w-[18px] h-[18px] text-[0.6rem] font-bold flex items-center justify-center border-2 border-neutral-bg">
                   {getCartCount()}
                 </span>
               )}
@@ -199,7 +195,7 @@ export default function Header() {
 
             <Link
               href="/shop"
-              className="hidden lg:inline-flex items-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3 px-6 rounded-full text-[0.68rem] uppercase tracking-widest shadow-md hover:shadow-lg"
+              className="hidden lg:inline-flex items-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-ink hover:text-white transition-all duration-300 py-3 px-6 rounded-full text-[0.68rem] uppercase tracking-widest shadow-md shadow-primary/30 hover:shadow-lg"
             >
               Shop Now
             </Link>
@@ -207,17 +203,17 @@ export default function Header() {
             {/* Mobile hamburger toggle */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary"
+              className="lg:hidden bg-white border border-black/5 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-primary hover:bg-accent-light"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-primary" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-ink" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-primary" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" className="stroke-ink" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="3" y1="6" x2="21" y2="6"></line>
                   <line x1="3" y1="12" x2="21" y2="12"></line>
                   <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -235,7 +231,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
-                className="text-neutral-text font-bold uppercase text-xs tracking-widest py-3 px-3 hover:text-secondary hover:bg-black/5 transition-all duration-200 rounded-xl"
+                className="text-neutral-text font-bold uppercase text-xs tracking-widest py-3 px-3 hover:bg-accent-light transition-all duration-200 rounded-xl"
               >
                 {link.label}
               </Link>
@@ -243,7 +239,7 @@ export default function Header() {
             <Link
               href="/shop"
               onClick={closeAll}
-              className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-5 rounded-full text-xs uppercase tracking-widest mt-4 shadow-md"
+              className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-ink hover:text-white transition-all duration-300 py-3.5 px-5 rounded-full text-xs uppercase tracking-widest mt-4 shadow-md"
             >
               Shop Now
             </Link>
@@ -263,8 +259,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search products..."
-                className="block w-full pl-11 pr-4 py-3.5 text-sm border border-black/5 rounded-full focus:outline-none focus:border-secondary transition-all text-neutral-text bg-white shadow-sm"
+                placeholder="Search necklaces, watches, clocks..."
+                className="block w-full pl-11 pr-4 py-3.5 text-sm border border-black/5 rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-neutral-text bg-white shadow-sm"
               />
             </div>
 
@@ -289,10 +285,10 @@ export default function Header() {
                           }}
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-bold text-primary truncate">{product.name}</div>
+                          <div className="text-sm font-bold text-ink truncate">{product.name}</div>
                           <div className="text-[0.65rem] text-neutral-text/50 truncate uppercase tracking-widest font-semibold">{product.category}</div>
                         </div>
-                        <div className="text-sm font-extrabold text-primary flex-shrink-0">${price}</div>
+                        <div className="text-sm font-extrabold text-ink flex-shrink-0">${price}</div>
                       </Link>
                     );
                   })

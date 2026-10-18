@@ -36,7 +36,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-[2.5rem] shadow-2xl">
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-[999px] rounded-b-[2.5rem] bg-accent-light shadow-2xl shadow-primary/20">
       {images.map((img, idx) => (
         <img
           key={img.src}
@@ -50,17 +50,17 @@ export default function HeroCarousel() {
       ))}
 
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent pointer-events-none" />
 
       {/* Dot indicators */}
-      <div className="absolute bottom-6 right-6 flex gap-2 z-10">
+      <div className="absolute bottom-4 right-1/2 translate-x-1/2 sm:bottom-6 sm:right-8 sm:translate-x-0 flex gap-2 z-10">
         {images.map((img, idx) => (
           <button
             key={img.src}
             onClick={() => setActiveIndex(idx)}
             aria-label={`Show image ${idx + 1}`}
             className={`rounded-full transition-all duration-300 cursor-pointer ${
-              idx === activeIndex ? "w-6 h-2 bg-secondary" : "w-2 h-2 bg-white/60 hover:bg-white/90"
+              idx === activeIndex ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-white/60 hover:bg-white/90"
             }`}
           />
         ))}

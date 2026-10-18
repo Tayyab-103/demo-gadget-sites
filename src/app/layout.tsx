@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop fine jewelry, watches, clocks & silverware online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop golden jewelry, watches and clocks with free shipping and keepsake gift packaging.`;
 
 // Preload the most common fonts
 const poppins = Poppins({

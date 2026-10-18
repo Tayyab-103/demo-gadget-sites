@@ -9,78 +9,77 @@ const products = productsData as unknown as Product[];
 
 export default function ProductGrid() {
   return (
-    <section className="py-12 md:py-16 bg-white relative overflow-hidden" id="shop">
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 md:mb-24">
-          <span className="eyebrow justify-center mb-4">The Collection</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Explore The <span className="text-secondary">Collection</span>
-          </h2>
-          <p className="text-neutral-text/60 text-sm md:text-base max-w-2xl mx-auto">
-            Select a piece below to customize your bundle and find something worth keeping.
-          </p>
+    <section className="relative overflow-hidden bg-neutral-bg py-16 md:py-24" id="shop">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+        <div className="mb-12 flex flex-col items-center gap-6 text-center md:mb-16 md:flex-row md:items-end md:justify-between md:text-left">
+          <div className="max-w-xl">
+            <span className="eyebrow mb-5 justify-center md:justify-start">The Collection</span>
+            <h2 className="text-3xl font-bold tracking-tight text-ink md:text-5xl">
+              Shop Our <span className="marker">Bestsellers</span>
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-text/60 md:text-base">
+              Choose a piece, pick your bundle and save more when you buy for yourself and someone special.
+            </p>
+          </div>
+          <Link
+            href="/shop"
+            className="group inline-flex items-center gap-2 whitespace-nowrap border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest text-ink transition-colors hover:text-secondary"
+          >
+            View All Pieces
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </Link>
         </div>
 
-        <div className="flex flex-col gap-20 md:gap-32">
-          {products.map((product, idx) => {
-            const isEven = idx % 2 === 0;
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => {
             const firstBundle = product.bundles && product.bundles[0];
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            // Fake an original price for the crossed-out effect to match the design screenshot
-            const originalPrice = (Number(currentPrice) * 1.3).toFixed(2);
+            const bundleCount = product.bundles?.length ?? 0;
 
             return (
-              <div
+              <Link
                 key={product.id}
-                className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-16 lg:gap-24`}
+                href={`/product/${product.id}`}
+                className="group flex flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/15"
               >
-                {/* Image Section */}
-                <Link href={`/product/${product.id}`} className="w-full md:w-1/2 relative flex justify-center group z-10">
-                  <div className="relative w-full max-w-[420px] aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/400x400?text=Jewelry";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" />
-                    <span className="absolute top-5 left-5 bg-secondary text-primary text-[0.62rem] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-md">
-                      {product.category}
+                <div className="relative aspect-[4/5] overflow-hidden bg-accent-light">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://placehold.co/400x500?text=Jewelry";
+                    }}
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-widest text-ink shadow-sm backdrop-blur">
+                    {product.category}
+                  </span>
+
+                  {/* Hover CTA */}
+                  <div className="absolute inset-x-4 bottom-4 transition-all duration-500 lg:translate-y-3 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+                    <span className="flex w-full items-center justify-center gap-2 rounded-full bg-primary py-3.5 text-xs font-bold uppercase tracking-widest text-primary-text shadow-lg">
+                      Choose Your Bundle →
                     </span>
                   </div>
-                </Link>
+                </div>
 
-                {/* Content Section */}
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 md:px-4">
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-neutral-text tracking-tighter mb-4 leading-none">
-                    {product.name}
-                  </h3>
+                <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <h3 className="text-xl font-bold leading-snug text-ink">{product.name}</h3>
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-neutral-text/55">{product.description}</p>
 
-                  <p className="text-neutral-text/60 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-                    {product.description}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8">
-                    <Link
-                      href={`/product/${product.id}`}
-                      className="group inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-10 rounded-full text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:shadow-secondary/20"
-                    >
-                      Shop Now
-                    </Link>
-
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl md:text-4xl font-black text-neutral-text">
-                        ${currentPrice}
-                      </span>
-                      <span className="text-xl md:text-2xl font-bold text-secondary line-through opacity-80">
-                        ${originalPrice}
-                      </span>
+                  <div className="mt-6 flex items-end justify-between border-t border-black/5 pt-5">
+                    <div>
+                      <div className="text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/45">Starting at</div>
+                      <div className="text-2xl font-black text-ink">${currentPrice}</div>
                     </div>
+                    {bundleCount > 1 && (
+                      <span className="rounded-full bg-accent-light px-3 py-1.5 text-[0.62rem] font-bold uppercase tracking-wider text-ink">
+                        {bundleCount} bundle options
+                      </span>
+                    )}
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

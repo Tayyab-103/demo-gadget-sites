@@ -32,7 +32,7 @@ export default async function Image() {
             height: 280,
             borderRadius: "50%",
             background: siteConfig.theme.primaryColor,
-            opacity: 0.08,
+            opacity: 0.45,
             display: "flex",
           }}
         />

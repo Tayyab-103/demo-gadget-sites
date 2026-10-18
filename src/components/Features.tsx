@@ -1,6 +1,10 @@
 "use client";
 
 import React from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const featuresData = [
   {
@@ -38,7 +42,7 @@ const featuresData = [
   },
   {
     title: "Risk-Free Guarantee",
-    description: "Not satisfied? We stand behind our quality with a 60-day money-back guarantee, no questions asked.",
+    description: `Not in love with it? We stand behind every piece with a ${siteConfig.trialPeriod}-day money-back guarantee.`,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -55,7 +59,7 @@ export default function Features() {
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[600px] mb-12 md:mb-16">
           <span className="eyebrow mb-4">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Built to Be Kept</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-ink mb-4 tracking-tight">Built to Be Kept</h2>
           <p className="text-neutral-text/60">
             We combine quality materials with real customer feedback to bring you pieces that actually hold up.
           </p>
@@ -64,13 +68,13 @@ export default function Features() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuresData.map((feature, idx) => (
             <div
-              className="bg-white rounded-xl p-6 border-2 border-black/10 hover:border-secondary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="bg-white rounded-xl p-6 border-2 border-black/10 hover:border-primary hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
               key={idx}
             >
-              <div className="mb-5 w-14 h-14 rounded-xl border-2 border-primary text-primary flex items-center justify-center">
+              <div className="mb-5 w-14 h-14 rounded-xl bg-primary text-primary-text flex items-center justify-center">
                 {feature.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2 text-primary">{feature.title}</h3>
+              <h3 className="text-lg font-bold mb-2 text-ink">{feature.title}</h3>
               <p className="text-xs md:text-sm text-neutral-text/60 leading-relaxed mb-0">
                 {feature.description}
               </p>

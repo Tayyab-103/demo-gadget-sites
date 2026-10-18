@@ -24,15 +24,15 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="contact">
+    <section className="py-16 md:py-24 bg-surface relative overflow-hidden" id="contact">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[800px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">Reach Out</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Have Questions? <span className="text-secondary">Get in Touch</span>
+          <span className="eyebrow mb-5">We&apos;re Here For You</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4 tracking-tight">
+            Happy to <span className="marker">Help</span>
           </h2>
           <p className="text-neutral-text/60 text-sm md:text-base">
-            Our customer care representatives are available to help guide you on products, shipping, or billing support.
+            Need help choosing a gift, tracking an order or starting a return? Send us a note and a real person will reply within 24 hours.
           </p>
         </div>
 
@@ -43,14 +43,14 @@ export default function Contact() {
               <img
                 key={src}
                 src={src}
-                alt="Friendly customer support team ready to help"
+                alt="Jewelry and gift packaging from our collection"
                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
                   idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
                 }`}
                 style={{ transitionProperty: "opacity, transform" }}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-primary/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/35 to-transparent" />
 
             <div className="relative z-10 h-full flex flex-col justify-end p-8">
               {/* Image dots */}
@@ -60,7 +60,7 @@ export default function Contact() {
                     key={idx}
                     onClick={() => setActiveImage(idx)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === activeImage ? "w-8 bg-secondary" : "w-4 bg-white/30"
+                      idx === activeImage ? "w-8 bg-primary" : "w-4 bg-white/30"
                     }`}
                     aria-label={`Show image ${idx + 1}`}
                   />
@@ -69,7 +69,7 @@ export default function Contact() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary text-primary-text flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   </div>
                   <div>
@@ -79,7 +79,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary text-primary-text flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   </div>
                   <div>
@@ -92,20 +92,20 @@ export default function Contact() {
           </div>
 
           {/* Form Column */}
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-black/5">
+          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-primary/5 border border-black/5">
             {contactSubmitted ? (
               <div className="text-center py-10 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md bg-secondary/5">
+                <div className="w-16 h-16 rounded-full bg-primary text-primary-text flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md shadow-primary/30">
                   ✓
                 </div>
-                <h3 className="text-primary font-bold text-xl mb-3">
+                <h3 className="text-ink font-bold text-xl mb-3">
                   Message Sent Successfully!
                 </h3>
                 <p className="text-neutral-text/60 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out. We have received your query and will reply within 24 hours.
+                  Thank you for reaching out. Our customer care team will reply within 24 hours.
                 </p>
                 <button
-                  className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+                  className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-ink hover:text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
                   onClick={() => setContactSubmitted(false)}
                 >
                   Send Another Message
@@ -124,7 +124,7 @@ export default function Contact() {
                     <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Full Name</label>
                     <input
                       type="text"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
+                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
                       placeholder="Enter your name"
                       required
                     />
@@ -133,7 +133,7 @@ export default function Contact() {
                     <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Email Address</label>
                     <input
                       type="email"
-                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
+                      className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
                       placeholder="Enter your email"
                       required
                     />
@@ -144,8 +144,8 @@ export default function Contact() {
                   <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Subject</label>
                   <input
                     type="text"
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
-                    placeholder="What can we help you with?"
+                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-neutral-text bg-neutral-bg placeholder:text-neutral-text/30"
+                    placeholder="Order, gift question, return..."
                     required
                   />
                 </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                 <div className="flex flex-col mb-8">
                   <label className="block font-bold mb-2.5 text-[0.65rem] uppercase tracking-widest text-neutral-text/50">Message</label>
                   <textarea
-                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-neutral-bg resize-none placeholder:text-neutral-text/30"
+                    className="block w-full px-5 py-4 text-sm border border-black/8 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-neutral-text bg-neutral-bg resize-none placeholder:text-neutral-text/30"
                     rows={5}
                     placeholder="Write your message here..."
                     required
@@ -162,7 +162,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-md hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-ink hover:text-white transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest w-full cursor-pointer shadow-md hover:shadow-lg"
                 >
                   Send Message
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

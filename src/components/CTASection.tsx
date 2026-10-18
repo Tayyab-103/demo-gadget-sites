@@ -2,53 +2,60 @@
 
 import React from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden bg-primary" id="cta">
-      {/* Background Parallax Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-40"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1600&q=80')` }}
-      />
-      
-      {/* Dark Green Gradient Overlay for Contrast */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
+    <section className="relative overflow-hidden bg-neutral-bg py-16 md:py-20" id="cta">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-ink">
+          {/* Background image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-35"
+            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=1600&q=80')` }}
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-ink via-ink/85 to-ink/30" aria-hidden="true" />
+          <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/30 blur-3xl" aria-hidden="true" />
 
-      <div className="w-full max-w-4xl mx-auto px-6 relative z-10 flex justify-center">
-        {/* Frosted Glass Content Card */}
-        <div className="glass-card-dark rounded-[2.5rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/20">
-          
-          {/* Faint corner glow */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          
-          <span className="eyebrow eyebrow-invert mb-6 inline-flex text-secondary relative z-10">
-            Limited Time Offer
-          </span>
+          <div className="relative z-10 grid grid-cols-1 items-center gap-10 p-8 sm:p-12 md:p-16 lg:grid-cols-[1.4fr_1fr]">
+            <div className="text-center lg:text-left">
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary-text">
+                Bundle &amp; Save
+              </span>
+              <h2 className="mt-6 text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
+                Treat Yourself, <span className="text-primary">Gift Someone</span> Golden
+              </h2>
+              <p className="mx-auto mt-5 max-w-lg text-sm leading-relaxed text-white/70 md:text-base lg:mx-0">
+                Add more pieces to your bundle and the price per piece drops, so it&apos;s easy to keep one and give
+                one. Every order ships free in our keepsake box.
+              </p>
+            </div>
 
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight leading-[1.1] relative z-10">
-            Ready to Find Your <br />
-            <span className="text-secondary drop-shadow-md">Next Favorite Piece?</span>
-          </h2>
-
-          <p className="text-white/80 text-sm md:text-[1.05rem] mb-10 max-w-lg mx-auto leading-relaxed relative z-10">
-            Join thousands of customers who&apos;ve added to their collection. Bundle up and save on your first order today.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-            <Link
-              href="/#shop"
-              className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-secondary-text hover:bg-white hover:text-primary transition-all duration-300 py-4 px-10 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-secondary/10"
-            >
-              Shop The Collection &amp; Save
-              <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
-            </Link>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 py-3.5 px-10 rounded-full text-xs uppercase tracking-widest"
-            >
-              Talk to Us
-            </Link>
+            <div className="flex flex-col gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md sm:p-8">
+              {[
+                `Free ${siteConfig.shippingCarrier} shipping, ${siteConfig.shippingPeriod} business days`,
+                `${siteConfig.trialPeriod}-day money-back guarantee`,
+                "Keepsake gift box with every piece",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 text-sm text-white/85">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-[0.7rem] font-black text-primary-text" aria-hidden="true">
+                    ✓
+                  </span>
+                  {item}
+                </div>
+              ))}
+              <Link
+                href="/#shop"
+                className="group mt-3 inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-primary-text shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-white"
+              >
+                Start Your Bundle
+                <span className="text-sm transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

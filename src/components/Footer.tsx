@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import productsData from "../../config/products.json";
+import { SiteConfig, Product } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
+const products = productsData as unknown as Product[];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,129 +21,117 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-white py-16 md:py-24" id="footer">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10">
-        
-        {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 mb-24 md:mb-32">
-          
-          {/* Left Column: CTA & Subscribe */}
-          <div className="w-full lg:w-[40%] flex flex-col">
-            <h2 className="text-3xl md:text-4xl font-normal leading-tight mb-8">
-              Talk with <br />
-              an expert at {siteConfig.brandName}
+    <footer className="relative overflow-hidden bg-accent-light text-ink" id="footer">
+      <div className="h-1.5 w-full bg-primary" aria-hidden="true" />
+      <div className="dot-grid pointer-events-none absolute -right-10 top-16 h-56 w-56 opacity-60" aria-hidden="true" />
+
+      <div className="relative mx-auto w-full max-w-7xl px-6 pt-16 pb-10 md:pt-20">
+        {/* Newsletter card */}
+        <div className="mb-16 flex flex-col items-start justify-between gap-8 rounded-[2rem] bg-white p-8 shadow-xl shadow-primary/10 md:p-10 lg:flex-row lg:items-center">
+          <div className="max-w-md">
+            <h2 className="text-2xl font-bold leading-tight md:text-3xl">
+              Join the <span className="marker">{siteConfig.brandName.split(" ")[0]}</span> List
             </h2>
-            
-            {subscribed ? (
-              <div className="flex items-center gap-3 text-secondary text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
-                Thanks for subscribing!
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-mail Address"
-                  required
-                  className="w-full bg-transparent border border-white/20 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-secondary transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="bg-secondary text-primary font-medium text-sm px-8 py-3 rounded-md hover:brightness-110 transition-all whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
-            )}
+            <p className="mt-3 text-sm text-neutral-text/60">
+              New arrivals, gift guides and members-only offers, delivered to your inbox. No spam, ever.
+            </p>
           </div>
 
-          {/* Right Column: Links Grid */}
-          <div className="w-full lg:w-[60%] grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
-            
-            {/* Column 1 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Company</h4>
-              <ul className="flex flex-col gap-3">
-                <li><Link href="/" className="text-white text-sm hover:text-secondary transition-colors">Home</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">Products</Link></li>
-                <li><Link href="/about" className="text-white text-sm hover:text-secondary transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-white text-sm hover:text-secondary transition-colors">Contact</Link></li>
-              </ul>
+          {subscribed ? (
+            <div className="flex items-center gap-3 rounded-full bg-accent-light px-5 py-3 text-sm font-semibold">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>
+              Thanks for subscribing!
             </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Products</h4>
-              <ul className="flex flex-col gap-3">
-                <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Pearl Pendant Necklace</Link></li>
-                <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Canvas-Strap Watch</Link></li>
-                <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Minimalist Wall Clock</Link></li>
-                <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Jewelry</Link></li>
-              </ul>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col">
-              <h4 className="text-white/50 text-xs mb-5 font-normal">Contact</h4>
-              <ul className="flex flex-col gap-3">
-                <li className="text-white text-sm break-all">{siteConfig.email}</li>
-                <li className="text-white text-sm">{siteConfig.phone}</li>
-                <li className="text-white text-sm max-w-[150px]">{siteConfig.address}</li>
-              </ul>
-            </div>
-
-          </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                required
+                className="w-full rounded-full border border-black/10 bg-neutral-bg px-5 py-3.5 text-sm text-ink placeholder:text-neutral-text/40 transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+              />
+              <button
+                type="submit"
+                className="whitespace-nowrap rounded-full bg-primary px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-primary-text shadow-md shadow-primary/30 transition-all hover:bg-ink hover:text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          )}
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 lg:gap-4 pt-10 border-t border-white/10">
-          
-          {/* Logo & Copyright */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-end gap-6 sm:gap-20">
+        {/* Link columns */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
+          <div className="col-span-2 md:col-span-1">
             {siteConfig.useImageLogo && siteConfig.footerLogoImage ? (
-              <div className="bg-white rounded-md px-3 py-2 w-fit">
-                <img
-                  src={siteConfig.footerLogoImage}
-                  alt={siteConfig.brandName}
-                  className="max-h-[36px] w-auto object-contain block"
-                />
-              </div>
+              <img src={siteConfig.footerLogoImage} alt={siteConfig.brandName} className="block max-h-[40px] w-auto object-contain mix-blend-multiply" />
             ) : (
-              <h4 className="text-white text-2xl font-black uppercase">{siteConfig.brandName}</h4>
+              <div className="flex items-center gap-3 text-lg font-black uppercase tracking-tight">
+                <span className="flex h-8 w-8 rotate-45 items-center justify-center rounded-md bg-primary">
+                  <span className="-rotate-45 text-xs text-primary-text">{siteConfig.brandName.charAt(0)}</span>
+                </span>
+                {siteConfig.brandName}
+              </div>
             )}
-            
-            <span className="text-white/50 text-xs">
-              &copy;{currentYear} {siteConfig.brandName}
-            </span>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-neutral-text/60">
+              Golden jewelry, watches and clocks made to be worn every day and gifted with love.
+            </p>
           </div>
 
-          {/* Legal Links */}
-          <div className="flex flex-col gap-2">
-            <Link href="/privacy" className="text-white/50 text-xs hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-white/50 text-xs hover:text-white transition-colors">Terms &amp; Conditions</Link>
-            <div className="text-white/50 text-[10px] max-w-xs mt-2">
-              <strong className="text-white/70">Note:</strong> Product images are for illustrative purposes; actual pieces may vary slightly.
-            </div>
+          <div>
+            <h4 className="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">Company</h4>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li><Link href="/" className="transition-colors hover:text-secondary">Home</Link></li>
+              <li><Link href="/shop" className="transition-colors hover:text-secondary">Shop All</Link></li>
+              <li><Link href="/about" className="transition-colors hover:text-secondary">About Us</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-secondary">Contact</Link></li>
+            </ul>
           </div>
 
-          {/* Accepted Payment Methods */}
-          <div className="flex flex-col gap-2.5">
-            <span className="text-white/50 text-xs">We Accept</span>
-            <div className="flex items-center gap-2.5">
-              <img src="/img/visa.png" alt="Visa" className="h-6 w-auto rounded-sm" />
-              <img src="/img/mastercard.png" alt="Mastercard" className="h-6 w-auto rounded-sm" />
-            </div>
+          <div>
+            <h4 className="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">Shop</h4>
+            <ul className="flex flex-col gap-3 text-sm">
+              {products.map((p) => (
+                <li key={p.id}>
+                  <Link href={`/product/${p.id}`} className="transition-colors hover:text-secondary">{p.name}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* All Rights Reserved */}
-          <div className="text-white/50 text-xs">
-            All Rights Reserved.
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="mb-5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">Customer Care</h4>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li><a href={`mailto:${siteConfig.email}`} className="break-all transition-colors hover:text-secondary">{siteConfig.email}</a></li>
+              <li><a href={`tel:${siteConfig.phone}`} className="transition-colors hover:text-secondary">{siteConfig.phone}</a></li>
+              <li className="max-w-[220px] text-neutral-text/70">{siteConfig.address}</li>
+            </ul>
           </div>
-
         </div>
 
+        {/* Bottom bar */}
+        <div className="mt-14 flex flex-col gap-6 border-t border-ink/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="text-xs text-neutral-text/60">
+            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs">
+            <Link href="/privacy" className="text-neutral-text/60 transition-colors hover:text-ink">Privacy Policy</Link>
+            <Link href="/terms" className="text-neutral-text/60 transition-colors hover:text-ink">Terms &amp; Conditions</Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-neutral-text/60">We Accept</span>
+            <img src="/img/visa.png" alt="Visa" className="h-6 w-auto rounded-sm" />
+            <img src="/img/mastercard.png" alt="Mastercard" className="h-6 w-auto rounded-sm" />
+          </div>
+        </div>
+
+        <p className="mt-6 max-w-2xl text-[0.68rem] leading-relaxed text-neutral-text/45">
+          Product images are for illustrative purposes; actual pieces may vary slightly in color and finish.
+        </p>
       </div>
     </footer>
   );

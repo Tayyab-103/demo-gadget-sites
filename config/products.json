@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Lunara Pearl Pendant Necklace",
-    "description": "A hand-strung cultured pearl necklace finished with a hammered 14k gold-plated pendant, designed to layer beautifully or wear on its own. Each pearl is hand-selected for luster and shape, then set on a tarnish-resistant chain that's equally at home at the office or at a black-tie dinner. Arrives nested in our signature presentation box, ready to gift.",
+    "name": "Solenne Pearl Drop Necklace",
+    "description": "A single luminous freshwater pearl suspended from a delicate 14k gold-plated chain, finished with a polished bezel that catches the light with every turn. Solenne is sized to sit just below the collarbone, so it layers easily with your favorite chains or shines on its own. The tarnish-resistant finish is made for everyday wear, and each necklace arrives in an Everglow keepsake box, ready to give.",
     "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
     "images": [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1000&q=80",
@@ -30,8 +30,8 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Meridian Canvas-Strap Watch",
-    "description": "A slim-profile quartz watch with a sunburst dial, gold-tone case, and a woven canvas strap that softens with wear. Water-resistant to 30m and fitted with a scratch-resistant mineral crystal, Meridian is built for daily wear, from morning meetings to evenings out, and pairs effortlessly with the rest of your jewelry box.",
+    "name": "Halden Sunburst Dial Watch",
+    "description": "A refined quartz timepiece with a warm sunburst dial, slim gold-tone case and a soft woven strap that molds to your wrist over time. Halden is water-resistant to 30m and protected by a scratch-resistant mineral crystal, so it keeps up with workdays, weekends and everything in between, and it pairs beautifully with gold jewelry.",
     "image": "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
     "images": [
       "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=1000&q=80",
@@ -57,8 +57,8 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Aurelia Minimalist Wall Clock",
-    "description": "A silent-sweep wall clock with a solid walnut face and slender brass hands, engineered to keep flawless time without a single tick. Its 10-inch frame is sized to anchor an entryway, study, or gallery wall, and the brushed brass hardware is finished to match the rest of our jewelry and tabletop pieces for a cohesive, considered home.",
+    "name": "Lumière Walnut & Brass Wall Clock",
+    "description": "A whisper-quiet sweep-movement wall clock with a natural walnut face, slim brushed-brass hands and clean minimalist markers. At 10 inches across, Lumière brings warmth to an entryway, living room or home office without a single tick, and its brass accents echo the gold tones found throughout the Everglow collection.",
     "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",
     "images": [
       "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1000&q=80",

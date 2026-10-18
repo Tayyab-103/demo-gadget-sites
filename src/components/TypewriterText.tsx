@@ -47,10 +47,10 @@ export default function TypewriterText({
   }, [displayed, isDeleting, phraseIndex, phrases, typingSpeed, deletingSpeed, pauseDuration]);
 
   return (
-    <span className={`text-secondary ${className}`}>
+    <span className={className || "text-secondary"}>
       {displayed}
       <span
-        className="inline-block w-[3px] bg-secondary ml-1 align-middle animate-pulse"
+        className="inline-block w-[3px] bg-ink ml-1 align-middle animate-pulse"
         style={{ height: "0.85em" }}
         aria-hidden="true"
       />

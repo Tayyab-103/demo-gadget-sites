@@ -7,6 +7,10 @@
   --color-secondary-text: var(--secondary-text-color);
   --color-neutral-bg: var(--neutral-bg-color);
   --color-neutral-text: var(--neutral-text-color);
+  --color-ink: var(--neutral-text-color);
+  --color-primary-dark: color-mix(in srgb, var(--primary-color) 82%, black);
+  --color-accent-light: color-mix(in srgb, var(--primary-color) 14%, white);
+  --color-surface: color-mix(in srgb, var(--primary-color) 5%, var(--neutral-bg-color));
   --font-sans: var(--font-family);
 }
 
@@ -113,9 +117,34 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .glass-card-dark {
-  background: rgba(13, 27, 42, 0.8);
+  background: color-mix(in srgb, var(--neutral-text-color) 80%, transparent);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(200, 162, 97, 0.15);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+/* Yellow highlighter stroke behind a word in a heading */
+.marker {
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+.marker::after {
+  content: "";
+  position: absolute;
+  left: -0.08em;
+  right: -0.08em;
+  bottom: 0.08em;
+  height: 0.38em;
+  background: var(--primary-color);
+  border-radius: 0.15em;
+  z-index: -1;
+  transform: skewX(-8deg);
+}
+
+/* Soft dotted texture used on light yellow surfaces */
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--primary-color) 45%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 /* Glowing background blobs */

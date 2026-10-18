@@ -6,11 +6,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import productsData from "../../../../config/products.json";
+import siteConfigData from "../../../../config/site-config.json";
 import { useCart } from "@/context/CartContext";
-import { Product, Bundle } from "@/types";
+import { Product, Bundle, SiteConfig } from "@/types";
 import ProductCarousel from "@/components/ProductCarousel";
 
 const products = productsData as unknown as Product[];
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function ProductDetail() {
   const params = useParams();
@@ -32,10 +34,10 @@ export default function ProductDetail() {
       <>
         <Header />
         <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
-          <h2 className="text-2xl font-black uppercase text-primary mb-4">Product Not Found</h2>
+          <h2 className="text-2xl font-black uppercase text-ink mb-4">Product Not Found</h2>
           <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The product you are looking for does not exist or has been removed from our catalog.</p>
           <button
-            className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+            className="inline-block font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-ink hover:text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
             onClick={() => router.push("/")}
           >
             Return to Home
@@ -77,13 +79,13 @@ export default function ProductDetail() {
                 {product.category || "Fine Jewelry"}
               </span>
 
-              <h1 className="text-2xl md:text-3xl font-bold text-primary mt-2 mb-4 leading-snug">
+              <h1 className="text-2xl md:text-3xl font-bold text-ink mt-2 mb-4 leading-snug">
                 {product.name}
               </h1>
 
               {/* Star Ratings */}
               <div className="flex items-center gap-2.5 mb-6">
-                <div className="flex gap-0.5 text-secondary">
+                <div className="flex gap-0.5 text-primary">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -93,7 +95,7 @@ export default function ProductDetail() {
                 <span className="text-xs text-neutral-text/45 font-medium">(14 Verified Customer Reviews)</span>
               </div>
 
-              <div className="text-2xl font-extrabold text-primary mb-6 flex items-baseline gap-2">
+              <div className="text-2xl font-extrabold text-ink mb-6 flex items-baseline gap-2">
                 ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 {selectedBundle.quantity > 1 && (
                   <span className="text-xs md:text-sm font-medium text-neutral-text/40 ml-1">
@@ -109,7 +111,7 @@ export default function ProductDetail() {
               {/* Bundle Packages Selector */}
               {product.bundles && product.bundles.length > 0 && (
                 <div className="mb-8">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-primary mb-4">Select Package Quantity:</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-ink mb-4">Select Package Quantity:</h4>
                   <div className="relative">
                     <select
                       value={selectedBundle.quantity}
@@ -117,7 +119,7 @@ export default function ProductDetail() {
                         const bundle = product.bundles?.find((b) => b.quantity === Number(e.target.value));
                         if (bundle) setSelectedBundle(bundle);
                       }}
-                      className="w-full appearance-none border border-black/10 rounded-xl px-5 py-4 text-sm font-bold text-primary bg-white cursor-pointer focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all shadow-sm"
+                      className="w-full appearance-none border border-black/10 rounded-xl px-5 py-4 text-sm font-bold text-ink bg-white cursor-pointer focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all shadow-sm"
                     >
                       {product.bundles.map((bundle) => {
                         const regularPrice = startingPrice * bundle.quantity;
@@ -143,7 +145,7 @@ export default function ProductDetail() {
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-primary"
+                      className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-ink"
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
@@ -154,7 +156,7 @@ export default function ProductDetail() {
               {/* Add to Cart Actions */}
               <div className="flex gap-4 mb-10 mt-6">
                 <button
-                  className="group inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
+                  className="group inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-primary text-primary-text border border-transparent hover:bg-ink hover:text-white transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
@@ -165,9 +167,9 @@ export default function ProductDetail() {
               {/* What's In The Box */}
               {product.showIngredients && product.ingredientsImage && (
                 <div className="border-t border-black/5 pt-8 mt-10">
-                  <h3 className="text-base md:text-lg font-bold text-primary mb-3">What&apos;s In The Box</h3>
+                  <h3 className="text-base md:text-lg font-bold text-ink mb-3">What&apos;s In The Box</h3>
                   <p className="text-xs text-neutral-text/50 mb-6 leading-relaxed">
-                    Every piece arrives in our signature gift-ready packaging, backed by a 1-year manufacturer&apos;s warranty against defects.
+                    Every piece arrives in our keepsake gift box, ships free and is backed by our {siteConfig.trialPeriod}-day money-back guarantee.
                   </p>
 
                   <div className="bg-neutral-bg border border-black/5 rounded-xl p-6 flex items-center justify-center shadow-inner">

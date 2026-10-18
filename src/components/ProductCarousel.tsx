@@ -16,7 +16,7 @@ export default function ProductCarousel({
     const singleImg = images && images.length === 1 ? images[0] : "/img/products/guitar-pick.jpg";
     return (
       <div className="lg:sticky top-[120px]">
-        <div className="relative bg-neutral-bg shadow-xl rounded-3xl overflow-hidden h-[380px] md:h-[480px] flex items-center justify-center border border-black/5">
+        <div className="relative bg-neutral-bg shadow-xl rounded-3xl overflow-hidden h-[340px] md:h-[480px] flex items-center justify-center border border-black/5">
           <img
             src={`${singleImg}?v=2`}
             alt={name}
@@ -27,20 +27,45 @@ export default function ProductCarousel({
     );
   }
 
+  const fallback =
+    "https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&h=800&w=800&auto=format&fit=crop";
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    setActiveIndex(Math.round(el.scrollLeft / el.clientWidth));
+  };
+
   return (
     <div className="lg:sticky top-[120px] w-full">
-      {/* Accordion expanding gallery layout */}
-      <div className="flex items-center gap-2 md:gap-3 h-[380px] md:h-[480px] w-full mx-auto">
+      {/* Mobile and tablet: swipeable full-width gallery */}
+      <div
+        onScroll={handleScroll}
+        className="lg:hidden no-scrollbar flex snap-x snap-mandatory overflow-x-auto rounded-2xl shadow-lg border border-black/5"
+      >
+        {images.map((img, idx) => (
+          <img
+            key={idx}
+            className="h-[340px] md:h-[460px] w-full flex-shrink-0 snap-center object-cover object-center"
+            src={`${img}?v=2`}
+            alt={`${name} - angle ${idx + 1}`}
+            onError={(e) => {
+              e.currentTarget.src = fallback;
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Desktop: accordion that expands on hover */}
+      <div className="hidden lg:flex items-center gap-3 h-[480px] w-full mx-auto">
         {images.map((img, idx) => {
           const isSelected = activeIndex === idx;
 
           return (
             <div
               key={idx}
-              onClick={() => setActiveIndex(idx)}
               onMouseEnter={() => setActiveIndex(idx)}
-              className={`relative group flex-grow transition-all duration-500 ease-out rounded-2xl overflow-hidden h-[380px] md:h-[480px] cursor-pointer shadow-lg border border-black/5 hover:w-full ${
-                isSelected ? "w-full flex-grow-[3]" : "w-24 md:w-32 flex-grow-[1]"
+              className={`relative group min-w-0 basis-0 transition-[flex-grow] duration-500 ease-out rounded-2xl overflow-hidden h-[480px] shadow-lg border border-black/5 ${
+                isSelected ? "grow-[4]" : "grow"
               }`}
             >
               <img
@@ -48,13 +73,16 @@ export default function ProductCarousel({
                 src={`${img}?v=2`}
                 alt={`${name} - angle ${idx + 1}`}
                 onError={(e) => {
-                  e.currentTarget.src =
-                    "https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&h=800&w=800&auto=format&fit=crop";
+                  e.currentTarget.src = fallback;
                 }}
               />
 
-              {/* Angle Tag on hover / active */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 pointer-events-none">
+              {/* Angle tag on the active panel */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-opacity duration-300 flex items-end justify-between p-4 pointer-events-none ${
+                  isSelected ? "opacity-100" : "opacity-0"
+                }`}
+              >
                 <span className="text-white text-[0.72rem] font-black uppercase tracking-wider bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
                   Angle {idx + 1}
                 </span>
@@ -67,17 +95,13 @@ export default function ProductCarousel({
         })}
       </div>
 
-      {/* Indicator Pill Bar */}
+      {/* Indicator pill bar */}
       <div className="flex items-center justify-center gap-2.5 mt-5">
         {images.map((_, idx) => (
-          <button
+          <span
             key={idx}
-            onClick={() => setActiveIndex(idx)}
-            aria-label={`Select angle ${idx + 1}`}
-            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-              activeIndex === idx
-                ? "w-8 bg-secondary shadow-sm"
-                : "w-2.5 bg-black/20 hover:bg-black/40"
+            className={`h-2 rounded-full transition-all duration-300 ${
+              activeIndex === idx ? "w-8 bg-secondary shadow-sm" : "w-2.5 bg-black/20"
             }`}
           />
         ))}

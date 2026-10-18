@@ -58,6 +58,12 @@
   text-transform: uppercase;
   color: var(--secondary-color);
 }
+@media (max-width: 479px) {
+  .eyebrow {
+    letter-spacing: 0.14em;
+    gap: 0.5rem;
+  }
+}
 .eyebrow::before {
   content: "";
   width: 22px;

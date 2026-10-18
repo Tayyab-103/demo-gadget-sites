@@ -23,13 +23,13 @@ export default function Hero() {
       <div className="pointer-events-none absolute -bottom-40 -left-40 h-130 w-130 rounded-full bg-secondary/10 blur-3xl" />
 
       {/* Hero content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:py-28 w-full">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 py-14 sm:py-20 md:py-28 w-full">
         <div className="max-w-2xl">
           <div className="mb-5 flex justify-start">
             <span className="eyebrow eyebrow-invert">{siteConfig.brandName}</span>
           </div>
 
-          <h1 className="text-4xl font-black uppercase leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[3.8rem]">
+          <h1 className="text-[2rem] sm:text-4xl font-black uppercase leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[3.8rem]">
             Crafted for <br />
             <span className="block text-secondary">
               Pure Tone &amp; Resonance

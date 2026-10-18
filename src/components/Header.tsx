@@ -6,7 +6,6 @@ import { useCart } from "@/context/CartContext";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
 import { SiteConfig, Product } from "@/types";
-import AnnouncementBar from "@/components/AnnouncementBar";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
@@ -84,26 +83,17 @@ export default function Header() {
 
   return (
     <>
-      <AnnouncementBar />
-
       {/* Utility strip */}
-      <div className="hidden md:block bg-primary text-white/80 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between text-[0.7rem] font-bold uppercase tracking-wider">
-          <div className="flex items-center gap-2 text-white/60">
-            <span className="flex items-center gap-1.5 text-secondary">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary" />
-              Artisanal Music Gear &amp; Studio Workshop
-            </span>
-          </div>
-
-          <div className="flex items-center gap-6">
+      <div className="block bg-primary text-white/80 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-center text-[0.52rem] min-[360px]:text-[0.62rem] sm:text-[0.7rem] font-bold uppercase tracking-wider">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-1 max-w-full">
             <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <svg className="flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               {siteConfig.phone}
             </a>
-            <span className="w-1 h-1 rounded-full bg-secondary/40 flex-shrink-0" />
-            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-secondary/40 flex-shrink-0" />
+            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 min-w-0 break-all hover:text-secondary transition-colors duration-300">
+              <svg className="flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               {siteConfig.email}
             </a>
           </div>
@@ -114,27 +104,27 @@ export default function Header() {
         ref={headerRef}
         className="sticky top-0 z-50 bg-neutral-bg/90 backdrop-blur-md border-b border-black/5"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-6 py-4.5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4.5">
           {/* Logo */}
           <Link
             href="/"
             onClick={closeAll}
-            className="text-xl lg:text-2xl font-black text-primary flex items-center flex-shrink-0 group"
+            className="text-xl lg:text-2xl font-black text-primary flex items-center min-w-0 group"
             style={{ textDecoration: "none" }}
           >
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-secondary shadow-md group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-secondary shadow-md group-hover:bg-secondary group-hover:text-primary transition-all duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M9 18V5l12-2v13"></path>
                   <circle cx="6" cy="18" r="3"></circle>
                   <circle cx="18" cy="16" r="3"></circle>
                 </svg>
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg lg:text-xl font-black tracking-tight uppercase leading-none text-primary">
+              <div className="flex flex-col min-w-0">
+                <span className="text-sm min-[360px]:text-base sm:text-lg lg:text-xl font-black tracking-tight uppercase leading-none text-primary whitespace-nowrap">
                   {firstWord} <span className="text-secondary">{secondWord}</span>
                 </span>
-                <span className="text-[0.62rem] font-bold tracking-[0.2em] uppercase text-neutral-text/50 mt-0.5">
+                <span className="text-[0.55rem] sm:text-[0.62rem] font-bold tracking-[0.12em] sm:tracking-[0.2em] uppercase text-neutral-text/50 mt-0.5 truncate">
                   {trailingWords || "Musical Workshop"}
                 </span>
               </div>
@@ -158,11 +148,11 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             {/* Search Icon */}
             <button
               onClick={toggleSearch}
-              className="bg-white border border-black/8 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary hover:text-secondary hover:shadow-md transition-all duration-300"
+              className="bg-white border border-black/8 rounded-full relative cursor-pointer w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:border-secondary hover:text-secondary hover:shadow-md transition-all duration-300"
               aria-label="Toggle Search"
               aria-expanded={isSearchOpen}
             >
@@ -175,7 +165,7 @@ export default function Header() {
             {/* Cart Icon */}
             <button
               onClick={toggleCart}
-              className="bg-white border border-black/8 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary hover:shadow-md transition-all duration-300"
+              className="bg-white border border-black/8 rounded-full relative cursor-pointer w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:border-secondary hover:shadow-md transition-all duration-300"
               aria-label="Toggle Cart"
             >
               <svg
@@ -211,7 +201,7 @@ export default function Header() {
             {/* Mobile hamburger toggle */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden bg-white border border-black/8 rounded-full relative cursor-pointer w-10 h-10 flex items-center justify-center hover:border-secondary"
+              className="lg:hidden bg-white border border-black/8 rounded-full relative cursor-pointer w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center hover:border-secondary"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >

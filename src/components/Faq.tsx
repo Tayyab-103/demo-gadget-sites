@@ -8,14 +8,14 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What makes your botanical inks archival?",
+    question: "What kinds of fabrics and piece goods do you carry?",
     answer:
-      "Our botanical inks are milled in small batches using pure organic pigments in natural binders, tested for lightfastness and non-bleeding permanency.",
+      "We carry natural-fiber textiles and finished piece goods, including cotton towels, hand-knit throws, woven jute and rope baskets, and home décor accents made with fabric-friendly materials.",
   },
   {
-    question: "How are your cotton sketchbooks crafted?",
+    question: "How should I care for my fabrics?",
     answer:
-      "Each journal is hand-bound with 100% acid-free, cold-pressed 300 GSM cotton paper, engineered for heavy watercolor washes and mixed media.",
+      "Most cotton and linen items can be machine washed cold on a gentle cycle and tumble dried low. Woven fiber pieces should be spot cleaned. Care details are listed on each product page.",
   },
   {
     question: "How fast is delivery?",
@@ -24,7 +24,7 @@ const faqData = [
   {
     question: "How does the 60-Day Guarantee work?",
     answer:
-      "Test our supplies in your studio. If you're not completely satisfied within 60 days, contact us for a hassle-free replacement or full refund.",
+      "Try our fabrics at home. If you're not completely satisfied within 60 days, contact us for a hassle-free replacement or full refund.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#FAF9F5] relative overflow-hidden border-b border-black/5" id="faq">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-bg relative overflow-hidden border-b border-black/5" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -78,7 +78,7 @@ export default function Faq() {
                     className={`flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-200 ${
                       isOpen
                         ? "bg-primary text-white"
-                        : "bg-[#FAF9F5] text-primary border border-black/10"
+                        : "bg-neutral-bg text-primary border border-black/10"
                     }`}
                   >
                     {isOpen ? "−" : "+"}
@@ -87,7 +87,7 @@ export default function Faq() {
 
                 {/* Accordion Content Body */}
                 {isOpen && (
-                  <div className="px-4 sm:px-5 md:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-[#5A554E] leading-relaxed border-t border-black/5">
+                  <div className="px-4 sm:px-5 md:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-neutral-text/70 leading-relaxed border-t border-black/5">
                     {item.answer}
                   </div>
                 )}

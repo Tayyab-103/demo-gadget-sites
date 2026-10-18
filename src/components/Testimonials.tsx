@@ -1,83 +1,160 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const testimonials = [
   {
-    quote: "The botanical inks have incredible depth and zero bleeding. My calligraphy lines stay crisp and lightfast on heavy watercolor paper.",
-    author: "Eleanor Vance",
-    role: "Botanical Illustrator",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80"
+    quote:
+      "The cotton towels are unbelievably soft and they got even fluffier after the first wash. No shedding, no fading. I ordered a second set for our guest bath.",
+    author: "Margaret H.",
+    location: "Asheville, NC",
+    product: "Soft Towel Set",
   },
   {
-    quote: "The cold-pressed sketchbook lays completely flat when open. I take it everywhere for plein air watercolor work.",
-    author: "Julian Thorne",
-    role: "Fine Artist & Educator",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+    quote:
+      "The handmade jute basket is sturdier than I expected and the weave is beautifully even. It holds all my yarn and fabric scraps and looks lovely on the shelf.",
+    author: "Daniel R.",
+    location: "Richmond, VA",
+    product: "Handmade Jute Basket",
   },
   {
-    quote: "The sable detail brushes keep their razor-sharp point even after months of intense detailing work.",
-    author: "Clara Sterling",
-    role: "Master Miniaturist",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80"
-  }
+    quote:
+      "Packed with care and arrived in three days. You can tell every piece is inspected before it ships. It feels like shopping at a real neighborhood fabric store.",
+    author: "Priya S.",
+    location: "Charlotte, NC",
+    product: "Verified Buyer",
+  },
+  {
+    quote:
+      "I sew and quilt, so I am picky about textiles. The colors matched the photos exactly and the quality is outstanding for the price. Customer service was friendly too.",
+    author: "Linda M.",
+    location: "Greenville, SC",
+    product: "Verified Buyer",
+  },
 ];
 
-export default function Testimonials() {
-  return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden border-b border-black/5" id="testimonials">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Main Display Headline */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-14">
-          <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-secondary mb-2 sm:mb-3 inline-block">
-            Artist Reviews
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase text-primary leading-[1.15] tracking-tight font-serif">
-            Trusted in Over 15,000+ <br />
-            <span className="text-secondary">Creative Studios</span>
-          </h2>
-        </div>
+const stats = [
+  { value: "4.9/5", label: "Average rating" },
+  { value: "12,000+", label: "Happy homes" },
+  { value: "98%", label: "Would buy again" },
+];
 
-        {/* 3-Column Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {testimonials.map((item, idx) => (
-            <div key={idx} className="bg-[#FAF9F5] rounded-2xl p-6 sm:p-8 border border-black/5 flex flex-col items-center text-center">
-              
-              {/* Star Rating */}
-              <div className="flex justify-center gap-1 text-[#C99236] text-xs sm:text-sm mb-3 sm:mb-4">
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+export default function Testimonials() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setActive((i) => (i + 1) % testimonials.length), 7000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const featured = testimonials[active];
+
+  return (
+    <section className="relative overflow-hidden bg-primary text-primary-text py-14 sm:py-20 lg:py-24" id="testimonials">
+      {/* Subtle woven texture */}
+      <div
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(45deg, currentColor 0 1px, transparent 1px 12px), repeating-linear-gradient(-45deg, currentColor 0 1px, transparent 1px 12px)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left: heading + stats */}
+          <div className="lg:col-span-5 text-center lg:text-left">
+            <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-secondary mb-3 inline-block">
+              Customer Stories
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black tracking-tight leading-[1.12] mb-4">
+              Loved in Homes <span className="block text-secondary">Across the Country</span>
+            </h2>
+            <p className="text-primary-text/70 text-sm sm:text-base leading-relaxed max-w-md mx-auto lg:mx-0 mb-8">
+              Real words from people who brought {siteConfig.brandName} fabrics and piece goods into their everyday lives.
+            </p>
+
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 px-3 py-4 text-center">
+                  <div className="text-lg sm:text-2xl font-black text-white">{stat.value}</div>
+                  <div className="text-[0.6rem] sm:text-[0.65rem] uppercase tracking-wider text-primary-text/60 font-semibold mt-1">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: featured quote + selector */}
+          <div className="lg:col-span-7">
+            <figure className="relative bg-white text-neutral-text rounded-3xl p-7 sm:p-10 shadow-2xl">
+              <span
+                className="absolute -top-6 left-7 sm:left-10 w-12 h-12 rounded-full bg-secondary text-secondary-text flex items-center justify-center font-serif text-3xl leading-none shadow-lg"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </span>
+
+              <div className="flex gap-1 text-secondary text-sm mb-4 mt-2" aria-label="5 out of 5 stars">
                 {[...Array(5)].map((_, i) => (
                   <span key={i}>★</span>
                 ))}
               </div>
 
-              {/* Quote Text */}
-              <p className="text-xs sm:text-sm leading-relaxed text-[#5A554E] font-normal mb-5 sm:mb-6 flex-1 italic">
-                &ldquo;{item.quote}&rdquo;
-              </p>
+              <blockquote key={active} className="font-serif text-lg sm:text-xl md:text-2xl leading-relaxed text-primary min-h-[9rem] sm:min-h-[8rem]">
+                {featured.quote}
+              </blockquote>
 
-              {/* Author Avatar */}
-              <img
-                src={item.image}
-                alt={item.author}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-cover mb-2 border border-black/10"
-                onError={(e) => {
-                  e.currentTarget.src = "https://placehold.co/100x100?text=Artist";
-                }}
-              />
+              <figcaption className="mt-6 pt-6 border-t border-black/10 flex items-center gap-4">
+                <span className="w-12 h-12 rounded-full bg-primary text-primary-text flex items-center justify-center font-bold text-sm shrink-0">
+                  {initials(featured.author)}
+                </span>
+                <div className="min-w-0">
+                  <div className="font-bold text-primary text-sm sm:text-base">{featured.author}</div>
+                  <div className="text-xs text-neutral-text/60 truncate">
+                    {featured.location} · <span className="text-secondary font-semibold">{featured.product}</span>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
 
-              {/* Author Info */}
-              <h3 className="text-xs sm:text-sm font-bold text-primary">
-                {item.author}
-              </h3>
-              <span className="text-[0.62rem] sm:text-[0.65rem] text-neutral-text/50 font-semibold tracking-wider uppercase">
-                {item.role}
-              </span>
-
+            {/* Reviewer selector */}
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+              {testimonials.map((item, idx) => (
+                <button
+                  key={item.author}
+                  onClick={() => setActive(idx)}
+                  className={`flex items-center gap-2 rounded-xl px-3 py-2.5 text-left transition-all cursor-pointer border ${
+                    idx === active
+                      ? "bg-white/15 border-secondary"
+                      : "bg-white/5 border-white/10 hover:bg-white/10"
+                  }`}
+                  aria-label={`Show review from ${item.author}`}
+                >
+                  <span className="w-7 h-7 rounded-full bg-secondary text-secondary-text flex items-center justify-center text-[0.6rem] font-bold shrink-0">
+                    {initials(item.author)}
+                  </span>
+                  <span className="text-xs font-semibold text-white truncate">{item.author}</span>
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-
       </div>
     </section>
   );

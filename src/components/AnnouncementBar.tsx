@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 
 const announcements = [
-  "Free shipping over $55 · Happiness guarantee · Delivery in 3–6 business days",
-  "100% Archival Standard · Non-toxic pigments · Hand-bound cotton paper",
-  "60-Day Studio Return Guarantee · Artisan Crafted Tools",
+  "Free shipping over $55 · Cut-to-order fabrics · Delivery in 3–6 business days",
+  "Natural fibers · Colorfast dyes · Pre-washed cotton & linen",
+  "60-Day Satisfaction Guarantee · Hand-selected piece goods",
 ];
 
 export default function AnnouncementBar() {
@@ -27,7 +27,7 @@ export default function AnnouncementBar() {
   };
 
   return (
-    <div className="bg-[#2D2824] text-white/90 text-xs py-2.5 px-4 border-b border-white/10 select-none">
+    <div className="bg-primary text-white/90 text-xs py-2.5 px-4 border-b border-white/10 select-none">
       <div className="max-w-7xl mx-auto flex items-center justify-center relative">
         
         {/* Left Arrow Button */}

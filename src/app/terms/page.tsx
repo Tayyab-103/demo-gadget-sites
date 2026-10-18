@@ -47,7 +47,7 @@ export default function Terms() {
 
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">PRODUCTS OFFERED &amp; BILLING TERMS</h3>
             <p>
-              We offer premium artist supplies and craft shop items through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer quality fabrics, piece goods, and home textile items through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}

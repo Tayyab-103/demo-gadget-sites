@@ -120,7 +120,7 @@ export default function Header() {
                     onClick={closeAll}
                     className="block px-3 py-2 text-xs font-black text-secondary hover:underline"
                   >
-                    View All Supplies →
+                    View All Fabrics →
                   </Link>
                 </div>
               </div>
@@ -136,17 +136,14 @@ export default function Header() {
           </nav>
 
           {/* CENTER: Brand Logo */}
-          <div className="flex items-center justify-start lg:justify-center">
+          <div className="flex min-w-0 items-center justify-start lg:justify-center">
             <Link
               href="/"
               onClick={closeAll}
-              className="flex flex-col items-start lg:items-center text-left lg:text-center group py-0.5"
+              className="flex min-w-0 flex-col items-start lg:items-center text-left lg:text-center group py-0.5"
             >
-              <span className="font-serif font-black text-lg sm:text-xl md:text-2xl tracking-tight text-primary uppercase leading-tight group-hover:text-secondary transition-colors">
-                Marlowe Finch
-              </span>
-              <span className="text-[0.52rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.28em] text-secondary leading-none mt-0.5">
-                Creative Supply
+              <span className="font-serif font-black text-sm min-[400px]:text-base sm:text-lg md:text-xl tracking-tight text-primary uppercase leading-tight group-hover:text-secondary transition-colors lg:whitespace-nowrap">
+                {siteConfig.brandName}
               </span>
             </Link>
           </div>
@@ -221,7 +218,7 @@ export default function Header() {
               onClick={closeAll}
               className="text-primary font-bold text-xs uppercase tracking-wider py-2.5 border-b border-black/5 flex items-center justify-between"
             >
-              <span>Shop All Supplies</span>
+              <span>Shop All Fabrics</span>
               <span className="text-[0.7rem] text-secondary">→</span>
             </Link>
             <Link
@@ -254,8 +251,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search studio supplies, botanical inks, sketchbooks..."
-                className="block w-full pl-12 pr-4 py-3.5 text-sm border border-black/15 rounded-full focus:outline-none focus:border-secondary transition-all text-primary bg-[#FAF9F5] shadow-inner"
+                placeholder="Search cotton, linen, yarn, home textiles..."
+                className="block w-full pl-12 pr-4 py-3.5 text-sm border border-black/15 rounded-full focus:outline-none focus:border-secondary transition-all text-primary bg-neutral-bg shadow-inner"
               />
             </div>
 
@@ -269,7 +266,7 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-4 p-3 rounded-2xl hover:bg-[#FAF9F5] border border-transparent hover:border-black/5 transition-all duration-200"
+                        className="flex items-center gap-4 p-3 rounded-2xl hover:bg-neutral-bg border border-transparent hover:border-black/5 transition-all duration-200"
                       >
                         <img
                           src={product.image}

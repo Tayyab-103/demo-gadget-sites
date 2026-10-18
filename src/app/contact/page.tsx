@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow bg-[#FAF9F5]">
+      <main className="flex-grow bg-neutral-bg">
         <Contact />
       </main>
       <Footer />

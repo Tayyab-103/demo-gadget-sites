@@ -8,11 +8,15 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const popupDismissed = localStorage.getItem("newsletter_dismissed");
+    let popupDismissed: string | null = null;
+    try {
+      popupDismissed = localStorage.getItem("newsletter_dismissed");
+    } catch {}
     if (popupDismissed) return;
 
     let hasSpentTimeOnPage = false;
@@ -23,6 +27,8 @@ export default function NewsletterPopup() {
       if (hasSpentTimeOnPage && hasShownScrollIntent && !isPopupShown) {
         isPopupShown = true;
         setIsVisible(true);
+        // Next frame so the slide-in transition runs
+        requestAnimationFrame(() => setIsOpen(true));
       }
     };
 
@@ -47,98 +53,104 @@ export default function NewsletterPopup() {
     };
   }, []);
 
-  const handleClose = () => {
-    setIsVisible(false);
-    localStorage.setItem("newsletter_dismissed", "true");
+  const dismiss = () => {
+    setIsOpen(false);
+    try {
+      localStorage.setItem("newsletter_dismissed", "true");
+    } catch {}
+    window.setTimeout(() => setIsVisible(false), 400);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      setTimeout(() => {
-        setIsVisible(false);
-        localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000); // Close after 2 seconds
+      window.setTimeout(dismiss, 2500);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
+    <div
+      role="dialog"
+      aria-label="Newsletter signup"
+      className={`fixed z-[9999] bottom-3 right-3 left-3 sm:left-auto sm:bottom-6 sm:right-6 sm:w-[380px] transition-all duration-500 ease-out ${
+        isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
+      }`}
+    >
+      <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.35)] border border-black/10">
         {/* Close Button */}
         <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          onClick={dismiss}
+          className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 text-primary flex items-center justify-center text-lg leading-none shadow-sm hover:bg-secondary hover:text-secondary-text transition-colors cursor-pointer"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[180px] relative">
-          <img
-            src="/img/contact2.jpg"
-            alt="Artist workspace with studio supplies"
-            className="w-full h-full object-cover absolute inset-0"
-          />
-          {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
+        {/* Image + offer header */}
+        <div className="flex">
+          <div className="relative w-28 sm:w-32 shrink-0">
+            <img
+              src="/img/cta1.jpg"
+              alt="Handwoven textiles hanging in a fabric shop"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-primary/20" />
+          </div>
 
-          <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              Studio Exclusive
-            </span>
-            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
-              Save 15% Today!
-            </h3>
+          <div className="flex-1 min-w-0 p-4 sm:p-5 pr-11">
+            {submitted ? (
+              <div className="py-3">
+                <div className="w-9 h-9 rounded-full bg-secondary text-secondary-text flex items-center justify-center text-base mb-3">
+                  ✓
+                </div>
+                <h4 className="font-serif font-bold text-primary text-base mb-1">You&apos;re on the list!</h4>
+                <p className="text-xs text-neutral-text/60 leading-relaxed">
+                  Check your inbox for your 15% discount code.
+                </p>
+              </div>
+            ) : (
+              <>
+                <span className="text-[0.6rem] uppercase tracking-[0.22em] font-bold text-secondary block mb-1">
+                  Members Exclusive
+                </span>
+                <h3 className="font-serif font-black text-primary text-xl sm:text-2xl leading-tight mb-1.5">
+                  Take 15% Off
+                </h3>
+                <p className="text-xs text-neutral-text/65 leading-relaxed">
+                  Join {siteConfig.brandName} for new fabric arrivals, care tips, and your first-order discount.
+                </p>
+              </>
+            )}
           </div>
         </div>
 
-        {/* Form Body */}
-        <div className="p-8">
-          {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
-                ✓
-              </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get studio guides, early access to small-batch releases, and <strong>15% off</strong> on your first order.
-              </p>
-
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
+        {/* Form */}
+        {!submitted && (
+          <form onSubmit={handleSubmit} className="border-t border-black/5 bg-neutral-bg p-3 sm:p-4">
+            <div className="flex items-center gap-2 bg-white rounded-full border border-black/10 p-1 focus-within:border-secondary transition-colors">
+              <input
+                type="email"
+                className="flex-1 min-w-0 bg-transparent px-3 py-2 text-sm text-neutral-text placeholder:text-neutral-text/40 outline-none"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
               <button
                 type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
+                className="shrink-0 bg-secondary text-secondary-text hover:bg-primary hover:text-primary-text font-bold text-[0.7rem] uppercase tracking-wider px-4 py-2 rounded-full transition-colors cursor-pointer"
               >
-                Unlock 15% Discount
+                Get 15%
               </button>
-
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
-              </span>
-            </form>
-          )}
-        </div>
+            </div>
+            <span className="block text-center text-[0.62rem] text-neutral-text/45 mt-2">
+              No spam. Unsubscribe at any time.
+            </span>
+          </form>
+        )}
       </div>
     </div>
   );

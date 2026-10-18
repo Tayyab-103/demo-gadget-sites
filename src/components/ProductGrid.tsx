@@ -9,17 +9,17 @@ const products = productsData as unknown as Product[];
 
 export default function ProductGrid() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#FAF9F5] relative overflow-hidden border-b border-black/5" id="shop">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-bg relative overflow-hidden border-b border-black/5" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Header Row with View More */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16 border-b border-black/5 pb-6 sm:pb-8">
           <div>
             <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.22em] text-secondary mb-2 block">
-              Studio Collection
+              Heritage Collection
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black uppercase text-primary tracking-tight">
-              Featured <span className="text-secondary">Supplies</span>
+              Featured <span className="text-secondary">Piece Goods</span>
             </h2>
           </div>
 
@@ -48,14 +48,14 @@ export default function ProductGrid() {
                 {/* Image Frame Container */}
                 <Link
                   href={`/product/${product.id}`}
-                  className="relative w-full aspect-4/5 bg-[#F5F4EF] rounded-2xl overflow-hidden mb-4 sm:mb-5 flex items-center justify-center p-4 sm:p-6 border border-black/5 shadow-sm group-hover:shadow-xl transition-all duration-500"
+                  className="relative w-full aspect-4/5 bg-neutral-bg rounded-2xl overflow-hidden mb-4 sm:mb-5 flex items-center justify-center p-4 sm:p-6 border border-black/5 shadow-sm group-hover:shadow-xl transition-all duration-500"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover rounded-xl transition-transform duration-700 ease-out group-hover:scale-105"
                     onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/400x500?text=Art+Supply";
+                      e.currentTarget.src = "https://placehold.co/400x500?text=Fabric";
                     }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
@@ -63,17 +63,6 @@ export default function ProductGrid() {
 
                 {/* Info Block */}
                 <div className="flex flex-col flex-1">
-                  {/* Category & Star Rating Row */}
-                  <div className="flex items-center justify-between gap-2 mb-1.5 sm:mb-2">
-                    <span className="text-[0.62rem] sm:text-[0.65rem] font-bold uppercase tracking-[0.16em] text-neutral-text/50 truncate">
-                      {product.category || "Studio Supply"}
-                    </span>
-                    <div className="flex items-center gap-1 text-[#C99236] text-xs flex-shrink-0">
-                      <span>★★★★★</span>
-                      <span className="text-[0.62rem] sm:text-[0.65rem] text-neutral-text/40 font-medium ml-0.5">(5)</span>
-                    </div>
-                  </div>
-
                   {/* Product Title */}
                   <Link href={`/product/${product.id}`}>
                     <h3 className="text-base sm:text-lg font-bold text-primary group-hover:text-secondary transition-colors duration-300 line-clamp-2 leading-snug mb-2">

@@ -10,16 +10,16 @@ export default function CuratedSupplies() {
         {/* Left Column: Clean Editorial Content */}
         <div className="flex flex-col justify-center px-5 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-10 sm:py-14 lg:py-18 order-2 lg:order-1">
           <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.25em] text-secondary mb-2 sm:mb-3">
-            Handcrafted in Small Batches
+            Woven With Care
           </span>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black text-primary tracking-tight leading-[1.15] mb-3 sm:mb-4">
-            Archival Supplies for <br className="hidden sm:inline" />
-            <span className="text-secondary">Visionary Artists</span>
+            Natural Textiles for <br className="hidden sm:inline" />
+            <span className="text-secondary">Every Home &amp; Project</span>
           </h2>
 
-          <p className="text-[#5A554E] text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-7 max-w-lg font-normal">
-            Discover studio-grade botanical inks, cold-pressed archival cotton papers, and hand-fitted sable brushes crafted for painters, calligraphers, and creators who demand generational permanence.
+          <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base leading-relaxed mb-6 sm:mb-7 max-w-lg font-normal">
+            From soft cotton terry and breathable linens to hand-knit throws and woven fiber baskets, our piece goods are chosen for sewists, quilters, makers, and anyone who loves the feel of honest, well-made fabric.
           </p>
 
           <div>
@@ -27,7 +27,7 @@ export default function CuratedSupplies() {
               href="/shop"
               className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-bold text-xs sm:text-sm uppercase tracking-[0.16em] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
             >
-              Discover Collection
+              Shop Fabrics
               <span className="text-sm">→</span>
             </Link>
           </div>
@@ -36,8 +36,8 @@ export default function CuratedSupplies() {
         {/* Right Column: Clean Studio Image */}
         <div className="relative w-full min-h-[260px] sm:min-h-[340px] lg:min-h-full overflow-hidden order-1 lg:order-2">
           <img
-            src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1400&q=80"
-            alt="Artist studio wall art and creative workspace"
+            src="/img/products/product2-1.jpg"
+            alt="Hand-knit cotton throw draped in a woven basket"
             className="w-full h-full object-cover object-center"
           />
         </div>

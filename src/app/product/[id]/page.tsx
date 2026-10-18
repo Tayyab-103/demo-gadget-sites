@@ -32,7 +32,7 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-[#FAF9F5]">
+        <main className="w-full max-w-7xl mx-auto px-6 py-28 text-center bg-neutral-bg">
           <h2 className="text-2xl font-black uppercase text-primary mb-4">Product Not Found</h2>
           <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The product you are looking for does not exist or has been removed from our catalog.</p>
           <button
@@ -60,7 +60,7 @@ export default function ProductDetail() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF9F5] py-8 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden border-b border-black/5">
+      <main className="bg-neutral-bg py-8 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden border-b border-black/5">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] right-[-250px] opacity-30 pointer-events-none" />
 
@@ -75,7 +75,7 @@ export default function ProductDetail() {
             {/* Product Details Section */}
             <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 md:p-8 border border-black/5 shadow-sm">
               <span className="text-[0.65rem] sm:text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
-                {product.category || "Studio Supplies"}
+                {product.category || "Fabric & Piece Goods"}
               </span>
 
               <h1 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-primary mt-2 mb-3 sm:mb-4 leading-snug">

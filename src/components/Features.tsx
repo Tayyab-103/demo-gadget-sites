@@ -4,8 +4,8 @@ import React from "react";
 
 const featuresData = [
   {
-    title: "Archival Pigments",
-    description: "Every pigment and binder we use is selected for maximum lightfastness, free of cheap fillers or fading agents.",
+    title: "Natural Fibers",
+    description: "Our cottons, linens, and wools are chosen for softness, breathability, and long-lasting wear.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a15 15 0 0 0-9.3 3.5c-.3.3-.4.8-.2 1.1l2.4 4.7c.2.4.7.7 1.1.7h12c.4 0 .9-.3 1.1-.7l2.4-4.7c.2-.4.1-.9-.2-1.1A15 15 0 0 0 12 2z"></path>
@@ -15,8 +15,8 @@ const featuresData = [
     )
   },
   {
-    title: "Studio-Tested Tools",
-    description: "Our supplies are tested under strict atelier checkpoints by practicing artists before they ever ship.",
+    title: "Hand-Inspected Goods",
+    description: "Every bolt and piece is checked for weave, color, and finish before it leaves our store.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -25,7 +25,7 @@ const featuresData = [
   },
   {
     title: "100% Acid-Free Cotton",
-    description: "Every batch of paper and journals is verified for non-bleeding permanence and archival integrity.",
+    description: "Every dye lot is checked for colorfastness so your fabrics stay vibrant wash after wash.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M10 2v7.31"></path>
@@ -38,7 +38,7 @@ const featuresData = [
   },
   {
     title: "Risk-Free Guarantee",
-    description: "Not satisfied? We stand behind our quality with a 60-day studio satisfaction guarantee.",
+    description: "Not satisfied? We stand behind our quality with a 60-day satisfaction guarantee.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -55,9 +55,9 @@ export default function Features() {
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="max-w-[600px] mb-12 md:mb-16">
           <span className="eyebrow mb-4">Why Choose Us</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Crafted for Fine Creators</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight">Woven for Everyday Living</h2>
           <p className="text-neutral-text/60">
-            We combine archival materials with artist feedback to bring you studio supplies that elevate your work.
+            We combine time-honored textile traditions with modern quality checks to bring you fabrics and piece goods you will love.
           </p>
         </div>
 

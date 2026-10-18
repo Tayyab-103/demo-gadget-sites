@@ -22,11 +22,8 @@ export default function Footer() {
           {/* Logo / Brand Name */}
           <div className="flex flex-col items-start">
             <Link href="/" className="flex flex-col items-start group">
-              <span className="font-serif text-xl sm:text-2xl font-black uppercase tracking-tight text-primary group-hover:text-secondary transition-colors">
-                Marlowe Finch
-              </span>
-              <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.28em] text-secondary leading-none mt-0.5">
-                Creative Supply
+              <span className="font-serif text-lg sm:text-xl font-black uppercase tracking-tight leading-tight text-primary group-hover:text-secondary transition-colors">
+                {siteConfig.brandName}
               </span>
             </Link>
           </div>
@@ -105,7 +102,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li><Link href="/shop" className="hover:text-secondary transition-colors font-bold text-secondary">All Supplies →</Link></li>
+              <li><Link href="/shop" className="hover:text-secondary transition-colors font-bold text-secondary">All Fabrics →</Link></li>
             </ul>
           </div>
 

@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow bg-[#FAF9F5]">
+      <main className="flex-grow bg-neutral-bg">
         <AboutUs />
       </main>
       <Footer />

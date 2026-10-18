@@ -18,6 +18,11 @@
     scroll-padding-top: 6rem;
   }
   
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     background-color: var(--neutral-bg-color);
     color: var(--neutral-text-color);

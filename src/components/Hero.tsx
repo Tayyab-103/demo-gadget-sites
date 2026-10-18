@@ -97,10 +97,10 @@ export default function Hero() {
       {/* =========================================================================
           TOP INTEGRATED HEADER (4 Core Pages: HOME, PRODUCTS, ABOUT US, CONTACT US)
           ========================================================================= */}
-      <div className="relative z-30 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 pt-6 pb-4 flex items-center justify-between">
-        
+      <div className="relative z-30 max-w-[1440px] mx-auto px-4 min-[360px]:px-6 sm:px-10 lg:px-14 pt-6 pb-4 flex items-center justify-between gap-2">
+
         {/* Left: Hamburger Menu Icon + Brand Name */}
-        <div className="flex items-center gap-3.5">
+        <div className="flex items-center gap-1.5 min-[360px]:gap-3.5 min-w-0">
           <button
             onClick={() => setIsMenuOpen((v) => !v)}
             className="md:hidden text-white hover:text-emerald-300 transition-colors p-2.5 -m-1 cursor-pointer"
@@ -114,13 +114,13 @@ export default function Hero() {
             </svg>
           </button>
           
-          <Link href="/" className="font-extrabold text-sm sm:text-base tracking-[0.22em] uppercase text-white lg:text-[#132A1C] font-sans drop-shadow-sm lg:drop-shadow-none">
+          <Link href="/" className="font-extrabold text-xs min-[360px]:text-sm sm:text-base tracking-[0.12em] min-[360px]:tracking-[0.22em] uppercase text-white lg:text-[#132A1C] font-sans drop-shadow-sm lg:drop-shadow-none">
             THORNWICK
           </Link>
         </div>
 
         {/* Right: Exactly 4 Navigation Links (HOME, PRODUCTS, ABOUT US, CONTACT US) */}
-        <div className="flex items-center gap-6 sm:gap-9 lg:gap-11">
+        <div className="flex items-center gap-3 sm:gap-9 lg:gap-11 shrink-0">
           <nav className="hidden md:flex items-center gap-7 lg:gap-10">
             {[
               { href: "/", label: "HOME" },

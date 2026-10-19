@@ -19,8 +19,9 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: siteConfig.theme.primaryColor,
+          background: "#1e293b",
           position: "relative",
+          fontFamily: "sans-serif",
         }}
       >
         <div
@@ -28,11 +29,11 @@ export default async function Image() {
             position: "absolute",
             top: -90,
             left: -90,
-            width: 320,
-            height: 320,
+            width: 340,
+            height: 340,
             borderRadius: "50%",
-            background: siteConfig.theme.secondaryColor,
-            opacity: 0.15,
+            background: "#ff4370",
+            opacity: 0.25,
             display: "flex",
           }}
         />
@@ -41,11 +42,11 @@ export default async function Image() {
             position: "absolute",
             bottom: -110,
             right: -70,
-            width: 380,
-            height: 380,
+            width: 400,
+            height: 400,
             borderRadius: "50%",
-            background: siteConfig.theme.secondaryColor,
-            opacity: 0.2,
+            background: "#ffb703",
+            opacity: 0.25,
             display: "flex",
           }}
         />
@@ -55,26 +56,24 @@ export default async function Image() {
             display: "flex",
             alignItems: "center",
             gap: 16,
-            padding: "24px 48px",
+            padding: "20px 44px",
             borderRadius: 999,
-            background: "rgba(255, 255, 255, 0.08)",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
+            background: "rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
           }}
         >
           <div
             style={{
               fontSize: 48,
-              color: "#38bdf8",
             }}
           >
-            ⚡
+            🧸
           </div>
           <div
             style={{
-              fontSize: 44,
+              fontSize: 42,
               fontWeight: 900,
-              letterSpacing: 2,
-              textTransform: "uppercase",
+              letterSpacing: 1,
               color: "#ffffff",
             }}
           >
@@ -84,24 +83,24 @@ export default async function Image() {
 
         <div
           style={{
-            marginTop: 32,
-            fontSize: 26,
+            marginTop: 28,
+            fontSize: 24,
             fontWeight: 700,
-            letterSpacing: 3,
+            letterSpacing: 2,
             textTransform: "uppercase",
-            color: siteConfig.theme.secondaryColor,
+            color: "#ffb703",
           }}
         >
-          Commercial Work Uniforms &amp; Industrial Workwear
+          Kids Toys, Puzzles, Board Games &amp; Action Figures
         </div>
 
         <div
           style={{
-            marginTop: 24,
-            width: 140,
+            marginTop: 20,
+            width: 120,
             height: 6,
             borderRadius: 999,
-            background: siteConfig.theme.secondaryColor,
+            background: "#ff4370",
             display: "flex",
           }}
         />

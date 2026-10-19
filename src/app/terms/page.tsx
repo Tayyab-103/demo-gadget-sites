@@ -14,24 +14,24 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-[#f0f4f8] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b border-black/6">
+      <main className="bg-[#fffafb] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b border-black/6 font-sans">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#0f2b48] mb-8 border-b border-black/8 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black text-[#1e293b] mb-8 border-b border-black/8 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
           <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/8 shadow-sm leading-relaxed text-black/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#ff4370] mt-8 mb-4 uppercase tracking-wider">
               OVERVIEW
             </h3>
             <p>
-              This website is operated by <strong className="text-[#0f2b48] font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-[#0f2b48] font-semibold">{siteConfig.brandName}</strong>. <strong className="text-[#0f2b48] font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the customer or commercial client,
+              This website is operated by <strong className="text-[#1e293b] font-semibold">{siteConfig.brandName}</strong> (operated by <strong className="text-[#1e293b] font-semibold">{siteConfig.corpName}</strong>). Throughout the site, the terms “we”,
+              “us” and “our” refer to <strong className="text-[#1e293b] font-semibold">{siteConfig.brandName}</strong>. <strong className="text-[#1e293b] font-semibold">{siteConfig.brandName}</strong> offers
+              this website, including all information, tools and services available from this site to you, the customer,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing commercial work uniforms, heavy-duty work shirts, reinforced utility cargo pants, and safety jackets from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing toys, board games, STEM puzzles, plushies, action figures, or accessories from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -41,19 +41,19 @@ export default function Terms() {
               terms and conditions of this agreement, then you may not access the website or use any services.
             </p>
 
-            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#ff4370] mt-8 mb-4 uppercase tracking-wider">
               PRODUCTS OFFERED &amp; BILLING TERMS
             </h3>
             <p>
-              We offer commercial work uniforms and industrial apparel through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer toys, puzzles, action figures, and family tabletop board games through one-time purchases (Straight Sale) under the following pricing structures:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-[#f0f4f8] border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-[#fff9fa] border border-[#ff4370]/15 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
                 <div key={product.id} className="mb-6 pb-6 border-b border-black/8 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-black text-[#0f2b48] mb-3 uppercase tracking-tight">
-                    {product.name}
+                  <h4 className="text-sm md:text-base font-black text-[#1e293b] mb-3">
+                    {product.name} ({product.category})
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
                     {product.bundles && product.bundles.map((bundle) => {
@@ -64,10 +64,10 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-black/75">
-                          Upon ordering a <strong className="text-[#0f2b48] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Crew Package` : "Single Unit"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-[#0f2b48] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                          Upon ordering a <strong className="text-[#1e293b] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Toy Bundle` : "Single Unit"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-[#ff4370] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-[#0f2b48] font-bold">“{siteConfig.descriptor}”</strong>.
+                          The credit card charge will appear on your statement as <strong className="text-[#1e293b] font-bold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}
@@ -76,7 +76,7 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#ff4370] mt-8 mb-4 uppercase tracking-wider">
               SECTION 1 - ONLINE STORE TERMS
             </h3>
             <p>
@@ -85,30 +85,30 @@ export default function Terms() {
               have given us your consent to allow any of your minor dependents to use this site.
             </p>
             <p>
-              You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws and occupational safety regulations).
+              All toys sold on this platform comply with mandatory United States Consumer Product Safety Improvement Act (CPSIA)
+              and ASTM F963 safety specifications.
             </p>
 
-            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-[#ff4370] mt-8 mb-4 uppercase tracking-wider">
               SECTION 2 - SHIPPING &amp; DELIVERY POLICY
             </h3>
             <p>
-              All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
+              All toy orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched from our Dallas, TX distribution facility.
+              You will receive an automated tracking number via email once your package has departed our Dallas, TX fulfillment facility.
             </p>
 
-            <h3 className="text-base font-black text-[#0f2b48] mt-8 mb-4 uppercase tracking-wider">
-              SECTION 3 - 14-DAY FIT TRIAL &amp; RETURN POLICY
+            <h3 className="text-base font-black text-[#ff4370] mt-8 mb-4 uppercase tracking-wider">
+              SECTION 3 - 14-DAY HAPPINESS &amp; RETURN POLICY
             </h3>
             <p>
-              We stand behind our commercial work uniforms with a 14-day fit trial guarantee. If you are not satisfied with the fit or performance of your purchase,
-              please contact our customer service center at <strong className="text-[#0f2b48] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-[#0f2b48] font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
+              We stand behind our toys and games with a 14-day customer happiness guarantee. If you or your child are not completely satisfied with your purchase,
+              please contact our customer care team at <strong className="text-[#1e293b] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              <strong className="text-[#1e293b] font-semibold">{siteConfig.email}</strong> to request a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated facility at: <strong className="text-[#0f2b48] font-semibold">{siteConfig.address}</strong>.
-              Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
+              Returns must be shipped to our designated customer center at: <strong className="text-[#1e293b] font-semibold">{siteConfig.address}</strong>.
+              Refunds will be processed back to the original credit card within 5-7 business days of receiving the returned item.
             </p>
           </div>
         </div>

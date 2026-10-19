@@ -7,172 +7,224 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ username: "", email: "", phone: "", subject: "", message: "" });
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="contact">
+    <section className="py-16 sm:py-20 md:py-24 bg-white text-black font-sans border-b border-black/5" id="contact">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-black uppercase tracking-widest text-[#ff4370] bg-[#ff4370]/10 px-3.5 py-1 rounded-full">
+            We&apos;re Here to Help
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1e293b] tracking-tight mt-3">
+            Contact <span className="text-[#ff4370]">Information</span>
+          </h2>
+          <p className="text-black/60 text-xs sm:text-sm md:text-base leading-relaxed mt-2 font-normal">
+            Reach out to our customer care team for toy inquiries, bulk orders, or shipment tracking.
+          </p>
+        </div>
 
-        {/* Large Contact Heading */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase text-[#0f2b48] tracking-tight leading-[1.02] mb-12 sm:mb-16">
-          Contact
-        </h2>
+        {/* 4 Info Blocks matching Kiddex contact-info-section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          <div className="p-6 rounded-3xl bg-[#f8fafc] border border-black/6 text-center hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#ff4370]/10 text-2xl flex items-center justify-center mx-auto mb-3">
+              🏢
+            </div>
+            <h4 className="text-sm font-black text-[#1e293b] uppercase tracking-wider mb-1">
+              Corporate Office
+            </h4>
+            <p className="text-xs text-black/60 leading-relaxed">
+              {siteConfig.corpName}<br />{siteConfig.address}
+            </p>
+          </div>
 
-        {/* 2-Column Grid: Form + Info Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="p-6 rounded-3xl bg-[#f8fafc] border border-black/6 text-center hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#ffb703]/20 text-2xl flex items-center justify-center mx-auto mb-3">
+              📦
+            </div>
+            <h4 className="text-sm font-black text-[#1e293b] uppercase tracking-wider mb-1">
+              Main Warehouse
+            </h4>
+            <p className="text-xs text-black/60 leading-relaxed">
+              UPS Logistics Facility<br />Dallas, TX Distribution Center
+            </p>
+          </div>
 
-          {/* Left Column: Contact Form */}
-          <div className="flex flex-col">
+          <div className="p-6 rounded-3xl bg-[#f8fafc] border border-black/6 text-center hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#ff4370]/10 text-2xl flex items-center justify-center mx-auto mb-3">
+              ✉️
+            </div>
+            <h4 className="text-sm font-black text-[#1e293b] uppercase tracking-wider mb-1">
+              Email Address
+            </h4>
+            <p className="text-xs text-black/60 leading-relaxed">
+              <a href={`mailto:${siteConfig.email}`} className="text-[#ff4370] hover:underline font-bold">
+                {siteConfig.email}
+              </a>
+              <br />Fast 24-hr Email Response
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-[#f8fafc] border border-black/6 text-center hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-[#ffb703]/20 text-2xl flex items-center justify-center mx-auto mb-3">
+              📞
+            </div>
+            <h4 className="text-sm font-black text-[#1e293b] uppercase tracking-wider mb-1">
+              Phone Hotline
+            </h4>
+            <p className="text-xs text-black/60 leading-relaxed">
+              <a href={`tel:${siteConfig.phone}`} className="text-[#1e293b] hover:text-[#ff4370] font-black">
+                {siteConfig.phone}
+              </a>
+              <br />Toll-Free 24/7 Support
+            </p>
+          </div>
+        </div>
+
+        {/* 2-Column: Form + Map Card matching Kiddex contact-section */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          
+          {/* Form */}
+          <div className="lg:col-span-7 bg-[#fffafb] p-7 sm:p-10 rounded-3xl border border-black/8 shadow-sm">
+            <h3 className="text-2xl font-black text-[#1e293b] mb-6">
+              Send Us a Message
+            </h3>
+
             {submitted ? (
-              <div className="flex items-center gap-3 text-[#0f2b48] text-sm font-bold bg-white p-6 rounded-2xl border border-[#0f2b48]/20 shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="9 12 11 14 15 10" />
-                </svg>
-                Thank you! Our uniform support desk will respond within 24 hours.
+              <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-bold text-center">
+                🎉 Thank you for contacting Playhouse Games and Toy Store! Our team will get back to you shortly.
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-0">
-                {/* Full Name */}
-                <div className="py-5 border-b border-black/10">
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Full name"
-                    required
-                    className="w-full bg-transparent text-sm sm:text-base text-[#0f2b48] placeholder-black/40 focus:outline-none font-medium"
-                  />
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-[#1e293b] uppercase tracking-wider mb-1.5">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleChange}
+                      placeholder="Jane Doe"
+                      required
+                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff4370]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-[#1e293b] uppercase tracking-wider mb-1.5">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="jane@example.com"
+                      required
+                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff4370]"
+                    />
+                  </div>
                 </div>
 
-                {/* Email */}
-                <div className="py-5 border-b border-black/10">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email address"
-                    required
-                    className="w-full bg-transparent text-sm sm:text-base text-[#0f2b48] placeholder-black/40 focus:outline-none font-medium"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-[#1e293b] uppercase tracking-wider mb-1.5">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="(555) 000-0000"
+                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff4370]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-[#1e293b] uppercase tracking-wider mb-1.5">
+                      Subject *
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Toy recommendation or tracking"
+                      required
+                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff4370]"
+                    />
+                  </div>
                 </div>
 
-                {/* Message */}
-                <div className="py-5 border-b border-black/10">
+                <div>
+                  <label className="block text-xs font-bold text-[#1e293b] uppercase tracking-wider mb-1.5">
+                    Write Message *
+                  </label>
                   <textarea
                     name="message"
+                    rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="How can our uniform supply team assist your crew?"
-                    rows={4}
+                    placeholder="Tell us about the toys or order details..."
                     required
-                    className="w-full bg-transparent text-sm sm:text-base text-[#0f2b48] placeholder-black/40 focus:outline-none resize-none font-medium"
+                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#ff4370] resize-none"
                   />
                 </div>
 
-                {/* Submit Button */}
-                <div className="mt-8">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm bg-[#0f2b48] hover:bg-[#0b2238] transition-all duration-200 py-3.5 px-8 rounded-full shadow-md hover:scale-105 cursor-pointer"
-                  >
-                    Submit Inquiry
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  className="py-4 px-8 rounded-full bg-[#ff4370] hover:bg-[#e63560] text-white font-black text-xs uppercase tracking-wider transition-all shadow-md hover:scale-[1.02] cursor-pointer"
+                >
+                  Send Message →
+                </button>
               </form>
             )}
           </div>
 
-          {/* Right Column: Dark Contact Info Card */}
-          <div className="bg-[#0b2238] rounded-3xl overflow-hidden shadow-xl border border-[#1e3a5f]/40">
-            {/* Card Header */}
-            <div className="relative px-7 sm:px-9 pt-8 pb-7 text-center">
-              {/* Decorative corner dots */}
-              <span className="absolute top-4 left-4 w-2 h-2 rounded-full bg-[#f59e0b]" />
-              <span className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#f59e0b]" />
-              <span className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-[#f59e0b]" />
-              <span className="absolute bottom-4 right-4 w-2 h-2 rounded-full bg-[#f59e0b]" />
-
-              <p className="text-white text-base sm:text-lg font-bold leading-snug">
-                Get in touch with us!
+          {/* Map Column */}
+          <div className="lg:col-span-5 rounded-3xl overflow-hidden border border-black/8 shadow-md relative min-h-[360px] bg-[#1e293b] text-white p-8 flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-black uppercase text-[#ffb703] tracking-wider block mb-2">
+                Visit Our Headquarters
+              </span>
+              <h4 className="text-2xl font-black text-white mb-4">
+                Playhouse Games and Toy Store
+              </h4>
+              <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-6">
+                Located in the heart of Dallas, Texas. Our distribution facility packs and dispatches orders daily across the entire continental United States.
               </p>
-              <p className="text-white/80 text-sm font-medium mt-1">
-                Let&apos;s talk uniforms!
-              </p>
+              <div className="space-y-2 text-xs text-white/80">
+                <p>📍 {siteConfig.address}</p>
+                <p>📞 {siteConfig.phone}</p>
+                <p>✉️ {siteConfig.email}</p>
+                <p>⏰ Mon - Fri: 8:00am - 6:00pm EST</p>
+              </div>
             </div>
 
-            {/* Contact Info Items */}
-            <div className="px-7 sm:px-9 pb-8 flex flex-col gap-4">
-              {/* Email */}
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-11 h-11 rounded-full bg-[#133556] border border-[#f59e0b]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#f59e0b] transition-colors duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </div>
-                <span className="text-white/90 text-sm font-medium group-hover:text-[#f59e0b] transition-colors break-all">
-                  {siteConfig.email}
-                </span>
-              </a>
-
-              {/* Phone */}
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-11 h-11 rounded-full bg-[#133556] border border-[#f59e0b]/30 flex items-center justify-center flex-shrink-0 group-hover:bg-[#f59e0b] transition-colors duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </div>
-                <span className="text-white/90 text-sm font-medium group-hover:text-[#f59e0b] transition-colors">
-                  {siteConfig.phone}
-                </span>
-              </a>
-
-              {/* Address */}
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full bg-[#133556] border border-[#f59e0b]/30 flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <span className="text-white/90 text-sm font-medium">
-                  {siteConfig.address}
-                </span>
-              </div>
-
-              {/* Website */}
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-full bg-[#133556] border border-[#f59e0b]/30 flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <span className="text-white/90 text-sm font-medium">
-                  {siteConfig.websiteUrl}
-                </span>
-              </div>
+            <div className="pt-6 border-t border-white/10 text-[0.68rem] text-white/50">
+              Operated by {siteConfig.corpName}. Statement Descriptor: <strong className="text-white">{siteConfig.descriptor}</strong>.
             </div>
           </div>
 

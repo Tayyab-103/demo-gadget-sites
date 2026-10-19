@@ -2,148 +2,141 @@
 
 import React, { useState } from "react";
 
-interface FieldNote {
+interface TestimonialItem {
   id: string;
-  quote: string;
   name: string;
-  role: string;
-  location: string;
-  image: string;
-  alt: string;
+  date: string;
+  rating: number;
+  quote: string;
+  productName: string;
+  productPrice: string;
+  productImage: string;
 }
 
-const fieldNotes: FieldNote[] = [
+const testimonials: TestimonialItem[] = [
   {
     id: "01",
-    quote: "The soil-release finish and double stitching hold up remarkably well through heavy industrial laundry cycles. Our entire facility crew looks sharp and uniform.",
-    name: "Sarah J.",
-    role: "Plant Operations Director",
-    location: "Dallas, TX",
-    image: "/img/testimonialsec1.jpg",
-    alt: "Sarah J. Plant Operations Director in commercial work shirt",
+    name: "Kenneth R. Myers",
+    date: "June 3, 2026",
+    rating: 5,
+    quote: "I absolutely love this toy shop! The selection is fantastic and shipping was lightning fast. I found everything I needed for my kids' birthdays, from creative STEM puzzles to adorable cuddle plushies.",
+    productName: "Ultrasoft Stuffed Animal Plush Bunny",
+    productPrice: "$16.99",
+    productImage: "/img/products/plush-bunny.jpg",
   },
   {
     id: "02",
-    quote: "The cargo pants have practical tool pockets and comfortable flex stretch. Switching our fleet technicians to Pro Work Uniform Supply was our best procurement decision this year.",
-    name: "Marcus V.",
-    role: "Fleet Maintenance Supervisor",
-    location: "Chicago, IL",
-    image: "/img/testimonialsec2.jpg",
-    alt: "Marcus V. Fleet Maintenance Supervisor on facility floor",
+    name: "James W. Myers",
+    date: "June 12, 2026",
+    rating: 5,
+    quote: "Shopping at Playhouse Games and Toy Store has been a delightful experience. The quality of the board games is top-notch, and the non-toxic wooden puzzle is beautiful and durable.",
+    productName: "The Quest for Everglade Family Board Game",
+    productPrice: "$24.99",
+    productImage: "/img/products/board-game.jpg",
   },
   {
     id: "03",
-    quote: "Ordering bundle packs made outfitting our fulfillment warehouse fast and affordable. Prompt UPS delivery and top-tier fabric durability across every shift.",
-    name: "Elena R.",
-    role: "Logistics Operations Lead",
-    location: "Atlanta, GA",
-    image: "/img/testimonialsec3.jpg",
-    alt: "Elena R. Logistics Operations Lead in quality uniform facility",
+    name: "Amanda L. Henderson",
+    date: "June 25, 2026",
+    rating: 5,
+    quote: "Our weekend family game night is completely transformed! The kids love the 3D action figure and the magnetic castle tiles keep them happily engaged for hours without screens.",
+    productName: "Architect 3D Magnetic Castle Building Tiles",
+    productPrice: "$27.99",
+    productImage: "/img/products/magnetic-blocks.jpg",
   },
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const handleNavigate = (newIndex: number) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(newIndex);
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 450);
-  };
 
   const handlePrev = () => {
-    const nextIdx = (currentIndex - 1 + fieldNotes.length) % fieldNotes.length;
-    handleNavigate(nextIdx);
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    const nextIdx = (currentIndex + 1) % fieldNotes.length;
-    handleNavigate(nextIdx);
+    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
-  const current = fieldNotes[currentIndex];
+  const current = testimonials[currentIndex];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="testimonials">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#fff9fa] text-black font-sans border-b border-black/5" id="testimonials">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f2b48] leading-[1.08]">
-            Customer <span className="text-[#f59e0b]">Reviews</span>
+          <span className="text-xs font-black uppercase tracking-widest text-[#ff4370] bg-[#ff4370]/10 px-3.5 py-1 rounded-full">
+            Parent &amp; Family Feedback
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1e293b] tracking-tight mt-3">
+            What Parents <span className="text-[#ff4370]">Say About Us</span>
           </h2>
-          <p className="text-black/70 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
-            Feedback from operations managers, facility supervisors, and teams wearing our commercial uniforms.
+          <p className="text-black/60 text-xs sm:text-sm md:text-base leading-relaxed mt-2 font-normal">
+            Real stories from parents, grandparents, and gift shoppers who love Playhouse Games and Toy Store.
           </p>
         </div>
 
-        {/* Testimonial Feature Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#f8fafc] rounded-3xl p-6 sm:p-10 border border-black/8 shadow-sm">
+        {/* Carousel / Feature Card */}
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-7 sm:p-10 md:p-12 border border-black/8 shadow-xl relative">
           
-          {/* Left Column: Quote & Client Info */}
-          <div className="lg:col-span-6 flex flex-col justify-between min-h-[260px]">
-            <div>
-              <blockquote
-                className={`text-xl sm:text-2xl md:text-3xl font-black text-[#0f2b48] uppercase leading-snug tracking-tight transition-opacity duration-400 ${
-                  isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
-              >
+          <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+            {/* Left: Review Content */}
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[#ffb703] text-base">★★★★★</span>
+                <span className="text-xs font-black text-[#ff4370]">({current.rating}.0 Verified Parent)</span>
+              </div>
+
+              <blockquote className="text-base sm:text-lg md:text-xl font-bold text-[#1e293b] leading-relaxed mb-6 italic">
                 &ldquo;{current.quote}&rdquo;
               </blockquote>
-            </div>
 
-            <div className="mt-8 pt-6 border-t border-black/10 flex items-center justify-between">
-              <div>
-                <div className="text-base font-black text-[#0f2b48] uppercase tracking-tight">
-                  {current.name}
+              <div className="flex items-center justify-between pt-4 border-t border-black/6">
+                <div>
+                  <h4 className="text-base font-black text-[#1e293b]">{current.name}</h4>
+                  <span className="text-xs text-black/50 font-medium">{current.date}</span>
                 </div>
-                <div className="text-xs font-bold text-black/50 uppercase tracking-wider mt-0.5">
-                  {current.role} · {current.location}
+
+                {/* Nav Arrows */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handlePrev}
+                    className="w-10 h-10 rounded-full bg-[#f8fafc] border border-black/10 flex items-center justify-center text-[#1e293b] hover:bg-[#ff4370] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
+                    aria-label="Previous review"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    className="w-10 h-10 rounded-full bg-[#f8fafc] border border-black/10 flex items-center justify-center text-[#1e293b] hover:bg-[#ff4370] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
+                    aria-label="Next review"
+                  >
+                    →
+                  </button>
                 </div>
               </div>
+            </div>
 
-              {/* Navigation buttons */}
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#0f2b48] hover:bg-[#0f2b48] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Previous Testimonial"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#0f2b48] hover:bg-[#0f2b48] hover:text-white transition-all cursor-pointer shadow-xs font-bold"
-                  aria-label="Next Testimonial"
-                >
-                  →
-                </button>
+            {/* Right: Featured Toy Badge Card from Kiddex */}
+            <div className="w-full md:w-64 bg-[#fff5f8] rounded-2xl p-4 border border-[#ff4370]/20 flex-shrink-0 flex items-center gap-4">
+              <img
+                src={current.productImage}
+                alt={current.productName}
+                className="w-16 h-16 rounded-xl object-cover border border-black/5 flex-shrink-0"
+              />
+              <div className="min-w-0">
+                <span className="text-[0.62rem] font-black uppercase text-[#ff4370] block">
+                  Purchased Toy
+                </span>
+                <div className="text-xs font-black text-[#1e293b] truncate">
+                  {current.productName}
+                </div>
+                <div className="text-xs font-bold text-[#ff4370] mt-0.5">
+                  {current.productPrice}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Photograph */}
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-2xl bg-black/5 shadow-md">
-              {fieldNotes.map((note, idx) => (
-                <div
-                  key={note.id}
-                  className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-                    currentIndex === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                  }`}
-                >
-                  <img
-                    src={note.image}
-                    alt={note.alt}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
 
         </div>

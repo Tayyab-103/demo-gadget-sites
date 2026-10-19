@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto, Playfair_Display } from "next/font/google";
+import { Nunito, Poppins, Inter, Montserrat, Roboto, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,9 +7,16 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade commercial ${siteConfig.Product?.toLowerCase() || "uniforms"}, industrial work shirts, utility trousers, and safety workwear engineered for workforce durability, comfort, and compliance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Discover our wonderland of kids toys, superhero action figures, cuddly plushies, Montessori wooden STEM puzzles, family board games, RC racers, and creative play accessories.`;
 
 // Preload fonts
+const nunito = Nunito({
+  weight: ["300", "400", "500", "600", "700", "800", "900", "1000"],
+  subsets: ["latin"],
+  variable: "--font-nunito",
+  display: "swap",
+});
+
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -45,21 +52,24 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Commercial Work Uniforms & Industrial Workwear`,
+  title: `${siteConfig.brandName} | Kids Toys, Games, Puzzles & Action Figures`,
   description: siteDescription,
   keywords: [
-    "commercial uniforms",
-    "work uniforms",
-    "industrial workwear",
-    "work shirts",
-    "cargo work pants",
-    "safety jackets",
-    "high visibility uniforms",
-    "Pro Work Uniform Supply Shop",
-    "commercial clothing"
+    "Toy and Game Shops",
+    "kids toys",
+    "children games",
+    "action figures",
+    "plushies",
+    "wooden puzzles",
+    "STEM toys",
+    "board games",
+    "remote control cars",
+    "magnetic building blocks",
+    "Playhouse Games and Toy Store",
+    "Blitzing Branding LLC"
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Commercial Work Uniforms & Workwear`,
+    title: `${siteConfig.brandName} | Kids Toys, Games, Puzzles & Action Figures`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -67,16 +77,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Commercial Work Uniforms & Workwear`,
+    title: `${siteConfig.brandName} | Kids Toys, Games, Puzzles & Action Figures`,
     description: siteDescription,
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  let selectedFontClass = inter.variable;
-  let activeFontVar = "var(--font-inter)";
+  let selectedFontClass = nunito.variable;
+  let activeFontVar = "var(--font-nunito)";
 
-  if (siteConfig.theme.fontFamily === "Poppins") {
+  if (siteConfig.theme.fontFamily === "Nunito") {
+    selectedFontClass = nunito.variable;
+    activeFontVar = "var(--font-nunito)";
+  } else if (siteConfig.theme.fontFamily === "Poppins") {
     selectedFontClass = poppins.variable;
     activeFontVar = "var(--font-poppins)";
   } else if (siteConfig.theme.fontFamily === "Montserrat") {
@@ -88,6 +101,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } else if (siteConfig.theme.fontFamily === "Playfair Display") {
     selectedFontClass = playfairDisplay.variable;
     activeFontVar = "var(--font-playfair-display)";
+  } else if (siteConfig.theme.fontFamily === "Inter") {
+    selectedFontClass = inter.variable;
+    activeFontVar = "var(--font-inter)";
   }
 
   const {

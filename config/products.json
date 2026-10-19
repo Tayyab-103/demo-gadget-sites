@@ -2,85 +2,190 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Heavy-Duty Industrial Work Shirt",
-    "description": "Commercial-grade poplin work shirt engineered with reinforced double-needle stitching, dual button-through chest pockets, soil-release finish, and breathable comfort for service, facility, and plant technicians.",
-    "image": "/img/products/product-shirt.jpg",
+    "name": "Avenger & Superhero 3D Action Figure",
+    "description": "Articulated 3D superhero action figure with poseable dynamic joints, collector display base, authentic comic-book detailing, and child-safe durable ABS construction.",
+    "image": "/img/products/action-figure.jpg",
     "images": [
-      "/img/products/product-shirt.jpg",
-      "/img/products/product-shirt2.jpg",
-      "/img/products/product-shirt3.jpg"
+      "/img/products/action-figure.jpg",
+      "/img/products/rc-car.jpg",
+      "/img/products/magnetic-blocks.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Industrial & Service Uniforms",
+    "category": "Action Figures & Hero Toys",
     "billingModel": 1,
-    "ssPrice": "14.95",
+    "ssPrice": "14.99",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 24.95 },
-      { "quantity": 3, "price": 34.95 },
-      { "quantity": 4, "price": 44.95 },
-      { "quantity": 5, "price": 54.95 },
-      { "quantity": 6, "price": 64.95 },
-      { "quantity": 7, "price": 74.95 },
-      { "quantity": 8, "price": 84.95 }
+      { "quantity": 1, "price": 14.99 },
+      { "quantity": 2, "price": 26.99 },
+      { "quantity": 3, "price": 37.99 },
+      { "quantity": 4, "price": 47.99 },
+      { "quantity": 5, "price": 56.99 },
+      { "quantity": 6, "price": 65.99 }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Reinforced Utility Cargo Work Pants",
-    "description": "Rugged commercial twill work trousers with triple-stitched main seams, articulated knees, heavy-duty brass zipper, and multi-compartment cargo pockets designed for maximum durability on job sites.",
-    "image": "/img/products/product-pants.jpg",
+    "name": "Ultrasoft Stuffed Animal Plush Bunny",
+    "description": "Hypoallergenic, ultra-soft cuddle bunny plush toy with floppy ears, satin ribbon bow, reinforced safety stitching, and machine-washable cloud-like filling.",
+    "image": "/img/products/plush-bunny.jpg",
     "images": [
-      "/img/products/product-pants.jpg",
-      "/img/products/product-pants2.jpg",
-      "/img/products/product-pants3.jpg"
+      "/img/products/plush-bunny.jpg",
+      "/img/products/musical-doll.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Commercial Workwear Bottoms",
+    "category": "Plushies & Soft Toys",
     "billingModel": 1,
-    "ssPrice": "19.95",
+    "ssPrice": "16.99",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 19.95 },
-      { "quantity": 2, "price": 32.95 },
-      { "quantity": 3, "price": 45.95 },
-      { "quantity": 4, "price": 58.95 },
-      { "quantity": 5, "price": 69.95 },
-      { "quantity": 6, "price": 79.95 },
-      { "quantity": 7, "price": 89.95 },
-      { "quantity": 8, "price": 99.95 }
+      { "quantity": 1, "price": 16.99 },
+      { "quantity": 2, "price": 29.99 },
+      { "quantity": 3, "price": 41.99 },
+      { "quantity": 4, "price": 52.99 },
+      { "quantity": 5, "price": 62.99 }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "High-Visibility All-Weather Work Jacket",
-    "description": "ANSI/ISEA compliant weatherproof commercial work jacket with 3M reflective safety striping, fleece insulation, storm-flap zipper, and reinforced abrasion-resistant elbows for field logistics and outdoor crews.",
-    "image": "/img/products/product-jacket.jpg",
+    "name": "Montessori Rainbow Wooden STEM Shape Puzzle",
+    "description": "Eco-friendly natural beechwood geometric shape sorting puzzle with water-based non-toxic pastel dyes designed to nurture fine motor skills and spatial reasoning.",
+    "image": "/img/products/wooden-puzzle.jpg",
     "images": [
-      "/img/products/product-jacket.jpg",
-      "/img/products/product-jacket2.jpg",
-      "/img/products/product-jacket3.jpg"
+      "/img/products/wooden-puzzle.jpg",
+      "/img/products/magnetic-blocks.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Safety & Protective Outerwear",
+    "category": "STEM & Learning Puzzles",
     "billingModel": 1,
-    "ssPrice": "24.95",
+    "ssPrice": "19.99",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 24.95 },
-      { "quantity": 2, "price": 42.95 },
-      { "quantity": 3, "price": 59.95 },
-      { "quantity": 4, "price": 74.95 },
-      { "quantity": 5, "price": 89.95 },
-      { "quantity": 6, "price": 104.95 },
-      { "quantity": 7, "price": 118.95 },
-      { "quantity": 8, "price": 132.95 }
+      { "quantity": 1, "price": 19.99 },
+      { "quantity": 2, "price": 34.99 },
+      { "quantity": 3, "price": 48.99 },
+      { "quantity": 4, "price": 60.99 },
+      { "quantity": 5, "price": 71.99 }
+    ]
+  },
+  {
+    "id": "product4",
+    "stickyId": 4,
+    "name": "The Quest for Everglade Family Board Game",
+    "description": "Immersive tabletop adventure board game with enchanted forest map, illustrated quest cards, colorful dice, wooden player meeples, and thrilling multiplayer cooperative gameplay.",
+    "image": "/img/products/board-game.jpg",
+    "images": [
+      "/img/products/board-game.jpg",
+      "/img/products/wooden-puzzle.jpg"
+    ],
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Board Games & Family Fun",
+    "billingModel": 1,
+    "ssPrice": "24.99",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 24.99 },
+      { "quantity": 2, "price": 44.99 },
+      { "quantity": 3, "price": 62.99 },
+      { "quantity": 4, "price": 78.99 }
+    ]
+  },
+  {
+    "id": "product5",
+    "stickyId": 5,
+    "name": "Cyberace High-Speed Remote Control RC Racer",
+    "description": "2.4GHz anti-interference radio control race car featuring aerodynamic chassis, luminous LED night headlights, responsive dual-joystick remote, and high-traction rubber wheels.",
+    "image": "/img/products/rc-car.jpg",
+    "images": [
+      "/img/products/rc-car.jpg",
+      "/img/products/action-figure.jpg"
+    ],
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Vehicles & RC Toys",
+    "billingModel": 1,
+    "ssPrice": "29.99",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 29.99 },
+      { "quantity": 2, "price": 52.99 },
+      { "quantity": 3, "price": 74.99 },
+      { "quantity": 4, "price": 92.99 }
+    ]
+  },
+  {
+    "id": "product6",
+    "stickyId": 6,
+    "name": "Architect 3D Magnetic Castle Building Tiles",
+    "description": "Jewel-toned translucent magnetic building tiles and geometric shapes engineered with ultra-strong neodymium corner magnets for endless creative 3D castles and towers.",
+    "image": "/img/products/magnetic-blocks.jpg",
+    "images": [
+      "/img/products/magnetic-blocks.jpg",
+      "/img/products/wooden-puzzle.jpg"
+    ],
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Building & Construction",
+    "billingModel": 1,
+    "ssPrice": "27.99",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 27.99 },
+      { "quantity": 2, "price": 49.99 },
+      { "quantity": 3, "price": 69.99 },
+      { "quantity": 4, "price": 88.99 }
+    ]
+  },
+  {
+    "id": "product7",
+    "stickyId": 7,
+    "name": "Enchanted Princess Rotating & Musical 3D Doll",
+    "description": "Fairytale musical doll dressed in a glittering multi-tier ballgown with tiara, rotating 3D melody music box base, and hand-painted delightful storytelling expressions.",
+    "image": "/img/products/musical-doll.jpg",
+    "images": [
+      "/img/products/musical-doll.jpg",
+      "/img/products/plush-bunny.jpg"
+    ],
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Dolls & Interactive Play",
+    "billingModel": 1,
+    "ssPrice": "21.99",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 21.99 },
+      { "quantity": 2, "price": 38.99 },
+      { "quantity": 3, "price": 54.99 },
+      { "quantity": 4, "price": 68.99 }
+    ]
+  },
+  {
+    "id": "product8",
+    "stickyId": 8,
+    "name": "SplashMaster Dual-Nozzle Outdoor Water Blaster",
+    "description": "Ergonomic rapid-fire pump action water squirt blaster with 800ml leak-proof reservoir and 32-foot long-range stream for family backyard fun and sunny summer games.",
+    "image": "/img/products/water-blaster.jpg",
+    "images": [
+      "/img/products/water-blaster.jpg",
+      "/img/products/rc-car.jpg"
+    ],
+    "showIngredients": false,
+    "ingredientsImage": "",
+    "category": "Outdoor & Water Games",
+    "billingModel": 1,
+    "ssPrice": "18.99",
+    "ssShipping": "0.00",
+    "bundles": [
+      { "quantity": 1, "price": 18.99 },
+      { "quantity": 2, "price": 32.99 },
+      { "quantity": 3, "price": 45.99 },
+      { "quantity": 4, "price": 57.99 }
     ]
   }
 ]

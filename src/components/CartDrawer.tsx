@@ -18,44 +18,74 @@ export default function CartDrawer() {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-xs z-999 transition-all duration-300 ${
+        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-50 transition-all duration-300 ${
           isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setIsCartOpen(false)}
       />
+
       {/* Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[430px] bg-white text-black z-1000 border-l border-black/10 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
+        className={`fixed top-0 bottom-0 right-0 w-full max-w-[430px] bg-white text-black z-50 border-l border-black/10 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl font-sans ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-6 border-b border-black/10 flex items-center justify-between bg-[#f0f4f8]">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#f59e0b]" />
-            <h3 className="m-0 text-sm font-black text-[#0f2b48] tracking-widest uppercase font-mono">
-              UNIFORM CART
+        {/* Header */}
+        <div className="p-5 sm:p-6 border-b border-black/8 flex items-center justify-between bg-[#fff5f8]">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff4370]" />
+            <h3 className="m-0 text-sm font-black text-[#1e293b] tracking-wider uppercase">
+              Shopping Cart ({cart.length})
             </h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="bg-transparent border-none text-2xl cursor-pointer text-black/40 hover:text-black leading-none transition-colors"
+            className="w-8 h-8 rounded-full bg-white text-black/60 hover:text-black flex items-center justify-center cursor-pointer shadow-xs text-xl border border-black/5"
             aria-label="Close Cart"
           >
             &times;
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6">
+        {/* Free Shipping Tracker */}
+        <div className="bg-[#fff9fa] px-6 py-3 border-b border-black/5 text-xs text-black/75">
+          {Number(getCartTotal()) >= 89.99 ? (
+            <span className="font-bold text-emerald-600 flex items-center gap-1.5">
+              <span>🎉</span> Congratulations! You unlocked FREE UPS Express Shipping!
+            </span>
+          ) : (
+            <div>
+              <span>Add </span>
+              <strong className="text-[#ff4370]">
+                ${(89.99 - Number(getCartTotal())).toFixed(2)}
+              </strong>
+              <span> more to unlock </span>
+              <strong className="text-[#1e293b]">Free Shipping</strong>!
+              <div className="w-full bg-black/10 h-1.5 rounded-full mt-2 overflow-hidden">
+                <div
+                  className="bg-[#ff4370] h-full rounded-full transition-all duration-300"
+                  style={{
+                    width: `${Math.min(100, (Number(getCartTotal()) / 89.99) * 100)}%`,
+                  }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Cart Item List */}
+        <div className="flex-1 overflow-y-auto p-5 sm:p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-black/50 text-xs font-mono uppercase tracking-wider mb-6">
-                Your uniform cart is empty.
+              <div className="text-5xl mb-4">🧸</div>
+              <p className="text-black/50 text-sm font-bold uppercase tracking-wider mb-6">
+                Your toy cart is empty.
               </p>
               <button
-                className="inline-block font-black text-center whitespace-nowrap bg-[#0f2b48] hover:bg-[#0b2238] text-white transition-all py-3.5 px-7 rounded-xl text-xs uppercase tracking-wider cursor-pointer shadow-sm"
+                className="inline-block font-black text-center whitespace-nowrap bg-[#ff4370] hover:bg-[#e63560] text-white transition-all py-3.5 px-8 rounded-full text-xs uppercase tracking-wider cursor-pointer shadow-md"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Uniform Catalog
+                Start Exploring Toys
               </button>
             </div>
           ) : (
@@ -85,57 +115,53 @@ export default function CartDrawer() {
 
               return (
                 <div
-                  className="flex gap-4 pb-5 mb-5 border-b border-black/10 items-start relative group"
+                  className="flex gap-4 pb-5 mb-5 border-b border-black/8 items-start relative group"
                   key={item.Id}
                 >
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-cover rounded-xl bg-black/5 flex-shrink-0"
-                    onError={(e) => {
-                      e.currentTarget.src =
-                        "/img/products/product-shirt.jpg";
-                    }}
+                    className="w-16 h-16 object-cover rounded-2xl bg-black/5 flex-shrink-0 border border-black/5"
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="font-black text-xs sm:text-sm text-[#0f2b48] mb-0.5 truncate uppercase tracking-tight">
+                    <div className="font-black text-xs sm:text-sm text-[#1e293b] mb-0.5 truncate tracking-tight">
                       {item.Name}
                     </div>
-                    <div className="text-[0.62rem] text-black/50 mb-3 uppercase tracking-wider font-mono">
+                    <div className="text-[0.68rem] text-black/50 mb-2 font-bold">
                       {item.Label || "Single Unit"}
                     </div>
 
                     <div className="flex items-center justify-between gap-3">
                       {/* Stepper Controls */}
-                      <div className="flex items-center gap-1 bg-black/5 p-1 rounded-lg">
+                      <div className="flex items-center gap-1 bg-black/5 p-1 rounded-xl">
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="w-5 h-5 rounded-md bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed"
+                          className="w-6 h-6 rounded-lg bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed shadow-xs"
                         >
                           -
                         </button>
-                        <span className="px-2 text-xs text-black font-black font-mono">
+                        <span className="px-2 text-xs text-black font-black">
                           {item.Qty}
                         </span>
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="w-5 h-5 rounded-md bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed"
+                          className="w-6 h-6 rounded-lg bg-white text-black flex items-center justify-center cursor-pointer text-xs font-black disabled:opacity-25 disabled:cursor-not-allowed shadow-xs"
                         >
                           +
                         </button>
                       </div>
 
-                      <div className="text-sm font-black text-[#0f2b48] font-mono">
-                        ${item.Price}
+                      <div className="text-sm font-black text-[#ff4370]">
+                        ${item.Total}
                       </div>
                     </div>
                   </div>
 
                   <button
                     onClick={() => removeFromCart(item.Id)}
-                    className="bg-transparent border-none text-black/30 hover:text-red-500 cursor-pointer text-lg px-1 transition-colors self-start leading-none"
+                    className="bg-transparent border-none text-black/30 hover:text-red-500 cursor-pointer text-xl px-1 transition-colors self-start leading-none"
                     aria-label="Remove item"
                   >
                     &times;
@@ -146,28 +172,38 @@ export default function CartDrawer() {
           )}
         </div>
 
+        {/* Footer Actions */}
         {cart.length > 0 && (
-          <div className="p-6 border-t border-black/10 bg-white">
-            <div className="flex items-center justify-between mb-5 font-mono">
-              <span className="font-black text-black uppercase text-xs tracking-wider">
-                Subtotal
+          <div className="p-5 sm:p-6 border-t border-black/8 bg-white">
+            <div className="flex items-center justify-between mb-4">
+              <span className="font-bold text-black/70 uppercase text-xs tracking-wider">
+                Subtotal:
               </span>
-              <span className="font-black text-lg text-[#0f2b48]">
+              <span className="font-black text-2xl text-[#ff4370]">
                 ${getCartTotal()}
               </span>
             </div>
 
-            <Link
-              href="/checkout"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-[#0f2b48] hover:bg-[#0b2238] text-white transition-all py-3.5 px-6 rounded-xl text-xs w-full shadow-md mb-2.5"
-              onClick={() => setIsCartOpen(false)}
-            >
-              Proceed to Checkout →
-            </Link>
+            <div className="grid grid-cols-2 gap-2.5 mb-2.5">
+              <Link
+                href="/cart"
+                className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-[#f8fafc] border border-black/10 hover:bg-black/5 text-[#1e293b] transition-all py-3.5 px-4 rounded-full text-xs text-center shadow-xs"
+                onClick={() => setIsCartOpen(false)}
+              >
+                View Cart
+              </Link>
+              <Link
+                href="/checkout"
+                className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-[#ff4370] hover:bg-[#e63560] text-white transition-all py-3.5 px-4 rounded-full text-xs text-center shadow-md hover:scale-[1.02]"
+                onClick={() => setIsCartOpen(false)}
+              >
+                Checkout →
+              </Link>
+            </div>
 
             <button
               onClick={() => setIsCartOpen(false)}
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider bg-transparent border border-black/20 text-[#0f2b48] hover:bg-[#f0f4f8] transition-all py-3 px-6 rounded-xl text-xs w-full cursor-pointer"
+              className="w-full text-center text-xs font-bold text-black/50 hover:text-black py-2 transition-colors cursor-pointer"
             >
               Continue Shopping
             </button>

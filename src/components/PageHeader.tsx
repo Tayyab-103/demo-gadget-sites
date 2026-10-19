@@ -13,31 +13,32 @@ interface PageHeaderProps {
 
 export default function PageHeader({ eyebrow, title, subtitle, image, currentLabel }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-[#0b2238] text-white pt-24 pb-14 sm:pt-28 sm:pb-16 md:pt-36 md:pb-20 border-b border-white/10">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
-        style={{ backgroundImage: `url('${image}')` }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b2238] via-[#0b2238]/90 to-[#0f2b48]/70" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#fff5f8] via-[#fff9fa] to-white text-[#1e293b] pt-28 pb-12 sm:pt-36 sm:pb-16 md:pt-40 md:pb-18 border-b border-black/5 font-sans">
+      {/* Decorative background shapes */}
+      <div className="absolute top-8 left-12 w-28 h-28 rounded-full bg-[#ffb703]/20 blur-xl pointer-events-none" />
+      <div className="absolute bottom-6 right-16 w-40 h-40 rounded-full bg-[#ff4370]/15 blur-2xl pointer-events-none" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-4 flex items-center justify-center gap-2 text-[0.68rem] font-mono font-bold uppercase tracking-widest text-white/60">
-          <Link href="/" className="hover:text-[#f59e0b] transition-colors">Home</Link>
+        {/* Kiddex Breadcrumb nav */}
+        <nav aria-label="Breadcrumb" className="mb-4 flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-black/50">
+          <Link href="/" className="hover:text-[#ff4370] transition-colors">Home</Link>
           <span aria-hidden="true">/</span>
-          <span className="text-[#f59e0b]">{currentLabel}</span>
+          <span className="text-[#ff4370]">{currentLabel}</span>
         </nav>
 
-
+        {eyebrow && (
+          <span className="inline-block px-3.5 py-1 rounded-full bg-[#ff4370]/10 text-[#ff4370] text-xs font-black uppercase tracking-wider mb-3">
+            {eyebrow}
+          </span>
+        )}
 
         {/* Title */}
-        <h1 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+        <h1 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl font-black text-[#1e293b] leading-tight tracking-tight">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="mx-auto mt-4 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-white/80 font-normal">
+          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-black/65 font-normal">
             {subtitle}
           </p>
         )}

@@ -2,114 +2,121 @@
 
 import React from "react";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { ScallopTop, ScallopBottom, WhimsicalStar } from "./ScallopBorders";
 
 export default function Hero() {
   return (
-    <section className="pt-28 sm:pt-32 md:pt-36 pb-0 bg-[#f8fafc] text-black min-h-[90vh] flex flex-col">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col">
-        
-        {/* Main Hero Grid — 2 columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 flex-1 items-stretch">
-          
-          {/* Left Column: Headline + Description */}
-          <div className="flex flex-col justify-center py-8 sm:py-12 lg:py-16">
+    <section className="relative bg-[#fde599] font-sans pt-24 sm:pt-28 md:pt-32 pb-0 overflow-hidden select-none">
+      {/* Top Scalloped Cloud Fringe */}
+      <ScallopTop color="#fde599" />
 
-            {/* Bold headline with arrow */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase text-[#0f2b48] tracking-tight leading-[1.02] mb-6">
-              <span className="flex items-center gap-3 flex-wrap">
-                <span>BUILT FOR</span>
-                <svg className="w-10 h-6 sm:w-14 sm:h-8 text-[#f59e0b]" viewBox="0 0 48 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="2" y1="12" x2="42" y2="12" />
-                  <polyline points="34 4 42 12 34 20" />
-                </svg>
-              </span>
-              <span className="block">COMMERCIAL <span className="text-[#f59e0b]">TEAMS</span></span>
-              <span className="block">NOT JUST <span className="text-[#0f2b48]">WORKDAYS</span></span>
+      {/* Floating Animated Cartoon Elements */}
+      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+        {/* Floating Twinkling Stars */}
+        <WhimsicalStar className="absolute top-16 left-12 w-6 h-6 text-white/90 zoom-fade" />
+        <WhimsicalStar className="absolute top-28 left-[45%] w-5 h-5 text-white/95 zoom-fade" />
+        <WhimsicalStar className="absolute top-14 right-1/3 w-6 h-6 text-white/90 zoom-fade" />
+        <WhimsicalStar className="absolute bottom-16 right-1/4 w-5 h-5 text-white/95 zoom-fade" />
+        <WhimsicalStar className="absolute bottom-24 left-1/4 w-4 h-4 text-white/80 zoom-fade" />
+
+        {/* Floating Pink Butterfly */}
+        <div className="absolute top-8 sm:top-12 left-[36%] sm:left-[38%] md:left-[40%] w-16 sm:w-20 md:w-24 float-bob-y">
+          <img
+            src="/img/anim-butterfly.png"
+            alt="Cartoon Butterfly"
+            className="w-full h-auto drop-shadow-sm"
+          />
+        </div>
+
+        {/* Floating Car on Cloud - Bottom Left */}
+        <div className="absolute bottom-4 sm:bottom-8 left-2 sm:left-6 md:left-12 w-20 sm:w-24 md:w-28 float-bob-x">
+          <img
+            src="/img/anim-car-cloud.png"
+            alt="Toy Car on Cloud"
+            className="w-full h-auto drop-shadow-sm"
+          />
+        </div>
+
+        {/* Floating Blossom Flower on Cloud - Top Right */}
+        <div className="absolute top-10 sm:top-14 right-4 sm:right-10 md:right-16 w-16 sm:w-20 md:w-24 float-bob-y">
+          <img
+            src="/img/anim-flower-cloud.png"
+            alt="Flower on Cloud"
+            className="w-full h-auto drop-shadow-sm"
+          />
+        </div>
+
+        {/* Floating Bumblebee - Mid Right */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-12 md:right-24 w-10 sm:w-12 md:w-14 float-bob-x">
+          <img
+            src="/img/anim-bee.png"
+            alt="Cute Bee"
+            className="w-full h-auto drop-shadow-sm"
+          />
+        </div>
+
+        {/* Soft Pastel Rainbow - Bottom Right */}
+        <div className="absolute bottom-0 right-0 w-32 sm:w-44 md:w-56 opacity-90">
+          <img
+            src="/img/anim-rainbow.png"
+            alt="Pastel Rainbow"
+            className="w-full h-auto"
+          />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-4 pb-12 sm:pb-16 md:pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          
+          {/* Left Column: Circular Girl with Teddy Bear */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-start items-center relative">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
+              {/* Concentric Halo Rings */}
+              <div className="absolute inset-0 rounded-full border-2 border-white/60 -scale-x-100 rotate-12 pointer-events-none" />
+              <div className="absolute -inset-3 rounded-full border border-white/40 pointer-events-none" />
+
+              {/* Girl Circular Frame */}
+              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-84 md:h-84 rounded-full overflow-hidden bg-white shadow-xl border-4 border-white flex items-center justify-center">
+                <img
+                  src="/img/herosection.png"
+                  alt="Happy Girl Holding Teddy Bear Toy"
+                  className="w-full h-full object-cover scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "/img/kiddex_hero_banner.png";
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Title, Price, & View Shop Button */}
+          <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-[#1e293b] leading-[1.12] tracking-tight">
+              The Best Kids Toy<br />Store in the City
             </h1>
 
-            <p className="text-black/70 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-8 font-normal">
-              Pro-grade commercial uniforms, heavy-duty industrial work shirts, reinforced utility trousers, and safety workwear engineered for maximum shift durability.
-            </p>
-          </div>
-
-          {/* Right Column: Large Hero Image with Shop Now */}
-          <div className="relative rounded-3xl overflow-hidden min-h-[340px] sm:min-h-[420px] lg:min-h-0 bg-black/5 group shadow-lg border border-black/5">
-            <img
-              src="/img/herosection1.jpg"
-              alt={`${siteConfig.brandName} workforce uniform collection`}
-              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b2238]/60 via-transparent to-transparent" />
-            
-            {/* Shop Now floating button */}
-            <Link
-              href="/shop"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#0f2b48] text-white flex items-center justify-center text-[0.62rem] sm:text-xs font-black uppercase tracking-wider shadow-2xl hover:bg-[#f59e0b] hover:text-[#0f2b48] hover:scale-110 transition-all duration-300 border-2 border-white/30 z-10"
-            >
-              <span className="text-center leading-tight">SHOP<br />NOW</span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Bottom Row: 2 Category Cards + CTA Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 py-6 sm:py-8">
-          
-          {/* Category Card 1 */}
-          <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
-            <img
-              src="/img/herosection2.jpg"
-              alt="Industrial work shirts collection"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3.5">
-              <span className="text-white text-xs font-black uppercase tracking-wider">Industrial Shirts</span>
+            <div className="mt-4 sm:mt-5 text-xl sm:text-2xl font-black text-[#1e293b] flex items-baseline gap-2">
+              <span className="font-bold text-[#1e293b]/90 text-lg sm:text-xl">From</span>
+              <span className="text-[#ff4370] text-3xl sm:text-4xl md:text-[2.6rem] font-black tracking-tight">
+                $42.99
+              </span>
             </div>
-          </Link>
 
-          {/* Category Card 2 */}
-          <Link href="/shop" className="group relative rounded-2xl overflow-hidden min-h-[160px] sm:min-h-[180px] bg-black/5 border border-black/5 shadow-sm hover:shadow-lg transition-all duration-300">
-            <img
-              src="/img/herosection3.jpg"
-              alt="Commercial safety apparel and outerwear collection"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3.5">
-              <span className="text-white text-xs font-black uppercase tracking-wider">Safety &amp; Outerwear</span>
+            <div className="mt-6 sm:mt-8">
+              <Link
+                href="/shop"
+                className="inline-flex items-center justify-center px-10 py-3.5 sm:px-12 sm:py-4 rounded-full bg-white text-[#ff4370] font-black text-sm sm:text-base tracking-wide border-2 border-dashed border-[#ff4370] hover:bg-[#ff4370] hover:text-white hover:border-solid hover:scale-105 transition-all duration-200 shadow-md shadow-[#ff4370]/10 cursor-pointer"
+              >
+                View Shop
+              </Link>
             </div>
-          </Link>
-
-          {/* CTA Buttons — spanning right 2 columns */}
-          <div className="sm:col-span-2 flex items-end justify-end gap-3 py-2 sm:py-0">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 justify-center font-black uppercase tracking-wider text-[#0f2b48] text-xs sm:text-sm bg-white hover:bg-[#e2e8f0] border border-black/10 transition-all duration-200 py-3.5 px-7 rounded-xl text-center shadow-sm"
-            >
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 16 16 12 12 8" />
-                <line x1="8" y1="12" x2="16" y2="12" />
-              </svg>
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 justify-center font-black uppercase tracking-wider text-white text-xs sm:text-sm bg-[#0f2b48] hover:bg-[#0b2238] transition-all duration-200 py-3.5 px-7 rounded-xl text-center shadow-md hover:scale-105"
-            >
-              Contact Us
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </Link>
           </div>
 
         </div>
-
       </div>
+
+      {/* Bottom Scalloped Cloud Fringe */}
+      <ScallopBottom color="#fde599" />
     </section>
   );
 }

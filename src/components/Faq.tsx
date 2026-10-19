@@ -10,33 +10,33 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqItems = [
   {
     number: "01",
-    question: "How does the 14-day trial & return policy work?",
-    answer: `Outfit your crew with confidence. If you're not completely satisfied with the uniform fit, fabric, or finish, return items within ${siteConfig.trialPeriod || 14} days for a full refund.`,
+    question: "Are your toys and games child-safe and non-toxic?",
+    answer: "Yes, 100%. Every toy, plush animal, wooden puzzle, and action figure in our store is manufactured with BPA-free, lead-free, non-toxic materials rigorously tested to meet or exceed ASTM and CPSIA child safety regulations.",
   },
   {
     number: "02",
-    question: "What fabrics and construction are used in our uniforms?",
-    answer: "Our commercial workwear is manufactured using soil-release poly-cotton poplin, rugged ripstop twill, and weatherproof ANSI-rated polyester shells with reinforced double and triple-stitched stress points.",
+    question: "How does the 14-day happiness & return guarantee work?",
+    answer: `We want every child and family to love their toys. If you or your little ones are not completely delighted with your purchase, you may return the item in original condition within ${siteConfig.trialPeriod || 14} days for a hassle-free full refund.`,
   },
   {
     number: "03",
-    question: "How quickly does my order ship?",
-    answer: `Orders are packed and dispatched within 1-2 business days from our distribution center via ${siteConfig.shippingCarrier}, typically arriving in ${siteConfig.shippingPeriod} business days with tracking.`,
+    question: "How fast is shipping and will I receive a tracking code?",
+    answer: `Orders are packed and dispatched from our fulfillment center within 1-2 business days via ${siteConfig.shippingCarrier}. Delivery typically arrives within ${siteConfig.shippingPeriod} business days with end-to-end tracking sent directly to your email.`,
   },
   {
     number: "04",
-    question: "How do I choose the right uniform sizing for my crew?",
-    answer: "Our uniforms fit true to standard US commercial sizing with relaxed articulated cuts designed for ease of movement over base layers and through full work shifts.",
+    question: "What age groups are your toys and games designed for?",
+    answer: "Our catalog is thoughtfully categorized for all developmental stages: infants (0-12 months), toddlers (1-3 years), preschoolers (4-6 years), early school age (7-9 years), and preteens, teens, and whole families for board games and complex STEM sets.",
   },
   {
     number: "05",
-    question: "How will the charge appear on my card statement?",
-    answer: `Your credit card statement will display the transaction descriptor "${siteConfig.descriptor}".`,
+    question: "How will this transaction appear on my card statement?",
+    answer: `For complete billing clarity, your credit card statement will display the descriptor: "${siteConfig.descriptor}".`,
   },
   {
     number: "06",
-    question: "How should our facility wash and care for the uniforms?",
-    answer: "Our uniforms are commercial-laundry friendly. Machine wash warm with like colors; tumble dry medium or hang dry to maintain soil-release properties and seam durability.",
+    question: "Can I order bundle packs for party favors or holiday gifts?",
+    answer: "Yes! We offer discounted bundle tiers on all popular items (2-Packs, 3-Packs, 4-Packs, etc.), making it easy and economical to shop for siblings, classroom gifts, birthday party favors, and family holidays.",
   },
 ];
 
@@ -48,16 +48,19 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white text-black border-t border-black/6" id="faq">
+    <section className="py-16 sm:py-20 md:py-24 bg-white text-black font-sans border-b border-black/5" id="faq">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[#0f2b48] leading-[1.08]">
-            Frequently Asked <span className="text-[#f59e0b]">Questions</span>
+          <span className="text-xs font-black uppercase tracking-widest text-[#ff4370] bg-[#ff4370]/10 px-3.5 py-1 rounded-full">
+            Help &amp; Answers
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1e293b] tracking-tight mt-3">
+            Frequently Asked <span className="text-[#ff4370]">Questions</span>
           </h2>
-          <p className="text-black/70 text-xs sm:text-sm md:text-base leading-relaxed mt-3 max-w-lg mx-auto font-normal">
-            Common questions regarding commercial uniform sizing, materials, shipping, and returns.
+          <p className="text-black/60 text-xs sm:text-sm md:text-base leading-relaxed mt-2 font-normal">
+            Everything you need to know about toy safety, shipping, 14-day trials, and family recommendations.
           </p>
         </div>
 
@@ -65,21 +68,22 @@ export default function Faq() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Support Box */}
-          <div className="lg:col-span-4 rounded-3xl bg-[#0b2238] text-white p-7 sm:p-9 shadow-xl flex flex-col justify-between border border-[#0f2b48]/40">
+          <div className="lg:col-span-4 rounded-3xl bg-[#1e293b] text-white p-7 sm:p-9 shadow-xl flex flex-col justify-between border border-white/10">
             <div>
-              <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-3 text-white">
-                Have a Question?
+              <div className="text-4xl mb-3">🧸</div>
+              <h3 className="text-xl sm:text-2xl font-black tracking-tight mb-3 text-white">
+                Have a Toy Question?
               </h3>
               <p className="text-xs sm:text-sm text-white/75 leading-relaxed mb-6 font-normal">
-                Our uniform support desk is ready to assist you with sizing recommendations, volume orders, and carrier tracking.
+                Our customer care desk is always excited to assist you with age recommendations, game rules, and shipment tracking.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-[#0b2238] text-xs bg-[#f59e0b] hover:bg-[#d97706] transition-all py-3.5 px-6 rounded-xl shadow-sm text-center"
+              className="inline-flex items-center justify-center font-black uppercase tracking-wider text-[#1e293b] text-xs bg-[#ffb703] hover:bg-white transition-all py-3.5 px-6 rounded-full shadow-sm text-center"
             >
-              Contact Support →
+              Contact Support Desk →
             </Link>
           </div>
 
@@ -92,7 +96,7 @@ export default function Faq() {
                 <div
                   key={item.number}
                   className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                    isOpen ? "border-[#0f2b48]/30 bg-[#f8fafc] shadow-sm" : "border-black/8 bg-white hover:border-[#0f2b48]/20"
+                    isOpen ? "border-[#ff4370]/30 bg-[#fff9fa] shadow-sm" : "border-black/8 bg-white hover:border-[#ff4370]/20"
                   }`}
                 >
                   <button
@@ -101,17 +105,17 @@ export default function Faq() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-3.5 sm:gap-4 flex-1">
-                      <span className="text-xs font-mono font-bold text-[#f59e0b]">
+                      <span className="text-xs font-mono font-black text-[#ff4370]">
                         {item.number}
                       </span>
-                      <h4 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#0f2b48]">
+                      <h4 className="text-sm sm:text-base font-black text-[#1e293b]">
                         {item.question}
                       </h4>
                     </div>
 
                     <span
                       className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-transform duration-200 flex-shrink-0 ${
-                        isOpen ? "bg-[#0f2b48] text-white rotate-45" : "bg-black/5 text-black"
+                        isOpen ? "bg-[#ff4370] text-white rotate-45" : "bg-black/5 text-black"
                       }`}
                     >
                       +

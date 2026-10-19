@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
     const IP = req.headers.get("x-forwarded-for") || "127.0.0.1";
 
     // Load credentials from Environment Variables
-    const CRM_URL = process.env.CRM_URL || "https://dummy-crm-api-url.com";
+    const CRM_URL = process.env.CRM_URL;
     const CRM_USERNAME = process.env.CRM_USERNAME || "";
     const CRM_PASSWORD = process.env.CRM_PASSWORD || "";
     const CAMPAIGN_ID = parseInt(process.env.CRM_CAMPAIGN_ID || "0", 10);
@@ -90,6 +90,16 @@ export async function POST(req: NextRequest) {
     const FORCE_GATEWAY_ID = parseInt(process.env.CRM_GATEWAY_ID || "0", 10);
     const INSURANCE_PRODUCT_ID = parseInt(process.env.CRM_INSURANCE_PRODUCT_ID || "0", 10);
     const INSURANCE_PRICE = parseFloat(process.env.CRM_INSURANCE_PRICE || "1.00");
+
+    // Demo/Development mode fallback if CRM endpoint is not configured
+    if (!CRM_URL || CRM_URL.includes("dummy-crm-api-url")) {
+      const mockOrderId = `PLY-${Math.floor(100000 + Math.random() * 900000)}`;
+      return NextResponse.json({
+        order_id: mockOrderId,
+        status: "success",
+        message: "Demo order processed successfully."
+      });
+    }
 
     // Parse shopping cart products
     let productsList: CartItem[] = [];

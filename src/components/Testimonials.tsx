@@ -23,30 +23,30 @@ const customerStories: CustomerStory[] = [
     logo: "THE CARTER FAMILY",
     logoSub: "FAMILY OF 5",
     quote:
-      "“With three kids growing out of everything, finding one store that fits all of us is a lifesaver. The tees still look new after months of washing.”",
+      "“With three kids growing out of everything, finding one store that fits all of us is a lifesaver. My maxi dress still looks new after months of washing.”",
     authorName: "Jessica Carter",
     authorRole: "Mom of Three",
-    image: "/img/stories/story-tactical.jpg",
+    image: "/img/hero2.jpg",
   },
   {
     id: "02",
     logo: "THE NGUYEN FAMILY",
     logoSub: "FAMILY OF 4",
     quote:
-      "“The jogger sets survive recess, mud puddles, and the washing machine. Soft enough that my son actually asks to wear them.”",
+      "“The quilted sweatshirt is warm without being bulky and held its shape wash after wash. It has become my go-to for weekends.”",
     authorName: "David Nguyen",
     authorRole: "Dad of Two",
-    image: "/img/stories/story-medical.jpg",
+    image: "/img/contact.jpg",
   },
   {
     id: "03",
     logo: "THE MORALES FAMILY",
     logoSub: "THREE GENERATIONS",
     quote:
-      "“We ordered matching pajamas for the holidays, from grandma down to the baby. Everything fit, felt cozy, and the photos were priceless.”",
+      "“I ordered the quarter-zip pullover for myself and my mom. Both fit true to size, feel incredibly soft, and look great with jeans.”",
     authorName: "Maria Morales",
     authorRole: "Mom & Grandma",
-    image: "/img/stories/story-culinary.jpg",
+    image: "/img/hero1.jpg",
   },
 ];
 

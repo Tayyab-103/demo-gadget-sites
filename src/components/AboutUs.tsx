@@ -66,7 +66,7 @@ export default function AboutUs() {
           <div className="lg:col-span-6">
             <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full overflow-hidden rounded-3xl bg-slate-900 shadow-md border border-slate-200">
               <Image
-                src="/img/tailoringstandards.jpg"
+                src="/img/about.jpg"
                 alt={`${siteConfig.brandName} family clothing`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"

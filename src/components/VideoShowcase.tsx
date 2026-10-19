@@ -32,7 +32,7 @@ export default function VideoShowcase() {
           {/* Card 1 */}
           <div className="group relative overflow-hidden rounded-3xl bg-[#0A0F1D] text-white shadow-md min-h-[320px] sm:min-h-[360px] flex flex-col justify-end p-6 sm:p-7">
             <Image
-              src="/img/textile-lab-test.jpg"
+              src="/img/cta.jpg"
               alt="Soft cotton family clothing"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
@@ -59,7 +59,7 @@ export default function VideoShowcase() {
           {/* Card 2 */}
           <div className="group relative overflow-hidden rounded-3xl bg-[#0A0F1D] text-white shadow-md min-h-[320px] sm:min-h-[360px] flex flex-col justify-end p-6 sm:p-7">
             <Image
-              src="/img/uniform-tailoring-atelier.jpg"
+              src="/img/feature.jpg"
               alt="Kids clothing ready for play"
               fill
               sizes="(max-width: 768px) 100vw, 600px"

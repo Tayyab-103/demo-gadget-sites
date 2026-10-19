@@ -109,9 +109,6 @@ export default function Header() {
             />
           ) : (
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-white text-[#0A0F1D] flex items-center justify-center font-black text-sm shadow-xs">
-                👕
-              </div>
               <div className="flex flex-col">
                 <span className="text-base sm:text-lg font-bold tracking-widest text-white uppercase leading-none">
                   EVERYDAY
@@ -239,7 +236,7 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search tees, kids' joggers, family pajamas..."
+                placeholder="Search dresses, sweatshirts, pullovers..."
                 className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none text-white bg-slate-900 border border-slate-700 placeholder-slate-400"
               />
             </div>

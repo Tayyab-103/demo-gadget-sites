@@ -15,7 +15,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: "/img/dresscode-hero-2.jpg",
+    image: "/img/hero1.jpg",
     eyebrow: "Clothing For The Whole Family",
     title: "Everyday Style For Every Age.",
     buttonText: "Click To Shop",
@@ -23,7 +23,7 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    image: "/img/dresscode-hero-1.jpg",
+    image: "/img/hero2.jpg",
     eyebrow: "Kids, Parents & Grandparents",
     title: "Comfort That Fits Your Family.",
     buttonText: "Click To Shop",
@@ -31,7 +31,7 @@ const slides: Slide[] = [
   },
   {
     id: 3,
-    image: "/img/hero-uniforms.jpg",
+    image: "/img/hero3.jpg",
     eyebrow: "Quality Basics, Fair Prices",
     title: "Made To Play, Wash & Wear Again.",
     buttonText: "Click To Shop",

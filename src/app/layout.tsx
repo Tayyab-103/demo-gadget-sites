@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Comfortable, affordable everyday clothing for the whole family: soft cotton basics, kids' play sets, and cozy matching pajamas for babies, kids, and adults.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Comfortable, affordable everyday clothing for the whole family: easy-wear dresses, cozy sweatshirts, and comfortable pullovers for women and men.`;
 
 // Preload fonts
 const montserrat = Montserrat({
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     "family apparel",
     "kids clothing",
     "baby clothes",
-    "matching family pajamas",
-    "cotton t-shirts",
-    "kids jogger sets",
+    "women's maxi dresses",
+    "men's sweatshirts",
+    "women's pullovers",
     "affordable family clothing",
     "everyday basics",
     "family loungewear",

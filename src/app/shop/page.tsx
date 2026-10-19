@@ -16,8 +16,8 @@ export default function ShopPage() {
         <PageHeader
           eyebrow="The Family Collection"
           title={<>Everyday Family Clothing</>}
-          subtitle="Explore soft cotton essentials, play-ready kids&apos; sets, and cozy matching pajamas for the whole family."
-          image="/img/hero-uniforms.jpg"
+          subtitle="Explore flowing maxi dresses, quilted sweatshirts, and cozy pullovers made for everyday family life."
+          image="/img/hero3.jpg"
           currentLabel="Shop"
         />
         <ProductGrid hideHeader={true} />

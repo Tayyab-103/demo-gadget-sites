@@ -21,7 +21,7 @@ export default function ContactPage() {
           eyebrow="Family Customer Care"
           title={<>Connect With {siteConfig.brandName}</>}
           subtitle="Questions about sizing, orders, returns, or matching family outfits? Our friendly support team responds within 24 hours."
-          image="/img/hero-uniforms.jpg"
+          image="/img/contact.jpg"
           currentLabel="Contact"
         />
         <Contact />

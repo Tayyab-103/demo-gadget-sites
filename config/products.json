@@ -2,17 +2,15 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Everyday Family Essentials Tee Pack",
-    "description": "Soft, breathable crew-neck tees cut from 100% combed ring-spun cotton in sizes for the whole family, from toddlers to adults. Pre-shrunk fabric, tagless printed labels for itch-free comfort, reinforced shoulder seams, and fade-resistant colors that stay bright wash after wash.",
-    "image": "/img/products/product-tactical-workwear.jpg",
+    "name": "Women's Leaf Print Tiered Maxi Dress",
+    "description": "An easy, flowing maxi dress in a bold leaf print, made for warm days, family outings, and weekend brunch. Soft, breathable fabric with a relaxed round neckline, short sleeves, and a tiered skirt that moves with you. Lightweight, easy-care, and comfortable from morning to evening.",
+    "image": "/img/products/product1.jpg",
     "images": [
-      "/img/products/product-tactical-workwear.jpg",
-      "/img/products/uniform1.jpg",
-      "/img/products/uniform2.jpg"
+      "/img/products/product1.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Family Basics & Tees",
+    "category": "Women's Dresses",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,17 +28,15 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Kids' Play-Ready Jogger Set",
-    "description": "A cozy two-piece set made for school days, playgrounds, and everything in between. Brushed cotton-blend fleece with a soft-stretch waistband, adjustable drawcord, reinforced double-layer knees, and ribbed cuffs that keep up with active kids and hold up to frequent washing.",
-    "image": "/img/products/product-medical-scrubs.jpg",
+    "name": "Men's Quilted Crew-Neck Sweatshirt",
+    "description": "A clean, everyday crew-neck with a textured diamond-quilted knit for extra warmth without the bulk. Soft brushed interior, ribbed collar, cuffs, and hem that hold their shape, and a relaxed fit that layers easily over a tee. Built for casual days, errands, and cool evenings.",
+    "image": "/img/products/product2.jpg",
     "images": [
-      "/img/products/product-medical-scrubs.jpg",
-      "/img/products/scrub1.jpg",
-      "/img/products/scrub2.jpg"
+      "/img/products/product2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Kids' Clothing",
+    "category": "Men's Tops & Sweatshirts",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +54,15 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Cozy Family Matching Pajama Set",
-    "description": "Matching long-sleeve pajamas for movie nights, holidays, and lazy weekend mornings. Made from breathable, brushed jersey cotton with a relaxed fit, covered elastic waistband, and soft ribbed cuffs. Available in sizes for babies, kids, and adults so the whole family can match.",
-    "image": "/img/products/product-chef-coat.jpg",
+    "name": "Women's Shawl-Collar Quarter-Zip Pullover",
+    "description": "A cozy heathered pullover with a wrap-style shawl collar and a short front zipper for easy on and off. Soft, stretchy knit with long sleeves and a relaxed, hip-length fit that pairs perfectly with jeans or leggings. Made for layering through every season.",
+    "image": "/img/products/product3.jpg",
     "images": [
-      "/img/products/product-chef-coat.jpg",
-      "/img/products/chef1.jpg",
-      "/img/products/chef2.jpg"
+      "/img/products/product3.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Family Loungewear & Sleepwear",
+    "category": "Women's Tops & Sweaters",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

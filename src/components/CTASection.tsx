@@ -16,7 +16,7 @@ export default function CTASection() {
           {/* Left — Image */}
           <div className="relative min-h-64 sm:min-h-80 md:min-h-full bg-black/10">
             <img
-              src="/img/hero-uniforms.jpg"
+              src="/img/cta.jpg"
               alt="Family wearing everyday clothing"
               className="absolute inset-0 h-full w-full object-cover opacity-90"
             />
@@ -60,7 +60,7 @@ export default function CTASection() {
             </h2>
 
             <p className="mb-8 max-w-md text-sm leading-relaxed text-slate-300 font-normal">
-              Soft basics, play-ready kids&apos; sets, and cozy matching pajamas. Dispatched via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day fit guarantee.
+              Flowing dresses, quilted sweatshirts, and cozy pullovers. Dispatched via {siteConfig.shippingCarrier} with our {siteConfig.trialPeriod || 14}-day fit guarantee.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">

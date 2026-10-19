@@ -22,7 +22,7 @@ export default function AboutPage() {
           eyebrow="Our Family Story"
           title={<>About {siteConfig.brandName}</>}
           subtitle="Based in Winston-Salem, North Carolina. Dedicated to comfortable, affordable everyday clothing for babies, kids, teens, and adults."
-          image="/img/uniform-tailoring-atelier.jpg"
+          image="/img/about.jpg"
           currentLabel="About"
         />
         <AboutUs />

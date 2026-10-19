@@ -45,7 +45,7 @@ export default function Home() {
         <Faq />
 
         {/* Family Support Contact Form */}
-        <Contact />
+        {/* <Contact /> */}
       </main>
 
       <Footer />

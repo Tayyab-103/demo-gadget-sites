@@ -35,7 +35,7 @@ export default function ProductGrid({ hideHeader = false }: ProductGridProps) {
               Everyday Clothing. For Every Age.
             </h2>
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-lg mx-auto">
-              Soft cotton basics, play-ready kids&apos; sets, and cozy matching pajamas made for real family life.
+              Easy maxi dresses, quilted sweatshirts, and cozy pullovers made for real family life.
             </p>
           </div>
         )}

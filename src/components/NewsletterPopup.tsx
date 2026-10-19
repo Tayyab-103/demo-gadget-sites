@@ -80,7 +80,7 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[190px] relative">
           <img
-            src="/img/hero-uniforms.jpg"
+            src="/img/newletterpopup.jpg"
             alt="Family clothing collection"
             className="w-full h-full object-cover absolute inset-0 opacity-80"
           />

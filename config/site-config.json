@@ -1,11 +1,12 @@
 {
   "Product": "Kitchen Tools",
-  "Processor": "Maverick",
-  "brandName": "Copper Whisk Kitchen Workshop",
-  "websiteUrl": "CopperWhiskKitchenWorkshop.com",
-  "email": "support@copperwhiskkitchenworkshop.com",
-  "descriptor": "CopperWhiskKitchenWork",
-  "corpName": "Starpath Marketing Co.",
+  "mcc": "5719",
+  "Processor": "Paysafe -PNC/BBVA",
+  "brandName": "Hearthside Kitchen Tool Market",
+  "websiteUrl": "hearthsidekitchentoolmarket.com",
+  "email": "support@hearthsidekitchentoolmarket.com",
+  "descriptor": "HearthsideKitchenToo",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#161413",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#C87A3E",
-    "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F8F6F2",
-    "neutralTextColor": "#1E1B18",
+    "primaryColor": "#2B2F33",
+    "primaryTextColor": "#FFFFFF",
+    "secondaryColor": "#6B7280",
+    "secondaryTextColor": "#FFFFFF",
+    "neutralBgColor": "#F3F4F6",
+    "neutralTextColor": "#1F2328",
     "fontFamily": "Montserrat"
   }
 }

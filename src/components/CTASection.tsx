@@ -9,59 +9,36 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
   return (
-    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5">
-      {/* Subtle pale champagne glow background */}
-      <div
-        className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#E5F2C9]/5 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-[#E5F2C9]/5 blur-3xl"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 text-center">
-        <div className="max-w-4xl mx-auto">
-        
-        <div className="inline-flex items-center gap-2 mb-4 rounded-full border border-[#E5F2C9]/20 bg-[#E5F2C9]/5 px-4 py-1.5 backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#E5F2C9] animate-pulse" />
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#E5F2C9]">
-            Join 25k+ Equipped Kitchens
-          </span>
-        </div>
-
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white tracking-tight leading-tight mb-6 font-sans">
-          Ready to Elevate Your <br />
-          <span className="text-[#E5F2C9]">Culinary Craft?</span>
-        </h2>
-
-        <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-          Equip your kitchen with commercial-grade balloon whisks, ultra-precise digital scales, and Japanese steel kitchen shears. Backed by our 60-day money-back trial.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/shop"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E5F2C9] text-[#0E0F11] font-bold text-xs uppercase tracking-widest px-9 py-4 rounded-lg hover:bg-white hover:shadow-[0_0_25px_rgba(229,242,201,0.4)] transition-all duration-300 shadow-md"
-          >
-            Shop The Collection &rarr;
-          </Link>
-          <Link
-            href="/about"
-            className="w-full sm:w-auto inline-flex items-center justify-center font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-lg border border-white/20 text-white hover:border-white hover:bg-white/10 transition-all duration-300"
-          >
-            Learn Our Story
-          </Link>
-        </div>
-
-        {/* Micro guarantees */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-[0.68rem] font-bold uppercase tracking-widest text-white/40 pt-8 border-t border-white/10">
-          <span>✓ 100% Food-Safe</span>
-          <span>✓ Fast Nationwide Shipping</span>
-          <span>✓ 60-Day Money-Back Trial</span>
-          <span>✓ 1-Year Full Warranty</span>
-        </div>
-
+    <section className="py-16 md:py-20 bg-surface">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="relative overflow-hidden rounded-[2rem] bg-primary text-primary-text px-6 py-14 sm:px-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div
+            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border-[40px] border-white/5"
+            aria-hidden="true"
+          />
+          <div className="lg:col-span-7 relative">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              Upgrade the tools you use every single day.
+            </h2>
+            <p className="mt-5 text-base opacity-75 max-w-xl leading-relaxed">
+              Free {siteConfig.shippingCarrier} delivery in {siteConfig.shippingPeriod} business days and{" "}
+              {siteConfig.trialPeriod} days to try everything at home.
+            </p>
+          </div>
+          <div className="lg:col-span-5 relative flex flex-col sm:flex-row lg:justify-end gap-3">
+            <Link
+              href="/shop"
+              className="inline-flex items-center justify-center rounded-full bg-surface text-ink font-semibold text-sm px-8 py-4 hover:bg-neutral-bg transition-colors"
+            >
+              Shop all tools
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 font-semibold text-sm px-8 py-4 hover:bg-white/10 transition-colors"
+            >
+              Ask a question
+            </Link>
+          </div>
         </div>
       </div>
     </section>

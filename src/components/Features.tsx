@@ -8,76 +8,66 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const features = [
   {
-    title: "Exceptional Concierge Service",
-    desc: "We stand with you every step of the way, offering culinary tool support, replacement guarantees, and care guidance.",
+    title: "Free shipping",
+    desc: `Sent with ${siteConfig.shippingCarrier}, arriving in ${siteConfig.shippingPeriod} business days.`,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polyline points="12 6 12 12 16 14"></polyline>
-      </svg>
+      <>
+        <rect x="1" y="3" width="15" height="13"></rect>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+      </>
     ),
-    badge: "24/7 Support"
   },
   {
-    title: "Premium Quality Metallurgy",
-    desc: "We use strictly 304 and 420J2 food-grade stainless steels to ensure durability, rust resistance, and lasting kitchen beauty.",
+    title: `${siteConfig.trialPeriod}-day returns`,
+    desc: "Not the right fit for your kitchen? Send it back for a refund.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-      </svg>
+      <>
+        <polyline points="1 4 1 10 7 10"></polyline>
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+      </>
     ),
-    badge: "Food Safe"
   },
   {
-    title: "Chef-Engineered Ergonomics",
-    desc: "Balanced weight distribution and calibrated strain-relief handles bring professional commercial precision into your home.",
+    title: "Secure checkout",
+    desc: "Card details are encrypted and handled by a PCI-compliant gateway.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-      </svg>
+      <>
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </>
     ),
-    badge: "1-Yr Warranty"
-  }
+  },
+  {
+    title: "Real people on the phone",
+    desc: `Talk to our team Monday to Friday at ${siteConfig.phone}.`,
+    icon: (
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    ),
+  },
 ];
 
 export default function Features() {
   return (
-    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5" id="features">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
-        
-        {/* Section Heading matching reference "WHY CHOOSE OUR KITCHEN?" */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white font-sans">
-            Why Choose Our <br className="sm:hidden" />
-            <span className="text-white/90">Workshop?</span>
-          </h2>
-        </div>
-
-        {/* 3 Boxed Feature Cards matching reference layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {features.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#16171A] border border-white/10 rounded-xl p-8 flex flex-col items-center text-center hover:border-white/25 hover:bg-[#1A1C20] transition-all duration-300 shadow-lg"
-            >
-              {/* Icon Container */}
-              <div className="w-16 h-16 rounded-full border border-white/15 bg-white/5 text-[#E5F2C9] flex items-center justify-center mb-6 shadow-inner">
+    <section className="bg-surface border-b border-line" id="features">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map((item) => (
+          <div
+            key={item.title}
+            className="flex items-start gap-4 py-7 sm:px-6 lg:first:pl-0 border-b sm:border-b-0 last:border-b-0 border-line lg:border-r lg:last:border-r-0"
+          >
+            <span className="w-11 h-11 rounded-xl bg-neutral-bg text-ink flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 {item.icon}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-sm font-extrabold uppercase tracking-wide text-white mb-3">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-xs text-white/60 leading-relaxed max-w-xs">
-                {item.desc}
-              </p>
+              </svg>
+            </span>
+            <div>
+              <h3 className="text-sm font-bold text-ink">{item.title}</h3>
+              <p className="mt-1 text-xs text-muted leading-relaxed">{item.desc}</p>
             </div>
-          ))}
-        </div>
-
+          </div>
+        ))}
       </div>
     </section>
   );

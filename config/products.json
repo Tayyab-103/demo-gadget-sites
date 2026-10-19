@@ -2,79 +2,151 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Balloon Whisk",
-    "description": "Crafted with 12 flexible, commercial-grade stainless steel wires and a reinforced copper-accented ergonomic handle. Engineered to maximize aeration and reduce wrist fatigue whether you're whipping silky meringue, emulsifying vinaigrettes, or folding delicate batters.",
+    "name": "Copper-Handle Balloon Whisk",
+    "description": "A 12-wire stainless steel balloon whisk with a weighted, copper-finish handle that sits comfortably in the palm. The wide balloon head moves more air with every stroke, so cream, egg whites, batters and pan sauces come together faster and with less wrist strain. Rinse clean or place on the top rack of the dishwasher.",
     "image": "/images/product-whisk.jpg",
     "images": [
       "/images/product-whisk.jpg",
       "/images/whisk-action-1.jpg",
       "/images/whisk-action-2.jpg"
     ],
-    "category": "Precision Baking & Prep",
+    "category": "Baking & Mixing",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Digital Culinary Scale & Timer",
-    "description": "Ultra-accurate 0.1g digital culinary scale with integrated drip timer, scratch-resistant tempered platform, and high-visibility illuminated display. Essential for precision sourdough baking, pour-over extraction, and chef-level recipe formulation.",
+    "name": "Stainless Platform Kitchen Scale",
+    "description": "A slim digital kitchen scale with a brushed stainless steel weighing platform and a bright LED display. Weighs in 0.1 g steps, with one-touch TARE and a MODE button to switch units, so you can measure flour, coffee, spices and portions straight into the bowl. Wipe clean with a damp cloth.",
     "image": "/images/product-scale.jpg",
     "images": [
       "/images/product-scale.jpg",
       "/images/scale-action-1.jpg",
       "/images/scale-action-2.jpg"
     ],
-    "category": "Measurement & Precision Prep",
+    "category": "Measuring",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Multi-Prep Chef Shears",
-    "description": "Heavy-gauge forged Japanese stainless steel kitchen shears featuring micro-serrated blade edges, an integrated bone-cutting notch, built-in herb stripper, and copper-finished pivot bolt. Disassembles smoothly for effortless, hygienic sanitization.",
+    "name": "Forged Steel Kitchen Shears",
+    "description": "Heavy-duty kitchen shears with forged stainless steel blades, a micro-serrated edge that grips slippery food, and soft-grip black handles. The center notch cracks nuts and opens bottles, and the blades take apart at the pivot for thorough cleaning. Made for herbs, poultry, twine, packaging and everyday prep.",
     "image": "/images/product-shears.jpg",
     "images": [
       "/images/product-shears.jpg",
       "/images/shears-action-1.jpg",
       "/images/shears-action-2.jpg"
     ],
-    "category": "Cutlery & Prep Workshop",
+    "category": "Cutting & Prep",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

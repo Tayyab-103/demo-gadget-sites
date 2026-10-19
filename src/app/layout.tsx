@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Discover chef-grade kitchen tools, precision culinary scales, and forged prep accessories engineered for passionate home cooks and culinary pros.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop well-made kitchen tools — a balloon whisk, a stainless digital kitchen scale and forged steel kitchen shears — with free shipping and easy returns.`;
 
 // Preload the most common fonts
 const poppins = Poppins({

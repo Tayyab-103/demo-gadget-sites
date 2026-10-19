@@ -1,111 +1,78 @@
 "use client";
 
 import React from "react";
+import productsData from "../../config/products.json";
+import { Product } from "@/types";
+
+const products = productsData as unknown as Product[];
 
 const reviews = [
   {
-    id: 1,
-    name: "Chef Marcus Vance",
-    role: "Executive Pastry Chef, Austin TX",
-    text: "The balance on the CopperPro Balloon Whisk is exceptional. Whipping meringue requires zero forearm strain, and the 304 stainless steel cleans up spotlessly in commercial dishwashers.",
-    rating: 5,
-    tag: "Verified Chef",
-    tool: "CopperPro Balloon Whisk"
+    name: "Rachel M.",
+    location: "Denver, CO",
+    text: "I didn't think a whisk could make a difference, but this one is so much quicker for whipped cream and pancake batter. The handle has a nice weight and it cleans up in seconds.",
+    productId: "product1",
   },
   {
-    id: 2,
-    name: "Elena Rostova",
-    role: "Artisan Sourdough Baker",
-    text: "For sourdough hydration calculations, a normal scale doesn't cut it. This digital scale's 0.1g accuracy and fast-response tare button has made our daily bread loaves completely consistent.",
-    rating: 5,
-    tag: "Verified Baker",
-    tool: "Precision Digital Scale"
+    name: "Owen T.",
+    location: "Raleigh, NC",
+    text: "I bake bread most weekends and the 0.1 g steps are exactly what I needed. Tare is instant, the display is easy to read and the steel platform wipes clean.",
+    productId: "product2",
   },
   {
-    id: 3,
-    name: "David Sterling",
-    role: "Culinary Enthusiast & Home Cook",
-    text: "The multi-prep shears easily cut through whole poultry backbone, butcher twine, and delicate herbs without slipping. Easily the highest quality kitchen tool purchase I've made all year.",
-    rating: 5,
-    tag: "Verified Buyer",
-    tool: "Artisan Chef Shears"
-  }
+    name: "Priya S.",
+    location: "Sacramento, CA",
+    text: "These shears go through chicken wings and twine without any fuss. Love that they come apart for washing — my old pair always had gunk stuck in the hinge.",
+    productId: "product3",
+  },
 ];
+
+function Stars() {
+  return (
+    <div className="flex gap-0.5 text-ink" aria-label="5 out of 5 stars">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      ))}
+    </div>
+  );
+}
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-28 bg-[#0E0F11] text-white relative overflow-hidden border-t border-white/5" id="reviews">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-8">
-          <div>
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#E5F2C9]" />
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#E5F2C9]">
-                Culinary Community
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-white tracking-tight">
-              Chef &amp; Baker <span className="text-white/80">Critiques</span>
-            </h2>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex text-[#E5F2C9] gap-1">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              ))}
-            </div>
-            <span className="text-xs font-bold text-white uppercase tracking-wider">
-              4.9 / 5.0 Rating (25k+ Kitchens)
-            </span>
-          </div>
+    <section className="py-20 md:py-28 bg-surface" id="reviews">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="eyebrow">From our customers</span>
+          <h2 className="section-title mt-4">What home cooks are saying</h2>
         </div>
 
-        {/* 3 Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((rev) => (
-            <div
-              key={rev.id}
-              className="bg-[#16171A] rounded-2xl p-8 border border-white/8 hover:border-white/20 transition-all duration-300 flex flex-col justify-between shadow-xl"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-6">
-                  <div className="flex text-[#E5F2C9] gap-0.5">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <svg key={i} xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="bg-white/5 text-[#E5F2C9] text-[0.62rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-white/10">
-                    {rev.tag}
-                  </span>
-                </div>
-
-                <p className="text-xs md:text-sm text-white/70 leading-relaxed italic mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {reviews.map((rev) => {
+            const product = products.find((p) => p.id === rev.productId);
+            return (
+              <figure key={rev.name} className="card p-7 flex flex-col">
+                <Stars />
+                <blockquote className="mt-5 text-[0.95rem] text-ink leading-relaxed flex-1">
                   &ldquo;{rev.text}&rdquo;
-                </p>
-              </div>
-
-              <div className="pt-6 border-t border-white/10">
-                <div className="font-extrabold text-sm text-white uppercase">
-                  {rev.name}
-                </div>
-                <div className="text-[0.65rem] text-white/50 uppercase tracking-widest font-semibold mb-2">
-                  {rev.role}
-                </div>
-                <div className="text-[0.62rem] font-bold text-[#E5F2C9] uppercase tracking-widest">
-                  Tool: {rev.tool}
-                </div>
-              </div>
-            </div>
-          ))}
+                </blockquote>
+                <figcaption className="mt-7 pt-5 border-t border-line flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-full bg-neutral-bg text-ink font-bold flex items-center justify-center flex-shrink-0">
+                    {rev.name.charAt(0)}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-bold text-ink">{rev.name}</span>
+                    <span className="block text-xs text-muted truncate">
+                      {rev.location}
+                      {product && <> &middot; {product.name}</>}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

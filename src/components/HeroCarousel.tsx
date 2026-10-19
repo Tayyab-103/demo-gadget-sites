@@ -4,24 +4,24 @@ import React, { useEffect, useState } from "react";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80",
-    alt: "Traveler waiting at the airport gate with a suitcase, plane taking off",
+    src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80",
+    alt: "Adventure traveler with luggage and gear overlooking scenic winding road",
   },
   {
     src: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80",
-    alt: "Traveler wheeling two hardshell suitcases out the door",
+    alt: "Traveler wheeling durable hardshell luggage through terminal",
   },
   {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80",
-    alt: "View of an airplane wing above the clouds at sunset",
+    src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80",
+    alt: "Scenic trail journey and travel expedition across national park landscape",
   },
   {
-    src: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?w=1600&q=80",
-    alt: "Canal city skyline, a classic travel destination",
+    src: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80",
+    alt: "Expedition journey and mountain trail exploration with travel packs",
   },
   {
-    src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80",
-    alt: "Hikers crossing a snowy mountain ridge",
+    src: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80",
+    alt: "Durable travel duffel and gear packed for an extended journey",
   },
 ];
 

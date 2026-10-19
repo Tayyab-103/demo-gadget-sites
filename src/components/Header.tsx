@@ -124,14 +124,18 @@ export default function Header() {
                 />
               </>
             ) : (
-              <span className="flex items-center gap-2 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
-                {/* <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-primary text-xs font-black">
-                  {firstWord.charAt(0)}
-                </span> */}
-                {firstWord}
-                <span className="text-secondary">
-                  {secondWord ? ` ${secondWord}` : ""}
-                  {trailingWords ? <span className="hidden sm:inline">{` ${trailingWords}`}</span> : ""}
+              <span className="flex items-center gap-2.5 tracking-tight text-base sm:text-lg lg:text-xl font-black uppercase">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary text-secondary shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                  </svg>
+                </span>
+                <span>
+                  {firstWord}
+                  <span className="text-secondary">
+                    {secondWord ? ` ${secondWord}` : ""}
+                    {trailingWords ? <span className="hidden sm:inline">{` ${trailingWords}`}</span> : ""}
+                  </span>
                 </span>
               </span>
             )}

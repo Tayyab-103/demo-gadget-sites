@@ -14,21 +14,37 @@ export default function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
+          borderRadius: 36,
           background: siteConfig.theme.primaryColor,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
         <div
           style={{
-            width: 88,
-            height: 110,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
+            color: siteConfig.theme.secondaryColor,
+            fontSize: 72,
+            fontWeight: 900,
+            lineHeight: 1,
+            display: "flex",
           }}
-        />
+        >
+          ▲
+        </div>
+        <div
+          style={{
+            color: "#ffffff",
+            fontSize: 22,
+            fontWeight: 800,
+            letterSpacing: 2,
+            marginTop: 8,
+            display: "flex",
+          }}
+        >
+          JOURNEY
+        </div>
       </div>
     ),
     { ...size }

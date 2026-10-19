@@ -14,9 +14,9 @@ import ProductCarousel from "@/components/ProductCarousel";
 const products = productsData as unknown as Product[];
 
 const highlights = [
-  "High-quality, travel-grade materials",
-  "Built for everyday use on the road",
-  "Backed by a 1-year manufacturer's warranty",
+  "Impact-resistant, expedition-tested construction",
+  "Ergonomic design built for long journeys and rugged transit",
+  "Backed by a comprehensive 1-year manufacturer warranty",
 ];
 
 export default function ProductDetail() {

@@ -8,16 +8,16 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Trip-Tested Durability",
-    desc: "Every bag is stress-tested through real travel conditions before it ships, so it holds up to daily use.",
+    title: "Trail-Tested Durability",
+    desc: "Every luggage shell, zipper, and seam is stress-tested against impacts, drops, and weather before leaving our facility.",
   },
   {
-    title: "1-Year Warranty, Every Order",
-    desc: "Manufacturing defects are covered for a full year — no fine print, no hidden exclusions.",
+    title: "1-Year Comprehensive Warranty",
+    desc: "We stand firmly behind our engineering. Any manufacturing defect within 12 months is repaired or replaced without hassle.",
   },
   {
-    title: "Responsibly Sourced Materials",
-    desc: "We partner with vetted manufacturers using quality-checked fabrics and hardware in every build.",
+    title: "Premium Certified Materials",
+    desc: "Aerospace-grade polycarbonate, water-resistant waxed ripstop canvas, and reinforced hardware in every build.",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function QualityPromise() {
         {/* Full-bleed banner */}
         <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
           <img
-            src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1400&q=80"
+            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80"
             alt={`${siteConfig.brandName} Quality Assurance`}
             className="absolute inset-0 h-full w-full object-cover"
           />

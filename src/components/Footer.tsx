@@ -94,9 +94,9 @@ export default function Footer() {
           <div className="flex flex-col">
             <h4 className="text-white/50 text-xs mb-5 font-bold uppercase tracking-widest">Shop</h4>
             <ul className="flex flex-col gap-3">
-              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Travel Adapter</Link></li>
-              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">Neck Travel Pillow</Link></li>
-              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Organizer Bags</Link></li>
+              <li><Link href="/product/product1" className="text-white text-sm hover:text-secondary transition-colors">Expedition Spinner Luggage</Link></li>
+              <li><Link href="/product/product2" className="text-white text-sm hover:text-secondary transition-colors">All-Weather Weekender Duffel</Link></li>
+              <li><Link href="/product/product3" className="text-white text-sm hover:text-secondary transition-colors">Compression Packing Cubes</Link></li>
               <li><Link href="/shop" className="text-white text-sm hover:text-secondary transition-colors">All Travel Gear</Link></li>
             </ul>
           </div>
@@ -118,7 +118,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-white/50 text-xs text-center sm:text-left">
-            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
+            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved. Operated by {siteConfig.corpName}.
           </span>
           <span className="text-white/40 text-[10px] text-center sm:text-right max-w-md">
             Product images are for illustrative purposes; actual gear may vary slightly.

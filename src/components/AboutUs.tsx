@@ -118,14 +118,11 @@ export default function AboutUs() {
 
           <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
             Travel Gear, Built{" "}
-            <span className="text-secondary">to Go the Distance</span>
+            <span className="text-secondary">for Every Trail Ahead</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, we believe your luggage should
-            work as hard as you do. We design and stress-test every piece
-            through real travel conditions to make sure it holds up, trip
-            after trip.
+            At {siteConfig.brandName}, operated by {siteConfig.corpName}, we believe travel gear should work as tirelessly as you explore. We engineer and stress-test every spinner suitcase, all-weather duffel, and modular organizer to guarantee enduring reliability, trip after trip.
           </p>
         </div>
 
@@ -134,8 +131,8 @@ export default function AboutUs() {
           {/* LEFT — Image */}
           <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-[2.5rem] shadow-2xl lg:mx-0 lg:aspect-4/5">
             <Image
-              src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80"
-              alt={`${siteConfig.brandName} travel lifestyle`}
+              src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80"
+              alt={`${siteConfig.brandName} expedition travel lifestyle`}
               fill
               sizes="(max-width: 1024px) 90vw, 520px"
               className="object-cover"

@@ -51,15 +51,13 @@ export default function Faq() {
               Find immediate answers to common questions about our products, shipping, and return policies.
             </p>
 
-            {/* Decorative Leaf Illustration */}
+            {/* Decorative Mountain / Trail Illustration */}
             <div className="hidden lg:block relative mb-10">
-              <svg viewBox="0 0 200 200" className="w-48 h-48 text-primary/10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 10 C40 40, 10 100, 30 160 C50 200, 100 190, 100 190 C100 190, 150 200, 170 160 C190 100, 160 40, 100 10Z" />
-                <path d="M100 30 C100 30, 100 190, 100 190" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/20" />
-                <path d="M100 60 C100 60, 60 90, 50 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 60 C100 60, 140 90, 150 130" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 70 110, 55 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
-                <path d="M100 90 C100 90, 130 110, 145 145" stroke="currentColor" strokeWidth="1" fill="none" className="text-primary/15" />
+              <svg viewBox="0 0 200 200" className="w-48 h-48 text-primary/15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 160 L62 90 L97 135 L142 75 L190 160 Z" fill="currentColor" fillOpacity="0.08" />
+                <path d="M62 90 L97 135 L142 75" />
+                <circle cx="155" cy="55" r="16" fill="currentColor" fillOpacity="0.12" stroke="none" />
+                <path d="M10 160 L190 160" />
               </svg>
             </div>
 

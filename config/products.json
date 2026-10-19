@@ -2,102 +2,104 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Universal Travel Adapter",
-    "description": "One adapter for over 150 countries, with UK, EU, US, and AU plug configurations built in. A compact, unbranded design keeps it light to pack, so you only need to bring one small adapter for the whole trip.",
-    "image": "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
+    "name": "Expedition Hardside Spinner Luggage",
+    "description": "Engineered with an ultra-resilient aerospace-grade polycarbonate shell, 360° whisper-glide dual spinner wheels, and an integrated TSA-approved digital lock. Featuring dual-sided compression packing walls and waterproof zip partitions, it is built to endure rough handling and long journeys with effortless mobility.",
+    "image": "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1000&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1564517945244-d371c925640b?w=1000&q=80",
-      "https://images.unsplash.com/photo-1564517746937-14218d983034?w=1000&q=80",
-      "https://images.unsplash.com/photo-1517320069935-381614f8c1e5?w=1000&q=80",
-      "https://images.unsplash.com/photo-1586339393702-b1d274be5806?w=1000&q=80",
-      "https://images.unsplash.com/photo-1770418000074-fa16c0a53e82?w=1000&q=80"
+      "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1000&q=80",
+      "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=1000&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1000&q=80",
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1000&q=80"
     ],
-    "showIngredients": true,
+    "showIngredients": false,
     "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
     "boxContents": [
-      "1x Universal Travel Adapter",
-      "1x Carrying Pouch",
-      "Quick Start Guide"
+      "1x JourneyTrail™ Expedition Hardside 24\" Spinner",
+      "1x Waterproof Luggage Protective Cover",
+      "1x TSA Combination Lock Setup Guide",
+      "1x 1-Year Manufacturer Warranty Card"
     ],
-    "category": "Travel Electronics",
+    "category": "Hardside Luggage",
     "billingModel": 1,
-    "ssPrice": "6.95",
+    "ssPrice": "49.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      { "quantity": 1, "price": 49.95 },
+      { "quantity": 2, "price": 89.95 },
+      { "quantity": 3, "price": 124.95 },
+      { "quantity": 4, "price": 154.95 },
+      { "quantity": 5, "price": 184.95 },
+      { "quantity": 6, "price": 209.95 },
+      { "quantity": 7, "price": 234.95 },
+      { "quantity": 8, "price": 259.95 }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Neck Travel Pillow",
-    "description": "A supportive memory-foam neck pillow that packs down small with its own compression strap, so it takes up almost no space in your carry-on. The contoured shape keeps your head from bobbing on long flights, bus rides, or road trips, and the soft cover is machine washable.",
-    "image": "/img/products/neck-travel-pillow.jpg",
+    "name": "All-Weather Weekender Duffel",
+    "description": "Crafted from heavy-duty water-resistant waxed ripstop canvas with reinforced full-grain saddle leather trim. Designed with a ventilated side shoe compartment, padded 16\" laptop protection sleeve, ergonomic detachable shoulder strap, and an integrated luggage trolley sleeve that slides securely over any spinner handle.",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1000&q=80",
     "images": [
-      "/img/products/neck-travel-pillow.jpg",
-      "/img/products/neck-travel-pillow2.jpg",
-      "/img/products/neck-travel-pillow3.jpg"
+      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1000&q=80",
+      "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=1000&q=80",
+      "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=1000&q=80"
     ],
-    "showIngredients": true,
+    "showIngredients": false,
     "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
     "boxContents": [
-      "1x Neck Travel Pillow",
-      "1x Compression Carry Strap",
-      "Removable Washable Cover"
+      "1x JourneyTrail™ All-Weather Weekender Duffel",
+      "1x Ergonomic Padded Shoulder Strap",
+      "1x Ventilated Shoe & Laundry Storage Bag",
+      "1x Care & Wax Protection Guide"
     ],
-    "category": "Travel Comfort",
+    "category": "Travel Bags",
     "billingModel": 1,
-    "ssPrice": "11.95",
+    "ssPrice": "34.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      { "quantity": 1, "price": 34.95 },
+      { "quantity": 2, "price": 59.95 },
+      { "quantity": 3, "price": 84.95 },
+      { "quantity": 4, "price": 104.95 },
+      { "quantity": 5, "price": 124.95 },
+      { "quantity": 6, "price": 142.95 },
+      { "quantity": 7, "price": 159.95 },
+      { "quantity": 8, "price": 174.95 }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Travel Organizer Bags",
-    "description": "A set of soft-touch organizer pouches for toiletries and small essentials, keeping cables, skincare, and grooming tools separated and easy to find. Water-resistant fabric and a wipeable lining mean spills stay contained, and each pouch folds flat when it's empty.",
-    "image": "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
+    "name": "Compression Packing Cubes (6-Piece Set)",
+    "description": "Compress clothing and accessories to save up to 60% of luggage space. Built with tear-proof diamond ripstop nylon, reinforced dual compression zippers, and breathable mesh visibility windows. Keeps clean and worn garments separate, cables tangle-free, and outfits wrinkle-resistant throughout your travel itinerary.",
+    "image": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=1000&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=1000&q=80",
       "https://images.unsplash.com/photo-1764909262009-3dcd5691185c?w=1000&q=80",
-      "https://images.unsplash.com/photo-1765516976457-550bd5f6f708?w=1000&q=80",
-      "https://images.unsplash.com/photo-1679466231026-7b632eb05b90?w=1000&q=80"
+      "https://images.unsplash.com/photo-1765516976457-550bd5f6f708?w=1000&q=80"
     ],
-    "showIngredients": true,
+    "showIngredients": false,
     "ingredientsImage": "https://images.unsplash.com/photo-1546938576-6e6a64f317cc?w=900&q=80",
     "boxContents": [
-      "3x Organizer Pouches (S/M/L)",
-      "1x Mesh Toiletry Bag",
-      "Care Instructions Card"
+      "3x Expandable Apparel Compression Cubes (L/M/S)",
+      "1x Water-Resistant Hanging Toiletry Bag",
+      "1x Breathable Footwear Pouch",
+      "1x Electronic Accessories & Cord Caddy"
     ],
-    "category": "Travel Organization",
+    "category": "Travel Organizers",
     "billingModel": 1,
-    "ssPrice": "14.95",
+    "ssPrice": "19.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      { "quantity": 1, "price": 19.95 },
+      { "quantity": 2, "price": 34.95 },
+      { "quantity": 3, "price": 47.95 },
+      { "quantity": 4, "price": 59.95 },
+      { "quantity": 5, "price": 69.95 },
+      { "quantity": 6, "price": 79.95 },
+      { "quantity": 7, "price": 89.95 },
+      { "quantity": 8, "price": 99.95 }
     ]
   }
 ]

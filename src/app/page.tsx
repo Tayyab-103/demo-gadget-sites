@@ -45,7 +45,7 @@ export default function Home() {
         <CTASection />
 
         {/* FAQ Accordions Dropdown */}
-        {/* <Faq /> */}
+        <Faq />
 
         {/* Contact Form Section */}
         <Contact />

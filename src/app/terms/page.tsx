@@ -27,8 +27,8 @@ export default function Terms() {
           <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
             <h3 className="text-base font-bold text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
-              This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
+              This website is operated by <strong className="text-primary font-semibold">{siteConfig.corpName}</strong> d/b/a <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+              “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> ({siteConfig.corpName}). <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
               this website, including all information, tools and services available from this site to you, the user,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>

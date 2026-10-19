@@ -1,12 +1,13 @@
 {
   "Product": "Luggage / Travel Accessories",
-  "Processor": "EMP",
-  "brandName": "Roamthorne Travel Goods House",
-  "websiteUrl": "roamthornetravelgoodshouse.com",
-  "email": "support@roamthornetravelgoodshouse.com",
-  "descriptor": "RoamthorneTravelGoodsH",
-  "corpName": "Starpath Marketing Co",
-  "phone": "1-800-762-7529",
+  "mcc": "5948",
+  "Processor": "EMS BMO",
+  "brandName": "Journey Trail Travel Goods",
+  "websiteUrl": "journeytrailtravelgoods.com",
+  "email": "support@journeytrailtravelgoods.com",
+  "descriptor": "JourneyTrailTravelGo",
+  "corpName": "Blitzing Branding LLC",
+  "phone": "1-800-672-7295",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
   "shippingPeriod": "3-5",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0F2A5C",
+    "primaryColor": "#152A24",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#2F7DF6",
+    "secondaryColor": "#C8691A",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F5F9FF",
-    "neutralTextColor": "#12203A",
-    "fontFamily": "Poppins"
+    "neutralBgColor": "#F9F8F5",
+    "neutralTextColor": "#182420",
+    "fontFamily": "Montserrat"
   }
 }

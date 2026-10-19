@@ -21,8 +21,8 @@ export default function CTASection() {
             <span className="text-secondary drop-shadow-md">Next Adventure?</span>
           </h2>
 
-          <p className="relative z-10 mb-10 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
-            Join thousands of travelers who&apos;ve upgraded their gear. Bundle up and save on your first order today.
+          <p className="relative z-10 mb-10 max-w-md text-sm leading-relaxed text-white/80 md:text-base">
+            Join thousands of travelers who&apos;ve upgraded to Journey Trail gear. Bundle up and enjoy effortless journeys on your next trip.
           </p>
 
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row">

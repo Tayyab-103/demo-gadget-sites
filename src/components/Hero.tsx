@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 import TypewriterText from "@/components/TypewriterText";
 import HeroCarousel from "@/components/HeroCarousel";
 
-const rotatingPhrases = ["Adventure", "Getaway", "Business Trip", "Journey"];
+const rotatingPhrases = ["Rugged Expedition", "Weekend Getaway", "Cross-Country Journey", "Scenic Trail"];
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -19,13 +19,13 @@ export default function Hero() {
         <HeroCarousel />
 
         {/* Readability overlay */}
-        <div className="absolute inset-0 z-10 bg-primary/55" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
+        <div className="absolute inset-0 z-10 bg-primary/60" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-primary/85 via-transparent to-primary/35" />
 
         {/* Content */}
         <div className="relative z-20 mx-auto w-full max-w-4xl px-6 py-20 text-center md:py-28">
           <div className="mb-6 flex justify-center">
-            <span className="eyebrow eyebrow-invert">{siteConfig.brandName} Travel Co.</span>
+            <span className="eyebrow eyebrow-invert">{siteConfig.brandName}</span>
           </div>
 
           <h1 className="mx-auto max-w-2xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-white md:text-6xl">
@@ -35,8 +35,8 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-white/75 md:text-base">
-            Thoughtfully designed luggage, bags, and travel accessories — built to survive layovers, priced for real travel budgets.
+          <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-white/80 md:text-base">
+            Engineered luggage, expedition-grade travel bags, and modular accessories — built to withstand rugged trails and airport layovers alike.
           </p>
 
           <div className="mt-9 flex justify-center">
@@ -54,9 +54,9 @@ export default function Hero() {
       {/* Proof points */}
       <div className="relative z-10 border-t border-black/5 bg-neutral-bg">
         <div className="mx-auto grid max-w-6xl grid-cols-2 px-6 lg:grid-cols-4">
-          {["Trip Tested", "1-Year Warranty", "60-Day Returns", "Free Shipping"].map((point) => (
+          {["Trail Tested", "1-Year Warranty", "60-Day Returns", "Free Shipping"].map((point) => (
             <div key={point} className="flex items-center justify-center gap-3 border-b border-black/5 py-5 text-center even:border-l even:border-black/5 md:py-6 lg:border-b-0 lg:border-l lg:first:border-l-0">
-              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-text text-xs font-bold" aria-hidden="true">✓</span>
+              <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-text text-xs font-bold" aria-hidden="true">✓</span>
               <span className="text-[0.65rem] font-bold uppercase tracking-widest text-primary md:text-xs">{point}</span>
             </div>
           ))}

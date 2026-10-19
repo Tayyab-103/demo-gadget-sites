@@ -80,8 +80,8 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[180px] relative">
           <img
-            src="https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80"
-            alt="Traveler wheeling suitcases out the door"
+            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&q=80"
+            alt="Journey Trail travel deals"
             className="w-full h-full object-cover absolute inset-0"
           />
           {/* Transparent Color Overlay */}

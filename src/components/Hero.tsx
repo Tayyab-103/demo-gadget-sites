@@ -79,13 +79,74 @@ export default function Hero() {
 
           {/* Right Column: Expanding Image Gallery (7 cols) */}
           <div className="lg:col-span-7 relative w-full">
-            <div className="flex items-center gap-3 sm:gap-4 h-[360px] sm:h-[420px] md:h-[450px] w-full">
+            {/* Mobile: swipeable snap carousel with every card fully readable */}
+            <div
+              className="md:hidden flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              onScroll={(e) => {
+                const el = e.currentTarget;
+                const card = el.firstElementChild as HTMLElement | null;
+                if (!card) return;
+                const idx = Math.round(el.scrollLeft / (card.offsetWidth + 12));
+                const clamped = Math.max(0, Math.min(heroGallery.length - 1, idx));
+                if (clamped !== activeIdx) setActiveIdx(clamped);
+              }}
+            >
+              {heroGallery.map((item, idx) => (
+                <Link
+                  key={idx}
+                  href="/shop"
+                  className="relative snap-center shrink-0 w-[82%] h-[380px] rounded-3xl overflow-hidden shadow-lg bg-neutral-200"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                  />
+                  <div className="absolute top-3.5 left-3.5 z-10">
+                    <span className="bg-[#182825]/90 text-white backdrop-blur-md text-[0.62rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm whitespace-nowrap">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 flex flex-col justify-end p-5 text-white bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                    <span className="inline-block text-[0.62rem] font-bold uppercase tracking-wider text-secondary bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full w-fit mb-2">
+                      {item.tag}
+                    </span>
+                    <h2 className="font-serif text-xl font-bold text-white mb-1.5 leading-snug">
+                      {item.title}
+                    </h2>
+                    <p className="text-xs text-white/90 leading-relaxed mb-2 line-clamp-2">
+                      {item.description}
+                    </p>
+                    <span className="inline-flex items-center gap-1 text-[0.72rem] font-bold uppercase tracking-wider text-secondary">
+                      <span>Shop Now</span>
+                      <span>→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Desktop/tablet: expanding hover gallery */}
+            <div
+              className="hidden md:flex items-center gap-3 sm:gap-4 md:h-[450px] w-full touch-pan-y"
+              onTouchMove={(e) => {
+                // Touchscreens have no hover: expand whichever card the finger is sliding over
+                const t = e.touches[0];
+                const el = document.elementFromPoint(t.clientX, t.clientY)?.closest<HTMLElement>("[data-hero-idx]");
+                const idx = el ? Number(el.dataset.heroIdx) : NaN;
+                if (!Number.isNaN(idx) && idx !== activeIdx) setActiveIdx(idx);
+              }}
+            >
               {heroGallery.map((item, idx) => {
                 const isActive = activeIdx === idx;
                 return (
                   <div
                     key={idx}
-                    onMouseEnter={() => setActiveIdx(idx)}
+                    onPointerEnter={() => setActiveIdx(idx)}
+                    onPointerMove={() => activeIdx !== idx && setActiveIdx(idx)}
+                    onFocus={() => setActiveIdx(idx)}
+                    tabIndex={0}
+                    data-hero-idx={idx}
                     className={`relative group transition-all duration-500 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-neutral-200 h-full ${
                       isActive ? "flex-[2.5] md:flex-[2.8]" : "flex-1 opacity-80 hover:opacity-100"
                     }`}

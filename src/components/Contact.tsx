@@ -1,105 +1,103 @@
 "use client";
 
 import React, { useState } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import { siteConfig } from "@/lib/brand";
+import SectionHeading from "@/components/SectionHeading";
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
+const channels = [
+  {
+    label: "Call us",
+    value: siteConfig.phone,
+    href: `tel:${siteConfig.phone}`,
+    icon: <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" />,
+  },
+  {
+    label: "Email us",
+    value: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
+    icon: (
+      <>
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m22 7-10 6L2 7" />
+      </>
+    ),
+  },
+  {
+    label: "Mailing address",
+    value: siteConfig.address,
+    href: undefined,
+    icon: (
+      <>
+        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </>
+    ),
+  },
+];
 
 export default function Contact() {
   const [contactSubmitted, setContactSubmitted] = useState(false);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden" id="contact">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Left-Aligned Section Header */}
-        <div className="text-left max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#FAF8F5] px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              PET CONCIERGE
-            </span>
-          </div>
+    <section className="py-16 sm:py-20 md:py-24 bg-brand-wash relative overflow-hidden" id="contact">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Get in touch"
+          title={<>We&apos;re here to <span className="text-gradient">help</span></>}
+          description="Questions about sizing, bundles or an existing order? Send us a message and we'll get back to you within one business day."
+          className="mb-10 sm:mb-14"
+        />
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Connect with Our <span className="italic text-secondary font-serif">Pet Care Team</span>
-          </h2>
-
-          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            Have questions about product sizing, multi-pack bundles, or shipping? Our friendly team is here to help.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch w-full">
-          
-          {/* Left Column: Visual & Direct Contact Info (5 cols) */}
-          <div className="lg:col-span-5 bg-[#182825] text-white rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xl">
-            <div className="absolute top-0 right-0 w-44 h-44 bg-secondary/20 rounded-full blur-3xl pointer-events-none" />
-            
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center text-2xl mb-6 shadow-md">
-                🐾
-              </div>
-              <h3 className="text-2xl font-black mb-3">Whisker Vale Pet Concierge</h3>
-              <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-8">
-                We treat every inquiry with the personal care your beloved animal deserves. Guaranteed reply within 24 hours.
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* Contact details */}
+          <div className="lg:col-span-5 flex flex-col gap-4">
+            <div className="relative rounded-[1.75rem] overflow-hidden h-48 sm:h-56">
+              <img src="/img/contact3.png" alt="French bulldog in a yellow hoodie" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+              <p className="absolute bottom-4 left-5 right-5 text-white font-display text-xl font-semibold">
+                Mon – Fri, 9:00 AM – 6:00 PM CT
               </p>
-
-              {/* Direct Channels */}
-              <div className="space-y-4">
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-secondary/30 text-secondary flex items-center justify-center flex-shrink-0 text-lg">
-                    📞
-                  </div>
-                  <div>
-                    <div className="text-[0.65rem] uppercase tracking-wider text-white/50 font-bold">Call Toll-Free</div>
-                    <div className="text-sm font-bold text-white mt-0.5">{siteConfig.phone}</div>
-                  </div>
-                </a>
-
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-secondary/30 text-secondary flex items-center justify-center flex-shrink-0 text-lg">
-                    ✉️
-                  </div>
-                  <div>
-                    <div className="text-[0.65rem] uppercase tracking-wider text-white/50 font-bold">Email Pet Support</div>
-                    <div className="text-sm font-bold text-white mt-0.5 break-all">{siteConfig.email}</div>
-                  </div>
-                </a>
-              </div>
             </div>
-
-            {/* Operating Hours */}
-            <div className="mt-8 pt-6 border-t border-white/10">
-              <div className="text-xs text-white/60">
-                <strong className="text-white">Fulfillment &amp; Support:</strong> Monday – Friday, 9:00 AM – 6:00 PM EST
-              </div>
-            </div>
+            {channels.map((c) => {
+              const inner = (
+                <>
+                  <span className="w-11 h-11 rounded-xl bg-brand-gradient text-primary-text flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      {c.icon}
+                    </svg>
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[0.65rem] font-bold uppercase tracking-wider text-faint">{c.label}</span>
+                    <span className="block text-sm font-bold text-ink break-words">{c.value}</span>
+                  </span>
+                </>
+              );
+              return c.href ? (
+                <a key={c.label} href={c.href} className="card flex items-center gap-4 p-4 hover:border-primary transition-colors">
+                  {inner}
+                </a>
+              ) : (
+                <div key={c.label} className="card flex items-center gap-4 p-4">
+                  {inner}
+                </div>
+              );
+            })}
           </div>
 
-          {/* Right Column: Inquiry Form (7 cols) */}
-          <div className="lg:col-span-7 bg-[#FAF8F5] rounded-[2.5rem] p-8 sm:p-10 border border-black/[0.06] shadow-sm flex flex-col justify-center">
+          {/* Form */}
+          <div className="lg:col-span-7 card p-6 sm:p-9 flex flex-col justify-center">
             {contactSubmitted ? (
-              <div className="text-center py-12 flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-3xl mb-4 font-bold shadow-sm">
-                  ✓
-                </div>
-                <h3 className="text-primary font-black text-2xl mb-2">Message Sent with Love!</h3>
-                <p className="text-neutral-text/70 text-sm max-w-sm mb-8 leading-relaxed">
-                  Thank you for reaching out to {siteConfig.brandName}. One of our pet advocates will review your message and respond within 24 hours.
+              <div className="text-center py-10 flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-brand-gradient text-primary-text flex items-center justify-center text-2xl mb-4 font-bold">✓</div>
+                <h3 className="font-display text-2xl font-semibold text-ink mb-2">Message sent!</h3>
+                <p className="text-muted text-sm max-w-sm mb-8 leading-relaxed">
+                  Thanks for reaching out to {siteConfig.brandName}. A member of our team will reply within one business day.
                 </p>
                 <button
-                  className="bg-primary text-white font-bold text-xs uppercase tracking-widest px-8 py-3.5 rounded-full hover:bg-secondary transition-all cursor-pointer shadow-md"
+                  className="bg-ink text-white font-bold text-sm px-7 py-3.5 rounded-full hover:bg-primary-deep transition-colors cursor-pointer"
                   onClick={() => setContactSubmitted(false)}
                 >
-                  Send Another Inquiry
+                  Send another message
                 </button>
               </div>
             ) : (
@@ -111,71 +109,41 @@ export default function Contact() {
                 }}
                 className="space-y-4"
               >
+                <h3 className="font-display text-2xl font-semibold text-ink mb-2">Send us a message</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[0.68rem] font-black uppercase tracking-wider text-neutral-text/60 mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Emily & Max (Golden Retriever)"
-                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[0.68rem] font-black uppercase tracking-wider text-neutral-text/60 mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="e.g. emily@example.com"
-                      className="w-full bg-white border border-black/10 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[0.68rem] font-black uppercase tracking-wider text-neutral-text/60 mb-2">
-                    Inquiry Topic
+                  <label className="block">
+                    <span className="block text-xs font-bold text-muted mb-2">Your name</span>
+                    <input type="text" required placeholder="Jane Doe" className="field" />
                   </label>
-                  <select
-                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors"
-                  >
-                    <option>Product Sizing &amp; Recommendations</option>
-                    <option>Multi-Pack Bundle Discounts</option>
-                    <option>UPS Tracking &amp; Delivery Update</option>
-                    <option>14-Day Happy Tail Guarantee Return</option>
-                    <option>Other Pet Question</option>
+                  <label className="block">
+                    <span className="block text-xs font-bold text-muted mb-2">Email address</span>
+                    <input type="email" required placeholder="jane@example.com" className="field" />
+                  </label>
+                </div>
+                <label className="block">
+                  <span className="block text-xs font-bold text-muted mb-2">Topic</span>
+                  <select className="field cursor-pointer">
+                    <option>Product question</option>
+                    <option>Bundles &amp; pricing</option>
+                    <option>Order status &amp; {siteConfig.shippingCarrier} tracking</option>
+                    <option>Returns &amp; {siteConfig.trialPeriod}-day guarantee</option>
+                    <option>Something else</option>
                   </select>
-                </div>
-
-                <div>
-                  <label className="block text-[0.68rem] font-black uppercase tracking-wider text-neutral-text/60 mb-2">
-                    How Can We Help Your Furry Friend?
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    placeholder="Tell us about your pet and how we can assist..."
-                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-3.5 text-sm text-neutral-text focus:outline-none focus:border-secondary transition-colors resize-none"
-                  />
-                </div>
-
+                </label>
+                <label className="block">
+                  <span className="block text-xs font-bold text-muted mb-2">Message</span>
+                  <textarea rows={5} required placeholder="Tell us a little about your pet and how we can help…" className="field resize-none" />
+                </label>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white hover:bg-secondary font-black text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-ink text-white hover:bg-primary-deep font-bold text-sm py-4 rounded-full transition-colors cursor-pointer"
                 >
-                  <span>Submit Message to Concierge</span>
-                  <span>🐾</span>
+                  Send message →
                 </button>
               </form>
             )}
           </div>
-
         </div>
-
       </div>
     </section>
   );

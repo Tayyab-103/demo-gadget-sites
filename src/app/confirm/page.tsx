@@ -22,11 +22,11 @@ function ConfirmContent() {
   return (
     <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/5 text-center max-w-[600px] mx-auto shadow-md">
       {/* Success Badge */}
-      <div className="w-[64px] h-[64px] rounded-full border border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-secondary/10 shadow-sm">
+      <div className="w-[64px] h-[64px] rounded-full border border-secondary text-primary-deep flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-secondary/10 shadow-sm">
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-primary mb-4 tracking-tight">Order Confirmed!</h2>
+      <h2 className="text-2xl md:text-3xl font-black uppercase text-ink mb-4 tracking-tight">Order Confirmed!</h2>
       <p className="text-neutral-text/75 text-sm md:text-base mb-8">
         Thank you for your purchase. Your payment was processed successfully.
       </p>
@@ -35,7 +35,7 @@ function ConfirmContent() {
       <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
         <div className="flex justify-between items-center mb-3">
           <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Order ID:</span>
-          <strong className="text-primary font-bold">{orderId}</strong>
+          <strong className="text-ink font-bold">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
           <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
@@ -61,7 +61,7 @@ function ConfirmContent() {
           href="/"
           className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-white hover:bg-primary transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
         >
-          <span>Return to Pet Mercantile</span>
+          <span>Back to the shop</span>
           <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">🐾</span>
         </Link>
       </div>
@@ -73,11 +73,11 @@ export default function Confirm() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF8F5] py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
+      <main className="bg-brand-wash py-16 md:py-24 min-h-[85vh] flex items-center relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Suspense fallback={
             <div className="text-center py-12">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Loading Order Details...</h4>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-ink">Loading Order Details...</h4>
             </div>
           }>
             <ConfirmContent />

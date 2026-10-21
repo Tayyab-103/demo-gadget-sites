@@ -3,16 +3,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
-import { SiteConfig, Product } from "@/types";
+import { Product } from "@/types";
+import { brandParts } from "@/lib/brand";
+import PawIcon from "@/components/PawIcon";
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/shop", label: "Products" },
+  { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -76,118 +76,72 @@ export default function Header() {
     setIsMenuOpen((v) => !v);
   };
 
-  return (
-    <header
-      ref={headerRef}
-      className="sticky top-0 z-50 bg-[#FAF8F5]/95 backdrop-blur-md transition-all duration-300 border-b border-black/[0.04] w-full"
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5 sm:py-5">
-        
-        {/* Left: Luxury Boutique Logo (Circular Emblem + Brand & Subtitle) */}
-        <Link
-          href="/"
-          onClick={closeAll}
-          className="flex items-center gap-2.5 sm:gap-3.5 group flex-shrink-0"
-          style={{ textDecoration: "none" }}
-        >
-          {/* Circular Luxury Emblem Icon */}
-          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#182825] text-[#FAF8F5] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/10 flex-shrink-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-            >
-              {/* Luxury Pet Paw Emblem */}
-              <circle cx="8.5" cy="5.5" r="1.7" />
-              <circle cx="15.5" cy="5.5" r="1.7" />
-              <circle cx="5.5" cy="10" r="1.7" />
-              <circle cx="18.5" cy="10" r="1.7" />
-              <path d="M12 9.5c-3.2 0-5.8 2.2-5.8 5.2 0 2.2 1.8 3.8 3.5 3.8 1.1 0 1.7-.7 2.3-.7s1.2.7 2.3.7c1.7 0 3.5-1.6 3.5-3.8 0-3-2.6-5.2-5.8-5.2z" />
-            </svg>
-          </div>
+  const cartCount = getCartCount();
 
-          {/* Typography: Brand Title & Small Uppercase Descriptor */}
-          <div className="flex flex-col">
-            <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-primary leading-tight">
-              Whisker &amp; Co.
+  return (
+    <header ref={headerRef} className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-xl border-b border-line">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 h-16 sm:h-20">
+        {/* Logo */}
+        <Link href="/" onClick={closeAll} className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0 min-w-0">
+          <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-brand-gradient text-primary-text flex items-center justify-center shadow-sm group-hover:rotate-[-8deg] transition-transform duration-300 flex-shrink-0">
+            <PawIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+          </span>
+          <span className="flex flex-col min-w-0">
+            <span className="font-display text-lg sm:text-[1.4rem] font-semibold tracking-tight text-ink leading-none truncate">
+              {brandParts.main}
             </span>
-            <span className="text-[0.55rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-neutral-text/55 -mt-0.5">
-              LUXURY PET BOUTIQUE
+            <span className="text-[0.58rem] sm:text-[0.62rem] font-bold uppercase tracking-[0.22em] text-primary-deep mt-1 truncate">
+              {brandParts.sub}
             </span>
-          </div>
+          </span>
         </Link>
 
-        {/* Center: Clean, Minimalist Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1 bg-neutral-bg/70 border border-line rounded-full p-1">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-neutral-text/80 hover:text-primary transition-colors duration-200 tracking-normal relative py-1"
+              className="px-5 py-2 rounded-full text-sm font-semibold text-muted hover:text-ink hover:bg-primary-soft transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Right: Clean Search & Luxury Shopping Bag Outline Icons */}
-        <div className="flex items-center gap-3.5 sm:gap-6 flex-shrink-0">
-          {/* Search Outline Icon */}
+        {/* Actions */}
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
           <button
             onClick={toggleSearch}
-            className="p-1 text-primary hover:text-secondary transition-colors cursor-pointer bg-transparent border-none"
-            aria-label="Search items"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-secondary-soft transition-colors cursor-pointer"
+            aria-label="Search products"
             aria-expanded={isSearchOpen}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="7.5" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
 
-          {/* Shopping Bag Outline Icon with Tiny Count Badge */}
           <button
             onClick={toggleCart}
-            className="p-1 text-primary hover:text-secondary transition-colors cursor-pointer relative bg-transparent border-none"
-            aria-label="Shopping Cart"
+            className="relative h-10 pl-3 pr-3 sm:pr-4 rounded-full flex items-center gap-2 bg-ink text-white hover:bg-primary-deep transition-colors cursor-pointer"
+            aria-label="Open cart"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
               <line x1="3" y1="6" x2="21" y2="6" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
-
-            {/* Micro Badge Count */}
-            <span className="absolute -top-1 -right-1 bg-[#182825] text-white rounded-full w-4 h-4 text-[0.62rem] font-bold flex items-center justify-center border border-[#FAF8F5] shadow-xs">
-              {getCartCount()}
+            <span className="hidden sm:inline text-xs font-bold">Cart</span>
+            <span className="min-w-5 h-5 px-1 rounded-full bg-primary text-primary-text text-[0.65rem] font-bold flex items-center justify-center">
+              {cartCount}
             </span>
           </button>
 
-          {/* Mobile Hamburger Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-1 text-primary hover:text-secondary cursor-pointer bg-transparent border-none"
+            className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-primary-soft cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -198,57 +152,46 @@ export default function Header() {
               </svg>
             ) : (
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="17" x2="14" y2="17" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-[#FAF8F5] border-t border-black/[0.06] shadow-xl px-6 py-6 flex flex-col gap-3 transition-all animate-fadeIn">
+        <div className="lg:hidden border-t border-line bg-white px-4 sm:px-6 py-5 flex flex-col gap-1 animate-fadeIn shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={closeAll}
-              className="text-base font-medium text-neutral-text/90 hover:text-primary py-2 border-b border-black/[0.04] last:border-0"
+              className="flex items-center justify-between px-4 py-3 rounded-2xl text-base font-semibold text-ink hover:bg-primary-soft"
             >
               {link.label}
+              <span className="text-faint">→</span>
             </Link>
           ))}
           <Link
-            href="/#shop"
+            href="/shop"
             onClick={closeAll}
-            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-[#182825] text-white py-3.5 rounded-full text-xs font-bold uppercase tracking-widest"
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 bg-brand-gradient text-primary-text py-3.5 rounded-full text-sm font-bold"
           >
-            <span>Explore Collection</span>
-            <span>→</span>
+            Shop all essentials →
           </Link>
         </div>
       )}
 
-      {/* Search Dropdown Overlay */}
+      {/* Search panel */}
       {isSearchOpen && (
-        <div className="bg-[#FAF8F5] border-t border-black/[0.06] shadow-xl px-6 py-6 max-h-[75vh] overflow-y-auto">
+        <div className="border-t border-line bg-white px-4 sm:px-6 py-6 max-h-[75vh] overflow-y-auto shadow-lg animate-fadeIn">
           <div className="max-w-3xl mx-auto">
             <div className="relative">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-text/40"
-              >
-                <circle cx="11" cy="11" r="8" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute left-4 top-1/2 -translate-y-1/2 text-faint">
+                <circle cx="11" cy="11" r="7.5" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
               <input
@@ -256,8 +199,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search luxury grooming, interactive smart toys, orthopedic beds..."
-                className="w-full pl-12 pr-4 py-3.5 text-sm bg-white border border-black/10 rounded-full focus:outline-none focus:border-[#182825] transition-colors text-neutral-text placeholder:text-neutral-text/40 shadow-xs"
+                placeholder="Search brushes, chew toys, collars…"
+                className="field rounded-full pl-12"
               />
             </div>
 
@@ -271,26 +214,20 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-4 p-3 rounded-2xl bg-white hover:border-[#182825] border border-black/5 transition-all shadow-xs"
+                        className="flex items-center gap-4 p-3 rounded-2xl bg-white border border-line hover:border-primary hover:bg-primary-soft/50 transition-colors"
                       >
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-12 h-12 rounded-xl object-cover bg-neutral-100 flex-shrink-0"
-                        />
+                        <img src={product.image} alt={product.name} className="w-12 h-12 rounded-xl object-cover flex-shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-bold text-primary truncate">{product.name}</div>
-                          <div className="text-[0.68rem] text-secondary font-bold uppercase tracking-wider">{product.category}</div>
+                          <div className="text-sm font-bold text-ink truncate">{product.name}</div>
+                          <div className="text-[0.68rem] text-primary-deep font-bold uppercase tracking-wider">{product.category}</div>
                         </div>
-                        <div className="text-sm font-bold text-primary flex-shrink-0">
-                          ${price}
-                        </div>
+                        <div className="text-sm font-bold text-ink flex-shrink-0">${price}</div>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="text-xs text-neutral-text/50 text-center py-6">
-                    No pet items found for &ldquo;{query}&rdquo;.
+                  <p className="text-sm text-muted text-center py-6">
+                    No products found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

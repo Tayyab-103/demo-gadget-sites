@@ -1,164 +1,110 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
+import productsData from "../../config/products.json";
+import { Product } from "@/types";
+import { siteConfig } from "@/lib/brand";
+import PawIcon from "@/components/PawIcon";
 
-const heroGallery = [
-  {
-    image: "/img/hero1.png",
-    badge: "Bestseller",
-    tag: "🐾 Comfort & Sleep",
-    title: "Orthopedic Rest",
-    description: "Cloud-soft memory foam beds designed for deep, restorative pet sleep and joint relief.",
-  },
-  {
-    image: "/img/hero2.png",
-    badge: "Staff Pick",
-    tag: "🎾 Active Play",
-    title: "Interactive Toys",
-    description: "Smart durable enrichment toys engineered to stimulate natural instinct and ease anxiety.",
-  },
-  {
-    image: "/img/hero3.png",
-    badge: "Top Rated",
-    tag: "✨ Coat Care",
-    title: "Grooming Essentials",
-    description: "Ergonomic slicker brushes designed for silky soft, tangle-free coats and shedding relief.",
-  },
+const products = productsData as unknown as Product[];
+const lowestPrice = Math.min(...products.map((p) => parseFloat(p.ssPrice))).toFixed(2);
+
+const avatars = ["/img/contact2.png", "/img/QualityPromise.png", "/img/hero5.jpg", "/img/about2.png"];
+
+const highlights = [
+  { value: `${siteConfig.shippingPeriod} days`, label: `Free ${siteConfig.shippingCarrier} delivery` },
+  { value: `${siteConfig.trialPeriod}-day`, label: "Happiness guarantee" },
+  { value: "Up to 8", label: "Pack bundle savings" },
 ];
 
 export default function Hero() {
-  const [activeIdx, setActiveIdx] = useState<number>(0);
-
   return (
-    <section className="relative bg-[#FAF8F5] pt-8 pb-12 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 overflow-hidden w-full">
-      {/* Subtle Ambient Backdrop Glow */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[450px] bg-gradient-to-b from-[#EFE5D8]/70 via-[#FAF8F5]/30 to-transparent blur-3xl pointer-events-none rounded-full" />
+    <section className="relative bg-brand-wash overflow-hidden">
+      {/* Decorative paws */}
+      <PawIcon className="absolute top-16 left-[46%] w-10 h-10 text-primary/40 rotate-[-18deg] hidden lg:block" />
+      <PawIcon className="absolute bottom-24 left-6 w-14 h-14 text-secondary/40 rotate-[24deg] hidden md:block" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Main 2-Column Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          
-          {/* Left Column: Typography & Actions (5 cols) */}
-          <div className="lg:col-span-5 text-left z-10">
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold text-primary tracking-tight leading-[1.12] mb-4 sm:mb-5">
-              Everything <br />
-              <span className="text-secondary italic font-serif">They Love,</span> <br />
-              All in One Place
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          {/* Copy */}
+          <div className="lg:col-span-6 text-center lg:text-left">
+            <span className="eyebrow mb-5">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-deep" />
+              Everyday essentials for dogs &amp; cats
+            </span>
+
+            <h1 className="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.4rem] font-semibold text-ink tracking-tight">
+              Gear up for every <span className="text-gradient">happy trail</span>
+              <PawIcon className="inline-block w-9 h-9 sm:w-12 sm:h-12 ml-2 -mt-2 text-primary align-middle" />
             </h1>
 
-            <p className="text-neutral-text/75 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mb-6 sm:mb-7">
-              Thoughtfully engineered grooming, interactive smart toys, and orthopedic beds for happier, healthier pets.
+            <p className="mt-6 text-muted text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Self-cleaning grooming brushes, tough little chew toys and comfy adjustable collars — simple,
+              well-made goods that keep tails wagging from the morning walk to the evening brush-down.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
               <Link
                 href="/shop"
-                className="group inline-flex items-center gap-2.5 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 px-7 sm:px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
+                className="group inline-flex items-center justify-center gap-2 bg-ink text-white hover:bg-primary-deep transition-colors px-8 py-4 rounded-full text-sm font-bold shadow-lg shadow-primary/30"
               >
-                <span>Explore Collection</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                Shop the essentials
+                <span className="transition-transform group-hover:translate-x-1">→</span>
               </Link>
               <Link
-                href="/about"
-                className="inline-flex items-center gap-2 bg-white text-primary hover:text-secondary border border-stone-300/80 hover:border-secondary/40 transition-all duration-300 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-xs"
+                href="/#how-it-works"
+                className="inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur text-ink border border-line hover:border-secondary hover:bg-white transition-colors px-7 py-4 rounded-full text-sm font-bold"
               >
-                <span>Our Story</span>
+                How it works
               </Link>
             </div>
 
-            {/* Trust Highlights */}
-            <div className="flex items-center flex-wrap gap-x-5 gap-y-1.5 text-[0.7rem] sm:text-xs text-neutral-text/70 font-medium pt-2 border-t border-stone-200/60">
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> Vet Endorsed</span>
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 100% Non-Toxic</span>
-              <span className="flex items-center gap-1"><span className="text-emerald-600 font-bold">✓</span> 14-Day Guarantee</span>
+            {/* Social proof */}
+            <div className="mt-9 flex items-center justify-center lg:justify-start gap-4">
+              <div className="flex -space-x-3">
+                {avatars.map((src) => (
+                  <img key={src} src={src} alt="" className="w-11 h-11 rounded-full object-cover border-[3px] border-white shadow-sm" />
+                ))}
+              </div>
+              <div className="text-left">
+                <div className="flex items-center gap-1 text-amber-400 text-sm leading-none">
+                  ★★★★★ <span className="ml-1 text-ink font-bold text-sm">4.9</span>
+                </div>
+                <p className="text-xs text-muted mt-1">from pet parents across the U.S.</p>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Expanding Image Gallery (7 cols) */}
-          <div className="lg:col-span-7 relative w-full">
-            <div className="flex items-center gap-3 sm:gap-4 h-[360px] sm:h-[420px] md:h-[450px] w-full">
-              {heroGallery.map((item, idx) => {
-                const isActive = activeIdx === idx;
-                return (
-                  <div
-                    key={idx}
-                    onMouseEnter={() => setActiveIdx(idx)}
-                    className={`relative group transition-all duration-500 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer bg-neutral-200 h-full ${
-                      isActive ? "flex-[2.5] md:flex-[2.8]" : "flex-1 opacity-80 hover:opacity-100"
-                    }`}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                    />
+          {/* Photo collage */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative mx-auto max-w-[560px] grid grid-cols-5 grid-rows-6 gap-3 sm:gap-4 h-[420px] sm:h-[520px]">
+              <div className="col-span-3 row-span-6 rounded-[2.5rem] overflow-hidden bg-secondary-soft shadow-xl shadow-secondary/30 ring-8 ring-white">
+                <img src="/img/hero4.jpg" alt="Happy dog running through the surf" className="w-full h-full object-cover" />
+              </div>
+              <div className="col-span-2 row-span-3 rounded-[2rem] overflow-hidden bg-primary-soft shadow-lg ring-4 ring-white">
+                <img src="/img/hero2.png" alt="French bulldog in a cozy hoodie" className="w-full h-full object-cover" />
+              </div>
+              <div className="col-span-2 row-span-3 rounded-[2rem] overflow-hidden bg-primary-soft shadow-lg ring-4 ring-white">
+                <img src="/img/contact1.png" alt="Fluffy pup ready for a walk" className="w-full h-full object-cover object-top" />
+              </div>
 
-                    {/* Top Floating Badge */}
-                    <div className="absolute top-3.5 left-3.5 z-10">
-                      <span className="bg-[#182825]/90 text-white backdrop-blur-md text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    {/* Collapsed State Title Label */}
-                    <div
-                      className={`absolute inset-x-0 bottom-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-300 pointer-events-none ${
-                        isActive ? "opacity-0" : "opacity-100"
-                      }`}
-                    >
-                      <p className="text-white text-[0.68rem] sm:text-xs font-bold truncate">
-                        {item.title}
-                      </p>
-                    </div>
-
-                    {/* Expanded Hover Overlay with Details */}
-                    <div
-                      className={`absolute inset-0 flex flex-col justify-end p-5 sm:p-8 text-white bg-gradient-to-t from-black/85 via-black/40 to-transparent transition-opacity duration-300 pointer-events-none ${
-                        isActive ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <span className="inline-block text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-wider text-secondary bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full w-fit mb-2">
-                        {item.tag}
-                      </span>
-                      <h2 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-1.5 leading-snug">
-                        {item.title}
-                      </h2>
-                      <p className="text-xs sm:text-sm text-white/90 max-w-xs leading-relaxed mb-2 line-clamp-2">
-                        {item.description}
-                      </p>
-                      <span className="inline-flex items-center gap-1 text-[0.72rem] font-bold uppercase tracking-wider text-secondary">
-                        <span>Shop Now</span>
-                        <span>→</span>
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Selection indicator dots */}
-            <div className="flex items-center justify-center gap-2 mt-4">
-              {heroGallery.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setActiveIdx(idx)}
-                  aria-label={`Select ${heroGallery[idx].title}`}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    activeIdx === idx
-                      ? "w-6 h-1.5 bg-[#182825]"
-                      : "w-1.5 h-1.5 bg-stone-300 hover:bg-stone-400"
-                  }`}
-                />
-              ))}
             </div>
           </div>
-
         </div>
 
+        {/* Highlights strip */}
+        <div className="mt-14 lg:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto lg:mx-0">
+          {highlights.map((h) => (
+            <div key={h.label} className="flex items-center gap-3 bg-white/75 backdrop-blur border border-white rounded-2xl px-5 py-4 shadow-sm">
+              <span className="w-2 h-10 rounded-full bg-brand-gradient shrink-0" />
+              <div>
+                <p className="font-display text-xl font-semibold text-ink leading-none">{h.value}</p>
+                <p className="text-xs text-muted mt-1">{h.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,12 +1,19 @@
 "use client";
 
 import React from "react";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+import PetMarquee from "@/components/PetMarquee";
 import ProductGrid from "@/components/ProductGrid";
+import ShopByNeed from "@/components/ShopByNeed";
+import Features from "@/components/Features";
+import BundleSavings from "@/components/BundleSavings";
+import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import AboutSection from "@/components/AboutSection";
+import PetGallery from "@/components/PetGallery";
+import Faq from "@/components/Faq";
 import CTASection from "@/components/CTASection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -16,27 +23,21 @@ import NewsletterPopup from "@/components/NewsletterPopup";
 export default function Home() {
   return (
     <>
+      <AnnouncementBar />
       <Header />
       <main className="flex-grow">
-        {/* 1. Hero Section */}
         <Hero />
-        
-        {/* 2. Features Showcase */}
-        <Features />
-
-        {/* 3. Product Catalog Showcase */}
+        <PetMarquee />
         <ProductGrid />
-
-        {/* 4. Customer Social Proof & Reviews Showcase */}
+        <ShopByNeed />
+        <Features />
+        <BundleSavings />
+        <HowItWorks />
         <Testimonials />
-
-        {/* 5. About Us Section */}
         <AboutSection />
-        
-        {/* 6. Special Offer Conversion Banner */}
+        <PetGallery />
+        <Faq />
         <CTASection />
-
-        {/* 7. Pet Concierge & Support Section */}
         <Contact />
       </main>
 

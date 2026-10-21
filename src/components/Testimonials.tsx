@@ -1,177 +1,110 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
+import SectionHeading from "@/components/SectionHeading";
 
 const reviews = [
   {
     quote:
-      "The WhiskerCare slicker brush transformed grooming. The fine bristles gently glide through Bella’s coat with zero pulling, and the one-click button drops shed hair right into the trash!",
-    owner: "Sarah Jenkins",
-    pet: "Bella (Golden Retriever)",
-    role: "Verified Pet Parent",
-    rating: 5,
-    product: "WhiskerCare™ Slicker Grooming Brush",
-    petImage: "/img/hero3.png",
+      "Our tabby used to bolt the second she saw a brush. This one is so gentle she now leans into it — and clicking the button to drop the fur straight in the trash is genuinely satisfying.",
+    owner: "Megan T.",
+    pet: "Clementine, tabby cat",
+    product: "Pet Grooming Brush",
+    image: "/img/QualityPromise2.png",
   },
   {
     quote:
-      "Milo loves the PawPulse smart ball! The automated obstacle sensor is so responsive, and the LED ring keeps him active and captivated for hours.",
-    owner: "David Keller",
-    pet: "Milo (Scottish Fold Tabby)",
-    role: "Verified Pet Parent",
-    rating: 5,
-    product: "PawPulse™ Smart Interactive LED Ball",
-    petImage: "/img/hero5.jpg",
+      "Our beagle puppy goes through toys fast. These chew toys have held up for weeks and finally gave him something better to chew than my shoes.",
+    owner: "Jordan P.",
+    pet: "Biscuit, beagle",
+    product: "Chew Toys for Small Dogs",
+    image: "/img/contact2.png",
   },
   {
     quote:
-      "Rocky has hip stiffness, and this CloudRest bed made an immediate difference. The memory foam is dense and supportive, and the bolsters support his neck perfectly.",
-    owner: "Elena Ross",
-    pet: "Rocky (French Bulldog)",
-    role: "Verified Pet Parent",
-    rating: 5,
-    product: "CloudRest™ Orthopedic Calming Nest Bed",
-    petImage: "/img/contact3.png",
+      "Got the collar for our corgi pup. The slide adjuster made it easy to get a snug fit, and I can loosen it as she grows.",
+    owner: "Priya S.",
+    pet: "Waffles, corgi puppy",
+    product: "Adjustable Pet Collar",
+    image: "/img/QualityPromise.png",
+  },
+  {
+    quote:
+      "We have two dogs, so the 3-pack of chew toys made sense — the per-toy price was noticeably lower. Free shipping and it showed up right on time.",
+    owner: "Chris & Dana L.",
+    pet: "Scout & Juniper",
+    product: "Chew Toys — 3-pack",
+    image: "/img/QualityPromise3.png",
   },
 ];
 
+const Stars = () => <div className="text-amber-400 text-sm tracking-wider">★★★★★</div>;
+
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
-  };
-
-  const current = reviews[activeIndex];
+  const [featured, ...rest] = reviews;
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="testimonials">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Left-Aligned Header Block */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-          <div className="max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-              <span className="text-xs">🐾</span>
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-                PET PARENT STORIES
+    <section className="py-16 sm:py-20 md:py-24 bg-brand-gradient-soft relative overflow-hidden" id="testimonials">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10 sm:mb-14">
+          <SectionHeading
+            align="left"
+            eyebrow="Pet parent reviews"
+            title={<>Wagging tails, <span className="text-gradient">happy purrs</span></>}
+            description="A few words from the people (and pets) who use our essentials every day."
+          />
+          <div className="flex items-center gap-4 bg-white rounded-2xl px-6 py-4 shadow-sm border border-white self-start lg:self-auto">
+            <span className="font-display text-4xl font-semibold text-ink leading-none">4.9</span>
+            <div>
+              <Stars />
+              <p className="text-xs text-muted mt-1">Average rating from verified buyers</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+          {/* Featured review with photo */}
+          <figure className="lg:col-span-2 card overflow-hidden grid grid-cols-1 md:grid-cols-2">
+            <div className="relative min-h-[260px] md:min-h-full">
+              <img src={featured.image} alt={featured.pet} className="absolute inset-0 w-full h-full object-cover" />
+              <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[0.65rem] font-bold uppercase tracking-wider text-ink px-3 py-1.5 rounded-full">
+                {featured.product}
               </span>
             </div>
-
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
-              Loved by Pets, <span className="italic text-secondary font-serif">Adored by Parents</span>
-            </h2>
-            <p className="text-neutral-text/75 text-sm sm:text-base mt-2.5 leading-relaxed">
-              Read real feedback from our devoted community of dog lovers and cat owners across the country.
-            </p>
-          </div>
-
-          {/* Aggregate Rating Chip */}
-          <div className="flex items-center gap-4 bg-white border border-stone-200/70 px-6 py-3.5 rounded-2xl flex-shrink-0 shadow-xs">
-            <div className="flex text-amber-500 text-lg">
-              {"★★★★★"}
+            <div className="p-7 sm:p-9 flex flex-col">
+              <svg className="w-10 h-10 text-primary mb-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M9.6 6C6.5 7.3 4.5 10 4.5 13.4V18h6v-6H7.6c.2-2 1.4-3.4 3.2-4.2L9.6 6zm9 0c-3.1 1.3-5.1 4-5.1 7.4V18h6v-6h-2.9c.2-2 1.4-3.4 3.2-4.2L18.6 6z" />
+              </svg>
+              <blockquote className="font-display text-xl sm:text-2xl text-ink leading-snug flex-1">
+                &ldquo;{featured.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-8 pt-6 border-t border-line flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-bold text-ink">{featured.owner}</p>
+                  <p className="text-xs text-muted">{featured.pet}</p>
+                </div>
+                <Stars />
+              </figcaption>
             </div>
-            <div className="border-l border-stone-200 pl-4">
-              <div className="text-base font-bold text-primary leading-none">4.9 / 5.0</div>
-              <div className="text-[0.65rem] uppercase tracking-wider text-neutral-text/50 font-bold mt-1">1,200+ Verified Paws</div>
-            </div>
-          </div>
-        </div>
+          </figure>
 
-        {/* Featured Pet Review Showcase Card (Light Theme) */}
-        <div className="bg-white border border-stone-200/70 rounded-[2.5rem] p-6 sm:p-10 lg:p-12 shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
-            {/* Left: Pet Photo & Tag (5 cols) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative aspect-square w-full rounded-3xl overflow-hidden shadow-md border border-stone-200/60 bg-[#FAF8F5]">
-                <img
-                  src={current.petImage}
-                  alt={current.pet}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[0.65rem] font-bold uppercase tracking-wider bg-[#182825] text-white px-3 py-1 rounded-full inline-block mb-1.5 shadow-sm">
-                    {current.product}
-                  </span>
-                  <div className="text-sm font-serif font-bold text-white/95">{current.pet}</div>
+          <div className="flex flex-col gap-5 sm:gap-6">
+          {rest.map((r) => (
+            <figure key={r.owner} className="card p-5 flex flex-col flex-1">
+              <div className="flex items-center gap-3 mb-4">
+                <img src={r.image} alt={r.pet} className="w-12 h-12 rounded-full object-cover ring-4 ring-primary-soft" />
+                <div className="min-w-0">
+                  <p className="font-bold text-ink text-sm">{r.owner}</p>
+                  <p className="text-xs text-muted truncate">{r.pet}</p>
                 </div>
               </div>
-            </div>
-
-            {/* Right: Quote, Rating, Author & Navigation (7 cols) */}
-            <div className="lg:col-span-7 flex flex-col justify-between text-left">
-              <div>
-                {/* Stars & Tag */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex text-amber-500 text-lg">
-                    {"★★★★★"}
-                  </div>
-                  <span className="text-[0.68rem] uppercase font-bold text-secondary tracking-widest bg-[#FAF8F5] border border-stone-200/60 px-3 py-1 rounded-full">
-                    5.0 Verified Purchase
-                  </span>
-                </div>
-
-                {/* Big Quote */}
-                <blockquote className="font-serif text-lg sm:text-xl md:text-2xl text-primary font-medium leading-relaxed mb-8">
-                  &ldquo;{current.quote}&rdquo;
-                </blockquote>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-3.5 mb-8">
-                  <div className="w-11 h-11 rounded-full bg-[#182825] text-white flex items-center justify-center font-serif font-bold text-base shadow-sm">
-                    {current.owner.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="text-base font-serif font-bold text-primary leading-tight">{current.owner}</div>
-                    <div className="text-xs text-neutral-text/60 font-medium">{current.role} • Companion to {current.pet}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Slider Controls */}
-              <div className="flex items-center justify-between pt-6 border-t border-stone-200/70">
-                <div className="flex items-center gap-2">
-                  {reviews.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveIndex(i)}
-                      className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                        i === activeIndex ? "w-8 bg-secondary" : "w-2.5 bg-stone-300 hover:bg-stone-400"
-                      }`}
-                      aria-label={`Go to review ${i + 1}`}
-                    />
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-full bg-[#FAF8F5] text-primary flex items-center justify-center hover:bg-secondary hover:text-white transition-all cursor-pointer border border-stone-200 shadow-xs"
-                    aria-label="Previous review"
-                  >
-                    ←
-                  </button>
-                  <button
-                    onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-full bg-[#FAF8F5] text-primary flex items-center justify-center hover:bg-secondary hover:text-white transition-all cursor-pointer border border-stone-200 shadow-xs"
-                    aria-label="Next review"
-                  >
-                    →
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
+              <Stars />
+              <blockquote className="text-sm text-muted leading-relaxed mt-2 flex-1">&ldquo;{r.quote}&rdquo;</blockquote>
+              <span className="mt-4 self-start text-[0.65rem] font-bold uppercase tracking-wider text-secondary-deep bg-secondary-soft px-2.5 py-1 rounded-md">
+                {r.product}
+              </span>
+            </figure>
+          ))}
           </div>
         </div>
-
       </div>
     </section>
   );

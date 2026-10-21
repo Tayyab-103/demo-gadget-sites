@@ -4,22 +4,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import productsData from "../../config/products.json";
 import { Product } from "@/types";
+import SectionHeading from "@/components/SectionHeading";
 
 const products = productsData as unknown as Product[];
 
-const cardMeta: Record<string, { badge: string; badgeBg: string }> = {
-  product1: {
-    badge: "Bestseller",
-    badgeBg: "bg-[#182825] text-white",
-  },
-  product2: {
-    badge: "Smart Toy",
-    badgeBg: "bg-secondary text-white",
-  },
-  product3: {
-    badge: "Top Rated",
-    badgeBg: "bg-[#182825] text-white",
-  },
+const badges: Record<string, { label: string; className: string }> = {
+  product1: { label: "Bestseller", className: "bg-primary text-primary-text" },
+  product2: { label: "Puppy favorite", className: "bg-secondary text-secondary-text" },
+  product3: { label: "Dogs & cats", className: "bg-white text-ink" },
 };
 
 export default function ProductGrid() {
@@ -32,132 +24,90 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-[#FAF8F5] relative overflow-hidden" id="shop">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-left max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              WHISKER VALE MERCANTILE CATALOG
-            </span>
-          </div>
+    <section className="py-16 sm:py-20 md:py-24 bg-white relative" id="shop">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="The collection"
+          title={<>Pet favorites, <span className="text-gradient">ready to ship</span></>}
+          description="Three everyday essentials, each available as a single item or in money-saving bundles of up to 8."
+          className="mb-10 sm:mb-14"
+        />
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Curated <span className="italic text-secondary font-serif">Pet Essentials</span>
-          </h2>
-
-          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            Thoughtfully engineered for safety, comfort, and everyday joy.
-          </p>
-        </div>
-
-        {/* 3-Card Catalog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {products.map((product) => {
-            const firstBundle = product.bundles && product.bundles[0];
-            const lastBundle = product.bundles && product.bundles.length > 0
-              ? product.bundles[product.bundles.length - 1]
-              : null;
-            
-            const minPrice = firstBundle
-              ? parseFloat(String(firstBundle.price)).toFixed(2)
-              : parseFloat(product.ssPrice || "0").toFixed(2);
-            const maxPrice = lastBundle
-              ? parseFloat(String(lastBundle.price)).toFixed(2)
-              : minPrice;
-
-            const meta = cardMeta[product.id] || {
-              badge: "Essential",
-              badgeBg: "bg-[#182825] text-white",
-            };
+            const bundles = product.bundles ?? [];
+            const fromPrice = bundles[0] ? bundles[0].price : parseFloat(product.ssPrice || "0");
+            const best = bundles[bundles.length - 1];
+            const bestUnit = best ? (best.price / best.quantity).toFixed(2) : null;
+            const badge = badges[product.id] ?? { label: "Essential", className: "bg-primary text-primary-text" };
             const isLiked = liked[product.id];
+            const hoverImage = product.images?.[1];
 
             return (
-              <div
+              <Link
                 key={product.id}
-                className="bg-white rounded-[2rem] border border-stone-200/60 p-5 sm:p-6 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
+                href={`/product/${product.id}`}
+                className="group flex flex-col bg-white rounded-[2rem] border border-line p-3 hover:border-primary hover:shadow-xl hover:shadow-primary/15 transition-all duration-300"
               >
-                <div>
-                  {/* 1:1 Aspect Ratio Image Container */}
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5] mb-5">
+                <div className="relative aspect-[4/4.3] rounded-[1.5rem] overflow-hidden bg-brand-gradient-soft">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  />
+                  {hoverImage && (
                     <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/600x600?text=Pet+Product";
-                      }}
+                      src={hoverImage}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover opacity-0 scale-105 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100"
                     />
+                  )}
 
-                    {/* Top Left Badge */}
-                    <span
-                      className={`absolute top-3.5 left-3.5 ${meta.badgeBg} text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm`}
-                    >
-                      {meta.badge}
-                    </span>
+                  <span className={`absolute top-3 left-3 text-[0.65rem] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm ${badge.className}`}>
+                    {badge.label}
+                  </span>
 
-                    {/* Top Right Wishlist Heart Button */}
-                    <button
-                      onClick={(e) => toggleLike(product.id, e)}
-                      aria-label="Save to favorites"
-                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-sm shadow-sm hover:scale-110 transition-all cursor-pointer border border-black/[0.04]"
-                    >
-                      <span className={isLiked ? "text-red-500" : "text-stone-400 hover:text-red-500"}>
-                        {isLiked ? "♥" : "♡"}
-                      </span>
-                    </button>
-                  </div>
-
-                  {/* Rating Block */}
-                  <div className="flex items-center gap-1.5 mb-2.5">
-                    <div className="flex text-amber-500 text-xs">
-                      {"★★★★★"}
-                    </div>
-                    <span className="text-xs font-bold text-neutral-text/75">
-                      5.0 <span className="text-neutral-text/40 font-normal">(380)</span>
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2.5 leading-snug group-hover:text-secondary transition-colors">
-                    <Link href={`/product/${product.id}`}>
-                      {product.name}
-                    </Link>
-                  </h3>
-
-                  {/* Price Range: 1 Unit Pack - 8 Unit Pack */}
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-xl sm:text-2xl font-bold text-primary font-serif">
-                      ${minPrice} – ${maxPrice}
-                    </span>
-                  </div>
-
-                  {/* Savings Tag */}
-                  <div className="mb-6">
-                    <span className="inline-flex items-center gap-1 bg-[#FAF8F5] border border-stone-200/60 text-secondary text-[0.68rem] font-bold px-3 py-1 rounded-lg">
-                      <span>✓</span>
-                      <span>1 to 8 Unit Pack Tiers</span>
-                    </span>
-                  </div>
-                </div>
-
-                {/* Bottom Action Button */}
-                <div className="pt-2">
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3.5 px-6 rounded-full text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg"
+                  <button
+                    onClick={(e) => toggleLike(product.id, e)}
+                    aria-label={isLiked ? "Remove from favorites" : "Save to favorites"}
+                    aria-pressed={isLiked}
+                    className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm hover:scale-110 transition-transform cursor-pointer"
                   >
-                    <span>View Product &amp; Tiers</span>
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </Link>
+                    <svg viewBox="0 0 24 24" className={`w-4 h-4 ${isLiked ? "fill-rose-500 stroke-rose-500" : "fill-none stroke-ink"}`} strokeWidth="2">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
+                    </svg>
+                  </button>
+
+                  {bestUnit && (
+                    <span className="absolute bottom-3 left-3 right-3 text-center text-xs font-semibold text-ink bg-white/90 backdrop-blur rounded-full py-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
+                      As low as ${bestUnit} each in an {best.quantity}-pack
+                    </span>
+                  )}
                 </div>
-              </div>
+
+                <div className="px-3 pt-5 pb-3 flex flex-col flex-1">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary-deep">{product.category}</span>
+                    <span className="text-xs text-muted flex items-center gap-1">
+                      <span className="text-amber-400">★</span> 4.9
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-ink leading-snug mb-4">{product.name}</h3>
+
+                  <div className="mt-auto flex items-center justify-between gap-3">
+                    <div>
+                      <span className="text-[0.65rem] uppercase tracking-wider text-faint font-bold block">From</span>
+                      <span className="font-display text-2xl font-semibold text-ink">${fromPrice.toFixed(2)}</span>
+                    </div>
+                    <span className="inline-flex items-center gap-2 bg-ink text-white group-hover:bg-linear-to-r group-hover:from-primary group-hover:to-secondary group-hover:text-primary-text text-xs font-bold px-5 py-3 rounded-full transition-colors">
+                      View options →
+                    </span>
+                  </div>
+                </div>
+              </Link>
             );
           })}
         </div>
-
       </div>
     </section>
   );

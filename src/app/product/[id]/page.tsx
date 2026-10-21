@@ -6,6 +6,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
+import Features from "@/components/Features";
+import { siteConfig } from "@/lib/brand";
 import productsData from "../../../../config/products.json";
 import { useCart } from "@/context/CartContext";
 import { Product, Bundle } from "@/types";
@@ -38,17 +40,17 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center bg-[#FAF8F5]">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 text-center">
           <div className="text-4xl mb-3">🐾</div>
-          <h2 className="font-serif text-2xl font-bold text-primary mb-3">Pet Product Not Found</h2>
+          <h2 className="font-display text-2xl font-bold text-ink mb-3">Product not found</h2>
           <p className="text-neutral-text/60 mb-6 max-w-md mx-auto text-sm">
-            The pet essential you are searching for is unavailable or has been relocated.
+            The product you are looking for is unavailable or has moved.
           </p>
           <button
-            className="inline-block font-bold text-center bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
+            className="inline-block font-bold text-center bg-ink text-white hover:bg-primary-deep transition-all duration-300 py-3 px-7 rounded-full text-xs uppercase tracking-widest cursor-pointer shadow-md"
             onClick={() => router.push("/")}
           >
-            Return to Pet Mercantile
+            Back to the shop
           </button>
         </main>
         <Footer />
@@ -78,24 +80,24 @@ export default function ProductDetail() {
   return (
     <>
       <Header />
-      <main className="bg-[#FAF8F5] py-8 sm:py-12 md:py-16 relative overflow-hidden">
+      <main className="bg-brand-wash py-8 sm:py-12 md:py-16 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 text-xs text-neutral-text/50 font-bold uppercase tracking-wider mb-6 sm:mb-8">
-            <Link href="/" className="hover:text-secondary transition-colors">Home</Link>
+            <Link href="/" className="hover:text-primary-deep transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/shop" className="hover:text-secondary transition-colors">Shop</Link>
+            <Link href="/shop" className="hover:text-primary-deep transition-colors">Shop</Link>
             <span>/</span>
-            <span className="text-primary truncate max-w-xs">{product.name}</span>
+            <span className="text-ink truncate max-w-xs">{product.name}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left: Product Image & 3-Image Gallery (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-stone-200/60 shadow-xs flex flex-col">
+            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-4 sm:p-6 md:p-8 border border-line shadow-xs flex flex-col">
               {/* Main Image */}
-              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#FAF8F5] shadow-xs">
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-primary-soft/50 shadow-xs">
                 <img
                   id="main-image"
                   src={currentDisplayImage}
@@ -120,8 +122,8 @@ export default function ProductDetail() {
                         aria-label={`View ${product.name} image ${idx + 1}`}
                         className={`thumb relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer transition-all duration-200 border-2 ${
                           isSelected
-                            ? "border-[#182825] ring-2 ring-[#182825]/20 shadow-sm opacity-100 scale-[1.02]"
-                            : "border-stone-200/80 hover:border-stone-400 opacity-70 hover:opacity-100"
+                            ? "border-primary ring-2 ring-primary/40 shadow-sm opacity-100 scale-[1.02]"
+                            : "border-line hover:border-stone-400 opacity-70 hover:opacity-100"
                         }`}
                       >
                         <img
@@ -140,30 +142,30 @@ export default function ProductDetail() {
             </div>
 
             {/* Right: Product Details & Dropdown Selector (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 border border-stone-200/60 shadow-xs">
-              <span className="text-[0.65rem] sm:text-xs font-bold uppercase text-secondary tracking-[0.2em] bg-[#FAF8F5] border border-stone-200/60 px-3 py-1 rounded-full inline-block mb-3">
+            <div className="lg:col-span-6 bg-white rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 border border-line shadow-xs">
+              <span className="text-[0.65rem] sm:text-xs font-bold uppercase text-primary-deep tracking-[0.2em] bg-primary-soft/50 border border-line px-3 py-1 rounded-full inline-block mb-3">
                 🐾 {product.category}
               </span>
 
-              <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 leading-snug">
+              <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-ink mb-3 leading-snug">
                 {product.name}
               </h1>
 
               {/* Star Ratings */}
-              <div className="flex items-center gap-2.5 mb-5 pb-5 border-b border-stone-200/60">
+              <div className="flex items-center gap-2.5 mb-5 pb-5 border-b border-line">
                 <div className="flex text-amber-500 text-xs sm:text-sm">
                   {"★★★★★"}
                 </div>
-                <span className="text-xs text-neutral-text/60 font-medium">5.0 (420+ Verified Reviews)</span>
+                <span className="text-xs text-neutral-text/60 font-medium">4.9 from verified buyers</span>
               </div>
 
               {/* Price Row */}
               <div className="mb-5 flex items-baseline gap-3 flex-wrap">
-                <span className="font-serif text-3xl sm:text-4xl font-bold text-primary">
+                <span className="font-display text-3xl sm:text-4xl font-bold text-ink">
                   ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 </span>
                 {selectedBundle.quantity > 1 && (
-                  <span className="text-xs font-bold text-secondary bg-[#FAF8F5] border border-stone-200/60 px-2.5 py-1 rounded-lg">
+                  <span className="text-xs font-bold text-primary-deep bg-primary-soft/50 border border-line px-2.5 py-1 rounded-lg">
                     ${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} / unit
                   </span>
                 )}
@@ -180,8 +182,8 @@ export default function ProductDetail() {
 
               {/* Dropdown Selector for Quantity & Bundle */}
               {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-6 p-4 sm:p-5 bg-[#FAF8F5] rounded-2xl border border-stone-200/60">
-                  <label htmlFor="bundle-select" className="block text-xs font-bold uppercase tracking-wider text-primary mb-2">
+                <div className="mb-6 p-4 sm:p-5 bg-primary-soft/50 rounded-2xl border border-line">
+                  <label htmlFor="bundle-select" className="block text-xs font-bold uppercase tracking-wider text-ink mb-2">
                     Select Quantity &amp; Bundle:
                   </label>
                   
@@ -194,7 +196,7 @@ export default function ProductDetail() {
                         const bundle = product.bundles?.find((b) => b.quantity === q);
                         if (bundle) setSelectedBundle(bundle);
                       }}
-                      className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 text-sm font-semibold text-primary focus:outline-none focus:border-[#182825] focus:ring-1 focus:ring-[#182825] transition-all cursor-pointer shadow-xs appearance-none pr-10"
+                      className="w-full bg-white border border-line rounded-xl px-4 py-3 text-sm font-semibold text-ink focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all cursor-pointer shadow-xs appearance-none pr-10"
                     >
                       {product.bundles.map((bundle) => {
                         const bPrice = parseFloat(String(bundle.price)).toFixed(2);
@@ -221,7 +223,7 @@ export default function ProductDetail() {
 
                   <div className="mt-2.5 flex items-center justify-between text-[0.68rem] text-neutral-text/60 font-medium">
                     <span>🐾 Automatic volume discounts</span>
-                    <span className="text-secondary font-bold">Fast UPS Dispatch</span>
+                    <span className="text-primary-deep font-bold">Free {siteConfig.shippingCarrier} shipping</span>
                   </div>
                 </div>
               )}
@@ -229,10 +231,10 @@ export default function ProductDetail() {
               {/* Add to Cart CTA */}
               <div className="flex flex-col gap-2.5">
                 <button
-                  className="w-full inline-flex items-center justify-center gap-2.5 bg-[#182825] text-white hover:bg-secondary transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full cursor-pointer text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2.5 bg-ink text-white hover:bg-primary-deep transition-all duration-300 py-3.5 sm:py-4 px-8 rounded-full cursor-pointer text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg"
                   onClick={handleAddToCart}
                 >
-                  <span>Add {selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Item"} to Pet Cart</span>
+                  <span>Add {selectedBundle.quantity > 1 ? `${selectedBundle.quantity}-Pack Bundle` : "Item"} to Cart</span>
                   <span className="text-sm">🐾</span>
                 </button>
 
@@ -242,8 +244,19 @@ export default function ProductDetail() {
                   </div>
                 )}
 
+                <div className="grid grid-cols-2 gap-2.5 mt-2">
+                  <div className="rounded-2xl bg-primary-soft px-4 py-3">
+                    <p className="text-xs font-bold text-ink">Free shipping</p>
+                    <p className="text-[0.68rem] text-muted">{siteConfig.shippingCarrier}, {siteConfig.shippingPeriod} business days</p>
+                  </div>
+                  <div className="rounded-2xl bg-secondary-soft px-4 py-3">
+                    <p className="text-xs font-bold text-ink">{siteConfig.trialPeriod}-day guarantee</p>
+                    <p className="text-[0.68rem] text-muted">Hassle-free returns</p>
+                  </div>
+                </div>
+
                 {/* Guaranteed Safe Checkout Badges */}
-                <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col items-center gap-2">
+                <div className="mt-4 pt-4 border-t border-line flex flex-col items-center gap-2">
                   <div className="flex items-center gap-2 text-[0.68rem] text-neutral-text/60 font-semibold">
                     <span className="text-emerald-600">🔒</span>
                     <span>Guaranteed Safe &amp; Secure Checkout</span>
@@ -259,6 +272,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </main>
+      <Features />
       <Footer />
       <CartDrawer />
     </>

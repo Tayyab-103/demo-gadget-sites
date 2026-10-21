@@ -1,11 +1,12 @@
 {
   "Product": "Pet Store",
-  "Processor": "Synovus Celero",
-  "brandName": "Whisker Vale Pet Mercantile",
-  "websiteUrl": "WhiskerValePetMercantile.com",
-  "email": "support@whiskervalepetmercantile.com",
-  "descriptor": "WhiskerValePetMercanti",
-  "corpName": "Starpath Marketing Co.",
+  "mcc": "5995",
+  "Processor": "Paysafe -PNC/BBVA",
+  "brandName": "Happy Trail Pet Goods Market",
+  "websiteUrl": "happytrailpetgoodsmarket.com",
+  "email": "support@happytrailpetgoodsmarket.com",
+  "descriptor": "HappyTrailPetGoodsMa",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#182825",
-    "primaryTextColor": "#ffffff",
-    "secondaryColor": "#E07A5F",
-    "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#FAF8F5",
-    "neutralTextColor": "#24201D",
+    "primaryColor": "#7ED9A6",
+    "primaryTextColor": "#0F2F25",
+    "secondaryColor": "#86C8F2",
+    "secondaryTextColor": "#0C2D4A",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#16332E",
     "fontFamily": "Montserrat"
   }
 }

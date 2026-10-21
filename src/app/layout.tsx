@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
+import { Poppins, Inter, Montserrat, Roboto, Fredoka } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium pet grooming brushes, interactive smart motion toys, and orthopedic calming beds online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop everyday pet essentials — self-cleaning grooming brushes, durable chew toys and adjustable collars for dogs and cats.`;
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -32,6 +32,14 @@ const inter = Inter({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+  display: "swap",
+});
+
+// Rounded display face used for headings
+const fredoka = Fredoka({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-fredoka",
   display: "swap",
 });
 
@@ -87,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" className={`${selectedFontClass} ${fredoka.variable} h-full antialiased`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {

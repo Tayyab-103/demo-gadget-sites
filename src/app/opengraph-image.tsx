@@ -19,7 +19,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: siteConfig.theme.neutralBgColor,
+          background: `linear-gradient(135deg, #ffffff 0%, ${siteConfig.theme.primaryColor}55 55%, ${siteConfig.theme.secondaryColor}77 100%)`,
           position: "relative",
         }}
       >
@@ -32,7 +32,7 @@ export default async function Image() {
             height: 280,
             borderRadius: "50%",
             background: siteConfig.theme.primaryColor,
-            opacity: 0.08,
+            opacity: 0.35,
             display: "flex",
           }}
         />
@@ -45,7 +45,7 @@ export default async function Image() {
             height: 340,
             borderRadius: "50%",
             background: siteConfig.theme.secondaryColor,
-            opacity: 0.14,
+            opacity: 0.35,
             display: "flex",
           }}
         />
@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Everyday Essentials for Dogs &amp; Cats
         </div>
 
         <div
@@ -91,7 +91,7 @@ export default async function Image() {
             width: 120,
             height: 6,
             borderRadius: 999,
-            background: siteConfig.theme.secondaryColor,
+            background: `linear-gradient(90deg, ${siteConfig.theme.primaryColor}, ${siteConfig.theme.secondaryColor})`,
             display: "flex",
           }}
         />

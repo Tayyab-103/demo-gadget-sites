@@ -1,106 +1,61 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+import { siteConfig } from "@/lib/brand";
+import SectionHeading from "@/components/SectionHeading";
 
 const steps = [
   {
     step: "01",
-    label: "SELECTION & SAVINGS",
-    title: "Curate Pet Essentials",
-    description:
-      "Choose from vet-approved grooming tools, smart interactive toys, and orthopedic beds with automatic volume savings.",
+    title: "Pick what your pet needs",
+    description: "Choose a brush, chew toy or collar, then select a single item or a 2 to 8-pack bundle for a lower per-item price.",
     image: "/img/how_step1.png",
-    highlight: "Volume discounts applied automatically",
   },
   {
     step: "02",
-    label: "DOMESTIC DISPATCH",
-    title: "Fast UPS Delivery",
-    description:
-      "Carefully packed in pet-safe recyclable boxes and dispatched within 1–2 days with live UPS tracking.",
+    title: "We pack & ship it free",
+    description: `Your order is packed with care and shipped free via ${siteConfig.shippingCarrier}. Expect it in ${siteConfig.shippingPeriod} business days.`,
     image: "/img/how_step2.png",
-    highlight: "Fast 3–5 business days delivery",
   },
   {
     step: "03",
-    label: "PEACE OF MIND",
-    title: "14-Day Happy Tail Guarantee",
-    description:
-      "Enjoy 100% satisfaction. If your companion isn't completely delighted, our concierge provides an easy refund.",
+    title: "Enjoy — risk free",
+    description: `Try it at home with your pet. If it isn't a good fit, contact us within ${siteConfig.trialPeriod} days for a hassle-free return.`,
     image: "/img/how_step3.png",
-    highlight: "100% risk-free guarantee",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="relative bg-[#FAF8F5] py-12 sm:py-16 md:py-20 overflow-hidden" id="how-it-works">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden" id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Left-Aligned Section Header */}
-        <div className="max-w-3xl text-left mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
-            <span className="text-xs">🐾</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
-              THE WHISKER VALE EXPERIENCE
-            </span>
-          </div>
+        <SectionHeading
+          eyebrow="How it works"
+          title={<>From our shelf to your <span className="text-gradient">front door</span></>}
+          className="mb-12 sm:mb-16"
+        />
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight mb-3">
-            Thoughtfully Crafted, <span className="italic text-secondary font-serif">Delivered with Care</span>
-          </h2>
-          <p className="text-neutral-text/70 text-sm sm:text-base leading-relaxed">
-            From our mercantile to your living room, we make nurturing your pet&apos;s daily health, play, and rest a completely effortless experience.
-          </p>
-        </div>
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+          {/* Dashed connector on desktop */}
+          <div className="hidden md:block absolute top-22 left-[16%] right-[16%] border-t-2 border-dashed border-primary/60" aria-hidden="true" />
 
-        {/* 3-Column Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {steps.map((item) => (
-            <div
-              key={item.step}
-              className="bg-white rounded-[2rem] p-7 sm:p-8 border border-stone-200/60 shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div>
-                {/* Image Container with Elegant Rounded Corners */}
-                <div className="relative aspect-[16/11] w-full rounded-2xl overflow-hidden mb-7 bg-neutral-100 shadow-inner">
-                  <Image
+            <div key={item.step} className="relative flex flex-col items-center text-center group">
+              <div className="relative">
+                <div className="w-44 h-44 rounded-full p-1.5 bg-brand-gradient shadow-lg shadow-primary/25">
+                  <img
                     src={item.image}
                     alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full rounded-full object-cover border-4 border-white transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  {/* Elegant Number Pill */}
-                  <span className="absolute top-3.5 left-3.5 bg-[#182825]/90 backdrop-blur-md text-[#FAF8F5] text-xs font-serif font-bold px-3 py-1 rounded-full shadow-sm">
-                    {item.step}
-                  </span>
                 </div>
-
-                {/* Subtitle & Title */}
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-secondary block mb-1.5">
-                  {item.label}
+                <span className="absolute -top-1 -right-1 w-12 h-12 rounded-full bg-ink text-white font-display font-semibold flex items-center justify-center border-4 border-white">
+                  {item.step}
                 </span>
-
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-3 leading-snug group-hover:text-secondary transition-colors">
-                  {item.title}
-                </h3>
-
-                <p className="text-neutral-text/70 text-xs sm:text-sm leading-relaxed mb-6">
-                  {item.description}
-                </p>
               </div>
-
-              {/* Bottom Feature Tag */}
-              <div className="pt-4 border-t border-stone-200/60 flex items-center gap-2 text-xs font-medium text-neutral-text/80">
-                <span className="text-secondary text-sm">✓</span>
-                <span className="text-[0.75rem]">{item.highlight}</span>
-              </div>
+              <h3 className="font-display text-2xl font-semibold text-ink mt-7 mb-2">{item.title}</h3>
+              <p className="text-sm text-muted leading-relaxed max-w-xs">{item.description}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -121,28 +121,28 @@ export default function Checkout() {
       {loading && (
         <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center">
           <div className="w-12 h-12 border-4 border-black/10 border-t-secondary rounded-full animate-spin" />
-          <h4 className="mt-6 text-lg font-bold text-primary">Processing Secure Order...</h4>
+          <h4 className="mt-6 text-lg font-bold text-ink">Processing Secure Order...</h4>
           <p className="text-xs text-neutral-text/55">Please do not refresh or close this window.</p>
         </div>
       )}
 
-      <main className="bg-[#FAF8F5] py-12 md:py-20 relative overflow-hidden">
+      <main className="bg-brand-wash py-12 md:py-20 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-stone-200/60 shadow-xs mb-3.5">
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-line shadow-xs mb-3.5">
             <span className="text-xs">🔒</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-secondary">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-primary-deep">
               GUARANTEED 256-BIT ENCRYPTION
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-primary tracking-tight mb-8">
-            Complete Your <span className="italic text-secondary font-serif">Order</span>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-tight mb-8">
+            Complete Your <span className="text-primary-deep font-display">Order</span>
           </h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
             {/* Form Column */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/70 shadow-xs">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-line shadow-xs">
               {errorMsg && (
                 <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-6 text-xs md:text-sm">
                   <strong>Transaction Status:</strong> {errorMsg}
@@ -151,7 +151,7 @@ export default function Checkout() {
 
               <form onSubmit={handleSubmit}>
                 {/* Billing/Shipping Address */}
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-ink">
                   1. Shipping Information
                 </h3>
                 
@@ -199,7 +199,7 @@ export default function Checkout() {
 
                 {/* Credit Card Details */}
                 <div className="flex items-center justify-between border-b border-black/5 pb-3.5 mb-6 mt-10">
-                  <h3 className="text-base font-bold uppercase tracking-wider text-primary">
+                  <h3 className="text-base font-bold uppercase tracking-wider text-ink">
                     2. Payment Details
                   </h3>
                   <div className="flex items-center gap-2">
@@ -250,7 +250,7 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-secondary text-white hover:brightness-110 transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
+                <button type="submit" className="inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-ink text-white hover:bg-primary-deep transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
                   <span>Complete Secure Order</span>
                   <span>🐾</span>
                 </button>
@@ -260,7 +260,7 @@ export default function Checkout() {
             {/* Cart Summary Column */}
             <div className="sticky top-[120px] flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-ink">
                   Order Summary
                 </h3>
 
@@ -268,7 +268,7 @@ export default function Checkout() {
                 {cart.map((item) => (
                   <div className="flex justify-between items-center py-4 border-b border-dashed border-black/10 last:border-b-0" key={item.Id}>
                     <div className="flex-1 pr-4">
-                      <strong className="text-xs md:text-sm font-bold text-primary">{item.Name}</strong>
+                      <strong className="text-xs md:text-sm font-bold text-ink">{item.Name}</strong>
                       <span className="block text-[0.65rem] font-semibold text-neutral-text/45 uppercase tracking-wide mt-1">
                         {item.Label} (Qty: {item.Qty})
                       </span>
@@ -281,7 +281,7 @@ export default function Checkout() {
 
                 {/* Shipping Insurance Checkbox */}
                 <div
-                  className="p-4 bg-secondary/5 border border-dashed border-secondary/30 rounded-2xl my-6 flex items-center gap-3.5 cursor-pointer hover:bg-secondary/8 transition-colors duration-200"
+                  className="p-4 bg-secondary/5 border border-dashed border-secondary/30 rounded-2xl my-6 flex items-center gap-3.5 cursor-pointer hover:bg-primary-deep/8 transition-colors duration-200"
                   onClick={() => setShippingInsurance(prev => !prev)}
                 >
                   <input
@@ -292,7 +292,7 @@ export default function Checkout() {
                     className="w-4 h-4 cursor-pointer accent-secondary"
                   />
                   <div>
-                    <strong className="text-xs md:text-sm font-bold text-primary block">
+                    <strong className="text-xs md:text-sm font-bold text-ink block">
                       Add Shipping Insurance
                     </strong>
                     <span className="text-[0.65rem] text-neutral-text/50">
@@ -319,8 +319,8 @@ export default function Checkout() {
                   )}
 
                   <div className="flex justify-between items-center border-t border-black/5 pt-4 mt-2 font-bold text-base md:text-lg">
-                    <span className="text-primary uppercase tracking-wider text-xs md:text-sm">Grand Total:</span>
-                    <span className="text-secondary font-extrabold">${grandTotal}</span>
+                    <span className="text-ink uppercase tracking-wider text-xs md:text-sm">Grand Total:</span>
+                    <span className="text-primary-deep font-extrabold">${grandTotal}</span>
                   </div>
                 </div>
               </div>

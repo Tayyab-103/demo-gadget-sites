@@ -20,46 +20,46 @@ function ConfirmContent() {
   });
 
   return (
-    <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/5 text-center max-w-[600px] mx-auto shadow-md">
+    <div className="card p-8 md:p-12 text-center max-w-[600px] mx-auto">
       {/* Success Badge */}
       <div className="w-[64px] h-[64px] rounded-full border border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold bg-secondary/10 shadow-sm">
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-primary mb-4 tracking-tight">Order Confirmed!</h2>
-      <p className="text-neutral-text/75 text-sm md:text-base mb-8">
+      <h2 className="text-2xl md:text-3xl font-black uppercase text-neutral-text mb-4 tracking-tight">Order Confirmed!</h2>
+      <p className="text-muted text-sm md:text-base mb-8">
         Thank you for your purchase. Your payment was processed successfully.
       </p>
 
       {/* Order Info Table */}
-      <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
+      <div className="bg-neutral-bg border border-line rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Order ID:</span>
-          <strong className="text-primary font-bold">{orderId}</strong>
+          <span className="text-faint uppercase tracking-wider text-[0.65rem] font-bold">Order ID:</span>
+          <strong className="text-primary-light font-bold">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
+          <span className="text-faint uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
           <span className="text-neutral-text font-semibold">{today}</span>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Shipping Carrier:</span>
+          <span className="text-faint uppercase tracking-wider text-[0.65rem] font-bold">Shipping Carrier:</span>
           <span className="text-neutral-text font-semibold">{siteConfig.shippingCarrier}</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Estimated Delivery:</span>
+          <span className="text-faint uppercase tracking-wider text-[0.65rem] font-bold">Estimated Delivery:</span>
           <span className="text-neutral-text font-semibold">{siteConfig.shippingPeriod} Business Days</span>
         </div>
       </div>
 
-      <p className="text-[0.7rem] md:text-xs text-neutral-text/50 leading-relaxed mb-6">
+      <p className="text-[0.7rem] md:text-xs text-faint leading-relaxed mb-6">
         A confirmation email containing your tracking information will be sent to your registered address shortly.
-        For support, contact us at <strong className="text-neutral-text/75 font-semibold">{siteConfig.email}</strong> or call <strong className="text-neutral-text/75 font-semibold">{siteConfig.phone}</strong>.
+        For support, contact us at <strong className="text-muted font-semibold">{siteConfig.email}</strong> or call <strong className="text-muted font-semibold">{siteConfig.phone}</strong>.
       </p>
 
       <div className="mt-8">
         <Link
           href="/"
-          className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg"
+          className="group btn-primary py-4 px-8 text-xs uppercase tracking-widest"
         >
           Back to Home
           <span className="transition-transform duration-300 group-hover:translate-x-1.5 text-sm">→</span>
@@ -80,7 +80,7 @@ export default function Confirm() {
         <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
           <Suspense fallback={
             <div className="text-center py-12">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Loading Order Details...</h4>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-primary-light">Loading Order Details...</h4>
             </div>
           }>
             <ConfirmContent />

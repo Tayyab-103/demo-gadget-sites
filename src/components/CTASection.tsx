@@ -1,69 +1,42 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function CTASection() {
-  const [isDismissed, setIsDismissed] = useState(false);
-
-  if (isDismissed) {
-    return null;
-  }
-
   return (
-    <section className="py-16 md:py-24 bg-[#FAFAFA] relative overflow-hidden" id="cta">
-      <div className="md:grid md:grid-cols-2 max-w-7xl bg-[#FDFDFD] mx-4 md:mx-auto rounded-2xl overflow-hidden shadow-xl border border-rose-200/80">
-        <div className="hidden md:block w-full h-full relative min-h-[360px]">
+    <section className="py-16 md:py-24 bg-neutral-bg relative overflow-hidden" id="cta">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-[2.5rem] overflow-hidden border border-line min-h-[420px] flex items-center">
           <img
             src="/img/cta_bg.jpg"
-            alt="Harmonic Hollow promotional workshop"
-            className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              e.currentTarget.src = "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/promotional/image.png";
-            }}
+            alt="Crowd at a live concert"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-bg via-neutral-bg/85 to-neutral-bg/30" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-secondary/30 mix-blend-screen" />
 
-        <div className="relative flex items-center justify-center p-6 md:p-10">
-          <button
-            onClick={() => setIsDismissed(true)}
-            className="absolute top-5 right-5 bg-rose-50 hover:bg-rose-100 text-[#4C0519] rounded-full p-2.5 transition-colors cursor-pointer border border-rose-200"
-            aria-label="Close promotion"
-          >
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M13 2 2 13M2 2l11 11"
-                stroke="#4C0519"
-                strokeOpacity=".8"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-
-          <div className="max-md:py-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#000000] leading-tight">
-              <span className="text-[#D2446D]">Don&apos;t miss out</span> on our discounted products.
+          <div className="relative z-10 p-8 sm:p-12 lg:p-16 max-w-2xl">
+            <span className="eyebrow">Ready When You Are</span>
+            <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
+              Your next great sound is <span className="text-gradient">one order away.</span>
             </h2>
-
-            <p className="mt-4 text-gray-500 text-sm leading-relaxed max-w-sm mx-auto">
-              Don&apos;t miss out on amazing discounts—shop now before they&apos;re gone!
+            <p className="mt-5 text-white/75 text-sm sm:text-base leading-relaxed max-w-lg">
+              Bundle up and save on picks, brass and cables. Free {siteConfig.shippingCarrier} shipping on every order and a{" "}
+              {siteConfig.trialPeriod}-day return window for peace of mind.
             </p>
-
-            <Link
-              href="/shop"
-              className="inline-block rounded-xl bg-[#4C0519] hover:bg-[#D2446D] transition-all duration-300 text-sm font-bold px-10 sm:px-14 py-3.5 mt-6 text-white cursor-pointer shadow-md hover:shadow-lg"
-            >
-              Check out the products
-            </Link>
-
-            <button
-              onClick={() => setIsDismissed(true)}
-              className="block mx-auto px-8 py-2.5 mt-3 text-sm text-gray-600 hover:text-[#4C0519] transition-colors cursor-pointer"
-            >
-              No thanks, I don&apos;t want the discounts.
-            </button>
+            <div className="mt-8 flex flex-wrap gap-3.5">
+              <Link href="/shop" className="btn-primary px-8 py-4 text-sm uppercase tracking-widest">
+                Shop Bundles <span aria-hidden="true">→</span>
+              </Link>
+              <Link href="/contact" className="btn-ghost px-8 py-4 text-sm uppercase tracking-widest text-white">
+                Ask a Question
+              </Link>
+            </div>
           </div>
         </div>
       </div>

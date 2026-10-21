@@ -9,208 +9,132 @@ import { SiteConfig, Product } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
+const [brandLead, ...brandRest] = siteConfig.brandName.split(" ");
+
+const companyLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/shop", label: "Shop All" },
+  { href: "/contact", label: "Contact" },
+];
+
+const policyLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms & Conditions" },
+  { href: "/terms", label: "Shipping Policy" },
+  { href: "/terms", label: "Returns & Refunds" },
+];
+
+function FooterLink({ href, label }: { href: string; label: string }) {
+  return (
+    <li>
+      <Link href={href} className="text-sm text-muted hover:text-neutral-text transition-colors flex items-center gap-2 group">
+        <span className="w-1.5 h-1.5 rounded-full bg-line group-hover:bg-primary transition-colors flex-shrink-0" />
+        <span className="line-clamp-1">{label}</span>
+      </Link>
+    </li>
+  );
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#1A0309] text-white overflow-hidden" id="footer">
+    <footer className="relative bg-neutral-bg text-neutral-text overflow-hidden border-t border-line" id="footer">
+      <div className="absolute inset-x-0 top-0 h-px bg-brand-gradient" />
+      <div className="absolute -bottom-40 -right-20 w-[480px] h-[480px] rounded-full bg-primary/15 blur-[120px] pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-secondary/10 blur-[100px] pointer-events-none" />
 
-      {/* Top: Scalloped wave from body */}
-      <div className="w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-10 sm:h-14 md:h-16 fill-current text-[#FAFAFA]">
-          <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,10 1440,40 L1440,0 L0,0 Z" />
-        </svg>
-      </div>
-
-      {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-
-          {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col">
-            {/* Logo */}
+          {/* Brand */}
+          <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4C0519] to-[#D2446D] flex items-center justify-center shadow-lg shadow-black/50 text-2xl text-white font-black">
-                𝄞
+              <div className="w-12 h-12 rounded-2xl bg-brand-gradient flex items-center justify-center shadow-lg shadow-primary/30">
+                <div className="flex items-end gap-[3px] h-5" aria-hidden="true">
+                  <span className="w-[3px] h-2.5 rounded-full bg-white" />
+                  <span className="w-[3px] h-5 rounded-full bg-white" />
+                  <span className="w-[3px] h-3.5 rounded-full bg-white" />
+                  <span className="w-[3px] h-2 rounded-full bg-white" />
+                </div>
               </div>
               <div>
-                <span className="text-xl font-black text-white tracking-tight uppercase leading-none block">
-                  {siteConfig.brandName}
-                </span>
-                <span className="text-[0.62rem] text-[#D2446D] font-bold tracking-widest uppercase">
-                  Artisanal Tonewoods &amp; Scores
-                </span>
+                <span className="text-xl font-black tracking-tight leading-none block">{brandLead}</span>
+                <span className="text-[0.62rem] text-gradient font-extrabold tracking-[0.22em] uppercase">{brandRest.join(" ")}</span>
               </div>
             </div>
 
-            <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-sm font-normal">
-              Dedicated to acoustic purity and musical devotion. From solid Sitka spruce guitars to classical score anthologies — crafted to inspire every stage and session.
+            <p className="text-sm text-muted leading-relaxed mb-6 max-w-sm">
+              Your online music store for guitar picks, brass instruments and studio-ready cables — shipped free via{" "}
+              {siteConfig.shippingCarrier} in {siteConfig.shippingPeriod} business days.
             </p>
 
-            {/* Contact Info */}
-            <div className="flex flex-col gap-2.5 mb-6">
-              <a href={`mailto:${siteConfig.email}`} className="text-xs text-rose-200 hover:text-[#D2446D] transition-colors font-medium flex items-center gap-2">
-                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">✉</span>
+            <div className="flex flex-col gap-2.5 text-sm">
+              <a href={`mailto:${siteConfig.email}`} className="text-muted hover:text-neutral-text transition-colors flex items-center gap-2.5 break-all">
+                <span className="w-7 h-7 rounded-lg bg-surface border border-line flex items-center justify-center text-xs flex-shrink-0">✉</span>
                 {siteConfig.email}
               </a>
-              <a href={`tel:${siteConfig.phone}`} className="text-xs text-rose-200 hover:text-[#D2446D] transition-colors font-medium flex items-center gap-2">
-                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">📞</span>
+              <a href={`tel:${siteConfig.phone}`} className="text-muted hover:text-neutral-text transition-colors flex items-center gap-2.5">
+                <span className="w-7 h-7 rounded-lg bg-surface border border-line flex items-center justify-center text-xs flex-shrink-0">☎</span>
                 {siteConfig.phone}
               </a>
-              <div className="text-xs text-white/50 font-medium flex items-center gap-2">
-                <span className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-[0.65rem]">📍</span>
+              <div className="text-faint flex items-center gap-2.5">
+                <span className="w-7 h-7 rounded-lg bg-surface border border-line flex items-center justify-center text-xs flex-shrink-0">⌖</span>
                 {siteConfig.address}
               </div>
             </div>
           </div>
 
-          {/* Nav Columns */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {/* Dynamic Products Column */}
+          {/* Link columns */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-10">
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
-                Instruments &amp; Scores
-              </h4>
-              <ul className="flex flex-col gap-2.5">
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-5">Products</h4>
+              <ul className="flex flex-col gap-3">
                 {products.map((product) => (
-                  <li key={product.id}>
-                    <Link
-                      href={`/product/${product.id}`}
-                      className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                      <span className="line-clamp-1">{product.name}</span>
-                    </Link>
-                  </li>
+                  <FooterLink key={product.id} href={`/product/${product.id}`} label={product.name} />
                 ))}
-                <li>
-                  <Link
-                    href="/shop"
-                    className="text-xs text-[#D2446D] hover:text-white transition-colors font-bold flex items-center gap-1.5 group mt-1"
-                  >
-                    <span>View All Collections →</span>
-                  </Link>
-                </li>
               </ul>
             </div>
-
-            {/* Company Column */}
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
-                Workshop
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    About Our Luthiers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Our Story
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Contact Workshop
-                  </Link>
-                </li>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-5">Company</h4>
+              <ul className="flex flex-col gap-3">
+                {companyLinks.map((l) => (
+                  <FooterLink key={l.label} {...l} />
+                ))}
               </ul>
             </div>
-
-            {/* Legal Column */}
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-4">
-                Policies
-              </h4>
-              <ul className="flex flex-col gap-2.5">
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Terms &amp; Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Insured Shipping Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-xs text-white/60 hover:text-white transition-colors font-medium flex items-center gap-1.5 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2446D] group-hover:bg-white transition-colors flex-shrink-0" />
-                    Tone Guarantee &amp; Returns
-                  </Link>
-                </li>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-5">Policies</h4>
+              <ul className="flex flex-col gap-3">
+                {policyLinks.map((l) => (
+                  <FooterLink key={l.label} {...l} />
+                ))}
               </ul>
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* Payment & Bottom Bar */}
-      <div className="border-t border-white/10">
+      {/* Bottom bar */}
+      <div className="relative z-10 border-t border-line">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-5">
-
-          {/* Payment icons */}
-          <div className="flex items-center gap-4">
-            <span className="text-[0.65rem] text-white/40 font-bold uppercase tracking-wider">Secure Payment Gateway:</span>
-            <div className="flex items-center gap-3">
-              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
-                <img src="/img/visa.png" alt="Visa" className="h-4 w-auto object-contain opacity-80" />
-              </div>
-              <div className="bg-white/10 rounded-lg px-3 py-1.5 flex items-center justify-center">
-                <img src="/img/mastercard.png" alt="Mastercard" className="h-4 w-auto object-contain opacity-80" />
-              </div>
+          <div className="flex items-center gap-3">
+            <span className="text-[0.65rem] text-faint font-bold uppercase tracking-wider">We Accept</span>
+            <div className="">
+              <img src="/img/visa.png" alt="Visa" className="h-8 w-auto object-contain" />
+            </div>
+            <div className="">
+              <img src="/img/mastercard.png" alt="Mastercard" className="h-8 w-auto object-contain" />
             </div>
           </div>
 
-          {/* Copyright */}
-          <p className="text-[0.68rem] text-white/40 font-medium text-center md:text-right">
-            &copy; {currentYear} {siteConfig.brandName}. All Rights Reserved.&nbsp;
-            <Link href="/privacy" className="hover:text-white/70 transition-colors underline-offset-2 hover:underline">Privacy</Link>
+          <p className="text-xs text-faint text-center md:text-right">
+            &copy; {currentYear} {siteConfig.brandName}. All rights reserved.&nbsp;
+            <Link href="/privacy" className="hover:text-neutral-text transition-colors">Privacy</Link>
             &nbsp;&middot;&nbsp;
-            <Link href="/terms" className="hover:text-white/70 transition-colors underline-offset-2 hover:underline">Terms</Link>
+            <Link href="/terms" className="hover:text-neutral-text transition-colors">Terms</Link>
           </p>
-
         </div>
       </div>
-
-      {/* Decorative background blobs */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#4C0519]/40 blur-3xl pointer-events-none translate-x-1/2 translate-y-1/2" />
-      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-[#D2446D]/10 blur-2xl pointer-events-none -translate-x-1/2" />
-
     </footer>
   );
 }

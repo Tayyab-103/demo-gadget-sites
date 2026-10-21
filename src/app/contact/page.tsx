@@ -15,16 +15,17 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="flex-grow">
-        <div className="bg-[#4C0519] text-white py-14 md:py-20 text-center border-b border-[#D2446D]/20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#D2446D] font-extrabold text-xs tracking-widest uppercase mb-4 border border-[#D2446D]/30">
-              <span>𝄞 Workshop Inquiries</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-3">
-              Harmonic Hollow <span className="text-[#D2446D]">Luthier Support</span>
+        <div className="relative overflow-hidden border-b border-line py-16 md:py-24 text-center">
+          <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" />
+          <div className="absolute -top-24 left-1/4 w-[420px] h-[420px] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
+          <div className="absolute -bottom-32 right-1/4 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none" />
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
+            <span className="eyebrow">Contact</span>
+            <h1 className="mt-5 text-3xl md:text-5xl font-black tracking-tight text-neutral-text mb-4">
+              Talk to the <span className="text-gradient">{siteConfig.brandName} team</span>
             </h1>
-            <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto font-medium">
-              Reach out to our master luthiers and customer care specialists for instrument questions, custom sheet music folios, or order support.
+            <p className="text-muted text-sm md:text-base max-w-xl mx-auto">
+              Questions about a product, an order or a return? Reach out by phone, email or the form below — we usually reply within 24 hours.
             </p>
           </div>
         </div>

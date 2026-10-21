@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Discover master-crafted instrument capos, precision clip-on chromatic tuners, and studio-grade audio cables engineered for pure tone and acoustic resonance.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Your online music store for stainless steel guitar picks, brass trumpets and low-noise instrument cables — with free ${siteConfig.shippingCarrier} shipping and easy returns.`;
 
 // Preload the most common fonts
 const poppins = Poppins({

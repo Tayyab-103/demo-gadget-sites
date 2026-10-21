@@ -15,16 +15,17 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="flex-grow">
-        <div className="bg-[#4C0519] text-white py-14 md:py-20 text-center border-b border-[#D2446D]/20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#D2446D] font-extrabold text-xs tracking-widest uppercase mb-4 border border-[#D2446D]/30">
-              <span>𝄞 The Luthier Heritage</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-3">
-              Crafting Tone In <span className="text-[#D2446D]">Our Music Workshop</span>
+        <div className="relative overflow-hidden border-b border-line py-16 md:py-24 text-center">
+          <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" />
+          <div className="absolute -top-24 left-1/4 w-[420px] h-[420px] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
+          <div className="absolute -bottom-32 right-1/4 w-[420px] h-[420px] rounded-full bg-secondary/20 blur-[120px] pointer-events-none" />
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
+            <span className="eyebrow">Our Story</span>
+            <h1 className="mt-5 text-3xl md:text-5xl font-black tracking-tight text-neutral-text mb-4">
+              Built by players, <span className="text-gradient">for players.</span>
             </h1>
-            <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto font-medium">
-              Dedicated to acoustic purity, master tonewood selection, and archival sheet music for a lifetime of inspired music-making.
+            <p className="text-muted text-sm md:text-base max-w-xl mx-auto">
+              {siteConfig.brandName} is an Austin-based music store bringing quality picks, brass and cables to musicians everywhere.
             </p>
           </div>
         </div>

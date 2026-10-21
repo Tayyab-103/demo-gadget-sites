@@ -32,7 +32,7 @@ export default async function Image() {
             height: 280,
             borderRadius: "50%",
             background: siteConfig.theme.primaryColor,
-            opacity: 0.08,
+            opacity: 0.35,
             display: "flex",
           }}
         />
@@ -45,7 +45,7 @@ export default async function Image() {
             height: 340,
             borderRadius: "50%",
             background: siteConfig.theme.secondaryColor,
-            opacity: 0.14,
+            opacity: 0.3,
             display: "flex",
           }}
         />
@@ -56,7 +56,7 @@ export default async function Image() {
             alignItems: "center",
             padding: "28px 56px",
             borderRadius: 24,
-            background: "#ffffff",
+            background: `linear-gradient(120deg, ${siteConfig.theme.primaryColor}, ${siteConfig.theme.secondaryColor})`,
             boxShadow: "0 12px 32px rgba(14, 16, 19, 0.12)",
           }}
         >
@@ -67,7 +67,7 @@ export default async function Image() {
               fontWeight: 900,
               letterSpacing: -2,
               textTransform: "uppercase",
-              color: siteConfig.theme.neutralTextColor,
+              color: siteConfig.theme.primaryTextColor,
             }}
           >
             {siteConfig.brandName}
@@ -82,7 +82,7 @@ export default async function Image() {
             color: siteConfig.theme.neutralTextColor,
           }}
         >
-          Performance Sports Gear &amp; Gadgets
+          Music Store · Picks, Brass &amp; Cables
         </div>
 
         <div

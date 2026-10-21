@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Guitar Pick",
-    "description": "10 Pcs Guitar Picks with Assorted Thickness, Celluloid Guitar Picks for Acoustic Electric Bass Guitar Beginners Accessories",
+    "name": "Stainless Steel Guitar Picks",
+    "description": "Precision-machined stainless steel guitar picks with a beveled tip for a bright, articulate attack and a cut-out thumb grip that stays put during fast runs. Rigid, wear-resistant and polished to a mirror finish — ideal for electric, acoustic and bass players looking for a crisp, consistent tone.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
@@ -12,54 +12,101 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Guitar Pick",
+    "category": "Guitar Accessories",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "metal kazoo instrument",
-    "description": "12 Pcs Metal Kazoo Portable Kazoo Instrument for Adults Kids Party Favor, Mini Metal Mouth Kazoo Musical Toy",
+    "name": "Gold Lacquer Brass Trumpet",
+    "description": "Classic Bb brass trumpet with a gold lacquer finish, smooth-action piston valves and a bright, projecting bell. A dependable choice for students, school bands and players returning to brass, supplied ready to play with a standard mouthpiece.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
-      "/img/products/product2-1.jpg",
-      "/img/products/product2-2.jpg"
+      "/img/products/product2-1.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Orchestral Instruments",
+    "category": "Brass Instruments",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
     "name": "25ft Instrument Audio Cable",
-    "description": "Premium 1/4-inch TS instrument cable with oxygen-free copper core, 20 AWG conductor, and noise-rejecting braided shield. 24k gold-plated connectors with strain-relief collar and secure-grip molded housing. 95% copper braid and PE insulation ensure low capacitance and maximum signal integrity across full 25ft length. Ideal for electric guitars, basses, keyboards, and audio interfaces.",
+    "description": "Low-noise 1/4-inch TS instrument cable with an oxygen-free copper core and braided shield that rejects hum and interference. Gold-plated connectors with strain-relief collars keep the signal clean across the full 25ft length — ideal for electric guitars, basses, keyboards and audio interfaces.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",
@@ -68,19 +115,43 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Musical Instruments Accessories",
+    "category": "Cables & Connectivity",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

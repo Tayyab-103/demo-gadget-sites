@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
+
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,99 +59,76 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2000);
+      }, 2500);
     }
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 max-w-[380px] w-[calc(100vw-2rem)] sm:w-full transition-all duration-300">
-      <div className="bg-[#FDFDFD] rounded-2xl border border-rose-200 shadow-2xl overflow-hidden relative group/popup ring-1 ring-black/5">
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-3 right-3 bg-black/40 hover:bg-[#D2446D] text-white rounded-full w-7 h-7 flex items-center justify-center text-sm cursor-pointer z-20 backdrop-blur-sm transition-all border border-white/20"
-          aria-label="Close newsletter popup"
-        >
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <div className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 max-w-[380px] w-[calc(100vw-2rem)] sm:w-full">
+      <div className="rounded-3xl p-[1.5px] bg-brand-gradient shadow-2xl shadow-primary/30">
+        <div className="relative rounded-[1.4rem] overflow-hidden bg-neutral-bg">
+          <button
+            onClick={handleClose}
+            className="absolute top-3 right-3 bg-black/50 hover:bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer z-20 backdrop-blur-sm transition-all border border-white/20"
+            aria-label="Close newsletter popup"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
-        {/* Compact Hero Banner */}
-        <div className="h-28 relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800&q=80"
-            alt="Harmonic Hollow Acoustic Instrument"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#4C0519] via-[#4C0519]/70 to-transparent" />
-
-          <div className="absolute bottom-3 left-4 right-10 text-white">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#D2446D]/90 text-[0.6rem] font-bold tracking-wider uppercase text-white mb-1 shadow-sm">
-              <span>𝄞</span> Workshop VIP
-            </span>
-            <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug uppercase text-white drop-shadow">
-              Claim 15% Off Your First Order
-            </h3>
-          </div>
-        </div>
-
-        {/* Content Body */}
-        <div className="p-4 sm:p-5">
-          {submitted ? (
-            <div className="text-center py-2">
-              <div className="w-10 h-10 rounded-full bg-rose-100 text-[#4C0519] flex items-center justify-center text-lg mx-auto mb-2 font-black border border-rose-200">
-                ✓
-              </div>
-              <h4 className="text-[#000000] font-black text-sm mb-1 uppercase tracking-wider">
-                You&apos;re On The List!
-              </h4>
-              <p className="text-gray-600 text-xs mb-3 font-medium">
-                Use your workshop discount code at checkout:
-              </p>
-              <div className="inline-block bg-rose-50 border border-dashed border-[#D2446D] px-4 py-2 rounded-xl text-[#4C0519] font-mono font-bold text-sm tracking-widest select-all">
-                HARMONIC15
-              </div>
+          <div className="h-32 relative overflow-hidden">
+            <img src="/img/newsletter_guitar.jpg" alt="Musician playing guitar" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-bg via-neutral-bg/50 to-transparent" />
+            <div className="absolute bottom-3 left-4 right-10">
+              <span className="inline-block px-2.5 py-0.5 rounded-full bg-brand-gradient text-[0.6rem] font-bold tracking-wider uppercase text-white mb-1.5">
+                ♪ Insider List
+              </span>
+              <h3 className="text-lg font-black tracking-tight leading-snug text-white">
+                Be first to hear about new gear
+              </h3>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <p className="text-xs text-gray-600 leading-relaxed mb-3.5 font-medium">
-                Subscribe for exclusive instrument drops, score releases, and an instant <strong>15% discount</strong> voucher.
-              </p>
+          </div>
 
-              <div className="flex flex-col gap-2">
-                <input
-                  type="email"
-                  className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-rose-200 rounded-xl focus:outline-none focus:border-[#D2446D] focus:ring-2 focus:ring-[#D2446D]/20 transition-all text-[#000000] bg-[#FAFAFA] placeholder:text-gray-400 font-medium"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#4C0519] hover:bg-[#D2446D] text-white font-bold py-2.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center gap-2 group"
-                >
-                  <span>Get 15% Discount</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </button>
+          <div className="p-5">
+            {submitted ? (
+              <div className="text-center py-2">
+                <div className="w-10 h-10 rounded-full bg-brand-gradient text-white flex items-center justify-center text-lg mx-auto mb-2 font-black">✓</div>
+                <h4 className="text-neutral-text font-black text-sm mb-1 uppercase tracking-wider">You&apos;re on the list!</h4>
+                <p className="text-muted text-xs">
+                  Watch your inbox for new arrivals and bundle deals from {siteConfig.brandName}.
+                </p>
               </div>
-
-              <div className="flex items-center justify-between mt-2.5 text-[0.65rem] text-gray-400 font-medium px-0.5">
-                <span>🔒 No spam guaranteed</span>
-                <button
-                  type="button"
-                  onClick={handleClose}
-                  className="hover:text-gray-700 underline cursor-pointer"
-                >
-                  No thanks
-                </button>
-              </div>
-            </form>
-          )}
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <p className="text-xs text-muted leading-relaxed mb-4">
+                  Subscribe for new arrivals, restock alerts and bundle deals. One or two emails a month — that&apos;s it.
+                </p>
+                <div className="flex flex-col gap-2">
+                  <input
+                    type="email"
+                    className="field !py-2.5 !text-sm"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <button type="submit" className="btn-primary w-full py-3 px-4 text-xs uppercase tracking-wider group">
+                    Subscribe
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </button>
+                </div>
+                <div className="flex items-center justify-between mt-3 text-[0.65rem] text-faint px-0.5">
+                  <span>🔒 No spam, unsubscribe anytime</span>
+                  <button type="button" onClick={handleClose} className="hover:text-neutral-text underline cursor-pointer">
+                    No thanks
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </div>

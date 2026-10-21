@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -8,203 +9,75 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Solid Tonewood Seasoning & Acoustic Voicing",
-    desc: "Every solid Sitka spruce and European maple soundboard is seasoned for years and individually hand-voiced by master luthiers to achieve full harmonic projection.",
+    title: "Honest Product Details",
+    desc: "Clear photos, real specs and straightforward descriptions — what you see on the page is what shows up at your door.",
   },
   {
-    title: "1-Year Comprehensive Workshop Warranty",
-    desc: "We stand firmly behind our instruments and binding craftsmanship. Any structural or manufacturing defect within 365 days is covered under our direct workshop warranty.",
+    title: `${siteConfig.trialPeriod}-Day Return Window`,
+    desc: `If your gear isn't right, reach out within ${siteConfig.trialPeriod} days of delivery and our team will walk you through a simple return.`,
   },
   {
-    title: "Archival Acid-Free Sheet Music Preserves",
-    desc: "Our sheet music editions are printed with fade-resistant inks on 120gsm acid-free paper, featuring lay-flat binding designed for decades of rehearsal and stage performance.",
+    title: "Fast, Tracked Delivery",
+    desc: `Orders ship within 1-2 business days and arrive via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days, fully tracked.`,
   },
 ];
 
 export default function QualityPromise() {
   return (
-    <section
-      id="quality-promise"
-      className="relative overflow-hidden bg-[#FAFAFA] py-16 md:py-24"
-    >
+    <section id="quality-promise" className="relative overflow-hidden bg-neutral-bg py-16 md:py-24">
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-2">
-
-          {/* LEFT — IMAGE CARD */}
-          <div
-            className="
-              group
-              relative
-              w-full
-              overflow-hidden
-              rounded-[2.5rem]
-              bg-white
-              shadow-2xl
-              border
-              border-rose-100
-              min-h-[340px]
-              sm:min-h-[440px]
-              md:min-h-[520px]
-              lg:min-h-[600px]
-            "
-          >
-            <img
-              src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1000&q=80"
-              alt={`${siteConfig.brandName} Acoustic Craftsmanship`}
-              className="
-                absolute
-                inset-0
-                block
-                h-full
-                w-full
-                object-cover
-                transition-transform
-                duration-700
-                ease-out
-                group-hover:scale-105
-              "
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#4C0519]/90 via-[#4C0519]/30 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 text-white">
-              <span className="text-xs font-black uppercase tracking-widest text-[#D2446D] block mb-1">
-                𝄞 Luthier Master Standard
-              </span>
-              <h3 className="text-xl md:text-2xl font-black">
-                Where Hand-Selected Tonewoods Meet Pure Acoustic Devotion
-              </h3>
-            </div>
-          </div>
-
-          {/* RIGHT — GUARANTEE CARD */}
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-[2.5rem]
-              border
-              border-rose-100
-              bg-[#FDFDFD]
-              shadow-xl
-            "
-          >
-            <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#D2446D]/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#4C0519]/5 blur-3xl" />
-
-            <div
-              className="
-                relative
-                z-10
-                flex
-                h-full
-                flex-col
-                justify-center
-                p-8
-                sm:p-10
-                md:p-12
-                lg:p-14
-              "
-            >
-              {/* EYEBROW */}
-              <div className="mb-4 inline-flex items-center gap-2">
-                <span className="text-xs font-black uppercase tracking-[0.24em] text-[#D2446D]">
-                  𝄞 Our Tone &amp; Score Promise
+        <div className="rounded-[2.5rem] p-[1.5px] bg-brand-gradient">
+          <div className="grid grid-cols-1 lg:grid-cols-2 rounded-[2.4rem] overflow-hidden bg-neutral-bg">
+            {/* LEFT — Image */}
+            <div className="group relative min-h-[320px] sm:min-h-[420px] lg:min-h-[560px] overflow-hidden">
+              <img
+                src="/img/hero3.jpg"
+                alt={`Electric guitars on display at ${siteConfig.brandName}`}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-bg via-neutral-bg/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-neutral-bg/20 lg:to-neutral-bg" />
+              <div className="absolute bottom-7 left-7 right-7 lg:right-1/4">
+                <span className="text-[0.65rem] font-black uppercase tracking-[0.2em] text-secondary-light block mb-1.5">
+                  The {siteConfig.brandName.split(" ")[0]} Promise
                 </span>
+                <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                  Gear you can trust, from a store that picks up the phone.
+                </h3>
               </div>
+            </div>
 
-              {/* HEADING */}
-              <h2
-                className="
-                  mb-6
-                  max-w-xl
-                  text-3xl
-                  font-black
-                  uppercase
-                  leading-[1.1]
-                  tracking-tight
-                  text-[#000000]
-                  sm:text-4xl
-                  md:text-5xl
-                "
-              >
-                The Musical Standard <br />
-                <span className="text-[#D2446D]">
-                  You Deserve
-                </span>
+            {/* RIGHT — Promise list */}
+            <div className="relative p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
+              <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/20 blur-[100px]" />
+
+              <span className="eyebrow self-start">Our Promise</span>
+              <h2 className="mt-5 mb-5 text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] tracking-tight text-neutral-text">
+                Shop with <span className="text-gradient">confidence.</span>
               </h2>
-
-              {/* DESCRIPTION */}
-              <p className="mb-8 max-w-xl text-sm leading-relaxed text-gray-600 font-medium">
-                We understand how essential rich acoustic timbre, effortless fretwork, and legible scores are to your craft. Every instrument and music folio undergoes comprehensive bench inspection before leaving our workshop.
+              <p className="mb-9 max-w-xl text-sm leading-relaxed text-muted">
+                We know how much the right gear matters to your sound. That&apos;s why we keep things simple: quality products,
+                clear policies and support from people who play.
               </p>
 
-              {/* GUARANTEE POINTS */}
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-5">
                 {promises.map((promise, idx) => (
-                  <div
-                    key={promise.title}
-                    className="
-                      group/item
-                      relative
-                      flex
-                      gap-5
-                      border-t
-                      border-rose-100
-                      py-5
-                      first:border-t-0
-                      first:pt-0
-                      last:pb-0
-                    "
-                  >
-                    <div className="relative flex shrink-0 flex-col items-center">
-                      <div
-                        className="
-                          flex
-                          h-10
-                          w-10
-                          items-center
-                          justify-center
-                          rounded-full
-                          border
-                          border-rose-200
-                          bg-rose-50
-                          text-xs
-                          font-black
-                          text-[#4C0519]
-                          shadow-xs
-                          transition-all
-                          duration-300
-                          group-hover/item:bg-[#4C0519]
-                          group-hover/item:text-white
-                        "
-                      >
-                        {String(idx + 1).padStart(2, "0")}
-                      </div>
-                      {idx < promises.length - 1 && (
-                        <div className="mt-2.5 h-full min-h-[22px] w-px bg-rose-200" />
-                      )}
+                  <div key={promise.title} className="group/item flex gap-5">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-line bg-surface text-sm font-black text-primary-light transition-all duration-300 group-hover/item:bg-brand-gradient group-hover/item:text-primary-text group-hover/item:border-transparent">
+                      {String(idx + 1).padStart(2, "0")}
                     </div>
-
-                    <div className="min-w-0 pt-0.5">
-                      <h3 className="mb-1 text-base font-black text-[#000000] transition-colors duration-300 group-hover/item:text-[#D2446D]">
-                        {promise.title}
-                      </h3>
-                      <p className="max-w-xl text-xs leading-relaxed text-gray-600 font-medium">
-                        {promise.desc}
-                      </p>
+                    <div className="min-w-0">
+                      <h3 className="mb-1 text-base font-black text-neutral-text">{promise.title}</h3>
+                      <p className="text-xs sm:text-sm leading-relaxed text-muted">{promise.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* BOTTOM ACCENT */}
-              <div className="mt-8 flex items-center gap-3">
-                <div className="h-1.5 w-12 rounded-full bg-[#4C0519]" />
-                <div className="h-1.5 w-3 rounded-full bg-[#D2446D]" />
-                <div className="h-1.5 w-2 rounded-full bg-rose-200" />
-              </div>
+              <Link href="/terms" className="mt-10 self-start text-xs font-black uppercase tracking-widest text-primary-light hover:text-secondary-light transition-colors">
+                Read our shipping &amp; return policy →
+              </Link>
             </div>
           </div>
-
         </div>
       </div>
     </section>

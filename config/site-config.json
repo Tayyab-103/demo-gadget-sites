@@ -1,12 +1,13 @@
 {
   "Product": "Sporting Goods",
-  "Processor": "Synovus Celero",
-  "brandName": "Northcrest Sporting Collective",
-  "websiteUrl": "NorthcrestSportingCollective.com",
-  "email": "support@northcrestsportingcollective.com",
-  "descriptor": "NorthcrestSportingColl",
-  "corpName": "Starpath Marketing Co",
-  "phone": "1-800-762-7529",
+  "mcc": "5941",
+  "Processor": "Paysafe -PNC/BBVA",
+  "brandName": "Fieldstone Outdoor Sports",
+  "websiteUrl": "fieldstoneoutdoorsports.com",
+  "email": "support@fieldstoneoutdoorsports.com",
+  "descriptor": "FieldstoneOutdoorSpo",
+  "corpName": "Blitzing Branding LLC",
+  "phone": "1-800-772-7519",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
   "shippingPeriod": "3-5",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0B132B",
+    "primaryColor": "#0B2C4F",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#0284C7",
+    "secondaryColor": "#F38D0F",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#F8FAFC",
-    "neutralTextColor": "#0F172A",
-    "fontFamily": "Inter"
+    "neutralBgColor": "#ffffff",
+    "neutralTextColor": "#0E2238",
+    "fontFamily": "Montserrat"
   }
 }

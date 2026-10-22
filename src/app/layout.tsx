@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. High-performance ${siteConfig.Product?.toLowerCase() || "sporting goods and fitness gear"} engineered for dedicated athletes, strength conditioning, and outdoor performance.`;
+const siteDescription = `${siteConfig.brandName} — rugged ${siteConfig.Product?.toLowerCase() || "sporting goods"} for outdoor and at-home training: weighted vests, home strength kits and waterproof gear backpacks, shipped by ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,20 +45,19 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Goods & Training Equipment`,
+  title: `${siteConfig.brandName} | Outdoor Sporting Goods & Training Gear`,
   description: siteDescription,
   keywords: [
     "sporting goods",
-    "athletic equipment",
-    "fitness gear",
+    "outdoor sports gear",
     "weighted training vest",
-    "performance duffle bag",
-    "percussion recovery gun",
-    "Austin athletics",
-    "Northcrest Sporting Collective"
+    "home strength kit",
+    "resistance band set",
+    "waterproof roll-top backpack",
+    siteConfig.brandName
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
+    title: `${siteConfig.brandName} | Outdoor Sporting Goods`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Goods`,
+    title: `${siteConfig.brandName} | Outdoor Sporting Goods`,
     description: siteDescription,
   },
 };

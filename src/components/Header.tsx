@@ -1,15 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useCart } from "@/context/CartContext";
+import { brandShort, fallbackImage, products, siteConfig } from "@/lib/brandIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCart } from "@/context/CartContext";
-import siteConfigData from "../../config/site-config.json";
-import productsData from "../../config/products.json";
-import { SiteConfig, Product } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
-const products = productsData as unknown as Product[];
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -38,8 +33,8 @@ export default function Header() {
   const trimmedQuery = query.trim().toLowerCase();
   const filteredProducts = trimmedQuery
     ? products.filter(
-        (p) => p.name.toLowerCase().includes(trimmedQuery) || (p.category || "").toLowerCase().includes(trimmedQuery)
-      )
+      (p) => p.name.toLowerCase().includes(trimmedQuery) || (p.category || "").toLowerCase().includes(trimmedQuery)
+    )
     : [];
 
   // Track scroll to intensify the glass pill on scroll
@@ -98,11 +93,10 @@ export default function Header() {
     >
       {/* Floating glass pill */}
       <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${
-          isScrolled
-            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2 px-3 sm:py-2.5 sm:px-6 shadow-black/50"
-            : "bg-primary/85 backdrop-blur-xl border-white/15 py-2.5 px-3 sm:py-3 sm:px-7 shadow-black/35"
-        }`}
+        className={`max-w-6xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${isScrolled
+            ? "bg-white/97 backdrop-blur-2xl border-line py-2 px-3 sm:py-2.5 sm:px-5 shadow-primary/20"
+            : "bg-white/92 backdrop-blur-xl border-white/40 py-2.5 px-3 sm:py-3 sm:px-6 shadow-black/25"
+          }`}
       >
         {/* Logo */}
         <Link href="/" onClick={closeAll} className="flex items-center gap-2 min-w-0 flex-1 sm:flex-initial" style={{ textDecoration: "none" }}>
@@ -115,32 +109,32 @@ export default function Header() {
               />
             </div>
           ) : (
-            <span className="text-white text-xs sm:text-base md:text-lg font-black tracking-tight flex items-center gap-2 min-w-0">
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0 items-center justify-center rounded-xl bg-secondary text-secondary-text shadow-md shadow-secondary/30">
-                {/* Athletic Crest Icon */}
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            <span className="text-primary text-xs sm:text-base md:text-lg font-black tracking-tight flex items-center gap-2.5 min-w-0">
+              <span className="flex h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary text-secondary shadow-md shadow-primary/30">
+                {/* Mountain crest icon */}
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 20h18L14.5 8l-3.5 6-2.5-3.5L3 20z" />
+                  <circle cx="17.5" cy="5" r="1.6" fill="currentColor" stroke="none" />
                 </svg>
               </span>
               <span className="truncate uppercase font-black tracking-wider text-[0.72rem] xs:text-xs sm:text-sm md:text-base">
                 <span className="hidden sm:inline">{siteConfig.brandName}</span>
-                <span className="sm:hidden">Northcrest</span>
+                <span className="sm:hidden">{brandShort}</span>
               </span>
             </span>
           )}
         </Link>
 
         {/* Desktop Navigation Links — Strictly 4: Home, Products, About, Contact */}
-        <nav className="hidden lg:flex items-center gap-1.5 bg-white/5 rounded-full p-1 border border-white/10 mx-4">
+        <nav className="hidden lg:flex items-center gap-1.5 bg-surface rounded-full p-1 border border-line mx-4">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-300 ${
-                  isActive ? "bg-secondary text-secondary-text shadow-md" : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
+                className={`text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-300 ${isActive ? "bg-primary text-primary-text shadow-md" : "text-primary/75 hover:text-primary hover:bg-white"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -153,9 +147,8 @@ export default function Header() {
           {/* Search Icon Button */}
           <button
             onClick={toggleSearch}
-            className={`transition-all duration-300 p-1.5 sm:p-2.5 rounded-full cursor-pointer ${
-              isSearchOpen ? "bg-white/20 text-secondary" : "text-white/80 hover:text-white hover:bg-white/10"
-            }`}
+            className={`transition-all duration-300 p-1.5 sm:p-2.5 rounded-full cursor-pointer ${isSearchOpen ? "bg-secondary-soft text-secondary-deep" : "text-primary/80 hover:text-primary hover:bg-surface"
+              }`}
             aria-label="Toggle Search"
             aria-expanded={isSearchOpen}
           >
@@ -168,7 +161,7 @@ export default function Header() {
           {/* Cart Icon Button */}
           <button
             onClick={toggleCart}
-            className="text-white/80 hover:text-white hover:bg-white/10 transition-all duration-300 p-1.5 sm:p-2.5 rounded-full relative cursor-pointer"
+            className="text-primary/80 hover:text-primary hover:bg-surface transition-all duration-300 p-1.5 sm:p-2.5 rounded-full relative cursor-pointer"
             aria-label="Toggle Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -177,7 +170,7 @@ export default function Header() {
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
             </svg>
             {mounted && getCartCount() > 0 && (
-              <span className="absolute top-0.5 right-0.5 bg-secondary text-secondary-text rounded-full w-[16px] h-[16px] text-[0.58rem] font-black flex items-center justify-center shadow-md animate-pulse">
+              <span className="absolute top-0.5 right-0.5 bg-secondary text-secondary-text rounded-full w-[16px] h-[16px] text-[0.58rem] font-black flex items-center justify-center shadow-md">
                 {getCartCount()}
               </span>
             )}
@@ -186,7 +179,7 @@ export default function Header() {
           {/* Mobile hamburger toggle */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white p-1.5 sm:p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+            className="lg:hidden text-primary p-1.5 sm:p-2 rounded-full hover:bg-surface transition-colors cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -208,7 +201,7 @@ export default function Header() {
 
       {/* Floating Mobile Nav Menu Panel */}
       {isMenuOpen && (
-        <div className="lg:hidden max-w-6xl mx-auto mt-2 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-4 flex flex-col gap-1 shadow-2xl pointer-events-auto">
+        <div className="lg:hidden max-w-6xl mx-auto mt-2 bg-white border border-line rounded-3xl p-3 flex flex-col gap-1 shadow-2xl pointer-events-auto">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -216,9 +209,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
-                className={`font-bold text-sm py-2.5 px-4 rounded-xl transition-all duration-200 ${
-                  isActive ? "bg-secondary text-secondary-text" : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
+                className={`font-bold text-sm py-2.5 px-4 rounded-xl transition-all duration-200 ${isActive ? "bg-primary text-primary-text" : "text-primary/80 hover:text-primary hover:bg-surface"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -229,9 +221,9 @@ export default function Header() {
 
       {/* Floating Search Panel */}
       {isSearchOpen && (
-        <div className="max-w-6xl mx-auto mt-2 bg-primary/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-4 max-h-[70vh] overflow-y-auto shadow-2xl pointer-events-auto">
+        <div className="max-w-6xl mx-auto mt-2 bg-white border border-line rounded-3xl p-4 max-h-[70vh] overflow-y-auto shadow-2xl pointer-events-auto">
           <div className="relative max-w-2xl mx-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-primary/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
@@ -240,8 +232,8 @@ export default function Header() {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search gear..."
-              className="block w-full pl-11 pr-4 py-2.5 text-xs sm:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-white bg-white/10 border border-white/15 placeholder-white/40"
+              placeholder="Search vests, strength kits, packs..."
+              className="block w-full pl-11 pr-4 py-2.5 text-xs sm:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-neutral-text bg-surface border border-line placeholder:text-muted"
             />
           </div>
 
@@ -255,26 +247,26 @@ export default function Header() {
                       key={product.id}
                       href={`/product/${product.id}`}
                       onClick={closeAll}
-                      className="flex items-center gap-3 p-2 rounded-2xl hover:bg-white/10 border border-transparent hover:border-white/10 transition-all duration-200"
+                      className="flex items-center gap-3 p-2 rounded-2xl hover:bg-surface border border-transparent hover:border-line transition-all duration-200"
                     >
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-10 h-10 rounded-xl object-cover bg-white/10 flex-shrink-0"
+                        className="w-10 h-10 rounded-xl object-cover bg-surface flex-shrink-0"
                         onError={(e) => {
-                          e.currentTarget.src = "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80";
+                          e.currentTarget.src = fallbackImage;
                         }}
                       />
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-bold text-white truncate">{product.name}</div>
-                        <div className="text-[0.6rem] text-secondary truncate uppercase tracking-widest font-bold">{product.category}</div>
+                        <div className="text-xs font-bold text-primary truncate">{product.name}</div>
+                        <div className="text-[0.6rem] text-secondary-deep truncate uppercase tracking-widest font-bold">{product.category}</div>
                       </div>
-                      <div className="text-xs font-extrabold text-secondary flex-shrink-0">${price}</div>
+                      <div className="text-xs font-extrabold text-primary flex-shrink-0">${price}</div>
                     </Link>
                   );
                 })
               ) : (
-                <p className="text-xs text-white/50 text-center py-4">
+                <p className="text-xs text-muted text-center py-4">
                   No gear found for &ldquo;{query}&rdquo;.
                 </p>
               )}

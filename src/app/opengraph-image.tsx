@@ -67,7 +67,7 @@ export default async function Image() {
               color: siteConfig.theme.secondaryColor,
             }}
           >
-            ⚡
+            ▲
           </div>
           <div
             style={{
@@ -92,7 +92,7 @@ export default async function Image() {
             color: siteConfig.theme.secondaryColor,
           }}
         >
-          Pro-Grade Sporting Goods &amp; Athletic Gear
+          Built For The Field · Outdoor Sporting Goods
         </div>
 
         <div

@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
+import React, { useEffect, useState } from "react";
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,8 +63,8 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/65 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[500px] border-2 border-primary/20 relative flex flex-col overflow-hidden shadow-2xl">
+    <div role="dialog" aria-modal="true" aria-labelledby="newsletter-title" className="fixed inset-0 bg-primary/70 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
+      <div className="bg-white rounded-3xl w-full max-w-[500px] relative flex flex-col overflow-hidden shadow-2xl">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -80,18 +77,18 @@ export default function NewsletterPopup() {
         {/* Visual Header */}
         <div className="h-[190px] relative">
           <img
-            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&q=80"
-            alt="Northcrest athletic conditioning training"
+            src="/img/howitworks1.jpg"
+            alt="Row of dumbbells on a gym rack"
             className="w-full h-full object-cover absolute inset-0"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/40 to-primary/95" />
 
           <div className="absolute bottom-5 left-6 right-6 text-white">
             <span className="text-[0.7rem] uppercase tracking-[0.2em] font-black text-secondary block mb-1">
-              Athlete Collective VIP Pass
+              Field Notes Newsletter
             </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
-              Save 15% On Your Next Gear Order
+            <h3 id="newsletter-title" className="text-2xl font-black text-white m-0 tracking-tight uppercase">
+              Train Smarter. Stay In The Loop.
             </h3>
           </div>
         </div>
@@ -100,25 +97,26 @@ export default function NewsletterPopup() {
         <div className="p-8">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4 font-bold">
+              <div className="w-12 h-12 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-xl mx-auto mb-4 font-bold">
                 ✓
               </div>
-              <h4 className="text-primary font-black uppercase text-lg mb-2">Discount Code Activated!</h4>
+              <h4 className="text-primary font-black uppercase text-lg mb-2">You&apos;re Subscribed!</h4>
               <p className="text-neutral-text/60 text-sm">
-                Check your inbox for your 15% sporting goods discount code.
+                Thanks for joining. Watch your inbox for new gear and training ideas.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <p className="text-sm text-neutral-text/75 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} VIP network. Subscribe today to receive training guides, new gear release alerts, and <strong>15% off</strong> your first order.
+                {`Get ${siteConfig.brandName} training ideas, new product announcements and bundle news — a few emails a month.`}
               </p>
 
               <div className="mb-4">
                 <input
                   type="email"
-                  className="block w-full px-5 py-3.5 text-sm border border-black/15 rounded-full focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all text-neutral-text bg-white shadow-sm"
-                  placeholder="Enter your athlete or personal email"
+                  className="field rounded-full! px-5"
+                  placeholder="Your email address"
+                  aria-label="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -127,9 +125,9 @@ export default function NewsletterPopup() {
 
               <button
                 type="submit"
-                className="inline-block font-black text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:brightness-110 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:shadow-lg"
+                className="btn-accent w-full"
               >
-                Claim 15% Athlete Discount
+                Subscribe
               </button>
 
               <span className="block text-center text-[0.68rem] text-neutral-text/45 mt-3">

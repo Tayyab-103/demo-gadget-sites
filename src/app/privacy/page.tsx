@@ -12,17 +12,17 @@ export default function Privacy() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+      <main className="bg-surface pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] right-[-250px] opacity-35 pointer-events-none" />
 
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="eyebrow mb-4">Privacy Standards</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-line pb-6 tracking-tight">
             Privacy Policy
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
+          <div className="bg-white rounded-3xl p-8 md:p-10 border border-line shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
             <p>
               This Privacy Policy describes how your personal information is collected, used, and shared when you visit
               or make a purchase from <strong className="text-primary font-semibold">{siteConfig.websiteUrl}</strong> (the “Site”).
@@ -36,7 +36,7 @@ export default function Privacy() {
               what websites or search terms referred you to the Site, and information about how you interact with the Site.
             </p>
             <p>
-              Additionally, when you place an order for sporting goods, weighted conditioning vests, performance bags, or recovery tools through the Site, we collect certain information
+              Additionally, when you place an order for sporting goods such as weighted training vests, home strength kits or gear backpacks through the Site, we collect certain information
               from you, including your name, billing address, shipping address, payment information (including encrypted credit card numbers),
               email address, and phone number. We refer to this information as “Order Information.”
             </p>

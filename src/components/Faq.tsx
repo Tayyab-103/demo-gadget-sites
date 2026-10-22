@@ -1,35 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
+import Link from "next/link";
+import { useState } from "react";
 
 const faqData = [
   {
-    question: "How does the 14-day athletic field trial work?",
-    answer: `We encourage you to test our weighted training vests, duffles, and percussion recovery tools during real workouts. If for any reason our gear does not elevate your training standards, return it within ${siteConfig.trialPeriod || 14} days for a 100% full refund with zero hassle.`
+    question: `How does the ${siteConfig.trialPeriod}-day trial work?`,
+    answer: `Use your gear in real workouts for up to ${siteConfig.trialPeriod} days after delivery. If it isn't right for you, contact us at ${siteConfig.phone} or ${siteConfig.email} within that window to receive a Return Merchandise Authorization (RMA) number and return instructions. Full details are in our Terms & Conditions.`
   },
   {
-    question: "What materials are used in Northcrest training vests and bags?",
-    answer: `Our weighted vests and duffles are constructed from 1000D military-grade ballistic Cordura nylon, reinforced with bar-tack box stitching, TPU-welded storm seams, and antimicrobial breathable air-mesh to prevent moisture buildup and skin irritation.`
+    question: "How quickly will my order arrive?",
+    answer: `Orders are processed within 1–2 business days at our Austin, TX facility and shipped with ${siteConfig.shippingCarrier}. Delivery typically takes ${siteConfig.shippingPeriod} business days, and a tracking number is emailed to you as soon as your package ships.`
   },
   {
-    question: "How quickly does my order ship and which carrier is used?",
-    answer: `All orders are inspected and packaged in our Austin, TX distribution facility within 1 business day. We ship nationwide using ${siteConfig.shippingCarrier}, with standard delivery arriving at your home, gym, or training facility within ${siteConfig.shippingPeriod} business days.`
+    question: "How do I adjust the weighted training vest?",
+    answer: "The vest uses padded shoulder straps and wraparound adjustable side straps. Put it on, then tighten the side straps until the vest sits snug against your torso without restricting your breathing. It should stay put when you jog in place."
   },
   {
-    question: "How do I choose the right weight and adjust the fit?",
-    answer: `The Apex-Pro weighted vest features 16 removable 1.25 lb cast-iron weight bricks, allowing you to scale resistance anywhere from 2.5 lbs to 20 lbs. Dual quick-release micro-adjustment side straps ensure a snug, bounce-free fit for athletes of all body types.`
+    question: "Is the roll-top backpack waterproof?",
+    answer: "The pack uses a water-resistant coated shell and a roll-top closure that keeps rain and splashes out during everyday use, wet commutes and lake days. It is not designed to be submerged."
   },
   {
-    question: "How will the charge appear on my credit card statement?",
-    answer: `Your credit card statement will display the official transaction descriptor "${siteConfig.descriptor}" alongside your verified order amount.`
+    question: "What are bundles and how do they save me money?",
+    answer: "Every product can be ordered as a single unit or as a multi-pack bundle. Bundles lower the price per unit, which is ideal for households, training partners or small group classes. Bundle options and pricing are shown on each product page."
   },
   {
-    question: "What is your warranty on percussion therapy guns and electronic gear?",
-    answer: `Our Flow-Recovery percussion therapy guns and electronic recovery equipment come with a comprehensive 1-year manufacturer's replacement warranty covering motor integrity, battery life, and mechanical defects.`
+    question: "How will the charge appear on my card statement?",
+    answer: `Your purchase will appear on your statement as "${siteConfig.descriptor}". If you don't recognize a charge, please contact us at ${siteConfig.phone} before contacting your bank so we can help right away.`
   }
 ];
 
@@ -41,36 +39,39 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-neutral-bg" id="faq">
+    <section className="py-16 sm:py-20 md:py-24 bg-white" id="faq">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
 
           {/* Left Column — Header & CTA */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-24 lg:self-start">
-            <span className="eyebrow mb-3">Frequently Asked Questions</span>
+            <span className="eyebrow mb-3">FAQ</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary mb-3">
-              Athlete <span className="text-secondary">Inquiries</span>
+              Good <span className="text-secondary">Questions</span>
             </h2>
             <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mb-8">
-              Find immediate answers regarding gear sizing, 14-day field trials, materials engineering, and shipping timelines.
+              Quick answers about shipping, fit, bundles and our trial period.
             </p>
 
             {/* CTA card */}
-            <div className="bg-primary rounded-3xl p-7 sm:p-8 text-white shadow-xl">
-              <h3 className="text-base sm:text-lg font-black uppercase tracking-tight mb-2">Need Team or Custom Sizing?</h3>
-              <p className="text-white/70 text-xs sm:text-sm mb-6 leading-relaxed">
-                Our athletic gear advisors and customer care team are standing by to assist with collegiate volume orders and technical specifications.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-black text-xs sm:text-sm px-6 py-3 rounded-full hover:brightness-110 transition-all shadow-md"
-              >
-                Contact Support
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+            <div className="relative overflow-hidden bg-primary rounded-3xl p-7 sm:p-8 text-white shadow-xl">
+              <div className="absolute inset-0 bg-topo" aria-hidden="true" />
+              <div className="relative">
+                <h3 className="text-base sm:text-lg font-black uppercase tracking-tight mb-2">Still Have A Question?</h3>
+                <p className="text-white/70 text-xs sm:text-sm mb-6 leading-relaxed">
+                  {`Our support team is available Monday to Friday. Call ${siteConfig.phone} or send us a message.`}
+                </p>
+                <Link
+                  href="/contact"
+                  className="btn-accent"
+                >
+                  Contact Support
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -82,9 +83,8 @@ export default function Faq() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white rounded-2xl sm:rounded-3xl border transition-all duration-200 ${
-                    isOpen ? "border-secondary/50 shadow-md" : "border-black/5 hover:border-black/10 shadow-xs"
-                  }`}
+                  className={`rounded-2xl border transition-all duration-200 ${isOpen ? "border-secondary/60 shadow-lg bg-white" : "border-line hover:border-primary/30 bg-surface"
+                    }`}
                 >
                   {/* FAQ Header */}
                   <button
@@ -93,22 +93,20 @@ export default function Faq() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <span className={`text-xs font-black tracking-wider flex-shrink-0 ${
-                        isOpen ? "text-secondary" : "text-neutral-text/30"
-                      }`}>
+                      <span className={`text-xs font-black tracking-wider flex-shrink-0 ${isOpen ? "text-secondary-deep" : "text-primary/30"
+                        }`}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-xs sm:text-sm md:text-base font-black text-primary uppercase tracking-tight">
+                      <span className="text-sm md:text-base font-bold text-primary">
                         {item.question}
                       </span>
                     </div>
 
                     <span
-                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-200 ${
-                        isOpen
+                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-200 ${isOpen
                           ? "bg-secondary text-secondary-text rotate-45 shadow-md"
-                          : "bg-neutral-bg border border-black/10 text-primary"
-                      }`}
+                          : "bg-white border border-line text-primary"
+                        }`}
                     >
                       +
                     </span>
@@ -121,7 +119,7 @@ export default function Faq() {
                       maxHeight: isOpen ? "350px" : "0px",
                     }}
                   >
-                    <div className="pb-5 sm:pb-6 text-xs sm:text-sm text-neutral-text/75 leading-relaxed border-t border-black/5 pt-4 pl-7 sm:pl-8">
+                    <div className="pb-5 sm:pb-6 text-xs sm:text-sm text-muted leading-relaxed border-t border-line pt-4 pl-7 sm:pl-8">
                       {item.answer}
                     </div>
                   </div>

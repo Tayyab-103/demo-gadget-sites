@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import { useCart } from "@/context/CartContext";
+import { fallbackImage } from "@/lib/brandIcon";
 import Link from "next/link";
 
 export default function CartDrawer() {
@@ -18,16 +18,14 @@ export default function CartDrawer() {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-999 transition-all duration-300 ${
-          isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-999 transition-all duration-300 ${isCartOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setIsCartOpen(false)}
       />
       {/* Drawer */}
       <div
-        className={`fixed top-0 bottom-0 right-0 w-full max-w-[440px] bg-white z-1000 border-l border-secondary/20 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${
-          isCartOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 bottom-0 right-0 w-full max-w-[440px] bg-white z-1000 border-l border-secondary/20 flex flex-col transition-transform duration-300 ease-in-out transform shadow-2xl ${isCartOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="p-6 border-b border-black/5 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -38,7 +36,7 @@ export default function CartDrawer() {
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
             </span>
-            <h3 className="m-0 text-base font-black text-primary tracking-tight uppercase">Athlete Cart</h3>
+            <h3 className="m-0 text-base font-black text-primary tracking-tight uppercase">Your Cart</h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
@@ -52,13 +50,19 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-6">
           {cart.length === 0 ? (
             <div className="text-center py-16">
-              <div className="text-neutral-text/20 text-6xl mb-4">⚡</div>
-              <p className="text-neutral-text/60 text-sm font-medium">Your athlete cart is empty.</p>
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-surface text-primary/40">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+              </div>
+              <p className="text-neutral-text/60 text-sm font-medium">Your cart is empty.</p>
               <button
                 className="inline-block font-black text-center whitespace-nowrap bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest mt-6 shadow-md cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Explore Gear Catalog
+                Browse The Gear
               </button>
             </div>
           ) : (
@@ -93,12 +97,12 @@ export default function CartDrawer() {
                     alt={item.Name}
                     className="w-[75px] h-[75px] object-cover rounded-2xl bg-neutral-bg border border-black/5 flex-shrink-0"
                     onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=150&q=80";
+                      e.currentTarget.src = fallbackImage;
                     }}
                   />
                   <div className="flex-1 min-w-0">
                     <div className="font-black text-sm text-primary mb-0.5 truncate uppercase tracking-tight">{item.Name}</div>
-                    <div className="text-[0.62rem] text-secondary mb-3.5 uppercase tracking-wider font-bold">
+                    <div className="text-[0.62rem] text-secondary-deep mb-3.5 uppercase tracking-wider font-bold">
                       {item.Label || "Single Unit"}
                     </div>
 

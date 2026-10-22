@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Adjustable Tactical Weighted Vest",
-    "description": "Engineered for elite conditioning, high-intensity interval training, and tactical endurance workouts. Crafted from 1000D military-grade ballistic nylon with laser-cut MOLLE webbing, padded breathable mesh shoulders, and dual quick-release contoured chest straps. Includes 16 removable laser-cut cast-iron weight bricks that sit flush against your torso to prevent bouncing during sprints, box jumps, and pull-ups.",
+    "name": "Ridgeline Adjustable Weighted Training Vest",
+    "description": "A low-profile plate-carrier style training vest built for rucking, hill sprints, bodyweight circuits and outdoor conditioning. The heavy-duty nylon shell features MOLLE-style webbing, padded mesh-lined shoulders and wraparound adjustable side straps so the load stays close to your torso and moves with you instead of bouncing. A reinforced top grab handle makes it easy to throw on between sets.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
@@ -17,21 +17,45 @@
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Hex-Grip Dumbbells & Conditioning Band Set",
-    "description": "Precision-balanced solid cast iron dumbbells paired with heavy-duty latex resistance cables and reinforced padded comfort grips. Engineered for progressive overload, functional movement training, and high-velocity conditioning with zero slippage. Features anti-roll hexagonal heads and textured ergonomic handles.",
+    "name": "Trailhead Home Strength Kit",
+    "description": "Everything you need for a full-body session at home, in the garage or at the park. The kit pairs a set of compact, coated hand dumbbells with a resistance band featuring padded foam handles and secure clip anchors. Use it for presses, rows, curls, banded pulls and mobility work, then pack it away in seconds. Ideal for travel days and quick morning workouts.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
@@ -45,21 +69,45 @@
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Tactical Gym Backpack & Dry-Pack",
-    "description": "Built for competitive athletes, multi-sport training, and weekend competitions. Constructed from TPU-laminated storm-resistant composite fabric featuring heavy-duty zippers, isolated ventilated footwear compartment, and dual thermal hydration sleeves. Padded ergonomic shoulder harnesses ensure all-day comfort.",
+    "name": "Summit Roll-Top Waterproof Gear Backpack",
+    "description": "A weatherproof roll-top backpack made for wet trails, lake days, rainy commutes and gym-to-field transitions. The water-resistant coated shell, sealed roll-top closure and front zip pocket keep your gear protected, while breathable mesh shoulder straps, an adjustable sternum strap and a padded back panel keep heavy loads comfortable from trailhead to summit.",
     "image": "/img/products/product3.jpg",
     "images": [
       "/img/products/product3.jpg",
@@ -68,19 +116,43 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Bags & Gear",
+    "category": "Packs & Bags",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

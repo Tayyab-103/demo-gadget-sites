@@ -1,73 +1,80 @@
 "use client";
 
-import React from "react";
+import { siteConfig } from "@/lib/brandIcon";
 
 const featuresData = [
   {
-    title: "1000D Ballistic Cordura",
-    description: "Constructed with tear-resistant, mil-spec ballistic weave that withstands asphalt scrapes, heavy loads, and relentless daily abuse.",
+    title: "Rugged Materials",
+    description: "Heavy-duty nylon, coated waterproof shells and solid hardware chosen to handle dirt, rain and daily use.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="m9 12 2 2 4-4" />
-      </svg>
+      </>
     ),
   },
   {
-    title: "Biomechanical Fit",
-    description: "Contoured anatomical panels and multi-point micro-adjustment straps distribute load evenly across your torso without chafing or bounce.",
+    title: "Adjustable Fit",
+    description: "Wraparound straps, padded shoulders and sternum clips let you dial in a secure, comfortable fit.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
+      <>
+        <line x1="4" y1="21" x2="4" y2="14" />
+        <line x1="4" y1="10" x2="4" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12" y2="3" />
+        <line x1="20" y1="21" x2="20" y2="16" />
+        <line x1="20" y1="12" x2="20" y2="3" />
+        <line x1="1" y1="14" x2="7" y2="14" />
+        <line x1="9" y1="8" x2="15" y2="8" />
+        <line x1="17" y1="16" x2="23" y2="16" />
+      </>
     ),
   },
   {
-    title: "All-Weather Hydro-Shield",
-    description: "TPU-welded storm seams, waterproof zippers, and antimicrobial air-mesh linings keep your gear dry and odor-free in extreme climates.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
+    title: "Weather Ready",
+    description: "Roll-top closures and water-resistant fabrics keep your essentials protected when the forecast turns.",
+    icon: <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />,
   },
   {
-    title: "14-Day Field Guarantee",
-    description: "Take our gear onto the track, trail, or box. If it doesn't dramatically outperform your existing kit, return it for a complete 100% refund.",
+    title: `${siteConfig.trialPeriod}-Day Trial`,
+    description: `Train with your gear for ${siteConfig.trialPeriod} days. Not the right fit? Contact us to arrange a return under our trial terms.`,
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z" />
-        <circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none" />
-      </svg>
+      <>
+        <polyline points="1 4 1 10 7 10" />
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </>
     ),
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-white" id="features">
+    <section className="py-16 sm:py-20 md:py-24 bg-surface" id="features">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 sm:mb-14 text-center md:mb-16">
-          <span className="eyebrow justify-center mb-3">Performance Engineering</span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-primary">
-            Built For The <span className="text-secondary">Dedicated Athlete</span>
+        <div className="mb-10 sm:mb-14 text-center">
+          <span className="eyebrow justify-center mb-3">What We Build For</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-primary leading-[1.05]">
+            Simple Gear, <span className="text-secondary">Done Right</span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-neutral-text/70">
-            Every Northcrest product is subjected to brutal mechanical stress tests and real-world athlete trials to ensure unyielding durability.
+          <p className="mx-auto mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-muted">
+            {`Four things every ${siteConfig.brandName} product has to deliver before it makes the lineup.`}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
-          {featuresData.map((feature) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {featuresData.map((feature, idx) => (
             <div
               key={feature.title}
-              className="flex flex-col items-center text-center p-6 sm:p-7 rounded-3xl bg-neutral-bg border border-black/5 shadow-sm transition-all duration-300 hover:border-secondary/40 hover:shadow-md hover:-translate-y-1"
+              className="card relative p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-secondary/50"
             >
-              <div className="mb-4 flex h-13 w-13 items-center justify-center rounded-2xl bg-secondary/15 text-secondary shadow-sm">
-                {feature.icon}
+              <span className="absolute top-5 right-6 text-3xl font-black text-primary/8">{String(idx + 1).padStart(2, "0")}</span>
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-text shadow-md shadow-secondary/30">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  {feature.icon}
+                </svg>
               </div>
               <h3 className="mb-2 text-base font-black text-primary uppercase tracking-tight">{feature.title}</h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-neutral-text/70">{feature.description}</p>
+              <p className="text-sm leading-relaxed text-muted">{feature.description}</p>
             </div>
           ))}
         </div>

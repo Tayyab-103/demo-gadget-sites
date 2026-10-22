@@ -14,26 +14,26 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-neutral-bg pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+      <main className="bg-surface pt-28 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="eyebrow mb-4">Legal &amp; Compliance</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-line pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
+          <div className="bg-white rounded-3xl p-8 md:p-10 border border-line shadow-md leading-relaxed text-neutral-text/75 text-xs md:text-sm space-y-6">
             <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">OVERVIEW</h3>
             <p>
               This website is operated by <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
               “us” and “our” refer to <strong className="text-primary font-semibold">{siteConfig.brandName}</strong>. <strong className="text-primary font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the athlete,
+              this website, including all information, tools and services available from this site to you, the user,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing sporting goods, weighted conditioning vests, performance bags, and recovery therapy from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing sporting goods, including weighted training vests, home strength kits and waterproof gear backpacks, from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -49,9 +49,9 @@ export default function Terms() {
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-neutral-bg border border-line rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/5 last:border-0 last:mb-0 last:pb-0">
+                <div key={product.id} className="mb-6 pb-6 border-b border-line last:border-0 last:mb-0 last:pb-0">
                   <h4 className="text-sm md:text-base font-black text-primary mb-3 uppercase tracking-tight">
                     {product.name}
                   </h4>
@@ -64,7 +64,7 @@ export default function Terms() {
 
                       return (
                         <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-neutral-text/75">
-                          Upon ordering a <strong className="text-primary font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Athlete Package` : "Single Unit"}</strong>,
+                          Upon ordering a <strong className="text-primary font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Bundle` : "Single Unit"}</strong>,
                           you will be charged a singular transaction fee of <strong className="text-primary font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
                           The credit card charge will appear on your statement as <strong className="text-primary font-bold">“{siteConfig.descriptor}”</strong>.
@@ -94,9 +94,9 @@ export default function Terms() {
               You will receive a tracking number via email once your order has been dispatched from our Austin, TX distribution center.
             </p>
 
-            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - 14-DAY FIELD TRIAL &amp; RETURN POLICY</h3>
+            <h3 className="text-base font-black text-primary mt-8 mb-4 uppercase tracking-wider">SECTION 3 - {siteConfig.trialPeriod}-DAY TRIAL &amp; RETURN POLICY</h3>
             <p>
-              We stand behind our sporting equipment with a 14-day field trial guarantee. If you are not satisfied with your purchase,
+              We stand behind our sporting equipment with a {siteConfig.trialPeriod}-day trial period. If you are not satisfied with your purchase, within {siteConfig.trialPeriod} days of delivery
               please contact our customer service center at <strong className="text-primary font-semibold">{siteConfig.phone}</strong> or email us at{" "}
               <strong className="text-primary font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>

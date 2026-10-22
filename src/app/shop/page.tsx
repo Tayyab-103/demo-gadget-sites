@@ -14,10 +14,10 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Complete Catalog"
-          title={<>The Athlete Collection</>}
-          subtitle="Explore battle-tested weighted training vests, solid cast dumbbells, and storm-shield equipment backpacks."
-          image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80"
+          eyebrow="Shop"
+          title={<>The Full <span className="text-secondary">Lineup</span></>}
+          subtitle="Weighted training vests, home strength kits and waterproof gear packs — available as single units or money-saving bundles."
+          image="/img/products/product2-2.jpg"
           currentLabel="Products"
         />
         <ProductGrid />

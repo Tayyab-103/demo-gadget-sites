@@ -9,27 +9,25 @@ import { useCart } from "@/context/CartContext";
 const products = productsData as unknown as Product[];
 
 const tabLabels = [
-  "3d Toys",
-  "Toys for Boys",
-  "Metal Toy",
-  "Teddy Doll",
-  "Stickers",
+  "All Collection",
+  "Action Figures",
+  "Plushies & Soft Toys",
+  "STEM Puzzles",
 ];
 
 export default function CollectionTabs() {
-  const [activeTab, setActiveTab] = useState("3d Toys");
+  const [activeTab, setActiveTab] = useState("All Collection");
   const { addToCart } = useCart();
 
   const filteredProducts = products.filter((p) => {
-    if (activeTab === "3d Toys") return p.category.includes("Action") || p.category.includes("Building");
-    if (activeTab === "Toys for Boys") return p.category.includes("RC") || p.category.includes("Action") || p.category.includes("Water");
-    if (activeTab === "Metal Toy") return p.category.includes("RC") || p.category.includes("STEM");
-    if (activeTab === "Teddy Doll") return p.category.includes("Plush") || p.category.includes("Doll");
-    if (activeTab === "Stickers") return p.category.includes("STEM") || p.category.includes("Board");
+    if (activeTab === "All Collection") return true;
+    if (activeTab === "Action Figures") return p.category.includes("Action");
+    if (activeTab === "Plushies & Soft Toys") return p.category.includes("Plush");
+    if (activeTab === "STEM Puzzles") return p.category.includes("STEM");
     return true;
   });
 
-  const displayProducts = filteredProducts.length > 0 ? filteredProducts.slice(0, 4) : products.slice(0, 4);
+  const displayProducts = filteredProducts.length > 0 ? filteredProducts : products;
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white font-sans border-b border-black/5" id="collection">
@@ -73,8 +71,8 @@ export default function CollectionTabs() {
           })}
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {displayProducts.map((product) => {
             return (
               <div

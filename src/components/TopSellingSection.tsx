@@ -10,7 +10,7 @@ const products = productsData as unknown as Product[];
 
 export default function TopSellingSection() {
   const { addToCart } = useCart();
-  const topSelling = products.slice(2, 6);
+  const topSelling = products.length > 3 ? products.slice(2, 6) : products;
 
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-white font-sans border-b border-black/5 relative overflow-hidden">

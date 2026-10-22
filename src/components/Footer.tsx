@@ -231,27 +231,15 @@ export default function Footer() {
               <Link href="/" className="font-black text-[#ff4370] hover:underline">
                 Playhouse Games and Toy Store
               </Link>
-              , Inc. All Rights Reserved. Operated by{" "}
-              <strong className="text-black/80">{siteConfig.corpName}</strong>.
+              , Inc. All Rights Reserved.
             </p>
-            <p className="text-[0.68rem] text-black/50 mt-0.5">
-              Statement Descriptor: <span className="font-mono font-bold text-black/75">{siteConfig.descriptor}</span>
-            </p>
+           
           </div>
 
           <div className="flex items-center gap-2 flex-wrap justify-center">
             {/* White rounded pill payment card badges matching Kiddex */}
            <img src="/img/visa.png" alt="Visa" className="h-5 w-auto rounded-xs bg-white p-0.5" />
             <img src="/img/mastercard.png" alt="Mastercard" className="h-5 w-auto rounded-xs bg-white p-0.5" />
-
-            {/* Pink Round Scroll-to-Top Button matching Kiddex */}
-            <button
-              onClick={scrollToTop}
-              aria-label="Scroll to top"
-              className="w-8 h-8 rounded-full border-2 border-[#ff4370] text-[#ff4370] hover:bg-[#ff4370] hover:text-white flex items-center justify-center font-bold text-sm ml-2 transition-all cursor-pointer shadow-xs active:scale-90"
-            >
-              ▲
-            </button>
           </div>
         </div>
       </div>

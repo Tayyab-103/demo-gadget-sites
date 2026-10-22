@@ -36,7 +36,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Cards Grid with Kiddex Styling */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {products.map((product, idx) => {
             const firstBundle = product.bundles && product.bundles[0];
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
@@ -73,12 +73,6 @@ export default function ProductGrid() {
                 {/* Content */}
                 <div className="flex flex-1 flex-col justify-between">
                   <div>
-                    {/* Star Rating */}
-                    <div className="flex items-center gap-1.5 mb-1.5 text-[#ffb703] text-xs font-bold">
-                      <span>★★★★★</span>
-                      <span className="text-[0.68rem] text-black/50 font-semibold">(4.9)</span>
-                    </div>
-
                     <Link href={`/product/${product.id}`}>
                       <h3 className="mb-2 text-sm sm:text-base font-black text-[#1e293b] leading-snug transition-colors duration-200 line-clamp-2 group-hover:text-[#ff4370]">
                         {product.name}
@@ -119,3 +113,4 @@ export default function ProductGrid() {
     </section>
   );
 }
+

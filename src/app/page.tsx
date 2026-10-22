@@ -24,7 +24,8 @@ export default function Home() {
       <main className="flex-grow">
         {/* 1. Kiddex Banner / Hero Section matching media_1792413693163.png */}
         <Hero />
-
+{/* 10. Slide Text Marquee Ticker */}
+        <MarqueeTicker />
         {/* 2. Category Section with 6 Whimsical Shapes */}
         <CategoriesSection />
 
@@ -49,8 +50,7 @@ export default function Home() {
         {/* 9. Parent Testimonials Section */}
         <Testimonials />
 
-        {/* 10. Slide Text Marquee Ticker */}
-        <MarqueeTicker />
+        
 
         {/* 11. Latest From Media (News Section) */}
         <NewsSection />

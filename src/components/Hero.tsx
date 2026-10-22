@@ -4,7 +4,35 @@ import React from "react";
 import Link from "next/link";
 import { ScallopTop, ScallopBottom, WhimsicalStar } from "./ScallopBorders";
 
+const heroImages = [
+  {
+    src: "/img/herosection.png",
+    alt: "Happy Girl Holding Teddy Bear Toy",
+    fallback: "/img/kiddex_hero_banner.png",
+  },
+  {
+    src: "/img/hero-slide-2.jpg",
+    alt: "Smiling Boy Playing with Toy Robot",
+    fallback: "/img/herosection.png",
+  },
+  {
+    src: "/img/hero-slide-3.jpg",
+    alt: "Laughing Girl Hugging Soft Plush Bunny",
+    fallback: "/img/herosection.png",
+  },
+];
+
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative bg-[#fde599] font-sans pt-24 sm:pt-28 md:pt-32 pb-0 overflow-hidden select-none">
       {/* Top Scalloped Cloud Fringe */}
@@ -68,23 +96,54 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-4 pb-12 sm:pb-16 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
-          {/* Left Column: Circular Girl with Teddy Bear */}
+          {/* Left Column: Circular Hero Carousel with Kids and Toys */}
           <div className="lg:col-span-6 flex justify-center lg:justify-start items-center relative">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
               {/* Concentric Halo Rings */}
               <div className="absolute inset-0 rounded-full border-2 border-white/60 -scale-x-100 rotate-12 pointer-events-none" />
               <div className="absolute -inset-3 rounded-full border border-white/40 pointer-events-none" />
 
-              {/* Girl Circular Frame */}
+              {/* Circular Slideshow Frame */}
               <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-84 md:h-84 rounded-full overflow-hidden bg-white shadow-xl border-4 border-white flex items-center justify-center">
-                <img
-                  src="/img/herosection.png"
-                  alt="Happy Girl Holding Teddy Bear Toy"
-                  className="w-full h-full object-cover scale-105"
-                  onError={(e) => {
-                    e.currentTarget.src = "/img/kiddex_hero_banner.png";
-                  }}
-                />
+                {heroImages.map((image, index) => {
+                  const isActive = index === currentSlide;
+                  return (
+                    <div
+                      key={image.src}
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                        isActive
+                          ? "opacity-100 scale-105 pointer-events-auto z-10"
+                          : "opacity-0 scale-100 pointer-events-none z-0"
+                      }`}
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = image.fallback;
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+
+                {/* Slideshow Indicator Dots */}
+                <div className="absolute bottom-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/25 backdrop-blur-xs">
+                  {heroImages.map((_, dotIndex) => (
+                    <button
+                      key={dotIndex}
+                      type="button"
+                      onClick={() => setCurrentSlide(dotIndex)}
+                      aria-label={`Go to slide ${dotIndex + 1}`}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        dotIndex === currentSlide
+                          ? "w-4 bg-white"
+                          : "w-1.5 bg-white/60 hover:bg-white"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -94,13 +153,6 @@ export default function Hero() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-[#1e293b] leading-[1.12] tracking-tight">
               The Best Kids Toy<br />Store in the City
             </h1>
-
-            <div className="mt-4 sm:mt-5 text-xl sm:text-2xl font-black text-[#1e293b] flex items-baseline gap-2">
-              <span className="font-bold text-[#1e293b]/90 text-lg sm:text-xl">From</span>
-              <span className="text-[#ff4370] text-3xl sm:text-4xl md:text-[2.6rem] font-black tracking-tight">
-                $42.99
-              </span>
-            </div>
 
             <div className="mt-6 sm:mt-8">
               <Link

@@ -20,7 +20,11 @@ export default function Header() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const [wishlistCount, setWishlistCount] = useState(0);
 
   const headerRef = useRef<HTMLElement>(null);
@@ -36,7 +40,6 @@ export default function Header() {
     : [];
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -88,7 +91,7 @@ export default function Header() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Shop All", href: "/shop" },
-    { label: "Cart", href: "/cart" },
+    // { label: "Cart", href: "/cart" },
     { label: "About Us", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },

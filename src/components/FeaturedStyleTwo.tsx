@@ -24,7 +24,7 @@ export default function FeaturedStyleTwo() {
             </div>
             <div>
               <Link
-                href="/shop?category=Puzzles"
+                href="/shop?category=STEM%20%26%20Learning%20Puzzles"
                 className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-[#ff4370] font-black text-xs uppercase tracking-wider border border-[#ff4370]/30 hover:bg-[#ff4370] hover:text-white transition-all shadow-xs"
               >
                 Shop Now →
@@ -71,7 +71,7 @@ export default function FeaturedStyleTwo() {
             </div>
             <div>
               <Link
-                href="/shop?category=Puzzles"
+                href="/shop?category=STEM%20%26%20Learning%20Puzzles"
                 className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white text-[#d97706] font-black text-xs uppercase tracking-wider border border-[#ffb703]/40 hover:bg-[#ffb703] hover:text-[#1e293b] transition-all shadow-xs"
               >
                 Shop Now →

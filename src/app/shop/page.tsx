@@ -24,14 +24,7 @@ const ageRanges = [
 
 const categoryList = [
   "All Categories",
-  "Action Figures & Hero Toys",
-  "Plushies & Soft Toys",
-  "STEM & Learning Puzzles",
-  "Board Games & Family Fun",
-  "Vehicles & RC Toys",
-  "Building & Construction",
-  "Dolls & Interactive Play",
-  "Outdoor & Water Games",
+  ...Array.from(new Set(products.map((p) => p.category).filter(Boolean))),
 ];
 
 export default function ShopPage() {

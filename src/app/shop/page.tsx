@@ -14,11 +14,9 @@ const products = productsData as unknown as Product[];
 
 const categoryList = [
   "All",
-  "Dresses",
-  "Knitwear & Sweaters",
   "Tops & Blouses",
+  "Knitwear & Sweaters",
   "Skirts & Bottoms",
-  "Accessories",
 ];
 
 const colorList = [

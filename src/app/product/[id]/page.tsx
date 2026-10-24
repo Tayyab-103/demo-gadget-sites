@@ -90,8 +90,14 @@ export default function ProductDetailPage() {
     );
   }
 
+  const maxQuantity = product.bundles && product.bundles.length > 0 ? product.bundles.length : 8;
+  const currentBundle = product.bundles?.find((b) => b.quantity === quantity);
+  const currentTotalPrice = currentBundle ? currentBundle.price : parseFloat(product.ssPrice) * quantity;
+  const currentOldPrice = product.oldPrice ? (parseFloat(product.oldPrice) * quantity).toFixed(2) : null;
+
   const handleAddToCart = () => {
-    addToCart(product, quantity, product.ssPrice, `Size: ${selectedSize}`, selectedSize);
+    const unitPrice = currentBundle ? (currentBundle.price / quantity).toFixed(2) : product.ssPrice;
+    addToCart(product, quantity, unitPrice, `Size: ${selectedSize}`, selectedSize);
   };
 
   const handleAddReview = (e: React.FormEvent) => {
@@ -240,16 +246,22 @@ export default function ProductDetailPage() {
                   </ul>
 
                   {/* Pricing */}
-                  <div className="flex items-baseline gap-3 mb-8">
-                    <span className="font-heading text-3xl font-extrabold text-primary">
-                      ${product.ssPrice}
+                  <div className="flex items-baseline flex-wrap gap-3 mb-6">
+                    <span className="font-heading text-3xl sm:text-4xl font-extrabold text-primary">
+                      ${currentTotalPrice.toFixed(2)}
                     </span>
-                    {product.oldPrice && (
+                    {currentOldPrice && (
                       <span className="text-lg text-neutral-text/40 line-through">
-                        ${product.oldPrice}
+                        ${currentOldPrice}
+                      </span>
+                    )}
+                    {quantity > 1 && (
+                      <span className="text-xs font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">
+                        Bundle for {quantity} Pieces (${(currentTotalPrice / quantity).toFixed(2)} / ea)
                       </span>
                     )}
                   </div>
+
 
                   {/* Size Selector */}
                   {product.sizes && product.sizes.length > 0 && (
@@ -289,6 +301,8 @@ export default function ProductDetailPage() {
                       <button
                         type="button"
                         onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                        disabled={quantity <= 1}
+                        className="disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                         aria-label="Decrease Quantity"
                       >
                         -
@@ -296,7 +310,9 @@ export default function ProductDetailPage() {
                       <input type="text" readOnly value={quantity} />
                       <button
                         type="button"
-                        onClick={() => setQuantity((q) => q + 1)}
+                        onClick={() => setQuantity((q) => Math.min(maxQuantity, q + 1))}
+                        disabled={quantity >= maxQuantity}
+                        className="disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                         aria-label="Increase Quantity"
                       >
                         +
@@ -308,7 +324,7 @@ export default function ProductDetailPage() {
                       onClick={handleAddToCart}
                       className="fashion-button flex-1 py-4 text-center cursor-pointer"
                     >
-                      Add To Shopping Bag
+                      Add To Shopping Bag &bull; ${currentTotalPrice.toFixed(2)}
                     </button>
                   </div>
 

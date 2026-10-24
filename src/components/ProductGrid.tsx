@@ -8,7 +8,7 @@ import { useCart } from "@/context/CartContext";
 
 const products = productsData as unknown as Product[];
 
-const categories = ["All", "Dresses", "Knitwear & Sweaters", "Tops & Blouses", "Skirts & Bottoms"];
+const categories = ["All", ...Array.from(new Set(products.map((p) => p.category).filter(Boolean)))];
 
 export default function ProductGrid() {
   const [activeTab, setActiveTab] = useState("All");
@@ -60,7 +60,7 @@ export default function ProductGrid() {
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProducts.map((product) => {
             const isWishlisted = !!wishlist[product.id];
 
@@ -89,31 +89,23 @@ export default function ProductGrid() {
                           <span className="item-tag item-tag_green">New</span>
                         )}
                       </div>
-
-                      {/* Wishlist Heart Toggle */}
-                      <button
-                        type="button"
-                        onClick={(e) => toggleWishlist(product.id, e)}
-                        className={`pointer-events-auto w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm shadow flex items-center justify-center transition-all ${
-                          isWishlisted ? "text-red-500 scale-110" : "text-black/40 hover:text-red-500"
-                        }`}
-                        aria-label="Add to wishlist"
-                      >
-                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                      </button>
                     </div>
 
-                    {/* Quick Add Overlay on Hover (Desktop) */}
-                    <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
+                    {/* Quick Add & View Detail Overlay on Hover (Desktop) */}
+                    <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:flex items-center gap-2">
                       <button
                         type="button"
                         onClick={() => addToCart(product, 1, product.ssPrice, "Quick Add", "M")}
-                        className="w-full py-2.5 bg-primary text-white text-[0.7rem] font-bold uppercase tracking-widest rounded-lg shadow-lg hover:bg-secondary transition-colors"
+                        className="flex-1 py-2.5 bg-primary text-white text-[0.68rem] font-bold uppercase tracking-wider rounded-lg shadow-lg hover:bg-secondary transition-colors cursor-pointer"
                       >
                         + Add To Bag
                       </button>
+                      <Link
+                        href={`/product/${product.id}`}
+                        className="flex-1 py-2.5 bg-white text-primary text-[0.68rem] font-bold uppercase tracking-wider rounded-lg shadow-lg hover:bg-primary hover:text-white transition-colors text-center border border-black/10 flex items-center justify-center"
+                      >
+                        View Detail
+                      </Link>
                     </div>
                   </div>
 
@@ -125,15 +117,34 @@ export default function ProductGrid() {
                   </h3>
                 </div>
 
-                <div className="flex items-baseline gap-2 mt-2">
-                  <span className="font-bold text-sm text-primary">
-                    ${product.ssPrice}
-                  </span>
-                  {product.oldPrice && (
-                    <span className="text-xs text-neutral-text/40 line-through">
-                      ${product.oldPrice}
+                <div>
+                  <div className="flex items-baseline gap-2 mt-2">
+                    <span className="font-bold text-sm text-primary">
+                      ${product.ssPrice}
                     </span>
-                  )}
+                    {product.oldPrice && (
+                      <span className="text-xs text-neutral-text/40 line-through">
+                        ${product.oldPrice}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Mobile Action Buttons */}
+                  <div className="flex sm:hidden items-center gap-2 mt-3">
+                    <button
+                      type="button"
+                      onClick={() => addToCart(product, 1, product.ssPrice, "Quick Add", "M")}
+                      className="flex-1 py-2 bg-primary text-white text-[0.68rem] font-bold uppercase tracking-wider rounded-lg shadow-sm hover:bg-secondary transition-colors cursor-pointer"
+                    >
+                      + Add To Bag
+                    </button>
+                    <Link
+                      href={`/product/${product.id}`}
+                      className="flex-1 py-2 bg-white text-primary text-[0.68rem] font-bold uppercase tracking-wider rounded-lg border border-black/10 text-center hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
+                    >
+                      View Detail
+                    </Link>
+                  </div>
                 </div>
               </article>
             );

@@ -55,32 +55,6 @@ export default function Hero() {
     <section className="relative w-full bg-white overflow-hidden select-none border-b border-black/5">
       <div className="relative w-full min-h-[640px] md:min-h-[720px] lg:h-[780px] xl:h-[840px] flex">
         
-        {/* ================= LEFT RAIL ================= */}
-        <div className="w-16 sm:w-20 lg:w-24 flex-shrink-0 flex flex-col justify-between items-center py-8 z-30 bg-white">
-          {/* Top spacer */}
-          <div className="h-10" />
-
-          {/* Vertical Stacked Socials */}
-          <div className="flex flex-col items-center gap-3 text-[0.68rem] tracking-[0.2em] font-medium text-neutral-800">
-            <a href="#" className="hover:text-black transition-colors">FB</a>
-            <span className="w-2.5 h-[1px] bg-neutral-300" />
-            <a href="#" className="hover:text-black transition-colors">TW</a>
-            <span className="w-2.5 h-[1px] bg-neutral-300" />
-            <a href="#" className="hover:text-black transition-colors">INS</a>
-            <span className="w-2.5 h-[1px] bg-neutral-300" />
-            <a href="#" className="hover:text-black transition-colors">PT</a>
-          </div>
-
-          {/* Bottom Left Slide Number: 1/3 */}
-          <div className="font-heading leading-none">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black">
-              {currentSlide + 1}
-            </span>
-            <span className="text-xs sm:text-sm font-normal text-neutral-400">
-              /{slides.length}
-            </span>
-          </div>
-        </div>
 
         {/* ================= CENTER HERO STAGE ================= */}
         <div className="relative flex-1 flex items-center justify-start h-full">
@@ -96,13 +70,6 @@ export default function Hero() {
             
             {/* Subtle light overlay to ensure soft fashion aesthetic */}
             <div className="absolute inset-0 bg-black/10" />
-
-            {/* Optional dimension watermark accent as in prototype placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-              <span className="font-heading text-4xl sm:text-6xl text-white font-light tracking-widest">
-                1040 x 800
-              </span>
-            </div>
           </div>
 
           {/* 2. Dotted Matrix Pattern on the Right */}

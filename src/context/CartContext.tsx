@@ -44,19 +44,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addToCart = (product: Product, quantity: number, price: number | string, label = "", size = "M") => {
     // If site configuration limits cart to one product
     const limitOne = siteConfig.oneProductCartLimit === "yes";
+    const maxQty = product.bundles && product.bundles.length > 0 ? product.bundles.length : 8;
+    const clampedQty = Math.min(maxQty, Math.max(1, quantity));
+    const matchedBundle = product.bundles?.find((b) => b.quantity === clampedQty);
+    const itemTotal = matchedBundle
+      ? matchedBundle.price.toFixed(2)
+      : (parseFloat(String(price)) * clampedQty).toFixed(2);
+    const itemUnitPrice = matchedBundle
+      ? (matchedBundle.price / clampedQty).toFixed(2)
+      : parseFloat(String(price)).toFixed(2);
 
     if (limitOne) {
       const newItem: CartItem = {
         Id: product.id,
         Name: product.name,
         Image: product.image,
-        Price: price,
-        Qty: quantity,
-        Total: (parseFloat(String(price)) * quantity).toFixed(2),
+        Price: itemUnitPrice,
+        Qty: clampedQty,
+        Total: itemTotal,
         billModel: product.billingModel,
         StickyId: product.stickyId,
         trlPrice: product.ssPrice,
-        EnableMaxqty: product.bundles ? product.bundles.length : 1,
+        EnableMaxqty: maxQty,
         Label: label,
         bundles: product.bundles,
         size: size,
@@ -75,12 +84,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
         // Update existing item
         const updatedCart = [...prevCart];
         const existingItem = updatedCart[existingItemIndex];
-        const newQty = existingItem.Qty + quantity;
+        const newQty = Math.min(maxQty, existingItem.Qty + clampedQty);
+        const existingMatchedBundle = existingItem.bundles?.find((b) => b.quantity === newQty);
         
         updatedCart[existingItemIndex] = {
           ...existingItem,
           Qty: newQty,
-          Total: (parseFloat(String(price)) * newQty).toFixed(2)
+          Price: existingMatchedBundle
+            ? (existingMatchedBundle.price / newQty).toFixed(2)
+            : existingItem.Price,
+          Total: existingMatchedBundle
+            ? existingMatchedBundle.price.toFixed(2)
+            : (parseFloat(String(existingItem.Price)) * newQty).toFixed(2)
         };
         return updatedCart;
       } else {
@@ -89,13 +104,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
           Id: product.id,
           Name: product.name,
           Image: product.image,
-          Price: price,
-          Qty: quantity,
-          Total: (parseFloat(String(price)) * quantity).toFixed(2),
+          Price: itemUnitPrice,
+          Qty: clampedQty,
+          Total: itemTotal,
           billModel: product.billingModel,
           StickyId: product.stickyId,
           trlPrice: product.ssPrice,
-          EnableMaxqty: product.bundles ? product.bundles.length : 1,
+          EnableMaxqty: maxQty,
           Label: label,
           bundles: product.bundles,
           size: size,
@@ -122,7 +137,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       prevCart.map((item) => {
         if (item.Id !== productId) return item;
 
-        const matchedBundle = item.bundles?.find((b) => b.quantity === quantity);
+        const maxQty = item.EnableMaxqty || (item.bundles ? item.bundles.length : 8);
+        const clampedQty = Math.min(maxQty, quantity);
+
+        const matchedBundle = item.bundles?.find((b) => b.quantity === clampedQty);
         if (matchedBundle) {
           return {
             ...item,
@@ -134,8 +152,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
         return {
           ...item,
-          Qty: quantity,
-          Total: (parseFloat(String(item.Price)) * quantity).toFixed(2)
+          Qty: clampedQty,
+          Total: (parseFloat(String(item.Price)) * clampedQty).toFixed(2)
         };
       })
     );

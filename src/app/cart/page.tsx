@@ -139,6 +139,8 @@ export default function CartPage() {
                             <button
                               type="button"
                               onClick={() => updateQuantity(item.Id, item.Qty + 1)}
+                              disabled={item.Qty >= (item.EnableMaxqty || 8)}
+                              className="disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                               aria-label="Increase quantity"
                             >
                               +

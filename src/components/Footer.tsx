@@ -144,8 +144,7 @@ export default function Footer() {
             )}
 
             <div className="mt-8 pt-6 border-t border-white/10 text-white/50 text-[0.72rem] leading-relaxed">
-              <div><strong className="text-white/80">Corporate:</strong> {siteConfig.corpName}</div>
-              <div><strong className="text-white/80">Descriptor:</strong> {siteConfig.descriptor}</div>
+              <div><strong className="text-white/80">Contact US:</strong> {siteConfig.phone}</div>
               <div><strong className="text-white/80">Address:</strong> {siteConfig.address}</div>
             </div>
           </div>

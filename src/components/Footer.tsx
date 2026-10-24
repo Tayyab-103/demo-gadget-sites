@@ -118,7 +118,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-white/50 text-xs text-center sm:text-left">
-            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved. Operated by {siteConfig.corpName}.
+            &copy;{currentYear} {siteConfig.brandName}. All Rights Reserved.
           </span>
           <span className="text-white/40 text-[10px] text-center sm:text-right max-w-md">
             Product images are for illustrative purposes; actual gear may vary slightly.

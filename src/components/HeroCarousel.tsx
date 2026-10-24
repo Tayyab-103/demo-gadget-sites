@@ -4,24 +4,24 @@ import React, { useEffect, useState } from "react";
 
 const images = [
   {
+    src: "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1600&q=80",
+    alt: "Traveler wheeling durable spinner luggage along airport walkway",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=1600&q=80",
+    alt: "Premium travel luggage ready for departure in terminal",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80",
+    alt: "Traveler waiting at departure gate with luggage watching aircraft takeoff",
+  },
+  {
     src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80",
     alt: "Adventure traveler with luggage and gear overlooking scenic winding road",
   },
   {
-    src: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=1600&q=80",
-    alt: "Traveler wheeling durable hardshell luggage through terminal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80",
-    alt: "Scenic trail journey and travel expedition across national park landscape",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80",
-    alt: "Expedition journey and mountain trail exploration with travel packs",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&q=80",
-    alt: "Durable travel duffel and gear packed for an extended journey",
+    src: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=1600&q=80",
+    alt: "Expedition hardside luggage set packed for travel journey",
   },
 ];
 

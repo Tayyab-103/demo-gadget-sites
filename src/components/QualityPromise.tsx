@@ -31,7 +31,7 @@ export default function QualityPromise() {
         {/* Full-bleed banner */}
         <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
           <img
-            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80"
+            src="/img/qualitypromise.jpg"
             alt={`${siteConfig.brandName} Quality Assurance`}
             className="absolute inset-0 h-full w-full object-cover"
           />

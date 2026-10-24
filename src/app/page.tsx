@@ -39,7 +39,7 @@ export default function Home() {
         {/* <Features /> */}
         
         {/* Customer Social Proof */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* Conversion CTA Banner */}
         <CTASection />

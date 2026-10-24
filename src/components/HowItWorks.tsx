@@ -9,7 +9,7 @@ const steps = [
     title: "Choose Your Gear",
     description:
       "Browse our range of luggage, bags, and travel accessories, and pick a bundle sized for your next trip, from a single piece to a full travel kit.",
-    image: "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const steps = [
     title: "Nationwide Dispatch",
     description:
       "Your order is packed and dispatched from our fulfillment center directly to your doorstep within 3-5 business days.",
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

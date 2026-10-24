@@ -97,13 +97,13 @@ export default function Contact() {
           })}
         </div>
 
-        <div className="text-center">
+        <div className="text-center px-2">
           <Link
             href="/#faq"
-            className="inline-flex items-center justify-center gap-2 font-bold text-center whitespace-nowrap bg-secondary text-secondary-text hover:bg-white hover:text-primary transition-all duration-300 py-4 px-9 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-secondary/10"
+            className="group inline-flex max-w-full items-center justify-center gap-2 font-bold text-center bg-secondary text-secondary-text hover:bg-white hover:text-primary transition-all duration-300 py-3.5 px-6 sm:py-4 sm:px-9 rounded-full text-[0.7rem] sm:text-xs uppercase tracking-wider sm:tracking-widest shadow-lg shadow-secondary/10"
           >
-            Browse Common Questions
-            <span className="text-sm">→</span>
+            <span>Browse Common Questions</span>
+            <span className="text-sm transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>

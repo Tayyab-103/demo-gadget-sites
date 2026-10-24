@@ -131,7 +131,7 @@ export default function AboutUs() {
           {/* LEFT — Image */}
           <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-[2.5rem] shadow-2xl lg:mx-0 lg:aspect-4/5">
             <Image
-              src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=1600&q=80"
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1600&q=80"
               alt={`${siteConfig.brandName} expedition travel lifestyle`}
               fill
               sizes="(max-width: 1024px) 90vw, 520px"

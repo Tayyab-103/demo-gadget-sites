@@ -96,8 +96,8 @@ export default function AboutUs() {
           {/* Col 2: Center Large Image */}
           <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[280px] sm:min-h-[340px] lg:min-h-[380px] bg-black/5 border border-black/5 shadow-sm">
             <Image
-              src="/img/howitworks1.jpg"
-              alt="Uniform supply consultation and fabrics"
+              src="/img/aboutus_crew.jpg"
+              alt="Diverse commercial team wearing professional work uniforms"
               fill
               sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover object-center transition-transform duration-700 hover:scale-105"
@@ -118,8 +118,8 @@ export default function AboutUs() {
             {/* Quality testing image */}
             <div className="relative rounded-3xl overflow-hidden h-[180px] sm:h-[200px] lg:h-[210px] w-full bg-black/5 border border-black/5 shadow-sm">
               <Image
-                src="/img/lab1.jpg"
-                alt="Uniform fabric quality inspection"
+                src="/img/aboutus_inspection.jpg"
+                alt="Uniform fabric and seam quality inspection"
                 fill
                 sizes="(max-width: 1024px) 100vw, 400px"
                 className="object-cover object-center transition-transform duration-700 hover:scale-105"

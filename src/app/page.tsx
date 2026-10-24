@@ -35,11 +35,9 @@ export default function Home() {
 
         {/* Video Showcase In Motion */}
         <VideoShowcase />
-
-
         
         {/* Commercial Client Testimonials */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* Conversion CTA Banner */}
         <CTASection />

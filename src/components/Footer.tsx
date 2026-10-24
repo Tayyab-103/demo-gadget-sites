@@ -55,7 +55,6 @@ export default function Footer() {
             <div className="flex flex-col gap-1.5 text-xs text-white/60">
               <span className="font-medium text-white/90">{siteConfig.address}</span>
               <span>{siteConfig.phone} • {siteConfig.email}</span>
-              <span className="text-white/40 mt-1">Operated by {siteConfig.corpName}</span>
             </div>
           </div>
 
@@ -145,7 +144,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright & Payment Badges */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p className="text-center sm:text-left">
-            Copyright {currentYear} © <span className="font-semibold text-white/80">{siteConfig.brandName}</span>. All Rights Reserved. Statement Descriptor: <strong className="text-white/70">{siteConfig.descriptor}</strong>.
+            Copyright {currentYear} © <span className="font-semibold text-white/80">{siteConfig.brandName}</span>. All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-2">

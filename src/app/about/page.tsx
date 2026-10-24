@@ -21,7 +21,7 @@ export default function AboutPage() {
           eyebrow="Commercial Heritage"
           title={<>About {siteConfig.brandName}</>}
           subtitle="Headquartered in Dallas, Texas. Dedicated to outfitting commercial crews, field technicians, and industrial teams with unyielding uniform durability."
-          image="/img/lab1.jpg"
+          image="/img/aboutus_crew.jpg"
           currentLabel="About"
         />
         <AboutUs />

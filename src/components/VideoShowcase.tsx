@@ -24,8 +24,8 @@ export default function VideoShowcase() {
           {/* Card 1: Work Shirts */}
           <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl hover:border-[#0f2b48]/30">
             <Image
-              src="/img/lab1.jpg"
-              alt="Textile quality inspection of industrial work uniform"
+              src="/img/videoshowcase_shirt.jpg"
+              alt="Industrial technician wearing reinforced two-tone work uniform shirt"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -52,8 +52,8 @@ export default function VideoShowcase() {
           {/* Card 2: Utility Bottoms & Safety */}
           <div className="group relative overflow-hidden rounded-3xl bg-black text-white shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-end p-7 transition-all duration-300 hover:shadow-2xl hover:border-[#0f2b48]/30">
             <Image
-              src="/img/lab2.jpg"
-              alt="Precision commercial garment sewing machine on work trousers"
+              src="/img/videoshowcase_pants.jpg"
+              alt="Field worker wearing high-vis safety gear and utility cargo work pants"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"

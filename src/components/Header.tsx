@@ -93,8 +93,8 @@ export default function Header() {
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0D1B2A]/95 backdrop-blur-md shadow-lg border-b border-[#C87D3B]/25 py-3 text-white"
-          : "bg-[#0D1B2A] border-b border-[#C87D3B]/15 py-3.5 text-white"
+          ? "bg-[#0D1B2A]/95 backdrop-blur-md shadow-lg border-b border-[#C87D3B]/25 pb-3 text-white"
+          : "bg-[#0D1B2A] border-b border-[#C87D3B]/15 pb-3.5 text-white"
       }`}
     >
       {/* Top Banner Notice */}
@@ -104,7 +104,7 @@ export default function Header() {
         <span className="text-[#C87D3B] ml-2">✦</span>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between mt-1 sm:mt-1.5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between pt-3 sm:pt-2">
         
         {/* Left: Brand Logo */}
         <Link href="/" onClick={closeAll} className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>

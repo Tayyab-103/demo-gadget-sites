@@ -130,14 +130,14 @@ export default function Checkout() {
         {/* Background decorative glow spot */}
         <div className="glow-bg absolute top-[10%] left-[-250px] opacity-35 pointer-events-none" />
 
-        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <span className="eyebrow mb-4">Secure Checkout</span>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 tracking-tight">Checkout <span className="text-secondary">Securely</span></h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-primary mb-6 sm:mb-8 tracking-tight">Checkout <span className="text-secondary">Securely</span></h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
             {/* Form Column */}
-            <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 border border-black/5 shadow-md">
               {errorMsg && (
                 <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-xl mb-6 text-xs md:text-sm">
                   <strong>Transaction Status:</strong> {errorMsg}
@@ -246,8 +246,8 @@ export default function Checkout() {
             </div>
 
             {/* Cart Summary Column */}
-            <div className="sticky top-28 flex flex-col gap-6">
-              <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
+            <div className="lg:sticky lg:top-28 flex flex-col gap-6">
+              <div className="bg-white rounded-3xl p-5 sm:p-8 border border-black/5 shadow-md">
                 <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
                   Order Summary
                 </h3>

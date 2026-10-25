@@ -31,7 +31,7 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-6 pt-36 pb-28 text-center bg-neutral-bg">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 sm:pt-36 sm:pb-28 text-center bg-neutral-bg">
           <h2 className="text-2xl font-black uppercase text-primary mb-4">Product Not Found</h2>
           <p className="text-neutral-text/60 mb-8 max-w-md mx-auto text-sm">The hardware item you are looking for does not exist or has been removed from our catalog.</p>
           <button
@@ -64,15 +64,15 @@ export default function ProductDetail() {
         <div className="glow-bg absolute top-[10%] right-[-250px] opacity-35 pointer-events-none" />
 
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-start">
             
             {/* Product Image Section */}
-            <div className="bg-white rounded-3xl p-6 border border-black/5 shadow-md">
+            <div className="bg-white rounded-3xl p-4 sm:p-6 border border-black/5 shadow-md min-w-0">
               <ProductCarousel images={product.images && product.images.length > 0 ? product.images : [product.image]} name={product.name} />
             </div>
 
             {/* Product Details Section */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/5 shadow-md">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-10 border border-black/5 shadow-md min-w-0">
               <span className="text-[0.68rem] font-bold uppercase text-secondary tracking-[0.18em]">
                 {product.category || "Plumbing & Heating Supplies"}
               </span>
@@ -93,7 +93,7 @@ export default function ProductDetail() {
                 <span className="text-xs text-neutral-text/55 font-medium">(28 Verified Contractor Reviews)</span>
               </div>
 
-              <div className="text-3xl font-black text-primary mb-6 flex items-baseline gap-2">
+              <div className="text-2xl sm:text-3xl font-black text-primary mb-6 flex flex-wrap items-baseline gap-x-2">
                 ${parseFloat(String(selectedBundle.price)).toFixed(2)}
                 {selectedBundle.quantity > 1 && (
                   <span className="text-xs md:text-sm font-medium text-neutral-text/50 ml-1">

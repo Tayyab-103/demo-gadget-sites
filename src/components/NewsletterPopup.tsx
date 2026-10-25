@@ -66,8 +66,8 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[500px] border-2 border-primary/20 relative flex flex-col overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-9999 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
+      <div className="bg-white rounded-3xl w-full max-w-[500px] max-h-[92vh] overflow-y-auto border-2 border-primary/20 relative flex flex-col shadow-2xl">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -78,7 +78,7 @@ export default function NewsletterPopup() {
         </button>
 
         {/* Visual Header */}
-        <div className="h-[180px] relative">
+        <div className="h-[150px] sm:h-[180px] relative shrink-0">
           <img
             src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=900&q=80"
             alt="Plumbing fittings and industrial supply"
@@ -90,14 +90,14 @@ export default function NewsletterPopup() {
             <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
               Contractor Volume Savings
             </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-black text-white m-0 tracking-tight">
               Save 15% On Your First Order
             </h3>
           </div>
         </div>
 
         {/* Form Body */}
-        <div className="p-8">
+        <div className="p-5 sm:p-8">
           {submitted ? (
             <div className="text-center py-4">
               <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4 font-bold">

@@ -95,12 +95,12 @@ export default function Header() {
       <div
         className={`max-w-7xl mx-auto rounded-full transition-all duration-300 pointer-events-auto border shadow-2xl flex items-center justify-between ${
           isScrolled
-            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2.5 px-5 sm:px-7 shadow-black/50"
-            : "bg-primary/85 backdrop-blur-xl border-white/15 py-3 px-5 sm:px-8 shadow-black/35"
+            ? "bg-primary/95 backdrop-blur-2xl border-white/20 py-2 sm:py-2.5 px-3.5 sm:px-7 shadow-black/50"
+            : "bg-primary/85 backdrop-blur-xl border-white/15 py-2.5 sm:py-3 px-3.5 sm:px-8 shadow-black/35"
         }`}
       >
         {/* Logo */}
-        <Link href="/" onClick={closeAll} className="flex items-center flex-shrink-0" style={{ textDecoration: "none" }}>
+        <Link href="/" onClick={closeAll} className="flex items-center min-w-0 flex-shrink mr-2" style={{ textDecoration: "none" }}>
           {siteConfig.useImageLogo && siteConfig.logoImage ? (
             <>
               <div className="bg-white rounded-full px-2.5 py-1 flex items-center lg:hidden">
@@ -119,8 +119,8 @@ export default function Header() {
               </div>
             </>
           ) : (
-            <span className="text-white text-sm sm:text-base md:text-lg font-black tracking-tight flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary text-secondary-text shadow-sm">
+            <span className="text-white text-sm sm:text-base md:text-lg font-black tracking-tight flex items-center gap-2 sm:gap-2.5 min-w-0">
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-secondary text-secondary-text shadow-sm">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                 </svg>
@@ -149,7 +149,7 @@ export default function Header() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div className="flex items-center gap-0.5 sm:gap-3 flex-shrink-0">
           {/* Search Icon Button */}
           <button
             onClick={toggleSearch}

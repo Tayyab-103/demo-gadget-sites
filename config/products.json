@@ -4,15 +4,15 @@
     "stickyId": 1,
     "name": "Magnetic Screwdriver Bit",
     "description": "Material: High-Carbon Steel; Drive Size: 1/4-inch Hex; Length: 65mm; Color: Black Phosphate; Quantity: 10 Pcs.",
-    "image": "/img/products/product1.jpg",
+    "image": "/img/web/products/product1.jpg",
     "images": [
-      "/img/products/product1.jpg",
-      "/img/products/product1-1.jpg",
-      "/img/products/product1-2.jpg"
+      "/img/web/products/product1.jpg",
+      "/img/web/products/product1-1.jpg",
+      "/img/web/products/product1-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Magnetic Screwdriver Bit",
+    "category": "Driver Bits",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -32,15 +32,15 @@
     "stickyId": 2,
     "name": "Blink Video Doorbell Power Adapter Cable",
     "description": "Material: 24AWG Copper Core; Input: AC 100-240V; Output: DC 5V 1A; Cable Length: 6M/20FT; Compatibility: Blink Video Doorbell, Blink Outdoor, Blink Mini.",
-    "image": "/img/products/product2.jpg",
+    "image": "/img/web/products/product2.jpg",
     "images": [
-      "/img/products/product2.jpg",
-      "/img/products/product2-1.jpg",
-      "/img/products/product2-2.jpg"
+      "/img/web/products/product2.jpg",
+      "/img/web/products/product2-1.jpg",
+      "/img/web/products/product2-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Power Adapter Cable",
+    "category": "Power & Wiring",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -60,15 +60,15 @@
     "stickyId": 3,
     "name": "Digital LCD Multimeter Tester",
     "description": "Material: ABS Housing & Silicone Sheathing; Max Display: 6000 Counts; DC Voltage: 600mV-600V; AC Voltage: 6V-600V; Resistance: 600Ω-60MΩ.",
-    "image": "/img/products/product3.jpg",
+    "image": "/img/web/products/product3.jpg",
     "images": [
-      "/img/products/product3.jpg",
-      "/img/products/product3-1.jpg",
-      "/img/products/product3-2.jpg"
+      "/img/web/products/product3.jpg",
+      "/img/web/products/product3-1.jpg",
+      "/img/web/products/product3-2.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Multimeter Tester",
+    "category": "Test & Measure",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

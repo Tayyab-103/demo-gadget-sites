@@ -1,161 +1,75 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import productsData from "../../config/products.json";
-import { Product } from "@/types";
-
-const products = productsData as unknown as Product[];
+import { products, productPrice } from "@/lib/brandIcon";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function ProductGrid() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#FAFAFA] relative overflow-hidden" id="products">
-      {/* Subtle diagonal line pattern matching Hero aesthetic */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 80px,
-            #000 80px,
-            #000 81px
-          )`,
-        }}
-      />
+    <section className="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden" id="products">
+      <div className="absolute inset-x-0 top-0 h-80 bg-brand-gradient-soft pointer-events-none" />
 
-      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-12 z-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 lg:mb-16 gap-4 sm:gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-2 sm:mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#111]" />
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-neutral-text/45">
-                Precision Hardware
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#111] leading-tight">
-              Featured Products
-            </h2>
-          </div>
-
-          <p className="text-xs sm:text-base text-neutral-text/60 max-w-md">
-            Certified electrical instruments and power conversion units built for mission-critical reliability.
-          </p>
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <SectionHeading
+            align="left"
+            eyebrow="Shop the essentials"
+            title={<>Tools we stand <span className="text-gradient">behind</span></>}
+            text="Every item below ships free and is covered by our satisfaction guarantee. Buy more than one and bundle pricing applies automatically."
+          />
+          <Link href="/shop" className="btn-ghost self-start md:self-auto flex-shrink-0">View All Tools</Link>
         </div>
 
-        {/* 3-Column Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {products.slice(0, 3).map((product, idx) => {
-            const firstBundle = product.bundles && product.bundles[0];
-            const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;
-            const originalPrice = (Number(currentPrice) * 1.35).toFixed(2);
-
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7">
+          {products.map((product, idx) => {
+            const specs = product.description.split(";").map((s) => s.trim()).filter(Boolean).slice(0, 3);
             return (
-              <div
+              <Link
                 key={product.id}
-                className="group relative bg-white rounded-[1.5rem] sm:rounded-[2rem] p-5 sm:p-6 md:p-7 flex flex-col justify-between shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 border border-black/[0.04] hover:-translate-y-1.5"
+                href={`/product/${product.id}`}
+                className="group card overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40"
               >
-                <div>
-                  {/* Image Container with Badges */}
-                  <div className="relative w-full aspect-square rounded-[1.5rem] overflow-hidden bg-[#F3F4F6] mb-6">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = `/img/products/product${(idx % 3) + 1}.jpg`;
-                      }}
-                    />
-                    
-                    {/* Top Badges */}
-                    <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                      <span className="bg-white/90 backdrop-blur-md text-[#111] text-[0.62rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm border border-black/5">
-                        0{idx + 1}
-                      </span>
-                      <span className="bg-[#111] text-white text-[0.62rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                        {product.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Product Details */}
-                  <div className="space-y-2 mb-6">
-                    <div className="text-[0.65rem] font-mono font-bold tracking-widest text-[#5B6BF0] uppercase">
-                      MODEL: VS-{(idx + 1) * 750}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black text-[#111] tracking-tight group-hover:text-[#5B6BF0] transition-colors leading-snug line-clamp-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-xs text-neutral-text/60 line-clamp-3 leading-relaxed">
-                      {product.description}
-                    </p>
-                  </div>
+                <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 text-[0.62rem] font-bold uppercase tracking-wider text-primary shadow-sm">
+                    {product.category}
+                  </span>
+                  <span className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/95 text-[0.7rem] font-extrabold text-ink flex items-center justify-center shadow-sm">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
-                {/* Bottom Pricing & CTA */}
-                <div className="pt-5 border-t border-black/[0.06] flex items-center justify-between gap-4">
-                  <div>
-                    <div className="text-[0.62rem] font-semibold text-neutral-text/40 uppercase tracking-wider">
-                      Starting at
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-2xl font-black text-[#111] tracking-tight">
-                        ${currentPrice}
-                      </span>
-                      <span className="text-sm font-semibold text-neutral-text/40 line-through">
-                        ${originalPrice}
-                      </span>
-                    </div>
-                  </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-ink leading-snug group-hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
+                  <ul className="mt-3 space-y-1.5 flex-1">
+                    {specs.map((s) => (
+                      <li key={s} className="flex items-start gap-2 text-[0.8rem] text-muted leading-snug">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
 
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="w-12 h-12 rounded-full bg-[#111] group-hover:bg-[#5B6BF0] text-white flex items-center justify-center transition-all duration-300 shadow-md hover:scale-105 flex-shrink-0"
-                    aria-label={`View ${product.name}`}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="transform transition-transform duration-300 group-hover:rotate-45"
-                    >
-                      <line x1="7" y1="17" x2="17" y2="7" />
-                      <polyline points="7 7 17 7 17 17" />
-                    </svg>
-                  </Link>
+                  <div className="mt-6 pt-5 border-t border-line flex items-center justify-between">
+                    <div>
+                      <div className="text-[0.6rem] font-bold uppercase tracking-wider text-faint">From</div>
+                      <div className="text-2xl font-extrabold text-ink">${productPrice(product).toFixed(2)}</div>
+                    </div>
+                    <span className="h-11 pl-5 pr-4 rounded-full bg-brand-gradient text-primary-text text-xs font-bold flex items-center gap-2 shadow-md transition-all group-hover:gap-3">
+                      View Tool
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
-
-        {/* Bottom Banner with Quality Reassurance */}
-        <div className="mt-12 sm:mt-16 bg-[#111] text-white rounded-[2rem] p-6 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-1 text-center sm:text-left">
-            <h4 className="text-xl sm:text-2xl font-black tracking-tight">
-              Need Bulk Electrical Components or Custom Spec?
-            </h4>
-            <p className="text-xs sm:text-sm text-white/60">
-              Direct factory pricing with comprehensive OEM warranty and certified test certificates.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-[#111] hover:bg-[#FEF08A] transition-colors text-xs font-bold uppercase tracking-widest px-7 py-3.5 rounded-full shadow-md flex-shrink-0"
-          >
-            Contact Engineering
-          </Link>
-        </div>
-
       </div>
     </section>
   );

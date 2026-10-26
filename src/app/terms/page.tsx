@@ -15,63 +15,63 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-[#E5E6EB] py-10 sm:py-16 overflow-hidden">
+      <main className="bg-surface py-10 sm:py-16 overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
           
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-neutral-text/50 font-medium">
-            <Link href="/" className="hover:text-[#111] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-[#111]">Terms &amp; Conditions</span>
+            <span className="text-ink">Terms &amp; Conditions</span>
           </nav>
 
           {/* Hero Header Card */}
-          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 shadow-[0_15px_45px_rgba(0,0,0,0.05)] border border-black/[0.04]">
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 shadow-[0_20px_50px_-30px_rgba(29,78,216,0.35)] border border-line">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F4F4F6] border border-black/5 text-[0.65rem] font-bold uppercase tracking-widest text-[#111]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0]" />
-                Commercial Governance
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-surface border border-black/5 text-[0.65rem] font-bold uppercase tracking-widest text-ink">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Store Policies
               </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black uppercase text-[#111] tracking-tight leading-[1.08] italic">
+              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black uppercase text-ink tracking-tight leading-[1.08]">
                 Terms &amp; Conditions
               </h1>
 
               <p className="text-sm sm:text-base text-neutral-text/65 leading-relaxed pt-2">
-                Commercial terms of service, fulfillment policies, and warranty specifications for {siteConfig.brandName}.
+                Terms of service, shipping and return policies for {siteConfig.brandName}.
               </p>
             </div>
           </div>
 
           {/* Main Terms Body */}
-          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border border-black/[0.04] shadow-[0_15px_45px_rgba(0,0,0,0.05)] leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-8">
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border border-line shadow-[0_20px_50px_-30px_rgba(29,78,216,0.35)] leading-relaxed text-neutral-text/75 text-xs sm:text-sm space-y-8">
             
             <div>
-              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
+              <h3 className="text-sm sm:text-base font-black text-ink uppercase tracking-wider mb-3">
                 Overview &amp; Acceptance
               </h3>
               <p className="leading-relaxed">
-                This website is operated by <strong className="text-[#111] font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”, “us” and “our” refer to <strong className="text-[#111] font-bold">{siteConfig.brandName}</strong>. By accessing this portal or purchasing our precision electrical testing instruments, power adapters, and magnetic hardware, you agree to be bound by the following terms and conditions.
+                This website is operated by <strong className="text-ink font-bold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”, “us” and “our” refer to <strong className="text-ink font-bold">{siteConfig.brandName}</strong>. By accessing this website or purchasing our hand tools, testers, power cables and hardware, you agree to be bound by the following terms and conditions.
               </p>
             </div>
 
             <div>
-              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
-                Products Offered &amp; Commercial Pricing
+              <h3 className="text-sm sm:text-base font-black text-ink uppercase tracking-wider mb-3">
+                Products Offered &amp; Pricing
               </h3>
               <p className="leading-relaxed mb-4">
-                We supply industrial-grade electrical parts and diagnostic equipment through one-time purchases under the following tier structures:
+                We sell tools and hardware as one-time purchases. There are no subscriptions or recurring charges. Current pricing:
               </p>
 
               {/* Product Pricing Table / Cards */}
-              <div className="bg-[#F8F9FB] border border-black/[0.05] rounded-2xl p-6 sm:p-8 space-y-6">
+              <div className="bg-surface border border-black/[0.05] rounded-2xl p-6 sm:p-8 space-y-6">
                 {products.map((product) => (
-                  <div key={product.id} className="pb-6 border-b border-black/[0.06] last:border-0 last:pb-0">
+                  <div key={product.id} className="pb-6 border-b border-line last:border-0 last:pb-0">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                      <h4 className="text-sm sm:text-base font-bold text-[#111]">
+                      <h4 className="text-sm sm:text-base font-bold text-ink">
                         {product.name}
                       </h4>
-                      <span className="text-[0.65rem] font-mono font-bold uppercase text-[#5B6BF0] bg-white px-2.5 py-1 rounded-full border border-black/5">
+                      <span className="text-[0.65rem] font-mono font-bold uppercase text-primary bg-white px-2.5 py-1 rounded-full border border-black/5">
                         {product.category}
                       </span>
                     </div>
@@ -85,7 +85,7 @@ export default function Terms() {
 
                         return (
                           <li key={bundle.quantity} className="leading-relaxed">
-                            Order of <strong className="text-[#111] font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Units Multi-Pack" : "Unit"}</strong>: single transaction of <strong className="text-[#111] font-bold">${totalCost.toFixed(2)}</strong> ({shippingText}). Delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days. Descriptor on billing statement: <strong className="text-[#111] font-mono">“{siteConfig.descriptor}”</strong>.
+                            Order of <strong className="text-ink font-semibold">{bundle.quantity} {bundle.quantity > 1 ? "Units Multi-Pack" : "Unit"}</strong>: single transaction of <strong className="text-ink font-bold">${totalCost.toFixed(2)}</strong> ({shippingText}). Delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days. Descriptor on billing statement: <strong className="text-ink font-mono">“{siteConfig.descriptor}”</strong>.
                           </li>
                         );
                       })}
@@ -96,23 +96,23 @@ export default function Terms() {
             </div>
 
             <div>
-              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
-                Shipping &amp; Logistics Policy
+              <h3 className="text-sm sm:text-base font-black text-ink uppercase tracking-wider mb-3">
+                Shipping Policy
               </h3>
               <p className="leading-relaxed">
-                All electrical equipment orders are verified, packaged, and dispatched from our logistics center within 1-2 business days. We partner with <strong className="text-[#111] font-semibold">{siteConfig.shippingCarrier}</strong> nationwide with end-to-end tracking. Transit times typically range between <strong className="text-[#111] font-semibold">{siteConfig.shippingPeriod} business days</strong>.
+                All orders are verified, packed and shipped within 1-2 business days. We partner with <strong className="text-ink font-semibold">{siteConfig.shippingCarrier}</strong> nationwide with end-to-end tracking. Transit times typically range between <strong className="text-ink font-semibold">{siteConfig.shippingPeriod} business days</strong>.
               </p>
             </div>
 
             <div>
-              <h3 className="text-sm sm:text-base font-black text-[#111] uppercase tracking-wider mb-3">
-                Warranty &amp; Return Policy
+              <h3 className="text-sm sm:text-base font-black text-ink uppercase tracking-wider mb-3">
+                Returns &amp; Satisfaction Guarantee
               </h3>
               <p className="leading-relaxed mb-3">
-                All diagnostic equipment and hardware include a <strong className="text-[#111] font-semibold">{siteConfig.trialPeriod}-day satisfaction guarantee</strong> and a 1-year commercial defect warranty.
+                Every product we sell is covered by a <strong className="text-ink font-semibold">{siteConfig.trialPeriod}-day satisfaction guarantee</strong>, starting on the day your order is delivered.
               </p>
               <p className="leading-relaxed">
-                To initiate a return or calibration exchange, contact our engineering desk at <strong className="text-[#111] font-semibold">{siteConfig.phone}</strong> or <strong className="text-[#111] font-semibold">{siteConfig.email}</strong>. Returns must be shipped to our designated facility at: <strong className="text-[#111] font-semibold">{siteConfig.address}</strong>.
+                To start a return, contact our support team at <strong className="text-ink font-semibold">{siteConfig.phone}</strong> or <strong className="text-ink font-semibold">{siteConfig.email}</strong>. Returns must be shipped to: <strong className="text-ink font-semibold">{siteConfig.address}</strong>.
               </p>
             </div>
 

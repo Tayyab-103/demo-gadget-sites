@@ -1,11 +1,12 @@
 {
-  "Product": "Electrical Parts and Equipments",
-  "Processor": "Maverick",
-  "brandName": "Voltspire Electrical Collective",
-  "websiteUrl": "voltspireelectricalcollective.com",
-  "email": "support@voltspireelectricalcollective.com",
-  "descriptor": "VoltspireElectricalCol",
-  "corpName": "Starpath Marketing Co",
+  "Product": "Tools and Hardware",
+  "mcc": "5251",
+  "Processor": "EMS BMO",
+  "brandName": "Iron Ridge Hardware Tool Shop",
+  "websiteUrl": "ironridgehardwaretoolshop.com",
+  "email": "support@ironridgehardwaretoolshop.com",
+  "descriptor": "IronRidgeHardwareToo",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "1197 E Los Angeles Ave C-260, Simi Valley, CA 93065",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#0F1217",
+    "primaryColor": "#1D4ED8",
     "primaryTextColor": "#ffffff",
-    "secondaryColor": "#5B6BF0",
+    "secondaryColor": "#0EA5E9",
     "secondaryTextColor": "#ffffff",
-    "neutralBgColor": "#E5E6EB",
-    "neutralTextColor": "#111317",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#0B1530",
     "fontFamily": "Montserrat"
   }
 }

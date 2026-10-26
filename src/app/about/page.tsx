@@ -1,197 +1,98 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import siteConfigData from "../../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
+import QualityPromise from "@/components/QualityPromise";
+import { siteConfig, brandShort } from "@/lib/brandIcon";
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
+export const metadata: Metadata = {
+  title: "About Us",
+  description: `Learn how ${siteConfig.brandName} picks the hand tools, testers and hardware it sells.`,
+};
+
+const values = [
+  {
+    title: "Useful over flashy",
+    text: "Every product earns its spot by solving a real job around the house or shop — tightening, testing or powering something.",
+  },
+  {
+    title: "Specs you can trust",
+    text: "We publish materials, sizes, ranges and compatibility so you can check fit before you buy, not after it arrives.",
+  },
+  {
+    title: "Fair, simple pricing",
+    text: "Clear prices, free shipping and automatic bundle savings. No memberships, no subscriptions, no codes to hunt for.",
+  },
+  {
+    title: "Support from people",
+    text: "A real team answers our phone line and inbox, and we reply to every message within one business day.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="bg-[#E5E6EB] py-10 sm:py-16 overflow-hidden">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
-          
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-xs text-neutral-text/50 font-medium">
-            <Link href="/" className="hover:text-[#111] transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-[#111]">About Us</span>
-          </nav>
+      <main>
+        <PageHero
+          crumb="About"
+          eyebrow={`About ${brandShort}`}
+          title={<>Good tools, <span className="text-gradient">plainly sold</span></>}
+          text={`${siteConfig.brandName} is a small online hardware shop focused on a few dependable essentials for homeowners, DIYers and the trades.`}
+        />
 
-          {/* =========================================================
-              HERO CARD
-              ========================================================= */}
-          <div className="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 shadow-[0_15px_45px_rgba(0,0,0,0.05)] border border-black/[0.04]">
-            <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F4F4F6] border border-black/5 text-[0.65rem] font-bold uppercase tracking-widest text-[#111]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#5B6BF0]" />
-                Who We Are
+        <section className="py-16 sm:py-20 lg:py-28 bg-white">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="relative">
+              <div className="absolute -inset-3 sm:-inset-4 rounded-[2.4rem] bg-brand-gradient rotate-[-2deg] opacity-90" />
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+                <img src="/img/web/hero2.jpg" alt="Socket and wrench set in a case" className="w-full h-full object-cover" />
               </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-black uppercase text-[#111] tracking-tight leading-[1.08] italic">
-                Engineered For Precision, Built For Resilience
-              </h1>
-
-              <p className="text-sm sm:text-base text-neutral-text/65 leading-relaxed pt-2">
-                At {siteConfig.brandName}, we design and supply industrial-grade electrical testing instruments, thermal diagnostic tools, and pure sine wave power modules for commercial installations, power utilities, and off-grid facilities.
-              </p>
+            </div>
+            <div>
+              <SectionHeading
+                align="left"
+                eyebrow="Our story"
+                title={<>Why we keep the shelf <span className="text-gradient">short</span></>}
+              />
+              <div className="mt-6 space-y-4 text-sm sm:text-base text-muted leading-relaxed">
+                <p>
+                  Shopping for tools online usually means scrolling past hundreds of near-identical listings with half the details missing. We wanted the opposite: a store where every product is explained clearly and priced honestly.
+                </p>
+                <p>
+                  So we keep our range tight. Magnetic screwdriver bits that grip. A digital multimeter for everyday electrical checks. A long, properly rated power cable for video doorbells. Each one comes with full specs and is backed by our guarantee.
+                </p>
+                <p>
+                  {`Orders are packed within 1-2 business days and shipped free by ${siteConfig.shippingCarrier}. If something isn't right, you have ${siteConfig.trialPeriod} days from delivery to let us know.`}
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/shop" className="btn-primary">Shop the Tools</Link>
+                <Link href="/contact" className="btn-ghost">Contact Us</Link>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* =========================================================
-              BENTO GRID: 4 CORE PILLARS
-              ========================================================= */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            
-            {/* Pillar 1 */}
-            <div className="bg-white rounded-[2rem] p-7 sm:p-8 shadow-xs border border-black/[0.04] flex flex-col justify-between group hover:shadow-md transition-all">
-              <div>
-                <span className="text-2xl font-black text-[#111] font-mono block mb-4">
-                  01
-                </span>
-                <h3 className="text-lg font-bold text-[#111] mb-2 leading-snug">
-                  Calibrated Precision
-                </h3>
-                <p className="text-xs text-neutral-text/60 leading-relaxed">
-                  Every testing instrument undergoes multi-point laboratory calibration before dispatch to ensure NIST-traceable accuracy.
-                </p>
-              </div>
-              <div className="pt-6 mt-6 border-t border-black/5 text-[0.65rem] font-bold uppercase tracking-wider text-[#5B6BF0]">
-                IEC / NIST Certified
-              </div>
-            </div>
-
-            {/* Pillar 2 */}
-            <div className="bg-white rounded-[2rem] p-7 sm:p-8 shadow-xs border border-black/[0.04] flex flex-col justify-between group hover:shadow-md transition-all">
-              <div>
-                <span className="text-2xl font-black text-[#111] font-mono block mb-4">
-                  02
-                </span>
-                <h3 className="text-lg font-bold text-[#111] mb-2 leading-snug">
-                  Jobsite Durability
-                </h3>
-                <p className="text-xs text-neutral-text/60 leading-relaxed">
-                  Built with shock-absorbing silicone casings and heavy-duty thermal heat-sinks engineered for harsh field environments.
-                </p>
-              </div>
-              <div className="pt-6 mt-6 border-t border-black/5 text-[0.65rem] font-bold uppercase tracking-wider text-[#5B6BF0]">
-                Drop & Shock Tested
-              </div>
-            </div>
-
-            {/* Pillar 3 */}
-            <div className="bg-white rounded-[2rem] p-7 sm:p-8 shadow-xs border border-black/[0.04] flex flex-col justify-between group hover:shadow-md transition-all">
-              <div>
-                <span className="text-2xl font-black text-[#111] font-mono block mb-4">
-                  03
-                </span>
-                <h3 className="text-lg font-bold text-[#111] mb-2 leading-snug">
-                  Grid Safety First
-                </h3>
-                <p className="text-xs text-neutral-text/60 leading-relaxed">
-                  High-voltage isolation safeguards, non-contact detection, and inrush capture protect technicians against dangerous spikes.
-                </p>
-              </div>
-              <div className="pt-6 mt-6 border-t border-black/5 text-[0.65rem] font-bold uppercase tracking-wider text-[#5B6BF0]">
-                CAT IV 600V Rated
-              </div>
-            </div>
-
-            {/* Pillar 4 */}
-            <div className="bg-white rounded-[2rem] p-7 sm:p-8 shadow-xs border border-black/[0.04] flex flex-col justify-between group hover:shadow-md transition-all">
-              <div>
-                <span className="text-2xl font-black text-[#111] font-mono block mb-4">
-                  04
-                </span>
-                <h3 className="text-lg font-bold text-[#111] mb-2 leading-snug">
-                  1-Year Warranty
-                </h3>
-                <p className="text-xs text-neutral-text/60 leading-relaxed">
-                  Comprehensive manufacturer coverage against defects with swift replacement support from our technical engineering desk.
-                </p>
-              </div>
-              <div className="pt-6 mt-6 border-t border-black/5 text-[0.65rem] font-bold uppercase tracking-wider text-[#5B6BF0]">
-                Full Commercial Coverage
-              </div>
-            </div>
-
-          </div>
-
-          {/* =========================================================
-              STORY & METRICS ROW
-              ========================================================= */}
-          <div className="bg-white rounded-[2.5rem] p-8 sm:p-12 lg:p-14 shadow-[0_15px_45px_rgba(0,0,0,0.05)] border border-black/[0.04]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              
-              {/* Left Column: Image */}
-              <div className="lg:col-span-6 rounded-[2rem] overflow-hidden bg-[#1A1D24] shadow-md h-[320px] sm:h-[380px]">
-                <img
-                  src="/img/aboutus.jpg"
-                  alt="Industrial Electrical Engineering Facility"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Right Column: Mission & Stats */}
-              <div className="lg:col-span-6 space-y-6">
-                <h2 className="text-2xl sm:text-3xl font-black text-[#111] tracking-tight">
-                  Powering Modern Electrical Infrastructure
-                </h2>
-
-                <p className="text-xs sm:text-sm text-neutral-text/65 leading-relaxed">
-                  Whether troubleshooting complex commercial control cabinets or setting up pure sine wave backup power systems, our instruments deliver unwavering repeatability.
-                </p>
-
-                {/* 3 Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-black/[0.06]">
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-black text-[#111] font-mono">
-                      99.9%
-                    </div>
-                    <div className="text-[0.6rem] font-bold uppercase tracking-wider text-neutral-text/45 mt-1">
-                      Accuracy Rating
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-black text-[#111] font-mono">
-                      49K+
-                    </div>
-                    <div className="text-[0.6rem] font-bold uppercase tracking-wider text-neutral-text/45 mt-1">
-                      Units Deployed
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-2xl sm:text-3xl font-black text-[#111] font-mono">
-                      100%
-                    </div>
-                    <div className="text-[0.6rem] font-bold uppercase tracking-wider text-neutral-text/45 mt-1">
-                      Lab Tested
-                    </div>
-                  </div>
+        <section className="py-16 sm:py-20 lg:py-24 bg-surface">
+          <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+            <SectionHeading eyebrow="What we value" title={<>How we <span className="text-gradient">do business</span></>} />
+            <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+              {values.map((v, i) => (
+                <div key={v.title} className="card p-6 sm:p-7">
+                  <span className="icon-tile w-11 h-11 font-extrabold">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-5 text-lg font-bold text-ink">{v.title}</h3>
+                  <p className="mt-2 text-sm text-muted leading-relaxed">{v.text}</p>
                 </div>
-
-                <div className="pt-2">
-                  <Link
-                    href="/shop"
-                    className="inline-flex items-center gap-2.5 bg-[#111] hover:bg-[#333] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-full shadow-md transition-all"
-                  >
-                    <span>Explore Products</span>
-                    <span>→</span>
-                  </Link>
-                </div>
-              </div>
-
+              ))}
             </div>
           </div>
+        </section>
 
-        </div>
+        <QualityPromise />
       </main>
       <Footer />
     </>

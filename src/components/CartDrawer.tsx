@@ -31,16 +31,16 @@ export default function CartDrawer() {
         }`}
       >
         {/* Header */}
-        <div className="p-5 sm:p-6 border-b border-black/[0.06] flex items-center justify-between bg-white">
+        <div className="p-5 sm:p-6 border-b border-line flex items-center justify-between bg-white">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#5B6BF0] animate-pulse" />
-            <h3 className="m-0 text-base sm:text-lg font-black text-[#111] tracking-tight uppercase">
-              Your Equipment Cart
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <h3 className="m-0 text-base sm:text-lg font-black text-ink tracking-tight uppercase">
+              Your Cart
             </h3>
           </div>
           <button
             onClick={() => setIsCartOpen(false)}
-            className="w-8 h-8 rounded-full hover:bg-[#F4F4F6] flex items-center justify-center text-[#111] text-lg font-bold transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-full hover:bg-surface flex items-center justify-center text-ink text-lg font-bold transition-colors cursor-pointer"
             aria-label="Close Cart"
           >
             &times;
@@ -51,18 +51,18 @@ export default function CartDrawer() {
         <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-4">
           {cart.length === 0 ? (
             <div className="text-center py-16 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#F4F4F6] text-[#111] flex items-center justify-center text-2xl mx-auto shadow-2xs">
-                ⚡
+              <div className="w-16 h-16 rounded-full bg-surface text-ink flex items-center justify-center text-2xl mx-auto shadow-2xs">
+                🧰
               </div>
-              <h4 className="text-base font-bold text-[#111]">Your cart is empty</h4>
+              <h4 className="text-base font-bold text-ink">Your cart is empty</h4>
               <p className="text-neutral-text/50 text-xs max-w-xs mx-auto leading-relaxed">
-                Explore our catalog of certified electrical parts, diagnostic testers, and power cables.
+                Browse our driver bits, multimeter and doorbell power cable — every order ships free.
               </p>
               <button
-                className="inline-block font-bold text-center bg-[#111] hover:bg-[#5B6BF0] text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider shadow-sm cursor-pointer"
+                className="inline-block font-bold text-center bg-primary hover:bg-primary-dark text-white transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider shadow-sm cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
-                Browse Equipment
+                Browse Tools
               </button>
             </div>
           ) : (
@@ -91,7 +91,7 @@ export default function CartDrawer() {
               };
 
               return (
-                <div className="flex gap-4 p-4 rounded-2xl bg-[#F9F9FB] border border-black/[0.04] items-center relative group" key={item.Id}>
+                <div className="flex gap-4 p-4 rounded-2xl bg-surface border border-line items-center relative group" key={item.Id}>
                   <img
                     src={item.Image}
                     alt={item.Name}
@@ -101,8 +101,8 @@ export default function CartDrawer() {
                     }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="font-bold text-xs sm:text-sm text-[#111] truncate">{item.Name}</div>
-                    <div className="text-[0.62rem] text-[#5B6BF0] font-mono uppercase tracking-wider font-semibold mb-2">
+                    <div className="font-bold text-xs sm:text-sm text-ink truncate">{item.Name}</div>
+                    <div className="text-[0.62rem] text-primary font-mono uppercase tracking-wider font-semibold mb-2">
                       {item.Label || "Standard Unit"}
                     </div>
 
@@ -112,21 +112,21 @@ export default function CartDrawer() {
                         <button
                           onClick={handleDecrease}
                           disabled={!canDecrease}
-                          className="w-5 h-5 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#F4F4F6] text-xs font-bold text-[#111] disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="w-5 h-5 rounded-md flex items-center justify-center cursor-pointer hover:bg-surface text-xs font-bold text-ink disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           -
                         </button>
-                        <span className="px-2 text-xs text-[#111] font-mono font-bold">{item.Qty}</span>
+                        <span className="px-2 text-xs text-ink font-mono font-bold">{item.Qty}</span>
                         <button
                           onClick={handleIncrease}
                           disabled={!canIncrease}
-                          className="w-5 h-5 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#F4F4F6] text-xs font-bold text-[#111] disabled:opacity-25 disabled:cursor-not-allowed transition-all"
+                          className="w-5 h-5 rounded-md flex items-center justify-center cursor-pointer hover:bg-surface text-xs font-bold text-ink disabled:opacity-25 disabled:cursor-not-allowed transition-all"
                         >
                           +
                         </button>
                       </div>
 
-                      <div className="text-sm font-black text-[#111] font-mono">${item.Price}</div>
+                      <div className="text-sm font-black text-ink font-mono">${item.Price}</div>
                     </div>
                   </div>
 
@@ -145,10 +145,10 @@ export default function CartDrawer() {
 
         {/* Footer Checkout Summary */}
         {cart.length > 0 && (
-          <div className="p-5 sm:p-6 border-t border-black/[0.06] bg-[#F8F9FB]">
+          <div className="p-5 sm:p-6 border-t border-line bg-surface">
             <div className="flex items-center justify-between mb-4">
-              <span className="font-bold text-[#111] uppercase text-xs tracking-wider">Estimated Total</span>
-              <span className="font-black text-xl text-[#111] font-mono">
+              <span className="font-bold text-ink uppercase text-xs tracking-wider">Estimated Total</span>
+              <span className="font-black text-xl text-ink font-mono">
                 ${getCartTotal()}
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function CartDrawer() {
             <div className="space-y-2.5">
               <Link
                 href="/checkout"
-                className="inline-flex items-center justify-center font-bold text-center bg-[#111] hover:bg-[#5B6BF0] text-white transition-all duration-300 py-3.5 px-6 rounded-full text-xs uppercase tracking-wider w-full shadow-md hover:shadow-lg cursor-pointer"
+                className="inline-flex items-center justify-center font-bold text-center bg-primary hover:bg-primary-dark text-white transition-all duration-300 py-3.5 px-6 rounded-full text-xs uppercase tracking-wider w-full shadow-md hover:shadow-lg cursor-pointer"
                 onClick={() => setIsCartOpen(false)}
               >
                 Proceed to Checkout →
@@ -164,13 +164,13 @@ export default function CartDrawer() {
 
               <button
                 onClick={() => setIsCartOpen(false)}
-                className="inline-flex items-center justify-center font-bold text-center bg-white hover:bg-[#F4F4F6] border border-black/10 text-[#111] transition-all duration-300 py-3 px-6 rounded-full text-xs uppercase tracking-wider w-full cursor-pointer"
+                className="inline-flex items-center justify-center font-bold text-center bg-white hover:bg-surface border border-black/10 text-ink transition-all duration-300 py-3 px-6 rounded-full text-xs uppercase tracking-wider w-full cursor-pointer"
               >
                 Continue Shopping
               </button>
             </div>
 
-            <div className="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-center gap-2 text-[0.68rem] text-neutral-text/50 font-medium">
+            <div className="mt-4 pt-3 border-t border-line flex items-center justify-center gap-2 text-[0.68rem] text-neutral-text/50 font-medium">
               <span>🔒 256-Bit SSL Encrypted Checkout</span>
             </div>
           </div>

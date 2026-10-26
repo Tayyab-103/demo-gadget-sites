@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { siteConfig } from "@/lib/brandIcon";
 
 const messages = [
-  "Free Expedited Freight on Orders Nationwide",
-  "60-Day Commercial Satisfaction Guarantee",
-  "1-Year Full Warranty on All Electrical Equipment",
-  "NIST-Traceable Calibration Included",
+  `Free ${siteConfig.shippingCarrier} shipping on every order`,
+  `Delivered in ${siteConfig.shippingPeriod} business days`,
+  `${siteConfig.trialPeriod}-day satisfaction guarantee`,
+  "Secure SSL-encrypted checkout",
+  `Questions? Call ${siteConfig.phone}`,
 ];
 
 export default function AnnouncementBar() {
@@ -14,42 +16,36 @@ export default function AnnouncementBar() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (localStorage.getItem("announcement_dismissed") === "true") {
-        setIsVisible(false);
-      }
+      try {
+        if (localStorage.getItem("announcement_dismissed") === "true") setIsVisible(false);
+      } catch {}
     }, 0);
     return () => clearTimeout(timer);
   }, []);
 
   const handleDismiss = () => {
     setIsVisible(false);
-    localStorage.setItem("announcement_dismissed", "true");
+    try {
+      localStorage.setItem("announcement_dismissed", "true");
+    } catch {}
   };
 
   if (!isVisible) return null;
 
-  const track = [...messages, ...messages, ...messages, ...messages];
+  const track = [...messages, ...messages, ...messages];
 
   return (
-    <div className="bg-secondary text-secondary-text relative overflow-hidden border-b border-white/10">
+    <div className="bg-brand-gradient text-primary-text relative overflow-hidden">
       <div className="flex items-center">
-        <div className="flex-1 overflow-hidden py-3">
-          <div className="marquee-track flex items-center gap-12 w-max">
+        <div className="flex-1 overflow-hidden py-2.5">
+          <div className="marquee-track flex items-center gap-10 w-max">
             {track.map((msg, idx) => (
               <span
                 key={idx}
-                className="text-[0.68rem] md:text-[0.72rem] font-bold uppercase tracking-[0.18em] flex items-center gap-3 whitespace-nowrap"
+                className="text-[0.68rem] md:text-[0.72rem] font-semibold uppercase tracking-[0.16em] flex items-center gap-3 whitespace-nowrap"
               >
-                {/* Clean Gold Star SVG instead of checkmark */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="text-secondary-text"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                 </svg>
                 {msg}
               </span>
@@ -60,11 +56,11 @@ export default function AnnouncementBar() {
         <button
           onClick={handleDismiss}
           aria-label="Dismiss announcement"
-          className="flex-shrink-0 px-4 md:px-5 py-3 text-secondary-text/80 hover:text-secondary-text transition-colors cursor-pointer bg-secondary relative z-10"
+          className="flex-shrink-0 px-4 md:px-5 py-2.5 text-white/80 hover:text-white transition-colors cursor-pointer bg-secondary relative z-10"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
       </div>

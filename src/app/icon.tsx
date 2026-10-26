@@ -1,37 +1,74 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig, brandInitial } from "@/lib/brandIcon";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default function Icon() {
+const FONT_NAME = "Playfair Display";
+
+/**
+ * Renders the brand monogram (italic first letter on the theme's primary → secondary gradient).
+ * Everything comes from config/site-config.json, so each site gets its own icon automatically.
+ */
+export async function renderBrandIcon(px: number, { rounded }: { rounded: boolean }) {
+  const font = await readFile(join(process.cwd(), "assets/fonts/PlayfairDisplay-ExtraBoldItalic.ttf"));
+  const { primaryColor, primaryTextColor, secondaryColor } = siteConfig.theme;
+
   return new ImageResponse(
     (
       <div
         style={{
           width: "100%",
           height: "100%",
-          borderRadius: "50%",
-          background: siteConfig.theme.primaryColor,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          background: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
+          borderRadius: rounded ? px * 0.24 : 0,
         }}
       >
         <div
           style={{
-            width: 16,
-            height: 20,
-            background: siteConfig.theme.primaryTextColor,
-            borderRadius: "0% 100% 0% 100%",
-            transform: "rotate(-45deg)",
+            display: "flex",
+            fontFamily: FONT_NAME,
+            fontStyle: "italic",
+            fontWeight: 800,
+            fontSize: px * 0.78,
+            lineHeight: 1,
+            color: primaryTextColor,
+            // Italic glyphs lean right; nudge left and up so the letter looks centered
+            marginLeft: -px * 0.04,
+            marginTop: -px * 0.06,
           }}
-        />
+        >
+          {brandInitial}
+        </div>
+        {px >= 64 && (
+          <div
+            style={{
+              display: "flex",
+              width: px * 0.3,
+              height: Math.max(2, px * 0.03),
+              borderRadius: 999,
+              background: primaryTextColor,
+              opacity: 0.85,
+              marginTop: px * 0.02,
+            }}
+          />
+        )}
       </div>
     ),
-    { ...size }
+    {
+      width: px,
+      height: px,
+      fonts: [{ name: FONT_NAME, data: font, weight: 800, style: "italic" }],
+    }
   );
+}
+
+export default function Icon() {
+  return renderBrandIcon(size.width, { rounded: true });
 }

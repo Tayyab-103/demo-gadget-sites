@@ -7,8 +7,8 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteTitle = `${siteConfig.brandName} | Precision Electrical Parts & Industrial Equipments`;
-const siteDescription = `Industrial-grade electrical parts, precision digital multimeters, continuous power adapter cables, and high-carbon magnetic drive bits for electricians, technicians, and commercial facilities.`;
+const siteTitle = `${siteConfig.brandName} | Tools & Hardware Shipped Free`;
+const siteDescription = `Shop magnetic screwdriver bits, a digital LCD multimeter and a 20 ft doorbell power cable at ${siteConfig.brandName}. Free ${siteConfig.shippingCarrier} shipping and a ${siteConfig.trialPeriod}-day satisfaction guarantee.`;
 
 // Preload common fonts
 const poppins = Poppins({
@@ -45,15 +45,13 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    "Electrical Parts and Equipments",
-    "Digital LCD Multimeter Tester",
+    "Tools and Hardware",
     "Magnetic Screwdriver Bits",
-    "Power Adapter Cables",
-    "True-RMS Precision Diagnostic Tools",
-    "Industrial Electrical Hardware",
-    "Commercial Electrician Tools",
-    "NIST Factory Calibrated Multimeters",
-    "Voltspire Electrical Collective",
+    "Digital LCD Multimeter",
+    "Video Doorbell Power Cable",
+    "Hand Tools Online",
+    "DIY Hardware Store",
+    siteConfig.brandName,
   ],
   authors: [{ name: siteConfig.brandName }],
   creator: siteConfig.brandName,
@@ -78,10 +76,10 @@ export const metadata: Metadata = {
     siteName: siteConfig.brandName,
     images: [
       {
-        url: "/img/hero1.jpg",
+        url: "/img/web/hero1.jpg",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.brandName} - Precision Electrical Parts & Industrial Equipments`,
+        alt: `${siteConfig.brandName} - Tools & Hardware`,
       },
     ],
   },
@@ -89,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/img/hero1.jpg"],
+    images: ["/img/web/hero1.jpg"],
     creator: `@${siteConfig.brandName.replace(/\s+/g, "")}`,
   },
   alternates: {

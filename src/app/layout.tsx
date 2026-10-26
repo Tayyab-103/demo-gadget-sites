@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
@@ -8,6 +8,12 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
 const siteDescription = `Welcome to ${siteConfig.brandName}. Discover master-grade artist supplies, handcrafted brushes, archival pigments, and studio craft materials.`;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 // Preload the most common fonts
 const poppins = Poppins({

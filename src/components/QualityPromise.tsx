@@ -27,7 +27,7 @@ export default function QualityPromise() {
       id="quality-promise"
       className="relative overflow-hidden bg-neutral-bg py-12 md:py-16 lg:py-20"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[1450px] px-5 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* MAIN TWO-CARD LAYOUT */}
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10">
 
@@ -38,18 +38,21 @@ export default function QualityPromise() {
               relative
               w-full
               overflow-hidden
-              rounded-[2.5rem]
+              rounded-3xl
+              sm:rounded-[2.5rem]
               bg-white
-              shadow-[0_25px_70px_rgba(0,0,0,0.12)]
-              min-h-[520px]
-              md:min-h-[620px]
-              lg:min-h-[720px]
+              shadow-lg
+              sm:shadow-[0_25px_70px_rgba(0,0,0,0.12)]
+              min-h-[260px]
+              sm:min-h-[380px]
+              md:min-h-[500px]
+              lg:min-h-[640px]
               border
               border-black/[0.04]
             "
           >
             <img
-              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&q=80"
+              src="/img/pexels-quality-paints-8189079.jpg"
               alt={`${siteConfig.brandName} Fine Art Quality Assurance`}
               className="
                 absolute
@@ -73,11 +76,13 @@ export default function QualityPromise() {
             className="
               relative
               overflow-hidden
-              rounded-[2.5rem]
+              rounded-3xl
+              sm:rounded-[2.5rem]
               border
               border-black/[0.04]
               bg-white
-              shadow-[0_25px_70px_rgba(0,0,0,0.10)]
+              shadow-md
+              sm:shadow-[0_25px_70px_rgba(0,0,0,0.10)]
             "
           >
             {/* Decorative background */}
@@ -118,16 +123,16 @@ export default function QualityPromise() {
                 h-full
                 flex-col
                 justify-center
-                p-8
-                sm:p-10
+                p-5
+                sm:p-8
                 md:p-12
                 lg:p-14
                 xl:p-16
               "
             >
               {/* EYEBROW */}
-              <div className="mb-7 flex items-center gap-4">
-                <span className="h-px w-8 bg-secondary md:w-10" />
+              <div className="mb-5 sm:mb-7 flex items-center gap-3 sm:gap-4">
+                <span className="h-px w-6 sm:w-8 bg-secondary md:w-10" />
                 <span
                   className="
                     text-xs
@@ -140,30 +145,31 @@ export default function QualityPromise() {
                 >
                   Our Studio Promise
                 </span>
-                <span className="h-px w-8 bg-secondary md:w-10" />
+                <span className="h-px w-6 sm:w-8 bg-secondary md:w-10" />
               </div>
 
               {/* HEADING */}
               <h2
                 className="
-                  mb-7
+                  mb-5
+                  sm:mb-7
                   max-w-xl
-                  text-4xl
+                  text-2.5xl
                   font-black
                   uppercase
-                  leading-[0.98]
-                  tracking-[-0.025em]
+                  leading-[1.05]
+                  tracking-tight
                   text-primary
-                  sm:text-5xl
+                  sm:text-4xl
                   md:text-5xl
                   lg:text-[3.25rem]
                   xl:text-[3.75rem]
                 "
               >
-                The Archival
-                <br />
-                Standard
-                <br />
+                The Archival{" "}
+                <span className="hidden sm:inline"><br /></span>
+                Standard{" "}
+                <span className="hidden sm:inline"><br /></span>
                 <span className="text-secondary">
                   You Deserve
                 </span>
@@ -172,12 +178,12 @@ export default function QualityPromise() {
               {/* DESCRIPTION */}
               <p
                 className="
-                  mb-10
+                  mb-8
                   max-w-xl
-                  text-sm
-                  leading-[1.8]
+                  text-xs
+                  leading-[1.75]
                   text-neutral-text/70
-                  sm:text-base
+                  sm:text-sm
                   md:mb-12
                   md:text-[1.05rem]
                 "

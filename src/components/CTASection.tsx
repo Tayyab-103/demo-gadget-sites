@@ -15,37 +15,37 @@ export default function CTASection() {
       {/* Dark Indigo Gradient Overlay for Contrast */}
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary via-primary/85 to-primary/60" />
 
-      <div className="w-full max-w-4xl mx-auto px-6 relative z-10 flex justify-center">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex justify-center">
         {/* Frosted Glass Content Card */}
-        <div className="glass-card-dark rounded-[2.5rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/25">
+        <div className="glass-card-dark rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 md:p-14 text-center shadow-2xl relative overflow-hidden max-w-3xl w-full border border-secondary/25">
           
           {/* Faint corner glow */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           
-          <span className="eyebrow eyebrow-invert mb-6 inline-flex text-secondary relative z-10">
+          <span className="eyebrow eyebrow-invert mb-5 sm:mb-6 inline-flex text-secondary relative z-10">
             Exclusive Studio Offer
           </span>
           
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-white mb-6 tracking-tight leading-[1.1] relative z-10">
-            Ready to Bring Your <br />
+          <h2 className="text-2.5xl sm:text-3xl md:text-5xl font-black uppercase text-white mb-5 sm:mb-6 tracking-tight leading-[1.1] relative z-10">
+            Ready to Bring Your <br className="hidden sm:inline" />
             <span className="text-secondary drop-shadow-md">Creative Vision to Life?</span>
           </h2>
 
-          <p className="text-white/80 text-sm md:text-[1.05rem] mb-10 max-w-lg mx-auto leading-relaxed relative z-10">
+          <p className="text-white/80 text-xs sm:text-sm md:text-[1.05rem] mb-8 sm:mb-10 max-w-lg mx-auto leading-relaxed relative z-10">
             Join thousands of artists and crafters who&apos;ve upgraded their materials. Bundle your favorite supplies and unlock volume savings today.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+          <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center relative z-10">
             <Link
               href="/#shop"
-              className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-primary hover:bg-white hover:text-primary transition-all duration-300 py-4 px-10 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-secondary/20"
+              className="group inline-flex items-center justify-center gap-2.5 font-bold text-center whitespace-nowrap bg-secondary text-primary hover:bg-white hover:text-primary transition-all duration-300 py-4 px-8 sm:px-10 rounded-full text-xs uppercase tracking-widest shadow-lg shadow-secondary/20 w-full sm:w-auto"
             >
               Shop Studio Bundles
               <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
             </Link>
             <Link
               href="/#contact"
-              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 py-3.5 px-10 rounded-full text-xs uppercase tracking-widest"
+              className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-transparent border border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 py-3.5 px-8 sm:px-10 rounded-full text-xs uppercase tracking-widest w-full sm:w-auto"
             >
               Contact Atelier
             </Link>

@@ -7,9 +7,9 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const contactImages = [
-  "/img/photo-1460661419201-fd4cecdf8a8b.jpg",
-  "/img/photo-1513364776144-60967b0f800f.jpg",
-  "/img/photo-1596548438137-d51ea5c83ca5.jpg",
+  "/img/pexels-contact-charcoal-4860071.jpg",
+  "/img/pexels-contact-palette-1572386.jpg",
+  "/img/pexels-contact-brushes-102127.jpg",
 ];
 
 export default function Contact() {
@@ -25,20 +25,20 @@ export default function Contact() {
 
   return (
     <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="contact">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-[800px] mb-12 md:mb-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[800px] mb-10 md:mb-16">
           <span className="eyebrow mb-4">Studio Inquiries</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
+          <h2 className="text-2.5xl sm:text-4xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
             Have Questions? <span className="text-secondary">Reach Our Atelier</span>
           </h2>
-          <p className="text-neutral-text/70 text-sm md:text-base">
+          <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base leading-relaxed">
             Our studio advisors and customer support specialists are here to assist with product guidance, bulk orders, or billing support.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
           {/* Visual + Info Column */}
-          <div className="relative rounded-[2rem] overflow-hidden min-h-[350px] lg:min-h-0 shadow-xl border border-black/5">
+          <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden min-h-[300px] sm:min-h-[360px] lg:min-h-0 shadow-xl border border-black/5">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
@@ -52,9 +52,9 @@ export default function Contact() {
             ))}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-primary/20" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-8">
+            <div className="relative z-10 h-full flex flex-col justify-end p-5 sm:p-8">
               {/* Image dots */}
-              <div className="flex gap-2 mb-8">
+              <div className="flex gap-2 mb-5 sm:mb-8">
                 {contactImages.map((_, idx) => (
                   <button
                     key={idx}
@@ -67,24 +67,24 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   </div>
                   <div>
                     <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Call Studio</div>
-                    <div className="font-bold text-sm text-white mt-0.5">{siteConfig.phone}</div>
+                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5">{siteConfig.phone}</div>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-5 py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
+                <div className="flex items-center gap-3.5 bg-white/10 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-4 rounded-2xl border border-white/10 flex-1 hover:bg-white/15 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   </div>
                   <div>
                     <div className="text-[0.62rem] text-white/50 uppercase tracking-widest font-bold">Email Support</div>
-                    <div className="font-bold text-sm text-white mt-0.5 break-all">{siteConfig.email}</div>
+                    <div className="font-bold text-xs sm:text-sm text-white mt-0.5 break-all">{siteConfig.email}</div>
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function Contact() {
           </div>
 
           {/* Form Column */}
-          <div className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-black/5">
+          <div className="bg-white rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-10 shadow-sm border border-black/5">
             {contactSubmitted ? (
               <div className="text-center py-10 h-full flex flex-col items-center justify-center">
                 <div className="w-16 h-16 rounded-full border-2 border-secondary text-secondary flex items-center justify-center text-3xl mx-auto mb-6 font-bold shadow-md bg-secondary/10">

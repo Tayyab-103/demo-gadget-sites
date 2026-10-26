@@ -76,16 +76,16 @@ export default function Footer() {
 
       {/* Top Value / Trust Strip */}
       <div className="border-b border-white/10 bg-white/3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
             {trustBadges.map((badge, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-secondary/30 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center flex-shrink-0">
+              <div key={idx} className="flex items-center gap-3.5 sm:gap-4 p-3 rounded-2xl bg-white/5 border border-white/5 hover:border-secondary/30 transition-colors">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center flex-shrink-0">
                   {badge.icon}
                 </div>
                 <div>
                   <h4 className="text-xs sm:text-sm font-bold text-white leading-tight">{badge.title}</h4>
-                  <p className="text-[0.68rem] sm:text-xs text-white/55 mt-0.5">{badge.desc}</p>
+                  <p className="text-[0.65rem] sm:text-xs text-white/55 mt-0.5">{badge.desc}</p>
                 </div>
               </div>
             ))}
@@ -93,16 +93,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 relative z-10">
         
         {/* Newsletter Subscription Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-white/8 via-white/5 to-white/8 border border-white/10 p-6 sm:p-10 mb-14 sm:mb-16 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="rounded-3xl bg-gradient-to-r from-white/8 via-white/5 to-white/8 border border-white/10 p-5 sm:p-8 md:p-10 mb-10 sm:mb-16 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary block mb-2">
                 Atelier Insider
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black uppercase text-white tracking-tight leading-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-white tracking-tight leading-tight">
                 Join the North Star Artist Collective
               </h3>
               <p className="text-white/70 text-xs sm:text-sm mt-2 max-w-xl leading-relaxed">
@@ -131,7 +131,7 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="bg-secondary text-primary font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full hover:bg-white transition-all whitespace-nowrap cursor-pointer shadow-md hover:shadow-lg flex-shrink-0"
+                    className="bg-secondary text-primary font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full hover:bg-white transition-all whitespace-nowrap cursor-pointer shadow-md hover:shadow-lg w-full sm:w-auto flex-shrink-0"
                   >
                     Subscribe
                   </button>
@@ -142,7 +142,7 @@ export default function Footer() {
         </div>
 
         {/* Main Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 mb-10 sm:mb-16">
           
           {/* Brand & Identity Column */}
           <div className="lg:col-span-4 flex flex-col gap-4">
@@ -250,10 +250,6 @@ export default function Footer() {
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
-          </div>
-
-          <div className="text-center md:text-right text-[0.68rem] text-white/40 max-w-md">
-            Operated by <strong className="text-white/60">{siteConfig.corpName}</strong>. Card statement descriptor: <strong className="text-secondary font-mono">{siteConfig.descriptor}</strong>.
           </div>
         </div>
 

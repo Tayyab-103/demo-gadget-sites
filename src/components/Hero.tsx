@@ -144,7 +144,7 @@ export default function Hero() {
       className="hero-slider hero-slider-one relative w-full overflow-hidden bg-neutral-bg focus:outline-none"
     >
       {/* Slides Container */}
-      <div className="relative min-h-[560px] sm:min-h-[620px] md:min-h-[680px] lg:min-h-[720px] w-full flex items-center">
+      <div className="relative min-h-[480px] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[700px] w-full flex items-center">
         {slides.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
@@ -159,34 +159,34 @@ export default function Hero() {
               }`}
             >
               {/* Right Side Background Image with seamless gradient blending */}
-              <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[58%] overflow-hidden">
+              <div className="absolute right-0 top-0 bottom-0 w-full md:w-[48%] lg:w-[54%] xl:w-[58%] overflow-hidden">
                 <img
                   src={slide.image}
                   alt={slide.alt}
-                  className={`w-full h-full object-cover object-center transition-transform duration-1000 ease-out ${
+                  className={`w-full h-full object-cover object-[75%_center] md:object-right transition-transform duration-1000 ease-out ${
                     isActive ? "scale-100" : "scale-105"
                   }`}
                 />
-                {/* Horizontal Gradient blend for desktop: dissolves left side into neutral-bg */}
+                {/* Horizontal Gradient blend: dissolves left side into neutral-bg for tablet & desktop */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-r from-neutral-bg via-neutral-bg/70 to-transparent hidden lg:block"
+                  className="absolute inset-0 bg-gradient-to-r from-neutral-bg via-neutral-bg/95 via-35% to-transparent hidden md:block"
                   aria-hidden="true"
                 />
-                {/* Vertical Gradient blend for mobile: ensures text legibility over image */}
+                {/* Vertical & soft overlay for mobile: ensures 100% text legibility over image */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-neutral-bg via-neutral-bg/85 to-neutral-bg/40 lg:hidden"
+                  className="absolute inset-0 bg-neutral-bg/92 backdrop-blur-[2px] md:hidden"
                   aria-hidden="true"
                 />
               </div>
 
-              {/* Slide Content */}
-              <div className="hero-content-one container relative z-20 mx-auto max-w-7xl px-6 sm:px-10 lg:px-12 py-16 sm:py-20 md:py-24">
-                <div className="max-w-xl lg:max-w-2xl">
+              {/* Slide Content with guaranteed clearance for side navigation arrows */}
+              <div className="hero-content-one relative z-20 w-full max-w-7xl mx-auto px-5 sm:pl-20 sm:pr-8 md:pl-24 md:pr-12 lg:pl-28 lg:pr-16 py-12 sm:py-16 md:py-20">
+                <div className="max-w-md sm:max-w-lg md:max-w-lg lg:max-w-xl xl:max-w-2xl">
                   <div className="slider-text-info">
                     {/* Subtitle (H2) */}
                     <h2
-                      className={`text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-neutral-text tracking-tight transition-all duration-700 delay-100 ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                      className={`text-lg sm:text-xl md:text-2xl lg:text-[2.2rem] font-bold text-neutral-text tracking-tight transition-all duration-500 ${
+                        isActive ? "translate-y-0 opacity-100 delay-100" : "translate-y-4 opacity-0 delay-0 pointer-events-none"
                       }`}
                     >
                       {slide.subtitlePrefix}{" "}
@@ -195,8 +195,8 @@ export default function Hero() {
 
                     {/* Main Title (H1) */}
                     <h1
-                      className={`mt-2 sm:mt-3 text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-neutral-text tracking-tight leading-[1.12] transition-all duration-700 delay-200 ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                      className={`mt-2 sm:mt-3 text-2.5xl sm:text-4xl md:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem] font-black text-neutral-text tracking-tight leading-[1.14] break-words transition-all duration-500 ${
+                        isActive ? "translate-y-0 opacity-100 delay-150" : "translate-y-4 opacity-0 delay-0 pointer-events-none"
                       }`}
                     >
                       {slide.titlePrefix}{" "}
@@ -206,8 +206,8 @@ export default function Hero() {
 
                     {/* Paragraph description */}
                     <p
-                      className={`mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-neutral-text/75 leading-relaxed max-w-md sm:max-w-lg transition-all duration-700 delay-300 ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                      className={`mt-3 sm:mt-5 text-xs sm:text-sm md:text-base text-neutral-text/85 font-medium leading-relaxed max-w-md sm:max-w-lg transition-all duration-500 ${
+                        isActive ? "translate-y-0 opacity-100 delay-200" : "translate-y-4 opacity-0 delay-0 pointer-events-none"
                       }`}
                     >
                       {slide.description}
@@ -215,8 +215,8 @@ export default function Hero() {
 
                     {/* Action button section with accent line */}
                     <div
-                      className={`mt-7 sm:mt-9 transition-all duration-700 delay-400 ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                      className={`mt-6 sm:mt-8 transition-all duration-500 ${
+                        isActive ? "translate-y-0 opacity-100 delay-250" : "translate-y-4 opacity-0 delay-0 pointer-events-none"
                       }`}
                     >
                       {/* Vertical coral/secondary accent mark as seen in template design */}
@@ -243,21 +243,21 @@ export default function Hero() {
           );
         })}
 
-        {/* Prev Navigation Arrow */}
+        {/* Prev Navigation Arrow (Desktop & Tablet only - Mobile uses touch swipe and bottom controls) */}
         <button
           type="button"
           onClick={prevSlide}
           aria-label="Previous Slide"
-          className="slick-prev slick-arrow absolute left-3 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/10 backdrop-blur-xs text-neutral-text hover:bg-secondary hover:text-white transition-all duration-300 shadow-sm hover:scale-105 cursor-pointer"
+          className="slick-prev slick-arrow absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 hidden sm:flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 backdrop-blur-md text-primary hover:bg-secondary hover:text-white border border-black/10 hover:border-secondary transition-all duration-300 shadow-md hover:scale-105 cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
             className="transition-transform duration-200"
@@ -267,21 +267,21 @@ export default function Hero() {
           </svg>
         </button>
 
-        {/* Next Navigation Arrow */}
+        {/* Next Navigation Arrow (Desktop & Tablet only - Mobile uses touch swipe and bottom controls) */}
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next Slide"
-          className="slick-next slick-arrow absolute right-3 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/10 backdrop-blur-xs text-neutral-text hover:bg-secondary hover:text-white transition-all duration-300 shadow-sm hover:scale-105 cursor-pointer"
+          className="slick-next slick-arrow absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 hidden sm:flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 backdrop-blur-md text-primary hover:bg-secondary hover:text-white border border-black/10 hover:border-secondary transition-all duration-300 shadow-md hover:scale-105 cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
             className="transition-transform duration-200"
@@ -291,38 +291,87 @@ export default function Hero() {
           </svg>
         </button>
 
-        {/* Simple Dots Indicator inside hero section */}
-        <ul
-          className="slick-dots absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-3"
-          role="tablist"
-        >
-          {slides.map((_, index) => {
-            const isActive = index === currentSlide;
-            return (
-              <li
-                key={index}
-                role="presentation"
-                className={isActive ? "slick-active" : ""}
-              >
-                <button
-                  type="button"
-                  role="tab"
-                  id={`slick-slide-control0${index}`}
-                  aria-controls={`slick-slide0${index}`}
-                  aria-label={`Slide ${index + 1} of ${totalSlides}`}
-                  aria-selected={isActive}
-                  tabIndex={isActive ? 0 : -1}
-                  onClick={() => goToSlide(index)}
-                  className={`cursor-pointer transition-all duration-300 rounded-full block p-0 ${
-                    isActive
-                      ? "w-3 h-3 bg-secondary scale-110 shadow-xs"
-                      : "w-3 h-3 bg-neutral-text/25 hover:bg-neutral-text/50"
-                  }`}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        {/* Navigation Controls: Dots (with mobile-friendly prev/next arrows) */}
+        <div className="absolute bottom-5 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center gap-3">
+          {/* Mobile Prev Arrow */}
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="Previous Slide Mobile"
+            className="flex sm:hidden items-center justify-center w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm text-primary border border-black/10 shadow-xs cursor-pointer active:scale-95"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+          </button>
+
+          {/* Dots Indicator */}
+          <ul
+            className="slick-dots flex items-center justify-center gap-2.5 sm:gap-3"
+            role="tablist"
+          >
+            {slides.map((_, index) => {
+              const isActive = index === currentSlide;
+              return (
+                <li
+                  key={index}
+                  role="presentation"
+                  className={isActive ? "slick-active" : ""}
+                >
+                  <button
+                    type="button"
+                    role="tab"
+                    id={`slick-slide-control0${index}`}
+                    aria-controls={`slick-slide0${index}`}
+                    aria-label={`Slide ${index + 1} of ${totalSlides}`}
+                    aria-selected={isActive}
+                    tabIndex={isActive ? 0 : -1}
+                    onClick={() => goToSlide(index)}
+                    className={`cursor-pointer transition-all duration-300 rounded-full block p-0 ${
+                      isActive
+                        ? "w-3 h-3 bg-secondary scale-110 shadow-xs"
+                        : "w-3 h-3 bg-neutral-text/25 hover:bg-neutral-text/50"
+                    }`}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Mobile Next Arrow */}
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Next Slide Mobile"
+            className="flex sm:hidden items-center justify-center w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm text-primary border border-black/10 shadow-xs cursor-pointer active:scale-95"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Proof points strip at base of hero */}

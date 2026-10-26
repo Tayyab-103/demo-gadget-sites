@@ -14,8 +14,8 @@ const products = productsData as unknown as Product[];
 
 const navLinks = [
   { href: "/", label: "Home", badge: "" },
-  { href: "/shop", label: "Art Supplies", badge: "New" },
-  { href: "/about", label: "Atelier Story", badge: "" },
+  { href: "/shop", label: "Shop", badge: "New" },
+  { href: "/about", label: "About", badge: "" },
   { href: "/contact", label: "Contact", badge: "" },
 ];
 
@@ -154,17 +154,17 @@ export default function Header() {
             : "bg-neutral-bg/95 backdrop-blur-sm border-b border-black/5 py-4 sm:py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Brand Logo */}
           <Link
             href="/"
             onClick={closeAll}
-            className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.01] flex-shrink-0"
+            className="group flex items-center gap-2 sm:gap-3 transition-transform duration-300 hover:scale-[1.01] min-w-0"
             aria-label={`${siteConfig.brandName} Homepage`}
           >
             {/* Atelier Star Monogram Badge */}
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-neutral-bg flex items-center justify-center border border-black/5 shadow-xs p-0.5 flex-shrink-0"> 
+            <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl overflow-hidden bg-neutral-bg flex items-center justify-center border border-black/5 shadow-xs p-0.5 flex-shrink-0"> 
               <img
                 src={siteConfig.logoImage || "/img/logo.jpg"}
                 alt={`${siteConfig.brandName} Logo`}
@@ -172,12 +172,12 @@ export default function Header() {
               />
             </div>
 
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-black uppercase tracking-tight text-primary leading-none flex items-center gap-1">
+            <div className="flex flex-col min-w-0">
+              <span className="text-sm sm:text-lg md:text-xl font-black uppercase tracking-tight text-primary leading-none flex items-center gap-1 truncate">
                 <span>{firstWord}</span>
                 <span className="text-secondary">{secondWord}</span>
               </span>
-              <span className="text-[0.6rem] sm:text-[0.65rem] font-bold uppercase tracking-[0.16em] text-neutral-text/60 mt-0.5">
+              <span className="text-[0.52rem] sm:text-[0.6rem] md:text-[0.65rem] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-neutral-text/60 mt-0.5 truncate">
                 {trailingWords}
               </span>
             </div>
@@ -209,11 +209,11 @@ export default function Header() {
           </nav>
 
           {/* Right Header Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
             {/* Search Trigger */}
             <button
               onClick={toggleSearch}
-              className={`flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-200 cursor-pointer ${
+              className={`flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border transition-all duration-200 cursor-pointer ${
                 isSearchOpen
                   ? "bg-secondary text-primary border-secondary shadow-sm"
                   : "bg-white text-primary border-black/8 hover:border-secondary hover:text-secondary shadow-xs"
@@ -230,7 +230,7 @@ export default function Header() {
             {/* Cart Drawer Trigger */}
             <button
               onClick={toggleCart}
-              className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white text-primary border border-black/8 hover:border-secondary hover:shadow-md transition-all duration-200 cursor-pointer"
+              className="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white text-primary border border-black/8 hover:border-secondary hover:shadow-md transition-all duration-200 cursor-pointer"
               aria-label="Open Cart"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -251,14 +251,14 @@ export default function Header() {
               href="/shop"
               className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-text hover:bg-secondary hover:text-secondary-text px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm hover:shadow-md"
             >
-              <span>Explore Supplies</span>
+              <span>Shop</span>
               <span className="text-xs transition-transform duration-200 group-hover:translate-x-1">→</span>
             </Link>
 
             {/* Mobile Menu Hamburger */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white border border-black/8 text-primary hover:border-secondary transition-colors cursor-pointer"
+              className="lg:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-black/8 text-primary hover:border-secondary transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
             >

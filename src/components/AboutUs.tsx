@@ -107,33 +107,33 @@ export default function AboutUs() {
       <div className="pointer-events-none absolute right-0 top-0 h-125 w-125 -translate-y-1/2 translate-x-1/4 rounded-full bg-primary/3" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-100 w-100 -translate-x-1/4 translate-y-1/3 rounded-full bg-secondary/10" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 text-center md:mb-20">
-          <span className="eyebrow mb-6 justify-center">
+        <div className="mb-12 text-center md:mb-20">
+          <span className="eyebrow mb-4 sm:mb-6 justify-center">
             Our Atelier Heritage
           </span>
 
-          <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
+          <h2 className="mx-auto max-w-3xl text-2.5xl sm:text-4xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
             Fine Artistry,{" "}
             <span className="text-secondary">
               Master Craftsmanship
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/70 md:text-base">
+          <p className="mx-auto mt-4 sm:mt-5 max-w-2xl text-xs sm:text-sm leading-relaxed text-neutral-text/70 md:text-base">
             At {siteConfig.brandName}, we believe that remarkable artwork begins with uncompromising materials. We curate and craft professional-grade paints, precision brushes, and archival surfaces for artists who demand excellence.
           </p>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-20">
           {/* LEFT — Visual Showcase */}
-          <div className="relative flex items-center justify-center lg:mb-16 lg:mt-16">
+          <div className="relative flex items-center justify-center lg:mb-16 lg:mt-16 w-full">
             {/* Main Image */}
-            <div className="group relative w-full max-w-110 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border border-black/5">
+            <div className="group relative w-full max-w-md aspect-square rounded-3xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-black/5">
               <Image
-                src="/img/photo-1513364776144-60967b0f800f.jpg"
+                src="/img/pexels-about-atelier-3778208.jpg"
                 alt={`${siteConfig.brandName} painting studio atelier`}
                 fill
                 sizes="(max-width: 1024px) 90vw, 440px"
@@ -143,14 +143,14 @@ export default function AboutUs() {
 
             {/* Floating Badge — Top Right */}
             <div
-              className="animate-float absolute right-0 top-0 z-20 md:-right-2"
+              className="animate-float absolute right-2 top-2 md:-right-2 md:top-0 z-20"
               style={{ animationDelay: "0.4s" }}
             >
-              <div className="flex h-20 w-20 flex-col items-center justify-center rounded-full bg-secondary text-primary shadow-xl shadow-secondary/25 md:h-24 md:w-24">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 flex-col items-center justify-center rounded-full bg-secondary text-primary shadow-xl shadow-secondary/25">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -162,7 +162,7 @@ export default function AboutUs() {
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
 
-                <span className="mt-1 text-[0.55rem] font-black uppercase tracking-wider">
+                <span className="mt-0.5 sm:mt-1 text-[0.5rem] sm:text-[0.55rem] font-black uppercase tracking-wider">
                   Master
                 </span>
               </div>
@@ -170,10 +170,10 @@ export default function AboutUs() {
 
             {/* Floating Chip — Bottom Left */}
             <div
-              className="animate-float absolute bottom-4 left-0 z-20 md:-left-2"
+              className="animate-float absolute bottom-2 left-2 md:bottom-4 md:-left-2 z-20"
               style={{ animationDelay: "1.6s" }}
             >
-              <div className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white px-4 py-3 shadow-xl md:px-5 md:py-3.5">
+              <div className="flex items-center gap-2.5 sm:gap-3 rounded-2xl border border-black/5 bg-white px-3.5 py-2.5 sm:px-5 sm:py-3.5 shadow-xl">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/15">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

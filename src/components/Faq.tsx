@@ -38,16 +38,16 @@ export default function Faq() {
 
   return (
     <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="faq">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-20">
 
           {/* Left Column — Header, Decoration & CTA */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-28 lg:self-start">
             <span className="eyebrow mb-4">Studio Inquiries</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
+            <h2 className="text-2.5xl sm:text-4xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
               Frequently Asked <span className="text-secondary">Questions</span>
             </h2>
-            <p className="text-neutral-text/70 text-sm md:text-base mb-10">
+            <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base mb-6 sm:mb-10 leading-relaxed">
               Find immediate answers regarding our artist formulations, craft tools, dispatch timelines, and guarantee standards.
             </p>
 
@@ -59,17 +59,17 @@ export default function Faq() {
             </div>
 
             {/* CTA Box */}
-            <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden border border-white/10 shadow-xl">
+            <div className="bg-primary rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden border border-white/10 shadow-xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2" />
               <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-2">Need Custom Advice?</h3>
-                <p className="text-white/70 text-sm mb-6 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-bold mb-2">Need Custom Advice?</h3>
+                <p className="text-white/70 text-xs sm:text-sm mb-5 sm:mb-6 leading-relaxed">
                   Our dedicated studio support team is here to assist with product specs, bulk orders, or recommendations.
                 </p>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-secondary text-primary font-bold text-sm px-6 py-3 rounded-full hover:bg-white transition-all shadow-md"
+                  className="inline-flex items-center gap-2 bg-secondary text-primary font-bold text-xs sm:text-sm px-5 py-3 rounded-full hover:bg-white transition-all shadow-md"
                 >
                   Contact Our Atelier
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +82,7 @@ export default function Faq() {
           </div>
 
           {/* Right Column — Accordion */}
-          <div className="w-full lg:w-7/12 flex flex-col gap-4">
+          <div className="w-full lg:w-7/12 flex flex-col gap-3.5 sm:gap-4">
             {faqData.map((item, idx) => {
               const isOpen = activeIndex === idx;
 
@@ -96,23 +96,23 @@ export default function Faq() {
                   {/* FAQ Header */}
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center p-6 md:p-7 bg-transparent border-none cursor-pointer text-left focus:outline-none gap-4"
+                    className="w-full flex justify-between items-center p-4 sm:p-6 md:p-7 bg-transparent border-none cursor-pointer text-left focus:outline-none gap-3 sm:gap-4"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 min-w-0">
                       <span className={`text-xs font-black tracking-widest transition-colors duration-300 flex-shrink-0 ${
                         isOpen ? "text-secondary" : "text-neutral-text/30"
                       }`}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
-                      <strong className="text-sm md:text-base font-extrabold text-primary">
+                      <strong className="text-xs sm:text-sm md:text-base font-extrabold text-primary leading-snug">
                         {item.question}
                       </strong>
                     </div>
 
                     {/* Animated Icon */}
                     <span
-                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-300 ${
+                      className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-300 ${
                         isOpen
                           ? "bg-secondary text-primary rotate-45 shadow-md font-bold"
                           : "bg-neutral-bg border border-black/10 text-primary hover:border-secondary/40 hover:text-secondary rotate-0"
@@ -124,12 +124,12 @@ export default function Faq() {
 
                   {/* FAQ Body */}
                   <div
-                    className="overflow-hidden transition-all duration-500 ease-in-out px-6 md:px-7"
+                    className="overflow-hidden transition-all duration-500 ease-in-out px-4 sm:px-6 md:px-7"
                     style={{
                       maxHeight: isOpen ? "400px" : "0px",
                     }}
                   >
-                    <div className="pb-7 text-sm text-neutral-text/75 leading-relaxed border-t border-black/5 pt-5 pl-10">
+                    <div className="pb-5 sm:pb-7 text-xs sm:text-sm text-neutral-text/75 leading-relaxed border-t border-black/5 pt-4 sm:pt-5 pl-0 sm:pl-10">
                       {item.answer}
                     </div>
                   </div>

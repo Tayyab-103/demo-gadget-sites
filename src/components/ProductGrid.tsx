@@ -20,22 +20,22 @@ export default function ProductGrid() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden" id="shop">
+    <section className="py-12 sm:py-16 md:py-24 bg-white relative overflow-hidden" id="shop">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <span className="eyebrow justify-center mb-4">Studio Collection</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
+          <h2 className="text-2.5xl sm:text-4xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
             Explore Our <span className="text-secondary">Artisan Supplies</span>
           </h2>
-          <p className="text-neutral-text/70 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-neutral-text/70 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             Select a studio essential below to configure your bundle pack and bring exceptional archival craftsmanship to your easel.
           </p>
         </div>
 
         {/* 3-Column Product Cards Grid (Matching ShopPage Design) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 xl:gap-8 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 xl:gap-8 mb-10 sm:mb-14">
           {products.map((product) => {
             const firstBundle = product.bundles?.[0];
             const currentPrice = firstBundle ? firstBundle.price : product.ssPrice;

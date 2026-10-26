@@ -137,7 +137,7 @@ export default function ShopPage() {
               </div>
 
               {/* Search & Sort Controls */}
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3 w-full md:w-auto">
                 {/* Live Search */}
                 <div className="relative flex-1 md:w-64">
                   <svg
@@ -160,7 +160,7 @@ export default function ShopPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search catalog..."
-                    className="w-full pl-9 pr-3 py-2 bg-neutral-bg border border-black/10 rounded-full text-xs font-medium focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/20"
+                    className="w-full pl-9 pr-8 py-2 bg-neutral-bg border border-black/10 rounded-full text-xs font-medium focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/20"
                   />
                   {searchQuery && (
                     <button
@@ -176,7 +176,7 @@ export default function ShopPage() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-neutral-bg border border-black/10 rounded-full px-3 py-2 text-xs font-semibold text-neutral-text focus:outline-none focus:border-secondary cursor-pointer"
+                  className="w-full sm:w-auto bg-neutral-bg border border-black/10 rounded-full px-3 py-2 text-xs font-semibold text-neutral-text focus:outline-none focus:border-secondary cursor-pointer"
                 >
                   <option value="featured">Featured Order</option>
                   <option value="price-asc">Price: Low to High</option>

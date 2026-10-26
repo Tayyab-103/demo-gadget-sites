@@ -2,15 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig, trialDays } from "@/lib/brandIcon";
+import SectionHeading from "@/components/SectionHeading";
 
 const promises = [
   {
-    title: "Durable Stitching & Fit",
-    desc: "Built with reinforced seams and flexible four-way stretch fabric for lasting comfort.",
+    title: "Made to be washed",
+    desc: "Reinforced seams and fabrics that hold their shape and stretch through regular machine washing.",
     icon: (
       <>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -19,8 +17,8 @@ const promises = [
     ),
   },
   {
-    title: "14-Day Return Policy",
-    desc: "Test our apparel during your workouts. If you're not satisfied, return it within 14 days for a full refund.",
+    title: `${trialDays}-day returns`,
+    desc: `Not the right fit? Contact us within ${trialDays} days of delivery and we'll walk you through the return.`,
     icon: (
       <>
         <polyline points="1 4 1 10 7 10" />
@@ -29,11 +27,14 @@ const promises = [
     ),
   },
   {
-    title: "Breathable Materials",
-    desc: "Crafted from lightweight, moisture-wicking fabrics that keep you dry and comfortable.",
+    title: `Free ${siteConfig.shippingCarrier} shipping`,
+    desc: `Every order ships free with tracking and arrives in ${siteConfig.shippingPeriod} business days.`,
     icon: (
       <>
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        <rect x="1" y="3" width="15" height="13" />
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+        <circle cx="5.5" cy="18.5" r="2.5" />
+        <circle cx="18.5" cy="18.5" r="2.5" />
       </>
     ),
   },
@@ -41,47 +42,37 @@ const promises = [
 
 export default function QualityPromise() {
   return (
-    <section id="quality-promise" className="bg-[#0a2e22] py-16 sm:py-20 md:py-24 text-white border-t border-white/10">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-[1.08]">
-            Quality &amp; <span className="text-[#10b981]">Reliability</span>
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-xs sm:text-sm md:text-base leading-relaxed text-white/75 font-normal">
-            Every piece from {siteConfig.brandName} is designed for comfort, athletic fit, and everyday durability.
-          </p>
-        </div>
+    <section id="quality-promise" className="relative overflow-hidden bg-primary py-16 sm:py-20 md:py-24 text-primary-text">
+      <div className="absolute inset-0 peak-pattern opacity-40" aria-hidden="true" />
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          invert
+          eyebrow="Our promise"
+          title={
+            <>
+              Shop with <span className="text-secondary">confidence</span>
+            </>
+          }
+          subtitle={`Every order from ${siteConfig.brandName} comes with the same simple guarantees.`}
+        />
 
-        {/* 3 Quality Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {promises.map((promise) => (
-            <div
-              key={promise.title}
-              className="flex flex-col items-center text-center rounded-3xl bg-white/5 border border-white/10 p-7 sm:p-8 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-[#10b981]/50 hover:-translate-y-1"
-            >
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0d4a36] text-white shadow-md border border-white/20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <div key={promise.title} className="rounded-[1.5rem] bg-white/5 border border-white/10 p-7 transition-all hover:bg-white/10 hover:border-secondary/50">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-text">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   {promise.icon}
                 </svg>
               </div>
-              <h3 className="mb-2.5 text-base sm:text-lg font-black text-white uppercase tracking-tight">
-                {promise.title}
-              </h3>
-              <p className="text-xs sm:text-sm leading-relaxed text-white/70">
-                {promise.desc}
-              </p>
+              <h3 className="text-lg font-black uppercase tracking-tight">{promise.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/65">{promise.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Link
-            href="/terms"
-            className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-white/80 hover:text-[#10b981] transition-colors"
-          >
-            Review 14-Day Trial &amp; Return Terms →
+        <div className="mt-10 text-center">
+          <Link href="/terms" className="text-xs font-black uppercase tracking-[0.14em] text-white/75 hover:text-secondary transition-colors">
+            Read our shipping &amp; return terms →
           </Link>
         </div>
       </div>

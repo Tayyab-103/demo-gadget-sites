@@ -7,10 +7,20 @@
   --color-secondary-text: var(--secondary-text-color);
   --color-neutral-bg: var(--neutral-bg-color);
   --color-neutral-text: var(--neutral-text-color);
+
+  /* Derived tokens — all built from site-config colors */
+  --color-ink: var(--neutral-text-color);
+  --color-primary-dark: color-mix(in srgb, var(--primary-color) 78%, black);
+  --color-primary-light: color-mix(in srgb, var(--primary-color) 82%, white);
+  --color-secondary-dark: color-mix(in srgb, var(--secondary-color) 86%, black);
+  --color-gold-ink: color-mix(in srgb, var(--secondary-color) 60%, black);
+  --color-mist: color-mix(in srgb, var(--neutral-bg-color) 42%, white);
+  --color-line: color-mix(in srgb, var(--primary-color) 12%, transparent);
+  --color-muted: color-mix(in srgb, var(--neutral-text-color) 68%, transparent);
+
   --font-sans: var(--font-family);
 }
 
-/* Base Styles */
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -18,12 +28,12 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6.5rem;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   body {
     background-color: var(--neutral-bg-color);
     color: var(--neutral-text-color);
@@ -35,116 +45,168 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  @keyframes pulseGlow {
-    0%, 100% {
-      opacity: 0.25;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.55;
-      transform: scale(1.08);
-    }
+  ::selection {
+    background: var(--secondary-color);
+    color: var(--secondary-text-color);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 
   @keyframes floatSlow {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
 }
 
-/* Custom scrollbars */
+@layer components {
+  /* Small uppercase label with a gold bar in front */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--secondary-color);
+    flex-shrink: 0;
+  }
+  .eyebrow-light {
+    color: var(--secondary-color);
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--secondary-color);
+    color: var(--secondary-text-color);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 0.95rem 1.8rem;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--secondary-color) 80%, transparent);
+    cursor: pointer;
+  }
+  .btn-gold:hover {
+    background: color-mix(in srgb, var(--secondary-color) 86%, black);
+    transform: translateY(-1px);
+  }
+
+  .btn-plum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--primary-color);
+    color: var(--primary-text-color);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 0.95rem 1.8rem;
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .btn-plum:hover {
+    background: color-mix(in srgb, var(--primary-color) 78%, black);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1.5px solid currentColor;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 0.88rem 1.7rem;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  /* Gold marker highlight behind a word in light-background headings */
+  .hl {
+    background-image: linear-gradient(transparent 62%, color-mix(in srgb, var(--secondary-color) 75%, transparent) 62%, color-mix(in srgb, var(--secondary-color) 75%, transparent) 92%, transparent 92%);
+    padding: 0 0.08em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--primary-color) 6%, transparent);
+  }
+
+  .field {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    color: var(--neutral-text-color);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 16%, transparent);
+    border-radius: 0.9rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field::placeholder {
+    color: color-mix(in srgb, var(--neutral-text-color) 42%, transparent);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--secondary-color) 35%, transparent);
+  }
+
+  /* Diagonal peak lines used behind dark sections */
+  .peak-pattern {
+    background-image:
+      linear-gradient(135deg, color-mix(in srgb, var(--secondary-color) 9%, transparent) 25%, transparent 25%),
+      linear-gradient(225deg, color-mix(in srgb, var(--secondary-color) 9%, transparent) 25%, transparent 25%);
+    background-size: 56px 56px;
+    background-position: 0 0, 28px 0;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+  }
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: var(--neutral-bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--primary-color) 25%, transparent);
+  background: color-mix(in srgb, var(--primary-color) 40%, transparent);
   border-radius: 999px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--secondary-color) 50%, transparent);
-}
 
-/* High-Performance Athletic Eyebrow */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--secondary-color);
-  max-width: 100%;
-}
-.eyebrow::before {
-  content: "";
-  width: 16px;
-  height: 2px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-  border-radius: 1px;
-}
-.eyebrow::after {
-  content: "";
-  width: 16px;
-  height: 2px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-  border-radius: 1px;
-}
-
-.eyebrow-invert {
-  color: var(--secondary-color);
-}
-.eyebrow-invert::before {
-  background: var(--secondary-color);
-}
-.eyebrow-invert::after {
-  background: var(--secondary-color);
-}
-
-/* Dynamic Ambient Glow */
-.glow-bg {
-  width: min(500px, 90vw);
-  height: min(500px, 90vw);
-  background: radial-gradient(circle, var(--secondary-color) 0%, color-mix(in srgb, var(--secondary-color) 12%, transparent) 55%, transparent 75%);
-  filter: blur(80px);
-  border-radius: 50%;
-  animation: pulseGlow 8s ease-in-out infinite;
-  max-width: 100%;
-}
-
-/* Glass card styles */
-.glass-card {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.glass-card-dark {
-  background: color-mix(in srgb, var(--primary-color) 92%, transparent);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Hide scrollbar for carousels while keeping native scroll/drag */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -153,8 +215,8 @@
   scrollbar-width: none;
 }
 
-/* Metallic Tech Pattern background */
-.tech-grid-pattern {
-  background-image: radial-gradient(color-mix(in srgb, var(--secondary-color) 14%, transparent) 1px, transparent 1px);
-  background-size: 24px 24px;
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

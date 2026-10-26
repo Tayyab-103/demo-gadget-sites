@@ -7,10 +7,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
-import siteConfigData from "../../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
+import Faq from "@/components/Faq";
 
 export default function ContactPage() {
   return (
@@ -18,13 +16,14 @@ export default function ContactPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Reach Our Collective"
+          eyebrow="Get in touch"
           title={<>Contact {siteConfig.brandName}</>}
-          subtitle="Questions about apparel sizing, volume team orders, or logistics? Our Austin athletic support desk typically responds within 24 hours."
-          image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80"
+          subtitle={`Questions about sizing, an order or a return? Email ${siteConfig.email} or call ${siteConfig.phone} and our team will help.`}
+          image="/img/testimonialsec2.jpg"
           currentLabel="Contact"
         />
         <Contact />
+        <Faq />
       </main>
       <Footer />
       <CartDrawer />

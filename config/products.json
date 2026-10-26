@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Crew & Compression Socks",
-    "description": "Breathable athletic socks designed with arch support, seamless toe construction, and cushioned soles for workouts and everyday training.",
+    "name": "Peak Cushion Crew Socks",
+    "description": "Mid-calf crew socks with a cushioned footbed, ribbed arch band and a seamless toe. Breathable mesh panels across the top of the foot help keep feet dry through runs, lifts and long days on your feet.",
     "image": "/img/products/product-socks.jpg",
     "images": [
       "/img/products/product-socks.jpg",
@@ -12,26 +12,50 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Performance Apparel & Accessories",
+    "category": "Training Socks",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Compression Baselayer Top",
-    "description": "Fitted four-way stretch compression shirt that provides muscle support and moisture-wicking comfort during training.",
+    "name": "Peak Compression Baselayer",
+    "description": "Close-fitting four-way stretch baselayer with flatlock seams that lie flat against the skin. Moisture-wicking knit moves sweat away during training and layers cleanly under a hoodie or jersey.",
     "image": "/img/products/product-compression.jpg",
     "images": [
       "/img/products/product-compression.jpg",
@@ -40,26 +64,50 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Technical Baselayers & Tops",
+    "category": "Compression Tops",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Training Hoodie",
-    "description": "Comfortable fleece training hoodie featuring an athletic cut, front pockets, and warm, breathable fabric for warmups and casual wear.",
+    "name": "Peak Zip Training Hoodie",
+    "description": "Full-zip training hoodie in soft brushed fleece with an adjustable drawcord hood, zip-close side pockets and ribbed cuffs. Built for warmups, cooldowns and cold-morning commutes to the gym.",
     "image": "/img/products/product-hoodie.jpg",
     "images": [
       "/img/products/product-hoodie.jpg",
@@ -68,19 +116,43 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Performance Outerwear & Fleeces",
+    "category": "Hoodies & Layers",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

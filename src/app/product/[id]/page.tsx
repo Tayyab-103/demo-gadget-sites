@@ -5,14 +5,13 @@ import { useParams, useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
-import productsData from "../../../../config/products.json";
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { Product, Bundle } from "@/types";
+import { Bundle } from "@/types";
+import { products, siteConfig, trialDays } from "@/lib/brandIcon";
 import ProductCarousel from "@/components/ProductCarousel";
 import QualityPromise from "@/components/QualityPromise";
 import NewsletterPopup from "@/components/NewsletterPopup";
-
-const products = productsData as unknown as Product[];
 
 export default function ProductDetail() {
   const params = useParams();
@@ -34,16 +33,13 @@ export default function ProductDetail() {
     return (
       <>
         <Header />
-        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-28 text-center bg-white text-black">
-          <h2 className="text-2xl font-black uppercase text-[#0d3b2e] mb-4">Apparel Not Found</h2>
-          <p className="text-black/60 mb-8 max-w-md mx-auto text-sm">
-            The sporting apparel item you are looking for does not exist or has been updated in our catalog.
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 pt-44 pb-28 text-center">
+          <h1 className="text-2xl font-black uppercase text-ink mb-4">Product not found</h1>
+          <p className="text-muted mb-8 max-w-md mx-auto text-sm">
+            The item you are looking for doesn&apos;t exist or is no longer in our collection.
           </p>
-          <button
-            className="inline-block font-black text-center whitespace-nowrap bg-[#0d4a36] text-white hover:bg-[#083325] transition-all py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider cursor-pointer"
-            onClick={() => router.push("/shop")}
-          >
-            Return to Apparel Catalog
+          <button className="btn-plum" onClick={() => router.push("/shop")}>
+            Back to the shop
           </button>
         </main>
         <Footer />
@@ -57,125 +53,110 @@ export default function ProductDetail() {
     addToCart(product, selectedBundle.quantity, unitPrice, label);
   };
 
-  const startingPrice = parseFloat(product.ssPrice);
+  const singlePrice = parseFloat(product.ssPrice);
+  const selectedPrice = parseFloat(String(selectedBundle.price));
+  const bundles = product.bundles && product.bundles.length > 0 ? product.bundles : [selectedBundle];
+
+  const perks = [
+    { title: `Free ${siteConfig.shippingCarrier} shipping`, desc: `Delivered in ${siteConfig.shippingPeriod} business days` },
+    { title: `${trialDays}-day returns`, desc: "Contact us to start a return" },
+    { title: "One-time charge", desc: "No subscription, ever" },
+  ];
 
   return (
     <>
       <Header />
-      <main className="bg-white pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-36 md:pb-24 border-b border-black/6">
+      <main className="bg-neutral-bg pt-32 pb-16 sm:pt-36 sm:pb-20 md:pt-44 md:pb-24">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+            <Link href="/" className="hover:text-primary">Home</Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/shop" className="hover:text-primary">Shop</Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-primary truncate">{product.name}</span>
+          </nav>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-start">
-            
-            {/* Product Image Section */}
-            <div className="bg-[#f2f7f4] rounded-3xl p-4 sm:p-6 border border-black/8 shadow-xs">
+            <div className="card p-3 sm:p-4">
               <ProductCarousel
                 images={product.images && product.images.length > 0 ? product.images : [product.image]}
                 name={product.name}
               />
             </div>
 
-            {/* Product Details Section */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-black/8 shadow-sm flex flex-col">
-              <h1 className="text-2xl sm:text-3xl font-black uppercase text-[#0d3b2e] mt-1 mb-3 leading-snug tracking-tight">
+            <div className="card p-6 sm:p-8 md:p-10 flex flex-col">
+              <span className="eyebrow">{product.category}</span>
+              <h1 className="mt-3 text-3xl sm:text-4xl font-black uppercase text-ink leading-[1.05] tracking-tight">
                 {product.name}
               </h1>
 
-              {/* Price Display */}
-              <div className="text-3xl font-black text-[#0d3b2e] mb-4 flex items-baseline gap-2 font-mono">
-                ${parseFloat(String(selectedBundle.price)).toFixed(2)}
+              <div className="mt-5 flex items-end gap-3">
+                <span className="text-4xl font-black text-primary leading-none">${selectedPrice.toFixed(2)}</span>
                 {selectedBundle.quantity > 1 && (
-                  <span className="text-xs sm:text-sm font-bold text-black/40">
-                    (${((parseFloat(String(selectedBundle.price)) / selectedBundle.quantity)).toFixed(2)} / unit)
+                  <span className="text-sm font-bold text-muted pb-0.5">
+                    ${(selectedPrice / selectedBundle.quantity).toFixed(2)} each
                   </span>
                 )}
               </div>
 
-              <p className="text-black/70 mb-6 text-xs sm:text-sm leading-relaxed border-t border-black/6 pt-4 font-normal">
-                {product.description}
-              </p>
+              <p className="mt-5 pt-5 border-t border-line text-sm text-muted leading-relaxed">{product.description}</p>
 
-              {/* Bundle Packages Selector */}
-              {product.bundles && product.bundles.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="text-xs font-black uppercase tracking-wider text-black mb-2 font-mono">
-                    Select Quantity:
-                  </h4>
-                  <div className="relative">
-                    <select
-                      value={selectedBundle.quantity}
-                      onChange={(e) => {
-                        const bundle = product.bundles?.find((b) => b.quantity === Number(e.target.value));
-                        if (bundle) setSelectedBundle(bundle);
-                      }}
-                      className="w-full appearance-none border border-black/15 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-bold text-black bg-white cursor-pointer focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all shadow-xs"
-                    >
-                      {product.bundles.map((bundle) => {
-                        const regularPrice = startingPrice * bundle.quantity;
-                        const savings = regularPrice - bundle.price;
-                        const label = bundle.quantity > 1 ? `Pack of ${bundle.quantity} Units` : "Single Unit";
-                        const price = parseFloat(String(bundle.price)).toFixed(2);
-                        const savingsText = bundle.quantity > 1 && savings > 0 ? ` (Save $${savings.toFixed(2)})` : "";
-
-                        return (
-                          <option key={bundle.quantity} value={bundle.quantity}>
-                            {label} — ${price}{savingsText}
-                          </option>
-                        );
-                      })}
-                    </select>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-black"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+              {bundles.length > 1 && (
+                <fieldset className="mt-7">
+                  <legend className="text-xs font-black uppercase tracking-[0.14em] text-ink mb-3">Choose your pack</legend>
+                  <div className="grid grid-cols-4 gap-2">
+                    {bundles.map((bundle) => {
+                      const active = bundle.quantity === selectedBundle.quantity;
+                      const savings = singlePrice * bundle.quantity - bundle.price;
+                      return (
+                        <button
+                          key={bundle.quantity}
+                          type="button"
+                          onClick={() => setSelectedBundle(bundle)}
+                          aria-pressed={active}
+                          className={`relative rounded-2xl border-2 px-1 py-3 text-center transition-all cursor-pointer ${
+                            active ? "border-primary bg-primary text-primary-text" : "border-line bg-white text-ink hover:border-primary/40"
+                          }`}
+                        >
+                          <span className="block text-lg font-black leading-none">{bundle.quantity}x</span>
+                          <span className={`block mt-1 text-[0.68rem] font-bold ${active ? "text-secondary" : "text-muted"}`}>
+                            ${bundle.price.toFixed(2)}
+                          </span>
+                          {bundle.quantity > 1 && savings > 0.5 && (
+                            <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-secondary text-secondary-text px-1.5 py-0.5 text-[0.55rem] font-black">
+                              -${savings.toFixed(0)}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
-                </div>
+                </fieldset>
               )}
 
-              {/* Add to Cart Actions */}
-              <div className="flex gap-4 mb-6">
-                <button
-                  className="group inline-flex items-center justify-center gap-2 font-black text-center whitespace-nowrap bg-[#0d4a36] text-white hover:bg-[#083325] transition-all duration-200 py-3.5 sm:py-4 px-8 rounded-xl w-full cursor-pointer text-xs uppercase tracking-widest shadow-md hover:scale-[1.01]"
-                  onClick={handleAddToCart}
-                >
-                  Add to Cart
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </button>
-              </div>
+              <button className="btn-gold w-full mt-7 !py-4" onClick={handleAddToCart}>
+                Add to cart · ${selectedPrice.toFixed(2)}
+              </button>
 
-              {/* Specifications & Fabric Construction */}
+              <ul className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {perks.map((perk) => (
+                  <li key={perk.title} className="rounded-2xl bg-mist px-4 py-3.5">
+                    <span className="block text-[0.7rem] font-black uppercase tracking-[0.08em] text-primary">{perk.title}</span>
+                    <span className="block mt-0.5 text-[0.7rem] text-muted">{perk.desc}</span>
+                  </li>
+                ))}
+              </ul>
+
               {product.showIngredients && product.ingredientsImage && (
-                <div className="border-t border-black/6 pt-6 mt-4">
-                  <h3 className="text-sm sm:text-base font-black text-[#0d3b2e] mb-1.5 uppercase tracking-tight">
-                    Product Details &amp; Materials
-                  </h3>
-                  <p className="text-xs text-black/60 mb-4 leading-relaxed">
-                    Designed in Austin, TX with four-way stretch fabric and reinforced stitching. Backed by our 14-day field trial.
-                  </p>
-
-                  <div className="bg-[#f2f7f4] border border-black/6 rounded-xl p-3 flex items-center justify-center">
-                    <img
-                      src={product.ingredientsImage}
-                      alt={`${product.name} specifications and fabric details`}
-                      className="max-w-full h-auto rounded-lg max-h-[260px] object-cover bg-white p-1 border border-black/5"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&q=80";
-                      }}
-                    />
-                  </div>
+                <div className="border-t border-line pt-6 mt-7">
+                  <h3 className="text-sm font-black text-ink mb-4 uppercase tracking-tight">Product details &amp; materials</h3>
+                  <img
+                    src={product.ingredientsImage}
+                    alt={`${product.name} materials and details`}
+                    className="max-w-full h-auto rounded-xl max-h-[260px] object-cover border border-line"
+                  />
                 </div>
               )}
-
             </div>
           </div>
         </div>

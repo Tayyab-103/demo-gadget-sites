@@ -7,10 +7,9 @@ import AboutUs from "@/components/AboutUs";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
-import siteConfigData from "../../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
+import VideoShowcase from "@/components/VideoShowcase";
+import CTASection from "@/components/CTASection";
 
 export default function AboutPage() {
   return (
@@ -18,13 +17,15 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Apparel Heritage"
+          eyebrow="Our story"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Born in Austin, Texas. Engineered for relentless conditioning, endurance athletics, and unyielding fabric durability."
-          image="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1600&q=80"
+          subtitle="A small sporting apparel store focused on three training essentials, made to be worn hard and washed often."
+          image="/img/howitworks3.jpg"
           currentLabel="About"
         />
         <AboutUs />
+        <VideoShowcase />
+        <CTASection />
       </main>
       <Footer />
       <CartDrawer />

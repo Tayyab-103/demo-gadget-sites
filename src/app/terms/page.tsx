@@ -14,24 +14,24 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main className="bg-[#f2f7f4] pt-28 pb-16 md:pt-36 md:pb-24 relative overflow-hidden border-b border-black/6">
+      <main className="bg-neutral-bg pt-32 pb-16 md:pt-44 md:pb-24 relative overflow-hidden border-b border-primary/6">
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-[#0d3b2e] mb-8 border-b border-black/8 pb-6 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-black uppercase text-ink mb-8 border-b border-primary/8 pb-6 tracking-tight">
             Terms &amp; Conditions
           </h1>
 
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-black/8 shadow-sm leading-relaxed text-black/75 text-xs md:text-sm space-y-6">
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+          <div className="bg-white rounded-3xl p-8 md:p-10 border border-primary/8 shadow-sm leading-relaxed text-ink/75 text-xs md:text-sm space-y-6">
+            <h3 className="text-base font-black text-ink mt-8 mb-4 uppercase tracking-wider">
               OVERVIEW
             </h3>
             <p>
-              This website is operated by <strong className="text-[#0d3b2e] font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
-              “us” and “our” refer to <strong className="text-[#0d3b2e] font-semibold">{siteConfig.brandName}</strong>. <strong className="text-[#0d3b2e] font-semibold">{siteConfig.brandName}</strong> offers
-              this website, including all information, tools and services available from this site to you, the athlete,
+              This website is operated by <strong className="text-ink font-semibold">{siteConfig.brandName}</strong>. Throughout the site, the terms “we”,
+              “us” and “our” refer to <strong className="text-ink font-semibold">{siteConfig.brandName}</strong>. <strong className="text-ink font-semibold">{siteConfig.brandName}</strong> offers
+              this website, including all information, tools and services available from this site to you, the user,
               conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
             </p>
             <p>
-              By visiting our site and/ or purchasing pro-grade sporting apparel, compression baselayers, technical hoodies, and athletic accessories from us, you engage in our “Service” and agree to be
+              By visiting our site and/ or purchasing sporting apparel, including compression baselayers, training hoodies and crew socks, from us, you engage in our “Service” and agree to be
               bound by the following terms and conditions (“Terms of Service”, “Terms”), including those additional
               terms and conditions and policies referenced herein and/or available by hyperlink.
             </p>
@@ -41,33 +41,33 @@ export default function Terms() {
               terms and conditions of this agreement, then you may not access the website or use any services.
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-ink mt-8 mb-4 uppercase tracking-wider">
               PRODUCTS OFFERED &amp; BILLING TERMS
             </h3>
             <p>
-              We offer pro-grade sporting apparel and athletic technical sportswear through one-time purchases (Straight Sale) under the following pricing structures:
+              We offer sporting apparel through one-time purchases (Straight Sale) under the following pricing structures. There are no subscriptions or recurring charges:
             </p>
 
             {/* Dynamic Price Points Display */}
-            <div className="bg-[#f2f7f4] border border-black/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
+            <div className="bg-mist border border-primary/5 rounded-2xl p-6 md:p-8 my-6 shadow-inner">
               {products.map((product) => (
-                <div key={product.id} className="mb-6 pb-6 border-b border-black/8 last:border-0 last:mb-0 last:pb-0">
-                  <h4 className="text-sm md:text-base font-black text-[#0d3b2e] mb-3 uppercase tracking-tight">
+                <div key={product.id} className="mb-6 pb-6 border-b border-primary/8 last:border-0 last:mb-0 last:pb-0">
+                  <h4 className="text-sm md:text-base font-black text-ink mb-3 uppercase tracking-tight">
                     {product.name}
                   </h4>
                   <ul className="list-disc pl-5 m-0 space-y-3">
                     {product.bundles && product.bundles.map((bundle) => {
                       const totalCost = parseFloat(String(bundle.price));
                       const shippingText = product.ssShipping === "0.00" || parseFloat(product.ssShipping) === 0
-                        ? "FREE Standard UPS Shipping"
+                        ? `FREE standard ${siteConfig.shippingCarrier} shipping`
                         : `$${product.ssShipping} Shipping`;
 
                       return (
-                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-black/75">
-                          Upon ordering a <strong className="text-[#0d3b2e] font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Athlete Package` : "Single Unit"}</strong>,
-                          you will be charged a singular transaction fee of <strong className="text-[#0d3b2e] font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
+                        <li key={bundle.quantity} className="text-xs md:text-sm leading-relaxed text-ink/75">
+                          Upon ordering a <strong className="text-ink font-bold">{bundle.quantity > 1 ? `${bundle.quantity}-Unit Pack` : "Single Unit"}</strong>,
+                          you will be charged a singular transaction fee of <strong className="text-ink font-bold">${totalCost.toFixed(2)}</strong> (including {shippingText}) for {product.name}.
                           Your package will be delivered via {siteConfig.shippingCarrier} within {siteConfig.shippingPeriod} business days of payment.
-                          The credit card charge will appear on your statement as <strong className="text-[#0d3b2e] font-bold">“{siteConfig.descriptor}”</strong>.
+                          The credit card charge will appear on your statement as <strong className="text-ink font-bold">“{siteConfig.descriptor}”</strong>.
                         </li>
                       );
                     })}
@@ -76,7 +76,7 @@ export default function Terms() {
               ))}
             </div>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-ink mt-8 mb-4 uppercase tracking-wider">
               SECTION 1 - ONLINE STORE TERMS
             </h3>
             <p>
@@ -86,28 +86,28 @@ export default function Terms() {
             </p>
             <p>
               You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service,
-              violate any laws in your jurisdiction (including but not limited to copyright laws and local athletic apparel regulations).
+              violate any laws in your jurisdiction (including but not limited to copyright laws).
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
+            <h3 className="text-base font-black text-ink mt-8 mb-4 uppercase tracking-wider">
               SECTION 2 - SHIPPING &amp; DELIVERY POLICY
             </h3>
             <p>
               All orders are processed and shipped within 1-2 business days of payment confirmation. We ship our packages via{" "}
               {siteConfig.shippingCarrier} and delivery typically takes between {siteConfig.shippingPeriod} business days.
-              You will receive a tracking number via email once your order has been dispatched from our Austin, TX distribution center.
+              You will receive a tracking number via email once your order has been dispatched.
             </p>
 
-            <h3 className="text-base font-black text-[#0d3b2e] mt-8 mb-4 uppercase tracking-wider">
-              SECTION 3 - 14-DAY FIELD TRIAL &amp; RETURN POLICY
+            <h3 className="text-base font-black text-ink mt-8 mb-4 uppercase tracking-wider">
+              SECTION 3 - {siteConfig.trialPeriod}-DAY RETURN POLICY
             </h3>
             <p>
-              We stand behind our sporting apparel with a 14-day field trial guarantee. If you are not satisfied with the fit or performance of your purchase,
-              please contact our customer service center at <strong className="text-[#0d3b2e] font-semibold">{siteConfig.phone}</strong> or email us at{" "}
-              <strong className="text-[#0d3b2e] font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
+              You may return your purchase within {siteConfig.trialPeriod} days of delivery. If you are not satisfied with the fit or performance of your purchase,
+              please contact our customer service center at <strong className="text-ink font-semibold">{siteConfig.phone}</strong> or email us at{" "}
+              <strong className="text-ink font-semibold">{siteConfig.email}</strong> to obtain a Return Merchandise Authorization (RMA) number.
             </p>
             <p>
-              Returns must be shipped to our designated facility at: <strong className="text-[#0d3b2e] font-semibold">{siteConfig.address}</strong>.
+              Returns must be shipped to our designated facility at: <strong className="text-ink font-semibold">{siteConfig.address}</strong>.
               Refunds will be processed back to the original payment method within 5-7 business days of receiving the returned item.
             </p>
           </div>

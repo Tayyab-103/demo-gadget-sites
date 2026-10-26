@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Pro-grade ${siteConfig.Product?.toLowerCase() || "sporting apparel"} engineered for dedicated athletes, high-output conditioning, and peak athletic performance.`;
+const siteDescription = `${siteConfig.brandName} sells training ${siteConfig.Product?.toLowerCase() || "sporting apparel"}: compression baselayers, zip training hoodies and cushioned crew socks, shipped by ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days with a ${siteConfig.trialPeriod}-day return window.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,20 +45,19 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel & Technical Sportswear`,
+  title: `${siteConfig.brandName} | Sporting Apparel for Everyday Training`,
   description: siteDescription,
   keywords: [
     "sporting apparel",
     "athletic wear",
-    "technical sportswear",
-    "compression baselayers",
-    "performance hoodies",
-    "athletic socks",
-    "Austin athletics",
-    "Vantage Thread Athletic Works"
+    "training apparel",
+    "compression baselayer",
+    "zip training hoodie",
+    "crew socks",
+    siteConfig.brandName
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Sporting Apparel`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Pro-Grade Sporting Apparel`,
+    title: `${siteConfig.brandName} | Sporting Apparel`,
     description: siteDescription,
   },
 };

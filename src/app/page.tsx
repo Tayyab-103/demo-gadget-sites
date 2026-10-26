@@ -24,21 +24,21 @@ export default function Home() {
         {/* Dynamic Hero Section */}
         <Hero />
         
-        {/* Step-by-Step Flow */}
-        <HowItWorks />
-        
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
-        {/* About Brand & Austin Heritage */}
+        {/* Step-by-Step Flow */}
+        <HowItWorks />
+        
+        {/* About the brand */}
         <AboutUs />
 
-        {/* Video Showcase In Motion */}
+        {/* Products in action */}
         <VideoShowcase />
 
 
         
-        {/* Athlete Testimonials */}
+        {/* Customer reviews */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}
@@ -47,8 +47,8 @@ export default function Home() {
         {/* FAQ Accordions Dropdown */}
         <Faq />
 
-        {/* Contact Form Section */}
-        <Contact />
+        {/* Contact details (form lives on /contact) */}
+        <Contact showForm={false} />
       </main>
 
       <Footer />

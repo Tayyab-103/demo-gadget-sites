@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,8 +9,11 @@ export default function NewsletterPopup() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const popupDismissed = localStorage.getItem("newsletter_dismissed");
-    if (popupDismissed) return;
+    try {
+      if (localStorage.getItem("newsletter_dismissed")) return;
+    } catch {
+      // storage unavailable: still show the popup once per page view
+    }
 
     let hasSpentTimeOnPage = false;
     let hasShownScrollIntent = false;
@@ -47,9 +47,17 @@ export default function NewsletterPopup() {
     };
   }, []);
 
+  const remember = () => {
+    try {
+      localStorage.setItem("newsletter_dismissed", "true");
+    } catch {
+      // ignore
+    }
+  };
+
   const handleClose = () => {
     setIsVisible(false);
-    localStorage.setItem("newsletter_dismissed", "true");
+    remember();
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -58,7 +66,7 @@ export default function NewsletterPopup() {
       setSubmitted(true);
       setTimeout(() => {
         setIsVisible(false);
-        localStorage.setItem("newsletter_dismissed", "true");
+        remember();
       }, 2000);
     }
   };
@@ -66,75 +74,63 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/65 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-3xl w-full max-w-[500px] border border-black/10 relative flex flex-col overflow-hidden shadow-2xl">
-        {/* Close Button */}
+    <div
+      className="fixed inset-0 bg-primary-dark/70 backdrop-blur-sm z-9999 flex items-center justify-center p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="newsletter-title"
+    >
+      <div className="bg-white rounded-[1.75rem] w-full max-w-[760px] relative grid grid-cols-1 sm:grid-cols-2 overflow-hidden shadow-2xl">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-[#0d3b2e] hover:bg-[#0d4a36] hover:text-white transition-all"
+          className="absolute top-3.5 right-3.5 bg-white rounded-full w-9 h-9 flex items-center justify-center text-xl cursor-pointer z-10 text-primary shadow-md hover:bg-secondary transition-colors"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[190px] relative">
-          <img
-            src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80"
-            alt="Vantage Thread athletic apparel conditioning"
-            className="w-full h-full object-cover absolute inset-0"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a2e22]/50 to-[#0a2e22]/95" />
-
-          <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-black text-[#10b981] block mb-1">
-              Athlete Collective VIP Pass
-            </span>
-            <h3 className="text-2xl font-black text-white m-0 tracking-tight uppercase">
-              Save 15% On Your Next Order
-            </h3>
-          </div>
+        <div className="relative h-[180px] sm:h-auto bg-primary">
+          <img src="/img/herosection2.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/85 to-transparent" />
+          <span className="absolute bottom-4 left-5 text-[0.65rem] font-black uppercase tracking-[0.2em] text-secondary">
+            {siteConfig.brandName}
+          </span>
         </div>
 
-        {/* Form Body */}
-        <div className="p-8">
+        <div className="p-7 sm:p-9">
           {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-[#10b981] text-[#10b981] flex items-center justify-center text-xl mx-auto mb-4 font-bold">
+            <div className="text-center py-8">
+              <span className="w-14 h-14 rounded-full bg-secondary text-secondary-text flex items-center justify-center text-2xl mx-auto mb-4 font-black">
                 ✓
-              </div>
-              <h4 className="text-[#0d3b2e] font-black uppercase text-lg mb-2">Discount Code Activated!</h4>
-              <p className="text-black/60 text-sm">
-                Check your inbox for your 15% sporting apparel discount code.
-              </p>
+              </span>
+              <h4 className="text-ink font-black uppercase text-lg mb-2">You&apos;re on the list</h4>
+              <p className="text-muted text-sm">Look out for new drops and training tips in your inbox.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-black/75 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} VIP network. Subscribe today to receive training guides, new apparel release alerts, and <strong>15% off</strong> your first order.
+              <span className="eyebrow">Newsletter</span>
+              <h3 id="newsletter-title" className="mt-3 text-2xl sm:text-3xl font-black uppercase tracking-tight text-ink leading-tight">
+                Be first to <span className="hl">new drops</span>
+              </h3>
+              <p className="mt-3 text-sm text-muted leading-relaxed">
+                Get restock alerts, new colors and practical training tips. A few emails a month, unsubscribe any time.
               </p>
 
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-5 py-3.5 text-sm border border-black/15 rounded-xl focus:outline-none focus:border-[#0d4a36] focus:ring-1 focus:ring-[#0d4a36] transition-all text-black bg-white shadow-sm"
-                  placeholder="Enter your athlete or personal email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-block font-black text-center whitespace-nowrap bg-[#0d4a36] hover:bg-[#083325] text-white transition-all duration-300 py-3.5 px-8 rounded-xl text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:shadow-lg"
-              >
-                Claim 15% Athlete Discount
+              <input
+                type="email"
+                className="field mt-6"
+                placeholder="Your email address"
+                aria-label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn-plum w-full mt-3">
+                Sign me up
               </button>
-
-              <span className="block text-center text-[0.68rem] text-black/45 mt-3">
-                No spam. Unsubscribe anytime with a single click.
-              </span>
+              <button type="button" onClick={handleClose} className="block mx-auto mt-3 text-xs text-muted hover:text-primary cursor-pointer">
+                No thanks
+              </button>
             </form>
           )}
         </div>

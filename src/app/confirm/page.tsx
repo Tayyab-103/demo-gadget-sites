@@ -20,57 +20,57 @@ function ConfirmContent() {
   });
 
   return (
-    <div className="bg-white rounded-3xl p-8 md:p-12 border border-black/8 text-center max-w-[620px] mx-auto shadow-xl">
+    <div className="bg-white rounded-3xl p-8 md:p-12 border border-primary/8 text-center max-w-[620px] mx-auto shadow-xl">
       {/* Success Badge */}
-      <div className="w-[72px] h-[72px] rounded-full border-2 border-[#10b981] text-[#10b981] flex items-center justify-center text-3xl mx-auto mb-6 font-black bg-[#10b981]/10 shadow-md">
+      <div className="w-[72px] h-[72px] rounded-full border-2 border-secondary text-gold-ink flex items-center justify-center text-3xl mx-auto mb-6 font-black bg-secondary/20 shadow-md">
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-[#0d3b2e] mb-3 tracking-tight">
-        Athlete Order Confirmed!
+      <h2 className="text-2xl md:text-3xl font-black uppercase text-ink mb-3 tracking-tight">
+        Order confirmed!
       </h2>
-      <p className="text-black/70 text-sm md:text-base mb-8 leading-relaxed">
-        Thank you for equipping with {siteConfig.brandName}. Your order has been submitted to our Austin, TX fulfillment lab.
+      <p className="text-ink/70 text-sm md:text-base mb-8 leading-relaxed">
+        Thank you for shopping with {siteConfig.brandName}. Your order has been received and is being prepared for shipping.
       </p>
 
       {/* Order Info Table */}
-      <div className="bg-[#f2f7f4] border border-black/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
+      <div className="bg-mist border border-primary/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-black/50 uppercase tracking-wider text-[0.68rem] font-black">Order ID:</span>
-          <strong className="text-[#0d3b2e] font-black font-mono">{orderId}</strong>
+          <span className="text-ink/50 uppercase tracking-wider text-[0.68rem] font-black">Order ID:</span>
+          <strong className="text-ink font-black">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-black/50 uppercase tracking-wider text-[0.68rem] font-black">Order Date:</span>
-          <span className="text-black/80 font-bold">{today}</span>
+          <span className="text-ink/50 uppercase tracking-wider text-[0.68rem] font-black">Order Date:</span>
+          <span className="text-ink/80 font-bold">{today}</span>
         </div>
         <div className="flex justify-between items-center mb-3">
-          <span className="text-black/50 uppercase tracking-wider text-[0.68rem] font-black">Carrier:</span>
-          <span className="text-black/80 font-bold">{siteConfig.shippingCarrier} Ground Express</span>
+          <span className="text-ink/50 uppercase tracking-wider text-[0.68rem] font-black">Carrier:</span>
+          <span className="text-ink/80 font-bold">{siteConfig.shippingCarrier}</span>
         </div>
         <div className="flex justify-between items-center">
-          <span className="text-black/50 uppercase tracking-wider text-[0.68rem] font-black">Estimated Dispatch:</span>
-          <span className="text-[#10b981] font-black">{siteConfig.shippingPeriod} Business Days</span>
+          <span className="text-ink/50 uppercase tracking-wider text-[0.68rem] font-black">Estimated delivery:</span>
+          <span className="text-gold-ink font-black">{siteConfig.shippingPeriod} Business Days</span>
         </div>
       </div>
 
-      <p className="text-[0.72rem] md:text-xs text-black/60 leading-relaxed mb-8">
-        A dispatch confirmation email containing your real-time tracking number will be sent to your registered inbox shortly.
-        For apparel support, reach our team at <strong className="text-[#0d3b2e] font-bold">{siteConfig.email}</strong> or call <strong className="text-[#0d3b2e] font-bold">{siteConfig.phone}</strong>.
+      <p className="text-[0.72rem] md:text-xs text-ink/60 leading-relaxed mb-8">
+        You will receive an email with your tracking number once your order ships.
+        For help with your order, reach our team at <strong className="text-ink font-bold">{siteConfig.email}</strong> or call <strong className="text-ink font-bold">{siteConfig.phone}</strong>.
       </p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <Link
           href="/shop"
-          className="group inline-flex items-center justify-center gap-2.5 font-black text-center whitespace-nowrap bg-[#0d4a36] text-white hover:bg-[#083325] transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg w-full sm:w-auto"
+          className="group inline-flex items-center justify-center gap-2.5 font-black text-center whitespace-nowrap bg-primary text-white hover:bg-primary-dark transition-all duration-300 py-4 px-8 rounded-full text-xs uppercase tracking-widest shadow-md hover:shadow-lg w-full sm:w-auto"
         >
-          Explore More Apparel
+          Keep shopping
           <span className="transition-transform duration-300 group-hover:translate-x-1 text-sm">→</span>
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-[#f2f7f4] border border-black/10 text-[#0d3b2e] hover:bg-black/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest w-full sm:w-auto"
+          className="inline-flex items-center justify-center font-black text-center whitespace-nowrap bg-mist border border-primary/10 text-ink hover:bg-black/5 transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-widest w-full sm:w-auto"
         >
-          Back to Home
+          Back to home
         </Link>
       </div>
     </div>
@@ -81,13 +81,13 @@ export default function Confirm() {
   return (
     <>
       <Header />
-      <main className="bg-[#f2f7f4] pt-28 pb-16 md:pt-36 md:pb-24 min-h-[85vh] flex items-center relative overflow-hidden border-b border-black/6">
+      <main className="bg-neutral-bg pt-32 pb-16 md:pt-44 md:pb-24 min-h-[85vh] flex items-center relative overflow-hidden border-b border-primary/6">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Suspense
             fallback={
               <div className="text-center py-12">
-                <h4 className="text-sm font-black uppercase tracking-wider text-[#0d3b2e]">
-                  Loading Order Confirmation...
+                <h4 className="text-sm font-black uppercase tracking-wider text-ink">
+                  Loading order confirmation...
                 </h4>
               </div>
             }

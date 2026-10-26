@@ -7,6 +7,8 @@ import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import HowItWorks from "@/components/HowItWorks";
+import { siteConfig, trialDays } from "@/lib/brandIcon";
 
 export default function ShopPage() {
   return (
@@ -14,13 +16,14 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Complete Catalog"
-          title={<>The Athlete Apparel Collection</>}
-          subtitle="Explore pro-grade compression baselayers, double-knit technical training hoodies, and zoned performance crew socks."
-          image="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1600&q=80"
-          currentLabel="Apparel"
+          eyebrow="Shop all"
+          title={<>The training collection</>}
+          subtitle={`Compression baselayers, zip training hoodies and cushioned crew socks. Free ${siteConfig.shippingCarrier} shipping and ${trialDays}-day returns on every order.`}
+          image="/img/herosection3.jpg"
+          currentLabel="Shop"
         />
-        <ProductGrid />
+        <ProductGrid showHeading={false} />
+        <HowItWorks />
       </main>
       <Footer />
       <CartDrawer />

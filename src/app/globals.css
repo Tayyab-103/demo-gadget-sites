@@ -7,11 +7,22 @@
   --color-secondary-text: var(--secondary-text-color);
   --color-neutral-bg: var(--neutral-bg-color);
   --color-neutral-text: var(--neutral-text-color);
+
+  /* Derived tokens — everything follows config/site-config.json */
+  --color-ink: var(--neutral-text-color);
+  --color-paper: var(--neutral-bg-color);
+  --color-muted: color-mix(in srgb, var(--neutral-text-color) 68%, var(--neutral-bg-color));
+  --color-faint: color-mix(in srgb, var(--neutral-text-color) 45%, var(--neutral-bg-color));
+  --color-line: color-mix(in srgb, var(--neutral-text-color) 11%, var(--neutral-bg-color));
+  --color-surface: color-mix(in srgb, var(--secondary-color) 14%, var(--neutral-bg-color));
+  --color-sun: color-mix(in srgb, var(--primary-color) 22%, var(--neutral-bg-color));
+  /* Darkened yellow — readable for small accent text on white */
+  --color-primary-deep: color-mix(in srgb, var(--primary-color) 46%, #2a1c00);
+
   --font-sans: var(--font-family);
-  --font-serif: var(--font-playfair-display);
+  --font-display: var(--font-family);
 }
 
-/* Base Styles */
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -19,154 +30,246 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6rem;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   body {
     background-color: var(--neutral-bg-color);
     color: var(--neutral-text-color);
-    font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+    font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
-    letter-spacing: 0.01em;
   }
 
-  @keyframes pulseGlow {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.45;
-      transform: scale(1.06);
-    }
+  ::selection {
+    background: var(--secondary-color);
+    color: var(--neutral-text-color);
   }
+}
 
-  @keyframes floatSlow {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-6px);
-    }
-  }
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
 
-  @keyframes shimmerGold {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes sunSpin {
+  to { transform: rotate(360deg); }
 }
 
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: var(--neutral-bg-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--primary-color) 20%, transparent);
+  background: color-mix(in srgb, var(--primary-color) 70%, transparent);
   border-radius: 999px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary-color);
+
+/* Inside a layer so Tailwind utilities can still override these */
+@layer components {
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: var(--color-sun);
+    color: var(--color-ink);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    max-width: 100%;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 30%, transparent);
+    flex-shrink: 0;
+  }
+
+  /* Highlighter-pen marker behind heading words */
+  .hl {
+    background-image: linear-gradient(100deg, var(--secondary-color), var(--primary-color));
+    background-repeat: no-repeat;
+    background-size: 100% 42%;
+    background-position: 0 88%;
+    padding: 0 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  }
+
+  .bg-sunny-wash {
+    background-image:
+      radial-gradient(ellipse 60% 55% at 85% 10%, color-mix(in srgb, var(--primary-color) 32%, transparent), transparent 70%),
+      radial-gradient(ellipse 50% 45% at 0% 100%, color-mix(in srgb, var(--secondary-color) 45%, transparent), transparent 70%),
+      linear-gradient(180deg, var(--neutral-bg-color), color-mix(in srgb, var(--secondary-color) 12%, var(--neutral-bg-color)));
+  }
+
+  /* Notebook graph-paper grid */
+  .grid-paper {
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--neutral-text-color) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--neutral-text-color) 6%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Ruled notepad lines */
+  .ruled {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 27px,
+      color-mix(in srgb, var(--neutral-text-color) 12%, transparent) 27px,
+      color-mix(in srgb, var(--neutral-text-color) 12%, transparent) 28px
+    );
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    background-image: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 10px 24px -10px color-mix(in srgb, var(--primary-color) 90%, transparent),
+      inset 0 -2px 0 color-mix(in srgb, var(--neutral-text-color) 10%, transparent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.15);
+    box-shadow: 0 16px 30px -12px color-mix(in srgb, var(--primary-color) 95%, transparent);
+  }
+
+  .btn-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--neutral-bg-color);
+    background: var(--neutral-text-color);
+    transition: transform 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+  }
+  .btn-dark:hover {
+    transform: translateY(-2px);
+    background: color-mix(in srgb, var(--neutral-text-color) 85%, var(--primary-color));
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.9rem 1.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--neutral-text-color);
+    border: 1.5px solid var(--color-line);
+    background: var(--neutral-bg-color);
+    transition: border-color 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+  }
+  .btn-ghost:hover {
+    border-color: var(--primary-color);
+    background: var(--color-sun);
+  }
+
+  .card {
+    background: var(--neutral-bg-color);
+    border: 1px solid var(--color-line);
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--neutral-text-color) 5%, transparent);
+  }
+
+  .field {
+    display: block;
+    width: 100%;
+    border-radius: 0.9rem;
+    border: 1.5px solid var(--color-line);
+    background: var(--neutral-bg-color);
+    color: var(--neutral-text-color);
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .field::placeholder {
+    color: var(--color-faint);
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-color) 25%, transparent);
+  }
+
+  /* Strip of tape for pinned photo cards */
+  .tape {
+    position: absolute;
+    width: 84px;
+    height: 24px;
+    background: color-mix(in srgb, var(--secondary-color) 75%, transparent);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--neutral-text-color) 12%, transparent);
+    z-index: 2;
+  }
+
+  .float-slow {
+    animation: floatY 6s ease-in-out infinite;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+  }
+
+  .spin-slow {
+    animation: sunSpin 40s linear infinite;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-/* Luxury Editorial Eyebrow */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--secondary-color);
-  max-width: 100%;
-}
-.eyebrow::before {
-  content: "";
-  width: 18px;
-  height: 1.5px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-}
-.eyebrow::after {
-  content: "";
-  width: 18px;
-  height: 1.5px;
-  background: var(--secondary-color);
-  flex-shrink: 0;
-}
-
-.eyebrow-invert {
-  color: var(--secondary-color);
-}
-.eyebrow-invert::before {
-  background: var(--secondary-color);
-}
-.eyebrow-invert::after {
-  background: var(--secondary-color);
-}
-
-/* Dynamic Ambient Warm Gold Glow */
-.glow-bg {
-  width: min(550px, 90vw);
-  height: min(550px, 90vw);
-  background: radial-gradient(circle, color-mix(in srgb, var(--secondary-color) 25%, transparent) 0%, color-mix(in srgb, var(--secondary-color) 8%, transparent) 50%, transparent 75%);
-  filter: blur(90px);
-  border-radius: 50%;
-  animation: pulseGlow 10s ease-in-out infinite;
-  max-width: 100%;
-}
-
-/* Luxury Glass Cards */
-.glass-card {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(197, 160, 89, 0.2);
-}
-
-.glass-card-dark {
-  background: color-mix(in srgb, var(--primary-color) 95%, transparent);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(197, 160, 89, 0.25);
-}
-
-/* Gold border accent & foil effect */
-.gold-border {
-  border-color: rgba(197, 160, 89, 0.35);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9B783E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Hide scrollbar for carousels while keeping native scroll/drag */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Parchment subtle texture background */
-.parchment-pattern {
-  background-color: var(--neutral-bg-color);
-  background-image: radial-gradient(color-mix(in srgb, var(--secondary-color) 12%, transparent) 1px, transparent 1px);
-  background-size: 28px 28px;
+@media (prefers-reduced-motion: reduce) {
+  .float-slow, .marquee-track, .spin-slow {
+    animation: none;
+  }
 }

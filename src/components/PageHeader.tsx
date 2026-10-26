@@ -13,38 +13,29 @@ interface PageHeaderProps {
 
 export default function PageHeader({ eyebrow, title, subtitle, image, currentLabel }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-[#121820] text-[#FAF8F5] pt-28 pb-14 sm:pt-32 sm:pb-16 md:pt-40 md:pb-20 border-b border-[#C5A059]/30">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: `url('${image}')` }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#121820] via-[#121820]/80 to-[#121820]/60" />
+    <section className="relative overflow-hidden bg-sunny-wash pt-36 pb-14 sm:pt-40 sm:pb-20">
+      <div className="absolute inset-0 grid-paper opacity-70 pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-3.5 sm:mb-4 flex items-center justify-center gap-2 text-[0.68rem] font-serif uppercase tracking-widest text-[#FAF8F5]/60">
-          <Link href="/" className="hover:text-[#C5A059] transition-colors">Home</Link>
-          <span aria-hidden="true">/</span>
-          <span className="text-[#C5A059]">{currentLabel}</span>
-        </nav>
-
-        {/* Eyebrow Tag */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/15 border border-[#C5A059]/40 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3.5 sm:mb-4">
-          <span>✦</span>
-          {eyebrow}
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <div className="md:col-span-7">
+          <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-2 text-sm text-muted">
+            <Link href="/" className="hover:text-ink transition-colors">Home</Link>
+            <span aria-hidden="true">/</span>
+            <span className="font-semibold text-ink">{currentLabel}</span>
+          </nav>
+          <span className="eyebrow mb-5">{eyebrow}</span>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.05]">
+            {title}
+          </h1>
+          {subtitle && <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-muted">{subtitle}</p>}
         </div>
 
-        {/* Title */}
-        <h1 className="mx-auto max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#FAF8F5] leading-tight">
-          {title}
-        </h1>
-
-        {subtitle && (
-          <p className="mx-auto mt-3.5 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-[#FAF8F5]/80 font-normal">
-            {subtitle}
-          </p>
-        )}
+        <div className="hidden md:block md:col-span-5">
+          <div className="relative rotate-2 rounded-[1.75rem] bg-paper p-2.5 shadow-2xl ring-1 ring-line">
+            <span className="tape -top-3 left-8 -rotate-6" />
+            <img src={image} alt="" className="h-64 lg:h-72 w-full rounded-[1.3rem] object-cover" />
+          </div>
+        </div>
       </div>
     </section>
   );

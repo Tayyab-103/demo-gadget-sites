@@ -2,85 +2,157 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Fountain Pen & Archival Ink Suite",
-    "description": "Handcrafted with solid burnished brass and hand-turned resin, featuring an 18k gold-plated German iridium-tipped nib for seamless ink flow. Includes a precision piston ink converter, three archival noir ink cartridges, and a velvet-lined collector box. Engineered for effortless calligraphic precision and enduring daily prose.",
+    "name": "Fountain Pen & Ink Bottle Set",
+    "description": "A smooth-writing fountain pen paired with a glass bottle of deep black ink. The steel nib glides across everyday paper, and the included converter lets you refill straight from the bottle \u2014 no cartridges to run out of. A simple, refillable upgrade for notes, letters and signatures at your desk.",
     "image": "/img/products/fountain-pen.jpg",
     "images": [
       "/img/products/fountain-pen.jpg",
       "/img/products/fountain-pen-2.jpg",
-      "/img/products/fountain-pen-3.jpg"
+      "/img/products/fountain-pen-3-web.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Fine Writing Instruments",
+    "category": "Pens & Ink",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 6.95 },
-      { "quantity": 2, "price": 9.95 },
-      { "quantity": 3, "price": 12.79 },
-      { "quantity": 4, "price": 16.95 },
-      { "quantity": 5, "price": 18.27 },
-      { "quantity": 6, "price": 21.97 },
-      { "quantity": 7, "price": 24.95 },
-      { "quantity": 8, "price": 34.95 }
+      {
+        "quantity": 1,
+        "price": 6.95
+      },
+      {
+        "quantity": 2,
+        "price": 9.95
+      },
+      {
+        "quantity": 3,
+        "price": 12.79
+      },
+      {
+        "quantity": 4,
+        "price": 16.95
+      },
+      {
+        "quantity": 5,
+        "price": 18.27
+      },
+      {
+        "quantity": 6,
+        "price": 21.97
+      },
+      {
+        "quantity": 7,
+        "price": 24.95
+      },
+      {
+        "quantity": 8,
+        "price": 34.95
+      }
     ]
   },
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "Leather Bound Journal",
-    "description": "Bound by master artisans in vegetable-tanned full-grain leather that burnishes beautifully over years of use. Houses 240 numbered pages of 160 GSM milled archival cotton paper, completely bleedproof against wet fountain pen inks, watercolors, and dip pens. Features Smythe-sewn lay-flat binding, dual silk ribbon bookmarks, and an expandable back pocket.",
+    "name": "Wrap-Tie Writing Journal",
+    "description": "A soft-cover journal with a wrap-around tie that keeps your pages closed in a bag or on the go. Inside are smooth, lined pages for meeting notes, to-do lists, sketches or daily journaling. Lightweight, easy to carry and made to be used every single day.",
     "image": "/img/products/journal.jpg",
     "images": [
       "/img/products/journal.jpg",
       "/img/products/journal-2.jpg",
-      "/img/products/journal-3.jpg"
+      "/img/products/journal-3-web.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Artisanal Journals",
+    "category": "Notebooks & Journals",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 11.95 },
-      { "quantity": 2, "price": 17.32 },
-      { "quantity": 3, "price": 22.95 },
-      { "quantity": 4, "price": 29.97 },
-      { "quantity": 5, "price": 31.72 },
-      { "quantity": 6, "price": 38.97 },
-      { "quantity": 7, "price": 41.95 },
-      { "quantity": 8, "price": 54.95 }
+      {
+        "quantity": 1,
+        "price": 11.95
+      },
+      {
+        "quantity": 2,
+        "price": 17.32
+      },
+      {
+        "quantity": 3,
+        "price": 22.95
+      },
+      {
+        "quantity": 4,
+        "price": 29.97
+      },
+      {
+        "quantity": 5,
+        "price": 31.72
+      },
+      {
+        "quantity": 6,
+        "price": 38.97
+      },
+      {
+        "quantity": 7,
+        "price": 41.95
+      },
+      {
+        "quantity": 8,
+        "price": 54.95
+      }
     ]
   },
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Stationery Set",
-    "description": "A practical and stylish notebook and writing set designed for students, professionals, and everyday use, offering essential tools for note-taking and organization.",
+    "name": "Notebook & Pen Desk Gift Set",
+    "description": "Everything for an organized desk in one box: a hard-cover notebook, a matching pen and a tidy presentation case. Great for new jobs, students, teachers and anyone setting up a home office \u2014 and ready to give as a gift straight out of the box.",
     "image": "/img/products/stationery-set.jpg",
     "images": [
       "/img/products/stationery-set.jpg",
       "/img/products/stationery-set-2.jpg",
-      "/img/products/stationery-set-3.jpg"
+      "/img/products/stationery-set-3-web.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Stationery Set",
+    "category": "Stationery Sets",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",
     "bundles": [
-      { "quantity": 1, "price": 14.95 },
-      { "quantity": 2, "price": 21.95 },
-      { "quantity": 3, "price": 29.72 },
-      { "quantity": 4, "price": 37.95 },
-      { "quantity": 5, "price": 42.55 },
-      { "quantity": 6, "price": 52.79 },
-      { "quantity": 7, "price": 59.95 },
-      { "quantity": 8, "price": 76.65 }
+      {
+        "quantity": 1,
+        "price": 14.95
+      },
+      {
+        "quantity": 2,
+        "price": 21.95
+      },
+      {
+        "quantity": 3,
+        "price": 29.72
+      },
+      {
+        "quantity": 4,
+        "price": 37.95
+      },
+      {
+        "quantity": 5,
+        "price": 42.55
+      },
+      {
+        "quantity": 6,
+        "price": 52.79
+      },
+      {
+        "quantity": 7,
+        "price": 59.95
+      },
+      {
+        "quantity": 8,
+        "price": 76.65
+      }
     ]
   }
 ]

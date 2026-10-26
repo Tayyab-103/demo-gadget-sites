@@ -1,11 +1,12 @@
 {
   "Product": "Stationery, Office Supplies",
-  "Processor": "Synovus APPs",
-  "brandName": "Quillhaven Stationery House",
-  "websiteUrl": "QuillhavenStationeryHouse.com",
-  "email": "support@QuillhavenStationeryHouse.com",
-  "descriptor": "QuillhavenStationeryHo",
-  "corpName": "Starpath Marketing Co",
+  "mcc": "5943",
+  "Processor": "EMS BMO",
+  "brandName": "Bright Desk Office Supply Store",
+  "websiteUrl": "brightdeskofficesupplystore.com",
+  "email": "support@brightdeskofficesupplystore.com",
+  "descriptor": "BrightDeskOfficeSupp",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#121820",
-    "primaryTextColor": "#FFFFFF",
-    "secondaryColor": "#C5A059",
-    "secondaryTextColor": "#FFFFFF",
-    "neutralBgColor": "#FAF8F5",
-    "neutralTextColor": "#1A202C",
-    "fontFamily": "Playfair Display"
+    "primaryColor": "#FFBE0B",
+    "primaryTextColor": "#1F1B12",
+    "secondaryColor": "#FFE372",
+    "secondaryTextColor": "#1F1B12",
+    "neutralBgColor": "#FFFFFF",
+    "neutralTextColor": "#1F1D18",
+    "fontFamily": "Poppins"
   }
 }

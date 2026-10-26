@@ -2,182 +2,125 @@
 
 import React, { useState } from "react";
 
-interface TestimonialItem {
-  id: string;
-  statNumber: string;
-  statLabel: string;
-  statFootnote?: string;
+interface Review {
   quote: string;
-  authorName: string;
-  authorRole: string;
-  authorAvatar: string;
-  organization: string;
+  name: string;
+  role: string;
+  product: string;
 }
 
-const testimonialsData: TestimonialItem[] = [
+const reviews: Review[] = [
   {
-    id: "01",
-    statNumber: "96%",
-    statLabel: "Patrons reporting zero bleed or ghosting across wet inks³",
     quote:
-      "The paper handles wet fountain pen ink without any ghosting. The 180° flat binding makes drafting daily manuscripts effortless... easy to use for hours.",
-    authorName: "Julian Vance",
-    authorRole: "Architect & Author, Austin Design Guild",
-    authorAvatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80",
-    organization: "Austin Design Guild",
+      "I keep the wrap journal in my work bag and it's become my go-to for meeting notes. The tie keeps it closed and the pages are lovely to write on.",
+    name: "Priya S.",
+    role: "Project coordinator",
+    product: "Wrap-Tie Writing Journal",
   },
   {
-    id: "02",
-    statNumber: "160 GSM",
-    statLabel: "Milled archival cotton paper with smooth capillary ink flow¹",
     quote:
-      "The German iridium nib glides cleanly with no scratching or skipping. Having both a piston converter and archival cartridges makes it my daily writer.",
-    authorName: "Marcus Henderson",
-    authorRole: "Technical Writer & Calligrapher",
-    authorAvatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
-    organization: "Scribe Collective",
+      "First fountain pen I've owned. Filling it from the bottle was easier than I expected and it writes smoothly on regular printer paper too.",
+    name: "Daniel R.",
+    role: "High-school teacher",
+    product: "Fountain Pen & Ink Bottle Set",
   },
   {
-    id: "03",
-    statNumber: "88%",
-    statLabel: "Patrons who made this their exclusive daily journal & desk suite²",
     quote:
-      "The full-grain leather cover is aging into a deep caramel patina. It opens completely flat on the desk, making morning reflection a genuine ritual.",
-    authorName: "Evelyn Reed",
-    authorRole: "Essayist & Creative Director",
-    authorAvatar:
-      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=150&q=80",
-    organization: "Patron Scribes",
+      "Bought the gift set for my sister's first office job. It arrived in the case, well packed, and looked great without any extra wrapping.",
+    name: "Monica L.",
+    role: "Gift shopper",
+    product: "Notebook & Pen Desk Gift Set",
   },
   {
-    id: "04",
-    statNumber: "100%",
-    statLabel: "Solid brass casting and Smyth-sewn archival durability standard⁴",
     quote:
-      "The solid brass weight feels substantial on the desk without being bulky. A rare example of stationery made to last years rather than months.",
-    authorName: "David Chen",
-    authorRole: "Managing Partner & Collector",
-    authorAvatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
-    organization: "Atelier Executive",
+      "My home-office desk finally feels organized. Delivery was quick and when I had a question about my order, support answered the same day.",
+    name: "James K.",
+    role: "Remote accountant",
+    product: "Notebook & Pen Desk Gift Set",
   },
 ];
 
+const initials = (name: string) =>
+  name
+    .split(" ")
+    .map((p) => p[0])
+    .join("")
+    .slice(0, 2);
+
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const current = testimonialsData[currentIndex];
+  const [active, setActive] = useState(0);
+  const current = reviews[active];
 
   return (
-    <section
-      className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20"
-      id="testimonials"
-    >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Testimonial Split Component (Matching Reference) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-          
-          {/* LEFT BLOCK: Deep Charcoal & Gold Brand Stat Card */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl bg-gradient-to-br from-[#18202A] to-[#121820] text-[#FAF8F5] border border-[#C5A059]/40 p-7 sm:p-9 md:p-10 shadow-lg transition-all duration-300 relative overflow-hidden">
-            {/* Subtle Gold Ambient Glow */}
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#C5A059]/10 rounded-full blur-2xl pointer-events-none" />
+    <section className="relative py-20 sm:py-24 md:py-28 bg-ink text-paper overflow-hidden" id="testimonials">
+      <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-gradient opacity-25 blur-3xl" aria-hidden="true" />
+      <div className="absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-primary opacity-15 blur-3xl" aria-hidden="true" />
 
-            <div className="relative z-10">
-              {/* Stat Number with Gold Accent */}
-              <div className="text-5xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight text-[#C5A059] mb-6 sm:mb-8 leading-none">
-                {current.statNumber}
-              </div>
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-5">
+          <span className="inline-flex items-center gap-2 rounded-full bg-paper/10 px-3.5 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-primary">
+            Kind words
+          </span>
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]">
+            Notes from <span className="text-primary">happy desks</span>
+          </h2>
+          <p className="mt-4 max-w-md text-paper/70 leading-relaxed">
+            What customers tell us after their supplies arrive — from first notebooks to office gifts.
+          </p>
 
-              {/* Stat Label */}
-              <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#FAF8F5] leading-snug tracking-tight max-w-sm">
-                {current.statLabel}
-              </h3>
-            </div>
-
-            {/* Bottom Dots Navigation for Left Card */}
-            <div className="relative z-10 flex items-center gap-2 mt-8 pt-4">
-              {testimonialsData.map((item, idx) => (
-                <button
-                  key={item.id}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                    currentIndex === idx
-                      ? "w-8 bg-[#C5A059]"
-                      : "w-2.5 bg-white/30 hover:bg-white/60"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
+          <div className="mt-8 flex flex-wrap gap-2">
+            {reviews.map((r, i) => (
+              <button
+                key={r.name}
+                onClick={() => setActive(i)}
+                aria-label={`Show review from ${r.name}`}
+                className={`flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold transition-all cursor-pointer ${
+                  i === active ? "bg-brand-gradient text-primary-text scale-110 shadow-lg" : "bg-paper/10 text-paper/70 hover:bg-paper/20"
+                }`}
+              >
+                {initials(r.name)}
+              </button>
+            ))}
           </div>
-
-          {/* RIGHT BLOCK: Quote + Author Info + Guild Mark */}
-          <div className="lg:col-span-7 flex flex-col justify-between rounded-3xl bg-white border border-[#C5A059]/25 p-7 sm:p-9 md:p-10 shadow-xs">
-            {/* Quote */}
-            <div className="mb-8">
-              <blockquote className="text-base sm:text-lg md:text-xl font-serif text-[#121820] leading-relaxed tracking-tight">
-                &ldquo;{current.quote}&rdquo;
-              </blockquote>
-            </div>
-
-            {/* Bottom Row: Author details on left, Guild mark on right */}
-            <div>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-[#C5A059]/15">
-                {/* Author Info */}
-                <div className="flex items-center gap-3.5">
-                  <img
-                    src={current.authorAvatar}
-                    alt={current.authorName}
-                    className="w-12 h-12 rounded-xl object-cover border border-[#C5A059]/30 shadow-xs flex-shrink-0"
-                  />
-                  <div>
-                    <div className="font-serif font-bold text-sm sm:text-base text-[#121820]">
-                      {current.authorName}
-                    </div>
-                    <div className="text-xs text-[#1A202C]/65 font-normal">
-                      — {current.authorRole}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Organization Emblem */}
-                <div className="flex items-center gap-2 text-right self-start sm:self-center">
-                  <div className="flex flex-col">
-                    <span className="text-xs font-serif font-bold tracking-wider text-[#121820]">
-                      {current.organization}
-                    </span>
-                    <span className="text-[0.62rem] uppercase tracking-widest text-[#C5A059] font-bold">
-                      Verified Patron
-                    </span>
-                  </div>
-                  <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xs font-serif font-bold">
-                    ✦
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Dots Navigation for Right Card */}
-              <div className="flex items-center gap-2 mt-6 pt-2">
-                {testimonialsData.map((item, idx) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setCurrentIndex(idx)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      currentIndex === idx
-                        ? "w-7 bg-[#C5A059]"
-                        : "w-2 bg-[#121820]/20 hover:bg-[#121820]/40"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
         </div>
 
+        <div className="lg:col-span-7">
+          <figure key={active} className="relative rounded-[2rem] bg-brand-gradient p-8 sm:p-12 text-primary-text shadow-2xl">
+            <svg className="absolute right-8 top-8 h-16 w-16 opacity-20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H5.41A1.76 1.76 0 0 1 7.17 9.41V6Zm10 0A5.17 5.17 0 0 0 12 11.17V18h6.83v-6.83h-3.42a1.76 1.76 0 0 1 1.76-1.76V6Z" />
+            </svg>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">On the {current.product}</p>
+            <blockquote className="mt-4 font-display text-xl sm:text-2xl md:text-[1.7rem] font-semibold leading-snug">
+              &ldquo;{current.quote}&rdquo;
+            </blockquote>
+            <figcaption className="mt-8 flex items-center gap-4">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-paper font-bold">
+                {initials(current.name)}
+              </span>
+              <span>
+                <span className="block font-bold">{current.name}</span>
+                <span className="block text-sm opacity-75">{current.role}</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <div className="mt-6 flex items-center justify-end gap-3">
+            <button
+              onClick={() => setActive((active - 1 + reviews.length) % reviews.length)}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-paper/20 hover:bg-paper/10 transition-colors cursor-pointer"
+              aria-label="Previous review"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+            <button
+              onClick={() => setActive((active + 1) % reviews.length)}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-text hover:brightness-105 transition cursor-pointer"
+              aria-label="Next review"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

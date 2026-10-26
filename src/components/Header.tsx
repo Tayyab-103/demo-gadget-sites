@@ -4,12 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
-import siteConfigData from "../../config/site-config.json";
-import productsData from "../../config/products.json";
-import { SiteConfig, Product } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
-const products = productsData as unknown as Product[];
+import { siteConfig, products, firstPrice } from "@/lib/brandIcon";
+import BrandLogo from "@/components/BrandLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -93,56 +89,32 @@ export default function Header() {
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#FAF8F5]/95 backdrop-blur-md shadow-md border-b border-[#C5A059]/25 py-3"
-          : "bg-[#FAF8F5] border-b border-[#C5A059]/15 py-4"
+          ? "bg-paper/90 backdrop-blur-md shadow-[0_8px_30px_-18px_rgba(0,0,0,0.35)] border-b border-line"
+          : "bg-paper/70 backdrop-blur-sm border-b border-transparent"
       }`}
     >
       {/* Top Banner Notice */}
-      <div className="hidden sm:block bg-[#121820] text-[#FAF8F5] py-1 text-center text-[0.68rem] tracking-[0.2em] uppercase font-serif border-b border-[#C5A059]/30">
-        <span className="text-[#C5A059] mr-1.5">✦</span>
-        Handcrafted Archival Stationery &amp; Fine Writing Instruments — Free Express Shipping Over $35
-        <span className="text-[#C5A059] ml-1.5">✦</span>
+      <div className="bg-brand-gradient text-primary-text py-1.5 text-center text-[0.7rem] sm:text-xs font-semibold tracking-wide px-4">
+        {`${siteConfig.shippingCarrier} shipping in ${siteConfig.shippingPeriod} business days · ${siteConfig.trialPeriod}-day trial · Questions? Call ${siteConfig.phone}`}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between mt-1 sm:mt-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
         
         {/* Left: Brand Logo */}
-        <Link href="/" onClick={closeAll} className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>
-          {siteConfig.useImageLogo && siteConfig.logoImage ? (
-            <img
-              src={siteConfig.logoImage}
-              alt={siteConfig.brandName}
-              className="max-h-8 sm:max-h-9 w-auto object-contain"
-            />
-          ) : (
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#121820] border border-[#C5A059] flex items-center justify-center text-[#C5A059] text-base sm:text-lg shadow-sm group-hover:scale-105 transition-transform">
-                ✒
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg sm:text-xl font-bold tracking-tight text-[#121820] font-serif leading-none">
-                  QUILLHAVEN
-                </span>
-                <span className="text-[0.55rem] sm:text-[0.6rem] font-bold uppercase tracking-[0.32em] text-[#C5A059] mt-0.5">
-                  STATIONERY HOUSE
-                </span>
-              </div>
-            </div>
-          )}
+        <Link href="/" onClick={closeAll} className="group" style={{ textDecoration: "none" }}>
+          <BrandLogo />
         </Link>
 
         {/* Center: Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
+        <nav className="hidden md:flex items-center gap-1 rounded-full border border-line bg-paper/80 p-1">
           {navLinks.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`text-xs font-bold uppercase tracking-[0.16em] transition-all duration-200 ${
-                  isActive
-                    ? "text-[#121820] border-b-2 border-[#C5A059] pb-0.5"
-                    : "text-[#1A202C]/75 hover:text-[#121820] hover:border-b-2 hover:border-[#C5A059]/50 pb-0.5"
+                className={`rounded-full px-4 lg:px-5 py-2 text-sm font-medium transition-all duration-200 ${
+                  isActive ? "bg-brand-gradient text-primary-text shadow-sm" : "text-muted hover:text-ink hover:bg-sun"
                 }`}
               >
                 {item.label}
@@ -151,13 +123,13 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Right: Actions (Search, Concierge, Cart, Mobile Menu) */}
+        {/* Right: Actions (Search, Contact, Cart, Mobile Menu) */}
         <div className="flex items-center gap-2 sm:gap-4">
           {/* Search Icon */}
           <button
             onClick={toggleSearch}
-            className="p-2 text-[#121820]/80 hover:text-[#121820] transition-colors cursor-pointer rounded-full hover:bg-[#C5A059]/10"
-            aria-label="Search Stationery"
+            className="p-2 text-ink/80 hover:text-ink transition-colors cursor-pointer rounded-full hover:bg-primary/10"
+            aria-label="Search products"
             aria-expanded={isSearchOpen}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -169,7 +141,7 @@ export default function Header() {
           {/* Contact Support Icon */}
           <Link
             href="/contact"
-            className="hidden sm:flex p-2 text-[#121820]/80 hover:text-[#121820] transition-colors rounded-full hover:bg-[#C5A059]/10"
+            className="hidden sm:flex p-2 text-ink/80 hover:text-ink transition-colors rounded-full hover:bg-primary/10"
             aria-label="Contact Us"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -181,7 +153,7 @@ export default function Header() {
           {/* Cart Bag Icon with Burnished Gold Badge */}
           <button
             onClick={toggleCart}
-            className="relative p-2 text-[#121820]/85 hover:text-[#121820] transition-colors cursor-pointer rounded-full hover:bg-[#C5A059]/10"
+            className="relative p-2 text-ink/85 hover:text-ink transition-colors cursor-pointer rounded-full hover:bg-primary/10"
             aria-label="View Shopping Cart"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -190,11 +162,11 @@ export default function Header() {
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
             {getCartCount() > 0 ? (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#C5A059] text-[#121820] rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-[#FAF8F5] shadow-xs">
+              <span className="absolute -top-0.5 -right-0.5 bg-primary text-ink rounded-full w-[18px] h-[18px] text-[0.62rem] font-bold flex items-center justify-center border border-paper shadow-xs">
                 {getCartCount()}
               </span>
             ) : (
-              <span className="absolute -top-0.5 -right-0.5 bg-[#C5A059]/30 text-[#121820] rounded-full w-[16px] h-[16px] text-[0.55rem] font-bold flex items-center justify-center border border-[#121820]/15">
+              <span className="absolute -top-0.5 -right-0.5 bg-primary/30 text-ink rounded-full w-[16px] h-[16px] text-[0.55rem] font-bold flex items-center justify-center border border-ink/15">
                 0
               </span>
             )}
@@ -203,7 +175,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-[#121820] p-1.5 rounded-lg hover:bg-[#C5A059]/10 transition-colors cursor-pointer"
+            className="md:hidden text-ink p-1.5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
@@ -225,14 +197,14 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-[#C5A059]/20 bg-[#FAF8F5] px-4 py-4 flex flex-col gap-2 shadow-xl">
+        <div className="md:hidden border-t border-primary/20 bg-surface px-4 py-4 flex flex-col gap-2 shadow-xl">
           {navLinks.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={closeAll}
-              className={`font-serif text-sm py-2.5 px-4 rounded-xl transition-all ${
-                pathname === item.href ? "bg-[#121820] text-[#FAF8F5]" : "text-[#121820] hover:bg-[#C5A059]/15"
+              className={`font-display text-sm py-2.5 px-4 rounded-xl transition-all ${
+                pathname === item.href ? "bg-ink text-paper" : "text-ink hover:bg-primary/15"
               }`}
             >
               {item.label}
@@ -243,10 +215,10 @@ export default function Header() {
 
       {/* Search Dropdown Panel */}
       {isSearchOpen && (
-        <div className="border-t border-[#C5A059]/25 bg-[#FAF8F5] px-4 sm:px-6 py-4 shadow-xl">
+        <div className="border-t border-primary/25 bg-surface px-4 sm:px-6 py-4 shadow-xl">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-[#121820]/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-ink/40 absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -255,8 +227,8 @@ export default function Header() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search fountain pens, leather journals, brass desk suites..."
-                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[#C5A059] text-[#121820] bg-white border border-[#C5A059]/30 placeholder-[#121820]/40 font-serif"
+                placeholder="Search pens, journals, gift sets..."
+                className="block w-full pl-11 pr-4 py-3 text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-ink bg-white border border-primary/30 placeholder-ink/40 font-display"
               />
             </div>
 
@@ -270,24 +242,24 @@ export default function Header() {
                         key={product.id}
                         href={`/product/${product.id}`}
                         onClick={closeAll}
-                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-[#C5A059]/10 border border-transparent hover:border-[#C5A059]/20 transition-all bg-white"
+                        className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all bg-white"
                       >
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="w-12 h-12 rounded-xl object-contain p-1 bg-[#FAF8F5] border border-[#C5A059]/20 flex-shrink-0"
+                          className="w-12 h-12 rounded-xl object-contain p-1 bg-surface border border-primary/20 flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <div className="text-xs sm:text-sm font-bold text-[#121820] font-serif truncate">{product.name}</div>
-                          <div className="text-[0.65rem] text-[#C5A059] truncate uppercase font-bold tracking-wider">{product.category}</div>
+                          <div className="text-xs sm:text-sm font-bold text-ink font-display truncate">{product.name}</div>
+                          <div className="text-[0.65rem] text-primary-deep truncate uppercase font-bold tracking-wider">{product.category}</div>
                         </div>
-                        <div className="text-xs sm:text-sm font-bold text-[#121820] flex-shrink-0">${price}</div>
+                        <div className="text-xs sm:text-sm font-bold text-ink flex-shrink-0">${price}</div>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="text-xs text-[#121820]/60 text-center py-4 font-serif">
-                    No fine stationery found for &ldquo;{query}&rdquo;.
+                  <p className="text-xs text-ink/60 text-center py-4 font-display">
+                    No supplies found for &ldquo;{query}&rdquo;.
                   </p>
                 )}
               </div>

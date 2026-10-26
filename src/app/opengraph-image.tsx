@@ -1,14 +1,13 @@
 import { ImageResponse } from "next/og";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
 
 export const alt = siteConfig.brandName;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const { primaryColor, secondaryColor, neutralBgColor, neutralTextColor } = siteConfig.theme;
+
   return new ImageResponse(
     (
       <div
@@ -17,94 +16,34 @@ export default async function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
           justifyContent: "center",
-          background: siteConfig.theme.primaryColor,
+          padding: "0 90px",
+          background: neutralBgColor,
           position: "relative",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: -90,
-            left: -90,
-            width: 320,
-            height: 320,
+            top: -160,
+            right: -120,
+            width: 560,
+            height: 560,
             borderRadius: "50%",
-            background: siteConfig.theme.secondaryColor,
-            opacity: 0.15,
+            background: `linear-gradient(135deg, ${secondaryColor}, ${primaryColor})`,
             display: "flex",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            bottom: -110,
-            right: -70,
-            width: 380,
-            height: 380,
-            borderRadius: "50%",
-            background: siteConfig.theme.secondaryColor,
-            opacity: 0.2,
-            display: "flex",
-          }}
-        />
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            padding: "24px 48px",
-            borderRadius: 999,
-            background: "rgba(255, 255, 255, 0.06)",
-            border: `1px solid ${siteConfig.theme.secondaryColor}`,
-          }}
-        >
-          <div
-            style={{
-              fontSize: 44,
-              color: siteConfig.theme.secondaryColor,
-            }}
-          >
-            ✒
-          </div>
-          <div
-            style={{
-              fontSize: 40,
-              fontWeight: 800,
-              letterSpacing: 2,
-              textTransform: "uppercase",
-              color: "#FAF8F5",
-            }}
-          >
-            {siteConfig.brandName}
-          </div>
+        <div style={{ display: "flex", fontSize: 26, fontWeight: 700, letterSpacing: 4, textTransform: "uppercase", color: neutralTextColor, opacity: 0.6 }}>
+          {siteConfig.Product || "Stationery & Office Supplies"}
         </div>
-
-        <div
-          style={{
-            marginTop: 32,
-            fontSize: 22,
-            fontWeight: 600,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            color: siteConfig.theme.secondaryColor,
-          }}
-        >
-          Artisanal Stationery &amp; Fine Writing Instruments
+        <div style={{ display: "flex", marginTop: 18, fontSize: 84, fontWeight: 800, lineHeight: 1.05, color: neutralTextColor, maxWidth: 820 }}>
+          {siteConfig.brandName}
         </div>
-
-        <div
-          style={{
-            marginTop: 24,
-            width: 140,
-            height: 3,
-            borderRadius: 999,
-            background: siteConfig.theme.secondaryColor,
-            display: "flex",
-          }}
-        />
+        <div style={{ display: "flex", marginTop: 28, width: 220, height: 18, borderRadius: 999, background: `linear-gradient(90deg, ${secondaryColor}, ${primaryColor})` }} />
+        <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: neutralTextColor, opacity: 0.75 }}>
+          Notebooks, pens &amp; desk sets for brighter workdays
+        </div>
       </div>
     ),
     { ...size }

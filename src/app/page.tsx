@@ -29,13 +29,13 @@ export default function Home() {
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
-        {/* About Brand & Austin Heritage */}
+        {/* Brand story */}
         <AboutUs />
 
         {/* Features Showcase */}
         <Features />
 
-        {/* Athlete Testimonials */}
+        {/* Customer reviews */}
         <Testimonials />
 
         {/* Conversion CTA Banner */}

@@ -14,10 +14,10 @@ export default function ShopPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="Signature Atelier Catalog"
-          title={<>The Fine Stationery &amp; Writing Suite</>}
-          subtitle="Explore German-tipped fountain pens, bleedproof milled cotton journals, and hand-cast solid brass desk accessories."
-          image="/img/cta-workspace-banner.jpg"
+          eyebrow="Shop all"
+          title={<>Stationery &amp; office supplies</>}
+          subtitle="Pens and ink, everyday journals and gift-ready desk sets — everything you need for a brighter workspace."
+          image="/img/desk/standard-3.jpg"
           currentLabel="Shop"
         />
         <ProductGrid />

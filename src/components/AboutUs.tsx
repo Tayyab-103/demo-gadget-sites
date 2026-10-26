@@ -1,84 +1,61 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
+import { siteConfig, trialDays } from "@/lib/brandIcon";
 
-const siteConfig = siteConfigData as unknown as SiteConfig;
-
-const metrics = [
-  { value: "15,000+", label: "Creators & Executives" },
-  { value: "160 GSM", label: "Zero-Bleed Archival Cotton" },
-  { value: "14-Day", label: "Studio Practice Guarantee" },
-  { value: "4.9★", label: "Master Calligrapher Rating" },
+const facts = [
+  { value: `${trialDays} days`, label: "to try your order at home" },
+  { value: `${siteConfig.shippingPeriod} days`, label: `tracked ${siteConfig.shippingCarrier} delivery` },
+  { value: "1–2 days", label: "to pack and ship orders" },
+  { value: "Real people", label: "answering every message" },
 ];
 
 export default function AboutUs() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#FAF8F5] text-[#121820] border-t border-[#C5A059]/20" id="about">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          {/* Left Column: Narrative & Metrics */}
-          <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/30 text-[0.68rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] mb-3">
-              <span>✦</span>
-              The Atelier Heritage &amp; Craft
-            </span>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#121820] leading-[1.15] tracking-tight mb-4 sm:mb-5">
-              Preserving The Art <br />
-              <span className="text-[#C5A059] italic font-normal">Of Timeless Thought</span>
-            </h2>
-
-            <p className="text-[#1A202C]/75 text-xs sm:text-sm md:text-base leading-relaxed font-normal mb-7 sm:mb-8 max-w-lg">
-              At {siteConfig.brandName}, we believe great ideas deserve heirloom vessels. Based in Austin, Texas, our atelier crafts fine writing instruments, Smyth-sewn leather journals, and architectural desk accessories designed to inspire deep focus, elegant prose, and enduring clarity.
-            </p>
-
-            {/* Metrics Cards Grid */}
-            <div className="grid grid-cols-2 gap-3.5 sm:gap-4 w-full max-w-md mb-7 sm:mb-8">
-              {metrics.map((m) => (
-                <div
-                  key={m.label}
-                  className="rounded-2xl border border-[#C5A059]/25 bg-white p-4 sm:p-5 text-left shadow-xs"
-                >
-                  <div className="text-2xl sm:text-3xl font-serif font-bold text-[#121820]">
-                    {m.value}
-                  </div>
-                  <div className="text-[0.65rem] sm:text-[0.7rem] font-bold uppercase tracking-wider text-[#C5A059] mt-1">
-                    {m.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <Link
-              href="/shop"
-              className="inline-flex items-center justify-center font-bold uppercase tracking-[0.14em] text-[#121820] text-xs sm:text-sm bg-[#C5A059] hover:bg-[#D4AF37] transition-all duration-200 py-3.5 px-8 rounded-full shadow-md text-center hover:scale-105 w-full sm:w-auto"
-            >
-              Shop All Products →
-            </Link>
+    <section className="py-20 sm:py-24 md:py-28 bg-paper overflow-hidden" id="about">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+        {/* Photo stack */}
+        <div className="lg:col-span-6 relative h-[440px] sm:h-[520px]">
+          <div className="absolute left-0 top-0 h-[78%] w-[70%] overflow-hidden rounded-[2rem] shadow-2xl">
+            <img src="/img/desk/heritage1.jpg" alt="Person opening a wrap journal" className="h-full w-full object-cover" />
           </div>
-
-          {/* Right Column: Large Campaign Photograph */}
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[5/4] w-full overflow-hidden rounded-3xl bg-black/5 shadow-xl border border-[#C5A059]/30">
-              <Image
-                src="/img/heritage1.jpg"
-                alt={`${siteConfig.brandName} master bookbinding and stationery craftsmanship in Austin, Texas`}
-                fill
-                sizes="(max-width: 1024px) 100vw, 800px"
-                className="object-cover object-center"
-                priority
-              />
-            </div>
+          <div className="absolute bottom-0 right-0 h-[56%] w-[58%] overflow-hidden rounded-[2rem] border-[6px] border-paper shadow-2xl">
+            <img src="/img/desk/cta1.jpg" alt="Notebooks, scissors and paper clips arranged on a desk" className="h-full w-full object-cover" />
           </div>
-
+          <div className="float-slow absolute left-[52%] top-6 sm:top-10 -translate-x-1/2 whitespace-nowrap rounded-2xl bg-brand-gradient px-5 py-4 text-primary-text shadow-xl rotate-3">
+            <p className="font-display text-sm font-bold">Made for everyday work</p>
+            <p className="text-xs opacity-80">notebooks · pens · desk sets</p>
+          </div>
         </div>
 
+        {/* Story */}
+        <div className="lg:col-span-6">
+          <span className="eyebrow mb-5">Our story</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-ink leading-[1.1]">
+            We think a good desk <span className="hl">changes your day</span>
+          </h2>
+          <p className="mt-5 text-muted leading-relaxed">
+            {`${siteConfig.brandName} started with a simple idea: the tools you touch every day should be a pleasure to use. A pen that writes smoothly, a notebook that's always within reach, a set that turns a blank desk into a workspace.`}
+          </p>
+          <p className="mt-4 text-muted leading-relaxed">
+            So we keep our range small and practical — supplies for students, home-office workers, teachers and anyone who still loves putting ideas on paper. Clear prices, honest descriptions and friendly help when you need it.
+          </p>
+
+          <dl className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+            {facts.map((f) => (
+              <div key={f.label} className="rounded-2xl border border-line bg-surface p-4 sm:p-5">
+                <dt className="font-display text-xl sm:text-2xl font-bold text-ink">{f.value}</dt>
+                <dd className="mt-1 text-xs sm:text-sm text-muted">{f.label}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Link href="/shop" className="btn-primary">Browse the shop</Link>
+            <Link href="/contact" className="btn-ghost">Say hello</Link>
+          </div>
+        </div>
       </div>
     </section>
   );

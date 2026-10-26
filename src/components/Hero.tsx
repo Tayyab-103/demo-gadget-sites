@@ -2,215 +2,152 @@
 
 import React from "react";
 import Link from "next/link";
-import { useCart } from "@/context/CartContext";
-import productsData from "../../config/products.json";
-import { Product } from "@/types";
+import { siteConfig, trialDays } from "@/lib/brandIcon";
 
-const products = productsData as unknown as Product[];
+const todo = [
+  { label: "Plan the week", done: true },
+  { label: "Refill the pen pot", done: true },
+  { label: "New notebook", done: false },
+];
+
+const ticker = [
+  "Notebooks",
+  "Journals",
+  "Fountain Pens",
+  "Bottled Ink",
+  "Gift Sets",
+  "Desk Essentials",
+  "Note-Taking",
+  "Home Office",
+];
+
+const CheckIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
 
 export default function Hero() {
-  const { addToCart } = useCart();
-  const product1 = products[0];
-
-  const handleQuickAddPen = () => {
-    if (product1) {
-      const firstBundle = product1.bundles?.[0];
-      const price = firstBundle ? String(firstBundle.price) : product1.ssPrice;
-      addToCart(product1, 1, price, "Single Unit");
-    }
-  };
+  const perks = [
+    `Ships via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days`,
+    `${trialDays}-day trial on every order`,
+    "Friendly support from real people",
+  ];
 
   return (
-    <section className="relative w-full bg-[#FAF8F5] text-[#121820] pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden border-b border-[#C5A059]/20">
-      
-      {/* Background Ambient Warmth */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#C5A059]/10 rounded-full blur-3xl" />
-      </div>
+    <section className="relative overflow-hidden bg-sunny-wash pt-32 sm:pt-36 lg:pt-40">
+      <div className="absolute inset-0 grid-paper opacity-70 pointer-events-none" aria-hidden="true" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* LEFT COLUMN: Editorial Typography & CTAs (Granola-inspired) */}
-          <div className="lg:col-span-6 flex flex-col items-start z-10">
-            
-            {/* Top Badge */}
-            <Link
-              href="/shop"
-              className="group inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-[#EFE9DF] border border-[#C5A059]/30 hover:border-[#C5A059] transition-all duration-200 mb-6 sm:mb-8 text-xs text-[#121820]"
-            >
-              <span className="px-2 py-0.5 rounded-full bg-[#C5A059] text-[#121820] font-bold text-[0.68rem] tracking-wide uppercase">
-                New
-              </span>
-              <span className="font-serif font-semibold text-xs tracking-tight">
-                Austin Atelier Autumn Suite
-              </span>
-              <span className="text-[#C5A059] group-hover:translate-x-0.5 transition-transform duration-200 font-bold">
-                →
-              </span>
-            </Link>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center pb-16 sm:pb-20 lg:pb-24">
+          {/* Copy */}
+          <div className="lg:col-span-6 relative z-10">
+            <span className="eyebrow mb-6">{siteConfig.Product || "Stationery & Office Supplies"}</span>
 
-            {/* Giant Editorial Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.75rem] font-serif font-bold text-[#121820] leading-[1.05] tracking-tight mb-6">
-              The artisanal <br />
-              notepad for <br />
-              visionary <br />
-              thinkers
+            <h1 className="font-display font-bold text-ink tracking-tight leading-[1.04] text-[2.6rem] sm:text-6xl lg:text-[4.4rem]">
+              Make every desk a <span className="hl">bright</span> desk.
             </h1>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg md:text-xl text-[#121820]/75 font-serif leading-relaxed mb-8 max-w-lg">
-              Words, sketches, and daily rituals. <br />
-              Without bleed or ghosting.
+            <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted">
+              Good work starts with good tools. {siteConfig.brandName} gathers the notebooks, pens and desk
+              essentials that make lists easier to keep, ideas easier to catch and Mondays a little more cheerful.
             </p>
 
-            {/* CTA Button Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-7 w-full sm:w-auto">
-              <Link
-                href="/shop"
-                className="inline-flex items-center justify-center gap-2 font-bold text-xs sm:text-sm uppercase tracking-wider bg-[#2A3B2B] hover:bg-[#1E2B1F] text-[#FAF8F5] transition-all duration-200 py-4 px-8 rounded-full shadow-lg hover:scale-105 text-center cursor-pointer"
-              >
-                Shop Collection
-                <span className="text-base leading-none">↓</span>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link href="/shop" className="btn-primary">
+                Explore the shop
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
               </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center font-serif text-xs sm:text-sm border border-[#C5A059]/60 text-[#121820] hover:bg-[#C5A059]/15 transition-all duration-200 py-4 px-7 rounded-full text-center"
-              >
-                About Us
+              <Link href="/#how-it-works" className="btn-ghost">
+                How ordering works
               </Link>
             </div>
 
-            {/* Trust Checkmark Line */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-[#121820]/70 font-normal">
-              <span className="flex items-center justify-center w-4 h-4 rounded-full border border-[#C5A059] text-[#C5A059] text-[0.65rem] font-bold">
-                ✓
-              </span>
-              <span>160 GSM Bleedproof Milled Cotton &amp; 18k German Iridium Nibs</span>
-            </div>
-
-          </div>
-
-          {/* RIGHT COLUMN: Atelier Manuscript Showcase */}
-          <div className="lg:col-span-6 relative flex items-center justify-center pt-6 lg:pt-0">
-            
-            {/* Background Layer 1: Angled Parchment Slate */}
-            <div className="absolute -top-5 -right-2 sm:right-4 w-72 sm:w-84 h-96 sm:h-[450px] bg-[#EAE3D5] rounded-3xl -rotate-6 opacity-70 border border-[#C5A059]/30 shadow-md pointer-events-none" />
-            
-            {/* Background Layer 2: Milled Cotton Green Texture Backing */}
-            <div className="absolute -bottom-6 -left-2 sm:left-4 w-64 sm:w-76 h-80 sm:h-[380px] bg-[#8FA782]/20 rounded-3xl rotate-3 border border-[#8FA782]/35 shadow-md pointer-events-none" />
-
-            {/* Main Manuscript Card */}
-            <div className="relative w-full max-w-[480px] bg-white rounded-3xl border border-[#C5A059]/35 shadow-2xl p-6 sm:p-7 text-[#121820] z-20 transition-all duration-300">
-              
-              {/* Header: Atelier Wax Stamp & Serial */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#C5A059]/20 mb-5">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#C5A059]/15 border border-[#C5A059] flex items-center justify-center text-[#C5A059] text-xs font-serif font-bold">
-                    ✒
-                  </div>
-                  <div>
-                    <div className="text-[0.62rem] font-serif uppercase tracking-[0.24em] text-[#C5A059] font-bold">
-                      Atelier Specimen № 184
-                    </div>
-                    <div className="text-xs font-serif font-bold text-[#121820]">
-                      Austin Studio Manuscript
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[0.65rem] font-bold text-[#121820]/60 uppercase tracking-wider">
-                    In Stock
+            <ul className="mt-9 grid gap-3 text-sm text-ink">
+              {perks.map((perk) => (
+                <li key={perk} className="flex items-center gap-3">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand-gradient text-primary-text shadow-sm">
+                    <CheckIcon />
                   </span>
-                </div>
-              </div>
-
-              {/* Manuscript Written Excerpt */}
-              <div className="relative p-5 rounded-2xl bg-[#FAF8F5] border border-[#C5A059]/25 mb-5 overflow-hidden">
-                {/* Decorative background watermark */}
-                <div className="absolute right-2 bottom-1 text-5xl font-serif text-[#C5A059]/10 select-none pointer-events-none font-bold">
-                  Quillhaven
-                </div>
-
-                <div className="flex items-center justify-between text-[0.62rem] font-serif uppercase tracking-wider text-[#121820]/50 mb-2">
-                  <span>Drafting Record · 160 GSM</span>
-                  <span>Carbon Noir</span>
-                </div>
-
-                <blockquote className="text-sm sm:text-base font-serif italic leading-relaxed text-[#121820]">
-                  &ldquo;To write by hand is to deliberate with time. Every drop of pigment caught in milled cotton preserves thought in enduring permanence.&rdquo;
-                </blockquote>
-
-                <div className="mt-3 pt-3 border-t border-[#C5A059]/15 flex items-center justify-between text-[0.68rem] text-[#121820]/70 font-serif">
-                  <span>160 GSM Milled Cotton Parchment</span>
-                  <span className="text-[#C5A059] font-bold">Zero Bleed Verified ✓</span>
-                </div>
-              </div>
-
-              {/* Craft Integrity Badges */}
-              <div className="grid grid-cols-3 gap-2 pt-2">
-                <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#C5A059]/25 text-center">
-                  <div className="text-[0.65rem] font-serif uppercase tracking-wider text-[#C5A059] font-bold mb-0.5">
-                    Nib
-                  </div>
-                  <div className="text-xs font-serif font-bold text-[#121820]">
-                    18k German
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#C5A059]/25 text-center">
-                  <div className="text-[0.65rem] font-serif uppercase tracking-wider text-[#C5A059] font-bold mb-0.5">
-                    Binding
-                  </div>
-                  <div className="text-xs font-serif font-bold text-[#121820]">
-                    180° Lay-Flat
-                  </div>
-                </div>
-
-                <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#C5A059]/25 text-center">
-                  <div className="text-[0.65rem] font-serif uppercase tracking-wider text-[#C5A059] font-bold mb-0.5">
-                    Origin
-                  </div>
-                  <div className="text-xs font-serif font-bold text-[#121820]">
-                    Austin, TX
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Companion Badge: Fountain Pen Quick View */}
-              <div className="absolute -bottom-7 -right-4 sm:-right-6 w-48 sm:w-56 rounded-2xl bg-[#121820] border border-[#C5A059]/50 shadow-2xl p-3 z-30 flex items-center justify-between text-[#FAF8F5]">
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <img
-                    src="/img/products/fountain-pen.jpg"
-                    alt="Fountain Pen Suite"
-                    className="w-11 h-11 rounded-xl object-contain bg-white p-1 border border-[#C5A059]/30 flex-shrink-0"
-                  />
-                  <div className="min-w-0">
-                    <div className="text-[0.62rem] font-bold text-[#C5A059] uppercase tracking-wider truncate">
-                      Archival Pen Suite
-                    </div>
-                    <div className="text-xs font-serif font-bold truncate">
-                      ${product1?.ssPrice || "6.95"}
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleQuickAddPen}
-                  className="h-8 px-3 rounded-lg bg-[#C5A059] hover:bg-[#D4AF37] text-[#121820] text-[0.65rem] font-bold uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer shadow-sm hover:scale-105"
-                  aria-label="Quick Add Fountain Pen"
-                >
-                  Add +
-                </button>
-              </div>
-
-            </div>
-
+                  {perk}
+                </li>
+              ))}
+            </ul>
           </div>
 
+          {/* Desk collage */}
+          <div className="lg:col-span-6 relative mx-auto w-full max-w-[560px] h-[420px] sm:h-[520px]">
+            {/* Sunburst */}
+            <svg
+              className="spin-slow absolute -top-6 right-2 sm:right-6 w-44 h-44 sm:w-56 sm:h-56 text-primary opacity-80"
+              viewBox="0 0 200 200"
+              aria-hidden="true"
+            >
+              {Array.from({ length: 16 }).map((_, i) => (
+                <rect key={i} x="96" y="6" width="8" height="40" rx="4" fill="currentColor" transform={`rotate(${i * 22.5} 100 100)`} />
+              ))}
+              <circle cx="100" cy="100" r="40" fill="currentColor" />
+            </svg>
+
+            {/* Main photo */}
+            <div className="absolute left-0 sm:left-2 top-8 w-[78%] -rotate-3 rounded-[1.75rem] bg-paper p-2.5 shadow-2xl ring-1 ring-line">
+              <span className="tape -top-3 left-1/2 -translate-x-1/2 rotate-2" />
+              <img
+                src="/img/desk/standard-3.jpg"
+                alt="Flat lay of notebooks, pencils, scissors and desk supplies"
+                className="h-[230px] sm:h-[300px] w-full rounded-[1.3rem] object-cover"
+              />
+            </div>
+
+            {/* Polaroid */}
+            <div className="float-slow absolute right-0 bottom-4 sm:bottom-2 w-[46%] rotate-[5deg] rounded-2xl bg-paper p-2.5 pb-9 shadow-2xl ring-1 ring-line">
+              <span className="tape -top-3 right-5 -rotate-6" />
+              <img
+                src="/img/desk/cta2.jpg"
+                alt="Hand arranging pencils on a tidy white desk"
+                className="h-[150px] sm:h-[200px] w-full rounded-xl object-cover"
+              />
+              <span className="absolute bottom-2.5 left-0 right-0 text-center text-xs font-semibold text-muted">
+                a tidy desk, a clear head
+              </span>
+            </div>
+
+            {/* Sticky note */}
+            <div className="absolute left-3 sm:left-8 bottom-0 w-[52%] sm:w-[46%] -rotate-[4deg] rounded-md bg-brand-gradient p-4 sm:p-5 shadow-xl">
+              <div className="ruled rounded-sm">
+                <p className="font-display text-sm font-bold text-ink leading-[28px]">Today&apos;s list</p>
+                <ul>
+                  {todo.map((item) => (
+                    <li key={item.label} className="flex items-center gap-2 text-[0.78rem] sm:text-sm leading-[28px] text-ink">
+                      <span
+                        className={`flex h-4 w-4 flex-shrink-0 items-center justify-center rounded border-[1.5px] border-ink ${
+                          item.done ? "bg-ink text-paper" : ""
+                        }`}
+                      >
+                        {item.done && <CheckIcon />}
+                      </span>
+                      <span className={`truncate ${item.done ? "line-through opacity-60" : ""}`}>{item.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Category ticker */}
+      <div className="relative border-y border-ink/10 bg-ink py-4 overflow-hidden" aria-hidden="true">
+        <div className="marquee-track">
+          {[...ticker, ...ticker].map((word, i) => (
+            <span key={i} className="flex items-center gap-6 px-6 text-sm sm:text-base font-semibold uppercase tracking-[0.18em] text-paper whitespace-nowrap">
+              {word}
+              <span className="text-primary text-lg">✳</span>
+            </span>
+          ))}
         </div>
       </div>
     </section>

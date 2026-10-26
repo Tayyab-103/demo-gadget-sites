@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Handcrafted luxury ${siteConfig.Product?.toLowerCase() || "stationery & office supplies"}, precision fountain pens, full-grain leather journals, and archival desk essentials for creators and executives.`;
+const siteDescription = `${siteConfig.brandName} is your bright, friendly shop for stationery and office supplies — pens, notebooks, journals and desk sets that make everyday work feel easier. Ships via ${siteConfig.shippingCarrier} in ${siteConfig.shippingPeriod} business days.`;
 
 // Preload fonts
 const poppins = Poppins({
@@ -45,24 +45,22 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+  title: `${siteConfig.brandName} | Stationery & Office Supplies for Bright Workdays`,
   description: siteDescription,
   keywords: [
     "stationery",
     "office supplies",
-    "luxury stationery",
-    "fine writing instruments",
-    "fountain pens",
-    "leather bound journals",
-    "desk accessories",
-    "executive office supplies",
-    "calligraphy set",
-    "archival paper",
-    "Austin stationery atelier",
-    "Quillhaven Stationery House"
+    "notebooks",
+    "journals",
+    "pens",
+    "fountain pen and ink",
+    "stationery gift set",
+    "desk supplies",
+    "home office essentials",
+    siteConfig.brandName,
   ],
   openGraph: {
-    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+    title: `${siteConfig.brandName} | Stationery & Office Supplies for Bright Workdays`,
     description: siteDescription,
     url: siteUrl,
     siteName: siteConfig.brandName,
@@ -70,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brandName} | Artisanal Stationery & Fine Writing Instruments`,
+    title: `${siteConfig.brandName} | Stationery & Office Supplies for Bright Workdays`,
     description: siteDescription,
   },
 };

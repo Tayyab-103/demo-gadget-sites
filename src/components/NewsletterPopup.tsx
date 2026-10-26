@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import siteConfigData from "../../config/site-config.json";
-import { SiteConfig } from "@/types";
-
-const siteConfig = siteConfigData as unknown as SiteConfig;
+import { siteConfig } from "@/lib/brandIcon";
 
 export default function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,75 +63,52 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#121820]/75 backdrop-blur-md z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-[#FAF8F5] rounded-3xl w-full max-w-[500px] border border-[#C5A059]/40 relative flex flex-col overflow-hidden shadow-2xl">
-        {/* Close Button */}
+    <div className="fixed inset-0 bg-ink/60 backdrop-blur-sm z-9999 flex items-center justify-center p-4 sm:p-6">
+      <div className="relative w-full max-w-[460px] overflow-hidden rounded-[1.75rem] bg-paper shadow-2xl">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm border border-[#C5A059]/30 rounded-full w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-[#121820] hover:bg-[#C5A059] hover:text-[#121820] transition-all"
+          className="absolute top-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-paper/90 text-lg text-ink shadow hover:bg-sun transition-colors cursor-pointer"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[190px] relative">
+        <div className="relative h-44 bg-brand-gradient overflow-hidden">
+          <div className="absolute inset-0 grid-paper opacity-60" aria-hidden="true" />
           <img
-            src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=900&q=80"
-            alt="Quillhaven fine stationery craftsmanship"
-            className="w-full h-full object-cover absolute inset-0 opacity-80"
+            src="/img/desk/standard-3.jpg"
+            alt=""
+            className="absolute right-0 top-0 h-full w-1/2 object-cover [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#121820]/50 to-[#121820]/95" />
-
-          <div className="absolute bottom-5 left-6 right-6 text-[#FAF8F5]">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-serif font-bold text-[#C5A059] block mb-1">
-              ✦ Patron Circle Invitation
-            </span>
-            <h3 className="text-2xl font-serif font-bold text-[#FAF8F5] m-0 tracking-tight">
-              Acquire 15% Off Your Next Stationery Order
-            </h3>
+          <div className="relative flex h-full flex-col justify-end p-6 max-w-[60%]">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary-text/70">Desk notes</span>
+            <h3 className="font-display text-2xl font-bold leading-tight text-primary-text">Brighten your inbox</h3>
           </div>
         </div>
 
-        {/* Form Body */}
-        <div className="p-8">
+        <div className="p-6 sm:p-8">
           {submitted ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-[#C5A059] text-[#C5A059] flex items-center justify-center text-xl mx-auto mb-4 font-bold bg-[#C5A059]/10">
-                ✓
-              </div>
-              <h4 className="text-[#121820] font-serif font-bold uppercase text-lg mb-2">Discount Code Activated!</h4>
-              <p className="text-[#1A202C]/70 text-sm font-normal">
-                Check your inbox for your 15% archival stationery discount code.
-              </p>
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-gradient text-xl font-bold text-primary-text">✓</div>
+              <h4 className="font-display text-lg font-bold text-ink">You&apos;re on the list!</h4>
+              <p className="mt-1 text-sm text-muted">Watch your inbox for new arrivals and desk-setup ideas.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-[#1A202C]/75 leading-relaxed mb-6 font-normal">
-                Join the {siteConfig.brandName} patron network. Subscribe today to receive private collection previews, calligraphy guides, and <strong>15% off</strong> your first order.
+              <p className="mb-5 text-sm leading-relaxed text-muted">
+                {`Join the ${siteConfig.brandName} list for new arrivals, back-to-work restocks and simple tips for a tidier desk.`}
               </p>
-
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-5 py-3.5 text-sm border border-[#C5A059]/30 rounded-full focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all text-[#121820] bg-white shadow-xs font-serif"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-[#C5A059] text-[#121820] border border-[#C5A059] hover:bg-[#D4AF37] transition-all duration-300 py-3.5 px-8 rounded-full text-xs uppercase tracking-wider w-full block cursor-pointer shadow-md hover:scale-[1.01]"
-              >
-                Claim 15% Discount
-              </button>
-
-              <span className="block text-center text-[0.68rem] text-[#1A202C]/50 mt-3">
-                No spam. Unsubscribe anytime with a single click.
-              </span>
+              <input
+                type="email"
+                className="field rounded-full"
+                placeholder="you@example.com"
+                aria-label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn-primary mt-3 w-full">Subscribe</button>
+              <span className="mt-3 block text-center text-xs text-faint">No spam. Unsubscribe any time.</span>
             </form>
           )}
         </div>

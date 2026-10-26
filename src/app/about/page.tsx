@@ -18,10 +18,10 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow">
         <PageHeader
-          eyebrow="The Craft &amp; Heritage"
+          eyebrow="About us"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Crafted in Austin, Texas. Dedicated to preserving master bookbinding, bleedproof paper milling, and heirloom writing instruments."
-          image="/img/heritage1.jpg"
+          subtitle="A friendly little shop for notebooks, pens and desk sets — chosen to make everyday work a bit brighter."
+          image="/img/desk/cta1.jpg"
           currentLabel="About"
         />
         <AboutUs />

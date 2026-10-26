@@ -66,76 +66,54 @@ export default function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-9999 flex items-center justify-center p-6 transition-opacity duration-300">
-      <div className="bg-white rounded-xl w-full max-w-[500px] border-2 border-primary relative flex flex-col overflow-hidden">
-        {/* Close Button */}
+    <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/50 p-5 backdrop-blur-sm">
+      <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 bg-white border-2 border-primary/20 rounded-xl w-8 h-8 flex items-center justify-center text-lg cursor-pointer z-10 text-primary hover:border-secondary hover:text-secondary transition-all"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-white/90 text-lg text-ink shadow transition-colors hover:text-primary"
           aria-label="Close newsletter popup"
         >
           &times;
         </button>
 
-        {/* Visual Header */}
-        <div className="h-[180px] relative">
+        <div className="relative h-44">
           <img
-            src="https://images.unsplash.com/photo-1518181835702-6eef8b4b2113?w=900&q=80"
-            alt="Coiled copper wire spool"
-            className="w-full h-full object-cover absolute inset-0"
+            src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=900&q=80"
+            alt="Distribution board fitted with circuit breakers"
+            className="absolute inset-0 h-full w-full object-cover"
           />
-          {/* Transparent Color Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/35 to-primary/85" />
-
+          <div className="bg-brand-gradient absolute inset-0 opacity-80" />
           <div className="absolute bottom-5 left-6 right-6 text-white">
-            <span className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-secondary block mb-1">
-              New Arrivals First
-            </span>
-            <h3 className="text-2xl font-extrabold text-white m-0 tracking-tight">
-              Save 15% Today!
-            </h3>
+            <span className="mb-1 block text-[0.68rem] font-bold uppercase tracking-[0.2em] text-white/85">Stay in the loop</span>
+            <h3 className="m-0 text-2xl font-extrabold tracking-tight">Restock alerts &amp; new arrivals</h3>
           </div>
         </div>
 
-        {/* Form Body */}
-        <div className="p-8">
+        <div className="p-7 sm:p-8">
           {submitted ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full border-2 border-green-600 text-green-600 flex items-center justify-center text-xl mx-auto mb-4">
-                ✓
-              </div>
-              <h4 className="text-primary font-bold text-lg mb-2">Subscription Successful!</h4>
-              <p className="text-neutral-text/50 text-sm">
-                Check your inbox for your 15% discount code.
-              </p>
+            <div className="py-4 text-center">
+              <div className="icon-chip mx-auto mb-4 h-12 w-12 rounded-full text-xl">✓</div>
+              <h4 className="mb-2 text-lg font-bold text-ink">You&apos;re subscribed!</h4>
+              <p className="text-sm text-ink/55">We&apos;ll email you when new parts and restocks land.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <p className="text-sm text-neutral-text/70 leading-relaxed mb-6">
-                Join the {siteConfig.brandName} community. Subscribe today to get job-site tips, early access to new stock, and <strong>15% off</strong> on your first order.
+              <p className="mb-6 text-sm leading-relaxed text-ink/70">
+                Join the {siteConfig.brandName} mailing list for restock alerts, new product announcements and helpful
+                job-site tips.
               </p>
-
-              <div className="mb-4">
-                <input
-                  type="email"
-                  className="block w-full px-4 py-3 text-sm md:text-base border-2 border-black/10 rounded-xl focus:outline-none focus:border-primary transition-all text-neutral-text bg-white"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="inline-block font-bold text-center whitespace-nowrap bg-secondary text-secondary-text border-2 border-secondary hover:bg-primary hover:border-primary hover:text-primary-text transition-all duration-300 py-3.5 px-8 rounded-full text-sm uppercase tracking-wide w-full block cursor-pointer"
-              >
-                Unlock 15% Discount
+              <input
+                type="email"
+                className="mb-4 block w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink transition-colors focus:border-primary focus:outline-none"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn-brand w-full">
+                Subscribe
               </button>
-
-              <span className="block text-center text-[0.7rem] text-neutral-text/40 mt-3">
-                We value your privacy. Unsubscribe at any time.
-              </span>
+              <span className="mt-3 block text-center text-[0.7rem] text-ink/45">We value your privacy. Unsubscribe at any time.</span>
             </form>
           )}
         </div>

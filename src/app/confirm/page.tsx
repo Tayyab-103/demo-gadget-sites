@@ -26,7 +26,7 @@ function ConfirmContent() {
         ✓
       </div>
 
-      <h2 className="text-2xl md:text-3xl font-black uppercase text-primary mb-4 tracking-tight">Order Confirmed!</h2>
+      <h2 className="text-2xl md:text-3xl font-black uppercase text-ink mb-4 tracking-tight">Order Confirmed!</h2>
       <p className="text-neutral-text/75 text-sm md:text-base mb-8">
         Thank you for your purchase. Your payment was processed successfully.
       </p>
@@ -35,7 +35,7 @@ function ConfirmContent() {
       <div className="bg-neutral-bg border border-black/5 rounded-2xl p-6 text-left mb-8 text-xs md:text-sm shadow-inner">
         <div className="flex justify-between items-center mb-3">
           <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Order ID:</span>
-          <strong className="text-primary font-bold">{orderId}</strong>
+          <strong className="text-ink font-bold">{orderId}</strong>
         </div>
         <div className="flex justify-between items-center mb-3">
           <span className="text-neutral-text/45 uppercase tracking-wider text-[0.65rem] font-bold">Date:</span>
@@ -80,7 +80,7 @@ export default function Confirm() {
         <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
           <Suspense fallback={
             <div className="text-center py-12">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-primary">Loading Order Details...</h4>
+              <h4 className="text-sm font-bold uppercase tracking-wider text-ink">Loading Order Details...</h4>
             </div>
           }>
             <ConfirmContent />

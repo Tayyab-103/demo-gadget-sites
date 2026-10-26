@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
@@ -14,14 +13,13 @@ import CTASection from "@/components/CTASection";
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-grow">
+      <main className="grow">
         <Hero />
         
         {/* Step-by-Step Flow */}
@@ -57,7 +55,6 @@ export default function Home() {
       </main>
 
       <Footer />
-      <CartDrawer />
       <NewsletterPopup />
     </>
   );

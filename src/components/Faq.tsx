@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -8,25 +8,25 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `All orders are dispatched within 1-2 business days. We ship using ${siteConfig.shippingCarrier} nationwide, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive at your door.`
+    question: "How fast will my order ship and arrive?",
+    answer: `Orders are processed and shipped within 1-2 business days of payment confirmation. We ship with ${siteConfig.shippingCarrier}, and delivery typically takes ${siteConfig.shippingPeriod} business days. Shipping is free on every order.`,
   },
   {
-    question: "Do you offer a money-back guarantee?",
-    answer: `Yes, we back all our products with a 60-day money-back guarantee. If you are not satisfied with your purchase, contact our support team via email or phone to initiate a hassle-free return and refund.`
+    question: "What is your return and refund policy?",
+    answer: `We offer a 60-day money-back guarantee. Contact us at ${siteConfig.email} to start a return, then ship the item to ${siteConfig.address}. Refunds are issued to your original payment method within 5-7 business days of receiving the return.`,
   },
   {
-    question: "Are your parts covered by a warranty?",
-    answer: "Yes. Every part ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
+    question: "How do multi-pack bundles work?",
+    answer: "Each product can be ordered as a single unit or in multi-packs. The more units in a pack, the lower the price per unit — the exact bundle price is shown before you add it to your cart, with no hidden fees.",
   },
   {
-    question: "How will the charge appear on my credit card statement?",
-    answer: `Your card statement will display the charge descriptor as "${siteConfig.descriptor}" to ensure a clean transaction history.`
+    question: "How will the charge appear on my card statement?",
+    answer: `Your purchase will appear on your statement as "${siteConfig.descriptor}".`,
   },
   {
     question: "How do I contact customer support?",
-    answer: `You can reach our customer support team Monday through Friday during business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. We aim to respond to all inquiries within 24 hours.`
-  }
+    answer: `Call us at ${siteConfig.phone} (Mon–Fri, 9am–6pm CST) or email ${siteConfig.email}. We reply to every message within 24 hours.`,
+  },
 ];
 
 export default function Faq() {
@@ -37,100 +37,81 @@ export default function Faq() {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="faq">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-
-          {/* Left Column — Header, Decoration & CTA */}
-          <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-28 lg:self-start">
-            <span className="eyebrow mb-4">Got Questions?</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-              Frequently Asked <span className="text-secondary">Questions</span>
+    <section className="bg-surface relative overflow-hidden py-16 md:py-24" id="faq">
+      <div className="container-page">
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
+          {/* Left column */}
+          <div className="flex w-full flex-col lg:sticky lg:top-36 lg:w-5/12 lg:self-start">
+            <span className="eyebrow w-fit">Got Questions?</span>
+            <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-5xl">
+              Frequently asked <span className="text-gradient">questions</span>
             </h2>
-            <p className="text-neutral-text/60 text-sm md:text-base mb-10">
-              Find immediate answers to common questions about our products, shipping, and return policies.
+            <p className="mb-10 mt-4 text-sm text-ink/60 md:text-base">
+              Quick answers about shipping, returns, bundles and billing.
             </p>
 
-            {/* CTA */}
-            <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-                <p className="text-white/70 text-sm mb-6 leading-relaxed">
-                  Our customer care team is here to help you with anything you need.
+            <div className="bg-brand-gradient relative overflow-hidden rounded-3xl p-8 text-white shadow-xl">
+              <svg className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-white/15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" />
+              </svg>
+              <div className="relative">
+                <h3 className="mb-2 text-xl font-bold">Still have questions?</h3>
+                <p className="mb-6 text-sm leading-relaxed text-white/85">
+                  Our customer care team is happy to help with parts, orders and billing.
                 </p>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-bold text-sm px-6 py-3 rounded-full hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary-deep transition-transform hover:-translate-y-0.5"
                 >
                   Get in Touch
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column — Accordion */}
-          <div className="w-full lg:w-7/12 flex flex-col gap-4">
+          {/* Accordion */}
+          <div className="flex w-full flex-col gap-4 lg:w-7/12">
             {faqData.map((item, idx) => {
               const isOpen = activeIndex === idx;
 
               return (
                 <div
-                  key={idx}
-                  className={`bg-white rounded-2xl border transition-all duration-300 ${
-                    isOpen ? "border-secondary/40 shadow-lg" : "border-black/5 hover:border-black/10 hover:shadow-sm"
+                  key={item.question}
+                  className={`rounded-2xl border bg-white transition-all duration-300 ${
+                    isOpen ? "border-primary/40 shadow-lg shadow-primary/5" : "border-line hover:border-primary/25"
                   }`}
                 >
-                  {/* FAQ Header */}
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center p-6 md:p-7 bg-transparent border-none cursor-pointer text-left focus:outline-none gap-4"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left md:p-6"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-center gap-4">
-                      <span className={`text-xs font-black tracking-widest transition-colors duration-300 flex-shrink-0 ${
-                        isOpen ? "text-secondary" : "text-neutral-text/25"
-                      }`}>
+                    <span className="flex items-center gap-4">
+                      <span className={`shrink-0 text-xs font-extrabold tracking-widest ${isOpen ? "text-primary" : "text-ink/30"}`}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
-                      <strong className="text-sm md:text-base font-extrabold text-primary">
-                        {item.question}
-                      </strong>
-                    </div>
-
-                    {/* Animated Icon */}
+                      <strong className="text-sm font-bold text-ink md:text-base">{item.question}</strong>
+                    </span>
                     <span
-                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-300 ${
-                        isOpen
-                          ? "bg-secondary text-primary-text rotate-45 shadow-md"
-                          : "bg-neutral-bg border border-black/10 text-primary hover:border-secondary/40 hover:text-secondary rotate-0"
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-lg leading-none transition-all duration-300 ${
+                        isOpen ? "bg-brand-gradient rotate-45 text-white shadow-md" : "border border-line bg-surface text-ink"
                       }`}
                     >
                       +
                     </span>
                   </button>
 
-                  {/* FAQ Body */}
                   <div
-                    className="overflow-hidden transition-all duration-500 ease-in-out px-6 md:px-7"
-                    style={{
-                      maxHeight: isOpen ? "400px" : "0px",
-                    }}
+                    className="overflow-hidden px-5 transition-all duration-500 ease-in-out md:px-6"
+                    style={{ maxHeight: isOpen ? "400px" : "0px" }}
                   >
-                    <div className="pb-7 text-sm text-neutral-text/65 leading-relaxed border-t border-black/5 pt-5 pl-10">
-                      {item.answer}
-                    </div>
+                    <div className="border-t border-line pb-6 pl-9 pt-4 text-sm leading-relaxed text-ink/65">{item.answer}</div>
                   </div>
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </section>

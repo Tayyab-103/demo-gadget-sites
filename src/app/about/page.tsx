@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import AboutUs from "@/components/AboutUs";
@@ -15,12 +14,12 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow">
+      <main className="grow">
         <PageHeader
           eyebrow="Our Story"
           title={<>About {siteConfig.brandName}</>}
-          subtitle="Certified, code-compliant electrical parts and equipment, quality-tested and priced fairly — this is who we are and why we do it."
-          image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80"
+          subtitle="Electrical parts and equipment, inspected before they ship and priced fairly — this is who we are and how we work."
+          image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
           currentLabel="About"
         />
         <AboutUs />

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -10,6 +11,7 @@ const contactImages = [
   "https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=900&q=80",
   "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=900&q=80",
   "https://images.unsplash.com/photo-1601462904263-f2fa0c851cb9?w=900&q=80",
+  "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=900&q=80",
 ];
 
 const methods = [
@@ -37,7 +39,7 @@ const methods = [
   {
     label: "Visit Us",
     value: siteConfig.address,
-    subtext: "By appointment only",
+    subtext: "Mailing & returns address",
     href: undefined,
     icon: (
       <>
@@ -59,48 +61,46 @@ export default function Contact() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="contact">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-[800px] mb-12 md:mb-16">
-          <span className="eyebrow mb-4">Reach Out</span>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-            Have Questions? <span className="text-secondary">Get in Touch</span>
+    <section className="relative overflow-hidden bg-white py-16 md:py-24" id="contact">
+      <div className="container-page">
+        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
+          <span className="eyebrow">Reach Out</span>
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-ink md:text-5xl">
+            We&apos;re here to <span className="text-gradient">help</span>
           </h2>
-          <p className="text-neutral-text/60 text-sm md:text-base">
-            Our customer care representatives are available to help guide you on products, shipping, or billing support.
+          <p className="mt-4 text-sm text-ink/60 md:text-base">
+            Questions about a part, an order or billing? Our customer care team will point you in the right direction.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-7xl mx-auto">
-          {/* Visual Column */}
-          <div className="relative rounded-[2rem] overflow-hidden min-h-[350px] lg:min-h-0 shadow-xl">
+        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-10">
+          {/* Visual column */}
+          <div className="relative min-h-90 overflow-hidden rounded-4xl shadow-xl">
             {contactImages.map((src, idx) => (
               <img
                 key={src}
                 src={src}
-                alt="Electrician testing an electrical panel"
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
-                  idx === activeImage ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                alt="Electrical work and order fulfilment"
+                className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ease-in-out ${
+                  idx === activeImage ? "scale-100 opacity-100" : "scale-105 opacity-0"
                 }`}
                 style={{ transitionProperty: "opacity, transform" }}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-8">
-              <span className="text-[0.65rem] font-bold uppercase tracking-widest text-secondary mb-2">Real Techs, Real Support</span>
-              <p className="text-white text-lg md:text-xl font-bold leading-snug max-w-sm mb-8">
-                &ldquo;They helped me find the exact breaker in stock, same day.&rdquo;
+            <div className="relative z-10 flex h-full flex-col justify-end p-7 sm:p-9">
+              <span className="eyebrow eyebrow-invert mb-4 w-fit">Customer Care</span>
+              <p className="mb-7 max-w-sm text-xl font-bold leading-snug text-white md:text-2xl">
+                Real people answering every call and email — usually within the same business day.
               </p>
-
-              {/* Image dots */}
               <div className="flex gap-2">
                 {contactImages.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImage(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === activeImage ? "w-8 bg-secondary" : "w-4 bg-white/30"
+                    className={`h-1.5 cursor-pointer rounded-full transition-all duration-300 ${
+                      idx === activeImage ? "bg-brand-gradient w-8" : "w-4 bg-white/40"
                     }`}
                     aria-label={`Show image ${idx + 1}`}
                   />
@@ -109,31 +109,31 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Methods Column */}
-          <div className="flex flex-col gap-5">
+          {/* Contact methods */}
+          <div className="flex flex-col gap-4">
             {methods.map((method) => {
               const Wrapper = method.href ? "a" : "div";
               return (
                 <Wrapper
                   key={method.label}
                   {...(method.href ? { href: method.href } : {})}
-                  className="group flex flex-1 items-center gap-5 rounded-2xl border border-black/5 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/5"
+                  className="card card-hover group flex flex-1 items-center gap-5 p-5 sm:p-6"
                 >
-                  <div className="flex h-13 w-13 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-secondary/15 group-hover:text-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="icon-chip h-13 w-13">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       {method.icon}
                     </svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[0.62rem] font-bold uppercase tracking-widest text-neutral-text/45 mb-1">{method.label}</div>
-                    <div className="font-bold text-sm md:text-base text-primary break-words">{method.value}</div>
-                    <div className="text-xs text-neutral-text/50 mt-0.5">{method.subtext}</div>
+                    <div className="mb-1 text-[0.62rem] font-bold uppercase tracking-widest text-ink/45">{method.label}</div>
+                    <div className="text-sm font-bold text-ink wrap-anywhere md:text-base">{method.value}</div>
+                    <div className="mt-0.5 text-xs text-ink/50">{method.subtext}</div>
                   </div>
                   {method.href && (
-                    <span className="hidden sm:flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-black/5 text-primary transition-all duration-300 group-hover:border-secondary group-hover:bg-secondary group-hover:text-secondary-text">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
+                    <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white sm:flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
                       </svg>
                     </span>
                   )}
@@ -141,18 +141,14 @@ export default function Contact() {
               );
             })}
 
-            {/* FAQ nudge */}
-            <div className="flex flex-1 items-center gap-5 rounded-2xl bg-primary p-6 text-white">
+            <div className="bg-wash flex flex-1 flex-col items-start gap-4 rounded-3xl border border-primary/15 p-6 sm:flex-row sm:items-center">
               <div className="min-w-0 flex-1">
-                <div className="font-bold text-sm md:text-base">Have a quick question?</div>
-                <div className="text-xs text-white/60 mt-0.5">Check our FAQ for instant answers on specs, shipping, and returns.</div>
+                <div className="text-sm font-bold text-ink md:text-base">Have a quick question?</div>
+                <div className="mt-0.5 text-xs text-ink/60">Our FAQ covers shipping, returns, bundles and billing.</div>
               </div>
-              <a
-                href="#faq"
-                className="hidden sm:inline-flex flex-shrink-0 items-center gap-2 rounded-full bg-secondary text-secondary-text font-bold text-xs px-5 py-2.5 hover:brightness-105 transition-all"
-              >
+              <Link href="/#faq" className="btn-brand px-6 py-3">
                 View FAQ
-              </a>
+              </Link>
             </div>
           </div>
         </div>

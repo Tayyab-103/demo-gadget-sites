@@ -1,11 +1,12 @@
 {
   "Product": "Electrical Parts and Equipment",
-  "Processor": "EMP",
-  "brandName": "Coppervolt Electrical Foundry",
-  "websiteUrl": "CoppervoltElectricalFoundry.com",
-  "email": "support@coppervoltelectricalfoundry.com",
-  "descriptor": "CoppervoltElectricalFo",
-  "corpName": "Starpath Marketing Co",
+  "mcc": "5065",
+  "Processor": "Quantam - FFB",
+  "brandName": "Powerline Electrical Supply",
+  "websiteUrl": "powerlineelectricalsupply.com",
+  "email": "support@powerlineelectricalsupply.com",
+  "descriptor": "PowerlineElectricalS",
+  "corpName": "Blitzing Branding LLC",
   "phone": "1-800-762-7529",
   "address": "480 Athletic Way, Austin, TX 78701",
   "shippingCarrier": "UPS",
@@ -15,12 +16,12 @@
   "logoImage": "/img/logo.png",
   "footerLogoImage": "/img/logo.png",
   "theme": {
-    "primaryColor": "#1C1C1C",
+    "primaryColor": "#EA580C",
     "primaryTextColor": "#FFFFFF",
-    "secondaryColor": "#EA1D2C",
-    "secondaryTextColor": "#FFFFFF",
+    "secondaryColor": "#F59E0B",
+    "secondaryTextColor": "#1C1917",
     "neutralBgColor": "#FFFFFF",
-    "neutralTextColor": "#1C1C1C",
+    "neutralTextColor": "#1C1917",
     "fontFamily": "Poppins"
   }
 }

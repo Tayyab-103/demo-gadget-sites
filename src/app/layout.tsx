@@ -7,7 +7,7 @@ import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
-const siteDescription = `Welcome to ${siteConfig.brandName}. Shop certified electrical parts and equipment for the trade online.`;
+const siteDescription = `Welcome to ${siteConfig.brandName}. Shop power strips, solar DC switches and rechargeable battery packs online.`;
 
 // Preload the most common fonts
 const poppins = Poppins({

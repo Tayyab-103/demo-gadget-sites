@@ -1,138 +1,150 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import siteConfigData from "../../config/site-config.json";
+import { SiteConfig } from "@/types";
 
-const specs = ["UL Listed", "Ships Same Day", "40K+ Orders Shipped"];
+const siteConfig = siteConfigData as unknown as SiteConfig;
 
-const carouselImages = [
+const U = (id: string) => `https://images.unsplash.com/photo-${id}?w=1000&q=80`;
+
+// General electrical imagery (no products) for the right-hand collage
+const gallery = [
+  { src: U("1621905251189-08b45d6a269e"), alt: "Electrician in a hard hat working on an electrical meter", caption: "On-site installs" },
+  { src: U("1544724569-5f546fd6f2b5"), alt: "Distribution board fitted with rows of circuit breakers", caption: "Power distribution" },
+  { src: U("1758101755915-462eddc23f57"), alt: "Electrician tightening terminals in a control panel", caption: "Panel & control work" },
+];
+
+const trustItems = [
   {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80",
-    alt: "Electrician installing wiring on the job",
+    title: `Free ${siteConfig.shippingCarrier} Shipping`,
+    text: "On every order",
+    icon: (
+      <>
+        <rect x="1" y="3" width="15" height="13" />
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+        <circle cx="5.5" cy="18.5" r="2.5" />
+        <circle cx="18.5" cy="18.5" r="2.5" />
+      </>
+    ),
   },
   {
-    src: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=1200&q=80",
-    alt: "Electrical panel with circuit breakers",
+    title: "Ships in 1-2 Days",
+    text: `Arrives in ${siteConfig.shippingPeriod} business days`,
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </>
+    ),
   },
   {
-    src: "https://images.unsplash.com/photo-1646640381839-02748ae8ddf0?w=1200&q=80",
-    alt: "Contractor with drill and hard hat on site",
+    title: "60-Day Money-Back",
+    text: "Hassle-free returns",
+    icon: (
+      <>
+        <polyline points="1 4 1 10 7 10" />
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </>
+    ),
   },
   {
-    src: "https://images.unsplash.com/photo-1758101755915-462eddc23f57?w=1200&q=80",
-    alt: "Electrician testing a panel with a multimeter",
+    title: "Inspected Orders",
+    text: "Checked before dispatch",
+    icon: (
+      <>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <polyline points="9 12 11.5 14.5 15 9" />
+      </>
+    ),
   },
 ];
 
-export default function Hero() {
-  const [activeImage, setActiveImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveImage((i) => (i + 1) % carouselImages.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const dots = (
-    <div className="absolute bottom-6 right-6 z-20 flex gap-2">
-      {carouselImages.map((_, idx) => (
-        <button
-          key={idx}
-          onClick={() => setActiveImage(idx)}
-          aria-label={`Show image ${idx + 1}`}
-          className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-            idx === activeImage ? "w-6 bg-secondary" : "w-2 bg-white/60 hover:bg-white/90"
-          }`}
-        />
-      ))}
+function PhotoTile({ photo, className = "", small = false }: { photo: (typeof gallery)[number]; className?: string; small?: boolean }) {
+  return (
+    <div className={`group relative overflow-hidden rounded-3xl shadow-lg ${className}`}>
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent" />
+      <span className={`absolute bottom-4 left-4 whitespace-nowrap rounded-full bg-white/90 px-3 py-1.5 ${small ? "hidden sm:block" : ""} text-[0.65rem] font-bold uppercase tracking-widest text-ink backdrop-blur`}>
+        {photo.caption}
+      </span>
     </div>
   );
+}
+
+export default function Hero() {
+  const [tall, ...stacked] = gallery;
 
   return (
-    <section className="relative overflow-hidden bg-neutral-bg">
-      {/* Blueprint grid texture */}
-      <div
-        className="pointer-events-none absolute inset-0 text-primary opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-        }}
-      />
+    <section className="relative overflow-hidden bg-white">
+      {/* Background: soft orange glow + circuit dots + diagonal gradient slab */}
+      <div className="bg-brand-gradient pointer-events-none absolute -right-32 top-0 hidden h-full w-[46%] -skew-x-12 opacity-[0.07] lg:block" />
+      <div className="pointer-events-none absolute -left-40 -top-40 h-120 w-120 rounded-full bg-secondary/20 blur-3xl" />
+      <div className="dot-grid pointer-events-none absolute inset-0 opacity-50 mask-[radial-gradient(ellipse_at_top_left,black,transparent_70%)]" />
 
-      {/* Right: full-height diagonal image panel — desktop only */}
-      <div
-        className="absolute inset-y-0 right-0 z-10 hidden w-[58%] overflow-hidden lg:block"
-        style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }}
-      >
-        {carouselImages.map((img, idx) => (
-          <img
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
-            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-              idx === activeImage ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/5 to-transparent" />
-        {dots}
-      </div>
+      <div className="container-page relative pb-10 pt-12 md:pt-16 lg:pb-14 lg:pt-20">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          {/* Copy */}
+          <div className="text-center lg:col-span-6 lg:text-left">
+            <span className="eyebrow">Electrical Parts &amp; Equipment</span>
 
-      <div className="relative z-20 mx-auto flex min-h-140 w-full max-w-7xl flex-col justify-center px-6 py-16 md:min-h-155 md:py-20">
-        {/* Copy */}
-        <div className="max-w-lg text-center lg:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-1.5 text-[0.65rem] font-bold uppercase tracking-widest text-primary shadow-sm">
-            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-secondary" aria-hidden="true" />
-            Electrical Parts &amp; Equipment
-          </span>
+            <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[1.04] tracking-tight text-ink sm:text-6xl xl:text-7xl">
+              Plug in.
+              <br />
+              Switch on.
+              <br />
+              <span className="text-gradient">Power up.</span>
+            </h1>
 
-          <h1 className="mx-auto mt-6 text-4xl font-black uppercase leading-[1.05] tracking-tight text-primary md:text-6xl lg:mx-0">
-            The Parts Pros Trust to Get the <span className="text-secondary">Job Done</span>
-          </h1>
+            <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-ink/65 md:text-base lg:mx-0">
+              Power strips, solar DC switches and rechargeable battery packs for workshops, installers and homes —
+              inspected before they ship and priced in bundles that save more as you stock up.
+            </p>
 
-          <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-text/60 md:text-base lg:mx-0">
-            From copper wire to certified breakers, we stock what contractors and electricians need — tested, code-compliant, and ready to ship today.
-          </p>
-
-          {/* Spec ticker */}
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
-            {specs.map((spec) => (
-              <span
-                key={spec}
-                className="rounded-full border border-primary/10 bg-white px-3.5 py-1.5 text-[0.62rem] font-bold uppercase tracking-widest text-primary/70"
-              >
-                {spec}
-              </span>
-            ))}
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+              <Link href="/shop" className="btn-brand w-full sm:w-auto">
+                Shop All Parts
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
 
-          <div className="mt-9 flex justify-center lg:justify-start">
-            <Link
-              href="/shop"
-              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-9 py-4 text-center text-sm font-bold uppercase tracking-widest text-primary-text shadow-lg transition-all duration-300 hover:bg-secondary hover:text-secondary-text"
-            >
-              Shop Parts &amp; Equipment
-              <span className="text-sm">→</span>
-            </Link>
+          {/* Photo collage */}
+          <div className="relative lg:col-span-6">
+            <div className="bg-brand-gradient pointer-events-none absolute -inset-4 rounded-[2.75rem] opacity-15 blur-2xl" />
+            <div className="relative grid h-105 grid-cols-5 grid-rows-2 gap-3 sm:h-135 sm:gap-4">
+              {tall && <PhotoTile photo={tall} className="col-span-3 row-span-2" />}
+              {stacked.map((photo) => (
+                <PhotoTile key={photo.src} photo={photo} className="col-span-2" small />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Mobile/tablet image — the diagonal panel only shows on lg+ */}
-        <div className="relative mt-12 aspect-4/3 w-full overflow-hidden rounded-[2rem] border border-black/5 shadow-2xl lg:hidden">
-          {carouselImages.map((img, idx) => (
-            <img
-              key={img.src}
-              src={img.src}
-              alt={img.alt}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-                idx === activeImage ? "opacity-100" : "opacity-0"
-              }`}
-            />
+        {/* Trust strip */}
+        <div className="card mt-12 grid grid-cols-2 gap-y-6 p-5 shadow-lg sm:p-6 lg:mt-16 lg:grid-cols-4">
+          {trustItems.map((item, idx) => (
+            <div
+              key={item.title}
+              className={`flex flex-col items-center gap-3 px-2 text-center sm:flex-row sm:text-left lg:px-5 ${
+                idx % 2 === 1 ? "border-l border-line" : ""
+              } ${idx === 2 ? "lg:border-l lg:border-line" : ""}`}
+            >
+              <span className="icon-chip h-11 w-11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  {item.icon}
+                </svg>
+              </span>
+              <div>
+                <div className="text-sm font-bold text-ink">{item.title}</div>
+                <div className="text-xs text-ink/55">{item.text}</div>
+              </div>
+            </div>
           ))}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-          {dots}
         </div>
       </div>
     </section>

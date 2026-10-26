@@ -121,7 +121,7 @@ export default function Checkout() {
       {loading && (
         <div className="fixed inset-0 bg-white/95 z-50 flex flex-col items-center justify-center">
           <div className="w-12 h-12 border-4 border-black/10 border-t-secondary rounded-full animate-spin" />
-          <h4 className="mt-6 text-lg font-bold text-primary">Processing Secure Order...</h4>
+          <h4 className="mt-6 text-lg font-bold text-ink">Processing Secure Order...</h4>
           <p className="text-xs text-neutral-text/55">Please do not refresh or close this window.</p>
         </div>
       )}
@@ -132,7 +132,7 @@ export default function Checkout() {
 
         <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
           <span className="eyebrow mb-4">Secure Checkout</span>
-          <h2 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 tracking-tight">Checkout <span className="text-secondary">Securely</span></h2>
+          <h2 className="text-3xl md:text-4xl font-black uppercase text-ink mb-8 tracking-tight">Checkout <span className="text-secondary">Securely</span></h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
@@ -146,7 +146,7 @@ export default function Checkout() {
 
               <form onSubmit={handleSubmit}>
                 {/* Billing/Shipping Address */}
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-ink">
                   1. Shipping Information
                 </h3>
                 
@@ -193,7 +193,7 @@ export default function Checkout() {
                 </div>
 
                 {/* Credit Card Details */}
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary mt-10">
+                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-ink mt-10">
                   2. Payment Details
                 </h3>
 
@@ -239,7 +239,7 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <button type="submit" className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-secondary text-primary hover:bg-primary hover:text-primary-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
+                <button type="submit" className="inline-flex items-center justify-center font-bold text-center whitespace-nowrap bg-secondary text-ink hover:bg-primary hover:text-primary-text transition-all duration-300 py-4 px-8 rounded-full w-full cursor-pointer mt-8 text-xs uppercase tracking-widest shadow-md hover:shadow-lg">
                   Secure Purchase
                 </button>
               </form>
@@ -248,7 +248,7 @@ export default function Checkout() {
             {/* Cart Summary Column */}
             <div className="sticky top-30 flex flex-col gap-6">
               <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-md">
-                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-primary">
+                <h3 className="text-base font-bold uppercase tracking-wider border-b border-black/5 pb-3.5 mb-6 text-ink">
                   Order Summary
                 </h3>
 
@@ -256,7 +256,7 @@ export default function Checkout() {
                 {cart.map((item) => (
                   <div className="flex justify-between items-center py-4 border-b border-dashed border-black/10 last:border-b-0" key={item.Id}>
                     <div className="flex-1 pr-4">
-                      <strong className="text-xs md:text-sm font-bold text-primary">{item.Name}</strong>
+                      <strong className="text-xs md:text-sm font-bold text-ink">{item.Name}</strong>
                       <span className="block text-[0.65rem] font-semibold text-neutral-text/45 uppercase tracking-wide mt-1">
                         {item.Label} (Qty: {item.Qty})
                       </span>
@@ -280,7 +280,7 @@ export default function Checkout() {
                     className="w-4 h-4 cursor-pointer accent-secondary"
                   />
                   <div>
-                    <strong className="text-xs md:text-sm font-bold text-primary block">
+                    <strong className="text-xs md:text-sm font-bold text-ink block">
                       Add Shipping Insurance
                     </strong>
                     <span className="text-[0.65rem] text-neutral-text/50">
@@ -307,7 +307,7 @@ export default function Checkout() {
                   )}
 
                   <div className="flex justify-between items-center border-t border-black/5 pt-4 mt-2 font-bold text-base md:text-lg">
-                    <span className="text-primary uppercase tracking-wider text-xs md:text-sm">Grand Total:</span>
+                    <span className="text-ink uppercase tracking-wider text-xs md:text-sm">Grand Total:</span>
                     <span className="text-secondary font-extrabold">${grandTotal}</span>
                   </div>
                 </div>

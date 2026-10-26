@@ -115,8 +115,8 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2">
             <span className="uppercase tracking-wider text-white/40">We accept</span>
-            <img src="/img/visa.png" alt="Visa" className="h-6 w-auto rounded bg-white p-1" />
-            <img src="/img/mastercard.png" alt="Mastercard" className="h-6 w-auto rounded bg-white p-1" />
+            <img src="/img/visa.png" alt="Visa" className="h-8" />
+            <img src="/img/mastercard.png" alt="Mastercard" className="h-8" />
           </div>
         </div>
       </div>

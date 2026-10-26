@@ -23,15 +23,17 @@ export default function Home() {
       <main className="flex-grow">
         {/* Dynamic Hero Section */}
         <Hero />
+
+        <AboutUs />
         
         {/* Flagship Product Showcase */}
         <ProductGrid />
 
         {/* Step-by-Step Flow */}
-        <HowItWorks />
+        {/* <HowItWorks /> */}
         
         {/* About the brand */}
-        <AboutUs />
+        {/* <AboutUs /> */}
 
         {/* Products in action */}
         <VideoShowcase />

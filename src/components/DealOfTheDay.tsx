@@ -122,12 +122,12 @@ export default function DealOfTheDay() {
             {/* Product Image */}
             <Link
               href={`/product/${featuredProduct.id}`}
-              className="block w-full aspect-[4/3] p-4 bg-emerald-50/40 rounded-xl overflow-hidden mb-4 group"
+              className="block w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 group border border-emerald-100"
             >
               <img
                 src={featuredProduct.image}
                 alt={featuredProduct.name}
-                className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-300"
                 onError={(e) => {
                   e.currentTarget.src = "https://placehold.co/300x300?text=Filter+Kit";
                 }}

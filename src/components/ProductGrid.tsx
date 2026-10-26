@@ -98,13 +98,13 @@ export default function ProductGrid() {
                 className="single-product-section group bg-white rounded-2xl border border-black/8 overflow-hidden shadow-xs hover:shadow-xl hover:border-secondary/40 transition-all duration-300 flex flex-col text-center"
               >
                 {/* Image Box */}
-                <div className="img-box relative aspect-4/3 sm:aspect-square w-full overflow-hidden bg-neutral-bg/60 p-6 flex items-center justify-center border-b border-black/5">
-                  <Link href={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
-                    <figure className="w-full h-full flex items-center justify-center m-0">
+                <div className="img-box relative aspect-4/3 sm:aspect-square w-full overflow-hidden bg-gray-100 p-2 sm:p-3 flex items-center justify-center border-b border-black/5">
+                  <Link href={`/product/${product.id}`} className="w-full h-full rounded-xl overflow-hidden flex items-center justify-center bg-gray-900/5">
+                    <figure className="w-full h-full flex items-center justify-center m-0 overflow-hidden">
                       <img
                         src={product.image || product.images?.[0] || ""}
                         alt={product.name}
-                        className="max-h-[210px] w-auto object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                         onError={(e) => {
                           e.currentTarget.src = "https://placehold.co/400x400?text=Product";
                         }}
@@ -113,7 +113,7 @@ export default function ProductGrid() {
                   </Link>
 
                   {/* Subtle Category Badge */}
-                  <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-primary border border-black/10 text-[0.62rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-2xs">
+                  <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-xs text-primary border border-black/10 text-[0.62rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-sm z-10">
                     {product.category}
                   </span>
                 </div>
@@ -123,16 +123,6 @@ export default function ProductGrid() {
                   <h4 className="text-base sm:text-lg font-bold text-primary group-hover:text-secondary transition-colors line-clamp-1 mb-2">
                     <Link href={`/product/${product.id}`}>{product.name}</Link>
                   </h4>
-
-                  {/* Rating Stars */}
-                  <ul className="rating in-block flex items-center justify-center gap-1 text-amber-400 text-xs mb-3">
-                    <li><i className="not-italic">★</i></li>
-                    <li><i className="not-italic">★</i></li>
-                    <li><i className="not-italic">★</i></li>
-                    <li><i className="not-italic">★</i></li>
-                    <li><i className="not-italic">★</i></li>
-                    <span className="text-[0.68rem] text-neutral-text/50 font-bold ml-1.5">(4.9/5.0)</span>
-                  </ul>
 
                   {/* Price */}
                   <div className="price flex items-baseline justify-center gap-2 mb-6">

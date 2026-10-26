@@ -7,9 +7,9 @@ const steps = [
     step: "01",
     tag: "TIERED BUNDLE SAVINGS",
     title: "Select Your Part & Bundle",
-    desc: "Choose your part and select single or volume bundles to save up to 50%.",
-    image: "https://plus.unsplash.com/premium_photo-1661964291917-b20c2648fac6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    fallbackImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&auto=format&fit=crop&q=80",
+    desc: "Browse our pro-grade automotive parts catalog and select single units or volume bundles to save up to 50%.",
+    image: "https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=800",
+    fallbackImage: "https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: (
       <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="8" cy="21" r="1" />
@@ -21,10 +21,10 @@ const steps = [
   {
     step: "02",
     tag: "FAST TRACKED DISPATCH",
-    title: "Same-Day Express Shipping",
-    desc: "Packed and dispatched within 24 hours with live nationwide tracking.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80",
-    fallbackImage: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&auto=format&fit=crop&q=80",
+    title: "Same-Day Express Dispatch",
+    desc: "Packed and dispatched within 24 hours with live nationwide tracking straight to your door or garage.",
+    image: "https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=800",
+    fallbackImage: "https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: (
       <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <rect width="16" height="13" x="1" y="3" rx="2" />
@@ -38,9 +38,9 @@ const steps = [
     step: "03",
     tag: "PLUG & PLAY FITMENT",
     title: "Seamless 20-Min Fitment",
-    desc: "Calibrated to strict OEM tolerances for effortless DIY bolt-on installation.",
-    image: "https://images.unsplash.com/photo-1758536368333-1d06be21642d?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    fallbackImage: "https://images.unsplash.com/photo-1600793575654-910699b5e4d4?w=800&auto=format&fit=crop&q=80",
+    desc: "Calibrated to strict OEM vehicle tolerances for effortless bolt-on installation with zero modifications.",
+    image: "https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=800",
+    fallbackImage: "https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: (
       <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />

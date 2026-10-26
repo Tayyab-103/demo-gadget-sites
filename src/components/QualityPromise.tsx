@@ -9,13 +9,13 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const guaranteeCards = [
   {
-    badgeTop: "60",
+    badgeTop: String(siteConfig.trialPeriod || 14),
     badgeBottom: "Days",
     image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop&q=80",
     fallbackImage: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=800&auto=format&fit=crop&q=80",
     author: "QUALITY ASSURANCE",
-    title: "60-Day Money-Back Guarantee",
-    desc: "Test on your vehicle for 60 days. If not completely satisfied, return for a full refund.",
+    title: `${siteConfig.trialPeriod || 14}-Day Money-Back Guarantee`,
+    desc: `Test on your vehicle for ${siteConfig.trialPeriod || 14} days. If not completely satisfied, return for a full refund.`,
     link: "/terms",
   },
   {

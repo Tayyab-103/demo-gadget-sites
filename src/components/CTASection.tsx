@@ -49,11 +49,11 @@ export default function CTASection() {
             
             {/* ─── 1. LEFT IMAGE ─── */}
             <div className="hidden lg:flex lg:col-span-3 flex-col items-center justify-center">
-              <div className="relative group w-full max-w-[220px] aspect-square rounded-2xl p-4 bg-gradient-to-b from-emerald-50/60 to-slate-50 border border-emerald-100 shadow-md transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300">
+              <div className="relative group w-full max-w-[220px] aspect-square rounded-2xl overflow-hidden border border-emerald-100 shadow-md transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300">
                 <img
                   src={leftProduct.image}
                   alt={leftProduct.name}
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/300x300?text=Auto+Upgrade";
                   }}
@@ -148,11 +148,11 @@ export default function CTASection() {
 
             {/* ─── 3. RIGHT IMAGE ─── */}
             <div className="hidden lg:flex lg:col-span-3 flex-col items-center justify-center">
-              <div className="relative group w-full max-w-[220px] aspect-square rounded-2xl p-4 bg-gradient-to-b from-emerald-50/60 to-slate-50 border border-emerald-100 shadow-md transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300">
+              <div className="relative group w-full max-w-[220px] aspect-square rounded-2xl overflow-hidden border border-emerald-100 shadow-md transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300">
                 <img
                   src={rightProduct.image}
                   alt={rightProduct.name}
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/300x300?text=Auto+Upgrade";
                   }}

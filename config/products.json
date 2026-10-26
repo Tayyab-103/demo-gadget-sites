@@ -2,8 +2,8 @@
   {
     "id": "product1",
     "stickyId": 1,
-    "name": "Mopar Engine Oil Filter Kit",
-    "description": "Engineered to rigorous OEM specifications, the Mopar Engine Oil Filter Kit delivers superior filtration and extended engine protection. Features advanced multi-fiber filter media to trap microscopic contaminants, a durable heat-resistant anti-drainback valve, and precision seal rings for leak-proof installation. Ensures optimal oil circulation and peak engine performance.",
+    "name": "ApexBrake™ Pro-Series Ceramic Brake Rotor & Caliper Kit",
+    "description": "Engineered for maximum stopping power and zero fade, the ApexBrake™ Pro-Series Ceramic Brake Rotor & Caliper Kit delivers track-calibrated deceleration and extended lifespan. Precision-slotted and drilled to rapidly dissipate heat and gas buildup, paired with OE-matched ceramic friction pads that reduce brake dust by 90% and eliminate squeal. Direct bolt-on replacement calibrated to factory specifications.",
     "image": "/img/products/product1.jpg",
     "images": [
       "/img/products/product1.jpg",
@@ -12,7 +12,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Engine & Oil Filters",
+    "category": "Braking Systems & Rotors",
     "billingModel": 1,
     "ssPrice": "6.95",
     "ssShipping": "0.00",
@@ -30,8 +30,8 @@
   {
     "id": "product2",
     "stickyId": 2,
-    "name": "ACDelco Gold 213-4514 (19236568) Engine Coolant Temperature Sensor",
-    "description": "The ACDelco Gold Engine Coolant Temperature Sensor provides high-precision thermal monitoring of your vehicle's engine coolant. Relays accurate, real-time operating data to the Engine Control Module (ECM) to optimize fuel delivery, ignition timing, and cooling fan operation. Built with durable brass housing and corrosion-resistant electrical pins for OE-caliber reliability.",
+    "name": "Blind Spot Car Mirror Set",
+    "description": "Never miss a thing with these high-quality, wide-angle blind-spot mirrors. Perfect for cars, trucks, and SUVs. Easy peel-and-stick installation. Shatterproof design with durable ABS frame. Eliminates dangerous blind spots and enhances safety while driving, parking, and reversing.",
     "image": "/img/products/product2.jpg",
     "images": [
       "/img/products/product2.jpg",
@@ -40,7 +40,7 @@
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Cooling & Engine Sensors",
+    "category": "Auto Safety & Visibility",
     "billingModel": 1,
     "ssPrice": "11.95",
     "ssShipping": "0.00",
@@ -58,17 +58,15 @@
   {
     "id": "product3",
     "stickyId": 3,
-    "name": "Fuzzy Leopard Steering Wheel Cover Set",
-    "description": "Add bold style and year-round comfort to your cabin with this plush leopard print steering wheel cover set. Crafted from high-density, anti-slip microfiber material that shields hands from scorching summer heat and bitter winter chill. The complete 3-piece kit includes a universal steering wheel cover, matching seat belt strap pads, and a gear shift cover.",
+    "name": "Anti-Slip Dashboard Mat",
+    "description": "This flexible and highly adhesive anti-slip dashboard mat keeps your essentials such as phones, keys, and sunglasses securely in place while driving. Crafted from premium silicone, it grips firmly without damaging your dashboard or leaving residue. It's easy to clean, reusable, and a perfect accessory for those who want to stay organized on the road.",
     "image": "/img/products/product3.jpg",
     "images": [
-      "/img/products/product3.jpg",
-      "/img/products/product3-1.jpg",
-      "/img/products/product3-2.jpg"
+      "/img/products/product3.jpg"
     ],
     "showIngredients": false,
     "ingredientsImage": "",
-    "category": "Interior & Steering Accessories",
+    "category": "Interior & Cockpit Accessories",
     "billingModel": 1,
     "ssPrice": "14.95",
     "ssShipping": "0.00",

@@ -9,23 +9,27 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 const faqData = [
   {
     question: "What shipping carrier do you use and how fast is delivery?",
-    answer: `All orders ship from our US warehouse within 24 hours via ${siteConfig.shippingCarrier || "UPS"}. Delivery typically takes ${siteConfig.shippingPeriod || "3-5"} business days with live tracking provided.`,
+    answer: `All orders ship from our US distribution warehouse within 24 hours via ${siteConfig.shippingCarrier || "UPS"}. Delivery typically takes ${siteConfig.shippingPeriod || "3-5"} business days with live nationwide tracking provided.`,
   },
   {
-    question: "How does the satisfaction money-back guarantee work?",
-    answer: `We offer a full ${siteConfig.trialPeriod || 30}-day road-test guarantee. If you are not completely satisfied with fitment or performance, email us at ${siteConfig.email} for an immediate refund.`,
+    question: "How does the satisfaction road-test guarantee work?",
+    answer: `We provide a full ${siteConfig.trialPeriod || 14}-day risk-free road-test guarantee. If you are not completely satisfied with fitment, appearance, or performance, contact us at ${siteConfig.email} for an immediate return authorization and full refund.`,
   },
   {
-    question: "Are these parts direct vehicle fitment replacements?",
-    answer: "Yes. Every part is manufactured to strict OEM standards for seamless direct installation with zero modifications required.",
+    question: "Are these automotive parts and accessories direct OEM fitment?",
+    answer: "Yes. Every part and accessory in our catalog is engineered to stringent OEM tolerances for seamless direct bolt-on fitment with zero vehicle cutting or modification required.",
+  },
+  {
+    question: "What automotive parts and accessories does Motorway Parts and Accessories specialize in?",
+    answer: "We specialize in pro-grade braking systems and ceramic rotors, engine ignition and thermal sensor assemblies, and premium interior cockpit accessories engineered for comfort and long-term durability.",
   },
   {
     question: "How will the charge appear on my credit card statement?",
-    answer: `Your statement will show the charge descriptor as "${siteConfig.descriptor}".`,
+    answer: `Your billing statement will show the merchant descriptor as "${siteConfig.descriptor}".`,
   },
   {
-    question: "How can I get technical assistance with installation?",
-    answer: `Our support team is available Monday–Friday to assist with fitment and installation at ${siteConfig.phone} or ${siteConfig.email}.`,
+    question: "How can I get technical assistance with fitment and installation?",
+    answer: `Our dedicated automotive support team is available Monday through Friday to verify vehicle compatibility and installation at ${siteConfig.phone} or ${siteConfig.email}.`,
   },
 ];
 
@@ -45,11 +49,11 @@ export default function Faq() {
           <div className="w-full md:w-1/2 max-w-md flex-shrink-0">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200 group">
               <img
-                src="https://plus.unsplash.com/premium_photo-1661964291917-b20c2648fac6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Automotive Performance Workshop"
+                src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                alt="Motorway Parts and Accessories Technician Inspection"
                 className="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&w=830&h=844&auto=format&fit=crop";
+                  e.currentTarget.src = "/img/faq.jpg";
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

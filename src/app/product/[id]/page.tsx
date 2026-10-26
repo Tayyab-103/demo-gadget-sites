@@ -113,7 +113,7 @@ export default function ProductDetail() {
                   </div>
                   <div className="p-2 bg-emerald-50/50 rounded-xl border border-emerald-100">
                     <span className="text-emerald-600 text-sm block mb-0.5">🛡️</span>
-                    <span className="text-[0.65rem] font-bold text-gray-900 uppercase block">60-Day Trial</span>
+                    <span className="text-[0.65rem] font-bold text-gray-900 uppercase block">{siteConfig.trialPeriod || 14}-Day Trial</span>
                     <span className="text-[0.58rem] text-gray-500 block">100% Refundable</span>
                   </div>
                   <div className="p-2 bg-emerald-50/50 rounded-xl border border-emerald-100">
@@ -233,7 +233,7 @@ export default function ProductDetail() {
 
                 {/* Assurance Note */}
                 <p className="text-center text-[0.68rem] text-gray-400 mt-3">
-                  🔒 Guaranteed Safe Checkout &bull; 60-Day Money-Back Guarantee &bull; Free US Shipping
+                  🔒 Guaranteed Safe Checkout &bull; {siteConfig.trialPeriod || 14}-Day Money-Back Guarantee &bull; Free US Shipping
                 </p>
               </div>
 
@@ -311,7 +311,7 @@ export default function ProductDetail() {
                         <strong>Standard Shipping:</strong> Orders placed before 3:00 PM EST ship the same business day from our Texas distribution facility.
                       </p>
                       <p>
-                        <strong>Coverage:</strong> All purchases include a 60-Day Trial and a 1-Year Comprehensive Replacement Warranty.
+                        <strong>Coverage:</strong> All purchases include a {siteConfig.trialPeriod || 14}-Day Trial and a 1-Year Comprehensive Replacement Warranty.
                       </p>
                     </div>
                   )}

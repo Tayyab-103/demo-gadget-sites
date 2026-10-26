@@ -11,11 +11,11 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
   return (
     <div className="w-full flex flex-col items-center">
       {/* Main Image Container */}
-      <div className="relative w-full aspect-square bg-[#fcfcfc] rounded-2xl overflow-hidden flex items-center justify-center p-4 sm:p-6 border border-gray-100">
+      <div className="relative w-full aspect-square bg-[#fcfcfc] rounded-2xl overflow-hidden flex items-center justify-center border border-gray-100">
         <img
           src={images[activeIndex] || images[0]}
           alt={`${name} - preview ${activeIndex + 1}`}
-          className="w-full h-full object-contain mix-blend-multiply transition-all duration-300 hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
           onError={(e) => {
             e.currentTarget.src = "https://placehold.co/400x400?text=Hardware";
           }}
@@ -56,11 +56,11 @@ export default function ProductCarousel({ images, name }: { images: string[]; na
               type="button"
               onClick={() => setActiveIndex(idx)}
               aria-label={`View image ${idx + 1}`}
-              className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 cursor-pointer transition-all bg-white p-1 flex-shrink-0 ${
+              className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 cursor-pointer transition-all bg-white p-0.5 flex-shrink-0 ${
                 activeIndex === idx ? "border-emerald-600 ring-2 ring-emerald-600/20" : "border-gray-200 opacity-60 hover:opacity-100"
               }`}
             >
-              <img src={img} alt="" className="w-full h-full object-contain mix-blend-multiply" />
+              <img src={img} alt="" className="w-full h-full object-cover rounded-lg" />
             </button>
           ))}
         </div>

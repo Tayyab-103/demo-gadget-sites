@@ -82,7 +82,7 @@ export default function CartDrawer() {
                   <img
                     src={item.Image}
                     alt={item.Name}
-                    className="w-[70px] h-[70px] object-contain rounded-xl bg-gray-50 border border-gray-200 flex-shrink-0 p-1"
+                    className="w-[70px] h-[70px] object-cover rounded-xl bg-gray-50 border border-gray-200 flex-shrink-0"
                     onError={(e) => {
                       e.currentTarget.src = "https://placehold.co/100x100?text=Product";
                     }}

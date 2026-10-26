@@ -1,33 +1,31 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import siteConfigData from "../../config/site-config.json";
 import productsData from "../../config/products.json";
 import { SiteConfig, Product } from "@/types";
-import Logo from "@/components/Logo";
+import BrandName from "@/components/BrandName";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const products = productsData as unknown as Product[];
 
+// true on the client, false during SSR — avoids hydration mismatch without setState in an effect
+const noopSubscribe = () => () => {};
+const useHydrated = () => useSyncExternalStore(noopSubscribe, () => true, () => false);
+
 export default function Header() {
   const pathname = usePathname();
-  const { toggleCart, getCartCount } = useCart();
-  const [cartCount, setCartCount] = useState(0);
+  const { getCartCount } = useCart();
+  const hydrated = useHydrated();
+  const cartCount = hydrated ? getCartCount() : 0;
 
   const [isMobOpen, setIsMobOpen] = useState(false);
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
-  const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [wishlistCount, setWishlistCount] = useState(0);
-
-  // Sync cart count after mount to avoid hydration mismatch
-  useEffect(() => {
-    setCartCount(getCartCount());
-  }, [getCartCount]);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -65,7 +63,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             
             {/* Left Column: Menu Button & Logo & Desktop Nav */}
-            <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
+            <div className="flex items-center gap-3 sm:gap-6 lg:gap-8 min-w-0">
               
               {/* Hamburger Menu Button (Mobile / Tablet only) */}
               <button
@@ -79,13 +77,17 @@ export default function Header() {
                 <span className="w-[18px] h-[2px] bg-primary block rounded-full transition-colors"></span>
               </button>
 
-              {/* Brand Logo */}
-              <Link href="/" className="flex items-center group py-1" aria-label={siteConfig.brandName}>
-                <Logo className="h-[18px] sm:h-5 w-auto text-primary group-hover:text-secondary transition-colors" />
+              {/* Brand Name */}
+              <Link
+                href="/"
+                aria-label={siteConfig.brandName}
+                className="py-1 text-primary hover:text-secondary transition-colors"
+              >
+                <BrandName />
               </Link>
 
               {/* Desktop Navigation */}
-              <nav className="hidden lg:flex items-center gap-8 ml-4">
+              <nav className="hidden lg:flex items-center gap-6 xl:gap-8 ml-2 xl:ml-4">
                 <Link
                   href="/"
                   className={`text-xs font-bold uppercase tracking-[0.14em] transition-colors py-2 ${
@@ -171,7 +173,7 @@ export default function Header() {
             </div>
 
             {/* Right Column: User Nav Icons */}
-            <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex items-center gap-1 sm:gap-4 shrink-0">
               
               {/* Search Toggle */}
               <button
@@ -282,9 +284,14 @@ export default function Header() {
         >
           <div>
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-6 border-b border-black/10">
-              <Link href="/" onClick={() => setIsMobOpen(false)} aria-label={siteConfig.brandName}>
-                <Logo className="h-4 w-auto text-primary" />
+            <div className="flex items-center justify-between gap-4 pb-6 border-b border-black/10">
+              <Link
+                href="/"
+                onClick={() => setIsMobOpen(false)}
+                aria-label={siteConfig.brandName}
+                className="text-primary hover:text-secondary transition-colors"
+              >
+                <BrandName topClassName="text-base" bottomClassName="text-[0.55rem]" />
               </Link>
               <button
                 type="button"

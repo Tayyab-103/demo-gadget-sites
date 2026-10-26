@@ -12,7 +12,7 @@
   "shippingCarrier": "USPS / UPS",
   "shippingPeriod": "3-5",
   "trialPeriod": 14,
-  "useImageLogo": true,
+  "useImageLogo": false,
   "logoImage": "/img/logo.svg",
   "footerLogoImage": "/img/logo.svg",
   "theme": {

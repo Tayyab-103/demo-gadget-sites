@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
-import Logo from "@/components/Logo";
+import BrandName from "@/components/BrandName";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
 
@@ -26,13 +26,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-8 pb-12 sm:pb-16 border-b border-white/10">
           
           {/* Col 1: Brand & Socials (4 cols) */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              <Link href="/" className="inline-block mb-4" aria-label={siteConfig.brandName}>
-                <Logo className="h-6 w-auto text-white hover:text-secondary transition-colors" />
+              <Link
+                href="/"
+                aria-label={siteConfig.brandName}
+                className="inline-block mb-5 text-white hover:text-secondary transition-colors"
+              >
+                <BrandName topClassName="text-xl sm:text-2xl" bottomClassName="text-[0.62rem] sm:text-[0.7rem]" />
               </Link>
               <p className="text-white/60 text-xs sm:text-sm leading-relaxed max-w-sm mb-6">
                 Curated contemporary womenswear crafted with timeless silhouettes, premium natural fabrics, and effortless daily comfort.
@@ -152,12 +156,12 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom Strip */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50 text-center md:text-left">
           <div>
             &copy; {currentYear} {siteConfig.corpName}. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             <span className="text-[0.7rem] uppercase tracking-wider">Payment methods:</span>
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center h-6 shadow-xs">

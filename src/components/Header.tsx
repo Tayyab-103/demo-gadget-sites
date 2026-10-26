@@ -92,7 +92,7 @@ export default function Header() {
           isScrolled ? "max-h-0" : "max-h-10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-center gap-3 text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.18em]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap text-[0.58rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.12em] sm:tracking-[0.18em]">
           <span>Free {siteConfig.shippingCarrier} shipping</span>
           <span className="w-1 h-1 rounded-full bg-secondary" aria-hidden="true" />
           <span>{trialDays}-day returns</span>
@@ -108,10 +108,10 @@ export default function Header() {
             : "bg-neutral-bg/95 backdrop-blur-md"
         } border-b border-line`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 flex items-center justify-between gap-4">
-          <Link href="/" onClick={closeAll} className="flex-shrink-0" aria-label={`${siteConfig.brandName} home`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-4">
+          <Link href="/" onClick={closeAll} className="min-w-0 flex-shrink" aria-label={`${siteConfig.brandName} home`}>
             {siteConfig.useImageLogo && siteConfig.logoImage ? (
-              <img src={siteConfig.logoImage} alt={siteConfig.brandName} className="max-h-8 w-auto object-contain" />
+              <img src={siteConfig.logoImage} alt={siteConfig.brandName} className="max-h-7 sm:max-h-8 max-w-[140px] sm:max-w-none w-auto object-contain" />
             ) : (
               <BrandLogo />
             )}
@@ -125,7 +125,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[0.72rem] font-bold uppercase tracking-[0.14em] px-4 lg:px-5 py-2 rounded-full transition-all duration-200 ${
+                  className={`text-[0.68rem] lg:text-[0.72rem] font-bold uppercase tracking-[0.1em] lg:tracking-[0.14em] px-3 lg:px-5 py-2 rounded-full transition-all duration-200 ${
                     active ? "bg-primary text-primary-text" : "text-ink/70 hover:text-primary hover:bg-neutral-bg"
                   }`}
                 >
@@ -135,10 +135,10 @@ export default function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex flex-shrink-0 items-center gap-0.5 sm:gap-2">
             <button
               onClick={toggleSearch}
-              className="w-10 h-10 flex items-center justify-center text-ink hover:text-primary transition-colors cursor-pointer rounded-full hover:bg-white"
+              className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-ink hover:text-primary transition-colors cursor-pointer rounded-full hover:bg-white"
               aria-label="Toggle search"
               aria-expanded={isSearchOpen}
             >
@@ -150,7 +150,7 @@ export default function Header() {
 
             <button
               onClick={toggleCart}
-              className="relative flex items-center gap-2 h-10 pl-3 pr-3 sm:pr-4 rounded-full bg-primary text-primary-text hover:bg-primary-dark transition-colors cursor-pointer"
+              className="relative flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 pl-2.5 sm:pl-3 pr-2.5 sm:pr-4 rounded-full bg-primary text-primary-text hover:bg-primary-dark transition-colors cursor-pointer"
               aria-label="Open cart"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -166,7 +166,7 @@ export default function Header() {
 
             <button
               onClick={toggleMenu}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-ink rounded-full hover:bg-white transition-colors cursor-pointer"
+              className="md:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-ink rounded-full hover:bg-white transition-colors cursor-pointer"
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -188,7 +188,7 @@ export default function Header() {
 
         {/* Mobile nav */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-line bg-white px-4 py-4 flex flex-col gap-1.5 shadow-xl">
+          <div className="md:hidden border-t border-line bg-white px-4 sm:px-6 py-4 flex flex-col gap-1.5 shadow-xl max-h-[calc(100dvh-5rem)] overflow-y-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -206,7 +206,7 @@ export default function Header() {
 
         {/* Search panel */}
         {isSearchOpen && (
-          <div className="border-t border-line bg-white px-4 sm:px-6 py-4 shadow-xl">
+          <div className="border-t border-line bg-white px-4 sm:px-6 py-3 sm:py-4 shadow-xl">
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-muted absolute left-4 top-1/2 -translate-y-1/2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -224,7 +224,7 @@ export default function Header() {
               </div>
 
               {trimmedQuery && (
-                <div className="mt-3 flex flex-col gap-2 max-h-[50vh] overflow-y-auto">
+                <div className="mt-3 flex flex-col gap-2 max-h-[60dvh] sm:max-h-[50vh] overflow-y-auto overscroll-contain">
                   {filteredProducts.length > 0 ? (
                     filteredProducts.map((product) => {
                       const price = product.bundles && product.bundles[0] ? product.bundles[0].price : product.ssPrice;

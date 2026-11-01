@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
@@ -8,33 +7,6 @@ import { SiteConfig } from "@/types";
 const siteConfig = siteConfigData as unknown as SiteConfig;
 const siteUrl = `https://${siteConfig.websiteUrl}`;
 const siteDescription = `Welcome to ${siteConfig.brandName}. Shop premium luggage, bags & travel accessories online.`;
-
-// Preload the most common fonts
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,19 +27,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Select dynamic font variable class
-  let selectedFontClass = poppins.variable;
-  let activeFontVar = "var(--font-poppins)";
+  let activeFontFamily = "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 
   if (siteConfig.theme.fontFamily === "Inter") {
-    selectedFontClass = inter.variable;
-    activeFontVar = "var(--font-inter)";
+    activeFontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
   } else if (siteConfig.theme.fontFamily === "Montserrat") {
-    selectedFontClass = montserrat.variable;
-    activeFontVar = "var(--font-montserrat)";
+    activeFontFamily = "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
   } else if (siteConfig.theme.fontFamily === "Roboto") {
-    selectedFontClass = roboto.variable;
-    activeFontVar = "var(--font-roboto)";
+    activeFontFamily = "'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+  } else if (siteConfig.theme.fontFamily === "Poppins") {
+    activeFontFamily = "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
   }
 
   // Extract theme values
@@ -81,8 +50,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } = siteConfig.theme;
 
   return (
-    <html lang="en" className={`${selectedFontClass} h-full antialiased`}>
+    <html lang="en" className="h-full antialiased">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+          rel="stylesheet"
+        />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --primary-color: ${primaryColor};
@@ -91,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             --secondary-text-color: ${secondaryTextColor};
             --neutral-bg-color: ${neutralBgColor};
             --neutral-text-color: ${neutralTextColor};
-            --font-family: ${activeFontVar};
+            --font-family: ${activeFontFamily};
           }
         `}} />
       </head>

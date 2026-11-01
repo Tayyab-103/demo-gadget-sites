@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import siteConfigData from "../../config/site-config.json";
 import { SiteConfig } from "@/types";
 
@@ -10,189 +9,122 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const highlights = [
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        <polyline points="9 12 11.5 14.5 15 9" />
-      </svg>
-    ),
-    title: "Trip-Tested Builds",
-    desc: "Every bag and case is stress-tested through real travel conditions before it ever reaches the shop.",
+    title: "Polycarbonate Architecture",
+    desc: "Aerospace-derived multi-layer composite resists high impacts, baggage carousel drops, and temperature swings.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
-    title: "Built for Real Travel",
-    desc: "Designed to hold up through layovers, cobblestones, and gate-checks alike.",
+    title: "Whisper-Glide System",
+    desc: "Japanese engineered dual-wheel assemblies with sealed steel bearings roll effortlessly over carpets and cobblestones.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
-    title: "No Shortcuts",
-    desc: "Durable materials and precision construction — in every piece we ship.",
+    title: "Tactical Compression Interiors",
+    desc: "Integrated compression straps and modular zip dividers maximize usable packing capacity by up to 60%.",
   },
   {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "1-Year Warranty",
-    desc: "Every piece we sell is backed by a full year of coverage.",
+    title: "1-Year Comprehensive Warranty",
+    desc: "Every seam, zipper, wheel, and telescoping handle is backed by a full replacement or repair guarantee.",
   },
 ];
 
 const stats = [
-  { value: "15k+", label: "Trips Packed" },
-  { value: "60-Day", label: "Returns" },
-  { value: "1-Yr", label: "Warranty" },
+  { value: "50,000+", label: "Expeditions Completed" },
+  { value: "60-Day", label: "Trial Guarantee" },
+  { value: "1-Year", label: "Full Warranty" },
 ];
 
 export default function AboutUs() {
   return (
-    <section
-      className="relative overflow-hidden bg-neutral-bg py-12 md:py-16"
-      id="about"
-    >
-      {/* Background decorative elements */}
-      <div className="pointer-events-none absolute right-0 top-0 h-125 w-125 -translate-y-1/2 translate-x-1/4 rounded-full bg-primary/3" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-100 w-100 -translate-x-1/4 translate-y-1/3 rounded-full bg-secondary/5" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+    <section className="relative overflow-hidden bg-white py-14 sm:py-20 md:py-28" id="about">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="mb-16 text-center md:mb-20">
-          <span className="eyebrow mb-6 justify-center">Our Story</span>
-
-          <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight text-neutral-text md:text-5xl">
-            Travel Gear, Built{" "}
-            <span className="text-secondary">for Every Trail Ahead</span>
+        <div className="mb-12 sm:mb-16 md:mb-20 text-center max-w-3xl mx-auto">
+          <span className="eyebrow justify-center mb-3">Our Heritage &amp; Craft</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary leading-tight">
+            Travel Gear Built For <span className="text-secondary">Every Horizon</span>
           </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-neutral-text/60 md:text-base">
-            At {siteConfig.brandName}, operated by {siteConfig.corpName}, we believe travel gear should work as tirelessly as you explore. We engineer and stress-test every spinner suitcase, all-weather duffel, and modular organizer to guarantee enduring reliability, trip after trip.
+          <div className="mx-auto mt-4 mb-4 w-10 h-px bg-secondary" />
+          <p className="text-neutral-text/65 text-xs sm:text-sm md:text-base leading-relaxed">
+            At {siteConfig.brandName}, operated by {siteConfig.corpName}, we refuse to compromise between rugged resilience and refined aesthetics. Every case, duffel, and packing cube is designed to outlast your longest adventures.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* LEFT — Image */}
-          <div className="relative mx-auto aspect-square w-full max-w-lg overflow-hidden rounded-[2.5rem] shadow-2xl lg:mx-0 lg:aspect-4/5">
-            <Image
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1600&q=80"
-              alt={`${siteConfig.brandName} expedition travel lifestyle`}
-              fill
-              sizes="(max-width: 1024px) 90vw, 520px"
-              className="object-cover"
-            />
+        {/* Asymmetrical Editorial Showcase Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          
+          {/* LEFT: Image Stage */}
+          <div className="lg:col-span-6 relative pb-6 sm:pb-0">
+            <div className="relative aspect-4/5 w-full max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-lg border border-black/8 bg-neutral-bg">
+              <Image
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1600&q=80"
+                alt={`${siteConfig.brandName} expedition travel lifestyle`}
+                fill
+                sizes="(max-width: 1024px) 90vw, 560px"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+            </div>
+
+            {/* Clean Feature Badge */}
+            <div className="relative sm:absolute mt-4 sm:mt-0 sm:-bottom-5 sm:left-6 bg-white p-4 sm:px-6 sm:py-4 rounded-xl shadow-lg flex items-center gap-3.5 border border-black/8 max-w-full sm:max-w-sm mx-auto">
+              <div className="w-10 h-10 rounded-lg bg-secondary text-white flex items-center justify-center flex-shrink-0 font-black text-base shadow-xs">
+                ✓
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-primary truncate">
+                  100,000+ Mile Durability
+                </h4>
+                <p className="text-[0.65rem] sm:text-xs text-neutral-text/60 mt-0.5 leading-snug">
+                  Drop-tested, tumble-tested, and weather-sealed.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* RIGHT — Content */}
-          <div>
-            {/* Highlight list */}
-            <div className="mb-10 flex flex-col gap-6">
-              {highlights.map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    {item.icon}
+          {/* RIGHT: Story and Feature Pillars */}
+          <div className="lg:col-span-6 flex flex-col justify-center pt-6 lg:pt-0">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-primary tracking-tight leading-snug mb-4">
+              Engineered Without Shortcuts. Built for the Demands of Modern Transit.
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-text/70 leading-relaxed mb-8">
+              Whether you are boarding an overseas red-eye, navigating cobblestone streets, or checking bags through turbulent weather, our equipment ensures your essentials stay protected and organized from departure to arrival.
+            </p>
+
+            {/* Highlight items list */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {highlights.map((item, idx) => (
+                <div key={item.title} className="p-4 rounded-xl bg-neutral-bg border border-black/5 hover:border-secondary/30 transition-colors">
+                  <div className="text-[0.68rem] font-bold text-secondary uppercase tracking-widest mb-1.5 flex items-center gap-2">
+                    <span>0{idx + 1}</span>
+                    <span className="w-3 h-0.5 bg-secondary/50 rounded-full" />
                   </div>
-                  <div>
-                    <h3 className="mb-1 text-sm font-bold text-primary">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs leading-relaxed text-neutral-text/60 md:text-sm">
-                      {item.desc}
-                    </p>
-                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-primary mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-[0.68rem] sm:text-xs text-neutral-text/60 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
 
-            {/* Stat strip */}
-            <div className="mb-10 grid grid-cols-3 gap-4 border-y border-black/10 py-6">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <div className="text-xl font-black text-primary md:text-2xl">{s.value}</div>
-                  <div className="mt-1 text-[0.6rem] font-bold uppercase tracking-widest text-neutral-text/50">
-                    {s.label}
-                  </div>
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-black/8 text-center sm:text-left">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="font-serif text-xl sm:text-2xl font-bold text-primary tracking-tight">
+                    {stat.value}
+                  </p>
+                  <p className="text-[0.65rem] sm:text-xs text-neutral-text/50 uppercase tracking-wider font-semibold mt-0.5">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/#shop"
-                className="group inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-primary px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-primary-text shadow-lg shadow-primary/15 transition-all duration-300 hover:bg-secondary hover:text-secondary-text hover:shadow-secondary/20"
-              >
-                Explore Products
-                <span className="text-sm transition-transform duration-300 group-hover:translate-x-1.5">
-                  →
-                </span>
-              </Link>
-
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-primary/15 bg-transparent px-8 py-3.5 text-center text-xs font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:border-primary hover:bg-primary/5"
-              >
-                Learn More
-              </Link>
-            </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );

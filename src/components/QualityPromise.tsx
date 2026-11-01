@@ -8,72 +8,84 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const promises = [
   {
-    title: "Trail-Tested Durability",
-    desc: "Every luggage shell, zipper, and seam is stress-tested against impacts, drops, and weather before leaving our facility.",
+    tag: "01 / Testing",
+    title: "Torture-Tested Shells & Seams",
+    desc: "Every luggage corner, zipper bite, and telescoping pull is put through thousands of drop cycles, tumble barrels, and extreme load ratings before dispatch.",
   },
   {
+    tag: "02 / Coverage",
     title: "1-Year Comprehensive Warranty",
-    desc: "We stand firmly behind our engineering. Any manufacturing defect within 12 months is repaired or replaced without hassle.",
+    desc: "We engineer for endurance. If any structural component fails due to materials or craftsmanship within 12 months, we repair or replace it immediately.",
   },
   {
-    title: "Premium Certified Materials",
-    desc: "Aerospace-grade polycarbonate, water-resistant waxed ripstop canvas, and reinforced hardware in every build.",
+    tag: "03 / Materials",
+    title: "Certified Aerospace Polycarbonate",
+    desc: "100% virgin Makrolon® polycarbonate and water-resistant coated ripstop provide unbreakable flexibility and featherweight convenience.",
   },
 ];
 
 export default function QualityPromise() {
   return (
-    <section
-      id="quality-promise"
-      className="relative overflow-hidden bg-white py-12 md:py-16 lg:py-20"
-    >
-      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* Full-bleed banner */}
-        <div className="relative mb-12 aspect-4/3 w-full overflow-hidden rounded-[2.5rem] shadow-2xl sm:aspect-16/9 md:mb-16 lg:aspect-21/8">
+    <section id="quality-promise" className="relative overflow-hidden bg-white py-14 sm:py-20 md:py-28">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Full-bleed Cinematic Banner */}
+        <div className="relative mb-8 sm:mb-12 min-h-[300px] sm:aspect-16/9 md:aspect-21/9 w-full overflow-hidden rounded-2xl shadow-lg border border-black/8 flex flex-col justify-end">
           <img
             src="/img/qualitypromise.jpg"
-            alt={`${siteConfig.brandName} Quality Assurance`}
+            alt={`${siteConfig.brandName} Quality Engineering Assurance`}
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
+          {/* Deep Charcoal Forest Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#141F1A] via-[#141F1A]/80 to-transparent" />
 
-          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-14">
-            <div className="mb-5 flex items-center gap-4">
-              <span className="h-px w-8 bg-secondary md:w-10" />
-              <span className="text-xs font-bold uppercase tracking-[0.22em] text-secondary md:text-sm">
+          {/* Banner Content */}
+          <div className="relative z-10 p-6 sm:p-10 md:p-14">
+            <div className="mb-3 inline-flex items-center gap-2.5">
+              <span className="w-8 h-px bg-secondary" />
+              <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-secondary">
                 Our Guarantee
               </span>
             </div>
 
-            <h2 className="max-w-xl text-3xl font-black uppercase leading-[1.05] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.5rem]">
-              The Lasting Quality{" "}
-              <span className="text-secondary">You Deserve</span>
+            <h2 className="font-serif max-w-2xl text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Quality Engineered for <span className="text-secondary">Every Voyage</span>
             </h2>
+
+            <p className="mt-3 text-xs sm:text-sm text-white/80 max-w-xl font-normal leading-relaxed">
+              Every detail is calibrated to eliminate travel friction, ensuring complete confidence wherever your ticket takes you.
+            </p>
           </div>
         </div>
 
-        {/* Promise grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-          {promises.map((promise, idx) => (
+        {/* 3 Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {promises.map((p) => (
             <div
-              key={promise.title}
-              className="group/item relative rounded-2xl border border-black/[0.06] bg-neutral-bg p-7 transition-all duration-300 hover:-translate-y-1 hover:border-secondary/30 hover:shadow-lg md:p-8"
+              key={p.tag}
+              className="p-6 sm:p-8 rounded-xl bg-neutral-bg border border-black/6 shadow-xs hover:border-secondary/30 transition-all flex flex-col justify-between"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-secondary/25 bg-secondary/[0.08] text-sm font-black text-secondary shadow-sm transition-all duration-300 group-hover/item:border-secondary group-hover/item:bg-secondary group-hover/item:text-primary-text">
-                {String(idx + 1).padStart(2, "0")}
+              <div>
+                <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-secondary block mb-2">
+                  {p.tag}
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2.5 leading-snug">
+                  {p.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-text/65 leading-relaxed font-normal">
+                  {p.desc}
+                </p>
               </div>
 
-              <h3 className="mb-2 text-base font-bold leading-snug text-primary transition-colors duration-300 group-hover/item:text-secondary sm:text-lg">
-                {promise.title}
-              </h3>
-
-              <p className="text-sm leading-[1.7] text-neutral-text/60">
-                {promise.desc}
-              </p>
+              <div className="mt-6 pt-4 border-t border-black/6 flex items-center gap-2 text-xs font-bold text-primary">
+                <span className="text-secondary">✓</span>
+                <span className="text-[0.68rem] uppercase tracking-wider text-neutral-text/60">Strictly Inspected</span>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

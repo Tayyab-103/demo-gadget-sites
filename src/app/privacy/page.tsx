@@ -18,7 +18,7 @@ export default function Privacy() {
 
         <div className="w-full max-w-4xl mx-auto px-6 relative z-10">
           <span className="eyebrow mb-4">Legal</span>
-          <h1 className="text-3xl md:text-4xl font-black uppercase text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-8 border-b border-black/5 pb-6 tracking-tight">
             Privacy Policy
           </h1>
 

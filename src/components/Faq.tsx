@@ -8,134 +8,115 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 const faqData = [
   {
-    question: "What shipping carrier do you use and how long does delivery take?",
-    answer: `All orders are dispatched within 1-2 business days. We ship using ${siteConfig.shippingCarrier} nationwide, and delivery typically takes between ${siteConfig.shippingPeriod} business days to arrive at your door.`
+    question: "What shipping carrier do you use and how fast is delivery?",
+    answer: `All orders are dispatched within 24–48 hours from our domestic fulfillment center. We partner with ${siteConfig.shippingCarrier} to provide reliable tracked transit, arriving at your doorstep within ${siteConfig.shippingPeriod} business days nationwide.`
   },
   {
-    question: "Do you offer a money-back guarantee?",
-    answer: `Yes, we back all our products with a 60-day money-back guarantee. If you are not satisfied with your purchase, contact our support team via email or phone to initiate a hassle-free return and refund.`
+    question: "What does the 60-day satisfaction guarantee cover?",
+    answer: `We want you to pack, travel, and test our gear in real-world conditions. If you are not thoroughly impressed with the craftsmanship or usability within 60 days of delivery, simply reach out to our support team for an effortless return and full refund.`
   },
   {
-    question: "Are your bags and gear covered by a warranty?",
-    answer: "Yes. Every product ships with a 1-year manufacturer's warranty covering defects in materials and workmanship. If something goes wrong under normal use, we'll repair or replace it free of charge."
+    question: "How does the 1-year comprehensive warranty work?",
+    answer: "Every piece of luggage and gear includes 12 months of complete defect protection. If any zipper, wheel assembly, telescoping handle, or polycarbonate shell experiences manufacturing failure under normal travel use, we repair or replace it at zero cost."
   },
   {
-    question: "How will the charge appear on my credit card statement?",
-    answer: `Your card statement will display the charge descriptor as "${siteConfig.descriptor}" to ensure a clean transaction history.`
+    question: "How will this purchase appear on my billing statement?",
+    answer: `To keep your records clear and recognizable, your credit card statement will display the merchant descriptor as "${siteConfig.descriptor}".`
   },
   {
-    question: "How do I contact customer support?",
-    answer: `You can reach our customer support team Monday through Friday during business hours at ${siteConfig.phone}, or email us at ${siteConfig.email}. We aim to respond to all inquiries within 24 hours.`
+    question: "Can I reach customer support directly if I have a question?",
+    answer: `Absolutely. Our dedicated concierge team is available Monday through Friday via phone at ${siteConfig.phone} or via email at ${siteConfig.email}. Inquiries are typically answered within a few hours.`
   }
 ];
 
 export default function Faq() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <section className="py-12 md:py-16 bg-neutral-bg relative overflow-hidden" id="faq">
-      <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+    <section className="py-14 sm:py-20 md:py-28 bg-neutral-bg relative overflow-hidden" id="faq">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
-          {/* Left Column — Header, Decoration & CTA */}
+          {/* Left Column: Summary & Support */}
           <div className="w-full lg:w-5/12 flex flex-col lg:sticky lg:top-28 lg:self-start">
-            <span className="eyebrow mb-4">Got Questions?</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-primary mb-4 tracking-tight">
-              Frequently Asked <span className="text-secondary">Questions</span>
+            <span className="eyebrow-start mb-3">Clarity &amp; Transparency</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary leading-tight">
+              Frequently Answered <span className="text-secondary">Questions</span>
             </h2>
-            <p className="text-neutral-text/60 text-sm md:text-base mb-10">
-              Find immediate answers to common questions about our products, shipping, and return policies.
+            <div className="mt-4 mb-4 w-10 h-px bg-secondary" />
+            <p className="text-neutral-text/65 text-xs sm:text-sm md:text-base mb-8 leading-relaxed">
+              Everything you need to know about our expedition warranties, domestic shipping times, and effortless returns.
             </p>
 
-            {/* Decorative Mountain / Trail Illustration */}
-            <div className="hidden lg:block relative mb-10">
-              <svg viewBox="0 0 200 200" className="w-48 h-48 text-primary/15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 160 L62 90 L97 135 L142 75 L190 160 Z" fill="currentColor" fillOpacity="0.08" />
-                <path d="M62 90 L97 135 L142 75" />
-                <circle cx="155" cy="55" r="16" fill="currentColor" fillOpacity="0.12" stroke="none" />
-                <path d="M10 160 L190 160" />
-              </svg>
-            </div>
+            {/* Quick Contact Card */}
+            <div className="rounded-xl bg-white border border-black/6 p-6 sm:p-8 shadow-xs">
+              <span className="text-[0.65rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-secondary block mb-2">
+                Need Specific Help?
+              </span>
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-primary mb-2">
+                Our support desk is ready.
+              </h3>
+              <p className="text-xs text-neutral-text/60 leading-relaxed mb-6">
+                Have a question about sizing or compatibility? Contact our concierge team anytime.
+              </p>
 
-            {/* CTA */}
-            <div className="bg-primary rounded-2xl p-8 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-2">Still have questions?</h3>
-                <p className="text-white/70 text-sm mb-6 leading-relaxed">
-                  Our customer care team is here to help you with anything you need.
-                </p>
+              <div className="flex flex-col gap-3">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-secondary text-secondary-text font-bold text-sm px-6 py-3 rounded-full hover:brightness-110 transition-all"
+                  href={`tel:${siteConfig.phone}`}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-neutral-bg border border-black/5 text-primary text-xs font-bold hover:border-secondary/30 transition-all"
                 >
-                  Get in Touch
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
+                  <span className="text-secondary">📞</span>
+                  <span>{siteConfig.phone}</span>
+                </a>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-neutral-bg border border-black/5 text-primary text-xs font-bold hover:border-secondary/30 transition-all truncate"
+                >
+                  <span className="text-secondary">✉️</span>
+                  <span className="truncate">{siteConfig.email}</span>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column — Accordion */}
-          <div className="w-full lg:w-7/12 flex flex-col gap-4">
-            {faqData.map((item, idx) => {
-              const isOpen = activeIndex === idx;
-
+          {/* Right Column: Accordion */}
+          <div className="w-full lg:w-7/12 flex flex-col gap-3">
+            {faqData.map((faq, index) => {
+              const isOpen = activeIndex === index;
               return (
                 <div
-                  key={idx}
-                  className={`bg-white rounded-2xl border transition-all duration-300 ${
-                    isOpen ? "border-secondary/40 shadow-lg" : "border-black/5 hover:border-black/10 hover:shadow-sm"
+                  key={index}
+                  className={`rounded-xl border transition-all duration-300 bg-white ${
+                    isOpen ? "border-secondary/40 shadow-sm" : "border-black/6 hover:border-black/15"
                   }`}
                 >
-                  {/* FAQ Header */}
                   <button
-                    onClick={() => toggleFaq(idx)}
-                    className="w-full flex justify-between items-center p-6 md:p-7 bg-transparent border-none cursor-pointer text-left focus:outline-none gap-4"
-                    aria-expanded={isOpen}
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex items-center justify-between text-left p-5 sm:p-6 cursor-pointer gap-4"
                   >
-                    <div className="flex items-center gap-4">
-                      <span className={`text-xs font-black tracking-widest transition-colors duration-300 flex-shrink-0 ${
-                        isOpen ? "text-secondary" : "text-neutral-text/25"
-                      }`}>
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <strong className="text-sm md:text-base font-extrabold text-primary">
-                        {item.question}
-                      </strong>
-                    </div>
-
-                    {/* Animated Icon */}
+                    <span className="font-serif text-base sm:text-lg font-bold text-primary leading-snug">
+                      {faq.question}
+                    </span>
                     <span
-                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-lg font-light leading-none transition-all duration-300 ${
-                        isOpen
-                          ? "bg-secondary text-primary-text rotate-45 shadow-md"
-                          : "bg-neutral-bg border border-black/10 text-primary hover:border-secondary/40 hover:text-secondary rotate-0"
+                      className={`flex items-center justify-center w-8 h-8 rounded-full flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? "bg-secondary text-white rotate-180" : "bg-neutral-bg text-primary"
                       }`}
                     >
-                      +
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
                     </span>
                   </button>
 
-                  {/* FAQ Body */}
-                  <div
-                    className="overflow-hidden transition-all duration-500 ease-in-out px-6 md:px-7"
-                    style={{
-                      maxHeight: isOpen ? "400px" : "0px",
-                    }}
-                  >
-                    <div className="pb-7 text-sm text-neutral-text/65 leading-relaxed border-t border-black/5 pt-5 pl-10">
-                      {item.answer}
+                  {isOpen && (
+                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-neutral-text/70 leading-relaxed border-t border-black/5 pt-4">
+                      {faq.answer}
                     </div>
-                  </div>
+                  )}
                 </div>
               );
             })}

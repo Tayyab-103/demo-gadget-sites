@@ -14,6 +14,15 @@ export default function CartDrawer() {
     getCartTotal,
   } = useCart();
 
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+
+  const displayCount = mounted ? cart.length : 0;
+  const isCartEmpty = mounted ? cart.length === 0 : true;
+
   return (
     <>
       {/* Overlay */}
@@ -34,8 +43,8 @@ export default function CartDrawer() {
         <div className="p-5 sm:p-6 border-b border-black/8 flex items-center justify-between bg-[#fff5f8]">
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#ff4370]" />
-            <h3 className="m-0 text-sm font-black text-[#1e293b] tracking-wider uppercase">
-              Shopping Cart ({cart.length})
+            <h3 className="m-0 text-sm font-black text-[#1e293b] tracking-wider uppercase" suppressHydrationWarning>
+              Shopping Cart ({displayCount})
             </h3>
           </div>
           <button
@@ -75,7 +84,7 @@ export default function CartDrawer() {
 
         {/* Cart Item List */}
         <div className="flex-1 overflow-y-auto p-5 sm:p-6">
-          {cart.length === 0 ? (
+          {isCartEmpty ? (
             <div className="text-center py-16">
               <div className="text-5xl mb-4">🧸</div>
               <p className="text-black/50 text-sm font-bold uppercase tracking-wider mb-6">
@@ -173,7 +182,7 @@ export default function CartDrawer() {
         </div>
 
         {/* Footer Actions */}
-        {cart.length > 0 && (
+        {mounted && cart.length > 0 && (
           <div className="p-5 sm:p-6 border-t border-black/8 bg-white">
             <div className="flex items-center justify-between mb-4">
               <span className="font-bold text-black/70 uppercase text-xs tracking-wider">

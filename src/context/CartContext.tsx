@@ -21,25 +21,37 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-function loadCartFromStorage(): CartItem[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const savedCart = localStorage.getItem("cartPdtArr");
-    return savedCart ? JSON.parse(savedCart) : [];
-  } catch (e) {
-    console.error("Error parsing cart data from localStorage", e);
-    return [];
-  }
-}
-
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Save cart to localStorage whenever it changes
+  // Load cart from localStorage after mount to prevent SSR hydration mismatch
   useEffect(() => {
-    localStorage.setItem("cartPdtArr", JSON.stringify(cart));
-  }, [cart]);
+    try {
+      const savedCart = localStorage.getItem("cartPdtArr");
+      if (savedCart) {
+        const parsed = JSON.parse(savedCart);
+        if (Array.isArray(parsed)) {
+          setCart(parsed);
+        }
+      }
+    } catch (e) {
+      console.error("Error parsing cart data from localStorage", e);
+    } finally {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes (only after initial client load)
+  useEffect(() => {
+    if (!isLoaded) return;
+    try {
+      localStorage.setItem("cartPdtArr", JSON.stringify(cart));
+    } catch (e) {
+      console.error("Error saving cart to localStorage", e);
+    }
+  }, [cart, isLoaded]);
 
   const addToCart = (product: Product, quantity: number, price: number | string, label = "") => {
     // If site configuration limits cart to one product

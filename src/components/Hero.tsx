@@ -1,174 +1,182 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ScallopTop, ScallopBottom, WhimsicalStar } from "./ScallopBorders";
+import { ScallopTop } from "./ScallopBorders";
 
-const heroImages = [
+const slides = [
   {
-    src: "/img/herosection.png",
-    alt: "Happy Girl Holding Teddy Bear Toy",
-    fallback: "/img/kiddex_hero_banner.png",
+    id: 1,
+    image: "/img/hero1.jpg",
+    badgeImg: "/img/badge-orange.png",
+    alt: "Kids Toy Store Collection - Colorful Toys and Games",
+    badgeDropShadow: "rgba(245, 130, 32, 0.4)",
+    btnTextColor: "#ff4370",
+    btnBorderColor: "#ff4370",
   },
   {
-    src: "/img/hero-slide-2.jpg",
-    alt: "Smiling Boy Playing with Toy Robot",
-    fallback: "/img/herosection.png",
+    id: 2,
+    image: "/img/hero2.jpg",
+    badgeImg: "/img/badge-green.png",
+    alt: "Kids Toy Store Collection - Soft Plushies and Teddy Bears",
+    badgeDropShadow: "rgba(98, 166, 46, 0.4)",
+    btnTextColor: "#62a62e",
+    btnBorderColor: "#62a62e",
   },
   {
-    src: "/img/hero-slide-3.jpg",
-    alt: "Laughing Girl Hugging Soft Plush Bunny",
-    fallback: "/img/herosection.png",
+    id: 3,
+    image: "/img/hero1.jpg",
+    badgeImg: "/img/badge-red.png",
+    alt: "Kids Toy Store Collection - Red Scallop Center Badge",
+    badgeDropShadow: "rgba(199, 74, 79, 0.45)",
+    btnTextColor: "#c74a4f",
+    btnBorderColor: "#c74a4f",
   },
 ];
 
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 3500);
-
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const active = slides[currentSlide];
+
   return (
-    <section className="relative bg-[#fde599] font-sans pt-24 sm:pt-28 md:pt-32 pb-0 overflow-hidden select-none">
-      {/* Top Scalloped Cloud Fringe */}
-      <ScallopTop color="#fde599" />
-
-      {/* Floating Animated Cartoon Elements */}
-      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-        {/* Floating Twinkling Stars */}
-        <WhimsicalStar className="absolute top-16 left-12 w-6 h-6 text-white/90 zoom-fade" />
-        <WhimsicalStar className="absolute top-28 left-[45%] w-5 h-5 text-white/95 zoom-fade" />
-        <WhimsicalStar className="absolute top-14 right-1/3 w-6 h-6 text-white/90 zoom-fade" />
-        <WhimsicalStar className="absolute bottom-16 right-1/4 w-5 h-5 text-white/95 zoom-fade" />
-        <WhimsicalStar className="absolute bottom-24 left-1/4 w-4 h-4 text-white/80 zoom-fade" />
-
-        {/* Floating Pink Butterfly */}
-        <div className="absolute top-8 sm:top-12 left-[36%] sm:left-[38%] md:left-[40%] w-16 sm:w-20 md:w-24 float-bob-y">
-          <img
-            src="/img/anim-butterfly.png"
-            alt="Cartoon Butterfly"
-            className="w-full h-auto drop-shadow-sm"
-          />
-        </div>
-
-        {/* Floating Car on Cloud - Bottom Left */}
-        <div className="absolute bottom-4 sm:bottom-8 left-2 sm:left-6 md:left-12 w-20 sm:w-24 md:w-28 float-bob-x">
-          <img
-            src="/img/anim-car-cloud.png"
-            alt="Toy Car on Cloud"
-            className="w-full h-auto drop-shadow-sm"
-          />
-        </div>
-
-        {/* Floating Blossom Flower on Cloud - Top Right */}
-        <div className="absolute top-10 sm:top-14 right-4 sm:right-10 md:right-16 w-16 sm:w-20 md:w-24 float-bob-y">
-          <img
-            src="/img/anim-flower-cloud.png"
-            alt="Flower on Cloud"
-            className="w-full h-auto drop-shadow-sm"
-          />
-        </div>
-
-        {/* Floating Bumblebee - Mid Right */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-12 md:right-24 w-10 sm:w-12 md:w-14 float-bob-x">
-          <img
-            src="/img/anim-bee.png"
-            alt="Cute Bee"
-            className="w-full h-auto drop-shadow-sm"
-          />
-        </div>
-
-        {/* Soft Pastel Rainbow - Bottom Right */}
-        <div className="absolute bottom-0 right-0 w-32 sm:w-44 md:w-56 opacity-90">
-          <img
-            src="/img/anim-rainbow.png"
-            alt="Pastel Rainbow"
-            className="w-full h-auto"
-          />
-        </div>
+    <section className="relative w-full overflow-hidden select-none bg-[#f8f9fa] pt-20 sm:pt-24 md:pt-28">
+      
+      {/* Top White Scalloped Cloud Fringe Border */}
+      <div className="absolute top-20 sm:top-24 md:top-28 left-0 right-0 z-30">
+        <ScallopTop color="#ffffff" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pt-4 pb-12 sm:pb-16 md:pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          
-          {/* Left Column: Circular Hero Carousel with Kids and Toys */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-start items-center relative">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
-              {/* Concentric Halo Rings */}
-              <div className="absolute inset-0 rounded-full border-2 border-white/60 -scale-x-100 rotate-12 pointer-events-none" />
-              <div className="absolute -inset-3 rounded-full border border-white/40 pointer-events-none" />
+      {/* Hero Slideshow Background Images */}
+      <div className="relative w-full min-h-[460px] xs:min-h-[500px] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[660px] flex items-center justify-center">
+        {slides.map((slide, idx) => {
+          const isActive = idx === currentSlide;
+          return (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          );
+        })}
 
-              {/* Circular Slideshow Frame */}
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 md:w-84 md:h-84 rounded-full overflow-hidden bg-white shadow-xl border-4 border-white flex items-center justify-center">
-                {heroImages.map((image, index) => {
-                  const isActive = index === currentSlide;
-                  return (
-                    <div
-                      key={image.src}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        isActive
-                          ? "opacity-100 scale-105 pointer-events-auto z-10"
-                          : "opacity-0 scale-100 pointer-events-none z-0"
-                      }`}
-                    >
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.src = image.fallback;
-                        }}
-                      />
-                    </div>
-                  );
-                })}
-
-                {/* Slideshow Indicator Dots */}
-                <div className="absolute bottom-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/25 backdrop-blur-xs">
-                  {heroImages.map((_, dotIndex) => (
-                    <button
-                      key={dotIndex}
-                      type="button"
-                      onClick={() => setCurrentSlide(dotIndex)}
-                      aria-label={`Go to slide ${dotIndex + 1}`}
-                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                        dotIndex === currentSlide
-                          ? "w-4 bg-white"
-                          : "w-1.5 bg-white/60 hover:bg-white"
-                      }`}
-                    />
-                  ))}
+        {/* Central Wavy/Scalloped Sunburst Badge using user-uploaded badge images */}
+        <div className="relative z-20 flex flex-col items-center justify-center px-4 my-auto">
+          <div className="relative w-[300px] h-[300px] xs:w-[340px] xs:h-[340px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] lg:w-[490px] lg:h-[490px] flex items-center justify-center transition-transform duration-300 hover:scale-[1.02]">
+            
+            {/* Scalloped Badge PNG Images cross-fading smoothly with slide change */}
+            {slides.map((slide, idx) => {
+              const isBadgeActive = idx === currentSlide;
+              return (
+                <div
+                  key={slide.id}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out pointer-events-none ${
+                    isBadgeActive ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }`}
+                  style={{
+                    filter: `drop-shadow(0 14px 28px ${slide.badgeDropShadow})`,
+                  }}
+                >
+                  <img
+                    src={slide.badgeImg}
+                    alt="Center Scalloped Badge"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
+              );
+            })}
+
+            {/* Content Inside Badge */}
+            <div className="relative z-20 flex flex-col items-center justify-center text-center px-6 sm:px-10">
+              
+              {/* Main Title matching reference typography */}
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-[3.25rem] lg:text-[3.65rem] font-black text-white leading-[1.08] tracking-tight drop-shadow-sm">
+                Kids Toy<br />
+                Store<br />
+                Collection
+              </h1>
+
+              {/* View Shop Pill Button with Dashed Border */}
+              <div className="mt-4 sm:mt-5 md:mt-6">
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 rounded-full bg-white font-black text-xs sm:text-sm md:text-base tracking-wide border-2 border-dashed shadow-md hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                  style={{
+                    color: active.btnTextColor,
+                    borderColor: active.btnBorderColor,
+                  }}
+                >
+                  View Shop
+                </Link>
               </div>
+
             </div>
+
           </div>
-
-          {/* Right Column: Title, Price, & View Shop Button */}
-          <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-[#1e293b] leading-[1.12] tracking-tight">
-              The Best Kids Toy<br />Store in the City
-            </h1>
-
-            <div className="mt-6 sm:mt-8">
-              <Link
-                href="/shop"
-                className="inline-flex items-center justify-center px-10 py-3.5 sm:px-12 sm:py-4 rounded-full bg-white text-[#ff4370] font-black text-sm sm:text-base tracking-wide border-2 border-dashed border-[#ff4370] hover:bg-[#ff4370] hover:text-white hover:border-solid hover:scale-105 transition-all duration-200 shadow-md shadow-[#ff4370]/10 cursor-pointer"
-              >
-                View Shop
-              </Link>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      {/* Bottom Scalloped Cloud Fringe */}
-      <ScallopBottom color="#fde599" />
+        {/* Previous Slide Arrow Button */}
+        <button
+          type="button"
+          onClick={prevSlide}
+          aria-label="Previous slide"
+          className="absolute left-3 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-xs"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Next Slide Arrow Button */}
+        <button
+          type="button"
+          onClick={nextSlide}
+          aria-label="Next slide"
+          className="absolute right-3 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-30 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-xs"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Slide Indicator Dots */}
+        <div className="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/25 backdrop-blur-xs">
+          {slides.map((slide, idx) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => setCurrentSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === currentSlide ? "w-6 bg-white" : "w-2 bg-white/60 hover:bg-white"
+              }`}
+            />
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 }

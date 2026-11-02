@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CartProvider>
           {children}
+          <NewsletterPopup />
         </CartProvider>
       </body>
     </html>

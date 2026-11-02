@@ -14,7 +14,7 @@ import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
-import NewsletterPopup from "@/components/NewsletterPopup";
+
 
 export default function Home() {
   return (
@@ -53,7 +53,7 @@ export default function Home() {
 
       <Footer />
       <CartDrawer />
-      <NewsletterPopup />
+
     </>
   );
 }

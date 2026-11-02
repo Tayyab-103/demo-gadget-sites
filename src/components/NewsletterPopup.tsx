@@ -36,7 +36,7 @@ export default function NewsletterPopup() {
     const timer = window.setTimeout(() => {
       hasSpentTimeOnPage = true;
       showWhenReady();
-    }, 12000);
+    }, 4000);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -59,7 +59,7 @@ export default function NewsletterPopup() {
       setTimeout(() => {
         setIsVisible(false);
         localStorage.setItem("newsletter_dismissed", "true");
-      }, 2500);
+      }, 2000);
     }
   };
 

@@ -15,7 +15,7 @@ const blogPosts = [
     date: "June 4, 2026",
     author: "By Jeams",
     comments: "3 Comments",
-    image: "/img/products/plush-bunny.jpg",
+    image: "/img/blog1.webp",
     category: "Baby Care",
     excerpt:
       "Discover the latest trends in child-safe fabrics, breathable organic cotton, and adorable outfits designed to keep your little ones cheerful during playful adventures and family outings.",
@@ -37,7 +37,7 @@ const blogPosts = [
     date: "June 2, 2026",
     author: "By Jeams",
     comments: "2 Comments",
-    image: "/img/products/board-game.jpg",
+    image: "/img/blog2.webp",
     category: "Safety",
     excerpt:
       "Creating a safe home playground is essential as toddlers begin exploring. Learn about ASTM safety standards, non-toxic toy finishes, and secure storage for family board games.",
@@ -48,7 +48,7 @@ const blogPosts = [
     date: "June 1, 2026",
     author: "By Jeams",
     comments: "4 Comments",
-    image: "/img/products/magnetic-blocks.jpg",
+    image: "/img/blog3.webp",
     category: "Learning",
     excerpt:
       "Age-appropriate toys nurture cognitive growth, spatial problem solving, and social sharing. Here is our expert guide to matching games with your child's developmental milestones.",

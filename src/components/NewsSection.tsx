@@ -6,35 +6,47 @@ import Link from "next/link";
 const newsArticles = [
   {
     id: 1,
-    title: "Dressing Your Little One Stylish and Comfortable Outfits",
+    title: "Dressing Your Little One Stylish and Comfortable Baby Outfits",
     date: "June 4, 2026",
     author: "By Jeams",
-    image: "/img/products/plush-bunny.jpg",
-    category: "Parenting",
+    comments: "3 Comments",
+    image: "/img/blog1.webp",
+    category: "Baby Care",
+    excerpt:
+      "Discover the latest trends in child-safe fabrics, breathable organic cotton, and adorable outfits designed to keep your little ones cheerful during playful adventures and family outings.",
   },
   {
     id: 2,
     title: "Baby Gear Essentials What You Really Need for Play",
     date: "June 3, 2026",
     author: "By Jeams",
+    comments: "5 Comments",
     image: "/img/products/wooden-puzzle.jpg",
-    category: "Toy Safety",
+    category: "Toy Reviews",
+    excerpt:
+      "From Montessori developmental wooden puzzles to ergonomic play mats, our comprehensive checklist helps parents choose the highest quality developmental toys without clutter.",
   },
   {
     id: 3,
     title: "Babyproofing Your Home A Comprehensive Family Guide",
     date: "June 2, 2026",
     author: "By Jeams",
-    image: "/img/products/board-game.jpg",
-    category: "Family Fun",
+    comments: "2 Comments",
+    image: "/img/blog2.webp",
+    category: "Safety",
+    excerpt:
+      "Creating a safe home playground is essential as toddlers begin exploring. Learn about ASTM safety standards, non-toxic toy finishes, and secure storage for family board games.",
   },
   {
     id: 4,
     title: "How to Choose the Perfect Toys and Games for Your Toddler",
     date: "June 1, 2026",
     author: "By Jeams",
-    image: "/img/products/magnetic-blocks.jpg",
+    comments: "4 Comments",
+    image: "/img/blog3.webp",
     category: "Learning",
+    excerpt:
+      "Age-appropriate toys nurture cognitive growth, spatial problem solving, and social sharing. Here is our expert guide to matching games with your child's developmental milestones.",
   },
 ];
 

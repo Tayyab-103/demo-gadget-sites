@@ -35,7 +35,7 @@ export default function Home() {
         <CategoriesSection />
 
         {/* 5. Featured 3-Block Section (Baby Toy's, Gaming, Accessories) */}
-        <FeaturedPromoBlocks />
+        {/* <FeaturedPromoBlocks /> */}
 
         {/* 6. Deal of the Day with Live Countdown Timer */}
         <DealsOfTheDay />

@@ -9,9 +9,9 @@ const siteConfig = siteConfigData as unknown as SiteConfig;
 
 export default function AboutUs() {
   const funfacts = [
-    { count: "25+", label: "Retail Partner Hubs", icon: "🏪" },
-    { count: "300+", label: "Active Delivery Network", icon: "🚚" },
-    { count: "120+", label: "Toy & Game Brands", icon: "🧸" },
+    { count: "25+", label: "Retails Store in the city", icon: "🏪" },
+    { count: "300+", label: "Active Delivery Person", icon: "🚚" },
+    { count: "120+", label: "Brands and Companies", icon: "🧸" },
   ];
 
   const features = [
@@ -33,63 +33,65 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white text-black font-sans border-b border-black/5" id="about">
+    <section className="py-16 sm:py-20 md:py-24 bg-white text-black font-sans border-b border-black/5 overflow-hidden" id="about">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main 2-Column Row matching Kiddex about-section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        {/* Main 2-Column Row matching Kiddex about-section from about.html */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Visual Showcase with Badge */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#fff0f4] aspect-[4/3] sm:aspect-square bg-[#fff0f4]">
-              <img
-                src="/img/hero-banner.jpg"
-                alt="Kids playing with toys at Playhouse Games and Toy Store"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              
-              {/* Curved/Rotating Style Badge from Kiddex */}
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-black/5 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#ff4370] text-white flex items-center justify-center font-black text-xl">
-                  30+
-                </div>
-                <div>
-                  <div className="text-sm font-black text-[#1e293b]">Years of Playful Joy</div>
-                  <div className="text-xs text-black/60 font-semibold">Inspiring Kids Everyday</div>
-                </div>
+          {/* Left Column: About Us Image Area (Matching uploaded artwork) */}
+          <div className="lg:col-span-6 relative flex items-center justify-center">
+            <div className="relative w-full max-w-[500px] mx-auto group">
+              {/* Subtle ambient whimsical glow */}
+              <div className="absolute inset-0 rounded-full bg-[#ff4370]/10 blur-3xl scale-90 pointer-events-none -z-10" />
+
+              <div className="relative flex items-center justify-center">
+                <img
+                  src="/img/about-kids-car.jpg"
+                  alt="Happy kids with toys - Playhouse Games and Toy Store"
+                  className="w-full h-auto max-h-[520px] object-contain transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "/img/about-kids.webp";
+                  }}
+                />
               </div>
             </div>
           </div>
 
-          {/* Right Column: Text & Funfacts */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          {/* Right Column: Text & Kiddex Inner Funfact Box */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
             <span className="text-xs font-black uppercase tracking-widest text-[#ff4370] bg-[#ff4370]/10 px-3.5 py-1 rounded-full w-fit mb-4">
               Our Story &amp; Mission
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1e293b] tracking-tight leading-[1.1] mb-5">
+            
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black text-[#1e293b] tracking-tight leading-[1.15] mb-5">
               We are a premier retail store in <span className="text-[#ff4370]">toys, games, and creative accessories</span> for kids
             </h2>
 
-            <p className="text-sm sm:text-base text-black/70 leading-relaxed mb-4">
-              At <strong className="text-[#1e293b] font-bold">{siteConfig.brandName}</strong>, we believe play is the greatest teacher. With a rich heritage of bringing laughter and discovery to families, we curate toys that ignite curiosity, foster teamwork, and spark lifelong fond memories.
+            <p className="text-sm sm:text-base text-black/70 leading-relaxed mb-3">
+              At <strong className="text-[#1e293b] font-bold">{siteConfig.brandName}</strong>, with a rich legacy spanning years of joyful moments, we stand as a beloved destination for families seeking durable, imaginative, and safe play companions.
             </p>
-            <p className="text-xs sm:text-sm text-black/60 leading-relaxed mb-8">
-              All toys, board games, puzzles, and plush companions in our inventory undergo comprehensive quality checks to meet or exceed consumer safety standards, instilling absolute confidence in parents and gift-givers alike.
+            <p className="text-xs sm:text-sm text-black/60 leading-relaxed mb-6">
+              All components and toys featured in our inventory undergo comprehensive lab quality checks to meet or exceed consumer safety standards, instilling confidence in parents regarding the durability and safety of their purchases.
             </p>
 
-            {/* Funfacts Row matching Kiddex */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-black/8 mb-8">
-              {funfacts.map((stat) => (
-                <div key={stat.label} className="flex flex-col">
-                  <div className="text-2xl sm:text-3xl font-black text-[#ff4370] flex items-center gap-1.5">
-                    <span>{stat.count}</span>
+            {/* Kiddex Inner Funfact Box with Dashed Border and Top Colored Accent */}
+            <div className="relative bg-[#fdf7f9] rounded-2xl p-6 sm:p-8 border border-dashed border-[#ff4370]/25 border-t-[3px] border-t-[#ff4370] shadow-xs mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-black/10">
+                {funfacts.map((stat, idx) => (
+                  <div
+                    key={stat.label}
+                    className={`flex flex-col ${idx !== 0 ? "pt-4 sm:pt-0 sm:pl-5" : ""}`}
+                  >
+                    <div className="text-3xl sm:text-4xl font-black text-[#ff4370] tracking-tight flex items-baseline">
+                      <span>{stat.count}</span>
+                    </div>
+                    <p className="text-xs font-extrabold text-[#1e293b] mt-1 leading-snug">
+                      {stat.label}
+                    </p>
                   </div>
-                  <span className="text-xs text-black/60 font-bold mt-1">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div>
@@ -104,7 +106,7 @@ export default function AboutUs() {
 
         </div>
 
-        {/* Feature Cards Grid */}
+        {/* Feature Cards Grid (Safety, Security, Delivery) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 sm:pt-20">
           {features.map((feature) => (
             <div

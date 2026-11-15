@@ -33,7 +33,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (savedCart) {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed)) {
-          setCart(parsed);
+          setTimeout(() => {
+            setCart(parsed);
+          }, 0);
         }
       }
     } catch (e) {

@@ -3,13 +3,13 @@
 import React from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ServicePerks from "@/components/ServicePerks";
 import CategoriesSection from "@/components/CategoriesSection";
 import FeaturedPromoBlocks from "@/components/FeaturedPromoBlocks";
-import ProductGrid from "@/components/ProductGrid";
 import DealsOfTheDay from "@/components/DealsOfTheDay";
-import TopSellingSection from "@/components/TopSellingSection";
 import FeaturedStyleTwo from "@/components/FeaturedStyleTwo";
 import CollectionTabs from "@/components/CollectionTabs";
+import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
 import MarqueeTicker from "@/components/MarqueeTicker";
 import NewsSection from "@/components/NewsSection";
@@ -24,33 +24,33 @@ export default function Home() {
       <main className="flex-grow">
         {/* 1. Kiddex Banner / Hero Section matching media_1792413693163.png */}
         <Hero />
-{/* 10. Slide Text Marquee Ticker */}
+
+        {/* 2. Slide Text Marquee Ticker */}
         <MarqueeTicker />
-        {/* 2. Category Section with 6 Whimsical Shapes */}
+
+        {/* 3. Service Perks & Trust Guarantees (Matching uploaded design: Free Shipping, Support 24/7, Money Return) */}
+        <ServicePerks />
+
+        {/* 4. Category Section with 6 Whimsical Shapes (Shop by Category) */}
         <CategoriesSection />
 
-        {/* 3. Featured 3-Block Section (Baby Toy's, Gaming, Accessories) */}
+        {/* 5. Featured 3-Block Section (Baby Toy's, Gaming, Accessories) */}
         <FeaturedPromoBlocks />
 
-        {/* 4. Today's Popular Picks Section */}
-        <ProductGrid />
-
-        {/* 5. Deal of the Day with Live Countdown Timer */}
+        {/* 6. Deal of the Day with Live Countdown Timer */}
         <DealsOfTheDay />
-
-        {/* 6. Shop Section: Kid Toy Collection for Summer + Top Selling Products */}
-        <TopSellingSection />
 
         {/* 7. Featured Style Two: Puzzle for Kids $50, Buy One Get One, Puzzle for Kids $40 */}
         <FeaturedStyleTwo />
 
-        {/* 8. Select from Collection with Tabs (3d Toys, Toys for Boys, Metal Toy, Teddy Doll, Stickers) */}
+        {/* 8. Select from Collection with Tabs */}
         <CollectionTabs />
 
-        {/* 9. Parent Testimonials Section */}
-        <Testimonials />
+        {/* 9. About Us Section (Story, Mission & Quality Guarantees) */}
+        <AboutUs />
 
-        
+        {/* 10. Parent Testimonials Section (What Parents Say About Us) */}
+        <Testimonials />
 
         {/* 11. Latest From Media (News Section) */}
         <NewsSection />

@@ -3,6 +3,7 @@ import { Nunito, Poppins, Inter, Montserrat, Roboto, Playfair_Display } from "ne
 import "./globals.css";
 import siteConfigData from "../../config/site-config.json";
 import { CartProvider } from "@/context/CartContext";
+import FloatingCartPill from "@/components/FloatingCartPill";
 import { SiteConfig } from "@/types";
 
 const siteConfig = siteConfigData as unknown as SiteConfig;
@@ -133,6 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CartProvider>
           {children}
+          <FloatingCartPill />
         </CartProvider>
       </body>
     </html>
